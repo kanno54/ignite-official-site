@@ -161,77 +161,132 @@ export const SiteHeader: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu — 100% Solid Opaque Background */}
+      {/* Full-screen Mobile Drawer Overlay — 100% Solid Opaque #080A0F */}
       {mobileMenuOpen && (
         <div
           style={{
             position: 'fixed',
-            top: '70px',
+            top: 0,
             left: 0,
-            right: 0,
-            bottom: 0,
+            width: '100vw',
+            height: '100vh',
             backgroundColor: '#080A0F',
-            padding: '32px 24px 60px',
+            zIndex: 99999,
             display: 'flex',
             flexDirection: 'column',
-            gap: '16px',
-            zIndex: 2500,
             overflowY: 'auto',
             WebkitOverflowScrolling: 'touch',
           }}
         >
-          <div style={{ marginBottom: '8px', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)', letterSpacing: '0.1em' }}>
-              NAVIGATION MENU
-            </span>
-            <FiveLights height={14} />
-          </div>
-
-          {navItems.map((item) => {
-            const active = isActive(item.path);
-            return (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
+          {/* Top Bar inside Overlay */}
+          <div
+            style={{
+              height: '70px',
+              padding: '0 24px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              borderBottom: '1px solid var(--color-border)',
+              backgroundColor: '#080A0F',
+              flexShrink: 0,
+            }}
+          >
+            <Link to="/" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <FiveLights height={22} gap={4} />
+              <span
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '1.6rem',
-                  letterSpacing: '0.08em',
-                  color: active ? 'var(--campaign-accent)' : '#FFFFFF',
-                  backgroundColor: active ? 'var(--color-surface)' : 'transparent',
-                  borderLeft: active ? '4px solid var(--campaign-accent)' : '4px solid transparent',
-                  padding: '14px 16px',
-                  borderRadius: '2px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  transition: 'all 0.2s ease',
-                  borderBottom: '1px solid rgba(255,255,255,0.05)',
+                  fontSize: '1.8rem',
+                  letterSpacing: '0.1em',
+                  fontWeight: 900,
+                  color: '#F6F3ED',
                 }}
               >
-                <span>{item.label}</span>
-                <span style={{ fontSize: '1rem', color: active ? 'var(--campaign-accent)' : '#AEB6C4' }}>➔</span>
-              </Link>
-            );
-          })}
+                IGNITE
+              </span>
+            </Link>
 
-          <div style={{ marginTop: 'auto', paddingTop: '32px', textAlign: 'center' }}>
             <button
               onClick={() => setMobileMenuOpen(false)}
               style={{
-                width: '100%',
-                padding: '14px',
-                backgroundColor: 'var(--color-surface-elevated)',
-                border: '1px solid var(--color-border)',
-                color: '#F6F3ED',
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.9rem',
+                padding: '8px 16px',
+                backgroundColor: 'var(--campaign-accent)',
+                border: '1px solid var(--campaign-accent)',
                 borderRadius: '2px',
+                color: 'var(--campaign-on-accent)',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.85rem',
+                fontWeight: 700,
               }}
             >
-              CLOSE MENU ✕
+              CLOSE ✕
             </button>
+          </div>
+
+          {/* Navigation Items */}
+          <div
+            style={{
+              flex: 1,
+              padding: '32px 24px 60px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              backgroundColor: '#080A0F',
+            }}
+          >
+            <div style={{ marginBottom: '8px', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)', letterSpacing: '0.1em' }}>
+                NAVIGATION MENU
+              </span>
+              <FiveLights height={14} />
+            </div>
+
+            {navItems.map((item) => {
+              const active = isActive(item.path);
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '1.6rem',
+                    letterSpacing: '0.08em',
+                    color: active ? 'var(--campaign-accent)' : '#FFFFFF',
+                    backgroundColor: active ? 'var(--color-surface)' : 'transparent',
+                    borderLeft: active ? '4px solid var(--campaign-accent)' : '4px solid transparent',
+                    padding: '16px 20px',
+                    borderRadius: '2px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    transition: 'all 0.2s ease',
+                    borderBottom: '1px solid rgba(255,255,255,0.05)',
+                  }}
+                >
+                  <span>{item.label}</span>
+                  <span style={{ fontSize: '1.1rem', color: active ? 'var(--campaign-accent)' : '#AEB6C4' }}>➔</span>
+                </Link>
+              );
+            })}
+
+            <div style={{ marginTop: 'auto', paddingTop: '32px', textAlign: 'center' }}>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  width: '100%',
+                  padding: '14px',
+                  backgroundColor: 'var(--color-surface-elevated)',
+                  border: '1px solid var(--color-border)',
+                  color: '#F6F3ED',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.9rem',
+                  borderRadius: '2px',
+                }}
+              >
+                CLOSE MENU ✕
+              </button>
+            </div>
           </div>
         </div>
       )}
