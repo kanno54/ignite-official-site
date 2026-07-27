@@ -56,11 +56,7 @@ jobs:
             set net:timeout 15;
             set net:max-retries 2;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            mkdir -p public_html || true;
             cd public_html || true;
-            mirror -R --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=3 . .;
-            mkdir -p ignite-official.site || true;
-            cd ignite-official.site || true;
-            mirror -R --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=3 . .;
+            mirror -R --delete --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=3 . .;
             quit;
           "
