@@ -1,4 +1,5 @@
 import React from 'react';
+// IGNITE Official Story & Timeline Component
 import { Link } from 'react-router-dom';
 import { FiveLights } from '../components/common/FiveLights';
 
