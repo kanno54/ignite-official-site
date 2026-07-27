@@ -36,15 +36,14 @@ jobs:
       - name: Assert Public Cutoff Safety
         run: npm run assert-public-cutoff
 
-      - name: Deploy to Remote Server via SFTP
+      - name: Deploy to Remote Server via FTP
         if: github.ref == 'refs/heads/main'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          key: ${{ secrets.SFTP_PRIVATE_KEY }}
-          port: ${{ secrets.SFTP_PORT || 22 }}
+          port: ${{ secrets.SFTP_PORT || 21 }}
           local-dir: ./dist/
           server-dir: ${{ secrets.SFTP_REMOTE_PATH }}
           exclude: |
