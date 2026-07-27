@@ -45,14 +45,19 @@ jobs:
           REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          TARGET_DIR="${REMOTE_PATH:-public_html/ignite-official.site}"
+          TARGET_DIR="public_html/ignite-official.site"
+          if [ -n "$REMOTE_PATH" ] && [ "$REMOTE_PATH" != "." ] && [ "$REMOTE_PATH" != "./" ] && [ "$REMOTE_PATH" != "/" ]; then
+            TARGET_DIR="$REMOTE_PATH"
+          fi
+          echo "Deploying to target directory: $TARGET_DIR"
           cd ./dist
           lftp -c "
             set ftp:ssl-allow no;
             set net:timeout 15;
             set net:max-retries 3;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            mkdir -p \"$TARGET_DIR\";
-            mirror -R --verbose . \"$TARGET_DIR\";
+            mkdir -p $TARGET_DIR;
+            cd $TARGET_DIR;
+            mirror -R --verbose . .;
             quit;
           "
