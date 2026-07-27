@@ -1,0 +1,42 @@
+:root {
+  /* Permanent Core Brand Tokens */
+  --color-primary: #FF4B2B;
+  --color-primary-strong: #E2361E;
+  --color-secondary: #F4C34E;
+  --color-bg: #080A0F;
+  --color-surface: #11151D;
+  --color-surface-elevated: #171C26;
+  --color-border: #2A303C;
+  --color-text: #F6F3ED;
+  --color-text-muted: #AEB6C4;
+  --color-focus: #6CCBFF;
+  --color-error: #FF6B6B;
+  --color-success: #58C998;
+
+  /* Member Accent Colors */
+  --color-member-kai: #D62839;
+  --color-member-sho: #7B5CFF;
+  --color-member-leo: #FF8A24;
+  --color-member-ren: #D9B44A;
+  --color-member-yuto: #2450A4;
+
+  /* Current Campaign: NO_LIMITS */
+  --campaign-accent: #55A8FF;
+  --campaign-accent-2: #CBE7FF;
+  --campaign-deep: #101B2D;
+  --campaign-white: #F6F3ED;
+  --campaign-on-accent: #08111E;
+
+  /* Typography Families */
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-sans: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  --font-serif: "Shippori Mincho", "Yu Mincho", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Layout Boundaries */
+  --max-shell: 1440px;
+  --standard-content: 1280px;
+  --article-content: 1040px;
+  --story-body: 720px;
+  --player-height: 80px;
+}

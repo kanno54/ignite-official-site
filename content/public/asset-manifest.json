@@ -1,0 +1,199 @@
+{
+  "images": {
+    "hero-no-limits-desktop": {
+      "path": "/assets/images/hero-no-limits-desktop.webp",
+      "status": "ready",
+      "aspect": "16:9"
+    },
+    "hero-no-limits-mobile": {
+      "path": "/assets/images/hero-no-limits-mobile.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "avatar-kai": {
+      "path": "/assets/images/members/avatar-kai.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "profile-kai": {
+      "path": "/assets/images/members/profile-kai.webp",
+      "status": "ready",
+      "aspect": "4:5"
+    },
+    "avatar-sho": {
+      "path": "/assets/images/members/avatar-sho.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "profile-sho": {
+      "path": "/assets/images/members/profile-sho.webp",
+      "status": "ready",
+      "aspect": "4:5"
+    },
+    "avatar-leo": {
+      "path": "/assets/images/members/avatar-leo.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "profile-leo": {
+      "path": "/assets/images/members/profile-leo.webp",
+      "status": "ready",
+      "aspect": "4:5"
+    },
+    "avatar-ren": {
+      "path": "/assets/images/members/avatar-ren.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "profile-ren": {
+      "path": "/assets/images/members/profile-ren.webp",
+      "status": "ready",
+      "aspect": "4:5"
+    },
+    "avatar-yuto": {
+      "path": "/assets/images/members/avatar-yuto.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "profile-yuto": {
+      "path": "/assets/images/members/profile-yuto.webp",
+      "status": "ready",
+      "aspect": "4:5"
+    },
+    "cover-firestarter": {
+      "path": "/assets/images/covers/cover-firestarter.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "cover-ignition": {
+      "path": "/assets/images/covers/cover-ignition.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "cover-burn-it-down": {
+      "path": "/assets/images/covers/cover-burn-it-down.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "cover-no-limits": {
+      "path": "/assets/images/covers/cover-no-limits.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "article-hero-no-limits": {
+      "path": "/assets/images/articles/hero-no-limits-interview.webp",
+      "status": "ready",
+      "aspect": "3:2"
+    },
+    "article-hero-yuto": {
+      "path": "/assets/images/articles/hero-yuto-feature.webp",
+      "status": "ready",
+      "aspect": "3:2"
+    },
+    "article-hero-sho-burn-it-down": {
+      "path": "/assets/images/articles/hero-sho-burn-it-down.webp",
+      "status": "ready",
+      "aspect": "3:2"
+    },
+    "article-hero-ignition": {
+      "path": "/assets/images/articles/hero-ignition-feature.webp",
+      "status": "ready",
+      "aspect": "3:2"
+    },
+    "article-ignition-cover": {
+      "path": "/assets/images/articles/ignition-mag-cover.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "article-ignition-roundtable": {
+      "path": "/assets/images/articles/ignition-roundtable.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "article-ignition-live-why": {
+      "path": "/assets/images/articles/ignition-live-why.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "article-ignition-member-file": {
+      "path": "/assets/images/articles/ignition-member-file.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-burn-it-down": {
+      "path": "/assets/images/tracks/poster-burn-it-down.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-ignition": {
+      "path": "/assets/images/tracks/poster-ignition.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-firestarter": {
+      "path": "/assets/images/tracks/poster-firestarter.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-no-limits": {
+      "path": "/assets/images/tracks/poster-no-limits.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-ashes-in-motion": {
+      "path": "/assets/images/tracks/poster-ashes-in-motion.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-higher-ground": {
+      "path": "/assets/images/tracks/poster-higher-ground.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-burn-it-down-indies": {
+      "path": "/assets/images/tracks/poster-burn-it-down-indies.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-ignition-indies": {
+      "path": "/assets/images/tracks/poster-ignition-indies.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-hands-up-hearts-out-live": {
+      "path": "/assets/images/tracks/poster-hands-up-hearts-out-live.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-heatwave-live": {
+      "path": "/assets/images/tracks/poster-heatwave-live.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-run-with-us-live": {
+      "path": "/assets/images/tracks/poster-run-with-us-live.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-heatwave-indies": {
+      "path": "/assets/images/tracks/poster-heatwave-indies.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-runaway-beat": {
+      "path": "/assets/images/tracks/poster-runaway-beat.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-first-light": {
+      "path": "/assets/images/tracks/poster-first-light.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "track-poster-back-to-the-spark": {
+      "path": "/assets/images/tracks/poster-back-to-the-spark.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    }
+  }
+}

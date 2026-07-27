@@ -1,0 +1,152 @@
+[
+  {
+    "id": "kai",
+    "slug": "kai",
+    "nameEn": "KAI",
+    "nameJa": "カイ",
+    "role": "Leader / Main Vocal",
+    "colorHex": "#D62839",
+    "colorName": "Crimson Red",
+    "height": "178cm",
+    "shortCopy": "熱量と意志でグループを先導するセンター",
+    "biography": "2020年インディーズ結成時からのリーダー。妥協なきヴォーカル表現とステージ全体の熱量を牽引する。自らの課題や葛藤を隠さず、パフォーマンスの熱に変換して観客へ届ける生粋のフロントマン。",
+    "origin": "ストリートダンスとバンドボーカルの双方を経験し、ダンス＆ボーカルグループの可能性を追求。",
+    "turningPoint": "1st Single「IGNITION」での圧倒的なシャウトと表現力でメジャーシーンに強烈なインパクトを与える。",
+    "currentChapter": "3rd Single「No Limits」では全体の主軸を支えつつ、メンバー個々の個性を前面に引き出すボーカルアレンジに挑戦。",
+    "stageStrengths": [
+      "圧倒的な声量とハイトーンの力強さ",
+      "ステージ全体の空気感を一瞬で変えるフロント力",
+      "観客との熱いレスポンスを生み出すライブパフォーマンス"
+    ],
+    "signaturePerformance": "「IGNITION」ラストサビ前のロングトーン＆ダンスブレイク誘導",
+    "featuredTrackIds": ["ignition-main", "no-limits-title", "firestarter-main"],
+    "avatarAssetId": "avatar-kai",
+    "profileImageAssetId": "profile-kai",
+    "publication": {
+      "fictionalReleaseDate": "2020-10",
+      "publishAt": "2020-10-01T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    }
+  },
+  {
+    "id": "sho",
+    "slug": "sho",
+    "nameEn": "SHO",
+    "nameJa": "ショウ",
+    "role": "Main Dancer / Rapper",
+    "colorHex": "#7B5CFF",
+    "colorName": "Purple",
+    "height": "181cm",
+    "shortCopy": "鋭いフォーメーションと重厚なラップを司る柱",
+    "biography": "切れ長の瞳と高い身体能力でダンスパフォーマンスの精度を高めるメインダンサー。振付の細部と立体的なフォーメーション構築を担当。クールな佇まいの裏に強い情熱を秘める。",
+    "origin": "幼少期からの本格的なダンス英才教育とコンテスト受賞歴を持つ。",
+    "turningPoint": "2nd Single「BURN IT DOWN」で自ら振り付けを手掛け、ダイナミックな群舞を完成させた。",
+    "currentChapter": "「No Limits」ではスピード感溢れる展開の中で高速ラップと激しいヒットアクションを両立。",
+    "stageStrengths": [
+      "ミリ単位で揃える高いダンスの精度と体幹",
+      "低音領域を支えるテクニカルな高速ラップ",
+      "ステージ全体を見守るフォーメーションコントロール"
+    ],
+    "signaturePerformance": "「BURN IT DOWN」間奏における重厚なソロダンスパート",
+    "featuredTrackIds": ["burn-it-down-main", "no-limits-title", "higher-ground"],
+    "avatarAssetId": "avatar-sho",
+    "profileImageAssetId": "profile-sho",
+    "publication": {
+      "fictionalReleaseDate": "2020-10",
+      "publishAt": "2020-10-01T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    }
+  },
+  {
+    "id": "leo",
+    "slug": "leo",
+    "nameEn": "LEO",
+    "nameJa": "レオ",
+    "role": "Sub Vocal / Performer",
+    "colorHex": "#FF8A24",
+    "colorName": "Orange",
+    "height": "175cm",
+    "shortCopy": "ステージと客席を笑顔で繋ぐムードメーカー",
+    "biography": "明るい親しみやすさと華やかなグルーヴ感で客席を包み込むパフォーマー。グループの雰囲気を常に温かく保ち、ライブMCやファンとの一体感作りに欠かせない存在。",
+    "origin": "エンターテインメントの多様な舞台を経験し、客席を巻き込む表情豊かな表現力を培う。",
+    "turningPoint": "ライブツアー「FIRESTARTER Tour」での観客巻き込みパフォーマンスで一気に注目を集める。",
+    "currentChapter": "「No Limits」では跳躍感のあるリズムと軽やかなボーカルラインで楽曲の開放感を際立たせる。",
+    "stageStrengths": [
+      "観客のグルーヴを引き出す高いエンターテイメント性",
+      "しなやかで表情豊かなアクロバティック要素",
+      "楽曲に明るい色彩を与えるミドルレンジボーカル"
+    ],
+    "signaturePerformance": "「Run With Us」サビでの観客とのシンクロクラップ＆ジャンプ",
+    "featuredTrackIds": ["run-with-us-main", "no-limits-title", "firestarter-main"],
+    "avatarAssetId": "avatar-leo",
+    "profileImageAssetId": "profile-leo",
+    "publication": {
+      "fictionalReleaseDate": "2020-10",
+      "publishAt": "2020-10-01T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    }
+  },
+  {
+    "id": "ren",
+    "slug": "ren",
+    "nameEn": "REN",
+    "nameJa": "レン",
+    "role": "Main Vocal",
+    "colorHex": "#D9B44A",
+    "colorName": "Gold",
+    "height": "176cm",
+    "shortCopy": "澄み渡る歌声で楽曲の情景を描くボーカルの核",
+    "biography": "伸びやかで透明感のあるボーカルを持ち、バラードからアップテンポまで楽曲に深いエモショナリティを付与するメインボーカル。美しく響くハーモニーの要。",
+    "origin": "クラシックの基礎を持ち、幼少から歌唱表現に親しんできた表現者。",
+    "turningPoint": "「IGNITION」カップリングバラードにおける圧倒的な歌唱でR&Bファンの心を掴む。",
+    "currentChapter": "「No Limits」ではYUTOとのツインハイトーンハーモニーを構成し、楽曲のスケール感を極限まで高めた。",
+    "stageStrengths": [
+      "繊細なファルセットと圧倒的なピッチ精度",
+      "歌詞の物語性を情感豊かに伝える表現力",
+      "メンバーの声を包み込み引き立てるハーモニーワーク"
+    ],
+    "signaturePerformance": "「Higher Ground」落ちサビでの情感豊かなファルセットソロ",
+    "featuredTrackIds": ["higher-ground", "no-limits-title", "ignition-main"],
+    "avatarAssetId": "avatar-ren",
+    "profileImageAssetId": "profile-ren",
+    "publication": {
+      "fictionalReleaseDate": "2020-10",
+      "publishAt": "2020-10-01T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    }
+  },
+  {
+    "id": "yuto",
+    "slug": "yuto",
+    "nameEn": "YUTO",
+    "nameJa": "ユウト",
+    "role": "Lead Vocal / Youngest",
+    "colorHex": "#2450A4",
+    "colorName": "Deep Blue",
+    "height": "174cm",
+    "shortCopy": "静かな情熱と急速な成長を見せる最年少ボーカル",
+    "biography": "大きな瞳と静かな闘志を秘めた最年少メンバー。インディーズ時代からの猛練習を経て、メジャーデビュー後に驚異的なハイトーンボーカルの才能を開花させた。",
+    "origin": "グループオーディションでその歌声の原石を見出され、最年少として加入。",
+    "turningPoint": "「BURN IT DOWN」のライブパフォーマンスで確かな存在感を示し、技術的成長を証明。",
+    "currentChapter": "3rd Single「No Limits」にて自身初となる最高音サビパートのフィーチャーを獲得。グループの新たな表現の扉を開く。",
+    "stageStrengths": [
+      "伸びやかでクリスタルな最高音ハイトーン",
+      "曲を追うごとに増す情感と鋭い集中力",
+      "しなやかで軸のぶれないダンスフォーム"
+    ],
+    "signaturePerformance": "「No Limits」サビ後半におけるハイトーンフェイク＆ハイノート",
+    "featuredTrackIds": ["no-limits-title", "higher-ground", "burn-it-down-main"],
+    "avatarAssetId": "avatar-yuto",
+    "profileImageAssetId": "profile-yuto",
+    "publication": {
+      "fictionalReleaseDate": "2020-10",
+      "publishAt": "2020-10-01T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    }
+  }
+]

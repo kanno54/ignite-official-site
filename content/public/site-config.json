@@ -1,0 +1,52 @@
+{
+  "siteUrl": "https://ignite-official.site",
+  "canonicalUrl": "https://ignite-official.site",
+  "fictionalCurrentDate": "2022-09",
+  "currentCampaign": "NO_LIMITS",
+  "latestReleaseId": "no-limits",
+  "pickUpTrackId": "no-limits-title",
+  "group": {
+    "name": "IGNITE",
+    "japaneseName": "イグナイト",
+    "debutYear": "2020",
+    "majorDebutYear": "2021",
+    "memberCount": 5,
+    "catchphraseEn": "We don’t just perform. We burn.",
+    "catchphraseJa": "ただ演じるのではない。自分たち自身を燃やして、舞台に立つ。",
+    "fanName": "EMBER",
+    "memberOrder": ["kai", "sho", "leo", "ren", "yuto"]
+  },
+  "brandTokens": {
+    "primary": "#FF4B2B",
+    "primaryStrong": "#E2361E",
+    "secondary": "#F4C34E",
+    "bg": "#080A0F",
+    "surface": "#11151D",
+    "surfaceElevated": "#171C26",
+    "border": "#2A303C",
+    "text": "#F6F3ED",
+    "textMuted": "#AEB6C4",
+    "focus": "#6CCBFF",
+    "error": "#FF6B6B",
+    "success": "#58C998"
+  },
+  "campaignSkin": {
+    "campaign": "NO_LIMITS",
+    "accent": "#55A8FF",
+    "accentLight": "#CBE7FF",
+    "deep": "#101B2D",
+    "white": "#F6F3ED",
+    "onAccent": "#08111E",
+    "heroEyebrow": "3RD SINGLE",
+    "heroTitle": "NO LIMITS",
+    "heroCopy": "五つの声で、まだ見ぬ場所へ。",
+    "primaryCta": "LISTEN NOW",
+    "secondaryCta": "VIEW RELEASE"
+  },
+  "featureFlags": {
+    "enableJukebox": true,
+    "enableEmberPass": true,
+    "enableLyricCard": false,
+    "enableSetlistMaker": false
+  }
+}

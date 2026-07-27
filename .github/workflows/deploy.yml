@@ -1,0 +1,52 @@
+name: IGNITE Official Site — Build & Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Validate Content Data
+        run: npm run validate:data
+
+      - name: Validate Asset Manifest
+        run: npm run validate:assets
+
+      - name: Production Build & Prerender
+        run: npm run build
+
+      - name: Verify Static Output Routes
+        run: npm run test:static
+
+      - name: Assert Public Cutoff Safety
+        run: npm run assert-public-cutoff
+
+      - name: Deploy to Remote Server via SFTP
+        if: github.ref == 'refs/heads/main'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          port: ${{ secrets.SFTP_PORT || 22 }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.SFTP_REMOTE_PATH }}
+          exclude: |
+            **/media/audio/**
+            .git*
+            .git*/**
