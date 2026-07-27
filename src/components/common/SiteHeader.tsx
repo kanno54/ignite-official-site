@@ -22,6 +22,17 @@ export const SiteHeader: React.FC = () => {
     return location.pathname.startsWith(path);
   };
 
+  React.useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <header
       style={{
@@ -30,8 +41,7 @@ export const SiteHeader: React.FC = () => {
         left: 0,
         right: 0,
         height: '70px',
-        backgroundColor: 'rgba(8, 10, 15, 0.9)',
-        backdropFilter: 'blur(12px)',
+        backgroundColor: '#080A0F',
         borderBottom: '1px solid var(--color-border)',
         zIndex: 1500,
       }}
@@ -48,7 +58,7 @@ export const SiteHeader: React.FC = () => {
         }}
       >
         {/* Left: Brand Logo & Five Lights */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <Link to="/" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <FiveLights height={22} gap={4} />
           <span
             style={{
@@ -135,13 +145,14 @@ export const SiteHeader: React.FC = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="mobile-menu-btn"
             style={{
-              padding: '8px 12px',
-              backgroundColor: 'var(--color-surface)',
-              border: '1px solid var(--color-border)',
+              padding: '8px 14px',
+              backgroundColor: mobileMenuOpen ? 'var(--campaign-accent)' : 'var(--color-surface)',
+              border: mobileMenuOpen ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
               borderRadius: '2px',
-              color: '#F6F3ED',
+              color: mobileMenuOpen ? 'var(--campaign-on-accent)' : '#F6F3ED',
               fontFamily: 'var(--font-mono)',
               fontSize: '0.85rem',
+              fontWeight: 700,
             }}
             aria-label="Toggle menu"
           >
@@ -150,7 +161,7 @@ export const SiteHeader: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Menu — 100% Solid Opaque Background */}
       {mobileMenuOpen && (
         <div
           style={{
@@ -159,32 +170,69 @@ export const SiteHeader: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(8, 10, 15, 0.98)',
-            backdropFilter: 'blur(16px)',
-            padding: '32px 24px',
+            backgroundColor: '#080A0F',
+            padding: '32px 24px 60px',
             display: 'flex',
             flexDirection: 'column',
-            gap: '24px',
-            zIndex: 1400,
+            gap: '16px',
+            zIndex: 2500,
+            overflowY: 'auto',
+            WebkitOverflowScrolling: 'touch',
           }}
         >
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
+          <div style={{ marginBottom: '8px', borderBottom: '1px solid var(--color-border)', paddingBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)', letterSpacing: '0.1em' }}>
+              NAVIGATION MENU
+            </span>
+            <FiveLights height={14} />
+          </div>
+
+          {navItems.map((item) => {
+            const active = isActive(item.path);
+            return (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '1.6rem',
+                  letterSpacing: '0.08em',
+                  color: active ? 'var(--campaign-accent)' : '#FFFFFF',
+                  backgroundColor: active ? 'var(--color-surface)' : 'transparent',
+                  borderLeft: active ? '4px solid var(--campaign-accent)' : '4px solid transparent',
+                  padding: '14px 16px',
+                  borderRadius: '2px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.2s ease',
+                  borderBottom: '1px solid rgba(255,255,255,0.05)',
+                }}
+              >
+                <span>{item.label}</span>
+                <span style={{ fontSize: '1rem', color: active ? 'var(--campaign-accent)' : '#AEB6C4' }}>➔</span>
+              </Link>
+            );
+          })}
+
+          <div style={{ marginTop: 'auto', paddingTop: '32px', textAlign: 'center' }}>
+            <button
               onClick={() => setMobileMenuOpen(false)}
               style={{
-                fontFamily: 'var(--font-display)',
-                fontSize: '2rem',
-                letterSpacing: '0.08em',
-                color: isActive(item.path) ? 'var(--campaign-accent)' : '#F6F3ED',
-                borderBottom: '1px solid var(--color-border)',
-                paddingBottom: '12px',
+                width: '100%',
+                padding: '14px',
+                backgroundColor: 'var(--color-surface-elevated)',
+                border: '1px solid var(--color-border)',
+                color: '#F6F3ED',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.9rem',
+                borderRadius: '2px',
               }}
             >
-              {item.label}
-            </Link>
-          ))}
+              CLOSE MENU ✕
+            </button>
+          </div>
         </div>
       )}
 

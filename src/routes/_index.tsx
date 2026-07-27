@@ -81,37 +81,40 @@ export const TopPage: React.FC = () => {
       </section>
 
       {/* 2. Latest News */}
-      <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '32px', borderRadius: '2px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+      <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: 'clamp(20px, 4vw, 32px)', borderRadius: '2px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: 0 }}>
             LATEST NEWS
           </h2>
           <FiveLights height={14} />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
           {newsList.slice(0, 3).map((item) => (
             <Link
               key={item.id}
               to={item.url}
               style={{
                 display: 'flex',
-                alignItems: 'center',
-                gap: '16px',
-                padding: '12px 16px',
+                flexDirection: 'column',
+                gap: '8px',
+                padding: '16px 20px',
                 backgroundColor: 'var(--color-surface-elevated)',
                 border: '1px solid var(--color-border)',
+                borderLeft: '3px solid var(--campaign-accent)',
                 borderRadius: '2px',
-                transition: 'border-color 0.2s ease',
+                transition: 'all 0.2s ease',
               }}
             >
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)' }}>
-                {item.date}
-              </span>
-              <span style={{ fontSize: '0.75rem', padding: '2px 8px', backgroundColor: 'var(--campaign-deep)', border: '1px solid var(--campaign-accent)', color: 'var(--campaign-accent-2)' }}>
-                {item.category}
-              </span>
-              <span style={{ fontSize: '0.95rem', color: '#F6F3ED', fontWeight: 500, flex: 1 }}>
-                {item.title}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)', fontWeight: 600 }}>
+                  {item.date}
+                </span>
+                <span style={{ fontSize: '0.7rem', padding: '2px 8px', backgroundColor: 'var(--campaign-deep)', border: '1px solid var(--campaign-accent)', color: 'var(--campaign-accent-2)', borderRadius: '2px' }}>
+                  {item.category}
+                </span>
+              </div>
+              <span style={{ fontSize: '0.95rem', color: '#F6F3ED', fontWeight: 600, lineHeight: 1.5, wordBreak: 'break-word' }}>
+                {item.title} ➔
               </span>
             </Link>
           ))}
