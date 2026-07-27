@@ -47,12 +47,15 @@ jobs:
           cd ./dist
           lftp -c "
             set ftp:ssl-allow no;
+            set ftp:passive-mode on;
             set ftp:use-site-chmod false;
             set ftp:use-site-utime false;
+            set ftp:use-mdtm false;
+            set ftp:use-size false;
+            set ftp:use-stat false;
             set net:timeout 15;
             set net:max-retries 3;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            cd public_html;
-            mirror -R --verbose --no-perms --no-umask . .;
+            mirror -R --verbose --no-perms --no-umask --no-symlinks --ignore-time . .;
             quit;
           "
