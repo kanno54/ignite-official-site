@@ -45,7 +45,7 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           cd ./dist
-          lftp -c "
+          timeout 120s lftp -c "
             set ftp:ssl-allow no;
             set ftp:passive-mode on;
             set ftp:use-site-chmod false;
@@ -53,9 +53,9 @@ jobs:
             set ftp:use-mdtm false;
             set ftp:use-size false;
             set ftp:use-stat false;
-            set net:timeout 15;
-            set net:max-retries 2;
+            set net:timeout 10;
+            set net:max-retries 1;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            mirror -R --delete --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=3 . .;
+            mirror -R --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=2 . .;
             quit;
           "
