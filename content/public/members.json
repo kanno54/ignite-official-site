@@ -19,7 +19,7 @@
       "観客との熱いレスポンスを生み出すライブパフォーマンス"
     ],
     "signaturePerformance": "「IGNITION」ラストサビ前のロングトーン＆ダンスブレイク誘導",
-    "featuredTrackIds": ["ignition-main", "no-limits-title", "firestarter-main"],
+    "featuredTrackIds": ["burn-it-down-main", "firestarter-runaway-beat", "no-limits-title"],
     "avatarAssetId": "avatar-kai",
     "profileImageAssetId": "profile-kai",
     "publication": {
@@ -49,7 +49,7 @@
       "ステージ全体を見守るフォーメーションコントロール"
     ],
     "signaturePerformance": "「BURN IT DOWN」間奏における重厚なソロダンスパート",
-    "featuredTrackIds": ["burn-it-down-main", "no-limits-title", "higher-ground"],
+    "featuredTrackIds": ["burn-it-down-main", "firestarter-runaway-beat", "back-to-the-spark"],
     "avatarAssetId": "avatar-sho",
     "profileImageAssetId": "profile-sho",
     "publication": {
@@ -79,7 +79,7 @@
       "楽曲に明るい色彩を与えるミドルレンジボーカル"
     ],
     "signaturePerformance": "「Run With Us」サビでの観客とのシンクロクラップ＆ジャンプ",
-    "featuredTrackIds": ["run-with-us-main", "no-limits-title", "firestarter-main"],
+    "featuredTrackIds": ["heatwave-live", "hands-up-hearts-out-live", "run-with-us-live"],
     "avatarAssetId": "avatar-leo",
     "profileImageAssetId": "profile-leo",
     "publication": {
@@ -109,7 +109,7 @@
       "メンバーの声を包み込み引き立てるハーモニーワーク"
     ],
     "signaturePerformance": "「Higher Ground」落ちサビでの情感豊かなファルセットソロ",
-    "featuredTrackIds": ["higher-ground", "no-limits-title", "ignition-main"],
+    "featuredTrackIds": ["firestarter-first-light", "ashes-in-motion", "back-to-the-spark"],
     "avatarAssetId": "avatar-ren",
     "profileImageAssetId": "profile-ren",
     "publication": {
@@ -139,7 +139,7 @@
       "しなやかで軸のぶれないダンスフォーム"
     ],
     "signaturePerformance": "「No Limits」サビ後半におけるハイトーンフェイク＆ハイノート",
-    "featuredTrackIds": ["no-limits-title", "higher-ground", "burn-it-down-main"],
+    "featuredTrackIds": ["no-limits-title", "higher-ground", "back-to-the-spark"],
     "avatarAssetId": "avatar-yuto",
     "profileImageAssetId": "profile-yuto",
     "publication": {
