@@ -56,7 +56,6 @@ jobs:
             set net:timeout 15;
             set net:max-retries 2;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            cd public_html || true;
             mirror -R --delete --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=3 . .;
             quit;
           "
