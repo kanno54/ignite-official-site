@@ -100,6 +100,7 @@ export const MiniPlayer: React.FC = () => {
 
       {/* Control Content */}
       <div
+        className="mini-player-container"
         style={{
           flex: 1,
           maxWidth: 'var(--max-shell)',
@@ -113,11 +114,11 @@ export const MiniPlayer: React.FC = () => {
         }}
       >
         {/* Left: 3:4 Poster & Track Info */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '14px', minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0, flex: 1 }}>
           <div
             style={{
-              width: '42px',
-              height: '56px',
+              width: '38px',
+              height: '50px',
               backgroundColor: '#171C26',
               borderRadius: '3px',
               border: '1px solid var(--color-border)',
@@ -138,16 +139,16 @@ export const MiniPlayer: React.FC = () => {
                 justifyContent: 'center',
               }}
             >
-              <EqualizerBars isPlaying={isPlaying} height={16} />
+              <EqualizerBars isPlaying={isPlaying} height={14} />
             </div>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0, flex: 1 }}>
             <span
               style={{
                 fontFamily: 'var(--font-sans)',
                 fontWeight: 700,
-                fontSize: '0.95rem',
+                fontSize: '0.9rem',
                 color: '#F6F3ED',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
@@ -159,7 +160,7 @@ export const MiniPlayer: React.FC = () => {
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.75rem',
+                fontSize: '0.72rem',
                 color: 'var(--campaign-accent)',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
@@ -172,19 +173,19 @@ export const MiniPlayer: React.FC = () => {
         </div>
 
         {/* Center: Play / Pause Controls */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0 }}>
           <button
             onClick={togglePlay}
             style={{
-              width: '42px',
-              height: '42px',
+              width: '40px',
+              height: '40px',
               borderRadius: '50%',
               backgroundColor: isPlaying ? 'var(--color-primary)' : 'var(--campaign-accent)',
               color: isPlaying ? '#FFF' : 'var(--campaign-on-accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '1.2rem',
+              fontSize: '1.1rem',
               fontWeight: 700,
               boxShadow: isPlaying ? '0 0 12px var(--color-primary)' : '0 0 10px rgba(85,168,255,0.4)',
             }}
@@ -197,8 +198,8 @@ export const MiniPlayer: React.FC = () => {
             onClick={nextTrack}
             style={{
               color: 'var(--color-text-muted)',
-              fontSize: '1.2rem',
-              padding: '8px',
+              fontSize: '1.1rem',
+              padding: '6px',
             }}
             aria-label="Next Track"
           >
@@ -206,11 +207,12 @@ export const MiniPlayer: React.FC = () => {
           </button>
 
           <div
+            className="mini-player-time"
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '0.8rem',
+              fontSize: '0.75rem',
               color: '#AEB6C4',
-              minWidth: '85px',
+              minWidth: '75px',
             }}
           >
             {formatTime(currentTime)} / {formatTime(duration)}
@@ -218,14 +220,14 @@ export const MiniPlayer: React.FC = () => {
         </div>
 
         {/* Right: Expand Drawer Toggle */}
-        <div>
+        <div style={{ flexShrink: 0 }}>
           <button
             onClick={toggleExpand}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              padding: '6px 14px',
+              gap: '4px',
+              padding: '6px 10px',
               backgroundColor: 'var(--color-surface)',
               border: '1px solid var(--color-border)',
               borderRadius: '2px',
@@ -234,7 +236,8 @@ export const MiniPlayer: React.FC = () => {
               color: 'var(--color-text)',
             }}
           >
-            <span>{isExpanded ? '▼ MINIMIZE' : '▲ EXPAND PLAYER'}</span>
+            <span className="mini-player-expand-text">{isExpanded ? '▼ MINIMIZE' : '▲ EXPAND PLAYER'}</span>
+            <span className="mini-player-expand-icon">{isExpanded ? '▼' : '▲'}</span>
           </button>
         </div>
       </div>

@@ -120,10 +120,10 @@ export const TopPage: React.FC = () => {
 
       {/* 3. Pick Up Track */}
       {pickUpTrack && (
-        <section style={{ backgroundColor: 'var(--campaign-deep)', border: '1px solid var(--campaign-accent)', padding: '36px', borderRadius: '2px' }}>
+        <section style={{ backgroundColor: 'var(--campaign-deep)', border: '1px solid var(--campaign-accent)', padding: 'clamp(20px, 4vw, 36px)', borderRadius: '2px' }}>
           <span className="campaign-tag" style={{ marginBottom: '12px' }}>PICK UP TRACK</span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '32px', alignItems: 'center', marginTop: '16px' }}>
-            <div style={{ width: '150px', flexShrink: 0, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'center', marginTop: '16px' }}>
+            <div style={{ width: '140px', flexShrink: 0, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)', margin: '0 auto' }}>
               <ResponsivePicture
                 assetId={pickUpTrack.posterAssetId || currentRelease.coverAssetId}
                 title={pickUpTrack.title}
@@ -132,19 +132,19 @@ export const TopPage: React.FC = () => {
                 accentColor="var(--campaign-accent)"
               />
             </div>
-            <div style={{ flex: 1, minWidth: '260px' }}>
-              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '2rem', margin: '0 0 8px', color: '#F6F3ED' }}>
+            <div style={{ flex: 1, minWidth: '220px' }}>
+              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(1.5rem, 5vw, 2rem)', margin: '0 0 8px', color: '#F6F3ED' }}>
                 {pickUpTrack.title}
               </h2>
-              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--campaign-accent)', margin: 0 }}>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', margin: 0 }}>
                 {pickUpTrack.versionLabel}
               </p>
 
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: '#F6F3ED', marginTop: '12px' }}>
+              <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: '#F6F3ED', marginTop: '12px' }}>
                 {pickUpTrack.linerNotes}
               </p>
 
-              <div style={{ display: 'flex', gap: '16px', marginTop: '20px', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '12px', marginTop: '20px', flexWrap: 'wrap' }}>
                 <TrackPlayButton recordingId={pickUpTrack.id} size="large" />
                 <Link to={`/discography/${currentRelease.slug}/`} className="btn-secondary">
                   READ LYRICS & NOTES
@@ -157,19 +157,19 @@ export const TopPage: React.FC = () => {
 
       {/* 4. Five Members */}
       <section>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
           <div>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)' }}>FIVE VOICES, ONE STAGE</span>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: '#F6F3ED', margin: 0 }}>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)' }}>FIVE VOICES, ONE STAGE</span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.8rem, 5vw, 2.4rem)', color: '#F6F3ED', margin: 0 }}>
               MEMBERS
             </h2>
           </div>
-          <Link to="/members/" className="btn-secondary" style={{ fontSize: '0.9rem', padding: '8px 16px' }}>
+          <Link to="/members/" className="btn-secondary" style={{ fontSize: '0.85rem', padding: '6px 14px' }}>
             VIEW ALL ➔
           </Link>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '16px' }}>
           {members.map((m) => (
             <Link
               key={m.id}
@@ -185,16 +185,16 @@ export const TopPage: React.FC = () => {
               }}
             >
               <ResponsivePicture assetId={m.avatarAssetId} title={m.nameEn} subtitle={m.role} aspectRatio="1:1" accentColor={m.colorHex} />
-              <div style={{ padding: '16px', borderTop: `3px solid ${m.colorHex}` }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', margin: 0, color: '#F6F3ED' }}>
+              <div style={{ padding: '12px', borderTop: `3px solid ${m.colorHex}` }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '4px' }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.3rem', margin: 0, color: '#F6F3ED' }}>
                     {m.nameEn}
                   </h3>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: m.colorHex }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: m.colorHex }}>
                     {m.colorName}
                   </span>
                 </div>
-                <p style={{ fontSize: '0.85rem', color: '#AEB6C4', marginTop: '6px', lineHeight: 1.4, margin: 0 }}>
+                <p style={{ fontSize: '0.8rem', color: '#AEB6C4', marginTop: '4px', lineHeight: 1.3, margin: 0 }}>
                   {m.shortCopy}
                 </p>
               </div>
@@ -205,17 +205,17 @@ export const TopPage: React.FC = () => {
 
       {/* 5. Latest Feature */}
       {latestArticle && (
-        <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px', borderRadius: '2px' }}>
+        <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: 'clamp(20px, 4vw, 36px)', borderRadius: '2px' }}>
           <span className="campaign-tag" style={{ marginBottom: '12px' }}>{latestArticle.kicker}</span>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', alignItems: 'center', marginTop: '16px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px', alignItems: 'center', marginTop: '16px' }}>
             <div>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', lineHeight: 1.4, color: '#F6F3ED', margin: '0 0 12px' }}>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.4rem, 4vw, 1.8rem)', lineHeight: 1.4, color: '#F6F3ED', margin: '0 0 12px' }}>
                 {latestArticle.title}
               </h2>
-              <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: '#AEB6C4', margin: 0 }}>
+              <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: '#AEB6C4', margin: 0 }}>
                 {latestArticle.dek}
               </p>
-              <Link to={`/features/${latestArticle.slug}/`} className="btn-primary" style={{ marginTop: '24px' }}>
+              <Link to={`/features/${latestArticle.slug}/`} className="btn-primary" style={{ marginTop: '20px' }}>
                 READ INTERVIEW ➔
               </Link>
             </div>

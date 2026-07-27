@@ -64,7 +64,7 @@ export const SiteHeader: React.FC = () => {
           >
             IGNITE
           </span>
-          <span className="campaign-tag" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>
+          <span className="campaign-tag brand-tag-mobile-hide" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>
             NO LIMITS
           </span>
         </Link>

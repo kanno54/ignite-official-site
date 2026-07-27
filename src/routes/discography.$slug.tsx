@@ -26,12 +26,12 @@ export const ReleaseDetailPage: React.FC = () => {
       <section
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '40px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+          gap: '24px',
           alignItems: 'center',
           backgroundColor: 'var(--color-surface)',
           border: '1px solid var(--color-border)',
-          padding: '40px',
+          padding: 'clamp(20px, 4vw, 40px)',
           borderRadius: '2px',
         }}
       >

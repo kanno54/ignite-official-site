@@ -148,7 +148,51 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .btn-secondary:hover {
+  background: var(--color-surface-elevated);
   border-color: var(--campaign-accent);
-  color: var(--campaign-accent);
-  background: rgba(85, 168, 255, 0.05);
+}
+
+/* Mobile Responsive Optimization Rules */
+@media (max-width: 640px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1.1rem;
+    justify-content: center;
+  }
+
+  .brand-tag-mobile-hide {
+    display: none !important;
+  }
+
+  .mini-player-time {
+    display: none !important;
+  }
+
+  .mini-player-expand-text {
+    display: none !important;
+  }
+
+  .mini-player-expand-icon {
+    display: inline !important;
+  }
+
+  .mini-player-container {
+    padding: 0 12px !important;
+    gap: 8px !important;
+  }
+
+  .responsive-padding {
+    padding: 20px 16px !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .mini-player-expand-icon {
+    display: none !important;
+  }
 }
