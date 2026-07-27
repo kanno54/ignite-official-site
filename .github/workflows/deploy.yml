@@ -54,13 +54,8 @@ jobs:
             set ftp:use-size false;
             set ftp:use-stat false;
             set net:timeout 15;
-            set net:max-retries 3;
+            set net:max-retries 2;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            echo '--- LISTING REMOTE ROOT DIRECTORY ---';
-            ls -la;
-            mirror -R --delete --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size . .;
-            mkdir -p ignite-official.site || true;
-            cd ignite-official.site || true;
-            mirror -R --delete --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size . .;
+            mirror -R --verbose --no-perms --no-umask --no-symlinks --parallel=3 . .;
             quit;
           "
