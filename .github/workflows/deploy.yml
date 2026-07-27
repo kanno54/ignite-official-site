@@ -46,11 +46,12 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           TARGET_DIR="${REMOTE_PATH:-.}"
+          cd ./dist
           lftp -c "
             set ftp:ssl-allow no;
             set net:timeout 15;
             set net:max-retries 3;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            mirror -R --verbose ./dist \"$TARGET_DIR\";
+            mirror -R --verbose . \"$TARGET_DIR\";
             quit;
           "
