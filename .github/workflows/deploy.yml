@@ -45,7 +45,7 @@ jobs:
           password: ${{ secrets.SFTP_PASSWORD }}
           port: ${{ secrets.SFTP_PORT || 21 }}
           local-dir: ./dist/
-          server-dir: ${{ secrets.SFTP_REMOTE_PATH || './' }}
+          server-dir: /
           exclude: |
             **/media/audio/**
             .git*
