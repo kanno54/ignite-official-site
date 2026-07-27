@@ -36,17 +36,21 @@ jobs:
       - name: Assert Public Cutoff Safety
         run: npm run assert-public-cutoff
 
-      - name: Deploy to Remote Server via FTP
+      - name: Deploy to Onamae Server via lftp
         if: github.ref == 'refs/heads/main'
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT || 21 }}
-          local-dir: ./dist/
-          server-dir: /
-          exclude: |
-            **/media/audio/**
-            .git*
-            .git*/**
+        env:
+          FTP_HOST: ${{ secrets.SFTP_HOST }}
+          FTP_USER: ${{ secrets.SFTP_USERNAME }}
+          FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
+          REMOTE_PATH: ${{ secrets.SFTP_REMOTE_PATH }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          TARGET_DIR="${REMOTE_PATH:-.}"
+          lftp -c "
+            set ftp:ssl-allow no;
+            set net:timeout 15;
+            set net:max-retries 3;
+            open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
+            mirror -R --verbose ./dist \"$TARGET_DIR\";
+            quit;
+          "
