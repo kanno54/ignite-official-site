@@ -109,36 +109,6 @@ export const StoryPage: React.FC = () => {
         ))}
       </section>
 
-      {/* External Archive Links */}
-      <section style={{ backgroundColor: 'var(--color-surface-elevated)', border: '1px solid var(--color-border)', padding: '32px', borderRadius: '2px' }}>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', color: '#F6F3ED', margin: '0 0 12px' }}>
-          EXTERNAL STORY ARCHIVE
-        </h3>
-        <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, marginBottom: '20px' }}>
-          公式短編・小説作品は外部掲載サイトにてお楽しみいただけます。（※外部リンクは別タブで開きます）
-        </p>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '16px' }}>
-          <a
-            href="https://pixiv.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              padding: '16px',
-              backgroundColor: 'var(--color-surface)',
-              border: '1px solid var(--color-border)',
-              borderRadius: '2px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '8px',
-            }}
-          >
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)' }}>PIXIV ARCHIVE ↗</span>
-            <span style={{ fontSize: '1rem', fontWeight: 700, color: '#F6F3ED' }}>公式ストーリーアーカイブ（pixiv）</span>
-            <span style={{ fontSize: '0.8rem', color: '#AEB6C4' }}>メンバーの日常とライブ前夜を描いた公式Short Novel集</span>
-          </a>
-        </div>
-      </section>
     </div>
   );
 };
