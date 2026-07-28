@@ -7,8 +7,8 @@
     "eyebrow": "4TH SINGLE / 2026.08.05 RELEASE",
     "title": "Moonlit",
     "catchCopy": "月光の青い静寂と、切り裂くようなダンスビート。",
-    "desktopHero": "/assets/images/heroes/hero-moonlit-desktop.webp",
-    "mobileHero": "/assets/images/heroes/hero-moonlit-mobile.webp",
+    "desktopHero": "/assets/images/heroes/hero-moonlit-desktop.jpg",
+    "mobileHero": "/assets/images/heroes/hero-moonlit-mobile.jpg",
     "primaryCta": {
       "text": "LISTEN NOW ▶",
       "action": "play"

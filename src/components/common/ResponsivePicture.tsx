@@ -108,6 +108,14 @@ export const ResponsivePicture: React.FC<Props> = ({
     ...protectedMediaProps.style,
   };
 
+  const getImageType = (pathStr?: string) => {
+    if (!pathStr) return undefined;
+    if (pathStr.endsWith('.webp')) return 'image/webp';
+    if (pathStr.endsWith('.png')) return 'image/png';
+    if (pathStr.endsWith('.jpg') || pathStr.endsWith('.jpeg')) return 'image/jpeg';
+    return undefined;
+  };
+
   return (
     <div
       className={`responsive-picture ${className}`}
@@ -117,9 +125,9 @@ export const ResponsivePicture: React.FC<Props> = ({
     >
       <picture>
         {mobileAsset && mobileAsset.status === 'ready' && (
-          <source media="(max-width: 768px)" srcSet={mobileAsset.path} type="image/webp" />
+          <source media="(max-width: 768px)" srcSet={mobileAsset.path} type={getImageType(mobileAsset.path)} />
         )}
-        <source srcSet={desktopAsset.path} type="image/webp" />
+        <source srcSet={desktopAsset.path} type={getImageType(desktopAsset.path)} />
         <img
           src={desktopAsset.path}
           alt={title}

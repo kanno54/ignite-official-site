@@ -196,37 +196,37 @@
       "aspect": "3:4"
     },
     "cover-moonlit": {
-      "path": "/assets/images/covers/cover-moonlit.webp",
+      "path": "/assets/images/covers/cover-moonlit.jpg",
       "status": "ready",
       "aspect": "1:1"
     },
     "hero-moonlit-desktop": {
-      "path": "/assets/images/heroes/hero-moonlit-desktop.webp",
+      "path": "/assets/images/heroes/hero-moonlit-desktop.jpg",
       "status": "ready",
       "aspect": "16:9"
     },
     "hero-moonlit-mobile": {
-      "path": "/assets/images/heroes/hero-moonlit-mobile.webp",
+      "path": "/assets/images/heroes/hero-moonlit-mobile.jpg",
       "status": "ready",
       "aspect": "3:4"
     },
     "track-poster-moonlit": {
-      "path": "/assets/images/tracks/poster-moonlit.webp",
+      "path": "/assets/images/tracks/poster-moonlit.jpg",
       "status": "ready",
       "aspect": "3:4"
     },
     "track-poster-between-the-lights": {
-      "path": "/assets/images/tracks/poster-between-the-lights.webp",
+      "path": "/assets/images/tracks/poster-between-the-lights.jpg",
       "status": "ready",
       "aspect": "3:4"
     },
     "track-poster-afterimage-live": {
-      "path": "/assets/images/tracks/poster-afterimage-live.webp",
+      "path": "/assets/images/tracks/poster-afterimage-live.jpg",
       "status": "ready",
       "aspect": "3:4"
     },
     "article-ren-moonlit-interview": {
-      "path": "/assets/images/articles/hero-ren-moonlit-interview.webp",
+      "path": "/assets/images/articles/hero-ren-moonlit-interview.jpg",
       "status": "ready",
       "aspect": "16:9"
     }
