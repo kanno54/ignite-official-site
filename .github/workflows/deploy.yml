@@ -47,13 +47,13 @@ jobs:
           sudo apt-get update && sudo apt-get install -y lftp
           cd ./dist
           REMOTE_DIR="${FTP_PATH:-.}"
-          lftp -e "
-            set ftp:ssl-allow no;
-            set ftp:passive-mode on;
-            set net:timeout 15;
-            set net:max-retries 2;
-            open -u \"$FTP_USER\",\"$FTP_PASS\" \"$FTP_HOST\";
-            cd \"$REMOTE_DIR\" || true;
-            mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .;
-            quit;
-          "
+          lftp <<EOF
+          set ftp:ssl-allow no
+          set ftp:passive-mode on
+          set net:timeout 15
+          set net:max-retries 2
+          open -u "$FTP_USER","$FTP_PASS" "$FTP_HOST"
+          cd "$REMOTE_DIR"
+          mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
+          quit
+          EOF
