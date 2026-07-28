@@ -14,10 +14,13 @@ import { ReleaseDetailPage } from './routes/discography.$slug';
 import { FeaturesIndex } from './routes/features._index';
 import { ArticleDetailPage } from './routes/features.$slug';
 import { StoryPage } from './routes/story';
+import { CampaignsIndex } from './routes/campaigns._index';
+import { CampaignDetailPage } from './routes/campaigns.$id';
 import { FunPage } from './routes/fun';
 import { PrivacyPage } from './routes/privacy';
 import { AccessibilityPage } from './routes/accessibility';
 import { NotFoundPage } from './routes/404';
+import { getCurrentCampaign, isStagingEnv } from './utils/contentLoader';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -29,11 +32,31 @@ const ScrollToTop: React.FC = () => {
 
 export const App: React.FC = () => {
   const location = useLocation();
+  const currentCampaign = getCurrentCampaign();
+  const isStaging = isStagingEnv();
 
   return (
     <AudioProvider>
       <ScrollToTop />
-      <div className="app-container" data-campaign="no-limits">
+      <div className="app-container" data-campaign={currentCampaign.id}>
+        {isStaging && (
+          <div
+            style={{
+              backgroundColor: '#D62839',
+              color: '#FFFFFF',
+              textAlign: 'center',
+              padding: '6px 12px',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.8rem',
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              zIndex: 100000,
+              position: 'relative',
+            }}
+          >
+            [STAGING ENVIRONMENT — MOONLIT PRE-RELEASE PREVIEW]
+          </div>
+        )}
         <SiteHeader />
         
         <main className="main-content">
@@ -46,6 +69,8 @@ export const App: React.FC = () => {
               <Route path="/discography/:slug/" element={<ReleaseDetailPage />} />
               <Route path="/features/" element={<FeaturesIndex />} />
               <Route path="/features/:slug/" element={<ArticleDetailPage />} />
+              <Route path="/campaigns/" element={<CampaignsIndex />} />
+              <Route path="/campaigns/:id/" element={<CampaignDetailPage />} />
               <Route path="/story/" element={<StoryPage />} />
               <Route path="/fun/" element={<FunPage />} />
               <Route path="/privacy/" element={<PrivacyPage />} />

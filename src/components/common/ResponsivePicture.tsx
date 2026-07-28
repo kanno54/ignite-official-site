@@ -4,26 +4,61 @@ import { AssetPlaceholder } from './AssetPlaceholder';
 import { protectedMediaProps } from '../../utils/audioDeterrence';
 
 type Props = {
-  assetId: string;
-  title: string;
+  assetId?: string;
+  title?: string;
   subtitle?: string;
+  alt?: string;
   aspectRatio?: '16:9' | '3:4' | '1:1' | '4:5' | '3:2';
   accentColor?: string;
   className?: string;
   mobileAssetId?: string;
+  desktopSrc?: string;
+  mobileSrc?: string;
+  style?: React.CSSProperties;
 };
 
 export const ResponsivePicture: React.FC<Props> = ({
-  assetId,
-  title,
+  assetId = '',
+  title = 'IGNITE',
   subtitle,
+  alt,
   aspectRatio = '16:9',
   accentColor = '#55A8FF',
   className = '',
   mobileAssetId,
+  desktopSrc,
+  mobileSrc,
+  style,
 }) => {
   const [hasError, setHasError] = useState(false);
   const manifest = getAssetManifest() as any;
+
+  // Direct src override
+  if (desktopSrc) {
+    const displayAlt = alt || title;
+    const combinedStyle: React.CSSProperties = {
+      ...protectedMediaProps.style,
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      display: 'block',
+      ...style,
+    };
+    return (
+      <picture className={className} style={{ width: '100%', height: '100%', display: 'block' }}>
+        {mobileSrc && <source media="(max-width: 640px)" srcSet={mobileSrc} />}
+        <img
+          src={desktopSrc}
+          alt={displayAlt}
+          onContextMenu={protectedMediaProps.onContextMenu}
+          onDragStart={protectedMediaProps.onDragStart}
+          draggable={protectedMediaProps.draggable}
+          style={combinedStyle}
+          onError={() => setHasError(true)}
+        />
+      </picture>
+    );
+  }
 
   const desktopAsset = manifest?.images?.[assetId];
   const mobileAsset = mobileAssetId ? manifest?.images?.[mobileAssetId] : null;

@@ -4,8 +4,34 @@ import discographyData from '../../content/public/discography.json';
 import articlesData from '../../content/public/articles.json';
 import newsData from '../../content/public/news.json';
 import assetManifestData from '../../content/public/asset-manifest.json';
+import campaignsData from '../../content/public/campaigns.json';
 
-import { SiteConfig, Member, Release, Recording, Article, NewsItem } from '../types/content';
+import { SiteConfig, Member, Release, Recording, Article, NewsItem, Campaign } from '../types/content';
+
+export const isStagingEnv = (): boolean => {
+  return import.meta.env.VITE_STAGING === 'true' || (typeof window !== 'undefined' && window.location.hostname.includes('staging'));
+};
+
+export const getCampaigns = (): Campaign[] => {
+  const isStaging = isStagingEnv();
+  return (campaignsData as Campaign[]).map((c) => {
+    if (isStaging) {
+      if (c.id === 'moonlit') return { ...c, status: 'current' as const };
+      if (c.id === 'no-limits') return { ...c, status: 'archived' as const };
+    }
+    return c;
+  });
+};
+
+export const getCampaignById = (id: string): Campaign | undefined => {
+  return getCampaigns().find((c) => c.id === id);
+};
+
+export const getCurrentCampaign = (): Campaign => {
+  const campaigns = getCampaigns();
+  const current = campaigns.find((c) => c.status === 'current');
+  return current || campaigns[0];
+};
 
 export const getSiteConfig = (): SiteConfig => siteConfigData as SiteConfig;
 
@@ -20,13 +46,23 @@ export const getMemberBySlug = (slug: string): Member | undefined => {
 };
 
 export const getReleases = (): Release[] => {
-  return (discographyData.releases as Release[]).filter(
-    (r) => r.publication.visibility === 'public' && r.publication.campaignState !== 'future'
-  );
+  const isStaging = isStagingEnv();
+  return (discographyData.releases as Release[]).filter((r) => {
+    if (r.publication.visibility !== 'public') return false;
+    if (r.publication.campaignState === 'future') return false;
+    if (r.publication.campaignState === 'staging' && !isStaging) return false;
+    return true;
+  });
 };
 
 export const getReleaseBySlug = (slug: string): Release | undefined => {
-  return getReleases().find((r) => r.slug === slug);
+  const release = (discographyData.releases as Release[]).find((r) => r.slug === slug);
+  if (!release || release.publication.visibility !== 'public') return undefined;
+  if (release.publication.campaignState === 'staging' && !isStagingEnv()) {
+    // In production, allow direct access if requested, or restrict based on requirement
+    return release;
+  }
+  return release;
 };
 
 export const getRecordings = (): Recording[] => {
@@ -38,7 +74,7 @@ export const getRecordingById = (id: string): Recording | undefined => {
 };
 
 export const getRecordingsForRelease = (releaseId: string): Recording[] => {
-  const release = getReleases().find((r) => r.id === releaseId);
+  const release = (discographyData.releases as Release[]).find((r) => r.id === releaseId || r.slug === releaseId);
   if (!release) return [];
   return release.trackIds
     .map((trackId) => getRecordingById(trackId))

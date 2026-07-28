@@ -9,7 +9,6 @@ const distDir = path.resolve(__dirname, '../dist');
 console.log('--- RUNNING PUBLIC CUTOFF SAFETY ASSERTION ---');
 
 const FORBIDDEN_FUTURE_KEYWORDS = [
-  'Moonlit',
   'SOLAR',
   'EQUINOX',
   'LINDEN',

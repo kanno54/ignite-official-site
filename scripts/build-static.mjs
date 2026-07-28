@@ -30,6 +30,10 @@ const routes = [
   '/discography/ignition/',
   '/discography/burn-it-down/',
   '/discography/no-limits/',
+  '/discography/moonlit/',
+  '/campaigns/',
+  '/campaigns/no-limits/',
+  '/campaigns/moonlit/',
   '/features/',
   '/features/no-limits-interview/',
   '/features/yuto-hightone-feature/',
@@ -66,6 +70,10 @@ for (const route of routes) {
     const slug = route.split('/')[2];
     if (slug) routeTitle = `${slug.toUpperCase()} | IGNITE Discography`;
     else routeTitle = 'DISCOGRAPHY | IGNITE Official Portal';
+  } else if (route.includes('/campaigns/')) {
+    const slug = route.split('/')[2];
+    if (slug) routeTitle = `${slug.toUpperCase()} Campaign | IGNITE Archive`;
+    else routeTitle = 'CAMPAIGN ARCHIVE | IGNITE Official Portal';
   } else if (route.includes('/features/')) {
     routeTitle = 'FEATURES & MAGAZINE | IGNITE Official Portal';
   } else if (route.includes('/story/')) {

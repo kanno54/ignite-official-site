@@ -1,0 +1,59 @@
+[
+  {
+    "id": "moonlit",
+    "status": "staging",
+    "releaseId": "moonlit",
+    "releaseDate": "2026-08-05",
+    "eyebrow": "4TH SINGLE / 2026.08.05 RELEASE",
+    "title": "Moonlit",
+    "catchCopy": "月光の青い静寂と、切り裂くようなダンスビート。",
+    "desktopHero": "/assets/images/heroes/hero-moonlit-desktop.webp",
+    "mobileHero": "/assets/images/heroes/hero-moonlit-mobile.webp",
+    "primaryCta": {
+      "text": "LISTEN NOW ▶",
+      "action": "play"
+    },
+    "secondaryCta": {
+      "text": "VIEW RELEASE ➔",
+      "action": "link",
+      "url": "/discography/moonlit/"
+    },
+    "campaignColors": {
+      "accent": "#4E8CFF",
+      "deep": "#0A1428",
+      "text": "#F6F3ED"
+    },
+    "relatedArticleIds": [
+      "no-limits-interview"
+    ]
+  },
+  {
+    "id": "no-limits",
+    "status": "current",
+    "releaseId": "no-limits",
+    "releaseDate": "2022-09-14",
+    "eyebrow": "3RD SINGLE / 2022.09.14 RELEASE",
+    "title": "No Limits",
+    "catchCopy": "五つの声で、まだ見ぬ場所へ。",
+    "desktopHero": "/assets/images/heroes/hero-no-limits-desktop.webp",
+    "mobileHero": "/assets/images/heroes/hero-no-limits-mobile.webp",
+    "primaryCta": {
+      "text": "LISTEN NOW ▶",
+      "action": "play"
+    },
+    "secondaryCta": {
+      "text": "VIEW RELEASE ➔",
+      "action": "link",
+      "url": "/discography/no-limits/"
+    },
+    "campaignColors": {
+      "accent": "#55A8FF",
+      "deep": "#0C1F38",
+      "text": "#F6F3ED"
+    },
+    "relatedArticleIds": [
+      "no-limits-interview",
+      "yuto-hightone-feature"
+    ]
+  }
+]

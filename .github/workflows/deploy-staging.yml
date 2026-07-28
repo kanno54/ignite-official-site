@@ -1,0 +1,63 @@
+name: IGNITE Staging Environment — Build & Deploy
+
+on:
+  push:
+    branches: [ staging ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Validate Content Data
+        run: npm run validate:data
+
+      - name: Validate Asset Manifest
+        run: npm run validate:assets
+
+      - name: Build Staging Static Output
+        env:
+          VITE_STAGING: 'true'
+          VITE_SITE_URL: 'https://staging.ignite-official.site'
+        run: npm run build
+
+      - name: Prepare Staging Protection & Noindex
+        run: node scripts/prepare-staging-dist.mjs
+
+      - name: Deploy to Staging Server via lftp
+        if: github.ref == 'refs/heads/staging'
+        env:
+          FTP_HOST: ${{ secrets.SFTP_HOST }}
+          FTP_USER: ${{ secrets.SFTP_USERNAME }}
+          FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          cd ./dist
+          timeout 120s lftp -c "
+            set ftp:ssl-allow no;
+            set ftp:passive-mode on;
+            set ftp:use-site-chmod false;
+            set ftp:use-site-utime false;
+            set ftp:use-mdtm false;
+            set ftp:use-size false;
+            set ftp:use-stat false;
+            set net:timeout 10;
+            set net:max-retries 1;
+            open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
+            mkdir -p staging.ignite-official.site || true;
+            cd staging.ignite-official.site;
+            mirror -R --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=2 . .;
+            quit;
+          "

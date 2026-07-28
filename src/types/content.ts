@@ -2,7 +2,7 @@ export type Publication = {
   fictionalReleaseDate: string;
   publishAt: string | null;
   visibility: 'draft' | 'scheduled' | 'public' | 'archived';
-  campaignState: 'past' | 'current' | 'future';
+  campaignState: 'past' | 'current' | 'future' | 'staging';
 };
 
 export type SiteConfig = {
@@ -118,6 +118,32 @@ export type Article = {
   relatedTrackIds: string[];
   blocks: ArticleBlock[];
   publication: Publication;
+};
+
+export type CampaignCTA = {
+  text: string;
+  action: 'play' | 'link';
+  url?: string;
+};
+
+export type Campaign = {
+  id: string;
+  status: 'current' | 'archived' | 'staging';
+  releaseId: string;
+  releaseDate: string;
+  eyebrow: string;
+  title: string;
+  catchCopy: string;
+  desktopHero: string;
+  mobileHero: string;
+  primaryCta: CampaignCTA;
+  secondaryCta: CampaignCTA;
+  campaignColors: {
+    accent: string;
+    deep: string;
+    text: string;
+  };
+  relatedArticleIds: string[];
 };
 
 export type NewsItem = {

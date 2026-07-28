@@ -10,7 +10,9 @@
     "validate:data": "node scripts/validate-content.mjs",
     "validate:assets": "node scripts/validate-assets.mjs",
     "assert-public-cutoff": "node scripts/assert-public-cutoff.mjs",
-    "test:static": "node scripts/verify-static-output.mjs"
+    "test:static": "node scripts/verify-static-output.mjs",
+    "prepare:staging": "node scripts/prepare-staging-dist.mjs",
+    "build:staging": "npx cross-env VITE_STAGING=true npm run build && npm run prepare:staging"
   },
   "dependencies": {
     "react": "^18.3.1",

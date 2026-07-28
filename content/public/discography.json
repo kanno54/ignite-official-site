@@ -94,6 +94,29 @@
         "visibility": "public",
         "campaignState": "current"
       }
+    },
+    {
+      "id": "moonlit",
+      "slug": "moonlit",
+      "title": "Moonlit",
+      "format": "4th Single",
+      "fictionalReleaseDate": "2026-08",
+      "fictionalReleaseDateFull": "2026.08.05",
+      "coverAssetId": "cover-moonlit",
+      "description": "月光の青い静寂と熱狂が交差する4thシングル。静かな月明かりから激しいダンスビートへとなだれ込む新境地。",
+      "linerNotes": "夜の静けさの中に差す蒼い月光。静と動、影と光のコントラストを描き出す、IGNITEの新たな表現領域。",
+      "trackIds": [
+        "moonlit-title",
+        "between-the-lights",
+        "afterimage-live"
+      ],
+      "campaignState": "staging",
+      "publication": {
+        "fictionalReleaseDate": "2026-08",
+        "publishAt": "2026-08-05T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "staging"
+      }
     }
   ],
   "recordings": [
@@ -504,6 +527,94 @@
         }
       ],
       "posterAssetId": "track-poster-run-with-us-live"
+    },
+    {
+      "id": "moonlit-title",
+      "releaseId": "moonlit",
+      "title": "Moonlit",
+      "versionLabel": "Title Track",
+      "trackNumber": 1,
+      "durationSeconds": 215,
+      "audioUrl": "/media/audio/moonlit/01-moonlit.v1.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "静けさ",
+        "火をつけたい"
+      ],
+      "linerNotes": "静けさを切り裂く美しくも鋭い月光のメロディ。RENとYUTOのハイトーンが夜空に交錯する。",
+      "lyrics": [
+        {
+          "speaker": "REN",
+          "text": "月光が照らし出す 蒼い足跡"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "光と影の狭間で 呼び合う声"
+        }
+      ],
+      "posterAssetId": "track-poster-moonlit"
+    },
+    {
+      "id": "between-the-lights",
+      "releaseId": "moonlit",
+      "title": "Between the Lights",
+      "versionLabel": "Coupling Track",
+      "trackNumber": 2,
+      "durationSeconds": 198,
+      "audioUrl": "/media/audio/moonlit/02-between-the-lights.v1.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "sho",
+        "kai"
+      ],
+      "moodTags": [
+        "夜に聴きたい"
+      ],
+      "linerNotes": "光と光の合間に潜むグルーヴ。SHOのテクニカルなRAPとKAIのミドルレンジがグルーヴを生む。",
+      "lyrics": [
+        {
+          "speaker": "SHO",
+          "text": "The shadow knows the truth in the night"
+        },
+        {
+          "speaker": "KAI",
+          "text": "すり抜けてゆく 瞬きのスキマ"
+        }
+      ],
+      "posterAssetId": "track-poster-between-the-lights"
+    },
+    {
+      "id": "afterimage-live",
+      "releaseId": "moonlit",
+      "title": "Afterimage - Live Version -",
+      "versionLabel": "Live Version",
+      "trackNumber": 3,
+      "durationSeconds": 230,
+      "audioUrl": "/media/audio/moonlit/03-afterimage-live.v1.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "leo",
+        "ren"
+      ],
+      "moodTags": [
+        "一緒に騒ぎたい"
+      ],
+      "linerNotes": "ツアーの熱狂をそのまま封じ込めたライブ音源。歓声と熱気が残像となって響く。",
+      "lyrics": [
+        {
+          "speaker": "LEO",
+          "text": "焼き付けた残像は 消えやしない"
+        },
+        {
+          "speaker": "all",
+          "text": "Woh-oh-oh Afterimage!"
+        }
+      ],
+      "posterAssetId": "track-poster-afterimage-live"
     }
   ]
 }

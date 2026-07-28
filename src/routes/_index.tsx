@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getSiteConfig, getMembers, getReleases, getArticles, getNews, getRecordingById } from '../utils/contentLoader';
+import { getSiteConfig, getMembers, getReleases, getArticles, getNews, getRecordingById, getCurrentCampaign } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { FiveLights } from '../components/common/FiveLights';
@@ -12,15 +12,24 @@ export const TopPage: React.FC = () => {
   const releases = getReleases();
   const articles = getArticles();
   const newsList = getNews();
-  const { playRelease } = useAudio();
+  const { playRelease, playTrack } = useAudio();
+  const currentCampaign = getCurrentCampaign();
 
-  const currentRelease = releases.find((r) => r.id === config.latestReleaseId) || releases[0];
+  const currentRelease = releases.find((r) => r.id === currentCampaign.releaseId) || releases[0];
   const pickUpTrack = getRecordingById(config.pickUpTrackId);
   const latestArticle = articles[0];
 
+  const handlePrimaryCta = () => {
+    if (currentRelease && currentRelease.trackIds.length > 0) {
+      const firstTrack = getRecordingById(currentRelease.trackIds[0]);
+      if (firstTrack) playTrack(firstTrack.id);
+      else playRelease(currentRelease.id);
+    }
+  };
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
-      {/* 1. No Limits Campaign Hero */}
+      {/* 1. Dynamic Campaign Hero Banner */}
       <section
         style={{
           position: 'relative',
@@ -32,19 +41,28 @@ export const TopPage: React.FC = () => {
           gap: '24px',
         }}
       >
-        <div style={{ maxWidth: '900px', width: '100%' }}>
+        <div style={{ maxWidth: '900px', width: '100%', position: 'relative', borderRadius: '4px', overflow: 'hidden' }}>
           <ResponsivePicture
-            assetId="hero-no-limits-desktop"
-            mobileAssetId="hero-no-limits-mobile"
-            title={config.campaignSkin.heroTitle}
-            subtitle={`${config.campaignSkin.heroEyebrow} — ${config.campaignSkin.heroCopy}`}
+            desktopSrc={currentCampaign.desktopHero}
+            mobileSrc={currentCampaign.mobileHero}
+            alt={currentCampaign.title}
             aspectRatio="16:9"
-            accentColor="var(--campaign-accent)"
           />
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-          <span className="campaign-tag">{config.campaignSkin.heroEyebrow}</span>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '12px',
+            maxWidth: '700px',
+            width: '100%',
+            padding: '0 16px',
+            zIndex: 1,
+          }}
+        >
+          <span className="campaign-tag">{currentCampaign.eyebrow}</span>
           <h1
             style={{
               fontFamily: 'var(--font-display)',
@@ -52,29 +70,30 @@ export const TopPage: React.FC = () => {
               margin: 0,
               letterSpacing: '0.08em',
               lineHeight: 1,
-              color: '#F6F3ED',
+              color: currentCampaign.campaignColors.text || '#F6F3ED',
+              textTransform: 'uppercase',
             }}
           >
-            {config.campaignSkin.heroTitle}
+            {currentCampaign.title}
           </h1>
           <p
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
-              color: 'var(--campaign-accent-2)',
+              color: currentCampaign.campaignColors.accent || 'var(--campaign-accent-2)',
               margin: 0,
               fontWeight: 500,
             }}
           >
-            {config.campaignSkin.heroCopy}
+            {currentCampaign.catchCopy}
           </p>
 
           <div style={{ display: 'flex', gap: '16px', marginTop: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button onClick={() => playRelease(currentRelease.id)} className="btn-primary">
-              LISTEN NOW ▶
+            <button onClick={handlePrimaryCta} className="btn-primary">
+              {currentCampaign.primaryCta.text}
             </button>
-            <Link to={`/discography/${currentRelease.slug}/`} className="btn-secondary">
-              VIEW RELEASE ➔
+            <Link to={currentCampaign.secondaryCta.url || `/discography/${currentRelease.slug}/`} className="btn-secondary">
+              {currentCampaign.secondaryCta.text}
             </Link>
           </div>
         </div>
@@ -287,6 +306,44 @@ export const TopPage: React.FC = () => {
         <Link to="/fun/" className="btn-primary">
           LAUNCH MINI TOOLS ✦
         </Link>
+      </section>
+
+      {/* 8. Campaign Archive Navigation */}
+      <section
+        style={{
+          backgroundColor: 'var(--color-surface)',
+          border: '1px solid var(--color-border)',
+          borderTop: '3px solid var(--campaign-accent)',
+          padding: '40px 32px',
+          borderRadius: '2px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          textAlign: 'center',
+          gap: '16px',
+        }}
+      >
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', fontWeight: 600 }}>
+          HISTORY & VISUALS
+        </span>
+        <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: '#F6F3ED', margin: 0 }}>
+          EXPLORE CAMPAIGN ARCHIVE
+        </h2>
+        <p style={{ fontSize: '0.95rem', color: '#AEB6C4', maxWidth: '600px', margin: 0, lineHeight: 1.6 }}>
+          歴代シングルのキャンペーンHero、コピー、およびビジュアルの世界観をアーカイブにて公開中。
+        </p>
+
+        <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap', justifyContent: 'center' }}>
+          <Link to="/campaigns/" className="btn-primary">
+            EXPLORE ARCHIVE ➔
+          </Link>
+
+          {currentCampaign.id === 'moonlit' && (
+            <Link to="/campaigns/no-limits/" className="btn-secondary">
+              PREVIOUS CAMPAIGN — NO LIMITS ↗
+            </Link>
+          )}
+        </div>
       </section>
     </div>
   );
