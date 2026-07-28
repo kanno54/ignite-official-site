@@ -47,32 +47,48 @@ jobs:
           sudo apt-get update && sudo apt-get install -y lftp
           cd ./dist
 
-          LISTING=$(lftp -c "
-            set ftp:ssl-allow no;
-            set ftp:passive-mode on;
-            set net:timeout 10;
-            set net:max-retries 1;
-            open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            cls -1;
-            quit;
-          " 2>/dev/null || echo "")
-
-          echo "--- FTP ROOT DIRECTORY LISTING ---"
-          echo "$LISTING"
-          echo "-----------------------------------"
-
-          TARGET_DIR=""
+          CANDIDATES=()
           if [ -n "$FTP_PATH" ]; then
-            TARGET_DIR="$FTP_PATH"
-          elif echo "$LISTING" | grep -q "public_html"; then
-            TARGET_DIR="public_html/staging.ignite-official.site"
-          elif echo "$LISTING" | grep -q "staging.ignite-official.site"; then
-            TARGET_DIR="staging.ignite-official.site"
-          else
-            TARGET_DIR="public_html/staging.ignite-official.site"
+            CANDIDATES+=("$FTP_PATH")
+          fi
+          CANDIDATES+=(
+            "/staging.ignite-official.site"
+            "/public_html/staging.ignite-official.site"
+            "/staging"
+            "/public_html/staging"
+            "staging.ignite-official.site"
+            "public_html/staging.ignite-official.site"
+          )
+
+          CHOSEN_DIR=""
+          for candidate in "${CANDIDATES[@]}"; do
+            echo "Testing candidate remote directory: $candidate"
+            TEST_OUT=$(lftp -c "
+              set ftp:ssl-allow no;
+              set ftp:passive-mode on;
+              set net:timeout 5;
+              set net:max-retries 1;
+              open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
+              cd '$candidate';
+              pwd;
+              quit;
+            " 2>&1 || true)
+
+            if ! echo "$TEST_OUT" | grep -q "550"; then
+              CHOSEN_DIR="$candidate"
+              echo "✔ Successfully verified remote directory: $CHOSEN_DIR"
+              break
+            else
+              echo "  ✘ Candidate $candidate returned 550"
+            fi
+          done
+
+          if [ -z "$CHOSEN_DIR" ]; then
+            CHOSEN_DIR="/staging.ignite-official.site"
+            echo "Falling back to default directory: $CHOSEN_DIR"
           fi
 
-          echo "Selected Target Directory: $TARGET_DIR"
+          echo "Final Target Remote Directory: $CHOSEN_DIR"
 
           cat <<EOF > deploy.lftp
           set ftp:ssl-allow no
@@ -80,11 +96,9 @@ jobs:
           set net:timeout 15
           set net:max-retries 2
           open -u "$FTP_USER","$FTP_PASS" "$FTP_HOST"
-          mkdir -p "$TARGET_DIR"
-          cd "$TARGET_DIR"
+          cd "$CHOSEN_DIR"
           mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
           quit
           EOF
 
           lftp -f deploy.lftp
-
