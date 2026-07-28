@@ -1,10 +1,31 @@
 [
   {
-    "id": "news-2022-09-14-1",
-    "date": "2022.09.14",
+    "id": "news-2023-05-22-1",
+    "date": "2023.05.22",
+    "category": "TRACK STORY",
+    "title": "【TRACK STORY】「Between the Lights」楽曲ストーリー『夜を終わらせない、五人の遠回り』公開",
+    "url": "/features/between-the-lights-story/"
+  },
+  {
+    "id": "news-2023-05-20-1",
+    "date": "2023.05.20",
     "category": "RELEASE",
-    "title": "3rd Single「No Limits」本日発売！全曲フル配信＆公式ライナーノーツ公開",
-    "url": "/discography/no-limits/"
+    "title": "4th Single「Moonlit」本日発売！全曲フル配信＆公式ライナーノーツ公開",
+    "url": "/discography/moonlit/"
+  },
+  {
+    "id": "news-2023-05-20-2",
+    "date": "2023.05.20",
+    "category": "MAGAZINE",
+    "title": "【COVER STORY】REN ロングインタビュー『届かない夜に、声を置いていく』公開",
+    "url": "/features/ren-moonlit-interview/"
+  },
+  {
+    "id": "news-2022-09-20-1",
+    "date": "2022.09.20",
+    "category": "FEATURE",
+    "title": "【PERFORMANCE FOCUS】最年少・YUTO特集記事公開！",
+    "url": "/features/yuto-hightone-feature/"
   },
   {
     "id": "news-2022-09-16-1",
@@ -14,10 +35,10 @@
     "url": "/features/no-limits-interview/"
   },
   {
-    "id": "news-2022-09-20-1",
-    "date": "2022.09.20",
-    "category": "FEATURE",
-    "title": "【PERFORMANCE FOCUS】最年少・YUTO特集記事公開！",
-    "url": "/features/yuto-hightone-feature/"
+    "id": "news-2022-09-14-1",
+    "date": "2022.09.14",
+    "category": "RELEASE",
+    "title": "3rd Single「No Limits」本日発売！全曲フル配信＆公式ライナーノーツ公開",
+    "url": "/discography/no-limits/"
   }
 ]

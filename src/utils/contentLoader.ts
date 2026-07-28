@@ -33,7 +33,32 @@ export const getCurrentCampaign = (): Campaign => {
   return current || campaigns[0];
 };
 
-export const getSiteConfig = (): SiteConfig => siteConfigData as SiteConfig;
+export const getSiteConfig = (): SiteConfig => {
+  const currentCamp = getCurrentCampaign();
+  if (currentCamp.id === 'moonlit') {
+    return {
+      ...(siteConfigData as SiteConfig),
+      fictionalCurrentDate: '2023-05',
+      currentCampaign: 'MOONLIT',
+      latestReleaseId: 'moonlit',
+      pickUpTrackId: 'moonlit-title',
+      campaignSkin: {
+        campaign: 'MOONLIT',
+        accent: '#4E8CFF',
+        accentLight: '#D0E0FF',
+        deep: '#0A1428',
+        white: '#F6F3ED',
+        onAccent: '#08111E',
+        heroEyebrow: '4TH SINGLE',
+        heroTitle: 'MOONLIT',
+        heroCopy: '月光の青い静寂と、切り裂くようなダンスビート。',
+        primaryCta: 'LISTEN NOW',
+        secondaryCta: 'VIEW RELEASE',
+      },
+    };
+  }
+  return siteConfigData as SiteConfig;
+};
 
 export const getMembers = (): Member[] => {
   return (membersData as Member[]).filter(
@@ -92,7 +117,7 @@ export const getArticleBySlug = (slug: string): Article | undefined => {
 };
 
 export const getNews = (): NewsItem[] => {
-  return newsData as NewsItem[];
+  return (newsData as NewsItem[]).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
 };
 
 export const getAssetManifest = () => assetManifestData;

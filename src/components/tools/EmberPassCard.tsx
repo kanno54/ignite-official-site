@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { getMemberBySlug } from '../../utils/contentLoader';
+import { getMemberBySlug, getCurrentCampaign } from '../../utils/contentLoader';
 
 type Props = {
   name: string;
@@ -9,6 +9,7 @@ type Props = {
 export const EmberPassCard: React.FC<Props> = ({ name, favoriteMemberId }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [memberNumber, setMemberNumber] = useState<string>('');
+  const currentCampaign = getCurrentCampaign();
 
   const favMember = getMemberBySlug(favoriteMemberId);
   const accentHex = favMember?.colorHex || '#55A8FF';
@@ -87,7 +88,7 @@ export const EmberPassCard: React.FC<Props> = ({ name, favoriteMemberId }) => {
             IGNITE OFFICIAL
           </text>
           <text x="60" y="150" fill={accentHex} fontFamily="'IBM Plex Mono', monospace" fontSize="24" letterSpacing="4">
-            EMBER DIGITAL PASS // 3RD SINGLE NO LIMITS ERA
+            EMBER DIGITAL PASS // {currentCampaign.eyebrow.split('/')[0]} {currentCampaign.title.toUpperCase()} ERA
           </text>
 
           {/* Five Lights Motif */}

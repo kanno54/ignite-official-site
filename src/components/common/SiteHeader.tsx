@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { FiveLights } from './FiveLights';
 import { useAudio } from '../audio/AudioProvider';
 import { EqualizerBars } from '../audio/EqualizerBars';
+import { getCurrentCampaign } from '../../utils/contentLoader';
 
 export const SiteHeader: React.FC = () => {
   const location = useLocation();
   const { playerState, toggleExpand } = useAudio();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const currentCampaign = getCurrentCampaign();
 
   const navItems = [
     { label: 'MEMBERS', path: '/members/' },
@@ -75,7 +77,7 @@ export const SiteHeader: React.FC = () => {
             IGNITE
           </span>
           <span className="campaign-tag brand-tag-mobile-hide" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>
-            NO LIMITS
+            {currentCampaign.title}
           </span>
         </Link>
 

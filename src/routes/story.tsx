@@ -3,7 +3,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiveLights } from '../components/common/FiveLights';
 
+import { getCurrentCampaign } from '../utils/contentLoader';
+
 export const StoryPage: React.FC = () => {
+  const currentCamp = getCurrentCampaign();
+  const isMoonlitCurrent = currentCamp.id === 'moonlit';
+
   const timelineEvents = [
     {
       date: '2020.10',
@@ -28,10 +33,17 @@ export const StoryPage: React.FC = () => {
     },
     {
       date: '2022.09',
-      era: 'NO LIMITS ERA (CURRENT)',
+      era: isMoonlitCurrent ? 'NO LIMITS ERA' : 'NO LIMITS ERA (CURRENT)',
       title: '3rd Single『No Limits』リリース — スカイブルーの地平へ',
       description: '炎の熱を保ったまま、青空と風が舞う大会場へと視界を開く。YUTOの最高音サビフィーチャーが大きな話題を呼ぶ最高到達点。',
       link: '/discography/no-limits/',
+    },
+    {
+      date: '2023.05',
+      era: isMoonlitCurrent ? 'MOONLIT ERA (CURRENT)' : 'MOONLIT ERA',
+      title: '4th Single『Moonlit』リリース — 青い月光とダンスビートの静寂',
+      description: '静と動、影と光のコントラストを描く4thシングル。RENの言葉とエモーショナルなボーカルが新境地を切り拓く。',
+      link: '/discography/moonlit/',
     },
   ];
 
@@ -43,7 +55,7 @@ export const StoryPage: React.FC = () => {
           OFFICIAL STORY & TIMELINE
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-          2020年10月のインディーズ結成から2022年9月『No Limits』リリースまでの公式年表。
+          2020年10月のインディーズ結成から4th Single『Moonlit』までの公式年表。
         </p>
       </div>
 

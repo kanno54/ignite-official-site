@@ -112,7 +112,7 @@ export const SiteFooter: React.FC = () => {
         >
           <div>IGNITE Official Management / Fictional Group Production</div>
           <div>This is a fictional creative project created for demonstration and artistic storytelling.</div>
-          <div>© 2020–2022 IGNITE Project. All rights reserved.</div>
+          <div>© 2020–2023 IGNITE Project. All rights reserved.</div>
         </div>
       </div>
     </footer>
