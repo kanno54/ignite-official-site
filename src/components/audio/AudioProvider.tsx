@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { PlayerState, AudioContextType } from '../../types/audio';
-import { getRecordingById, getRecordingsForRelease } from '../../utils/contentLoader';
+import { getRecordingById, getRecordingsForRelease, getRecordings } from '../../utils/contentLoader';
 
 const AudioContext = createContext<AudioContextType | null>(null);
 
@@ -42,9 +42,29 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
     const handleEnded = () => {
       setPlayerState((prev) => {
-        if (prev.queueIndex < prev.queue.length - 1) {
-          const nextIndex = prev.queueIndex + 1;
-          const nextTrackId = prev.queue[nextIndex];
+        let nextIndex = prev.queueIndex + 1;
+        let nextQueue = prev.queue;
+
+        // Shuffle Bag auto-advance for jukebox mode
+        if (prev.queueContext === 'jukebox' && nextIndex >= prev.queue.length) {
+          const allReady = getRecordings()
+            .filter((r) => r.audioStatus === 'ready')
+            .map((r) => r.id);
+
+          if (allReady.length > 0) {
+            let shuffled = [...allReady].sort(() => Math.random() - 0.5);
+            const lastTrackId = prev.currentTrackId;
+            if (lastTrackId && shuffled.length > 1 && shuffled[0] === lastTrackId) {
+              const swapIdx = 1 + Math.floor(Math.random() * (shuffled.length - 1));
+              [shuffled[0], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[0]];
+            }
+            nextQueue = shuffled;
+            nextIndex = 0;
+          }
+        }
+
+        if (nextIndex < nextQueue.length) {
+          const nextTrackId = nextQueue[nextIndex];
           const nextRecording = getRecordingById(nextTrackId);
 
           if (nextRecording && nextRecording.audioStatus === 'ready' && audioRef.current) {
@@ -54,6 +74,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
               ...prev,
               currentTrackId: nextTrackId,
               currentRecording: nextRecording,
+              queue: nextQueue,
               queueIndex: nextIndex,
               isPlaying: true,
               error: null,
@@ -177,9 +198,29 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const nextTrack = () => {
-    if (playerState.queueIndex < playerState.queue.length - 1) {
-      const nextId = playerState.queue[playerState.queueIndex + 1];
-      playTrack(nextId, playerState.queue, playerState.queueContext);
+    let nextIndex = playerState.queueIndex + 1;
+    let nextQueue = playerState.queue;
+
+    if (playerState.queueContext === 'jukebox' && nextIndex >= playerState.queue.length) {
+      const allReady = getRecordings()
+        .filter((r) => r.audioStatus === 'ready')
+        .map((r) => r.id);
+
+      if (allReady.length > 0) {
+        let shuffled = [...allReady].sort(() => Math.random() - 0.5);
+        const lastTrackId = playerState.currentTrackId;
+        if (lastTrackId && shuffled.length > 1 && shuffled[0] === lastTrackId) {
+          const swapIdx = 1 + Math.floor(Math.random() * (shuffled.length - 1));
+          [shuffled[0], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[0]];
+        }
+        nextQueue = shuffled;
+        nextIndex = 0;
+      }
+    }
+
+    if (nextIndex < nextQueue.length) {
+      const nextId = nextQueue[nextIndex];
+      playTrack(nextId, nextQueue, playerState.queueContext);
     }
   };
 

@@ -63,7 +63,7 @@ for (const route of routes) {
   }
 
   // Customize title tag based on route for static SEO prerendering
-  let routeTitle = 'IGNITE Official Portal — 3rd Single「No Limits」';
+  let routeTitle = 'IGNITE Official Portal — 4th Single「Moonlit」';
   if (route.includes('/members/')) {
     const slug = route.split('/')[2];
     if (slug) routeTitle = `${slug.toUpperCase()} Profile | IGNITE Official Portal`;

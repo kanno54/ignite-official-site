@@ -12,7 +12,7 @@ export const JukeboxForm: React.FC<Props> = ({ onSelectResult }) => {
   const [selectedMood, setSelectedMood] = useState<string>('火をつけたい');
   const [selectedMember, setSelectedMember] = useState<string>('all');
 
-  const moods = ['火をつけたい', '前へ進みたい', '一緒に騒ぎたい', '朝の光へ戻りたい'];
+  const moods = ['火をつけたい', '前へ進みたい', '一緒に騒ぎたい', '静けさ', '夜に聴きたい', '朝の光へ戻りたい'];
   const members = [
     { id: 'all', label: 'FIVE MEMBERS' },
     { id: 'kai', label: 'KAI (Red)' },
@@ -34,7 +34,7 @@ export const JukeboxForm: React.FC<Props> = ({ onSelectResult }) => {
     playTrack(firstTrack.id, shuffledQueue, 'jukebox');
     onSelectResult(
       firstTrack,
-      `🎲 【全15曲 ランダム連続再生スタート】全15曲をランダムシャッフルしてプレイヤーにセットしました。`
+      `🎲 【全${allRecordings.length}曲 ランダムシャッフル再生】全${allRecordings.length}曲（4th Single Moonlit含む）を連続再生プレイヤーにセットしました。`
     );
   };
 
