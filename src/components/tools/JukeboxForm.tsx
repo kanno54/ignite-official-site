@@ -101,7 +101,7 @@ export const JukeboxForm: React.FC<Props> = ({ onSelectResult }) => {
           gap: '12px',
         }}
       >
-        <span>🎲 ALL 15 TRACKS SHUFFLE PLAY (全15曲 ランダム連続再生)</span>
+        <span>🎲 ALL {getRecordings().filter((r) => r.audioStatus === 'ready').length} TRACKS SHUFFLE PLAY (全{getRecordings().filter((r) => r.audioStatus === 'ready').length}曲 ランダム連続再生)</span>
       </button>
 
       <div style={{ textAlign: 'center', color: '#AEB6C4', fontSize: '0.85rem', fontFamily: 'var(--font-mono)' }}>
