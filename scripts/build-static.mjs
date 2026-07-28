@@ -36,6 +36,7 @@ const routes = [
   '/campaigns/moonlit/',
   '/features/',
   '/features/no-limits-interview/',
+  '/features/ren-moonlit-interview/',
   '/features/yuto-hightone-feature/',
   '/features/sho-burn-it-down-interview/',
   '/features/ignition-special-feature/',
