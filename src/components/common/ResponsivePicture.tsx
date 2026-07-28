@@ -33,35 +33,15 @@ export const ResponsivePicture: React.FC<Props> = ({
   const [hasError, setHasError] = useState(false);
   const manifest = getAssetManifest() as any;
 
-  // Direct src override
-  if (desktopSrc) {
-    const displayAlt = alt || title;
-    const combinedStyle: React.CSSProperties = {
-      ...protectedMediaProps.style,
-      width: '100%',
-      height: '100%',
-      objectFit: 'cover',
-      display: 'block',
-      ...style,
-    };
-    return (
-      <picture className={className} style={{ width: '100%', height: '100%', display: 'block' }}>
-        {mobileSrc && <source media="(max-width: 640px)" srcSet={mobileSrc} />}
-        <img
-          src={desktopSrc}
-          alt={displayAlt}
-          onContextMenu={protectedMediaProps.onContextMenu}
-          onDragStart={protectedMediaProps.onDragStart}
-          draggable={protectedMediaProps.draggable}
-          style={combinedStyle}
-          onError={() => setHasError(true)}
-        />
-      </picture>
-    );
-  }
+  const desktopAsset = desktopSrc
+    ? { path: desktopSrc, status: 'ready' }
+    : manifest?.images?.[assetId];
 
-  const desktopAsset = manifest?.images?.[assetId];
-  const mobileAsset = mobileAssetId ? manifest?.images?.[mobileAssetId] : null;
+  const mobileAsset = mobileSrc
+    ? { path: mobileSrc, status: 'ready' }
+    : mobileAssetId
+    ? manifest?.images?.[mobileAssetId]
+    : null;
 
   const isReady = desktopAsset && desktopAsset.status === 'ready' && !hasError;
 
@@ -97,6 +77,7 @@ export const ResponsivePicture: React.FC<Props> = ({
     overflow: 'hidden',
     border: '1px solid #2A303C',
     ...protectedMediaProps.style,
+    ...style,
   };
 
   const imgStyle: React.CSSProperties = {
@@ -116,6 +97,8 @@ export const ResponsivePicture: React.FC<Props> = ({
     return undefined;
   };
 
+  const displayAlt = alt || title;
+
   return (
     <div
       className={`responsive-picture ${className}`}
@@ -123,14 +106,14 @@ export const ResponsivePicture: React.FC<Props> = ({
       onContextMenu={protectedMediaProps.onContextMenu}
       onDragStart={protectedMediaProps.onDragStart}
     >
-      <picture>
+      <picture style={{ width: '100%', height: '100%', display: 'block' }}>
         {mobileAsset && mobileAsset.status === 'ready' && (
           <source media="(max-width: 768px)" srcSet={mobileAsset.path} type={getImageType(mobileAsset.path)} />
         )}
         <source srcSet={desktopAsset.path} type={getImageType(desktopAsset.path)} />
         <img
           src={desktopAsset.path}
-          alt={title}
+          alt={displayAlt}
           onError={() => setHasError(true)}
           draggable={false}
           style={imgStyle}

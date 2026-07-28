@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getReleases, getRecordingsForRelease } from '../utils/contentLoader';
+import { getReleases, getRecordingsForRelease, getRecordings } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
@@ -24,7 +24,7 @@ export const DiscographyIndex: React.FC = () => {
           DISCOGRAPHY
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', maxWidth: '700px', lineHeight: 1.6, margin: 0 }}>
-          インディーズミニアルバム『FIRESTARTER』から3rd Single『No Limits』まで。IGNITEの歩んできた軌跡と15の公開収録音源。
+          インディーズミニアルバム『FIRESTARTER』から最新リリースまで。IGNITEの歩んできた軌跡と全{getRecordings().length}曲の公開収録音源。
         </p>
       </div>
 

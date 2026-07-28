@@ -100,8 +100,8 @@
       "slug": "moonlit",
       "title": "Moonlit",
       "format": "4th Single",
-      "fictionalReleaseDate": "2026-08",
-      "fictionalReleaseDateFull": "2026.08.05",
+      "fictionalReleaseDate": "2023-05",
+      "fictionalReleaseDateFull": "2023.05.20",
       "coverAssetId": "cover-moonlit",
       "description": "月光の青い静寂と熱狂が交差する4thシングル。静かな月明かりから激しいダンスビートへとなだれ込む新境地。",
       "linerNotes": "夜の静けさの中に差す蒼い月光。静と動、影と光のコントラストを描き出す、IGNITEの新たな表現領域。",
@@ -112,8 +112,8 @@
       ],
       "campaignState": "staging",
       "publication": {
-        "fictionalReleaseDate": "2026-08",
-        "publishAt": "2026-08-05T00:00:00Z",
+        "fictionalReleaseDate": "2023-05",
+        "publishAt": "2023-05-20T00:00:00Z",
         "visibility": "public",
         "campaignState": "staging"
       }

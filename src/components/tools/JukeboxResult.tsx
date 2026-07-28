@@ -66,7 +66,7 @@ export const JukeboxResult: React.FC<Props> = ({ recording, reason, onReset }) =
       <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
         <TrackPlayButton recordingId={recording.id} size="large" />
         <button onClick={handleShuffleAll} className="btn-secondary" style={{ backgroundColor: 'var(--campaign-deep)', borderColor: 'var(--campaign-accent)' }}>
-          🎲 SHUFFLE ALL 15 TRACKS
+          🎲 SHUFFLE ALL {getRecordings().filter((r) => r.audioStatus === 'ready').length} TRACKS
         </button>
         <button onClick={onReset} className="btn-secondary">
           TRY AGAIN ↻
