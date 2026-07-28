@@ -229,6 +229,11 @@
       "path": "/assets/images/articles/hero-ren-moonlit-interview.jpg",
       "status": "ready",
       "aspect": "16:9"
+    },
+    "article-between-the-lights-story": {
+      "path": "/assets/images/articles/hero-between-the-lights-story.jpg",
+      "status": "ready",
+      "aspect": "16:9"
     }
   }
 }

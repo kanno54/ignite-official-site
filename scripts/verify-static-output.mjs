@@ -29,6 +29,7 @@ const expectedFiles = [
   'features/index.html',
   'features/no-limits-interview/index.html',
   'features/ren-moonlit-interview/index.html',
+  'features/between-the-lights-story/index.html',
   'features/yuto-hightone-feature/index.html',
   'features/sho-burn-it-down-interview/index.html',
   'features/ignition-special-feature/index.html',

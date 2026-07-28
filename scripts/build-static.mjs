@@ -37,6 +37,7 @@ const routes = [
   '/features/',
   '/features/no-limits-interview/',
   '/features/ren-moonlit-interview/',
+  '/features/between-the-lights-story/',
   '/features/yuto-hightone-feature/',
   '/features/sho-burn-it-down-interview/',
   '/features/ignition-special-feature/',
