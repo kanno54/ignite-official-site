@@ -224,6 +224,11 @@
       "path": "/assets/images/tracks/poster-afterimage-live.webp",
       "status": "ready",
       "aspect": "3:4"
+    },
+    "article-ren-moonlit-interview": {
+      "path": "/assets/images/articles/hero-ren-moonlit-interview.webp",
+      "status": "ready",
+      "aspect": "16:9"
     }
   }
 }

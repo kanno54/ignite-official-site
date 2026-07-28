@@ -12,7 +12,7 @@ const articles = JSON.parse(fs.readFileSync(articlesPath, 'utf8'));
 const newArticle = {
   id: 'ren-moonlit-interview',
   slug: 'ren-moonlit-interview',
-  title: '【COVER STORY】# 届かない夜に、声を置いていく — MOONLIT CAMPAIGN / REN LONG INTERVIEW',
+  title: '届かない夜に、声を置いていく',
   kicker: 'MOONLIT CAMPAIGN / REN LONG INTERVIEW',
   dek: '歌は誰かへ届かせるものだと思っていた。正しく美しく歌うだけでは完成しなかった「Moonlit」のレコーディングと、静かな夜をメインボーカルのRENが振り返る。',
   publishDate: '2023-05',
