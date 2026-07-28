@@ -1,0 +1,103 @@
+name: Scheduled Production Release — 2026-07-30 00:00 JST
+
+on:
+  schedule:
+    # 2026-07-30 00:00 JST = 2026-07-29 15:00 UTC
+    - cron: '0 15 29 7 *'
+  workflow_dispatch:
+
+jobs:
+  scheduled-release-to-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Validate Content Data
+        run: npm run validate:data
+
+      - name: Validate Asset Manifest
+        run: npm run validate:assets
+
+      - name: Build Production Output for Release
+        env:
+          VITE_STAGING: 'true'
+          VITE_SITE_URL: 'https://ignite-official.site'
+        run: npm run build
+
+      - name: Verify Static Output Routes
+        run: npm run test:static
+
+      - name: Deploy to Production Server via lftp
+        env:
+          FTP_HOST: ${{ secrets.SFTP_HOST }}
+          FTP_USER: ${{ secrets.SFTP_USERNAME }}
+          FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
+          FTP_PATH: ${{ secrets.SFTP_PROD_PATH || secrets.SFTP_REMOTE_PATH }}
+        run: |
+          sudo apt-get update && sudo apt-get install -y lftp
+          cd ./dist
+
+          CANDIDATES=()
+          if [ -n "$FTP_PATH" ]; then
+            CANDIDATES+=("$FTP_PATH")
+          fi
+          CANDIDATES+=(
+            "/ignite-official.site"
+            "/public_html/ignite-official.site"
+            "/public_html"
+            "ignite-official.site"
+            "public_html"
+          )
+
+          CHOSEN_DIR=""
+          for candidate in "${CANDIDATES[@]}"; do
+            echo "Testing candidate remote directory: $candidate"
+            TEST_OUT=$(lftp -c "
+              set ftp:ssl-allow no;
+              set ftp:passive-mode on;
+              set net:timeout 5;
+              set net:max-retries 1;
+              open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
+              cd '$candidate';
+              pwd;
+              quit;
+            " 2>&1 || true)
+
+            if ! echo "$TEST_OUT" | grep -q "550"; then
+              CHOSEN_DIR="$candidate"
+              echo "✔ Successfully verified remote directory: $CHOSEN_DIR"
+              break
+            fi
+          done
+
+          if [ -z "$CHOSEN_DIR" ]; then
+            CHOSEN_DIR="/ignite-official.site"
+          fi
+
+          echo "Final Target Remote Directory: $CHOSEN_DIR"
+
+          cat <<EOF > deploy.lftp
+          set ftp:ssl-allow no
+          set ftp:passive-mode on
+          set net:timeout 15
+          set net:max-retries 2
+          open -u "$FTP_USER","$FTP_PASS" "$FTP_HOST"
+          mkdir -p "$CHOSEN_DIR"
+          cd "$CHOSEN_DIR"
+          mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
+          quit
+          EOF
+
+          lftp -f deploy.lftp
