@@ -56,8 +56,11 @@ jobs:
             set net:timeout 10;
             set net:max-retries 1;
             open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-            mkdir -p staging.ignite-official.site || true;
-            cd staging.ignite-official.site;
+            mkdir -p public_html/staging.ignite-official.site || true;
+            cd public_html/staging.ignite-official.site || true;
+            mirror -R --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=2 . .;
+            mkdir -p /home/r0445204/public_html/staging || true;
+            cd /home/r0445204/public_html/staging || true;
             mirror -R --verbose --no-perms --no-umask --no-symlinks --ignore-time --ignore-size --parallel=2 . .;
             quit;
           "
