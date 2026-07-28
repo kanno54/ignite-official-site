@@ -30,36 +30,31 @@ const fileMapping = [
   { recordingId: 'afterimage-live', file: 'data/Lyrics/005-Moonlit/005-03-Afterimage.md' }
 ];
 
-function parseLyricsMarkdown(content) {
+function parseLyricsMarkdownClean(content) {
   const lines = content.split(/\r?\n/);
   const result = [];
-  let currentSpeaker = 'all';
+  let inSection = false;
 
   for (let rawLine of lines) {
     let line = rawLine.trim();
-    if (!line) continue;
 
-    // Check for section header like **[Intro / KAI]** or [Verse 1 - YUTO]
-    const headerMatch = line.match(/^[\*\_]*\[(.*?)\][\*\_]*$/);
-    if (headerMatch) {
-      const headerText = headerMatch[1];
-      // Try to extract speaker after / or -
-      if (headerText.includes('/') || headerText.includes('-')) {
-        const parts = headerText.split(/[\/-]/);
-        const possibleSpeaker = parts[parts.length - 1].trim();
-        if (possibleSpeaker) {
-          currentSpeaker = possibleSpeaker;
-        }
+    // Check if line is a section header like [Intro - YUTO] or **[Verse 1 / LEO]**
+    const isHeader = /^[\*\_]*\[(.*?)\][\*\_]*$/.test(line);
+
+    if (isHeader || line === '') {
+      // Add empty gap line if we already have content and previous item wasn't already an empty gap
+      if (result.length > 0 && result[result.length - 1].text !== '') {
+        result.push({ text: '' });
       }
       continue;
     }
 
-    // Normal lyric line
-    result.push({
-      speaker: currentSpeaker,
-      text: line
-    });
+    result.push({ text: line });
   }
+
+  // Remove leading or trailing empty gap lines
+  while (result.length > 0 && result[0].text === '') result.shift();
+  while (result.length > 0 && result[result.length - 1].text === '') result.pop();
 
   return result;
 }
@@ -74,16 +69,16 @@ fileMapping.forEach(m => {
     return;
   }
   const fileContent = fs.readFileSync(filePath, 'utf8');
-  const parsedLyrics = parseLyricsMarkdown(fileContent);
+  const parsedLyrics = parseLyricsMarkdownClean(fileContent);
 
   const recording = disco.recordings.find(r => r.id === m.recordingId);
   if (recording) {
     recording.lyrics = parsedLyrics;
-    console.log(`✔ Updated lyrics for ${m.recordingId} (${parsedLyrics.length} lines)`);
+    console.log(`✔ Updated clean lyrics for ${m.recordingId} (${parsedLyrics.length} items with stanza breaks)`);
   } else {
     console.warn(`⚠️ Warning: recording not found in discography.json for ID ${m.recordingId}`);
   }
 });
 
 fs.writeFileSync(discographyPath, JSON.stringify(disco, null, 2), 'utf8');
-console.log('\n✔ Successfully updated discography.json with all 18 full lyrics!');
+console.log('\n✔ Successfully updated discography.json with clean stanza-separated lyrics!');

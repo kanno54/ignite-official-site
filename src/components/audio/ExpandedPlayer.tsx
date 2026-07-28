@@ -283,33 +283,23 @@ export const ExpandedPlayer: React.FC = () => {
               style={{
                 backgroundColor: 'var(--color-surface-elevated)',
                 border: '1px solid var(--color-border)',
-                padding: '16px',
+                padding: '20px',
                 borderRadius: '2px',
               }}
             >
               <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--campaign-accent)', margin: '0 0 12px' }}>
-                LYRICS
+                OFFICIAL LYRICS
               </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {currentRecording.lyrics.map((line, idx) => {
-                  const m = getMemberBySlug(line.speaker);
-                  return (
-                    <div key={idx} style={{ display: 'flex', gap: '10px', fontSize: '0.85rem' }}>
-                      <span
-                        style={{
-                          fontFamily: 'var(--font-mono)',
-                          fontSize: '0.7rem',
-                          color: m?.colorHex || '#AEB6C4',
-                          minWidth: '45px',
-                          textTransform: 'uppercase',
-                        }}
-                      >
-                        [{line.speaker}]
-                      </span>
-                      <span style={{ color: '#F6F3ED' }}>{line.text}</span>
+              <div style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', lineHeight: 1.8 }}>
+                {currentRecording.lyrics.map((line, idx) =>
+                  line.text === '' ? (
+                    <div key={idx} style={{ height: '12px' }} />
+                  ) : (
+                    <div key={idx} style={{ color: '#F6F3ED' }}>
+                      {line.text}
                     </div>
-                  );
-                })}
+                  )
+                )}
               </div>
             </div>
           )}
