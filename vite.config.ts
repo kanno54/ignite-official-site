@@ -14,9 +14,4 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
   },
-  server: {
-    watch: {
-      ignored: ['**/public/media/**', '**/public/assets/**'],
-    },
-  },
 });
