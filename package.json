@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:staging": "npx cross-env VITE_STAGING=true vite",
     "build": "tsc && vite build && node scripts/build-static.mjs",
     "preview": "vite preview",
     "validate:data": "node scripts/validate-content.mjs",
