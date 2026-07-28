@@ -119,7 +119,7 @@ export const ReleaseDetailPage: React.FC = () => {
               {track.lyrics && track.lyrics.length > 0 && (
                 <div style={{ backgroundColor: 'var(--color-surface-elevated)', padding: '16px', borderRadius: '2px', marginTop: '8px' }}>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)', display: 'block', marginBottom: '8px' }}>
-                    LYRICS EXCERPT
+                    FULL OFFICIAL LYRICS
                   </span>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {track.lyrics.map((l, lIdx) => {

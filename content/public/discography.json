@@ -140,11 +140,399 @@
       "lyrics": [
         {
           "speaker": "KAI",
-          "text": "暗闇の中に 一筋の火種を"
+          "text": "まだ小さな火だとしても"
         },
         {
-          "speaker": "all",
-          "text": "俺たちが FIRESTARTER"
+          "speaker": "KAI",
+          "text": "消えないように抱いてきた"
+        },
+        {
+          "speaker": "KAI",
+          "text": "名前もない未来のため"
+        },
+        {
+          "speaker": "KAI",
+          "text": "今、ここから始めよう"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰もいない朝の街を"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "少し急いで歩いていた"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "昨日の失敗もそのままで"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "うまく笑えなくても"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "窓に映った自分の目が"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "思ったより真っすぐで"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "「もう一度」と言う代わりに"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "靴紐を結び直した"
+        },
+        {
+          "speaker": "LEO",
+          "text": "遠くに見えたステージは"
+        },
+        {
+          "speaker": "LEO",
+          "text": "近づくたび眩しくて"
+        },
+        {
+          "speaker": "LEO",
+          "text": "届かない理由ばかり"
+        },
+        {
+          "speaker": "LEO",
+          "text": "数えていた夜もある"
+        },
+        {
+          "speaker": "LEO",
+          "text": "だけど隣で鳴る足音"
+        },
+        {
+          "speaker": "LEO",
+          "text": "それだけで救われた"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ひとりなら消えていた熱を"
+        },
+        {
+          "speaker": "LEO",
+          "text": "君が守ってくれた"
+        },
+        {
+          "speaker": "REN",
+          "text": "風に揺らぐたび"
+        },
+        {
+          "speaker": "REN",
+          "text": "弱く見えた火も"
+        },
+        {
+          "speaker": "REN",
+          "text": "重ねた手のひらで"
+        },
+        {
+          "speaker": "REN",
+          "text": "確かな光になる"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥に灯した"
+        },
+        {
+          "speaker": "All",
+          "text": "小さな火を　明日へつなげ"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ見えなくても"
+        },
+        {
+          "speaker": "All",
+          "text": "この熱だけは嘘じゃない"
+        },
+        {
+          "speaker": "All",
+          "text": "誰かの夜を照らせるなら"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らは何度でも歌う"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの願いが重なって"
+        },
+        {
+          "speaker": "All",
+          "text": "今、始まる"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "Keep the flame alive"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "We are firestarters"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃わなかった八カウント"
+        },
+        {
+          "speaker": "SHO",
+          "text": "止まったままの音楽も"
+        },
+        {
+          "speaker": "SHO",
+          "text": "何度も繰り返したから"
+        },
+        {
+          "speaker": "SHO",
+          "text": "身体が覚えている"
+        },
+        {
+          "speaker": "SHO",
+          "text": "完璧じゃない僕らでも"
+        },
+        {
+          "speaker": "SHO",
+          "text": "立つ場所は選べる"
+        },
+        {
+          "speaker": "SHO",
+          "text": "汗に濡れた床の上で"
+        },
+        {
+          "speaker": "SHO",
+          "text": "見つけた答えがある"
+        },
+        {
+          "speaker": "KAI",
+          "text": "「無理だ」って言う声なら"
+        },
+        {
+          "speaker": "KAI",
+          "text": "何度だって聞いてきた"
+        },
+        {
+          "speaker": "KAI",
+          "text": "それでも前へ出るたびに"
+        },
+        {
+          "speaker": "KAI",
+          "text": "景色は少し変わった"
+        },
+        {
+          "speaker": "KAI",
+          "text": "大きな夢じゃなくていい"
+        },
+        {
+          "speaker": "KAI",
+          "text": "最初の一歩でいい"
+        },
+        {
+          "speaker": "KAI",
+          "text": "今日の自分を越えたなら"
+        },
+        {
+          "speaker": "KAI",
+          "text": "それだけで火になる"
+        },
+        {
+          "speaker": "REN",
+          "text": "迷いも痛みも"
+        },
+        {
+          "speaker": "REN",
+          "text": "抱えたままでいい"
+        },
+        {
+          "speaker": "REN",
+          "text": "消えそうな誰かのため"
+        },
+        {
+          "speaker": "REN",
+          "text": "この声を燃やそう"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥に灯した"
+        },
+        {
+          "speaker": "All",
+          "text": "小さな火を　明日へつなげ"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ見えなくても"
+        },
+        {
+          "speaker": "All",
+          "text": "この熱だけは嘘じゃない"
+        },
+        {
+          "speaker": "All",
+          "text": "誰かの夜を照らせるなら"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らは何度でも歌う"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの願いが重なって"
+        },
+        {
+          "speaker": "All",
+          "text": "今、始まる"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No crown, no spotlight"
+        },
+        {
+          "speaker": "KAI",
+          "text": "まだ何者でもない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "でもこの鼓動だけは"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰にも消せやしない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Small spark, big dream"
+        },
+        {
+          "speaker": "KAI",
+          "text": "遠回りでも keep it clean"
+        },
+        {
+          "speaker": "KAI",
+          "text": "手渡した熱がまた"
+        },
+        {
+          "speaker": "KAI",
+          "text": "新しい朝を連れてくる"
+        },
+        {
+          "speaker": "KAI",
+          "text": "燃やすためじゃない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "奪うためでもない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "立ち止まる誰かの背中を"
+        },
+        {
+          "speaker": "KAI",
+          "text": "そっと押せるように"
+        },
+        {
+          "speaker": "KAI",
+          "text": "We don’t wait for the sun"
+        },
+        {
+          "speaker": "KAI",
+          "text": "We become the light"
+        },
+        {
+          "speaker": "KAI",
+          "text": "ここから始める"
+        },
+        {
+          "speaker": "KAI",
+          "text": "This is our first night"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "もしも君が迷うなら"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "僕らの声を思い出して"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "ほんの少しの勇気でも"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "明日を変えられる"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "消えないように"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "離さないように"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "この手のひらで守って"
+        },
+        {
+          "speaker": "YUTO → LEO → REN",
+          "text": "いつか大きな光へ"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥に灯した"
+        },
+        {
+          "speaker": "All",
+          "text": "小さな火を　明日へつなげ"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ見えなくても"
+        },
+        {
+          "speaker": "All",
+          "text": "この熱だけは嘘じゃない"
+        },
+        {
+          "speaker": "All",
+          "text": "誰かの夜を照らせるなら"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らは何度でも歌う"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの願いが重なって"
+        },
+        {
+          "speaker": "All",
+          "text": "今、燃え上がる"
+        },
+        {
+          "speaker": "All",
+          "text": "小さな火から始めよう"
+        },
+        {
+          "speaker": "All",
+          "text": "明日を変えるため"
+        },
+        {
+          "speaker": "All",
+          "text": "We are firestarters"
         }
       ],
       "posterAssetId": "track-poster-firestarter"
@@ -168,8 +556,288 @@
       "linerNotes": "インディーズ時代の初期型IGNITION。原石のままの荒々しさと熱量が宿る。",
       "lyrics": [
         {
-          "speaker": "KAI",
-          "text": "ここから始まる 初期衝動の火花"
+          "speaker": "Low Male Voice, Spoken",
+          "text": "暗いままの街を抜けて"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "まだ名前もない火を抱いて"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "「無理だ」って笑う声ごと"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "今夜、追い越していく"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "靴底すり減らした rehearsal room"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "終電の窓に映る tired face"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "何者にもなれないまま"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "それでも明日を選んできた"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "届かない場所を見上げて"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "何度も手を伸ばした"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "冷えた指先の奥で"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "消えなかったものがある"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "ひとりじゃ越えられなかった"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "夜を並んで越えてきた"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "呼吸を合わせた瞬間"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "心臓が beat を刻む"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "まだ見えない未来へ"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "迷いも全部　燃料にして"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "気をつけろ　この声が届くなら"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "昨日までの僕らを超えていける"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "ゼロから始めればいい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "五つの光がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "今、燃え上がる"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "悔しさを隠して笑った"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "あの日の自分に言いたい"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "まだ終わってない"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "ここから変わるんだって"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "スポットライトの外側で"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "見失いかけた理由も"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "隣で笑うお前らが"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "ちゃんと引き戻してくれた"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "正解なんてなくていい"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "選んだ道を正解にしよう"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "ぶつかるたび強くなる"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "傷跡さえ rhythm に変えて"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "怖がらなくていい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "弱さも全部　抱えたままで"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "目を凝らせ　この先が暗くても"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "手を伸ばせば　同じ熱がある"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "名前を呼び合えばいい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "五つの鼓動がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "今、走り出す"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "No map, no answer, no safe line"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "それでも踏み出した first time"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "遠回りした分だけ"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "この足跡は嘘じゃない"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "One voice, one heart, one flame"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "まだ誰も知らない name"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "でも今夜だけは覚えて帰れ"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "俺たちはここにいる"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "IGNITE"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "もしも光が消えそうなら"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "誰かの火を分け合えばいい"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "小さな熱でも重なれば"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "夜を照らせる"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "まだ見えない未来へ"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "涙も全部　燃料にして"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "気をつけろ　この声が届くなら"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "昨日までの僕らを超えていける"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "ゼロから始めればいい"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "五つの光がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "今、燃え上がる"
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We don't just perform."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We burn."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "IGNITION"
         }
       ],
       "posterAssetId": "track-poster-ignition-indies"
@@ -192,8 +860,320 @@
       "linerNotes": "インディーズ版BURN IT DOWN。粗削りなビートと直感的なダンスパフォーマンス。",
       "lyrics": [
         {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "Lights out."
+        },
+        {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "息を潜めろ。"
+        },
+        {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "ここから先は、"
+        },
+        {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "綺麗なだけじゃ終われない。"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "鳴りやまないノイズの中"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰かの正解をなぞって"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "笑われないように生きるのは"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "もう、飽きただろ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "飲み込んだ言葉の数だけ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "胸の奥が熱を持つ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "「まだ足りない」って声が"
+        },
+        {
+          "speaker": "LEO",
+          "text": "何度も俺を追い立てる"
+        },
+        {
+          "speaker": "REN",
+          "text": "壊したいんだ"
+        },
+        {
+          "speaker": "REN",
+          "text": "昨日までの自分を"
+        },
+        {
+          "speaker": "REN",
+          "text": "守るための嘘も"
+        },
+        {
+          "speaker": "REN",
+          "text": "迷いも全部"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "燃やせ　燃やせ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "迷いごと灰になるまで"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "越えていけ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "誰かが決めた限界線"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "振り返るな"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "ここに残すな"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "中途半端な願いなら"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "その手で今すぐ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "KAI",
+          "text": "拍手だけじゃ足りなくて"
+        },
+        {
+          "speaker": "KAI",
+          "text": "歓声だけじゃ満たされない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "もっと深く　もっと遠く"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この熱を刻みつけたい"
+        },
+        {
           "speaker": "SHO",
-          "text": "過去を燃やして 前へ進む"
+          "text": "傷つくことを恐れて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "何も選べなかった夜"
+        },
+        {
+          "speaker": "SHO",
+          "text": "あの頃の俺を置いて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "前へ進むと決めたんだ"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "逃げられない"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "なら燃え尽きるまで"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "きれいな負け方なんて"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "欲しくない"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "燃やせ　燃やせ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "躊躇いも音に変えて"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "響かせろ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "五つの鼓動　重なるまで"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "手を伸ばせ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "奪い取れ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "まだ見えない場所へ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "光ごとすべて"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "Break the silence, break the rules"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "従うだけじゃ終われない"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "痛みさえも証明になる"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "俺らはまだ途中だ"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "No fear, no shame, no rewind"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "引き返す理由はない"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "燃え残った願いまで"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "全部まとめて連れていけ"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Fire in my veins"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Fire in my veins"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Don’t look away"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Don’t look away"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "もしも何も残らなくても"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "その灰の中からまた"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "新しい光を探せるなら"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "何度だって始められる"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "燃やせ　燃やせ"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "迷いごと灰になるまで"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "越えていけ"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "誰かが決めた限界線"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "俺たちは"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "終わらない"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "燃え尽きるためじゃない"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "次の景色を照らすために"
+        },
+        {
+          "speaker": "All, chant",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, chant",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, chant",
+          "text": "BURN IT DOWN"
         }
       ],
       "posterAssetId": "track-poster-burn-it-down-indies"
@@ -217,7 +1197,463 @@
       "lyrics": [
         {
           "speaker": "LEO",
-          "text": "押し寄せる熱波を感じて"
+          "text": "Sunlight on my skin"
+        },
+        {
+          "speaker": "LEO",
+          "text": "熱を帯びた風の中"
+        },
+        {
+          "speaker": "LEO",
+          "text": "始まる予感だけを"
+        },
+        {
+          "speaker": "LEO",
+          "text": "胸いっぱいに吸い込んだ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "---"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "照り返すアスファルト"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "揺れる影を追い越して"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "昨日までの悩みなんて"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "置いてきたままでいい"
+        },
+        {
+          "speaker": "LEO",
+          "text": "眩しすぎる青空に"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑われたって構わない"
+        },
+        {
+          "speaker": "LEO",
+          "text": "汗だって　焦げるくらい"
+        },
+        {
+          "speaker": "LEO",
+          "text": "今日を遊び尽くそう"
+        },
+        {
+          "speaker": "REN",
+          "text": "止まらない鼓動"
+        },
+        {
+          "speaker": "REN",
+          "text": "高鳴るほど自由になる"
+        },
+        {
+          "speaker": "REN",
+          "text": "君が隣にいるなら"
+        },
+        {
+          "speaker": "REN",
+          "text": "この景色はひとつになる"
+        },
+        {
+          "speaker": "REN",
+          "text": "---"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "燃えるような夏の中"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら　どこまででも行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "声が届くその場所まで"
+        },
+        {
+          "speaker": "All",
+          "text": "太陽より熱いこの瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないで"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと高く"
+        },
+        {
+          "speaker": "All",
+          "text": "Jump up, jump up"
+        },
+        {
+          "speaker": "All",
+          "text": "飛び越えろ"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの光と君の声で"
+        },
+        {
+          "speaker": "All",
+          "text": "今、世界を揺らせ"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "---"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "Feel alive"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "この夏を　駆け抜けろ"
+        },
+        {
+          "speaker": "All",
+          "text": "---"
+        },
+        {
+          "speaker": "KAI",
+          "text": "予定通りじゃなくたって"
+        },
+        {
+          "speaker": "KAI",
+          "text": "最高ならそれでいい"
+        },
+        {
+          "speaker": "KAI",
+          "text": "遠回りした分だけ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この景色は眩しい"
+        },
+        {
+          "speaker": "SHO",
+          "text": "刻み込んだ八カウント"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃う足音　風を切る"
+        },
+        {
+          "speaker": "SHO",
+          "text": "限界なんて言葉ごと"
+        },
+        {
+          "speaker": "SHO",
+          "text": "このビートで蹴り飛ばせ"
+        },
+        {
+          "speaker": "REN",
+          "text": "熱を帯びた夜"
+        },
+        {
+          "speaker": "REN",
+          "text": "終わらせる理由なんてない"
+        },
+        {
+          "speaker": "REN",
+          "text": "君が笑っているなら"
+        },
+        {
+          "speaker": "REN",
+          "text": "何度だって火をつける"
+        },
+        {
+          "speaker": "REN",
+          "text": "---"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "燃えるような夏の中"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら　どこまででも行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "声が届くその場所まで"
+        },
+        {
+          "speaker": "All",
+          "text": "太陽より熱いこの瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないで"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと高く"
+        },
+        {
+          "speaker": "All",
+          "text": "Jump up, jump up"
+        },
+        {
+          "speaker": "All",
+          "text": "飛び越えろ"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの光と君の声で"
+        },
+        {
+          "speaker": "All",
+          "text": "今、世界を揺らせ"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "---"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No shade, no break, we run it all day"
+        },
+        {
+          "speaker": "KAI",
+          "text": "汗も涙も全部 okay"
+        },
+        {
+          "speaker": "KAI",
+          "text": "遠くのゴールより目の前の声"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この熱量で塗り替える stage"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Sunlight, spotlight, heartbeats collide"
+        },
+        {
+          "speaker": "KAI",
+          "text": "君がいるなら we feel alive"
+        },
+        {
+          "speaker": "KAI",
+          "text": "焼きつけろ　今しかない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "夏の記憶を　もっと loud, loud, loud"
+        },
+        {
+          "speaker": "KAI",
+          "text": "---"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Clap clap clap"
+        },
+        {
+          "speaker": "SHO",
+          "text": "身体ごと踊れ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Step right, step left"
+        },
+        {
+          "speaker": "SHO",
+          "text": "風を切って行け"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Clap clap clap"
+        },
+        {
+          "speaker": "SHO",
+          "text": "鳴り続ける beat"
+        },
+        {
+          "speaker": "SHO",
+          "text": "この熱を"
+        },
+        {
+          "speaker": "SHO",
+          "text": "まだ終わらせない"
+        },
+        {
+          "speaker": "SHO",
+          "text": "---"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "何度でも思い出す"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "眩しかった今日のこと"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "君と笑った一秒が"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "明日を照らしてくれる"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "手を伸ばして"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "光を掴め"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "誰より熱く"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "この夏を生きよう"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "---"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "燃えるような夏の中"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら　どこまででも行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "声が届くその場所まで"
+        },
+        {
+          "speaker": "All",
+          "text": "太陽より熱いこの瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないで"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと高く"
+        },
+        {
+          "speaker": "All",
+          "text": "Jump up, jump up"
+        },
+        {
+          "speaker": "All",
+          "text": "飛び越えろ"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの光と君の声で"
+        },
+        {
+          "speaker": "All",
+          "text": "今、世界を揺らせ"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "---"
+        },
+        {
+          "speaker": "LEO",
+          "text": "Sunlight on my skin"
+        },
+        {
+          "speaker": "LEO",
+          "text": "また新しい夏へ"
         }
       ],
       "posterAssetId": "track-poster-heatwave-indies"
@@ -241,8 +1677,384 @@
       "linerNotes": "疾走するビートとパッション溢れるラップ。",
       "lyrics": [
         {
+          "speaker": "KAI",
+          "text": "Turn it up."
+        },
+        {
+          "speaker": "KAI",
+          "text": "逃げるなら今だ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "でもこのビートが鳴ったなら"
+        },
+        {
+          "speaker": "KAI",
+          "text": "もう戻れない"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "午前零時　滲むネオン"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰かのルールは置いてきた"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "まともな顔で笑うより"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "壊れたままで踊りたい"
+        },
+        {
+          "speaker": "LEO",
+          "text": "鳴りっぱなしの低い bass"
+        },
+        {
+          "speaker": "LEO",
+          "text": "胸の奥まで揺らしてく"
+        },
+        {
+          "speaker": "LEO",
+          "text": "「どうせ無理」って聞こえた声"
+        },
+        {
+          "speaker": "LEO",
+          "text": "全部かき消すくらいに"
+        },
+        {
+          "speaker": "REN",
+          "text": "迷っている暇なんてない"
+        },
+        {
+          "speaker": "REN",
+          "text": "足元から世界を変えろ"
+        },
+        {
+          "speaker": "REN",
+          "text": "名前もない衝動が"
+        },
+        {
+          "speaker": "REN",
+          "text": "今　僕らを走らせる"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと速く　もっと深く"
+        },
+        {
+          "speaker": "All",
+          "text": "理性なんて振り切って"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を裂いて"
+        },
+        {
+          "speaker": "All",
+          "text": "この瞬間を奪い取れ"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "聞こえるなら声を上げろ"
+        },
+        {
+          "speaker": "All",
+          "text": "限界まで　燃え尽きるまで"
+        },
+        {
+          "speaker": "All",
+          "text": "止まらない"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "Hey! Hey!"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway, runaway"
+        },
+        {
+          "speaker": "All",
+          "text": "Hey! Hey!"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
           "speaker": "SHO",
-          "text": "駆け抜けるビート 誰も止められない"
+          "text": "乱れた呼吸　跳ねる汗"
+        },
+        {
+          "speaker": "SHO",
+          "text": "八カウントでぶち壊せ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "綺麗に揃うだけじゃない"
+        },
+        {
+          "speaker": "SHO",
+          "text": "この身体で噛みついてく"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰かのための正しさより"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "自分の熱を信じたい"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "転んだ傷も　笑った夜も"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "今夜のリズムに変えていく"
+        },
+        {
+          "speaker": "REN",
+          "text": "後悔なんて置き去りにして"
+        },
+        {
+          "speaker": "REN",
+          "text": "光のない場所へ飛び込め"
+        },
+        {
+          "speaker": "REN",
+          "text": "怖さごと抱えたまま"
+        },
+        {
+          "speaker": "REN",
+          "text": "もっと高く跳べるはずだ"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと速く　もっと深く"
+        },
+        {
+          "speaker": "All",
+          "text": "理性なんて振り切って"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を裂いて"
+        },
+        {
+          "speaker": "All",
+          "text": "この瞬間を奪い取れ"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "聞こえるなら声を上げろ"
+        },
+        {
+          "speaker": "All",
+          "text": "限界まで　燃え尽きるまで"
+        },
+        {
+          "speaker": "All",
+          "text": "止まらない"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No sleep, no brakes, no looking back"
+        },
+        {
+          "speaker": "KAI",
+          "text": "つまらない常識なら throw it back"
+        },
+        {
+          "speaker": "KAI",
+          "text": "逃げ場なんて最初からない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "ならこの足で蹴り飛ばすだけ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Too loud? それでいい"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Too wild? もっと来い"
+        },
+        {
+          "speaker": "KAI",
+          "text": "飼い慣らされた感情じゃ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "このフロアは揺らせない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "One shot, one life, one chance"
+        },
+        {
+          "speaker": "KAI",
+          "text": "身体ごと叩き込む dance"
+        },
+        {
+          "speaker": "KAI",
+          "text": "負け犬みたいに黙るな"
+        },
+        {
+          "speaker": "KAI",
+          "text": "欲しいなら奪え　今すぐだ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Break it down"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Break it down"
+        },
+        {
+          "speaker": "SHO",
+          "text": "床を蹴って"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Shake it up"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Shake it up"
+        },
+        {
+          "speaker": "SHO",
+          "text": "息を奪って"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Run, run, run"
+        },
+        {
+          "speaker": "SHO",
+          "text": "止まるな"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Run, run, run"
+        },
+        {
+          "speaker": "SHO",
+          "text": "もっと来い"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "朝が来れば　また何かが"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "僕らを試すのかもしれない"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "それでも今は　この熱だけ"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "嘘じゃないと叫びたい"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと速く　もっと深く"
+        },
+        {
+          "speaker": "All",
+          "text": "昨日なんて振り切って"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を裂いて"
+        },
+        {
+          "speaker": "All",
+          "text": "新しい景色を奪い取れ"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "最後まで声を上げろ"
+        },
+        {
+          "speaker": "All",
+          "text": "何者でもない僕らだから"
+        },
+        {
+          "speaker": "All",
+          "text": "誰よりも"
+        },
+        {
+          "speaker": "All",
+          "text": "止まらない"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "Runaway Beat"
+        },
+        {
+          "speaker": "All",
+          "text": "We run this night."
         }
       ],
       "posterAssetId": "track-poster-runaway-beat"
@@ -266,8 +2078,324 @@
       "linerNotes": "暗闇の先にある最初の光を描いたバラード。",
       "lyrics": [
         {
+          "speaker": "YUTO",
+          "text": "窓の外が少しだけ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "青くほどけていく"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "消えかけた街灯の下"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "僕らはまだここにいる"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "散らかったままのスタジオ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "床に落ちた汗の跡"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "何度目かのテイクのあと"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰もすぐには帰らなかった"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "時計の針は朝を指して"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "始発の音が遠く鳴る"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "上手くいかなかった夜さえ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "今なら少し愛せる気がした"
+        },
+        {
           "speaker": "REN",
-          "text": "夜明けの光が 未来を照らす"
+          "text": "誰にも見えない場所で"
+        },
+        {
+          "speaker": "REN",
+          "text": "守ってきた小さな火を"
+        },
+        {
+          "speaker": "REN",
+          "text": "ただ強くするためじゃなく"
+        },
+        {
+          "speaker": "REN",
+          "text": "消さないために抱きしめる"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "All",
+          "text": "朝が来る"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ何も変わってなくても"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "All",
+          "text": "この胸に"
+        },
+        {
+          "speaker": "All",
+          "text": "昨日より確かな熱がある"
+        },
+        {
+          "speaker": "All",
+          "text": "急がなくていい"
+        },
+        {
+          "speaker": "All",
+          "text": "答えはまだ遠くていい"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を越えた僕らなら"
+        },
+        {
+          "speaker": "All",
+          "text": "次の景色へ行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "LEO",
+          "text": "コンビニの白い光"
+        },
+        {
+          "speaker": "LEO",
+          "text": "眠そうに笑う横顔"
+        },
+        {
+          "speaker": "LEO",
+          "text": "くだらない話をしたこと"
+        },
+        {
+          "speaker": "LEO",
+          "text": "きっと忘れないと思う"
+        },
+        {
+          "speaker": "LEO",
+          "text": "誰もいない交差点で"
+        },
+        {
+          "speaker": "LEO",
+          "text": "赤信号が変わるまで"
+        },
+        {
+          "speaker": "LEO",
+          "text": "止まっていた時間みたいに"
+        },
+        {
+          "speaker": "LEO",
+          "text": "胸の奥が静かに動いた"
+        },
+        {
+          "speaker": "REN",
+          "text": "拍手もない明け方に"
+        },
+        {
+          "speaker": "REN",
+          "text": "並んだ影は長く伸びる"
+        },
+        {
+          "speaker": "REN",
+          "text": "ここまで来た理由なんて"
+        },
+        {
+          "speaker": "REN",
+          "text": "言葉にしなくても分かる"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "All",
+          "text": "朝が来る"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ名前のない未来へ"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "All",
+          "text": "その先も"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らは同じ熱を持ってる"
+        },
+        {
+          "speaker": "All",
+          "text": "眩しすぎなくていい"
+        },
+        {
+          "speaker": "All",
+          "text": "小さく灯るだけでいい"
+        },
+        {
+          "speaker": "All",
+          "text": "今日を越えるそのために"
+        },
+        {
+          "speaker": "All",
+          "text": "この火を守っていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No spotlight, no crowd, no sound"
+        },
+        {
+          "speaker": "KAI",
+          "text": "静かな街に残る footsteps"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰にも見えないこの時間が"
+        },
+        {
+          "speaker": "KAI",
+          "text": "俺たちを少しずつ変えてく"
+        },
+        {
+          "speaker": "KAI",
+          "text": "燃やすためじゃない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "失くさないために"
+        },
+        {
+          "speaker": "KAI",
+          "text": "何度も確かめたこの鼓動"
+        },
+        {
+          "speaker": "KAI",
+          "text": "朝を迎えるたびにまた"
+        },
+        {
+          "speaker": "KAI",
+          "text": "ここから始めよう"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "もしもまた迷う夜が来ても"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "今日の空を思い出せばいい"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "終わらなかった練習も"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "眠れなかった悔しさも"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "全部が今"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "僕らを照らしている"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "All",
+          "text": "朝が来る"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ何も終わっていないから"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "All",
+          "text": "この胸の"
+        },
+        {
+          "speaker": "All",
+          "text": "火を絶やさず歩いていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "遠くへ行くためじゃない"
+        },
+        {
+          "speaker": "All",
+          "text": "今日を選び続けるため"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの影が重なって"
+        },
+        {
+          "speaker": "All",
+          "text": "新しい光になる"
+        },
+        {
+          "speaker": "All",
+          "text": "First Light"
+        },
+        {
+          "speaker": "REN",
+          "text": "誰もいない街の向こう"
+        },
+        {
+          "speaker": "REN",
+          "text": "ゆっくり空が明るくなる"
+        },
+        {
+          "speaker": "REN",
+          "text": "火をつけたあの日より"
+        },
+        {
+          "speaker": "REN",
+          "text": "少しだけ強い僕らで"
         }
       ],
       "posterAssetId": "track-poster-first-light"
@@ -291,8 +2419,304 @@
       "linerNotes": "メジャーデビューの火蓋を切ったアッパーチューン。KAIの咆哮とSHOのラップが強烈。",
       "lyrics": [
         {
-          "speaker": "KAI",
-          "text": "火花を散らせ IGNITION!"
+          "speaker": "Low Male Voice, Spoken",
+          "text": "暗いままの街を抜けて"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "まだ名前もない火を抱いて"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "「無理だ」って笑う声ごと"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "今夜、追い越していく"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "靴底すり減らした rehearsal room"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "終電の窓に映る tired face"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "何者にもなれないまま"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "それでも明日を選んできた"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "届かない場所を見上げて"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "何度も手を伸ばした"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "冷えた指先の奥で"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "消えなかったものがある"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "ひとりじゃ越えられなかった"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "夜を並んで越えてきた"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "呼吸を合わせた瞬間"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "心臓が beat を刻む"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "まだ見えない未来へ"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "迷いも全部　燃料にして"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "気をつけろ　この声が届くなら"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "昨日までの僕らを超えていける"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "ゼロから始めればいい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "五つの光がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "今、燃え上がる"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "悔しさを隠して笑った"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "あの日の自分に言いたい"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "まだ終わってない"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "ここから変わるんだって"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "スポットライトの外側で"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "見失いかけた理由も"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "隣で笑うお前らが"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "ちゃんと引き戻してくれた"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "正解なんてなくていい"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "選んだ道を正解にしよう"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "ぶつかるたび強くなる"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "傷跡さえ rhythm に変えて"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "怖がらなくていい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "弱さも全部　抱えたままで"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "目を凝らせ　この先が暗くても"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "手を伸ばせば　同じ熱がある"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "名前を呼び合えばいい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "五つの鼓動がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "今、走り出す"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "No map, no answer, no safe line"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "それでも踏み出した first time"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "遠回りした分だけ"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "この足跡は嘘じゃない"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "One voice, one heart, one flame"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "まだ誰も知らない name"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "でも今夜だけは覚えて帰れ"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "俺たちはここにいる"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "IGNITE"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "もしも光が消えそうなら"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "誰かの火を分け合えばいい"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "小さな熱でも重なれば"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "夜を照らせる"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "まだ見えない未来へ"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "涙も全部　燃料にして"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "気をつけろ　この声が届くなら"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "昨日までの僕らを超えていける"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "ゼロから始めればいい"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "五つの光がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "今、燃え上がる"
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We don't just perform."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We burn."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "IGNITION"
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We don't just perform."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We burn."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "IGNITION"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "暗いままの街"
         }
       ],
       "posterAssetId": "track-poster-ignition"
@@ -316,8 +2740,288 @@
       "linerNotes": "原点である火種へと回帰するメッセージソング。",
       "lyrics": [
         {
-          "speaker": "SHO",
-          "text": "原点の輝きへと手を伸ばす"
+          "speaker": "Low Male Voice, Spoken",
+          "text": "暗いままの街を抜けて"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "まだ名前もない火を抱いて"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "「無理だ」って笑う声ごと"
+        },
+        {
+          "speaker": "Low Male Voice, Spoken",
+          "text": "今夜、追い越していく"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "靴底すり減らした rehearsal room"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "終電の窓に映る tired face"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "何者にもなれないまま"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "それでも明日を選んできた"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "届かない場所を見上げて"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "何度も手を伸ばした"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "冷えた指先の奥で"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "消えなかったものがある"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "ひとりじゃ越えられなかった"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "夜を並んで越えてきた"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "呼吸を合わせた瞬間"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "心臓が beat を刻む"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "まだ見えない未来へ"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "迷いも全部　燃料にして"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "気をつけろ　この声が届くなら"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "昨日までの僕らを超えていける"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "ゼロから始めればいい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "五つの光がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "今、燃え上がる"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "悔しさを隠して笑った"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "あの日の自分に言いたい"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "まだ終わってない"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "ここから変わるんだって"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "スポットライトの外側で"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "見失いかけた理由も"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "隣で笑うお前らが"
+        },
+        {
+          "speaker": "Male Lead Vocal",
+          "text": "ちゃんと引き戻してくれた"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "正解なんてなくていい"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "選んだ道を正解にしよう"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "ぶつかるたび強くなる"
+        },
+        {
+          "speaker": "Rising Male Vocal",
+          "text": "傷跡さえ rhythm に変えて"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "怖がらなくていい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "弱さも全部　抱えたままで"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "目を凝らせ　この先が暗くても"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "手を伸ばせば　同じ熱がある"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "名前を呼び合えばいい"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "五つの鼓動がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group",
+          "text": "今、走り出す"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "No map, no answer, no safe line"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "それでも踏み出した first time"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "遠回りした分だけ"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "この足跡は嘘じゃない"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "One voice, one heart, one flame"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "まだ誰も知らない name"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "でも今夜だけは覚えて帰れ"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "俺たちはここにいる"
+        },
+        {
+          "speaker": "Confident Male Rapper",
+          "text": "IGNITE"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "もしも光が消えそうなら"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "誰かの火を分け合えばいい"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "小さな熱でも重なれば"
+        },
+        {
+          "speaker": "Emotional Male Lead",
+          "text": "夜を照らせる"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "火をつけろ　いますぐに"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "まだ見えない未来へ"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "涙も全部　燃料にして"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "気をつけろ　この声が届くなら"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "昨日までの僕らを超えていける"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "何度でも　何度でも"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "ゼロから始めればいい"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "五つの光がひとつになって"
+        },
+        {
+          "speaker": "Full Male Group, Explosive",
+          "text": "今、燃え上がる"
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We don't just perform."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "We burn."
+        },
+        {
+          "speaker": "Whispered Group Vocal",
+          "text": "IGNITION"
         }
       ],
       "posterAssetId": "track-poster-back-to-the-spark"
@@ -342,7 +3046,487 @@
       "lyrics": [
         {
           "speaker": "LEO",
-          "text": "会場全体で熱くなろうぜ！"
+          "text": "Everybody, hands up!"
+        },
+        {
+          "speaker": "LEO",
+          "text": "もっと上まで行ける？"
+        },
+        {
+          "speaker": "LEO",
+          "text": "Say “HEY!”"
+        },
+        {
+          "speaker": "LEO",
+          "text": "HEY!"
+        },
+        {
+          "speaker": "LEO",
+          "text": "もう一回！"
+        },
+        {
+          "speaker": "LEO",
+          "text": "HEY!"
+        },
+        {
+          "speaker": "LEO",
+          "text": "Sunlight on my skin"
+        },
+        {
+          "speaker": "LEO",
+          "text": "熱を帯びた風の中"
+        },
+        {
+          "speaker": "LEO",
+          "text": "始まる予感だけを"
+        },
+        {
+          "speaker": "LEO",
+          "text": "胸いっぱいに吸い込んだ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "---"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "照り返すアスファルト"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "揺れる影を追い越して"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "昨日までの悩みなんて"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "置いてきたままでいい"
+        },
+        {
+          "speaker": "LEO",
+          "text": "眩しすぎる青空に"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑われたって構わない"
+        },
+        {
+          "speaker": "LEO",
+          "text": "汗だって　焦げるくらい"
+        },
+        {
+          "speaker": "LEO",
+          "text": "今日を遊び尽くそう"
+        },
+        {
+          "speaker": "REN",
+          "text": "止まらない鼓動"
+        },
+        {
+          "speaker": "REN",
+          "text": "高鳴るほど自由になる"
+        },
+        {
+          "speaker": "REN",
+          "text": "君が隣にいるなら"
+        },
+        {
+          "speaker": "REN",
+          "text": "この景色はひとつになる"
+        },
+        {
+          "speaker": "REN",
+          "text": "---"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "燃えるような夏の中"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら　どこまででも行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "声が届くその場所まで"
+        },
+        {
+          "speaker": "All",
+          "text": "太陽より熱いこの瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないで"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと高く"
+        },
+        {
+          "speaker": "All",
+          "text": "Jump up, jump up"
+        },
+        {
+          "speaker": "All",
+          "text": "飛び越えろ"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの光と君の声で"
+        },
+        {
+          "speaker": "All",
+          "text": "今、世界を揺らせ"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "---"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "[LEO] 右、行ける？"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "[Crowd] HEY!"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "[LEO] 左、行ける？"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "[Crowd] HEY!"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "[LEO] 真ん中、まだ足りない！"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "Oh oh oh, Heatwave!"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "---"
+        },
+        {
+          "speaker": "KAI",
+          "text": "予定通りじゃなくたって"
+        },
+        {
+          "speaker": "KAI",
+          "text": "最高ならそれでいい"
+        },
+        {
+          "speaker": "KAI",
+          "text": "遠回りした分だけ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この景色は眩しい"
+        },
+        {
+          "speaker": "SHO",
+          "text": "刻み込んだ八カウント"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃う足音　風を切る"
+        },
+        {
+          "speaker": "SHO",
+          "text": "限界なんて言葉ごと"
+        },
+        {
+          "speaker": "SHO",
+          "text": "このビートで蹴り飛ばせ"
+        },
+        {
+          "speaker": "REN",
+          "text": "熱を帯びた夜"
+        },
+        {
+          "speaker": "REN",
+          "text": "終わらせる理由なんてない"
+        },
+        {
+          "speaker": "REN",
+          "text": "君が笑っているなら"
+        },
+        {
+          "speaker": "REN",
+          "text": "何度だって火をつける"
+        },
+        {
+          "speaker": "REN",
+          "text": "---"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "燃えるような夏の中"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら　どこまででも行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "声が届くその場所まで"
+        },
+        {
+          "speaker": "All",
+          "text": "太陽より熱いこの瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないで"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと高く"
+        },
+        {
+          "speaker": "All",
+          "text": "Jump up, jump up"
+        },
+        {
+          "speaker": "All",
+          "text": "飛び越えろ"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの光と君の声で"
+        },
+        {
+          "speaker": "All",
+          "text": "今、世界を揺らせ"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "---"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No shade, no break, we run it all day"
+        },
+        {
+          "speaker": "KAI",
+          "text": "汗も涙も全部 okay"
+        },
+        {
+          "speaker": "KAI",
+          "text": "遠くのゴールより目の前の声"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この熱量で塗り替える stage"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Sunlight, spotlight, heartbeats collide"
+        },
+        {
+          "speaker": "KAI",
+          "text": "君がいるなら we feel alive"
+        },
+        {
+          "speaker": "KAI",
+          "text": "焼きつけろ　今しかない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "夏の記憶を　もっと loud, loud, loud"
+        },
+        {
+          "speaker": "KAI",
+          "text": "---"
+        },
+        {
+          "speaker": "SHO → All",
+          "text": "Clap clap clap"
+        },
+        {
+          "speaker": "SHO → All",
+          "text": "Clap clap clap"
+        },
+        {
+          "speaker": "SHO → All",
+          "text": "もっと鳴らせ"
+        },
+        {
+          "speaker": "SHO → All",
+          "text": "Step right, step left"
+        },
+        {
+          "speaker": "SHO → All",
+          "text": "Step right, step left"
+        },
+        {
+          "speaker": "SHO → All",
+          "text": "身体ごと踊れ"
+        },
+        {
+          "speaker": "SHO → All",
+          "text": "⸻"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "何度でも思い出す"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "眩しかった今日のこと"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "君と笑った一秒が"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "明日を照らしてくれる"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "手を伸ばして"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "光を掴め"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "誰より熱く"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "この夏を生きよう"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "---"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "燃えるような夏の中"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら　どこまででも行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "声が届くその場所まで"
+        },
+        {
+          "speaker": "All",
+          "text": "太陽より熱いこの瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないで"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと高く"
+        },
+        {
+          "speaker": "All",
+          "text": "Jump up, jump up"
+        },
+        {
+          "speaker": "All",
+          "text": "飛び越えろ"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの光と君の声で"
+        },
+        {
+          "speaker": "All",
+          "text": "今、世界を揺らせ"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "Heatwave"
+        },
+        {
+          "speaker": "All",
+          "text": "---"
+        },
+        {
+          "speaker": "LEO → Crowd",
+          "text": "Everybody! One more time!"
+        },
+        {
+          "speaker": "Crowd",
+          "text": "Heatwave!"
+        },
+        {
+          "speaker": "Crowd",
+          "text": "Heatwave!"
+        },
+        {
+          "speaker": "Crowd",
+          "text": "Heatwave!"
+        },
+        {
+          "speaker": "LEO→Crowd",
+          "text": "また次の夏も、ここで会おう！"
         }
       ],
       "posterAssetId": "track-poster-heatwave-live"
@@ -367,8 +3551,320 @@
       "linerNotes": "ソリッドな重低音と激しいフォーメーションダンスで魅せる2ndシングル。",
       "lyrics": [
         {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "Lights out."
+        },
+        {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "息を潜めろ。"
+        },
+        {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "ここから先は、"
+        },
+        {
+          "speaker": "KAI, spoken, low and controlled",
+          "text": "綺麗なだけじゃ終われない。"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "鳴りやまないノイズの中"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰かの正解をなぞって"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "笑われないように生きるのは"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "もう、飽きただろ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "飲み込んだ言葉の数だけ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "胸の奥が熱を持つ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "「まだ足りない」って声が"
+        },
+        {
+          "speaker": "LEO",
+          "text": "何度も俺を追い立てる"
+        },
+        {
+          "speaker": "REN",
+          "text": "壊したいんだ"
+        },
+        {
+          "speaker": "REN",
+          "text": "昨日までの自分を"
+        },
+        {
+          "speaker": "REN",
+          "text": "守るための嘘も"
+        },
+        {
+          "speaker": "REN",
+          "text": "迷いも全部"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "燃やせ　燃やせ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "迷いごと灰になるまで"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "越えていけ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "誰かが決めた限界線"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "振り返るな"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "ここに残すな"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "中途半端な願いなら"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "その手で今すぐ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "KAI",
+          "text": "拍手だけじゃ足りなくて"
+        },
+        {
+          "speaker": "KAI",
+          "text": "歓声だけじゃ満たされない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "もっと深く　もっと遠く"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この熱を刻みつけたい"
+        },
+        {
           "speaker": "SHO",
-          "text": "余分な装飾はすべて Burn it down"
+          "text": "傷つくことを恐れて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "何も選べなかった夜"
+        },
+        {
+          "speaker": "SHO",
+          "text": "あの頃の俺を置いて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "前へ進むと決めたんだ"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "逃げられない"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "なら燃え尽きるまで"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "きれいな負け方なんて"
+        },
+        {
+          "speaker": "REN, rising intensity",
+          "text": "欲しくない"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "燃やせ　燃やせ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "躊躇いも音に変えて"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "響かせろ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "五つの鼓動　重なるまで"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "手を伸ばせ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "奪い取れ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "まだ見えない場所へ"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "光ごとすべて"
+        },
+        {
+          "speaker": "All, powerful unison",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "Break the silence, break the rules"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "従うだけじゃ終われない"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "痛みさえも証明になる"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "俺らはまだ途中だ"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "No fear, no shame, no rewind"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "引き返す理由はない"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "燃え残った願いまで"
+        },
+        {
+          "speaker": "KAI, aggressive rhythmic rap",
+          "text": "全部まとめて連れていけ"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Fire in my veins"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Fire in my veins"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Don’t look away"
+        },
+        {
+          "speaker": "SHO and All, instrumental with chant",
+          "text": "Don’t look away"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "もしも何も残らなくても"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "その灰の中からまた"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "新しい光を探せるなら"
+        },
+        {
+          "speaker": "REN, emotional lead",
+          "text": "何度だって始められる"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "燃やせ　燃やせ"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "迷いごと灰になるまで"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "越えていけ"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "誰かが決めた限界線"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "俺たちは"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "終わらない"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "燃え尽きるためじゃない"
+        },
+        {
+          "speaker": "All, huge anthem",
+          "text": "次の景色を照らすために"
+        },
+        {
+          "speaker": "All, chant",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, chant",
+          "text": "BURN IT DOWN"
+        },
+        {
+          "speaker": "All, chant",
+          "text": "BURN IT DOWN"
         }
       ],
       "posterAssetId": "track-poster-burn-it-down"
@@ -392,8 +3888,352 @@
       "linerNotes": "舞い上がる灰の中で躍動する意志を描いたナンバー。",
       "lyrics": [
         {
+          "speaker": "KAI",
+          "text": "煙の向こう"
+        },
+        {
+          "speaker": "KAI",
+          "text": "消えたはずの灯り"
+        },
+        {
+          "speaker": "KAI",
+          "text": "まだ足元で"
+        },
+        {
+          "speaker": "KAI",
+          "text": "熱を持ってる"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "乾いた風が　頬をかすめて"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "昨日までを遠くへ運ぶ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "名前もないまま抱えていた"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "迷いだけが　少し軽くなった"
+        },
+        {
+          "speaker": "LEO",
+          "text": "きれいなままでいられなくて"
+        },
+        {
+          "speaker": "LEO",
+          "text": "傷も増えた気がするけど"
+        },
+        {
+          "speaker": "LEO",
+          "text": "振り返ったあの場所には"
+        },
+        {
+          "speaker": "LEO",
+          "text": "もう戻れない気がした"
+        },
+        {
           "speaker": "REN",
-          "text": "舞い上がる灰を超えて進む"
+          "text": "燃えた跡に残るものが"
+        },
+        {
+          "speaker": "REN",
+          "text": "何もないわけじゃない"
+        },
+        {
+          "speaker": "REN",
+          "text": "黒くなったこの手のひらにも"
+        },
+        {
+          "speaker": "REN",
+          "text": "次の光は宿ってる"
+        },
+        {
+          "speaker": "All",
+          "text": "灰をまとったまま"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ見えない明日へ歩いていく"
+        },
+        {
+          "speaker": "All",
+          "text": "消えかけた熱を"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥で　確かに守りながら"
+        },
+        {
+          "speaker": "All",
+          "text": "失くしたものも"
+        },
+        {
+          "speaker": "All",
+          "text": "壊した夜も"
+        },
+        {
+          "speaker": "All",
+          "text": "全部連れて行けばいい"
+        },
+        {
+          "speaker": "All",
+          "text": "風にさらわれそうな夢でも"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らは　まだ動いてる"
+        },
+        {
+          "speaker": "All",
+          "text": "Move, move"
+        },
+        {
+          "speaker": "All",
+          "text": "Through the night"
+        },
+        {
+          "speaker": "All",
+          "text": "Move, move"
+        },
+        {
+          "speaker": "All",
+          "text": "We’re not done yet"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃わない足音のままで"
+        },
+        {
+          "speaker": "SHO",
+          "text": "暗い道を進んでいく"
+        },
+        {
+          "speaker": "SHO",
+          "text": "正しい答えがなくても"
+        },
+        {
+          "speaker": "SHO",
+          "text": "止まる理由にはならない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "選んだことを疑うたび"
+        },
+        {
+          "speaker": "KAI",
+          "text": "背中に残る視線がある"
+        },
+        {
+          "speaker": "KAI",
+          "text": "それでもこの痛みごと"
+        },
+        {
+          "speaker": "KAI",
+          "text": "自分の足で越えていく"
+        },
+        {
+          "speaker": "REN",
+          "text": "崩れたままの景色にも"
+        },
+        {
+          "speaker": "REN",
+          "text": "朝はちゃんと来るから"
+        },
+        {
+          "speaker": "REN",
+          "text": "誰かの声が届かなくても"
+        },
+        {
+          "speaker": "REN",
+          "text": "隣の気配を信じたい"
+        },
+        {
+          "speaker": "All",
+          "text": "灰をまとったまま"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ見えない明日へ歩いていく"
+        },
+        {
+          "speaker": "All",
+          "text": "冷えない願いを"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥で　確かに守りながら"
+        },
+        {
+          "speaker": "All",
+          "text": "間違えた日も"
+        },
+        {
+          "speaker": "All",
+          "text": "黙った夜も"
+        },
+        {
+          "speaker": "All",
+          "text": "全部無駄じゃないから"
+        },
+        {
+          "speaker": "All",
+          "text": "風に消えそうな火種でも"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らは　まだ進んでる"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No way back, no clean escape"
+        },
+        {
+          "speaker": "KAI",
+          "text": "残った傷も carry the weight"
+        },
+        {
+          "speaker": "KAI",
+          "text": "燃やした過去が足を止めても"
+        },
+        {
+          "speaker": "KAI",
+          "text": "ここから先は俺らで決める"
+        },
+        {
+          "speaker": "KAI",
+          "text": "灰の匂い　靴の裏"
+        },
+        {
+          "speaker": "KAI",
+          "text": "まだ消えない熱の跡だ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "何もかも失くしたように見えて"
+        },
+        {
+          "speaker": "KAI",
+          "text": "手の中には次の火がある"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Step through the smoke"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Step through the night"
+        },
+        {
+          "speaker": "SHO",
+          "text": "崩れたリズムを"
+        },
+        {
+          "speaker": "SHO",
+          "text": "もう一度　刻め"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Don’t look down"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Don’t turn around"
+        },
+        {
+          "speaker": "SHO",
+          "text": "灰の中から"
+        },
+        {
+          "speaker": "SHO",
+          "text": "息を吸って"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "もしも遠くで"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "誰かが呼んでいるなら"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "届くまで何度でも"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "この声を残していく"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "小さな火でも"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "消さないでいれば"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "暗い道の先を"
+        },
+        {
+          "speaker": "LEO → REN",
+          "text": "照らせるはずだから"
+        },
+        {
+          "speaker": "All",
+          "text": "灰をまとったまま"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ見えない明日へ歩いていく"
+        },
+        {
+          "speaker": "All",
+          "text": "消えかけた熱を"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥で　確かに守りながら"
+        },
+        {
+          "speaker": "All",
+          "text": "失くしたものも"
+        },
+        {
+          "speaker": "All",
+          "text": "壊した夜も"
+        },
+        {
+          "speaker": "All",
+          "text": "全部連れて行けばいい"
+        },
+        {
+          "speaker": "All",
+          "text": "風にさらわれそうな夢でも"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らは　まだ動いてる"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "足元に残る灰を"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "そっと踏みしめて"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "まだ小さな光へ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "僕らは歩いていく"
         }
       ],
       "posterAssetId": "track-poster-ashes-in-motion"
@@ -420,8 +4260,508 @@
       "linerNotes": "手を掲げ心を解放するライブでの圧巻パフォーマンス。",
       "lyrics": [
         {
-          "speaker": "all",
-          "text": "Hands up, Hearts out!"
+          "speaker": "LEO & YUTO",
+          "text": "LEO：Everybody, hands up!"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "YUTO：もっと上、行ける？"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "LEO：声、まだ残ってる？"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "YUTO：じゃあ行こうぜ！"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を抜けて"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "LEO",
+          "text": "寝ぐせのままで飛び出した"
+        },
+        {
+          "speaker": "LEO",
+          "text": "いつも通りの交差点"
+        },
+        {
+          "speaker": "LEO",
+          "text": "信号待ちの退屈まで"
+        },
+        {
+          "speaker": "LEO",
+          "text": "今日はちょっと悪くない"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ポケットの中　鳴るビート"
+        },
+        {
+          "speaker": "LEO",
+          "text": "昨日のミスも置いていこう"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑われたって構わない"
+        },
+        {
+          "speaker": "LEO",
+          "text": "好きなものくらい好きでいたい"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "大げさなくらいの青空"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "見上げたら少し笑えた"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "ちゃんとした理由なんてない"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "でも走り出せそうなんだ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "すれ違う誰かの憂鬱も"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "軽くできたらいいのにな"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "そんなことを思うだけで"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "世界は少し近くなる"
+        },
+        {
+          "speaker": "REN",
+          "text": "隠していた気持ちまで"
+        },
+        {
+          "speaker": "REN",
+          "text": "光に変えてしまおう"
+        },
+        {
+          "speaker": "REN",
+          "text": "胸の奥で鳴るメロディー"
+        },
+        {
+          "speaker": "REN",
+          "text": "もう止められないから"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "高く掲げた願いが"
+        },
+        {
+          "speaker": "All",
+          "text": "風を切って　明日へ向かう"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "格好悪くたっていい"
+        },
+        {
+          "speaker": "All",
+          "text": "笑いながら進めばいい"
+        },
+        {
+          "speaker": "All",
+          "text": "ためらいも連れて"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らのままで"
+        },
+        {
+          "speaker": "All",
+          "text": "一度きりの今日を鳴らそう"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "この瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "きっと好きになれる"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "LEO：せーの！"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "Crowd：Hey! Hey! Hey! Hey!"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "YUTO：まだ足りない！"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "Crowd：Hey! Hey! Hey! Hey!"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "胸を開いて"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh, hands up"
+        },
+        {
+          "speaker": "All",
+          "text": "Oh oh, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "光の方へ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "うまく話せない帰り道"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "既読のままのメッセージ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "言葉にできないことほど"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "なぜかずっと残ってる"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "だけど少し遠回りして"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "見つけた景色も悪くない"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "迷ったぶんだけ増えていく"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "自分だけのサインがある"
+        },
+        {
+          "speaker": "LEO",
+          "text": "誰かと比べて落ち込んだ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "そんな夜もあったけど"
+        },
+        {
+          "speaker": "LEO",
+          "text": "隣にいる君が笑えば"
+        },
+        {
+          "speaker": "LEO",
+          "text": "なんだか全部どうでもいい"
+        },
+        {
+          "speaker": "LEO",
+          "text": "完璧じゃない僕らでも"
+        },
+        {
+          "speaker": "LEO",
+          "text": "揃うタイミングがあるんだ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "小さな鼓動を重ねれば"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ちゃんとひとつの歌になる"
+        },
+        {
+          "speaker": "REN",
+          "text": "遠く見えた未来でも"
+        },
+        {
+          "speaker": "REN",
+          "text": "手を伸ばせば変わっていく"
+        },
+        {
+          "speaker": "REN",
+          "text": "迷いながら選んだ今日が"
+        },
+        {
+          "speaker": "REN",
+          "text": "僕らを連れていく"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "高く掲げた願いが"
+        },
+        {
+          "speaker": "All",
+          "text": "風を切って　明日へ向かう"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "格好悪くたっていい"
+        },
+        {
+          "speaker": "All",
+          "text": "笑いながら進めばいい"
+        },
+        {
+          "speaker": "All",
+          "text": "ためらいも連れて"
+        },
+        {
+          "speaker": "All",
+          "text": "僕らのままで"
+        },
+        {
+          "speaker": "All",
+          "text": "一度きりの今日を鳴らそう"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "この瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "きっと好きになれる"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No perfect day, no perfect line"
+        },
+        {
+          "speaker": "KAI",
+          "text": "少しくらいズレてても alright"
+        },
+        {
+          "speaker": "KAI",
+          "text": "予定通りじゃない story"
+        },
+        {
+          "speaker": "KAI",
+          "text": "だからこそ今が so bright"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Turn it up, breathe it in"
+        },
+        {
+          "speaker": "KAI",
+          "text": "背伸びしないままで winning"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰かの正解じゃ測れない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この熱だけは僕らのもの"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Hands up!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Hands up!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Hearts out!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Hearts out!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Jump! Jump!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Clap! Clap!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Jump! Jump!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Clap! Clap!"
+        },
+        {
+          "speaker": "REN",
+          "text": "何もかも投げ出したくなる"
+        },
+        {
+          "speaker": "REN",
+          "text": "そんな日が来たとしても"
+        },
+        {
+          "speaker": "REN",
+          "text": "ここで笑った記憶だけは"
+        },
+        {
+          "speaker": "REN",
+          "text": "消えないまま残るから"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "高く掲げた願いが"
+        },
+        {
+          "speaker": "All",
+          "text": "風を切って　明日へ向かう"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "格好悪くたっていい"
+        },
+        {
+          "speaker": "All",
+          "text": "笑いながら進めばいい"
+        },
+        {
+          "speaker": "All",
+          "text": "何度でも僕らは"
+        },
+        {
+          "speaker": "All",
+          "text": "新しい朝を"
+        },
+        {
+          "speaker": "All",
+          "text": "自分たちの手で選べる"
+        },
+        {
+          "speaker": "All",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "All",
+          "text": "この瞬間を"
+        },
+        {
+          "speaker": "All",
+          "text": "ずっと忘れないように"
+        },
+        {
+          "speaker": "All",
+          "text": "One more time!"
+        },
+        {
+          "speaker": "All",
+          "text": "声を出せ　Hey! Hey!"
+        },
+        {
+          "speaker": "All",
+          "text": "もう一回！"
+        },
+        {
+          "speaker": "All",
+          "text": "飛び跳ねろ　Hey! Hey!"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "心のままで"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "Hands up, hearts out"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "光の方へ"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "LEO：まだいける？"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "YUTO：最後まで行ける？"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "All：Hands up! Hearts out!"
+        },
+        {
+          "speaker": "LEO & YUTO",
+          "text": "IGNITE!"
         }
       ],
       "posterAssetId": "track-poster-hands-up-hearts-out-live"
@@ -447,16 +4787,328 @@
       "linerNotes": "YUTOの突き抜けるハイトーンサビと、KAI/RENのツインボーカルが駆け抜ける3rdシングル表題曲。",
       "lyrics": [
         {
-          "speaker": "KAI",
-          "text": "見上げた空の深さに 理由を探していた"
+          "speaker": "All",
+          "text": "Hey!"
+        },
+        {
+          "speaker": "All",
+          "text": "No limits, no limits"
+        },
+        {
+          "speaker": "All",
+          "text": "We’re going higher"
         },
         {
           "speaker": "YUTO",
-          "text": "風が切り開く未来へ 踏み出すこの一歩"
+          "text": "昨日より少しだけ"
         },
         {
-          "speaker": "all",
-          "text": "We burn, We fly, 限界なんて超えてゆけ！"
+          "speaker": "YUTO",
+          "text": "速く走れた気がして"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "理由なんてなくても"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "景色は変わり始める"
+        },
+        {
+          "speaker": "LEO",
+          "text": "遠回りした道にも"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ちゃんと意味があったんだ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑い合ったその瞬間"
+        },
+        {
+          "speaker": "LEO",
+          "text": "また一歩 強くなれた"
+        },
+        {
+          "speaker": "REN",
+          "text": "見上げた空は"
+        },
+        {
+          "speaker": "REN",
+          "text": "思ったより近くて"
+        },
+        {
+          "speaker": "REN",
+          "text": "伸ばした手の先に"
+        },
+        {
+          "speaker": "REN",
+          "text": "新しい風が吹く"
+        },
+        {
+          "speaker": "All",
+          "text": "No Limits"
+        },
+        {
+          "speaker": "All",
+          "text": "越えていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ誰も見たことない場所へ"
+        },
+        {
+          "speaker": "All",
+          "text": "No Limits"
+        },
+        {
+          "speaker": "All",
+          "text": "怖がらないで"
+        },
+        {
+          "speaker": "All",
+          "text": "迷うたび 僕らは強くなる"
+        },
+        {
+          "speaker": "All",
+          "text": "転んだっていい"
+        },
+        {
+          "speaker": "All",
+          "text": "遅れたっていい"
+        },
+        {
+          "speaker": "All",
+          "text": "同じ夢を追いかけてる"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの声が重なれば"
+        },
+        {
+          "speaker": "All",
+          "text": "未来はもっと遠くまで行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "Woah oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "No limits"
+        },
+        {
+          "speaker": "All",
+          "text": "Woah oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "Keep going on"
+        },
+        {
+          "speaker": "KAI",
+          "text": "うまくいかない夜ほど"
+        },
+        {
+          "speaker": "KAI",
+          "text": "余計な声が聞こえるけど"
+        },
+        {
+          "speaker": "KAI",
+          "text": "選んだ道の真ん中で"
+        },
+        {
+          "speaker": "KAI",
+          "text": "自分を信じるしかない"
+        },
+        {
+          "speaker": "SHO",
+          "text": "何度も繰り返した"
+        },
+        {
+          "speaker": "SHO",
+          "text": "同じ振り 同じ八カウント"
+        },
+        {
+          "speaker": "SHO",
+          "text": "積み上げた汗の数だけ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "身体は答えを知ってる"
+        },
+        {
+          "speaker": "REN",
+          "text": "追い風なんて"
+        },
+        {
+          "speaker": "REN",
+          "text": "待っていられないから"
+        },
+        {
+          "speaker": "REN",
+          "text": "僕らの足音で"
+        },
+        {
+          "speaker": "REN",
+          "text": "この世界を揺らしていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "No Limits"
+        },
+        {
+          "speaker": "All",
+          "text": "越えていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ誰も見たことない場所へ"
+        },
+        {
+          "speaker": "All",
+          "text": "No Limits"
+        },
+        {
+          "speaker": "All",
+          "text": "立ち止まらない"
+        },
+        {
+          "speaker": "All",
+          "text": "悔しさも 明日の力になる"
+        },
+        {
+          "speaker": "All",
+          "text": "届かなくていい"
+        },
+        {
+          "speaker": "All",
+          "text": "今すぐじゃなくていい"
+        },
+        {
+          "speaker": "All",
+          "text": "それでも手を伸ばし続ける"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの光が重なれば"
+        },
+        {
+          "speaker": "All",
+          "text": "夜さえ飛び越えて行ける"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Step by step, we don’t slow down"
+        },
+        {
+          "speaker": "KAI",
+          "text": "遠回りも全部 own now"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰かの基準じゃ測れない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この熱量は俺らのものだ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No fear, no doubt, no turning back"
+        },
+        {
+          "speaker": "KAI",
+          "text": "背中合わせで break the glass"
+        },
+        {
+          "speaker": "KAI",
+          "text": "限界なんて越えるためにある"
+        },
+        {
+          "speaker": "KAI",
+          "text": "だからまだ終われない"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "もしも立ち尽くした夜に"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "ひとりで答えが出なくても"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "隣にいるその声が"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "もう一度 前を向かせる"
+        },
+        {
+          "speaker": "REN",
+          "text": "もう一度 前を向かせる"
+        },
+        {
+          "speaker": "All",
+          "text": "No Limits"
+        },
+        {
+          "speaker": "All",
+          "text": "越えていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ誰も見たことない場所へ"
+        },
+        {
+          "speaker": "All",
+          "text": "No Limits"
+        },
+        {
+          "speaker": "All",
+          "text": "怖がらないで"
+        },
+        {
+          "speaker": "All",
+          "text": "迷うたび 僕らは強くなる"
+        },
+        {
+          "speaker": "All",
+          "text": "転んだっていい"
+        },
+        {
+          "speaker": "All",
+          "text": "遅れたっていい"
+        },
+        {
+          "speaker": "All",
+          "text": "同じ夢を追いかけてる"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの声が重なれば"
+        },
+        {
+          "speaker": "All",
+          "text": "未来はもっと遠くまで行ける"
+        },
+        {
+          "speaker": "All",
+          "text": "No limits"
+        },
+        {
+          "speaker": "All",
+          "text": "No limits"
+        },
+        {
+          "speaker": "All",
+          "text": "We’re going higher"
+        },
+        {
+          "speaker": "All",
+          "text": "IGNITE"
         }
       ],
       "posterAssetId": "track-poster-no-limits"
@@ -481,16 +5133,396 @@
       "linerNotes": "RENの透明感溢れるファルセットと、SHOのエモーショナルな低音ラップが響くカップリングナンバー。",
       "lyrics": [
         {
-          "speaker": "REN",
-          "text": "朝の光が差し込む前に 高い場所へ"
+          "speaker": "SHO",
+          "text": "非常灯の緑だけ"
         },
         {
           "speaker": "SHO",
-          "text": "影を振り払い 確かな足跡を刻む"
+          "text": "コンクリートをなぞってる"
         },
         {
-          "speaker": "all",
-          "text": "Higher and higher, 光の射す方へ"
+          "speaker": "SHO",
+          "text": "壁の向こう　低い音"
+        },
+        {
+          "speaker": "SHO",
+          "text": "まだ扉は閉じたまま"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "搬入口の白い線"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "かすれた番号　古いテープ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "何度も通った練習室と"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "違う匂いがしていた"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "袖口を直すふりで"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "少しだけ時間を使った"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰にも見せない癖まで"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "今日は連れてきている"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑い声を飲み込んで"
+        },
+        {
+          "speaker": "LEO",
+          "text": "いつもより静かなまま"
+        },
+        {
+          "speaker": "LEO",
+          "text": "隣に立つ横顔を"
+        },
+        {
+          "speaker": "LEO",
+          "text": "なんとなく見ていた"
+        },
+        {
+          "speaker": "LEO",
+          "text": "遠くで鳴るざわめきが"
+        },
+        {
+          "speaker": "LEO",
+          "text": "鉄の扉を震わせる"
+        },
+        {
+          "speaker": "LEO",
+          "text": "まだ知らないたくさんの目が"
+        },
+        {
+          "speaker": "LEO",
+          "text": "この先にあるらしい"
+        },
+        {
+          "speaker": "REN",
+          "text": "ここまで来た理由を"
+        },
+        {
+          "speaker": "REN",
+          "text": "今さら数えはしない"
+        },
+        {
+          "speaker": "REN",
+          "text": "ただ　戻れない場所に"
+        },
+        {
+          "speaker": "REN",
+          "text": "もう立っているだけ"
+        },
+        {
+          "speaker": "All",
+          "text": "開くまでの数秒を"
+        },
+        {
+          "speaker": "All",
+          "text": "誰も急かさずにいた"
+        },
+        {
+          "speaker": "All",
+          "text": "言葉にしないままで"
+        },
+        {
+          "speaker": "All",
+          "text": "それぞれ目線を上げる"
+        },
+        {
+          "speaker": "All",
+          "text": "名前のないこの景色を"
+        },
+        {
+          "speaker": "All",
+          "text": "自分たちのものにする"
+        },
+        {
+          "speaker": "All",
+          "text": "扉の向こうへ行けば"
+        },
+        {
+          "speaker": "All",
+          "text": "何かが変わる気がした"
+        },
+        {
+          "speaker": "All",
+          "text": "No need to say it"
+        },
+        {
+          "speaker": "All",
+          "text": "No need to prove it"
+        },
+        {
+          "speaker": "All",
+          "text": "Just one more second"
+        },
+        {
+          "speaker": "All",
+          "text": "Before the door opens"
+        },
+        {
+          "speaker": "KAI",
+          "text": "予定表の余白には"
+        },
+        {
+          "speaker": "KAI",
+          "text": "眠れなかった街の名"
+        },
+        {
+          "speaker": "KAI",
+          "text": "うまくいかなかった夜も"
+        },
+        {
+          "speaker": "KAI",
+          "text": "消さずに残してある"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰かの期待の形に"
+        },
+        {
+          "speaker": "KAI",
+          "text": "合わせるだけじゃ足りない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "今日ここへ持ってきたのは"
+        },
+        {
+          "speaker": "KAI",
+          "text": "綺麗じゃない全部だ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "鏡に貼られた印"
+        },
+        {
+          "speaker": "SHO",
+          "text": "立つ場所だけ確かめる"
+        },
+        {
+          "speaker": "SHO",
+          "text": "決められた線の上でも"
+        },
+        {
+          "speaker": "SHO",
+          "text": "見せ方は選べるから"
+        },
+        {
+          "speaker": "SHO",
+          "text": "ジャケットの重ささえ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "いつもよりはっきり分かる"
+        },
+        {
+          "speaker": "SHO",
+          "text": "鳴り始めた合図が"
+        },
+        {
+          "speaker": "SHO",
+          "text": "壁の奥を揺らしてる"
+        },
+        {
+          "speaker": "REN",
+          "text": "ここから先のことは"
+        },
+        {
+          "speaker": "REN",
+          "text": "まだ誰にも分からない"
+        },
+        {
+          "speaker": "REN",
+          "text": "だから今　この沈黙を"
+        },
+        {
+          "speaker": "REN",
+          "text": "ちゃんと覚えていたい"
+        },
+        {
+          "speaker": "All",
+          "text": "開くまでの数秒を"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥にしまい込む"
+        },
+        {
+          "speaker": "All",
+          "text": "拍手よりも先にある"
+        },
+        {
+          "speaker": "All",
+          "text": "この張りつめた空気を"
+        },
+        {
+          "speaker": "All",
+          "text": "見上げた場所じゃなくて"
+        },
+        {
+          "speaker": "All",
+          "text": "ここに立ったことだけを"
+        },
+        {
+          "speaker": "All",
+          "text": "いつか振り返る時も"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないでいたい"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Concrete wall, metal door"
+        },
+        {
+          "speaker": "KAI",
+          "text": "名前のない通路の floor"
+        },
+        {
+          "speaker": "KAI",
+          "text": "派手な言葉は置いていこう"
+        },
+        {
+          "speaker": "KAI",
+          "text": "今日の答えはまだ向こう"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Card key, black tape, cold air"
+        },
+        {
+          "speaker": "KAI",
+          "text": "積み上げた時間は全部 there"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰に見えなくても消えない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "この場所まで連れてきた days"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No shortcut, no borrowed sign"
+        },
+        {
+          "speaker": "KAI",
+          "text": "一段ずつ残した mine"
+        },
+        {
+          "speaker": "KAI",
+          "text": "扉が開く　その前に"
+        },
+        {
+          "speaker": "KAI",
+          "text": "自分の輪郭を確かめる"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "最後の踊り場で"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "一度だけ振り返った"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "下に続く暗がりも"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "今なら置いていける"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "誰かが小さく笑って"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "緊張が少しほどけた"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "その瞬間だけでいい"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "ここまで来たと思えた"
+        },
+        {
+          "speaker": "All",
+          "text": "開くまでの数秒を"
+        },
+        {
+          "speaker": "All",
+          "text": "誰も急かさずにいた"
+        },
+        {
+          "speaker": "All",
+          "text": "言葉にしないままで"
+        },
+        {
+          "speaker": "All",
+          "text": "それぞれ目線を上げる"
+        },
+        {
+          "speaker": "All",
+          "text": "名前のないこの景色を"
+        },
+        {
+          "speaker": "All",
+          "text": "自分たちのものにする"
+        },
+        {
+          "speaker": "All",
+          "text": "扉の向こうへ行けば"
+        },
+        {
+          "speaker": "All",
+          "text": "何かが変わる気がした"
+        },
+        {
+          "speaker": "All",
+          "text": "終わったあともきっと"
+        },
+        {
+          "speaker": "All",
+          "text": "この通路を覚えてる"
+        },
+        {
+          "speaker": "All",
+          "text": "見上げた場所じゃなく"
+        },
+        {
+          "speaker": "All",
+          "text": "ここに立ったことを"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "扉の向こうで"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "音が変わった"
         }
       ],
       "posterAssetId": "track-poster-higher-ground"
@@ -519,11 +5551,343 @@
       "lyrics": [
         {
           "speaker": "LEO",
-          "text": "準備はいいか？ 手を打ち鳴らせ！"
+          "text": "Everybody!"
         },
         {
-          "speaker": "all",
-          "text": "一緒に走ろう この火が消える前に！"
+          "speaker": "LEO",
+          "text": "もっと声を聞かせて！"
+        },
+        {
+          "speaker": "LEO",
+          "text": "Run with us!"
+        },
+        {
+          "speaker": "LEO",
+          "text": "Hey!"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us"
+        },
+        {
+          "speaker": "All",
+          "text": "Tonight"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "見慣れない駅のホーム"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "少し早い朝の風"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "ポケットのチケット握って"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "今日を待っていたんだろう"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "遠く離れた街でも"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "同じように鳴る鼓動"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "名前を呼んでくれるたび"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "ここまで来た意味になる"
+        },
+        {
+          "speaker": "REN",
+          "text": "違う景色　違う日々を"
+        },
+        {
+          "speaker": "REN",
+          "text": "それぞれ越えてきたけど"
+        },
+        {
+          "speaker": "REN",
+          "text": "今この瞬間だけは"
+        },
+        {
+          "speaker": "REN",
+          "text": "同じ未来へ走れる"
+        },
+        {
+          "speaker": "All",
+          "text": "手を伸ばして　もっと遠く"
+        },
+        {
+          "speaker": "All",
+          "text": "昨日の迷いを追い越して"
+        },
+        {
+          "speaker": "All",
+          "text": "声を重ね　どこまでも"
+        },
+        {
+          "speaker": "All",
+          "text": "この街の夜を揺らしていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ知らない明日へ"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら行けるから"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us tonight"
+        },
+        {
+          "speaker": "All",
+          "text": "Whoa oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us"
+        },
+        {
+          "speaker": "All",
+          "text": "Whoa oh oh"
+        },
+        {
+          "speaker": "All",
+          "text": "Sing it!"
+        },
+        {
+          "speaker": "LEO",
+          "text": "初めて会ったあの日から"
+        },
+        {
+          "speaker": "LEO",
+          "text": "少し変わったかな"
+        },
+        {
+          "speaker": "LEO",
+          "text": "だけど笑う時の顔は"
+        },
+        {
+          "speaker": "LEO",
+          "text": "あの頃のままだね"
+        },
+        {
+          "speaker": "LEO",
+          "text": "知らない街の言葉も"
+        },
+        {
+          "speaker": "LEO",
+          "text": "あたたかい拍手も"
+        },
+        {
+          "speaker": "LEO",
+          "text": "全部ちゃんと覚えてる"
+        },
+        {
+          "speaker": "LEO",
+          "text": "僕らを強くするもの"
+        },
+        {
+          "speaker": "REN",
+          "text": "遠回りした足跡も"
+        },
+        {
+          "speaker": "REN",
+          "text": "無駄じゃなかったんだって"
+        },
+        {
+          "speaker": "REN",
+          "text": "君がそばにいるたびに"
+        },
+        {
+          "speaker": "REN",
+          "text": "何度だって信じられる"
+        },
+        {
+          "speaker": "All",
+          "text": "目を上げて　もっと高く"
+        },
+        {
+          "speaker": "All",
+          "text": "胸の奥まで響かせて"
+        },
+        {
+          "speaker": "All",
+          "text": "笑いながら　どこまでも"
+        },
+        {
+          "speaker": "All",
+          "text": "今だけの風をつかまえよう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ終わらない夢を"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら描けるから"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us tonight"
+        },
+        {
+          "speaker": "All",
+          "text": "右のみんな！"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ行ける？"
+        },
+        {
+          "speaker": "All",
+          "text": "左のみんな！"
+        },
+        {
+          "speaker": "All",
+          "text": "もっと！"
+        },
+        {
+          "speaker": "KAI",
+          "text": "地図にない場所へ　moving through the night"
+        },
+        {
+          "speaker": "KAI",
+          "text": "知らない空の下　変わらない light"
+        },
+        {
+          "speaker": "KAI",
+          "text": "遠く離れても　消えない flame"
+        },
+        {
+          "speaker": "KAI",
+          "text": "君がくれた声が　次の理由になる"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No fear　振り向かずに"
+        },
+        {
+          "speaker": "KAI",
+          "text": "One step　隣の君と"
+        },
+        {
+          "speaker": "KAI",
+          "text": "どんな距離も越えていける"
+        },
+        {
+          "speaker": "KAI",
+          "text": "僕らは一人じゃない"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Clap! Clap!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Everybody!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Jump! Jump!"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Hands up!"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "もしも明日が少しだけ"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "不安に見えてしまっても"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "今ここで交わした声が"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "きっと背中を押してくれる"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "さよならじゃなくて"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "また会うために進もう"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "次の街でも　その先でも"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "僕らは歌い続ける"
+        },
+        {
+          "speaker": "All",
+          "text": "手を伸ばして　もっと遠く"
+        },
+        {
+          "speaker": "All",
+          "text": "昨日の迷いを追い越して"
+        },
+        {
+          "speaker": "All",
+          "text": "声を重ね　どこまでも"
+        },
+        {
+          "speaker": "All",
+          "text": "この街の夜を揺らしていこう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ知らない明日へ"
+        },
+        {
+          "speaker": "All",
+          "text": "君となら行けるから"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us tonight"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us!"
+        },
+        {
+          "speaker": "All",
+          "text": "Whoa oh oh!"
+        },
+        {
+          "speaker": "All",
+          "text": "Run with us!"
+        },
+        {
+          "speaker": "All",
+          "text": "ありがとう！"
+        },
+        {
+          "speaker": "All",
+          "text": "また会おう！"
         }
       ],
       "posterAssetId": "track-poster-run-with-us-live"
@@ -548,12 +5912,300 @@
       "linerNotes": "静けさを切り裂く美しくも鋭い月光のメロディ。RENとYUTOのハイトーンが夜空に交錯する。",
       "lyrics": [
         {
-          "speaker": "REN",
-          "text": "月光が照らし出す 蒼い足跡"
+          "speaker": "YUTO",
+          "text": "街の灯りが遠ざかる"
         },
         {
           "speaker": "YUTO",
-          "text": "光と影の狭間で 呼び合う声"
+          "text": "静かな夜の隙間で"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "名前のない気持ちだけ"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "まだ胸に残ってる"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "今日も上手く笑えたかな"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "鏡に映る顔を見て"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "誰にも見せなかった弱さを"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "そっと飲み込んだ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "にぎやかな帰り道"
+        },
+        {
+          "speaker": "LEO",
+          "text": "言葉は途切れないのに"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ふと黙った横顔のこと"
+        },
+        {
+          "speaker": "LEO",
+          "text": "なぜか忘れられない"
+        },
+        {
+          "speaker": "REN",
+          "text": "月明かりが照らすたび"
+        },
+        {
+          "speaker": "REN",
+          "text": "隠していた想いが"
+        },
+        {
+          "speaker": "REN",
+          "text": "少しずつ輪郭を持って"
+        },
+        {
+          "speaker": "REN",
+          "text": "僕の中で揺れている"
+        },
+        {
+          "speaker": "All",
+          "text": "Moonlit"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を越えて"
+        },
+        {
+          "speaker": "All",
+          "text": "君のいる場所まで行けたなら"
+        },
+        {
+          "speaker": "All",
+          "text": "Moonlit"
+        },
+        {
+          "speaker": "All",
+          "text": "届かなくても"
+        },
+        {
+          "speaker": "All",
+          "text": "同じ空を見ていたい"
+        },
+        {
+          "speaker": "All",
+          "text": "言えないままの願いでも"
+        },
+        {
+          "speaker": "All",
+          "text": "消えない熱があるから"
+        },
+        {
+          "speaker": "All",
+          "text": "静かな光を抱きしめて"
+        },
+        {
+          "speaker": "All",
+          "text": "僕は今日も歩いていく"
+        },
+        {
+          "speaker": "Chorus",
+          "text": "Under the moonlight"
+        },
+        {
+          "speaker": "Chorus",
+          "text": "Under the moonlight"
+        },
+        {
+          "speaker": "Chorus",
+          "text": "まだ終わらない夜"
+        },
+        {
+          "speaker": "KAI",
+          "text": "正しさばかり探して"
+        },
+        {
+          "speaker": "KAI",
+          "text": "何度も立ち止まったけど"
+        },
+        {
+          "speaker": "KAI",
+          "text": "答えがないからこそ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "自分で選ぶしかない"
+        },
+        {
+          "speaker": "SHO",
+          "text": "音の消えたスタジオで"
+        },
+        {
+          "speaker": "SHO",
+          "text": "ひとり残る深夜二時"
+        },
+        {
+          "speaker": "SHO",
+          "text": "乱れた呼吸の奥に"
+        },
+        {
+          "speaker": "SHO",
+          "text": "悔しさだけが残ってた"
+        },
+        {
+          "speaker": "REN",
+          "text": "誰にも見せられない"
+        },
+        {
+          "speaker": "REN",
+          "text": "傷や迷いの全部が"
+        },
+        {
+          "speaker": "REN",
+          "text": "いつか誰かを照らす光に"
+        },
+        {
+          "speaker": "REN",
+          "text": "変わるならいい"
+        },
+        {
+          "speaker": "All",
+          "text": "Moonlit"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を越えて"
+        },
+        {
+          "speaker": "All",
+          "text": "君のいる場所まで行けたなら"
+        },
+        {
+          "speaker": "All",
+          "text": "Moonlit"
+        },
+        {
+          "speaker": "All",
+          "text": "届かなくても"
+        },
+        {
+          "speaker": "All",
+          "text": "同じ空を見ていたい"
+        },
+        {
+          "speaker": "All",
+          "text": "誰にも言えない痛みでも"
+        },
+        {
+          "speaker": "All",
+          "text": "明日へ連れていけるから"
+        },
+        {
+          "speaker": "All",
+          "text": "静かな光を抱きしめて"
+        },
+        {
+          "speaker": "All",
+          "text": "僕は今日も歩いていく"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Don’t fade away"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Don’t fade away"
+        },
+        {
+          "speaker": "SHO",
+          "text": "この孤独さえ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "リズムに変えて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Stay with me"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Stay with me"
+        },
+        {
+          "speaker": "SHO",
+          "text": "月が消えるまで"
+        },
+        {
+          "speaker": "REN",
+          "text": "もしも朝が来る前に"
+        },
+        {
+          "speaker": "REN",
+          "text": "少しだけ勇気が出たら"
+        },
+        {
+          "speaker": "REN",
+          "text": "届かないと思っていた名前を"
+        },
+        {
+          "speaker": "REN",
+          "text": "呼んでみたい"
+        },
+        {
+          "speaker": "All",
+          "text": "Moonlit"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を越えて"
+        },
+        {
+          "speaker": "All",
+          "text": "君のいる場所まで行けたなら"
+        },
+        {
+          "speaker": "All",
+          "text": "Moonlit"
+        },
+        {
+          "speaker": "All",
+          "text": "遠く離れても"
+        },
+        {
+          "speaker": "All",
+          "text": "同じ空を見ている"
+        },
+        {
+          "speaker": "All",
+          "text": "言えないままの願いでも"
+        },
+        {
+          "speaker": "All",
+          "text": "消えない熱があるから"
+        },
+        {
+          "speaker": "All",
+          "text": "静かな光を抱きしめて"
+        },
+        {
+          "speaker": "All",
+          "text": "僕は今日も歩いていく"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "月明かりが消える頃"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "少しだけ前を向けた"
         }
       ],
       "posterAssetId": "track-poster-moonlit"
@@ -577,12 +6229,324 @@
       "linerNotes": "光と光の合間に潜むグルーヴ。SHOのテクニカルなRAPとKAIのミドルレンジがグルーヴを生む。",
       "lyrics": [
         {
+          "speaker": "LEO",
+          "text": "袖を抜けた風が"
+        },
+        {
+          "speaker": "LEO",
+          "text": "まだ熱をさらっていかない"
+        },
+        {
+          "speaker": "LEO",
+          "text": "遠くで鳴るクラクション"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑い声でかき消した"
+        },
+        {
+          "speaker": "LEO",
+          "text": "裏口のドアを押したら"
+        },
+        {
+          "speaker": "LEO",
+          "text": "急に街が近くなる"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ステージじゃない顔のまま"
+        },
+        {
+          "speaker": "LEO",
+          "text": "誰かが先に走り出す"
+        },
+        {
+          "speaker": "LEO",
+          "text": "自販機の前　立ち止まって"
+        },
+        {
+          "speaker": "LEO",
+          "text": "同じボタンに手を伸ばして"
+        },
+        {
+          "speaker": "LEO",
+          "text": "「それ俺の」って笑う声が"
+        },
+        {
+          "speaker": "LEO",
+          "text": "夜更けに転がっていく"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "点滅した信号"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "急がなくてもいいのに"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "青へ変わるその瞬間"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "なぜかみんな走り出す"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ帰りたくない"
+        },
+        {
+          "speaker": "All",
+          "text": "街灯の下　もう少しだけ"
+        },
+        {
+          "speaker": "All",
+          "text": "今日のことを終わらせないで"
+        },
+        {
+          "speaker": "All",
+          "text": "くだらない話をしよう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ帰りたくない"
+        },
+        {
+          "speaker": "All",
+          "text": "ネオンが揺れる交差点"
+        },
+        {
+          "speaker": "All",
+          "text": "明日になればまた変わるから"
+        },
+        {
+          "speaker": "All",
+          "text": "今はこのままでいい"
+        },
+        {
+          "speaker": "All",
+          "text": "La la la"
+        },
+        {
+          "speaker": "All",
+          "text": "靴音を鳴らして"
+        },
+        {
+          "speaker": "All",
+          "text": "La la la"
+        },
+        {
+          "speaker": "All",
+          "text": "夜を連れ出して"
+        },
+        {
+          "speaker": "REN",
+          "text": "ガラス越しに映る僕ら"
+        },
+        {
+          "speaker": "REN",
+          "text": "少しだけ大人に見える"
+        },
+        {
+          "speaker": "REN",
+          "text": "でも目が合った途端にまた"
+        },
+        {
+          "speaker": "REN",
+          "text": "変な顔で笑わせてくる"
+        },
+        {
+          "speaker": "REN",
+          "text": "遠回りでも構わない"
+        },
+        {
+          "speaker": "REN",
+          "text": "地図なんて見なくていい"
+        },
+        {
+          "speaker": "REN",
+          "text": "次の角を曲がるたび"
+        },
+        {
+          "speaker": "REN",
+          "text": "知らない景色が増えていく"
+        },
+        {
           "speaker": "SHO",
-          "text": "The shadow knows the truth in the night"
+          "text": "誰かが落としたリズム"
+        },
+        {
+          "speaker": "SHO",
+          "text": "足先で拾い上げて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃わなくてもいい今だけ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "好きに踊ればいい"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ帰りたくない"
+        },
+        {
+          "speaker": "All",
+          "text": "街の灯が滲む頃まで"
+        },
+        {
+          "speaker": "All",
+          "text": "言えなかったことなんて"
+        },
+        {
+          "speaker": "All",
+          "text": "今はなくてもいい"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ帰りたくない"
+        },
+        {
+          "speaker": "All",
+          "text": "少し遠い帰り道"
+        },
+        {
+          "speaker": "All",
+          "text": "肩が触れて　ほどけるように"
+        },
+        {
+          "speaker": "All",
+          "text": "夜は続いていく"
         },
         {
           "speaker": "KAI",
-          "text": "すり抜けてゆく 瞬きのスキマ"
+          "text": "時計なんて見ないで move"
+        },
+        {
+          "speaker": "KAI",
+          "text": "明日の予定は置いといて"
+        },
+        {
+          "speaker": "KAI",
+          "text": "真っ直ぐ帰るだけじゃ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "もったいないだろ this view"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰が先とか関係ない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "笑った分だけ軽くなる"
+        },
+        {
+          "speaker": "KAI",
+          "text": "眩しい場所を降りたあとも"
+        },
+        {
+          "speaker": "KAI",
+          "text": "俺たちの足は止まらない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "赤から青へ　また進め"
+        },
+        {
+          "speaker": "KAI",
+          "text": "静かな街をすり抜けて"
+        },
+        {
+          "speaker": "KAI",
+          "text": "「そろそろ戻れ」って声の前に"
+        },
+        {
+          "speaker": "KAI",
+          "text": "もう一つだけ曲がろうぜ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Step to the left"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Step to the right"
+        },
+        {
+          "speaker": "SHO",
+          "text": "街灯の影を飛び越えて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Clap your hands"
+        },
+        {
+          "speaker": "SHO",
+          "text": "Keep it light"
+        },
+        {
+          "speaker": "SHO",
+          "text": "まだ終わらない tonight"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "帰る場所があるから"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "寄り道が愛しくなる"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "何でもないこの時間を"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "たぶん忘れたくない"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ帰りたくない"
+        },
+        {
+          "speaker": "All",
+          "text": "街灯の下　もう少しだけ"
+        },
+        {
+          "speaker": "All",
+          "text": "今日のことを終わらせないで"
+        },
+        {
+          "speaker": "All",
+          "text": "くだらない話をしよう"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ帰りたくない"
+        },
+        {
+          "speaker": "All",
+          "text": "ネオンが消えるその前に"
+        },
+        {
+          "speaker": "All",
+          "text": "五人の影が重なったら"
+        },
+        {
+          "speaker": "All",
+          "text": "明日へ歩き出せる"
+        },
+        {
+          "speaker": "LEO",
+          "text": "「じゃあ、次の角まで」"
+        },
+        {
+          "speaker": "LEO",
+          "text": "誰かが笑って言った"
         }
       ],
       "posterAssetId": "track-poster-between-the-lights"
@@ -606,12 +6570,476 @@
       "linerNotes": "ツアーの熱狂をそのまま封じ込めたライブ音源。歓声と熱気が残像となって響く。",
       "lyrics": [
         {
-          "speaker": "LEO",
-          "text": "焼き付けた残像は 消えやしない"
+          "speaker": "Ambient Crowd → YUTO",
+          "text": "(歓声が少しずつ遠ざかる)"
         },
         {
-          "speaker": "all",
-          "text": "Woh-oh-oh Afterimage!"
+          "speaker": "Ambient Crowd → YUTO",
+          "text": "拍手が遠ざかる"
+        },
+        {
+          "speaker": "Ambient Crowd → YUTO",
+          "text": "眩しすぎた光のあと"
+        },
+        {
+          "speaker": "Ambient Crowd → YUTO",
+          "text": "閉じたまぶたの裏で"
+        },
+        {
+          "speaker": "Ambient Crowd → YUTO",
+          "text": "まだ君が揺れている"
+        },
+        {
+          "speaker": "LEO",
+          "text": "誰もいない通路を"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ゆっくり歩いていく"
+        },
+        {
+          "speaker": "LEO",
+          "text": "さっきまでの熱気だけ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "壁に残ったまま"
+        },
+        {
+          "speaker": "LEO",
+          "text": "汗に滲んだ衣装も"
+        },
+        {
+          "speaker": "LEO",
+          "text": "ほどけかけた靴紐も"
+        },
+        {
+          "speaker": "LEO",
+          "text": "終わったはずの夜を"
+        },
+        {
+          "speaker": "LEO",
+          "text": "まだ終わらせてくれない"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "ガラスに映る自分が"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "少しだけ知らない顔で"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "笑えていたはずなのに"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "胸だけ追いつけなくて"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "名前を呼ぶ声の波"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "耳の奥で消えないまま"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "ひとりになった瞬間"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "静けさが痛い"
+        },
+        {
+          "speaker": "REN",
+          "text": "光が消えたあとほど"
+        },
+        {
+          "speaker": "REN",
+          "text": "本当の色が見える"
+        },
+        {
+          "speaker": "REN",
+          "text": "手を伸ばしても掴めない"
+        },
+        {
+          "speaker": "REN",
+          "text": "あの瞬間の続きを"
+        },
+        {
+          "speaker": "REN",
+          "text": "僕はまだ探してる"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "Afterimage"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "まぶたの奥で"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "消えない光が僕を照らす"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "Afterimage"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "終わったはずの"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "夜がまだ胸を離れない"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "歓声も　約束も"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "夢みたいに遠ざかるのに"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "君がくれた熱だけは"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "静かな闇の中"
+        },
+        {
+          "speaker": "REN → All",
+          "text": "まだ燃えている"
+        },
+        {
+          "speaker": "All",
+          "text": "Fade into blue"
+        },
+        {
+          "speaker": "All",
+          "text": "Fade into blue"
+        },
+        {
+          "speaker": "All",
+          "text": "残された光を抱いて"
+        },
+        {
+          "speaker": "KAI",
+          "text": "完璧な夜なんて"
+        },
+        {
+          "speaker": "KAI",
+          "text": "きっとどこにもない"
+        },
+        {
+          "speaker": "KAI",
+          "text": "見せなかった迷いまで"
+        },
+        {
+          "speaker": "KAI",
+          "text": "ライトは照らしていた"
+        },
+        {
+          "speaker": "KAI",
+          "text": "笑顔の隙間に落とした"
+        },
+        {
+          "speaker": "KAI",
+          "text": "小さなため息ひとつ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "誰にも気づかれないなら"
+        },
+        {
+          "speaker": "KAI",
+          "text": "それでいいと思ってた"
+        },
+        {
+          "speaker": "SHO",
+          "text": "音が止まったステージで"
+        },
+        {
+          "speaker": "SHO",
+          "text": "八カウントを数えてる"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃っていたはずの影が"
+        },
+        {
+          "speaker": "SHO",
+          "text": "少しずつほどけていく"
+        },
+        {
+          "speaker": "SHO",
+          "text": "踊り終えた身体には"
+        },
+        {
+          "speaker": "SHO",
+          "text": "まだリズムが残っていて"
+        },
+        {
+          "speaker": "SHO",
+          "text": "暗闇に置いていけない"
+        },
+        {
+          "speaker": "SHO",
+          "text": "想いまで動き出す"
+        },
+        {
+          "speaker": "REN",
+          "text": "朝が来ればきっと"
+        },
+        {
+          "speaker": "REN",
+          "text": "何事もなかったように"
+        },
+        {
+          "speaker": "REN",
+          "text": "また次の場所へ向かう"
+        },
+        {
+          "speaker": "REN",
+          "text": "それでも今だけは"
+        },
+        {
+          "speaker": "REN",
+          "text": "この余韻に沈んでいたい"
+        },
+        {
+          "speaker": "All",
+          "text": "Afterimage"
+        },
+        {
+          "speaker": "All",
+          "text": "消えかけた灯り"
+        },
+        {
+          "speaker": "All",
+          "text": "追いかけるほど遠くなるけど"
+        },
+        {
+          "speaker": "All",
+          "text": "Afterimage"
+        },
+        {
+          "speaker": "All",
+          "text": "名前のない"
+        },
+        {
+          "speaker": "All",
+          "text": "孤独さえ君につながってる"
+        },
+        {
+          "speaker": "All",
+          "text": "拍手も　ざわめきも"
+        },
+        {
+          "speaker": "All",
+          "text": "いつか夜に溶けていっても"
+        },
+        {
+          "speaker": "All",
+          "text": "確かにここにいたこと"
+        },
+        {
+          "speaker": "All",
+          "text": "静かな闇の中"
+        },
+        {
+          "speaker": "All",
+          "text": "忘れないでいる"
+        },
+        {
+          "speaker": "KAI",
+          "text": "Lights down… heart loud"
+        },
+        {
+          "speaker": "KAI",
+          "text": "静寂の方が正直だ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "眩しい場所にいた分だけ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "影も深くなっていくんだ"
+        },
+        {
+          "speaker": "KAI",
+          "text": "No rewind… no perfect scene"
+        },
+        {
+          "speaker": "KAI",
+          "text": "残った傷も part of me"
+        },
+        {
+          "speaker": "KAI",
+          "text": "消えないものを抱えたまま"
+        },
+        {
+          "speaker": "KAI",
+          "text": "次の夜へ歩いていく"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "Hold on"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "消えない残像を"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "Move slow"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "闇に溶けるまで"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "Don’t fade"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "まだここにいて"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "Stay close"
+        },
+        {
+          "speaker": "SHO → YUTO",
+          "text": "光が消えるまで"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "もしもあの光が"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "僕を少し変えたなら"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "戻れないことさえ"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "怖がらなくていい"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "見えなくなったあとも"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "君の声が残るから"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "夜の向こう側へ"
+        },
+        {
+          "speaker": "YUTO → REN",
+          "text": "もう一度　進める"
+        },
+        {
+          "speaker": "All",
+          "text": "Afterimage"
+        },
+        {
+          "speaker": "All",
+          "text": "まぶたの奥で"
+        },
+        {
+          "speaker": "All",
+          "text": "消えない光が僕を照らす"
+        },
+        {
+          "speaker": "All",
+          "text": "Afterimage"
+        },
+        {
+          "speaker": "All",
+          "text": "終わったはずの"
+        },
+        {
+          "speaker": "All",
+          "text": "夜がまだ胸を離れない"
+        },
+        {
+          "speaker": "All",
+          "text": "歓声も　約束も"
+        },
+        {
+          "speaker": "All",
+          "text": "夢みたいに遠ざかるのに"
+        },
+        {
+          "speaker": "All",
+          "text": "君がくれた熱だけは"
+        },
+        {
+          "speaker": "All",
+          "text": "月のない空の下"
+        },
+        {
+          "speaker": "All",
+          "text": "まだ燃えている"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "消えないで"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "そう願うほど"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "光は遠くなる"
+        },
+        {
+          "speaker": "REN",
+          "text": "それでも今"
+        },
+        {
+          "speaker": "REN",
+          "text": "ここに残った"
+        },
+        {
+          "speaker": "REN",
+          "text": "君の声を抱いている"
+        },
+        {
+          "speaker": "YUTO → REN → All",
+          "text": "光が消えたあとに"
+        },
+        {
+          "speaker": "YUTO → REN → All",
+          "text": "初めて見えるものがある"
+        },
+        {
+          "speaker": "YUTO → REN → All",
+          "text": "静かな夜の入口で"
+        },
+        {
+          "speaker": "YUTO → REN → All",
+          "text": "僕らはまだ立っている"
+        },
+        {
+          "speaker": "YUTO → REN → All",
+          "text": "(演奏が止まり、数秒の静寂のあと拍手)"
         }
       ],
       "posterAssetId": "track-poster-afterimage-live"
