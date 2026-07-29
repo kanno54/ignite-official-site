@@ -25,7 +25,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
   });
 
-  // Initialize single shared HTMLAudioElement
+  // Initialize single shared HTMLAudioElement with strict event handling
   useEffect(() => {
     const audio = new Audio();
     audio.preload = 'metadata';
@@ -41,6 +41,9 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
 
     const handleEnded = () => {
+      // Immediately reset time to 0 upon track completion so play state is clean
+      audio.currentTime = 0;
+
       setPlayerState((prev) => {
         let nextIndex = prev.queueIndex + 1;
         let nextQueue = prev.queue;
@@ -69,6 +72,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
           if (nextRecording && nextRecording.audioStatus === 'ready' && audioRef.current) {
             audioRef.current.src = nextRecording.audioUrl;
+            audioRef.current.currentTime = 0;
             audioRef.current.play().catch(() => {});
             return {
               ...prev,
@@ -81,7 +85,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
             };
           }
         }
-        return { ...prev, isPlaying: false };
+
+        return { ...prev, isPlaying: false, currentTime: 0 };
       });
     };
 
@@ -94,11 +99,11 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
 
     const handlePlay = () => {
-      setPlayerState((prev) => ({ ...prev, isPlaying: true }));
+      setPlayerState((prev) => (prev.isPlaying ? prev : { ...prev, isPlaying: true }));
     };
 
     const handlePause = () => {
-      setPlayerState((prev) => ({ ...prev, isPlaying: false }));
+      setPlayerState((prev) => (prev.isPlaying ? { ...prev, isPlaying: false } : prev));
     };
 
     audio.addEventListener('timeupdate', handleTimeUpdate);
@@ -117,7 +122,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
   }, []);
 
-  // Update Media Session API metadata & action handlers
+  // Update Media Session API metadata & action handlers with JPG lockscreen artwork
   useEffect(() => {
     if (typeof window === 'undefined' || !('mediaSession' in navigator)) return;
 
@@ -131,7 +136,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const albumTitle = release ? release.title : 'IGNITE Official Site';
 
     const manifest = getAssetManifest();
-    let relativeImagePath = '/assets/images/hero-no-limits-desktop.webp';
+    let relativeImagePath = '/assets/images/covers/cover-no-limits.jpg';
 
     if (rec.posterAssetId && manifest.images[rec.posterAssetId as keyof typeof manifest.images]) {
       relativeImagePath = manifest.images[rec.posterAssetId as keyof typeof manifest.images].path;
@@ -140,21 +145,19 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
 
     const origin = window.location.origin;
-    const absoluteImageUrl = relativeImagePath.startsWith('http')
-      ? relativeImagePath
-      : `${origin}${relativeImagePath}`;
-
-    const mimeType = absoluteImageUrl.endsWith('.png') ? 'image/png' : 'image/webp';
+    const jpgImagePath = relativeImagePath.replace(/\.webp$/i, '.jpg');
+    const fullJpgUrl = jpgImagePath.startsWith('http') ? jpgImagePath : `${origin}${jpgImagePath}`;
+    const fullWebpUrl = relativeImagePath.startsWith('http') ? relativeImagePath : `${origin}${relativeImagePath}`;
 
     navigator.mediaSession.metadata = new MediaMetadata({
       title: `${rec.title} (${rec.versionLabel})`,
       artist: 'IGNITE',
       album: albumTitle,
       artwork: [
-        { src: absoluteImageUrl, sizes: '512x512', type: mimeType },
-        { src: absoluteImageUrl, sizes: '300x300', type: mimeType },
-        { src: absoluteImageUrl, sizes: '192x192', type: mimeType },
-        { src: absoluteImageUrl, sizes: '96x96', type: mimeType },
+        { src: fullJpgUrl, sizes: '512x512', type: 'image/jpeg' },
+        { src: fullJpgUrl, sizes: '300x300', type: 'image/jpeg' },
+        { src: fullJpgUrl, sizes: '192x192', type: 'image/jpeg' },
+        { src: fullWebpUrl, sizes: '512x512', type: 'image/webp' },
       ],
     });
 
@@ -223,26 +226,29 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (audioRef.current) {
       audioRef.current.src = recording.audioUrl;
       audioRef.current.currentTime = 0;
-      audioRef.current.play().then(() => {
-        setPlayerState((prev) => ({
-          ...prev,
-          currentTrackId: recordingId,
-          currentRecording: recording,
-          queue,
-          queueIndex,
-          queueContext: context,
-          isPlaying: true,
-          error: null,
-        }));
-      }).catch(() => {
-        setPlayerState((prev) => ({
-          ...prev,
-          currentTrackId: recordingId,
-          currentRecording: recording,
-          isPlaying: false,
-          error: '音声の再生に失敗しました。',
-        }));
-      });
+      audioRef.current
+        .play()
+        .then(() => {
+          setPlayerState((prev) => ({
+            ...prev,
+            currentTrackId: recordingId,
+            currentRecording: recording,
+            queue,
+            queueIndex,
+            queueContext: context,
+            isPlaying: true,
+            error: null,
+          }));
+        })
+        .catch(() => {
+          setPlayerState((prev) => ({
+            ...prev,
+            currentTrackId: recordingId,
+            currentRecording: recording,
+            isPlaying: false,
+            error: '音声の再生に失敗しました。',
+          }));
+        });
     }
   };
 
@@ -261,7 +267,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       audio.pause();
       setPlayerState((prev) => ({ ...prev, isPlaying: false }));
     } else {
-      if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration)) {
+      if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration - 0.5)) {
         audio.currentTime = 0;
       }
       audio
@@ -285,7 +291,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const resume = () => {
     if (!audioRef.current || !playerState.currentRecording) return;
     const audio = audioRef.current;
-    if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration)) {
+
+    if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration - 0.5)) {
       audio.currentTime = 0;
     }
     audio
