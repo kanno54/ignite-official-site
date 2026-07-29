@@ -93,14 +93,26 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       }));
     };
 
+    const handlePlay = () => {
+      setPlayerState((prev) => ({ ...prev, isPlaying: true }));
+    };
+
+    const handlePause = () => {
+      setPlayerState((prev) => ({ ...prev, isPlaying: false }));
+    };
+
     audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('ended', handleEnded);
     audio.addEventListener('error', handleError);
+    audio.addEventListener('play', handlePlay);
+    audio.addEventListener('pause', handlePause);
 
     return () => {
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('error', handleError);
+      audio.removeEventListener('play', handlePlay);
+      audio.removeEventListener('pause', handlePause);
       audio.pause();
     };
   }, []);
@@ -243,29 +255,47 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   const togglePlay = () => {
     if (!audioRef.current || !playerState.currentRecording) return;
-    if (playerState.isPlaying) {
-      audioRef.current.pause();
+    const audio = audioRef.current;
+
+    if (playerState.isPlaying && !audio.paused) {
+      audio.pause();
       setPlayerState((prev) => ({ ...prev, isPlaying: false }));
     } else {
-      audioRef.current.play().then(() => {
-        setPlayerState((prev) => ({ ...prev, isPlaying: true }));
-      }).catch(() => {});
+      if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration)) {
+        audio.currentTime = 0;
+      }
+      audio
+        .play()
+        .then(() => {
+          setPlayerState((prev) => ({ ...prev, isPlaying: true }));
+        })
+        .catch(() => {
+          setPlayerState((prev) => ({ ...prev, isPlaying: false }));
+        });
     }
   };
 
   const pause = () => {
-    if (audioRef.current && playerState.isPlaying) {
+    if (audioRef.current) {
       audioRef.current.pause();
       setPlayerState((prev) => ({ ...prev, isPlaying: false }));
     }
   };
 
   const resume = () => {
-    if (audioRef.current && !playerState.isPlaying && playerState.currentRecording) {
-      audioRef.current.play().then(() => {
-        setPlayerState((prev) => ({ ...prev, isPlaying: true }));
-      }).catch(() => {});
+    if (!audioRef.current || !playerState.currentRecording) return;
+    const audio = audioRef.current;
+    if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration)) {
+      audio.currentTime = 0;
     }
+    audio
+      .play()
+      .then(() => {
+        setPlayerState((prev) => ({ ...prev, isPlaying: true }));
+      })
+      .catch(() => {
+        setPlayerState((prev) => ({ ...prev, isPlaying: false }));
+      });
   };
 
   const nextTrack = () => {
