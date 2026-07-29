@@ -32,7 +32,6 @@ jobs:
 
       - name: Build Production Output for Release
         env:
-          VITE_STAGING: 'true'
           VITE_SITE_URL: 'https://ignite-official.site'
         run: npm run build
 

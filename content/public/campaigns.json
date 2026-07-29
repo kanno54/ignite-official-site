@@ -1,7 +1,7 @@
 [
   {
     "id": "moonlit",
-    "status": "staging",
+    "status": "current",
     "releaseId": "moonlit",
     "releaseDate": "2023-05-20",
     "eyebrow": "4TH SINGLE / 2023.05.20 RELEASE",
@@ -31,7 +31,7 @@
   },
   {
     "id": "no-limits",
-    "status": "current",
+    "status": "archived",
     "releaseId": "no-limits",
     "releaseDate": "2022-09-14",
     "eyebrow": "3RD SINGLE / 2022.09.14 RELEASE",

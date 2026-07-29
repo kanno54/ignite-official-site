@@ -1,10 +1,10 @@
 {
   "siteUrl": "https://ignite-official.site",
   "canonicalUrl": "https://ignite-official.site",
-  "fictionalCurrentDate": "2022-09",
-  "currentCampaign": "NO_LIMITS",
-  "latestReleaseId": "no-limits",
-  "pickUpTrackId": "no-limits-title",
+  "fictionalCurrentDate": "2023-05",
+  "currentCampaign": "MOONLIT",
+  "latestReleaseId": "moonlit",
+  "pickUpTrackId": "moonlit-title",
   "group": {
     "name": "IGNITE",
     "japaneseName": "イグナイト",
@@ -31,15 +31,15 @@
     "success": "#58C998"
   },
   "campaignSkin": {
-    "campaign": "NO_LIMITS",
-    "accent": "#55A8FF",
-    "accentLight": "#CBE7FF",
-    "deep": "#101B2D",
+    "campaign": "MOONLIT",
+    "accent": "#4E8CFF",
+    "accentLight": "#D0E0FF",
+    "deep": "#0A1428",
     "white": "#F6F3ED",
     "onAccent": "#08111E",
-    "heroEyebrow": "3RD SINGLE",
-    "heroTitle": "NO LIMITS",
-    "heroCopy": "五つの声で、まだ見ぬ場所へ。",
+    "heroEyebrow": "4TH SINGLE",
+    "heroTitle": "MOONLIT",
+    "heroCopy": "月光の青い静寂と、切り裂くようなダンスビート。",
     "primaryCta": "LISTEN NOW",
     "secondaryCta": "VIEW RELEASE"
   },

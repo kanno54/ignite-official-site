@@ -87,12 +87,12 @@
         "higher-ground",
         "run-with-us-live"
       ],
-      "campaignState": "current",
+      "campaignState": "past",
       "publication": {
         "fictionalReleaseDate": "2022-09",
         "publishAt": "2022-09-14T00:00:00Z",
         "visibility": "public",
-        "campaignState": "current"
+        "campaignState": "past"
       }
     },
     {
@@ -110,12 +110,12 @@
         "between-the-lights",
         "afterimage-live"
       ],
-      "campaignState": "staging",
+      "campaignState": "current",
       "publication": {
         "fictionalReleaseDate": "2023-05",
         "publishAt": "2023-05-20T00:00:00Z",
         "visibility": "public",
-        "campaignState": "staging"
+        "campaignState": "current"
       }
     }
   ],

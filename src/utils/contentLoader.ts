@@ -13,14 +13,7 @@ export const isStagingEnv = (): boolean => {
 };
 
 export const getCampaigns = (): Campaign[] => {
-  const isStaging = isStagingEnv();
-  return (campaignsData as Campaign[]).map((c) => {
-    if (isStaging) {
-      if (c.id === 'moonlit') return { ...c, status: 'current' as const };
-      if (c.id === 'no-limits') return { ...c, status: 'archived' as const };
-    }
-    return c;
-  });
+  return campaignsData as Campaign[];
 };
 
 export const getCampaignById = (id: string): Campaign | undefined => {
@@ -34,29 +27,6 @@ export const getCurrentCampaign = (): Campaign => {
 };
 
 export const getSiteConfig = (): SiteConfig => {
-  const currentCamp = getCurrentCampaign();
-  if (currentCamp.id === 'moonlit') {
-    return {
-      ...(siteConfigData as SiteConfig),
-      fictionalCurrentDate: '2023-05',
-      currentCampaign: 'MOONLIT',
-      latestReleaseId: 'moonlit',
-      pickUpTrackId: 'moonlit-title',
-      campaignSkin: {
-        campaign: 'MOONLIT',
-        accent: '#4E8CFF',
-        accentLight: '#D0E0FF',
-        deep: '#0A1428',
-        white: '#F6F3ED',
-        onAccent: '#08111E',
-        heroEyebrow: '4TH SINGLE',
-        heroTitle: 'MOONLIT',
-        heroCopy: '月光の青い静寂と、切り裂くようなダンスビート。',
-        primaryCta: 'LISTEN NOW',
-        secondaryCta: 'VIEW RELEASE',
-      },
-    };
-  }
   return siteConfigData as SiteConfig;
 };
 
