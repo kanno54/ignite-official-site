@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { PlayerState, AudioContextType } from '../../types/audio';
-import { getRecordingById, getRecordingsForRelease, getRecordings } from '../../utils/contentLoader';
+import { getRecordingById, getRecordingsForRelease, getRecordings, getReleases, getAssetManifest } from '../../utils/contentLoader';
 
 const AudioContext = createContext<AudioContextType | null>(null);
 
@@ -105,22 +105,93 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
   }, []);
 
-  // Update Media Session API
+  // Update Media Session API metadata & action handlers
   useEffect(() => {
-    if ('mediaSession' in navigator && playerState.currentRecording) {
-      const rec = playerState.currentRecording;
-      navigator.mediaSession.metadata = new MediaMetadata({
-        title: `${rec.title} (${rec.versionLabel})`,
-        artist: 'IGNITE',
-        album: 'IGNITE Official Portal',
-      });
+    if (typeof window === 'undefined' || !('mediaSession' in navigator)) return;
 
-      navigator.mediaSession.setActionHandler('play', () => resume());
-      navigator.mediaSession.setActionHandler('pause', () => pause());
-      navigator.mediaSession.setActionHandler('nexttrack', () => nextTrack());
-      navigator.mediaSession.setActionHandler('previoustrack', () => previousTrack());
+    if (!playerState.currentRecording) {
+      navigator.mediaSession.metadata = null;
+      return;
+    }
+
+    const rec = playerState.currentRecording;
+    const release = getReleases().find((r) => r.id === rec.releaseId);
+    const albumTitle = release ? release.title : 'IGNITE Official Site';
+
+    const manifest = getAssetManifest();
+    let relativeImagePath = '/assets/images/hero-no-limits-desktop.webp';
+
+    if (rec.posterAssetId && manifest.images[rec.posterAssetId as keyof typeof manifest.images]) {
+      relativeImagePath = manifest.images[rec.posterAssetId as keyof typeof manifest.images].path;
+    } else if (release?.coverAssetId && manifest.images[release.coverAssetId as keyof typeof manifest.images]) {
+      relativeImagePath = manifest.images[release.coverAssetId as keyof typeof manifest.images].path;
+    }
+
+    const origin = window.location.origin;
+    const absoluteImageUrl = relativeImagePath.startsWith('http')
+      ? relativeImagePath
+      : `${origin}${relativeImagePath}`;
+
+    const mimeType = absoluteImageUrl.endsWith('.png') ? 'image/png' : 'image/webp';
+
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: `${rec.title} (${rec.versionLabel})`,
+      artist: 'IGNITE',
+      album: albumTitle,
+      artwork: [
+        { src: absoluteImageUrl, sizes: '512x512', type: mimeType },
+        { src: absoluteImageUrl, sizes: '300x300', type: mimeType },
+        { src: absoluteImageUrl, sizes: '192x192', type: mimeType },
+        { src: absoluteImageUrl, sizes: '96x96', type: mimeType },
+      ],
+    });
+
+    const actionHandlers: [MediaSessionAction, MediaSessionActionHandler][] = [
+      ['play', () => resume()],
+      ['pause', () => pause()],
+      ['nexttrack', () => nextTrack()],
+      ['previoustrack', () => previousTrack()],
+      [
+        'seekto',
+        (details) => {
+          if (details.seekTime !== undefined) {
+            seek(details.seekTime);
+          }
+        },
+      ],
+    ];
+
+    for (const [action, handler] of actionHandlers) {
+      try {
+        navigator.mediaSession.setActionHandler(action, handler);
+      } catch (e) {
+        // Ignore unsupported action types
+      }
     }
   }, [playerState.currentRecording]);
+
+  // Update Media Session playbackState & positionState
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('mediaSession' in navigator)) return;
+
+    try {
+      navigator.mediaSession.playbackState = playerState.isPlaying ? 'playing' : 'paused';
+    } catch (e) {
+      // Ignore
+    }
+
+    if ('setPositionState' in navigator.mediaSession && audioRef.current && playerState.duration > 0) {
+      try {
+        navigator.mediaSession.setPositionState({
+          duration: playerState.duration,
+          playbackRate: audioRef.current.playbackRate || 1,
+          position: playerState.currentTime,
+        });
+      } catch (e) {
+        // Ignore
+      }
+    }
+  }, [playerState.isPlaying, playerState.currentTime, playerState.duration]);
 
   const playTrack = (recordingId: string, customQueue?: string[], context: PlayerState['queueContext'] = 'manual') => {
     const recording = getRecordingById(recordingId);
