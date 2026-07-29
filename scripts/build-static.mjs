@@ -84,13 +84,26 @@ for (const route of routes) {
     routeTitle = 'JUKEBOX & EMBER DIGITAL PASS | IGNITE Official Portal';
   }
 
-  let customizedHtml = baseHtml.replace(
-    /<title>.*?<\/title>/,
-    `<title>${routeTitle}</title>`
-  );
+  const timestamp = Date.now();
+  let customizedHtml = baseHtml
+    .replace(/<title>.*?<\/title>/, `<title>${routeTitle}</title>`)
+    .replace('src="/assets/index.js"', `src="/assets/index.js?v=${timestamp}"`)
+    .replace('href="/assets/index.css"', `href="/assets/index.css?v=${timestamp}"`);
 
   fs.writeFileSync(targetPath, customizedHtml, 'utf8');
   console.log(`  Generated: ${targetPath.replace(distDir, 'dist')}`);
 }
+
+// 4. Create production .htaccess to prevent stale JS/HTML browser caching
+const prodHtaccess = `<IfModule mod_headers.c>
+  <FilesMatch "\\.(html|htm|js|css)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+`;
+fs.writeFileSync(path.join(distDir, '.htaccess'), prodHtaccess, 'utf8');
+console.log('  ✔ Created production .htaccess with Cache-Control no-cache');
 
 console.log(`✔ Static pre-rendering completed for ${routes.length} routes!`);
