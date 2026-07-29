@@ -124,10 +124,14 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   // Update Media Session API metadata & action handlers with JPG lockscreen artwork
   useEffect(() => {
-    if (typeof window === 'undefined' || !('mediaSession' in navigator)) return;
+    if (typeof window === 'undefined' || !('mediaSession' in navigator) || typeof window.MediaMetadata === 'undefined') return;
 
     if (!playerState.currentRecording) {
-      navigator.mediaSession.metadata = null;
+      try {
+        navigator.mediaSession.metadata = null;
+      } catch (e) {
+        // Ignore
+      }
       return;
     }
 
@@ -149,17 +153,21 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const fullJpgUrl = jpgImagePath.startsWith('http') ? jpgImagePath : `${origin}${jpgImagePath}`;
     const fullWebpUrl = relativeImagePath.startsWith('http') ? relativeImagePath : `${origin}${relativeImagePath}`;
 
-    navigator.mediaSession.metadata = new MediaMetadata({
-      title: `${rec.title} (${rec.versionLabel})`,
-      artist: 'IGNITE',
-      album: albumTitle,
-      artwork: [
-        { src: fullJpgUrl, sizes: '512x512', type: 'image/jpeg' },
-        { src: fullJpgUrl, sizes: '300x300', type: 'image/jpeg' },
-        { src: fullJpgUrl, sizes: '192x192', type: 'image/jpeg' },
-        { src: fullWebpUrl, sizes: '512x512', type: 'image/webp' },
-      ],
-    });
+    try {
+      navigator.mediaSession.metadata = new window.MediaMetadata({
+        title: `${rec.title} (${rec.versionLabel})`,
+        artist: 'IGNITE',
+        album: albumTitle,
+        artwork: [
+          { src: fullJpgUrl, sizes: '512x512', type: 'image/jpeg' },
+          { src: fullJpgUrl, sizes: '300x300', type: 'image/jpeg' },
+          { src: fullJpgUrl, sizes: '192x192', type: 'image/jpeg' },
+          { src: fullWebpUrl, sizes: '512x512', type: 'image/webp' },
+        ],
+      });
+    } catch (e) {
+      console.warn('Failed to construct MediaMetadata:', e);
+    }
 
     const actionHandlers: [MediaSessionAction, MediaSessionActionHandler][] = [
       ['play', () => resume()],
