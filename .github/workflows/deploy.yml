@@ -96,7 +96,7 @@ jobs:
           set net:max-retries 2
           open -u "$FTP_USER","$FTP_PASS" "$FTP_HOST"
           cd "$CHOSEN_DIR"
-          mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
+          mirror -R --delete --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
           quit
           EOF
 

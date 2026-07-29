@@ -18,9 +18,16 @@ const stagingRobotsTxt = `User-agent: *\nDisallow: /\n`;
 fs.writeFileSync(path.join(distDir, 'robots.txt'), stagingRobotsTxt, 'utf8');
 console.log('  ✔ Created staging robots.txt (Disallow: /)');
 
-// 2. Create Staging .htaccess with X-Robots-Tag and Basic Auth Guide
+// 2. Create Staging .htaccess with X-Robots-Tag, No-Cache headers, and Security settings
 const stagingHtaccess = `# Staging Security & Search Engine Blocking
 Header set X-Robots-Tag "noindex, nofollow"
+
+# Disable Browser Caching for Instant Staging Updates
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</IfModule>
 
 # Basic Authentication (Optional / Onamae.com Setup)
 # AuthType Basic
@@ -29,7 +36,7 @@ Header set X-Robots-Tag "noindex, nofollow"
 # Require valid-user
 `;
 fs.writeFileSync(path.join(distDir, '.htaccess'), stagingHtaccess, 'utf8');
-console.log('  ✔ Created staging .htaccess with X-Robots-Tag: noindex, nofollow');
+console.log('  ✔ Created staging .htaccess with no-cache & X-Robots-Tag');
 
 // 3. Recursively inject noindex meta tags and [STAGING] titles into HTML files
 function processDirectory(dirPath) {
