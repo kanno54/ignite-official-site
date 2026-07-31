@@ -1,5 +1,15 @@
 {
   "images": {
+    "ignite-logo-full": {
+      "path": "/assets/images/ignite-logo-full.svg",
+      "status": "ready",
+      "aspect": "4:1"
+    },
+    "ignite-logo-symbol": {
+      "path": "/assets/images/ignite-logo-symbol.svg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
     "hero-no-limits-desktop": {
       "path": "/assets/images/hero-no-limits-desktop.webp",
       "status": "ready",
