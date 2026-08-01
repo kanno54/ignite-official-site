@@ -220,6 +220,23 @@ export type Campaign = {
       url: string;
     };
   };
+  vocalFocus?: {
+    eyebrow: string;
+    heading: string;
+    subtitle?: string;
+    yuto: {
+      label: string;
+      body: string;
+    };
+    ren: {
+      label: string;
+      body: string;
+    };
+    link?: {
+      text: string;
+      url: string;
+    };
+  };
   memberRoles?: {
     eyebrow: string;
     heading: string;

@@ -14,6 +14,14 @@ export const CampaignDetailPage: React.FC = () => {
   React.useEffect(() => {
     if (campaign) {
       document.title = `${campaign.title}｜Campaign Archive｜IGNITE Official Site`;
+      const canonicalEl = document.querySelector("link[rel='canonical']");
+      if (canonicalEl) {
+        canonicalEl.setAttribute('href', `https://ignite-official.site/campaigns/${campaign.slug || campaign.id}/`);
+      }
+      const ogUrlEl = document.querySelector("meta[property='og:url']");
+      if (ogUrlEl) {
+        ogUrlEl.setAttribute('content', `https://ignite-official.site/campaigns/${campaign.slug || campaign.id}/`);
+      }
     }
   }, [campaign]);
 
@@ -207,6 +215,87 @@ export const CampaignDetailPage: React.FC = () => {
           </section>
         )}
 
+        {/* PERFORMANCE FOCUS Section */}
+        {campaign.focusSection && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              {campaign.focusSection.eyebrow}
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#F6F3ED', margin: '12px 0 6px' }}>
+              {campaign.focusSection.heading}
+            </h2>
+            {campaign.focusSection.subtitle && (
+              <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: campaign.campaignColors.accent, margin: '0 0 16px' }}>
+                {campaign.focusSection.subtitle}
+              </p>
+            )}
+            <p style={{ fontSize: '1.02rem', color: '#AEB6C4', lineHeight: 1.8, margin: 0, whiteSpace: 'pre-line' }}>
+              {campaign.focusSection.body}
+            </p>
+            {campaign.focusSection.link && (
+              <div style={{ marginTop: '20px', borderTop: '1px solid var(--color-border)', paddingTop: '16px' }}>
+                <Link
+                  to={campaign.focusSection.link.url}
+                  style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: campaign.campaignColors.accent, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                >
+                  {campaign.focusSection.link.text}
+                </Link>
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* VOCAL FOCUS Section (2 Vocals: YUTO & REN) */}
+        {campaign.vocalFocus && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              {campaign.vocalFocus.eyebrow}
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#F6F3ED', margin: '12px 0 6px' }}>
+              {campaign.vocalFocus.heading}
+            </h2>
+            {campaign.vocalFocus.subtitle && (
+              <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: campaign.campaignColors.accent, margin: '0 0 20px' }}>
+                {campaign.vocalFocus.subtitle}
+              </p>
+            )}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+              <div style={{ backgroundColor: 'var(--color-surface-elevated)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: '#F6F3ED', fontWeight: 900 }}>
+                  YUTO
+                </span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: campaign.campaignColors.accent, display: 'block', margin: '4px 0 12px', fontWeight: 700 }}>
+                  {campaign.vocalFocus.yuto.label}
+                </span>
+                <p style={{ fontSize: '0.92rem', color: '#AEB6C4', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+                  {campaign.vocalFocus.yuto.body}
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: 'var(--color-surface-elevated)', border: `1px solid ${campaign.campaignColors.accent}`, padding: '24px', borderRadius: '4px' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: '1.2rem', color: '#F6F3ED', fontWeight: 900 }}>
+                  REN
+                </span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: campaign.campaignColors.accent, display: 'block', margin: '4px 0 12px', fontWeight: 700 }}>
+                  {campaign.vocalFocus.ren.label}
+                </span>
+                <p style={{ fontSize: '0.92rem', color: '#AEB6C4', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+                  {campaign.vocalFocus.ren.body}
+                </p>
+              </div>
+            </div>
+            {campaign.vocalFocus.link && (
+              <div style={{ marginTop: '20px', borderTop: '1px solid var(--color-border)', paddingTop: '16px' }}>
+                <Link
+                  to={campaign.vocalFocus.link.url}
+                  style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: campaign.campaignColors.accent, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                >
+                  {campaign.vocalFocus.link.text}
+                </Link>
+              </div>
+            )}
+          </section>
+        )}
 
         {/* INDIES vs MAJOR Version Comparison Section */}
         {campaign.comparison && (
