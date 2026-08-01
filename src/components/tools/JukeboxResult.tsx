@@ -12,8 +12,13 @@ type Props = {
 };
 
 export const JukeboxResult: React.FC<Props> = ({ recording, reason, onReset }) => {
-  const release = getReleaseBySlug(recording.releaseId);
-  const { playTrack } = useAudio();
+  const { playerState, playTrack } = useAudio();
+
+  // Dynamically synchronize with playerState.currentRecording when in jukebox queueContext
+  const isJukeboxActive = playerState.queueContext === 'jukebox' && playerState.currentRecording;
+  const displayRecording = isJukeboxActive ? playerState.currentRecording! : recording;
+  const release = getReleaseBySlug(displayRecording.releaseId);
+  const isOriginalTrack = displayRecording.id === recording.id;
 
   const handleShuffleAll = () => {
     const allRecordings = getRecordings().filter((r) => r.audioStatus === 'ready');
@@ -40,31 +45,41 @@ export const JukeboxResult: React.FC<Props> = ({ recording, reason, onReset }) =
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'center' }}>
         <div style={{ width: '130px', flexShrink: 0, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
           <ResponsivePicture
-            assetId={recording.posterAssetId || release?.coverAssetId || 'hero-no-limits-desktop'}
-            title={recording.title}
+            assetId={displayRecording.posterAssetId || release?.coverAssetId || 'hero-no-limits-desktop'}
+            title={displayRecording.title}
             aspectRatio="3:4"
           />
         </div>
 
         <div style={{ flex: 1, minWidth: '240px' }}>
-          <span className="campaign-tag" style={{ marginBottom: '8px' }}>
-            JUKEBOX RECOMMENDATION
-          </span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+            <span className="campaign-tag">
+              {isOriginalTrack ? 'JUKEBOX RECOMMENDATION' : 'JUKEBOX NOW PLAYING'}
+            </span>
+            {playerState.isPlaying && isJukeboxActive && (
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)', fontWeight: 700 }}>
+                ● NOW PLAYING
+              </span>
+            )}
+          </div>
+
           <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.8rem', fontWeight: 700, margin: '4px 0', color: '#F6F3ED' }}>
-            {recording.title}
+            {displayRecording.title}
           </h3>
           <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.9rem', color: 'var(--campaign-accent)', margin: 0 }}>
-            {recording.versionLabel} — {release?.title}
+            {displayRecording.versionLabel} — {release?.title}
           </p>
 
           <p style={{ fontSize: '0.9rem', color: '#AEB6C4', marginTop: '12px', lineHeight: 1.6 }}>
-            {reason}
+            {isOriginalTrack
+              ? reason
+              : `JUKEBOX 連続再生中（${playerState.queueIndex + 1} / ${playerState.queue.length} 曲目）。${reason}`}
           </p>
         </div>
       </div>
 
       <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
-        <TrackPlayButton recordingId={recording.id} size="large" />
+        <TrackPlayButton recordingId={displayRecording.id} size="large" />
         <button onClick={handleShuffleAll} className="btn-secondary" style={{ backgroundColor: 'var(--campaign-deep)', borderColor: 'var(--campaign-accent)' }}>
           🎲 SHUFFLE ALL {getRecordings().filter((r) => r.audioStatus === 'ready').length} TRACKS
         </button>
