@@ -47,6 +47,7 @@ export const TopPage: React.FC = () => {
             mobileSrc={currentCampaign.mobileHero}
             alt={currentCampaign.title}
             aspectRatio="16:9"
+            mobileAspectRatio="3:4"
           />
         </div>
 

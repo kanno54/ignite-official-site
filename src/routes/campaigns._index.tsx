@@ -32,12 +32,13 @@ export const CampaignsIndex: React.FC = () => {
               flexDirection: 'column',
             }}
           >
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', backgroundColor: camp.campaignColors.deep }}>
+            <div style={{ position: 'relative', width: '100%', backgroundColor: camp.campaignColors.deep }}>
               <ResponsivePicture
                 desktopSrc={camp.desktopHero}
                 mobileSrc={camp.mobileHero}
                 alt={camp.title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                aspectRatio="16:9"
+                mobileAspectRatio="3:4"
               />
               <div
                 style={{

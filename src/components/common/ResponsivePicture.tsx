@@ -9,6 +9,7 @@ type Props = {
   subtitle?: string;
   alt?: string;
   aspectRatio?: '16:9' | '3:4' | '1:1' | '4:5' | '3:2';
+  mobileAspectRatio?: '16:9' | '3:4' | '1:1' | '4:5' | '3:2';
   accentColor?: string;
   className?: string;
   mobileAssetId?: string;
@@ -23,6 +24,7 @@ export const ResponsivePicture: React.FC<Props> = ({
   subtitle,
   alt,
   aspectRatio = '16:9',
+  mobileAspectRatio,
   accentColor = '#55A8FF',
   className = '',
   mobileAssetId,
@@ -31,6 +33,8 @@ export const ResponsivePicture: React.FC<Props> = ({
   style,
 }) => {
   const [hasError, setHasError] = useState(false);
+  const rawId = React.useId();
+  const instanceClass = `rp-${rawId.replace(/[^a-zA-Z0-9_-]/g, '')}`;
   const manifest = getAssetManifest() as any;
 
   const desktopAsset = desktopSrc
@@ -57,8 +61,8 @@ export const ResponsivePicture: React.FC<Props> = ({
     );
   }
 
-  const getPaddingTop = () => {
-    switch (aspectRatio) {
+  const getPaddingTopVal = (ratioStr: string) => {
+    switch (ratioStr) {
       case '16:9': return '56.25%';
       case '3:4': return '133.33%';
       case '1:1': return '100%';
@@ -68,10 +72,13 @@ export const ResponsivePicture: React.FC<Props> = ({
     }
   };
 
+  const desktopPadding = getPaddingTopVal(aspectRatio);
+  const effectiveMobileRatio = mobileAspectRatio || (mobileAsset ? '3:4' : aspectRatio);
+  const mobilePadding = getPaddingTopVal(effectiveMobileRatio);
+
   const containerStyle: React.CSSProperties = {
     position: 'relative',
     width: '100%',
-    paddingTop: getPaddingTop(),
     backgroundColor: '#11151D',
     borderRadius: '2px',
     overflow: 'hidden',
@@ -100,27 +107,39 @@ export const ResponsivePicture: React.FC<Props> = ({
   const displayAlt = alt || title;
 
   return (
-    <div
-      className={`responsive-picture ${className}`}
-      style={containerStyle}
-      onContextMenu={protectedMediaProps.onContextMenu}
-      onDragStart={protectedMediaProps.onDragStart}
-    >
-      <picture style={{ width: '100%', height: '100%', display: 'block' }}>
-        {mobileAsset && mobileAsset.status === 'ready' && (
-          <source media="(max-width: 768px)" srcSet={mobileAsset.path} type={getImageType(mobileAsset.path)} />
-        )}
-        <source srcSet={desktopAsset.path} type={getImageType(desktopAsset.path)} />
-        <img
-          src={desktopAsset.path}
-          alt={displayAlt}
-          onError={() => setHasError(true)}
-          draggable={false}
-          style={imgStyle}
-          onContextMenu={protectedMediaProps.onContextMenu}
-          onDragStart={protectedMediaProps.onDragStart}
-        />
-      </picture>
-    </div>
+    <>
+      <style>{`
+        .${instanceClass} {
+          padding-top: ${mobilePadding};
+        }
+        @media (min-width: 769px) {
+          .${instanceClass} {
+            padding-top: ${desktopPadding};
+          }
+        }
+      `}</style>
+      <div
+        className={`responsive-picture ${instanceClass} ${className}`}
+        style={containerStyle}
+        onContextMenu={protectedMediaProps.onContextMenu}
+        onDragStart={protectedMediaProps.onDragStart}
+      >
+        <picture style={{ width: '100%', height: '100%', display: 'block' }}>
+          {mobileAsset && mobileAsset.status === 'ready' && (
+            <source media="(max-width: 768px)" srcSet={mobileAsset.path} type={getImageType(mobileAsset.path)} />
+          )}
+          <source srcSet={desktopAsset.path} type={getImageType(desktopAsset.path)} />
+          <img
+            src={desktopAsset.path}
+            alt={displayAlt}
+            onError={() => setHasError(true)}
+            draggable={false}
+            style={imgStyle}
+            onContextMenu={protectedMediaProps.onContextMenu}
+            onDragStart={protectedMediaProps.onDragStart}
+          />
+        </picture>
+      </div>
+    </>
   );
 };
