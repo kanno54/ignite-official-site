@@ -39,8 +39,6 @@ export interface ScrollDepthParams {
 const CONSENT_STORAGE_KEY = 'ignite_analytics_consent';
 let googleTagScriptInserted = false;
 let googleTagConfigured = false;
-let lastPageViewParams: PageViewParams | null = null;
-let lastSentPageViewKey: string | null = null;
 
 export const getAnalyticsMeasurementId = (): string => {
   return import.meta.env.VITE_GA_MEASUREMENT_ID || '';
@@ -113,7 +111,6 @@ export const setAnalyticsConsent = (status: 'granted' | 'denied') => {
     }
 
     loadGoogleTag();
-    flushPageViewOnConsentGrant();
   } else {
     disableGoogleTagWindowFlag();
     if (window.gtag) {
@@ -122,6 +119,9 @@ export const setAnalyticsConsent = (status: 'granted' | 'denied') => {
       });
     }
   }
+
+  // Notify application components of consent status change
+  window.dispatchEvent(new CustomEvent('ignite:analytics-consent-changed'));
 };
 
 export const loadGoogleTag = () => {
@@ -153,44 +153,10 @@ export const loadGoogleTag = () => {
   }
 };
 
-const getPathKey = (pageLocation: string): string => {
-  try {
-    const urlObj = new URL(pageLocation);
-    return urlObj.pathname;
-  } catch (e) {
-    return pageLocation;
-  }
-};
-
-export const flushPageViewOnConsentGrant = () => {
-  if (!isAnalyticsEnabledEnv() || getAnalyticsConsent() !== 'granted') return;
-  if (typeof window === 'undefined') return;
-
-  ensureGtagInitialized();
-
-  const currentUrl = window.location.href;
-  const currentTitle = document.title;
-
-  const paramsToSend: PageViewParams = lastPageViewParams
-    ? { ...lastPageViewParams, page_location: currentUrl, page_title: currentTitle }
-    : {
-        page_location: currentUrl,
-        page_title: currentTitle,
-        page_type: 'general',
-      };
-
-  const pathKey = getPathKey(paramsToSend.page_location);
-
-  if (lastSentPageViewKey === pathKey) return;
-
-  if (typeof window.gtag === 'function') {
-    window.gtag('event', 'page_view', paramsToSend);
-    lastSentPageViewKey = pathKey;
-  }
-};
-
-export const trackPageView = (params: PageViewParams) => {
-  lastPageViewParams = params;
+/**
+ * Single-sourced helper used EXCLUSIVELY by PageViewTracker
+ */
+export const sendPageViewEvent = (params: PageViewParams) => {
   if (!isAnalyticsEnabledEnv() || getAnalyticsConsent() !== 'granted') return;
 
   const measurementId = getAnalyticsMeasurementId();
@@ -198,12 +164,8 @@ export const trackPageView = (params: PageViewParams) => {
 
   ensureGtagInitialized();
 
-  const pathKey = getPathKey(params.page_location);
-  if (lastSentPageViewKey === pathKey) return;
-
-  if (typeof window.gtag === 'function') {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     window.gtag('event', 'page_view', params);
-    lastSentPageViewKey = pathKey;
   }
 };
 
@@ -215,7 +177,7 @@ export const trackEvent = (eventName: string, params: Record<string, any> = {}) 
 
   ensureGtagInitialized();
 
-  if (typeof window.gtag === 'function') {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     window.gtag('event', eventName, params);
   }
 };

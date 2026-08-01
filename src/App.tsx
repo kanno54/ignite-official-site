@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AudioProvider } from './components/audio/AudioProvider';
 import { SiteHeader } from './components/common/SiteHeader';
@@ -22,7 +22,7 @@ import { AccessibilityPage } from './routes/accessibility';
 import { NotFoundPage } from './routes/404';
 import { getCurrentCampaign, isStagingEnv } from './utils/contentLoader';
 import { ConsentBanner } from './components/common/ConsentBanner';
-import { loadGoogleTag, trackPageView, trackScrollDepth } from './utils/analytics';
+import { loadGoogleTag, sendPageViewEvent, trackScrollDepth, getAnalyticsConsent, isAnalyticsEnabledEnv, ConsentStatus } from './utils/analytics';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -34,8 +34,21 @@ const ScrollToTop: React.FC = () => {
 
 const AnalyticsTracker: React.FC = () => {
   const { pathname } = useLocation();
+  const [consentStatus, setConsentStatus] = useState<ConsentStatus>(() => getAnalyticsConsent());
 
   useEffect(() => {
+    const handleConsentChange = () => {
+      setConsentStatus(getAnalyticsConsent());
+    };
+    window.addEventListener('ignite:analytics-consent-changed', handleConsentChange);
+    return () => {
+      window.removeEventListener('ignite:analytics-consent-changed', handleConsentChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isAnalyticsEnabledEnv() || consentStatus !== 'granted') return;
+
     loadGoogleTag();
 
     let page_type = 'general';
@@ -68,16 +81,14 @@ const AnalyticsTracker: React.FC = () => {
       page_type = 'privacy';
     }
 
-    const timer = setTimeout(() => {
-      trackPageView({
-        page_location: window.location.href,
-        page_title: document.title,
-        page_type,
-        content_id,
-        campaign_id,
-        release_id,
-      });
-    }, 100);
+    sendPageViewEvent({
+      page_location: window.location.href,
+      page_title: document.title,
+      page_type,
+      content_id,
+      campaign_id,
+      release_id,
+    });
 
     const trackedMilestones = { 25: false, 50: false, 75: false, 90: false };
 
@@ -102,10 +113,9 @@ const AnalyticsTracker: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
-      clearTimeout(timer);
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [pathname]);
+  }, [pathname, consentStatus]);
 
   return <ConsentBanner />;
 };
