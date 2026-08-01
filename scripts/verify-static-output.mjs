@@ -8,6 +8,8 @@ const distDir = path.resolve(__dirname, '../dist');
 
 console.log('--- VERIFYING STATIC OUTPUT ROUTES ---');
 
+const isStagingBuild = process.env.VITE_STAGING === 'true';
+
 const expectedFiles = [
   'index.html',
   '404.html',
@@ -24,11 +26,11 @@ const expectedFiles = [
   'discography/no-limits/index.html',
   'discography/moonlit/index.html',
   'campaigns/index.html',
-  'campaigns/firestarter/index.html',
+  ...(isStagingBuild ? ['campaigns/firestarter/index.html'] : []),
   'campaigns/no-limits/index.html',
   'campaigns/moonlit/index.html',
   'features/index.html',
-  'features/archive-firestarter-leo-one-day-ahead/index.html',
+  ...(isStagingBuild ? ['features/archive-firestarter-leo-one-day-ahead/index.html'] : []),
   'features/no-limits-interview/index.html',
   'features/ren-moonlit-interview/index.html',
   'features/between-the-lights-story/index.html',

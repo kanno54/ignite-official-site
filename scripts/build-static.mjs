@@ -16,6 +16,8 @@ if (!fs.existsSync(indexHtmlPath)) {
 
 const baseHtml = fs.readFileSync(indexHtmlPath, 'utf8');
 
+const isStagingBuild = process.env.VITE_STAGING === 'true';
+
 // Known routes to prerender
 const routes = [
   '/',
@@ -32,11 +34,11 @@ const routes = [
   '/discography/no-limits/',
   '/discography/moonlit/',
   '/campaigns/',
-  '/campaigns/firestarter/',
+  ...(isStagingBuild ? ['/campaigns/firestarter/'] : []),
   '/campaigns/no-limits/',
   '/campaigns/moonlit/',
   '/features/',
-  '/features/archive-firestarter-leo-one-day-ahead/',
+  ...(isStagingBuild ? ['/features/archive-firestarter-leo-one-day-ahead/'] : []),
   '/features/no-limits-interview/',
   '/features/ren-moonlit-interview/',
   '/features/between-the-lights-story/',

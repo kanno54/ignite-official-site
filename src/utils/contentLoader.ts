@@ -13,15 +13,22 @@ export const isStagingEnv = (): boolean => {
 };
 
 export const getCampaigns = (): Campaign[] => {
-  return campaignsData as Campaign[];
+  const isStaging = isStagingEnv();
+  return (campaignsData as Campaign[]).filter((c) => {
+    if (c.status === 'staging' && !isStaging) return false;
+    return true;
+  });
 };
 
 export const getCampaignById = (id: string): Campaign | undefined => {
-  return getCampaigns().find((c) => c.id === id);
+  const c = (campaignsData as Campaign[]).find((camp) => camp.id === id);
+  if (!c) return undefined;
+  if (c.status === 'staging' && !isStagingEnv()) return undefined;
+  return c;
 };
 
 export const getCurrentCampaign = (): Campaign => {
-  const campaigns = getCampaigns();
+  const campaigns = campaignsData as Campaign[];
   const current = campaigns.find((c) => c.status === 'current');
   return current || campaigns[0];
 };
@@ -54,8 +61,7 @@ export const getReleaseBySlug = (slug: string): Release | undefined => {
   const release = (discographyData.releases as Release[]).find((r) => r.slug === slug);
   if (!release || release.publication.visibility !== 'public') return undefined;
   if (release.publication.campaignState === 'staging' && !isStagingEnv()) {
-    // In production, allow direct access if requested, or restrict based on requirement
-    return release;
+    return undefined;
   }
   return release;
 };
@@ -77,13 +83,21 @@ export const getRecordingsForRelease = (releaseId: string): Recording[] => {
 };
 
 export const getArticles = (): Article[] => {
-  return (articlesData as Article[]).filter(
-    (a) => a.publication.visibility === 'public' && a.publication.campaignState !== 'future'
-  );
+  const isStaging = isStagingEnv();
+  return (articlesData as Article[]).filter((a) => {
+    if (a.publication.visibility !== 'public') return false;
+    if (a.publication.campaignState === 'future') return false;
+    if (a.publication.campaignState === 'staging' && !isStaging) return false;
+    return true;
+  });
 };
 
 export const getArticleBySlug = (slug: string): Article | undefined => {
-  return getArticles().find((a) => a.slug === slug);
+  const a = (articlesData as Article[]).find((art) => art.slug === slug);
+  if (!a || a.publication.visibility !== 'public') return undefined;
+  if (a.publication.campaignState === 'staging' && !isStagingEnv()) return undefined;
+  if (a.publication.campaignState === 'future') return undefined;
+  return a;
 };
 
 export const getNews = (): NewsItem[] => {

@@ -29,7 +29,7 @@
       "fictionalReleaseDate": "2026-08-01",
       "publishAt": "2026-08-01T00:00:00Z",
       "visibility": "public",
-      "campaignState": "past"
+      "campaignState": "staging"
     },
     "specialStory": {
       "kicker": "SPECIAL STORY",
