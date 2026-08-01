@@ -38,7 +38,7 @@ export const FeaturesIndex: React.FC = () => {
 
             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '8px' }}>
-                  <span className="campaign-tag" style={art.kicker.includes('ARCHIVE') ? { backgroundColor: '#F4C34E', color: '#08111E', fontWeight: 700 } : {}}>
+                  <span className="campaign-tag">
                     {art.kicker}
                   </span>
                   {art.eraLabel && (
@@ -54,7 +54,10 @@ export const FeaturesIndex: React.FC = () => {
                   {art.dek}
                 </p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)' }}>
-                <span>Published {art.publishDateFull} — {art.readingTimeMinutes} MIN READ</span>
+                <span>
+                  {!art.publishDateFull.startsWith('2026') ? `${art.publishDateFull} — ` : art.storyDateFull ? `STORY ${art.storyDateFull} — ` : ''}
+                  {art.readingTimeMinutes} MIN READ
+                </span>
                 <div style={{ display: 'flex', gap: '4px' }}>
                   {art.mainSpeakerIds.map((sId) => {
                     const m = getMemberBySlug(sId);

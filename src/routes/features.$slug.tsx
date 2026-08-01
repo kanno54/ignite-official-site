@@ -29,7 +29,7 @@ export const ArticleDetailPage: React.FC = () => {
       {/* Header */}
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '12px' }}>
-          <span className="campaign-tag" style={article.kicker.includes('ARCHIVE') ? { backgroundColor: '#F4C34E', color: '#08111E', fontWeight: 700 } : {}}>
+          <span className="campaign-tag">
             {article.kicker}
           </span>
           {article.eraLabel && (
@@ -47,7 +47,9 @@ export const ArticleDetailPage: React.FC = () => {
           </p>
         )}
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)' }}>
-          <span>PUBLISHED: {article.publishDateFull}</span>
+          {!article.publishDateFull.startsWith('2026') && (
+            <span>PUBLISHED: {article.publishDateFull}</span>
+          )}
           {article.storyDateFull && <span>STORY: {article.storyDateFull}</span>}
           <span>READING TIME: {article.readingTimeMinutes} MIN</span>
         </div>
