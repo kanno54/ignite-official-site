@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getArticles, getMemberBySlug } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
+import { trackFeatureOpen } from '../utils/analytics';
 
 export const FeaturesIndex: React.FC = () => {
   const articles = getArticles();
@@ -24,6 +25,7 @@ export const FeaturesIndex: React.FC = () => {
           <Link
             key={art.id}
             to={`/features/${art.slug}/`}
+            onClick={() => trackFeatureOpen({ feature_id: art.slug, source: 'features_index_card' })}
             style={{
               backgroundColor: 'var(--color-surface)',
               border: '1px solid var(--color-border)',

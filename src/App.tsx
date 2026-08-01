@@ -21,6 +21,8 @@ import { PrivacyPage } from './routes/privacy';
 import { AccessibilityPage } from './routes/accessibility';
 import { NotFoundPage } from './routes/404';
 import { getCurrentCampaign, isStagingEnv } from './utils/contentLoader';
+import { ConsentBanner } from './components/common/ConsentBanner';
+import { loadGoogleTag, trackPageView, trackScrollDepth } from './utils/analytics';
 
 const ScrollToTop: React.FC = () => {
   const { pathname } = useLocation();
@@ -28,6 +30,84 @@ const ScrollToTop: React.FC = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return null;
+};
+
+const AnalyticsTracker: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    loadGoogleTag();
+
+    let page_type = 'general';
+    let content_id: string | undefined = undefined;
+    let campaign_id: string | undefined = undefined;
+    let release_id: string | undefined = undefined;
+
+    const parts = pathname.split('/').filter(Boolean);
+    if (parts.length === 0) {
+      page_type = 'home';
+    } else if (parts[0] === 'campaigns') {
+      page_type = 'campaign';
+      content_id = parts[1] || 'archive';
+      campaign_id = parts[1];
+    } else if (parts[0] === 'features') {
+      page_type = 'feature';
+      content_id = parts[1] || 'index';
+    } else if (parts[0] === 'discography') {
+      page_type = 'discography';
+      content_id = parts[1] || 'index';
+      release_id = parts[1];
+    } else if (parts[0] === 'members') {
+      page_type = 'member';
+      content_id = parts[1] || 'index';
+    } else if (parts[0] === 'story') {
+      page_type = 'story';
+    } else if (parts[0] === 'fun') {
+      page_type = 'fun';
+    } else if (parts[0] === 'privacy') {
+      page_type = 'privacy';
+    }
+
+    const timer = setTimeout(() => {
+      trackPageView({
+        page_location: window.location.href,
+        page_title: document.title,
+        page_type,
+        content_id,
+        campaign_id,
+        release_id,
+      });
+    }, 100);
+
+    const trackedMilestones = { 25: false, 50: false, 75: false, 90: false };
+
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) return;
+      const scrollPercent = (window.scrollY / scrollHeight) * 100;
+
+      const milestones: (25 | 50 | 75 | 90)[] = [25, 50, 75, 90];
+      for (const m of milestones) {
+        if (scrollPercent >= m && !trackedMilestones[m]) {
+          trackedMilestones[m] = true;
+          trackScrollDepth({
+            percent_scrolled: m,
+            page_type,
+            content_id,
+          });
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [pathname]);
+
+  return <ConsentBanner />;
 };
 
 export const App: React.FC = () => {
@@ -38,6 +118,7 @@ export const App: React.FC = () => {
   return (
     <AudioProvider>
       <ScrollToTop />
+      <AnalyticsTracker />
       <div className="app-container" data-campaign={currentCampaign.id}>
         {isStaging && (
           <div

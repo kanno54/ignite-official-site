@@ -4,6 +4,7 @@ import { getReleases, getRecordingsForRelease, getRecordings } from '../utils/co
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
+import { trackDiscographyOpen } from '../utils/analytics';
 
 export const DiscographyIndex: React.FC = () => {
   const releases = getReleases();
@@ -111,7 +112,12 @@ export const DiscographyIndex: React.FC = () => {
                       PLAY RELEASE ▶
                     </button>
                   )}
-                  <Link to={`/discography/${rel.slug}/`} className="btn-secondary" style={{ fontSize: '0.9rem', padding: '8px 16px' }}>
+                  <Link
+                    to={`/discography/${rel.slug}/`}
+                    onClick={() => trackDiscographyOpen({ release_id: rel.slug, source: 'discography_index_card' })}
+                    className="btn-secondary"
+                    style={{ fontSize: '0.9rem', padding: '8px 16px' }}
+                  >
                     DETAILS & LYRICS ➔
                   </Link>
                 </div>

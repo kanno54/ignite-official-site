@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getCampaigns } from '../utils/contentLoader';
 import { FiveLights } from '../components/common/FiveLights';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
+import { trackCampaignArchiveSelect } from '../utils/analytics';
 
 export const CampaignsIndex: React.FC = () => {
   const campaigns = getCampaigns();
@@ -77,6 +78,7 @@ export const CampaignsIndex: React.FC = () => {
               <div style={{ display: 'flex', gap: '12px', marginTop: '12px', flexWrap: 'wrap' }}>
                 <Link
                   to={`/campaigns/${camp.id}/`}
+                  onClick={() => trackCampaignArchiveSelect(camp.id, 'archive_list_card')}
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',

@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { PlayerState, AudioContextType } from '../../types/audio';
 import { getRecordingById, getRecordingsForRelease, getRecordings, getReleases, getAssetManifest } from '../../utils/contentLoader';
+import { trackTrackPlay, trackJukeboxPlay, trackTrackComplete } from '../../utils/analytics';
 
 const AudioContext = createContext<AudioContextType | null>(null);
 
@@ -45,6 +46,17 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       audio.currentTime = 0;
 
       setPlayerState((prev) => {
+        if (prev.currentRecording) {
+          const rec = prev.currentRecording;
+          trackTrackComplete({
+            track_id: rec.id,
+            release_id: rec.releaseId,
+            track_position: prev.queueIndex + 1,
+            track_version: rec.versionLabel,
+            source: prev.queueContext || 'manual',
+          });
+        }
+
         let nextIndex = prev.queueIndex + 1;
         let nextQueue = prev.queue;
 
@@ -99,7 +111,29 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
 
     const handlePlay = () => {
-      setPlayerState((prev) => (prev.isPlaying ? prev : { ...prev, isPlaying: true }));
+      setPlayerState((prev) => {
+        if (!prev.isPlaying && prev.currentRecording) {
+          const rec = prev.currentRecording;
+          const isJukebox = prev.queueContext === 'jukebox';
+          if (isJukebox) {
+            trackJukeboxPlay({
+              track_id: rec.id,
+              release_id: rec.releaseId,
+              track_version: rec.versionLabel,
+              source: 'jukebox',
+            });
+          } else {
+            trackTrackPlay({
+              track_id: rec.id,
+              release_id: rec.releaseId,
+              track_position: prev.queueIndex + 1,
+              track_version: rec.versionLabel,
+              source: prev.queueContext || 'manual',
+            });
+          }
+        }
+        return prev.isPlaying ? prev : { ...prev, isPlaying: true };
+      });
     };
 
     const handlePause = () => {

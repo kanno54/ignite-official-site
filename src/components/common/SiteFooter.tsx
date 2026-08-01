@@ -92,6 +92,27 @@ export const SiteFooter: React.FC = () => {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem' }}>
                 <li><Link to="/privacy/" style={{ color: '#AEB6C4' }}>PRIVACY POLICY</Link></li>
                 <li><Link to="/accessibility/" style={{ color: '#AEB6C4' }}>ACCESSIBILITY</Link></li>
+                <li>
+                  <button
+                    onClick={() => {
+                      if (typeof window !== 'undefined') {
+                        window.dispatchEvent(new CustomEvent('ignite:open-analytics-consent'));
+                      }
+                    }}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      color: '#AEB6C4',
+                      fontFamily: 'inherit',
+                      fontSize: 'inherit',
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    ANALYTICS SETTINGS (アクセス解析設定)
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
