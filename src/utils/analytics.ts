@@ -149,6 +149,15 @@ export const loadGoogleTag = () => {
   });
 };
 
+const getPathKey = (pageLocation: string): string => {
+  try {
+    const urlObj = new URL(pageLocation);
+    return urlObj.pathname;
+  } catch (e) {
+    return pageLocation;
+  }
+};
+
 export const flushPageViewOnConsentGrant = () => {
   if (!isAnalyticsEnabledEnv() || getAnalyticsConsent() !== 'granted') return;
   if (typeof window === 'undefined') return;
@@ -166,13 +175,13 @@ export const flushPageViewOnConsentGrant = () => {
         page_type: 'general',
       };
 
-  const pageKey = `${paramsToSend.page_location}_${paramsToSend.page_title}`;
+  const pathKey = getPathKey(paramsToSend.page_location);
 
-  if (lastSentPageViewKey === pageKey) return;
+  if (lastSentPageViewKey === pathKey) return;
 
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'page_view', paramsToSend);
-    lastSentPageViewKey = pageKey;
+    lastSentPageViewKey = pathKey;
   }
 };
 
@@ -185,12 +194,12 @@ export const trackPageView = (params: PageViewParams) => {
 
   ensureGtagInitialized();
 
-  const pageKey = `${params.page_location}_${params.page_title}`;
-  if (lastSentPageViewKey === pageKey) return;
+  const pathKey = getPathKey(params.page_location);
+  if (lastSentPageViewKey === pathKey) return;
 
   if (typeof window.gtag === 'function') {
     window.gtag('event', 'page_view', params);
-    lastSentPageViewKey = pageKey;
+    lastSentPageViewKey = pathKey;
   }
 };
 
@@ -224,10 +233,13 @@ export const trackTrackComplete = (params: TrackEventParams) => {
   trackEvent('track_complete', params);
 };
 
-export const trackJukeboxPlay = (params: Omit<TrackEventParams, 'source'> & { source?: string }) => {
+export const trackJukeboxPlay = (params: TrackEventParams) => {
   trackEvent('jukebox_play', {
-    ...params,
-    source: params.source || 'jukebox',
+    track_id: params.track_id,
+    release_id: params.release_id,
+    track_position: params.track_position,
+    track_version: params.track_version,
+    source: 'jukebox',
   });
 };
 
