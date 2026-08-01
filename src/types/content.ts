@@ -104,6 +104,14 @@ export type ArticleBlock = {
   caption?: string;
 };
 
+export type SpecialStoryCTA = {
+  kicker: string;
+  subtitle: string;
+  title: string;
+  description: string;
+  pixivUrl?: string;
+};
+
 export type Article = {
   id: string;
   slug: string;
@@ -112,12 +120,22 @@ export type Article = {
   dek: string;
   publishDate: string;
   publishDateFull: string;
+  storyDate?: string;
+  storyDateFull?: string;
+  era?: string;
+  eraLabel?: string;
+  series?: string;
+  format?: string;
+  interviewee?: string;
+  heroCopy?: string;
+  heroAlt?: string;
   readingTimeMinutes: number;
   mainSpeakerIds: string[];
   heroAssetId: string;
   relatedTrackIds: string[];
   blocks: ArticleBlock[];
   publication: Publication;
+  specialStory?: SpecialStoryCTA;
 };
 
 export type CampaignCTA = {

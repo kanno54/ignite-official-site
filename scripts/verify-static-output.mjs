@@ -27,6 +27,7 @@ const expectedFiles = [
   'campaigns/no-limits/index.html',
   'campaigns/moonlit/index.html',
   'features/index.html',
+  'features/archive-firestarter-leo-one-day-ahead/index.html',
   'features/no-limits-interview/index.html',
   'features/ren-moonlit-interview/index.html',
   'features/between-the-lights-story/index.html',

@@ -9,6 +9,13 @@ export const ArticleDetailPage: React.FC = () => {
   const article = getArticleBySlug(slug || '');
   const allArticles = getArticles();
 
+  React.useEffect(() => {
+    if (article) {
+      const seriesTag = article.series ? `${article.series}｜` : '';
+      document.title = `${article.title}｜${seriesTag}IGNITE Official Site`;
+    }
+  }, [article]);
+
   if (!article) {
     return <Navigate to="/features/" replace />;
   }
@@ -21,12 +28,27 @@ export const ArticleDetailPage: React.FC = () => {
     <article style={{ maxWidth: 'var(--article-content)', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '40px' }}>
       {/* Header */}
       <div>
-        <span className="campaign-tag" style={{ marginBottom: '12px' }}>{article.kicker}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '12px' }}>
+          <span className="campaign-tag" style={article.kicker.includes('ARCHIVE') ? { backgroundColor: '#F4C34E', color: '#08111E', fontWeight: 700 } : {}}>
+            {article.kicker}
+          </span>
+          {article.eraLabel && (
+            <span style={{ fontSize: '0.82rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)', fontWeight: 600 }}>
+              {article.eraLabel}
+            </span>
+          )}
+        </div>
         <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 5vw, 3.2rem)', lineHeight: 1.35, color: '#F6F3ED', margin: '8px 0 16px' }}>
           {article.title}
         </h1>
-        <div style={{ display: 'flex', gap: '16px', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)' }}>
+        {article.dek && (
+          <p style={{ fontSize: '1.1rem', color: '#AEB6C4', lineHeight: 1.6, margin: '0 0 16px' }}>
+            {article.dek}
+          </p>
+        )}
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)' }}>
           <span>PUBLISHED: {article.publishDateFull}</span>
+          {article.storyDateFull && <span>STORY: {article.storyDateFull}</span>}
           <span>READING TIME: {article.readingTimeMinutes} MIN</span>
         </div>
       </div>
@@ -193,6 +215,51 @@ export const ArticleDetailPage: React.FC = () => {
               );
             })}
           </div>
+        </section>
+      )}
+
+      {/* Special Story CTA Card */}
+      {article.specialStory && (
+        <section
+          style={{
+            backgroundColor: 'var(--color-surface)',
+            border: '1px solid var(--campaign-accent)',
+            padding: '28px 24px',
+            borderRadius: '4px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '12px',
+          }}
+        >
+          <div>
+            <span className="campaign-tag" style={{ backgroundColor: 'var(--campaign-accent)', color: '#08111E' }}>
+              {article.specialStory.kicker}
+            </span>
+          </div>
+
+          <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', margin: 0 }}>
+            {article.specialStory.subtitle}
+          </p>
+
+          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: '#F6F3ED', margin: 0 }}>
+            {article.specialStory.title}
+          </h3>
+
+          <p style={{ fontSize: '0.98rem', color: '#AEB6C4', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+            {article.specialStory.description}
+          </p>
+
+          {article.specialStory.pixivUrl ? (
+            <a
+              href={article.specialStory.pixivUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+              style={{ alignSelf: 'flex-start', marginTop: '8px', textDecoration: 'none' }}
+            >
+              pixivで読む ➔
+            </a>
+          ) : null}
         </section>
       )}
 

@@ -244,6 +244,16 @@
       "path": "/assets/images/articles/hero-between-the-lights-track-story.webp",
       "status": "ready",
       "aspect": "16:9"
+    },
+    "article-archive-firestarter-leo-one-day-ahead": {
+      "path": "/assets/images/articles/hero-firestarter-leo-one-day-ahead.webp",
+      "status": "ready",
+      "aspect": "3:2"
+    },
+    "hero-firestarter-leo-one-day-ahead": {
+      "path": "/assets/images/articles/hero-firestarter-leo-one-day-ahead.webp",
+      "status": "ready",
+      "aspect": "3:2"
     }
   }
 }

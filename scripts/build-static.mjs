@@ -35,6 +35,7 @@ const routes = [
   '/campaigns/no-limits/',
   '/campaigns/moonlit/',
   '/features/',
+  '/features/archive-firestarter-leo-one-day-ahead/',
   '/features/no-limits-interview/',
   '/features/ren-moonlit-interview/',
   '/features/between-the-lights-story/',

@@ -37,18 +37,24 @@ export const FeaturesIndex: React.FC = () => {
             <ResponsivePicture assetId={art.heroAssetId} title={art.kicker} subtitle={art.title} aspectRatio="3:2" accentColor="var(--campaign-accent)" />
 
             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-              <div>
-                <span className="campaign-tag" style={{ marginBottom: '8px' }}>{art.kicker}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '8px' }}>
+                  <span className="campaign-tag" style={art.kicker.includes('ARCHIVE') ? { backgroundColor: '#F4C34E', color: '#08111E', fontWeight: 700 } : {}}>
+                    {art.kicker}
+                  </span>
+                  {art.eraLabel && (
+                    <span style={{ fontSize: '0.72rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)', fontWeight: 600 }}>
+                      {art.eraLabel}
+                    </span>
+                  )}
+                </div>
                 <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', lineHeight: 1.4, margin: '8px 0', color: '#F6F3ED' }}>
                   {art.title}
                 </h2>
-                <p style={{ fontSize: '0.85rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '0.85rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0, whiteSpace: 'pre-line' }}>
                   {art.dek}
                 </p>
-              </div>
-
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)' }}>
-                <span>{art.publishDateFull} — {art.readingTimeMinutes} MIN READ</span>
+                <span>Published {art.publishDateFull} — {art.readingTimeMinutes} MIN READ</span>
                 <div style={{ display: 'flex', gap: '4px' }}>
                   {art.mainSpeakerIds.map((sId) => {
                     const m = getMemberBySlug(sId);
