@@ -37,7 +37,7 @@ export interface ScrollDepthParams {
 }
 
 const CONSENT_STORAGE_KEY = 'ignite_analytics_consent';
-let googleTagLoaded = false;
+let googleTagScriptInserted = false;
 let lastPageViewParams: PageViewParams | null = null;
 let lastSentPageViewKey: string | null = null;
 
@@ -75,10 +75,19 @@ export const getAnalyticsConsent = (): ConsentStatus => {
   return 'unset';
 };
 
-export const enableGoogleTagWindowFlag = () => {
+export const ensureGtagInitialized = () => {
+  if (typeof window === 'undefined') return;
+
   const measurementId = getAnalyticsMeasurementId();
-  if (measurementId && typeof window !== 'undefined') {
+  if (measurementId) {
     (window as any)[`ga-disable-${measurementId}`] = false;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  if (typeof window.gtag !== 'function') {
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
   }
 };
 
@@ -94,11 +103,23 @@ export const setAnalyticsConsent = (status: 'granted' | 'denied') => {
   localStorage.setItem(CONSENT_STORAGE_KEY, status);
 
   if (status === 'granted') {
-    enableGoogleTagWindowFlag();
+    ensureGtagInitialized();
+
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+      });
+    }
+
     loadGoogleTag();
     flushPageViewOnConsentGrant();
   } else {
     disableGoogleTagWindowFlag();
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'denied',
+      });
+    }
   }
 };
 
@@ -106,38 +127,33 @@ export const loadGoogleTag = () => {
   if (!isAnalyticsEnabledEnv()) return;
   if (getAnalyticsConsent() !== 'granted') return;
 
-  enableGoogleTagWindowFlag();
-
-  if (googleTagLoaded) return;
+  ensureGtagInitialized();
 
   const measurementId = getAnalyticsMeasurementId();
   if (!measurementId) return;
 
-  // Insert gtag.js asynchronously
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  document.head.appendChild(script);
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(...args: any[]) {
-    window.dataLayer.push(args);
+  // Insert script tag once if not already inserted
+  if (!googleTagScriptInserted) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(script);
+    googleTagScriptInserted = true;
   }
-  window.gtag = gtag;
 
-  gtag('js', new Date());
-  // Configure with send_page_view: false for SPA manual page_view dispatch
-  gtag('config', measurementId, {
+  // Issue standard GA4 initialization commands
+  window.gtag('js', new Date());
+  window.gtag('config', measurementId, {
     send_page_view: false,
     anonymize_ip: true,
   });
-
-  googleTagLoaded = true;
 };
 
 export const flushPageViewOnConsentGrant = () => {
   if (!isAnalyticsEnabledEnv() || getAnalyticsConsent() !== 'granted') return;
   if (typeof window === 'undefined') return;
+
+  ensureGtagInitialized();
 
   const currentUrl = window.location.href;
   const currentTitle = document.title;
@@ -154,7 +170,7 @@ export const flushPageViewOnConsentGrant = () => {
 
   if (lastSentPageViewKey === pageKey) return;
 
-  if (window.gtag) {
+  if (typeof window.gtag === 'function') {
     window.gtag('event', 'page_view', paramsToSend);
     lastSentPageViewKey = pageKey;
   }
@@ -167,10 +183,12 @@ export const trackPageView = (params: PageViewParams) => {
   const measurementId = getAnalyticsMeasurementId();
   if (measurementId && (window as any)[`ga-disable-${measurementId}`]) return;
 
+  ensureGtagInitialized();
+
   const pageKey = `${params.page_location}_${params.page_title}`;
   if (lastSentPageViewKey === pageKey) return;
 
-  if (typeof window !== 'undefined' && window.gtag) {
+  if (typeof window.gtag === 'function') {
     window.gtag('event', 'page_view', params);
     lastSentPageViewKey = pageKey;
   }
@@ -182,7 +200,9 @@ export const trackEvent = (eventName: string, params: Record<string, any> = {}) 
   const measurementId = getAnalyticsMeasurementId();
   if (measurementId && (window as any)[`ga-disable-${measurementId}`]) return;
 
-  if (typeof window !== 'undefined' && window.gtag) {
+  ensureGtagInitialized();
+
+  if (typeof window.gtag === 'function') {
     window.gtag('event', eventName, params);
   }
 };
