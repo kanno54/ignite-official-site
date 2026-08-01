@@ -36,6 +36,7 @@ const expectedFiles = [
   'features/between-the-lights-story/index.html',
   'features/yuto-hightone-feature/index.html',
   'features/sho-burn-it-down-interview/index.html',
+  'features/kai-ignition-five-names/index.html',
   'features/ignition-special-feature/index.html',
   'story/index.html',
   'fun/index.html',

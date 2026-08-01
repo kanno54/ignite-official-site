@@ -44,6 +44,7 @@ const routes = [
   '/features/between-the-lights-story/',
   '/features/yuto-hightone-feature/',
   '/features/sho-burn-it-down-interview/',
+  '/features/kai-ignition-five-names/',
   '/features/ignition-special-feature/',
   '/story/',
   '/fun/',
