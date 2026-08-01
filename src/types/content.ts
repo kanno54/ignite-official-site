@@ -183,6 +183,8 @@ export type Campaign = {
     subtitle?: string;
     body: string;
   };
+  timelineHeading?: string;
+  timelineSubtitle?: string;
   timeline?: CampaignTimelineItem[];
   commentary?: {
     heading: string;
@@ -207,6 +209,38 @@ export type Campaign = {
     subtitle: string;
     body: string;
     elements?: string[];
+  };
+  focusSection?: {
+    eyebrow: string;
+    heading: string;
+    subtitle?: string;
+    body: string;
+    link?: {
+      text: string;
+      url: string;
+    };
+  };
+  memberRoles?: {
+    eyebrow: string;
+    heading: string;
+    subtitle?: string;
+    roles: Array<{
+      name: string;
+      role: string;
+      desc: string;
+    }>;
+  };
+  bannerCopy?: string;
+  trackOverview?: {
+    eyebrow: string;
+    heading: string;
+    subtitle?: string;
+    items: Array<{
+      trackNo: string;
+      title: string;
+      subtitle: string;
+      desc: string;
+    }>;
   };
   trackDescriptions?: Record<string, string>;
 };

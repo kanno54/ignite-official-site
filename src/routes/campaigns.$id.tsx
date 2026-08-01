@@ -207,38 +207,6 @@ export const CampaignDetailPage: React.FC = () => {
           </section>
         )}
 
-        {/* THE FIRST FLAME (Timeline Section) */}
-        {campaign.timeline && campaign.timeline.length > 0 && (
-          <section>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '0 0 24px' }}>
-              THE FIRST FLAME
-            </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
-              {campaign.timeline.map((item, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    backgroundColor: 'var(--color-surface)',
-                    padding: '20px 24px',
-                    borderRadius: '0 4px 4px 0',
-                    border: '1px solid var(--color-border)',
-                    borderLeft: `4px solid ${campaign.campaignColors.accent}`,
-                  }}
-                >
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
-                    {item.date}
-                  </span>
-                  <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.2rem', fontWeight: 700, color: '#F6F3ED', margin: '6px 0 10px' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-                    {item.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
 
         {/* INDIES vs MAJOR Version Comparison Section */}
         {campaign.comparison && (
@@ -274,6 +242,47 @@ export const CampaignDetailPage: React.FC = () => {
                   {campaign.comparison.major.body}
                 </p>
               </div>
+            </div>
+          </section>
+        )}
+
+        {/* Design Banner Copy */}
+        {campaign.bannerCopy && (
+          <div style={{ padding: '32px 24px', backgroundColor: 'rgba(255,255,255,0.02)', borderLeft: `4px solid ${campaign.campaignColors.accent}`, borderRadius: '2px', textAlign: 'center' }}>
+            <p style={{ fontFamily: 'var(--font-display)', fontSize: '1.6rem', letterSpacing: '0.08em', fontWeight: 900, color: '#F6F3ED', margin: 0, lineHeight: 1.4 }}>
+              {campaign.bannerCopy}
+            </p>
+          </div>
+        )}
+
+        {/* THREE WAYS FORWARD (Track Overview Cards) */}
+        {campaign.trackOverview && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              {campaign.trackOverview.eyebrow}
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: '#F6F3ED', margin: '12px 0 24px' }}>
+              {campaign.trackOverview.heading}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
+              {campaign.trackOverview.items.map((item, idx) => (
+                <div key={idx} style={{ backgroundColor: 'var(--color-surface-elevated)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '1.1rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
+                      {item.trackNo}
+                    </span>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4', textTransform: 'uppercase' }}>
+                      {item.subtitle}
+                    </span>
+                  </div>
+                  <h3 style={{ fontSize: '1.15rem', color: '#F6F3ED', margin: 0, fontWeight: 700 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </section>
         )}
@@ -382,6 +391,47 @@ export const CampaignDetailPage: React.FC = () => {
                 ))}
               </div>
             )}
+          </section>
+        )}
+
+        {/* Timeline Section */}
+        {campaign.timeline && campaign.timeline.length > 0 && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              TIMELINE
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '12px 0 6px' }}>
+              {campaign.timelineHeading || 'THE FIRST FLAME'}
+            </h2>
+            {campaign.timelineSubtitle && (
+              <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: campaign.campaignColors.accent, margin: '0 0 20px' }}>
+                {campaign.timelineSubtitle}
+              </p>
+            )}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
+              {campaign.timeline.map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    backgroundColor: 'var(--color-surface)',
+                    padding: '20px 24px',
+                    borderRadius: '0 4px 4px 0',
+                    border: '1px solid var(--color-border)',
+                    borderLeft: `4px solid ${campaign.campaignColors.accent}`,
+                  }}
+                >
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
+                    {item.date}
+                  </span>
+                  <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.2rem', fontWeight: 700, color: '#F6F3ED', margin: '6px 0 10px' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
           </section>
         )}
 
