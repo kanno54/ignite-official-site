@@ -20,7 +20,7 @@
       "fictionalReleaseDate": "2023-05-20",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "current"
     },
     "blocks": [
       {
@@ -341,7 +341,7 @@
       "fictionalReleaseDate": "2023-05-22",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "current"
     },
     "blocks": [
       {
@@ -1183,7 +1183,7 @@
       "fictionalReleaseDate": "2026-08-01",
       "publishAt": "2026-08-01T00:00:00Z",
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "past"
     },
     "specialStory": {
       "kicker": "SPECIAL STORY",
