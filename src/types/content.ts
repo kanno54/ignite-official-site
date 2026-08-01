@@ -144,16 +144,26 @@ export type CampaignCTA = {
   url?: string;
 };
 
+export type CampaignTimelineItem = {
+  date: string;
+  title: string;
+  body: string;
+};
+
 export type Campaign = {
   id: string;
   status: 'current' | 'archived' | 'staging';
   releaseId: string;
   releaseDate: string;
+  archiveOrderDate?: string;
   eyebrow: string;
   title: string;
   catchCopy: string;
+  headline?: string;
+  subheadline?: string;
   desktopHero: string;
   mobileHero: string;
+  heroAlt?: string;
   primaryCta: CampaignCTA;
   secondaryCta: CampaignCTA;
   campaignColors: {
@@ -162,6 +172,15 @@ export type Campaign = {
     text: string;
   };
   relatedArticleIds: string[];
+  introduction?: {
+    heading: string;
+    body: string;
+  };
+  timeline?: CampaignTimelineItem[];
+  commentary?: {
+    heading: string;
+    body: string;
+  };
 };
 
 export type NewsItem = {

@@ -24,6 +24,7 @@ const expectedFiles = [
   'discography/no-limits/index.html',
   'discography/moonlit/index.html',
   'campaigns/index.html',
+  'campaigns/firestarter/index.html',
   'campaigns/no-limits/index.html',
   'campaigns/moonlit/index.html',
   'features/index.html',

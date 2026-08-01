@@ -11,6 +11,12 @@ export const CampaignDetailPage: React.FC = () => {
   const campaign = id ? getCampaignById(id) : undefined;
   const { playTrack } = useAudio();
 
+  React.useEffect(() => {
+    if (campaign) {
+      document.title = `${campaign.title}｜Campaign Archive｜IGNITE Official Site`;
+    }
+  }, [campaign]);
+
   if (!campaign) {
     return <NotFoundPage />;
   }
@@ -47,7 +53,7 @@ export const CampaignDetailPage: React.FC = () => {
           <ResponsivePicture
             desktopSrc={campaign.desktopHero}
             mobileSrc={campaign.mobileHero}
-            alt={campaign.title}
+            alt={campaign.heroAlt || campaign.title}
           />
           <div
             style={{
@@ -162,20 +168,73 @@ export const CampaignDetailPage: React.FC = () => {
 
       {/* Main Content Area */}
       <div style={{ maxWidth: 'var(--article-content)', margin: '0 auto', width: '100%', display: 'flex', flexDirection: 'column', gap: '48px' }}>
-        {/* Navigation Back */}
+        {/* Navigation Back (Top) */}
         <div>
-          <Link to="/campaigns/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)' }}>
+          <Link to="/campaigns/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: campaign.campaignColors.accent }}>
             ← BACK TO CAMPAIGN ARCHIVE
           </Link>
         </div>
 
-        {/* Tracklist Preview */}
-        {release && recordings.length > 0 && (
-          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '32px', borderRadius: '4px' }}>
-            <FiveLights height={16} />
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '8px 0 20px' }}>
-              RELEASE TRACKLIST ({release.title})
+        {/* INTRODUCTION Section */}
+        {campaign.introduction && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              INTRODUCTION
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#F6F3ED', margin: '12px 0 16px' }}>
+              {campaign.introduction.heading}
             </h2>
+            <p style={{ fontSize: '1.05rem', color: '#AEB6C4', lineHeight: 1.8, margin: 0, whiteSpace: 'pre-line' }}>
+              {campaign.introduction.body}
+            </p>
+          </section>
+        )}
+
+        {/* THE FIRST FLAME (Timeline Section) */}
+        {campaign.timeline && campaign.timeline.length > 0 && (
+          <section>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '0 0 24px' }}>
+              THE FIRST FLAME
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+              {campaign.timeline.map((item, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    backgroundColor: 'var(--color-surface)',
+                    padding: '20px 24px',
+                    borderRadius: '0 4px 4px 0',
+                    border: '1px solid var(--color-border)',
+                    borderLeft: `4px solid ${campaign.campaignColors.accent}`,
+                  }}
+                >
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
+                    {item.date}
+                  </span>
+                  <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.2rem', fontWeight: 700, color: '#F6F3ED', margin: '6px 0 10px' }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Tracklist Preview & Commentary */}
+        {release && recordings.length > 0 && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '32px', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '28px' }}>
+            <div>
+              <FiveLights height={16} />
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '8px 0 4px' }}>
+                RELEASE / TRACKLIST ({release.title})
+              </h2>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: campaign.campaignColors.accent, margin: 0 }}>
+                {release.format} — {release.fictionalReleaseDateFull} RELEASE
+              </p>
+            </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {recordings.map((rec, idx) => (
@@ -192,7 +251,7 @@ export const CampaignDetailPage: React.FC = () => {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)', fontWeight: 700 }}>
+                    <span style={{ fontFamily: 'var(--font-mono)', color: campaign.campaignColors.accent, fontWeight: 700 }}>
                       0{idx + 1}
                     </span>
                     <div>
@@ -206,8 +265,8 @@ export const CampaignDetailPage: React.FC = () => {
                     style={{
                       padding: '8px 16px',
                       backgroundColor: 'transparent',
-                      color: 'var(--campaign-accent)',
-                      border: '1px solid var(--campaign-accent)',
+                      color: campaign.campaignColors.accent,
+                      border: `1px solid ${campaign.campaignColors.accent}`,
                       fontFamily: 'var(--font-mono)',
                       fontSize: '0.8rem',
                       fontWeight: 700,
@@ -220,14 +279,25 @@ export const CampaignDetailPage: React.FC = () => {
                 </div>
               ))}
             </div>
+
+            {campaign.commentary && (
+              <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '24px', marginTop: '8px' }}>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#F6F3ED', margin: '0 0 12px' }}>
+                  {campaign.commentary.heading}
+                </h3>
+                <p style={{ fontSize: '0.98rem', color: '#AEB6C4', lineHeight: 1.75, margin: 0, whiteSpace: 'pre-line' }}>
+                  {campaign.commentary.body}
+                </p>
+              </div>
+            )}
           </section>
         )}
 
-        {/* Related Articles & Interviews */}
+        {/* Related Articles & Interviews (FROM THE ARCHIVE) */}
         {relatedArticles.length > 0 && (
           <section>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '0 0 20px' }}>
-              RELATED ARTICLES & INTERVIEWS
+              FROM THE ARCHIVE
             </h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
@@ -246,7 +316,7 @@ export const CampaignDetailPage: React.FC = () => {
                     gap: '12px',
                   }}
                 >
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: campaign.campaignColors.accent }}>
                     {art.kicker} // {art.publishDateFull}
                   </span>
                   <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#F6F3ED', margin: 0 }}>
@@ -260,6 +330,13 @@ export const CampaignDetailPage: React.FC = () => {
             </div>
           </section>
         )}
+
+        {/* Navigation Back (Bottom) */}
+        <div style={{ borderTop: '1px solid var(--color-border)', paddingTop: '24px' }}>
+          <Link to="/campaigns/" style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: campaign.campaignColors.accent, textDecoration: 'none' }}>
+            ← BACK TO CAMPAIGN ARCHIVE
+          </Link>
+        </div>
       </div>
     </div>
   );

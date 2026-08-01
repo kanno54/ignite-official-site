@@ -57,5 +57,67 @@
       "no-limits-interview",
       "yuto-hightone-feature"
     ]
+  },
+  {
+    "id": "firestarter",
+    "status": "archived",
+    "releaseId": "firestarter",
+    "releaseDate": "2020-10-01",
+    "archiveOrderDate": "2020-10-01",
+    "eyebrow": "INDIES MINI ALBUM / 2020.10 RELEASE",
+    "title": "FIRESTARTER",
+    "catchCopy": "小さな火が、五人の輪郭になる。",
+    "headline": "小さな火が、五人の輪郭になる。",
+    "subheadline": "まだ何者でもなかったIGNITEが、最初に残した六つの熱。",
+    "desktopHero": "/assets/images/heroes/hero-firestarter-campaign-desktop.webp",
+    "mobileHero": "/assets/images/heroes/hero-firestarter-campaign-mobile.webp",
+    "heroAlt": "小規模ライブハウスのステージで、手の中に生まれた小さな火を五人で囲む初期のIGNITE",
+    "primaryCta": {
+      "text": "LISTEN NOW ▶",
+      "action": "play"
+    },
+    "secondaryCta": {
+      "text": "VIEW RELEASE ➔",
+      "action": "link",
+      "url": "/discography/firestarter/"
+    },
+    "campaignColors": {
+      "accent": "#FF6B35",
+      "deep": "#0D0A08",
+      "text": "#F6F3ED"
+    },
+    "relatedArticleIds": [
+      "archive-firestarter-leo-one-day-ahead"
+    ],
+    "introduction": {
+      "heading": "THE FIRST FIRE",
+      "body": "2020年10月。\n\n小規模会場での自主ライブを重ねていたIGNITEが、初めて「自分たちの作品」として形にした六曲入りのMini Album。\n\nまだ歌もダンスも荒く、五人の役割も完全には定まっていなかった。大きく見せる方法を知らなかった彼らは、持っている熱をそのまま音へ叩き込んだ。\n\n『FIRESTARTER』に残されているのは、完成されたスターの姿ではない。\n\nまだ小さな火を囲み、それを消さずに次の朝まで運ぼうとしていた、五人の最初の記録である。"
+    },
+    "timeline": [
+      {
+        "date": "2020.03",
+        "title": "IGNITE",
+        "body": "五人のグループ名が「IGNITE」に決定。「火をつける」「始まりを生む」という意味が、彼らの熱量と重ねられた。"
+      },
+      {
+        "date": "2020.06",
+        "title": "FIRST STAGES",
+        "body": "小規模会場を中心に、自主ライブと配信イベントを開始。白と黒のノースリーブ衣装、鍛えた身体を生かしたダンス、火花や光を使った演出が初期の輪郭となる。"
+      },
+      {
+        "date": "2020.10",
+        "title": "FIRESTARTER",
+        "body": "六曲入りのインディーズMini Albumを自主流通、会場販売、初期配信でリリース。近距離の会場で育った熱と、まだ整理されていない五人の勢いが作品に残された。"
+      },
+      {
+        "date": "2020.11—12",
+        "title": "LIVE CIRCUIT",
+        "body": "発売後ライブサーキットを開催。「Heatwave」のコール＆レスポンスや、「Runaway Beat」のラップとダンスがライブの中で育ち始める。"
+      }
+    ],
+    "commentary": {
+      "heading": "SIX TRACKS, ONE BEGINNING",
+      "body": "「IGNITION」で始まり、「BURN IT DOWN」で壊し、「FIRESTARTER」で自分たちの火を見つけ、「First Light」で次の朝へ向かう。\n\n後に大きな会場で育つ「IGNITION」「BURN IT DOWN」「Heatwave」の原型と、KAIのラップとSHOのダンスが前面に出た「Runaway Beat」、RENが作品の終わりを担った「First Light」。\n\nメジャー期に再構成された楽曲もあるが、ここに収められた原曲は、その後のVersionに置き換えられたものではない。\n\n緊張も、荒さも、近い会場の熱も含めて、五人が最初に残した音である。"
+    }
   }
 ]

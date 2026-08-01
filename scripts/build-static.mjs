@@ -32,6 +32,7 @@ const routes = [
   '/discography/no-limits/',
   '/discography/moonlit/',
   '/campaigns/',
+  '/campaigns/firestarter/',
   '/campaigns/no-limits/',
   '/campaigns/moonlit/',
   '/features/',
