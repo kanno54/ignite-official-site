@@ -36,6 +36,7 @@ const routes = [
   '/campaigns/',
   ...(isStagingBuild ? ['/campaigns/firestarter/'] : []),
   '/campaigns/no-limits/',
+  '/campaigns/burn-it-down/',
   '/campaigns/ignition/',
   '/campaigns/moonlit/',
   '/features/',

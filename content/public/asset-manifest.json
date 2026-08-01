@@ -284,6 +284,16 @@
       "path": "/assets/images/heroes/hero-ignition-campaign-mobile.webp",
       "status": "ready",
       "aspect": "3:4"
+    },
+    "hero-burn-it-down-campaign-desktop": {
+      "path": "/assets/images/heroes/hero-burn-it-down-campaign-desktop.webp",
+      "status": "ready",
+      "aspect": "16:9"
+    },
+    "hero-burn-it-down-campaign-mobile": {
+      "path": "/assets/images/heroes/hero-burn-it-down-campaign-mobile.webp",
+      "status": "ready",
+      "aspect": "3:4"
     }
   }
 }

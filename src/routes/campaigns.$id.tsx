@@ -190,6 +190,23 @@ export const CampaignDetailPage: React.FC = () => {
           </section>
         )}
 
+        {/* CREATION BACKGROUND Section */}
+        {campaign.creationBackground && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              {campaign.creationBackground.heading}
+            </span>
+            {campaign.creationBackground.subtitle && (
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: '#F6F3ED', margin: '12px 0 16px' }}>
+                {campaign.creationBackground.subtitle}
+              </h2>
+            )}
+            <p style={{ fontSize: '1.02rem', color: '#AEB6C4', lineHeight: 1.8, margin: 0, whiteSpace: 'pre-line' }}>
+              {campaign.creationBackground.body}
+            </p>
+          </section>
+        )}
+
         {/* THE FIRST FLAME (Timeline Section) */}
         {campaign.timeline && campaign.timeline.length > 0 && (
           <section>

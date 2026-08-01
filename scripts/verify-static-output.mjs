@@ -28,6 +28,7 @@ const expectedFiles = [
   'campaigns/index.html',
   ...(isStagingBuild ? ['campaigns/firestarter/index.html'] : []),
   'campaigns/no-limits/index.html',
+  'campaigns/burn-it-down/index.html',
   'campaigns/ignition/index.html',
   'campaigns/moonlit/index.html',
   'features/index.html',

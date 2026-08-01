@@ -176,6 +176,11 @@ export type Campaign = {
     heading: string;
     body: string;
   };
+  creationBackground?: {
+    heading: string;
+    subtitle?: string;
+    body: string;
+  };
   timeline?: CampaignTimelineItem[];
   commentary?: {
     heading: string;
