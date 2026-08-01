@@ -38,6 +38,7 @@ export interface ScrollDepthParams {
 
 const CONSENT_STORAGE_KEY = 'ignite_analytics_consent';
 let googleTagScriptInserted = false;
+let googleTagConfigured = false;
 let lastPageViewParams: PageViewParams | null = null;
 let lastSentPageViewKey: string | null = null;
 
@@ -141,12 +142,15 @@ export const loadGoogleTag = () => {
     googleTagScriptInserted = true;
   }
 
-  // Issue standard GA4 initialization commands
-  window.gtag('js', new Date());
-  window.gtag('config', measurementId, {
-    send_page_view: false,
-    anonymize_ip: true,
-  });
+  // Issue standard GA4 initialization commands ONLY ONCE
+  if (!googleTagConfigured) {
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      send_page_view: false,
+      anonymize_ip: true,
+    });
+    googleTagConfigured = true;
+  }
 };
 
 const getPathKey = (pageLocation: string): string => {
