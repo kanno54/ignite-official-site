@@ -274,6 +274,16 @@
       "path": "/assets/images/articles/hero-kai-ignition-feature.webp",
       "status": "ready",
       "aspect": "3:2"
+    },
+    "hero-ignition-campaign-desktop": {
+      "path": "/assets/images/heroes/hero-ignition-campaign-desktop.webp",
+      "status": "ready",
+      "aspect": "16:9"
+    },
+    "hero-ignition-campaign-mobile": {
+      "path": "/assets/images/heroes/hero-ignition-campaign-mobile.webp",
+      "status": "ready",
+      "aspect": "3:4"
     }
   }
 }

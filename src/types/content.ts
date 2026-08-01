@@ -181,6 +181,27 @@ export type Campaign = {
     heading: string;
     body: string;
   };
+  comparison?: {
+    heading: string;
+    subtitle: string;
+    indies: {
+      title: string;
+      subtitle: string;
+      body: string;
+    };
+    major: {
+      title: string;
+      subtitle: string;
+      body: string;
+    };
+  };
+  performance?: {
+    heading: string;
+    subtitle: string;
+    body: string;
+    elements?: string[];
+  };
+  trackDescriptions?: Record<string, string>;
 };
 
 export type NewsItem = {

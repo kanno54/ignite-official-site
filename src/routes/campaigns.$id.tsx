@@ -223,6 +223,44 @@ export const CampaignDetailPage: React.FC = () => {
           </section>
         )}
 
+        {/* INDIES vs MAJOR Version Comparison Section */}
+        {campaign.comparison && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              {campaign.comparison.heading}
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: '#F6F3ED', margin: '12px 0 24px' }}>
+              {campaign.comparison.subtitle}
+            </h2>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+              <div style={{ backgroundColor: 'var(--color-surface-elevated)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
+                  {campaign.comparison.indies.title}
+                </span>
+                <h3 style={{ fontSize: '1.2rem', color: '#F6F3ED', margin: '8px 0 12px' }}>
+                  {campaign.comparison.indies.subtitle}
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#AEB6C4', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+                  {campaign.comparison.indies.body}
+                </p>
+              </div>
+
+              <div style={{ backgroundColor: 'var(--color-surface-elevated)', border: `1px solid ${campaign.campaignColors.accent}`, padding: '24px', borderRadius: '4px' }}>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
+                  {campaign.comparison.major.title}
+                </span>
+                <h3 style={{ fontSize: '1.2rem', color: '#F6F3ED', margin: '8px 0 12px' }}>
+                  {campaign.comparison.major.subtitle}
+                </h3>
+                <p style={{ fontSize: '0.92rem', color: '#AEB6C4', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+                  {campaign.comparison.major.body}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Tracklist Preview & Commentary */}
         {release && recordings.length > 0 && (
           <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '32px', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '28px' }}>
@@ -236,46 +274,54 @@ export const CampaignDetailPage: React.FC = () => {
               </p>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {recordings.map((rec, idx) => (
                 <div
                   key={rec.id}
                   style={{
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '16px',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    padding: '20px',
                     backgroundColor: 'var(--color-surface-elevated)',
                     border: '1px solid var(--color-border)',
                     borderRadius: '2px',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                    <span style={{ fontFamily: 'var(--font-mono)', color: campaign.campaignColors.accent, fontWeight: 700 }}>
-                      0{idx + 1}
-                    </span>
-                    <div>
-                      <div style={{ fontWeight: 700, color: '#F6F3ED' }}>{rec.title}</div>
-                      <div style={{ fontSize: '0.8rem', color: '#AEB6C4' }}>{rec.versionLabel}</div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', color: campaign.campaignColors.accent, fontWeight: 700, fontSize: '1.1rem' }}>
+                        0{idx + 1}
+                      </span>
+                      <div>
+                        <div style={{ fontWeight: 700, color: '#F6F3ED', fontSize: '1.05rem' }}>{rec.title}</div>
+                        <div style={{ fontSize: '0.8rem', color: '#AEB6C4' }}>{rec.versionLabel}</div>
+                      </div>
                     </div>
+
+                    <button
+                      onClick={() => playTrack(rec.id)}
+                      style={{
+                        padding: '8px 16px',
+                        backgroundColor: 'transparent',
+                        color: campaign.campaignColors.accent,
+                        border: `1px solid ${campaign.campaignColors.accent}`,
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.8rem',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        borderRadius: '2px',
+                      }}
+                    >
+                      PLAY ▶
+                    </button>
                   </div>
 
-                  <button
-                    onClick={() => playTrack(rec.id)}
-                    style={{
-                      padding: '8px 16px',
-                      backgroundColor: 'transparent',
-                      color: campaign.campaignColors.accent,
-                      border: `1px solid ${campaign.campaignColors.accent}`,
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.8rem',
-                      fontWeight: 700,
-                      cursor: 'pointer',
-                      borderRadius: '2px',
-                    }}
-                  >
-                    PLAY ▶
-                  </button>
+                  {campaign.trackDescriptions?.[rec.id] && (
+                    <p style={{ fontSize: '0.88rem', color: '#AEB6C4', lineHeight: 1.6, margin: '4px 0 0', whiteSpace: 'pre-line', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '10px' }}>
+                      {campaign.trackDescriptions[rec.id]}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
@@ -288,6 +334,35 @@ export const CampaignDetailPage: React.FC = () => {
                 <p style={{ fontSize: '0.98rem', color: '#AEB6C4', lineHeight: 1.75, margin: 0, whiteSpace: 'pre-line' }}>
                   {campaign.commentary.body}
                 </p>
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* FIVE POSITIONS, ONE NAME (Performance Section) */}
+        {campaign.performance && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              PERFORMANCE
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '12px 0 6px' }}>
+              {campaign.performance.heading}
+            </h2>
+            <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.2rem', color: campaign.campaignColors.accent, margin: '0 0 16px' }}>
+              {campaign.performance.subtitle}
+            </p>
+            <p style={{ fontSize: '1.02rem', color: '#AEB6C4', lineHeight: 1.8, margin: '0 0 24px', whiteSpace: 'pre-line' }}>
+              {campaign.performance.body}
+            </p>
+
+            {campaign.performance.elements && campaign.performance.elements.length > 0 && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', borderTop: '1px solid var(--color-border)', paddingTop: '20px' }}>
+                {campaign.performance.elements.map((elem, idx) => (
+                  <div key={idx} style={{ fontSize: '0.85rem', fontFamily: 'var(--font-mono)', color: '#AEB6C4', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ color: campaign.campaignColors.accent }}>✦</span>
+                    {elem}
+                  </div>
+                ))}
               </div>
             )}
           </section>
