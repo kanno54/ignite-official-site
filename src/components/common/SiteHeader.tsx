@@ -59,27 +59,52 @@ export const SiteHeader: React.FC = () => {
           justifyContent: 'space-between',
         }}
       >
-        {/* Left: Brand Logo & Five Lights */}
-        <Link to="/" onClick={() => setMobileMenuOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <FiveLights height={22} gap={4} />
-          <span
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '1.8rem',
-              letterSpacing: '0.1em',
-              fontWeight: 900,
-              color: '#F6F3ED',
-              background: 'linear-gradient(180deg, #FFFFFF 0%, #AEB6C4 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
+        {/* Left: Brand Logo & Current Campaign Badge */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <Link
+            to="/"
+            onClick={() => setMobileMenuOpen(false)}
+            style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}
+            aria-label="IGNITE Official Site Top Page"
           >
-            IGNITE
-          </span>
-          <span className="campaign-tag brand-tag-mobile-hide" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>
-            {currentCampaign.title}
-          </span>
-        </Link>
+            <FiveLights height={22} gap={4} />
+            <span
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '1.8rem',
+                letterSpacing: '0.1em',
+                fontWeight: 900,
+                color: '#F6F3ED',
+                background: 'linear-gradient(180deg, #FFFFFF 0%, #AEB6C4 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              IGNITE
+            </span>
+          </Link>
+
+          {currentCampaign && (
+            <Link
+              to={`/campaigns/${currentCampaign.slug || currentCampaign.id}/`}
+              onClick={() => setMobileMenuOpen(false)}
+              className="campaign-tag brand-tag-mobile-hide"
+              style={{
+                fontSize: '0.65rem',
+                padding: '3px 8px',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              aria-label={`CURRENT CAMPAIGN: ${currentCampaign.title.toUpperCase()}`}
+              {...(location.pathname === `/campaigns/${currentCampaign.slug || currentCampaign.id}/` ? { 'aria-current': 'page' } : {})}
+            >
+              {currentCampaign.shortTitle || currentCampaign.title}
+            </Link>
+          )}
+        </div>
 
         {/* Center: Desktop Navigation */}
         <nav style={{ display: 'flex', gap: '32px' }} className="desktop-nav">

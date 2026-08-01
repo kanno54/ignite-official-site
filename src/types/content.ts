@@ -152,6 +152,8 @@ export type CampaignTimelineItem = {
 
 export type Campaign = {
   id: string;
+  slug?: string;
+  shortTitle?: string;
   status: 'current' | 'archived' | 'staging';
   releaseId: string;
   releaseDate: string;
