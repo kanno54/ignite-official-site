@@ -5301,9 +5301,9 @@
       "audioUrl": "/media/audio/no-limits/03-run-with-us-live.v1.mp3",
       "audioStatus": "ready",
       "spotlightMemberIds": [
-        "leo",
         "kai",
         "sho",
+        "leo",
         "ren",
         "yuto"
       ],
@@ -6275,8 +6275,11 @@
       "audioUrl": "/media/audio/moonlit/03-afterimage-live.v1.mp3",
       "audioStatus": "ready",
       "spotlightMemberIds": [
+        "kai",
+        "sho",
         "leo",
-        "ren"
+        "ren",
+        "yuto"
       ],
       "moodTags": [
         "一緒に騒ぎたい"
@@ -8952,7 +8955,11 @@
       "audioUrl": "/media/audio/solar/a01-07-Run With Us.mp3",
       "audioStatus": "ready",
       "spotlightMemberIds": [
-        "leo"
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
       ],
       "moodTags": [
         "走る",
@@ -9256,7 +9263,11 @@
       "audioUrl": "/media/audio/solar/a01-08-Afterimage.mp3",
       "audioStatus": "ready",
       "spotlightMemberIds": [
-        "leo"
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
       ],
       "moodTags": [
         "余韻",
