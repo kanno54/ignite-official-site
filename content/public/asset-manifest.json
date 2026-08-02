@@ -354,6 +354,31 @@
       "path": "/assets/images/covers/poster-solar-overdrive.webp",
       "status": "ready",
       "aspect": "3:4"
+    },
+    "poster-solar-afterimage": {
+      "path": "/assets/images/covers/poster-solar-afterimage.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-solar-hands-up-hearts-out": {
+      "path": "/assets/images/covers/poster-solar-hands-up-hearts-out.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-solar-blue-signal": {
+      "path": "/assets/images/covers/poster-solar-blue-signal.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-solar-run-with-us": {
+      "path": "/assets/images/covers/poster-solar-run-with-us.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-solar-daybreak-runner": {
+      "path": "/assets/images/covers/poster-solar-daybreak-runner.webp",
+      "status": "ready",
+      "aspect": "3:4"
     }
   }
 }
