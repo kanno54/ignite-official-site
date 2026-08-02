@@ -46,6 +46,10 @@ const expectedFiles = [
   'accessibility/index.html',
 ];
 
+if (isStagingBuild) {
+  expectedFiles.push('features/leo-from-stage-to-solar/index.html');
+}
+
 let missing = 0;
 for (const relPath of expectedFiles) {
   const fullPath = path.join(distDir, relPath);

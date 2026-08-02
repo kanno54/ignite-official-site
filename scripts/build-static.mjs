@@ -55,6 +55,10 @@ const routes = [
   '/404.html',
 ];
 
+if (isStagingBuild) {
+  routes.push('/features/leo-from-stage-to-solar/');
+}
+
 for (const route of routes) {
   let targetPath;
   if (route === '/' || route === '/index.html') {

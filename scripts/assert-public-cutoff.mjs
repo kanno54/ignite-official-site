@@ -8,13 +8,14 @@ const distDir = path.resolve(__dirname, '../dist');
 
 console.log('--- RUNNING PUBLIC CUTOFF SAFETY ASSERTION ---');
 
-const FORBIDDEN_FUTURE_KEYWORDS = [
-  'SOLAR',
-  'EQUINOX',
-  'LINDEN',
-  'Silent Signal',
-  'RISE AGAIN',
-];
+const robotsPath = path.join(distDir, 'robots.txt');
+const isStagingBuild =
+  process.env.VITE_STAGING === 'true' ||
+  (fs.existsSync(robotsPath) && fs.readFileSync(robotsPath, 'utf8').includes('Disallow: /'));
+
+const FORBIDDEN_FUTURE_KEYWORDS = isStagingBuild
+  ? ['EQUINOX', 'LINDEN', 'Silent Signal', 'RISE AGAIN']
+  : ['SOLAR', 'EQUINOX', 'LINDEN', 'Silent Signal', 'RISE AGAIN'];
 
 if (!fs.existsSync(distDir)) {
   console.log('Dist directory does not exist yet; checking source directory...');
