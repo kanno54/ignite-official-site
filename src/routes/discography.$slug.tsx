@@ -107,9 +107,11 @@ export const ReleaseDetailPage: React.FC = () => {
                     <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.4rem', fontWeight: 700, margin: 0, color: '#F6F3ED' }}>
                       {track.title}
                     </h3>
-                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#AEB6C4' }}>
-                      {track.versionLabel}
-                    </span>
+                    {track.versionLabel && (
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#AEB6C4' }}>
+                        {track.versionLabel}
+                      </span>
+                    )}
                   </div>
                 </div>
 

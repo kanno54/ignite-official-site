@@ -473,7 +473,7 @@ export const CampaignDetailPage: React.FC = () => {
                       </span>
                       <div>
                         <div style={{ fontWeight: 700, color: '#F6F3ED', fontSize: '1.05rem' }}>{rec.title}</div>
-                        <div style={{ fontSize: '0.8rem', color: '#AEB6C4' }}>{rec.versionLabel}</div>
+                        {rec.versionLabel && <div style={{ fontSize: '0.8rem', color: '#AEB6C4' }}>{rec.versionLabel}</div>}
                       </div>
                     </div>
 
