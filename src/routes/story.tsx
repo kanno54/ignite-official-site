@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // IGNITE Official Story & Timeline Component
 import { Link } from 'react-router-dom';
 import { FiveLights } from '../components/common/FiveLights';
-
 import { getCurrentCampaign } from '../utils/contentLoader';
 
 export const StoryPage: React.FC = () => {
   const currentCamp = getCurrentCampaign();
-  const isMoonlitCurrent = currentCamp.id === 'moonlit';
+
+  useEffect(() => {
+    document.title = 'OFFICIAL STORY & TIMELINE｜IGNITE Official Site';
+  }, []);
 
   const timelineEvents = [
     {
+      id: 'firestarter',
       date: '2020.10',
       era: 'FIRESTARTER ERA',
       title: 'インディーズ始動 & 1st Mini Album『FIRESTARTER』リリース',
@@ -18,6 +21,7 @@ export const StoryPage: React.FC = () => {
       link: '/discography/firestarter/',
     },
     {
+      id: 'ignition',
       date: '2021.07',
       era: 'IGNITION ERA',
       title: 'メジャーデビュー Single『IGNITION』リリース',
@@ -25,6 +29,7 @@ export const StoryPage: React.FC = () => {
       link: '/discography/ignition/',
     },
     {
+      id: 'burn-it-down',
       date: '2021.10',
       era: 'BURN IT DOWN ERA',
       title: '2nd Single『BURN IT DOWN』リリース & 東名阪クアトロツアー',
@@ -32,18 +37,28 @@ export const StoryPage: React.FC = () => {
       link: '/discography/burn-it-down/',
     },
     {
+      id: 'no-limits',
       date: '2022.09',
-      era: isMoonlitCurrent ? 'NO LIMITS ERA' : 'NO LIMITS ERA (CURRENT)',
+      era: 'NO LIMITS ERA',
       title: '3rd Single『No Limits』リリース — スカイブルーの地平へ',
       description: '炎の熱を保ったまま、青空と風が舞う大会場へと視界を開く。YUTOの最高音サビフィーチャーが大きな話題を呼ぶ最高到達点。',
       link: '/discography/no-limits/',
     },
     {
+      id: 'moonlit',
       date: '2023.05',
-      era: isMoonlitCurrent ? 'MOONLIT ERA (CURRENT)' : 'MOONLIT ERA',
+      era: 'MOONLIT ERA',
       title: '4th Single『Moonlit』リリース — 青い月光とダンスビートの静寂',
       description: '静と動、影と光のコントラストを描く4thシングル。RENの言葉とエモーショナルなボーカルが新境地を切り拓く。',
       link: '/discography/moonlit/',
+    },
+    {
+      id: 'solar',
+      date: '2023.07',
+      era: 'SOLAR ERA',
+      title: '1st Full Album『SOLAR』リリース ― 火をつける側から、光を放つ側へ',
+      description: '朝から昼、夕方、夜、そして次の朝へ。五人が初めて、自分たちの明るさと影を一枚の大きな景色として描く。表題曲「SOLAR」とともに、IGNITEはより大きな光を放つ側へ踏み出した。',
+      link: '/discography/solar/',
     },
   ];
 
@@ -55,7 +70,7 @@ export const StoryPage: React.FC = () => {
           OFFICIAL STORY & TIMELINE
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-          2020年10月のインディーズ結成から4th Single『Moonlit』までの公式年表。
+          2020年10月のインディーズ始動から、2023年7月の1st Full Album『SOLAR』まで。五人が小さな火を育て、初めて大きな光を放つまでの公式年表。
         </p>
       </div>
 
@@ -63,63 +78,69 @@ export const StoryPage: React.FC = () => {
       <section style={{ display: 'flex', flexDirection: 'column', gap: '32px', position: 'relative' }}>
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: '19px', width: '2px', backgroundColor: 'var(--color-border)', zIndex: 0 }} />
 
-        {timelineEvents.map((ev, idx) => (
-          <div
-            key={idx}
-            style={{
-              display: 'flex',
-              gap: '24px',
-              position: 'relative',
-              zIndex: 1,
-            }}
-          >
-            <div
-              style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '50%',
-                backgroundColor: ev.era.includes('CURRENT') ? 'var(--campaign-accent)' : 'var(--color-surface-elevated)',
-                border: '2px solid var(--campaign-accent)',
-                color: ev.era.includes('CURRENT') ? 'var(--campaign-on-accent)' : '#FFF',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '0.85rem',
-                fontFamily: 'var(--font-mono)',
-                fontWeight: 700,
-                flexShrink: 0,
-              }}
-            >
-              0{idx + 1}
-            </div>
+        {timelineEvents.map((ev, idx) => {
+          const isCurrent = currentCamp.id === ev.id || (idx === timelineEvents.length - 1 && (currentCamp.id === 'solar' || currentCamp.status === 'current'));
+          const eraText = isCurrent ? `${ev.era} (CURRENT)` : ev.era;
 
+          return (
             <div
+              key={ev.id}
               style={{
-                flex: 1,
-                backgroundColor: 'var(--color-surface)',
-                border: ev.era.includes('CURRENT') ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
-                padding: '24px',
-                borderRadius: '2px',
+                display: 'flex',
+                gap: '24px',
+                position: 'relative',
+                zIndex: 1,
               }}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', fontWeight: 600 }}>
-                  {ev.date} // {ev.era}
-                </span>
-                <Link to={ev.link} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4' }}>
-                  VIEW RELEASE ➔
-                </Link>
+              <div
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  backgroundColor: isCurrent ? 'var(--campaign-accent)' : 'var(--color-surface-elevated)',
+                  border: isCurrent ? '2px solid var(--campaign-accent)' : '2px solid var(--color-border)',
+                  color: isCurrent ? 'var(--campaign-on-accent)' : '#FFF',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '0.85rem',
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: 700,
+                  flexShrink: 0,
+                }}
+              >
+                0{idx + 1}
               </div>
 
-              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.4rem', fontWeight: 700, margin: '8px 0', color: '#F6F3ED' }}>
-                {ev.title}
-              </h2>
-              <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-                {ev.description}
-              </p>
+              <div
+                style={{
+                  flex: 1,
+                  backgroundColor: isCurrent ? 'rgba(85, 168, 255, 0.04)' : 'var(--color-surface)',
+                  border: isCurrent ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
+                  padding: '24px',
+                  borderRadius: '2px',
+                  boxShadow: isCurrent ? '0 0 24px rgba(85, 168, 255, 0.1)' : 'none',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', fontWeight: 600 }}>
+                    {ev.date} // {eraText}
+                  </span>
+                  <Link to={ev.link} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4' }}>
+                    VIEW RELEASE ➔
+                  </Link>
+                </div>
+
+                <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.4rem', fontWeight: 700, margin: '8px 0', color: '#F6F3ED' }}>
+                  {ev.title}
+                </h2>
+                <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
+                  {ev.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </section>
 
     </div>
