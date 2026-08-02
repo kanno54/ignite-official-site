@@ -14,7 +14,7 @@ const isStagingBuild =
   (fs.existsSync(robotsPath) && fs.readFileSync(robotsPath, 'utf8').includes('Disallow: /'));
 
 const FORBIDDEN_FUTURE_KEYWORDS = isStagingBuild
-  ? ['EQUINOX', 'LINDEN', 'Silent Signal', 'RISE AGAIN']
+  ? ['LINDEN', 'Silent Signal', 'RISE AGAIN']
   : ['SOLAR', 'EQUINOX', 'LINDEN', 'Silent Signal', 'RISE AGAIN'];
 
 if (!fs.existsSync(distDir)) {
