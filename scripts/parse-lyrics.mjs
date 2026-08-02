@@ -27,7 +27,20 @@ const fileMapping = [
 
   { recordingId: 'moonlit-title', file: 'data/Lyrics/005-Moonlit/005-01-Moonlit.md' },
   { recordingId: 'between-the-lights', file: 'data/Lyrics/005-Moonlit/005-02-Between-the-Lights.md' },
-  { recordingId: 'afterimage-live', file: 'data/Lyrics/005-Moonlit/005-03-Afterimage.md' }
+  { recordingId: 'afterimage-live', file: 'data/Lyrics/005-Moonlit/005-03-Afterimage.md' },
+
+  { recordingId: 'solar-title', file: 'data/Lyrics/006-SOLAR/06-01-SOLAR.md' },
+  { recordingId: 'solar-no-limits', file: 'data/Lyrics/006-SOLAR/06-02-NoLimits.md' },
+  { recordingId: 'solar-heatwave-remix', file: 'data/Lyrics/006-SOLAR/06-03-Heatwave.v3.md' },
+  { recordingId: 'solar-golden-hour', file: 'data/Lyrics/006-SOLAR/06-04-GoldenHour.md' },
+  { recordingId: 'solar-overdrive', file: 'data/Lyrics/006-SOLAR/06-05-OVERDRIVE.md' },
+  { recordingId: 'solar-blue-signal', file: 'data/Lyrics/006-SOLAR/06-06-BlueSignal.md' },
+  { recordingId: 'solar-run-with-us', file: 'data/Lyrics/006-SOLAR/06-07-RunWithUs.md' },
+  { recordingId: 'solar-afterimage', file: 'data/Lyrics/006-SOLAR/06-08-Afterimage.md' },
+  { recordingId: 'solar-moonlit', file: 'data/Lyrics/006-SOLAR/06-09-Moonlit.md' },
+  { recordingId: 'solar-daybreak-runner', file: 'data/Lyrics/006-SOLAR/06-10-DaybreakRunner.md' },
+  { recordingId: 'solar-hands-up-hearts-out', file: 'data/Lyrics/006-SOLAR/06-11-HandsUpHeartsOut.md' },
+  { recordingId: 'solar-sun-never-sleeps', file: 'data/Lyrics/006-SOLAR/06-12-SunNeverSleep.md' }
 ];
 
 function parseLyricsMarkdownClean(content) {
