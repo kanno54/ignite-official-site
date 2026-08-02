@@ -24,7 +24,7 @@
 [Chorus - Full Male Group]
 火をつけろ　いますぐに
 まだ見えない未来へ
-迷いも全部　燃料にして
+迷いも全部燃料にして
 
 気をつけろ　この声が届くなら
 昨日までの僕らを超えていける
@@ -54,9 +54,9 @@
 [Chorus - Full Male Group]
 火をつけろ　いますぐに
 怖がらなくていい
-弱さも全部　抱えたままで
+弱さも全部抱えたままで
 
-目を凝らせ　この先が暗くても
+目を凝らせこの先が暗くても
 手を伸ばせば　同じ熱がある
 
 何度でも　何度でも
@@ -86,7 +86,7 @@ IGNITE
 [Final Chorus - Full Male Group, Explosive]
 火をつけろ　いますぐに
 まだ見えない未来へ
-涙も全部　燃料にして
+涙も全部燃料にして
 
 気をつけろ　この声が届くなら
 昨日までの僕らを超えていける
@@ -99,11 +99,3 @@ IGNITE
 [Outro - Whispered Group Vocal]
 We don't just perform.
 We burn.
-
-IGNITION
-
-[Outro - Whispered Group Vocal]
-We don't just perform.
-We burn.
-
-IGNITION
