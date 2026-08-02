@@ -384,6 +384,16 @@
       "path": "/assets/images/covers/poster-solar-sun-never-sleeps.webp",
       "status": "ready",
       "aspect": "3:4"
+    },
+    "poster-solar-title": {
+      "path": "/assets/images/covers/poster-solar-vertical.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-solar-vertical": {
+      "path": "/assets/images/covers/poster-solar-vertical.webp",
+      "status": "ready",
+      "aspect": "3:4"
     }
   }
 }

@@ -7092,7 +7092,8 @@
         {
           "text": "SOLAR"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-title"
     },
     {
       "id": "solar-no-limits",
@@ -7434,7 +7435,8 @@
         {
           "text": "IGNITE"
         }
-      ]
+      ],
+      "posterAssetId": "track-poster-no-limits"
     },
     {
       "id": "solar-heatwave-remix",
@@ -7863,7 +7865,8 @@
         {
           "text": "新しい夏へ"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-heatwave-remix"
     },
     {
       "id": "solar-golden-hour",
@@ -8152,7 +8155,8 @@
         {
           "text": "Golden Hour"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-golden-hour"
     },
     {
       "id": "solar-overdrive",
@@ -8507,7 +8511,8 @@
         {
           "text": "OVERDRIVE."
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-overdrive"
     },
     {
       "id": "solar-blue-signal",
@@ -8913,7 +8918,8 @@
         {
           "text": "君が笑って　手を振った"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-blue-signal"
     },
     {
       "id": "solar-run-with-us",
@@ -9216,7 +9222,8 @@
         {
           "text": "We’ll run with you"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-run-with-us"
     },
     {
       "id": "solar-afterimage",
@@ -9624,7 +9631,8 @@
         {
           "text": "僕はまだ立ち尽くしてる"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-afterimage"
     },
     {
       "id": "solar-moonlit",
@@ -9926,7 +9934,8 @@
         {
           "text": "少しだけ前を向けた"
         }
-      ]
+      ],
+      "posterAssetId": "track-poster-moonlit"
     },
     {
       "id": "solar-daybreak-runner",
@@ -10254,7 +10263,8 @@
         {
           "text": "Now we run"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-daybreak-runner"
     },
     {
       "id": "solar-hands-up-hearts-out",
@@ -10672,7 +10682,8 @@
         {
           "text": "光の方へ"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-hands-up-hearts-out"
     },
     {
       "id": "solar-sun-never-sleeps",
@@ -11042,7 +11053,8 @@
         {
           "text": "We carry the light"
         }
-      ]
+      ],
+      "posterAssetId": "poster-solar-sun-never-sleeps"
     }
   ]
 }
