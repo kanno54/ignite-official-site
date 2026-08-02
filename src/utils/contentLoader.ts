@@ -28,7 +28,12 @@ export const getCampaignById = (id: string): Campaign | undefined => {
 };
 
 export const getCurrentCampaign = (): Campaign => {
+  const isStaging = isStagingEnv();
   const campaigns = campaignsData as Campaign[];
+  if (isStaging) {
+    const stagingCurrent = campaigns.find((c) => c.status === 'staging');
+    if (stagingCurrent) return stagingCurrent;
+  }
   const current = campaigns.find((c) => c.status === 'current');
   return current || campaigns[0];
 };

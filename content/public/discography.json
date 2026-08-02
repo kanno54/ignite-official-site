@@ -1,6 +1,39 @@
 {
   "releases": [
     {
+      "id": "solar",
+      "slug": "solar",
+      "title": "SOLAR",
+      "subtitle": "1st Full Album",
+      "format": "1st Full Album",
+      "fictionalReleaseDate": "2023-08",
+      "fictionalReleaseDateFull": "2023 Summer",
+      "coverAssetId": "hero-solar-release-special-desktop",
+      "description": "1st Full Album『SOLAR』。火をつける側から、光を放つ側へ。",
+      "linerNotes": "火をつける側から、光を放つ側へ。1st Full Album『SOLAR』。",
+      "campaignState": "staging",
+      "trackIds": [
+        "solar-title",
+        "solar-no-limits",
+        "solar-heatwave-remix",
+        "solar-golden-hour",
+        "solar-overdrive",
+        "solar-blue-signal",
+        "solar-run-with-us",
+        "solar-afterimage",
+        "solar-moonlit",
+        "solar-daybreak-runner",
+        "solar-hands-up-hearts-out",
+        "solar-sun-never-sleeps"
+      ],
+      "publication": {
+        "fictionalReleaseDate": "2023-08",
+        "publishAt": "2023-08-02T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "staging"
+      }
+    },
+    {
       "id": "firestarter",
       "slug": "firestarter",
       "title": "FIRESTARTER",

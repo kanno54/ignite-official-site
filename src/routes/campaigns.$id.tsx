@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getCampaignById, getReleaseBySlug, getRecordingsForRelease, getArticles } from '../utils/contentLoader';
+import { getCampaignById, getReleaseBySlug, getRecordingsForRelease, getArticles, getCampaigns } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
@@ -13,7 +13,7 @@ export const CampaignDetailPage: React.FC = () => {
 
   React.useEffect(() => {
     if (campaign) {
-      document.title = `${campaign.title}｜Campaign Archive｜IGNITE Official Site`;
+      document.title = `${campaign.title}｜Campaign Special｜IGNITE Official Site`;
       const canonicalEl = document.querySelector("link[rel='canonical']");
       if (canonicalEl) {
         canonicalEl.setAttribute('href', `https://ignite-official.site/campaigns/${campaign.slug || campaign.id}/`);
@@ -33,6 +33,8 @@ export const CampaignDetailPage: React.FC = () => {
   const recordings = getRecordingsForRelease(campaign.releaseId);
   const allArticles = getArticles();
   const relatedArticles = allArticles.filter((art) => campaign.relatedArticleIds.includes(art.slug) || campaign.relatedArticleIds.includes(art.id));
+  const allCampaigns = getCampaigns();
+  const relatedCampaigns = allCampaigns.filter((c) => campaign.relatedCampaignIds?.includes(c.id) || campaign.relatedCampaignIds?.includes(c.slug || ''));
 
   const handlePlayTitleTrack = () => {
     if (recordings.length > 0) {
@@ -344,6 +346,67 @@ export const CampaignDetailPage: React.FC = () => {
           </div>
         )}
 
+        {/* THREE WAYS INTO SOLAR Section */}
+        {campaign.threeWays && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              {campaign.threeWays.eyebrow}
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#F6F3ED', margin: '12px 0 24px' }}>
+              {campaign.threeWays.heading}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+              {campaign.threeWays.items.map((item, idx) => (
+                <div key={idx} style={{ backgroundColor: 'var(--color-surface-elevated)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
+                    {item.category}
+                  </span>
+                  <h3 style={{ fontSize: '1.25rem', color: '#F6F3ED', margin: 0, fontWeight: 700 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.92rem', color: '#AEB6C4', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+                    {item.body}
+                  </p>
+                  {item.links && item.links.map((link, lIdx) => (
+                    <div key={lIdx} style={{ marginTop: '8px', paddingTop: '8px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                      <Link to={link.url} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: campaign.campaignColors.accent, fontWeight: 700, textDecoration: 'none' }}>
+                        {link.text} ➔
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ONE DAY, TWELVE TRACKS Section */}
+        {campaign.oneDayTwelveTracks && (
+          <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
+            <span className="campaign-tag" style={{ backgroundColor: campaign.campaignColors.accent, color: '#080A0F', fontWeight: 700, marginBottom: '12px' }}>
+              {campaign.oneDayTwelveTracks.eyebrow}
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: '#F6F3ED', margin: '12px 0 24px' }}>
+              {campaign.oneDayTwelveTracks.heading}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
+              {campaign.oneDayTwelveTracks.items.map((item, idx) => (
+                <div key={idx} style={{ backgroundColor: 'var(--color-surface-elevated)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '1.1rem', color: campaign.campaignColors.accent, fontWeight: 700 }}>
+                    {item.timeSlot}
+                  </span>
+                  <h3 style={{ fontSize: '1.15rem', color: '#F6F3ED', margin: 0, fontWeight: 700 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0, whiteSpace: 'pre-line' }}>
+                    {item.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* THREE WAYS FORWARD (Track Overview Cards) */}
         {campaign.trackOverview && (
           <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '36px 32px', borderRadius: '4px' }}>
@@ -555,6 +618,44 @@ export const CampaignDetailPage: React.FC = () => {
                   </h3>
                   <p style={{ fontSize: '0.85rem', color: '#AEB6C4', margin: 0, lineHeight: 1.5 }}>
                     {art.dek}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related Campaigns */}
+        {relatedCampaigns.length > 0 && (
+          <section>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: '0 0 20px' }}>
+              RELATED CAMPAIGNS
+            </h2>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+              {relatedCampaigns.map((rc) => (
+                <Link
+                  key={rc.id}
+                  to={`/campaigns/${rc.slug || rc.id}/`}
+                  style={{
+                    backgroundColor: 'var(--color-surface)',
+                    border: '1px solid var(--color-border)',
+                    padding: '24px',
+                    borderRadius: '4px',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                  }}
+                >
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: campaign.campaignColors.accent }}>
+                    {rc.eyebrow}
+                  </span>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#F6F3ED', margin: 0 }}>
+                    {rc.title}
+                  </h3>
+                  <p style={{ fontSize: '0.85rem', color: '#AEB6C4', margin: 0, lineHeight: 1.5 }}>
+                    {rc.catchCopy}
                   </p>
                 </Link>
               ))}

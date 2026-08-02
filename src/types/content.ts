@@ -260,6 +260,29 @@ export type Campaign = {
     }>;
   };
   trackDescriptions?: Record<string, string>;
+  relatedCampaignIds?: string[];
+  threeWays?: {
+    eyebrow: string;
+    heading: string;
+    items: Array<{
+      category: string;
+      title: string;
+      body: string;
+      links?: Array<{
+        text: string;
+        url: string;
+      }>;
+    }>;
+  };
+  oneDayTwelveTracks?: {
+    eyebrow: string;
+    heading: string;
+    items: Array<{
+      timeSlot: string;
+      title: string;
+      body: string;
+    }>;
+  };
 };
 
 export type NewsItem = {

@@ -56,6 +56,7 @@ const routes = [
 ];
 
 if (isStagingBuild) {
+  routes.push('/campaigns/solar/');
   routes.push('/features/six-new-lights/');
   routes.push('/features/leo-from-stage-to-solar/');
 }

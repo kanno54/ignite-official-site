@@ -1,5 +1,137 @@
 [
   {
+    "id": "solar",
+    "slug": "solar",
+    "status": "staging",
+    "releaseId": "solar",
+    "releaseDate": "2023-08-02",
+    "eyebrow": "1ST FULL ALBUM / 2023 SUMMER RELEASE",
+    "title": "SOLAR",
+    "catchCopy": "火をつける側から、光を放つ側へ。",
+    "desktopHero": "/assets/images/campaigns/hero-solar-release-special-desktop.webp",
+    "mobileHero": "/assets/images/campaigns/hero-solar-release-special-desktop.webp",
+    "heroAlt": "夜から朝、夕景へ巡るSOLARの光を背に、白と金の衣装で歩き出すIGNITEの五人",
+    "primaryCta": {
+      "text": "LISTEN NOW ▶",
+      "action": "play"
+    },
+    "secondaryCta": {
+      "text": "VIEW DISCOGRAPHY ➔",
+      "action": "link",
+      "url": "/discography/"
+    },
+    "campaignColors": {
+      "accent": "#F4C34E",
+      "deep": "#080A0F",
+      "text": "#F6F3ED"
+    },
+    "relatedArticleIds": [
+      "leo-from-stage-to-solar",
+      "six-new-lights"
+    ],
+    "relatedCampaignIds": [
+      "no-limits",
+      "moonlit"
+    ],
+    "introduction": {
+      "heading": "FROM SPARK TO SUNLIGHT",
+      "body": "2023年夏、IGNITEは1st Full Album『SOLAR』をリリースする。\n\n小さな火でも、誰かの明日を変えられる。そう信じて走り始めた五人は、ライブとシングルを重ねる中で、自分たちの熱が客席へ届き、そこでさらに大きな光へ変わっていくことを知った。\n\n『SOLAR』は、その最初の到達点である。\n\n強い日差しの下へ飛び出す表題曲。すでにIGNITEの現在地を示してきた二つのシングル。ステージで先に育ち、スタジオで別の輪郭を得た楽曲。そして、初のフルアルバムで初めて届けられる六つの新曲。\n\n全12曲は、ただ明るく、ただ熱いだけではない。朝の始動、真昼の熱、夕方の余韻、夜に残る感情、そして次の朝へ向かう気配まで、一日の中で変わり続ける光を描いている。\n\n初期のIGNITEが持っていた勢いと青春感を、最も大きなスケールで鳴らした一枚。同時に、光が強くなるほど、そのそばに影も生まれることを、五人が初めて見つめたアルバムでもある。"
+    },
+    "creationBackground": {
+      "heading": "FROM SPARK TO SUNLIGHT",
+      "subtitle": "五人は、初めて大きな光の中に立つ。",
+      "body": "インディーズ期のIGNITEを象徴していたのは、「火をつける」という意志だった。\n\nまだ小さくても、自分たちから始める。誰かが立ち止まっているなら、先に走り出して合図を送る。1st Mini Album『FIRESTARTER』からメジャーデビュー以降のシングルまで、五人は何度もその火を歌ってきた。\n\n『SOLAR』で、その主語が少し変わる。\n\n五人だけで燃え続けようとするのではなく、客席から返ってくる声を受け取り、一緒に光を大きくする。誰か一人が太陽になるのではなく、異なる五つの声と、その歌を待つ人たちによって、一つの景色を作る。\n\n表題曲「SOLAR」でRENの声がサビの扉を開き、直後に五人の声が横へ広がる瞬間は、その変化を最も鮮明に伝えている。\n\nこれは、IGNITEが完成したことを宣言するアルバムではない。\n\n五人が初めて、自分たちの光が届く広さを知った記録である。"
+    },
+    "bannerCopy": "WE DON'T STAND UNDER THE SUN. WE MAKE THE DAY TOGETHER.",
+    "threeWays": {
+      "eyebrow": "THREE WAYS INTO SOLAR",
+      "heading": "十二曲は、三つの異なる時間から一枚へ集まった。",
+      "items": [
+        {
+          "category": "THE SINGLES",
+          "title": "すでに五人の現在地を変えていた二曲。",
+          "body": "「No Limits」は、YUTOのハイトーンを初めて大きくフィーチャーし、五人の視線をステージの外へ開いた曲。\n\n「Moonlit」は、その次に視線を静かに内側へ戻し、IGNITEが初めて本格的に夜と、言葉にならない感情を描いた曲。\n\n相反するように見える二曲が同じアルバムに存在することで、『SOLAR』の光は単色ではなくなる。前へ進む力と、立ち止まらずに抱えていく感情。その両方が、今のIGNITEを作っている。\n\nこの二曲の物語は、各リリース特集でより深く紹介している。",
+          "links": [
+            {
+              "text": "No Limits Release Special",
+              "url": "/campaigns/no-limits/"
+            },
+            {
+              "text": "Moonlit Release Special",
+              "url": "/campaigns/moonlit/"
+            }
+          ]
+        },
+        {
+          "category": "FROM THE STAGE",
+          "title": "客席と育てた歌を、スタジオへ持ち帰る。",
+          "body": "「Run With Us」「Afterimage」「Hands Up, Hearts Out」は、スタジオ音源より先にライブ版が届けられていた楽曲である。\n\nそこへ、初期曲「Heatwave」を夏フェスの景色へ向けて再構築した「Heatwave - SOLAR Remix -」が加わる。\n\n四曲に共通するのは、ライブの熱をそのまま再現しようとしなかったことだ。歓声や会場の空気を失った状態で同じ演奏を作るのではなく、ステージを重ねたからこそ見つかった曲の芯を、五人の声とスタジオの音であらためて形にした。\n\nLEOが語る、ステージから『SOLAR』へ至るまでの四曲。",
+          "links": [
+            {
+              "text": "FROM THE STAGE TO SOLAR — ライブで育った歌を、もう一度録るということ。",
+              "url": "/features/leo-from-stage-to-solar/"
+            }
+          ]
+        },
+        {
+          "category": "SIX NEW LIGHTS",
+          "title": "初のフルアルバムで、初めて世に出る六つの光。",
+          "body": "「SOLAR」「Golden Hour」「OVERDRIVE」「Blue Signal」「Daybreak Runner」「Sun Never Sleeps」。\n\n六つの完全新曲は、アルバムの時間と温度を決めるために書かれた。\n\n真昼の開放感だけでは、一日は描けない。夕方の美しさ、夜明け前の冷たさ、見えなくなっても誰かへ渡っていく光まで含めることで、『SOLAR』というタイトルは初めて、昼の太陽だけではない意味を持つ。\n\n五人が楽曲制作、レコーディング、パフォーマンスから見つけた「一日の光」を語る。",
+          "links": [
+            {
+              "text": "SIX NEW LIGHTS — 五人で作った、一日の光。",
+              "url": "/features/six-new-lights/"
+            }
+          ]
+        }
+      ]
+    },
+    "oneDayTwelveTracks": {
+      "eyebrow": "ONE DAY, TWELVE TRACKS",
+      "heading": "光は、同じ色のままではいられない。",
+      "items": [
+        {
+          "timeSlot": "01–03｜INTO THE SUN",
+          "title": "光の中へ飛び出し、限界の外側へ手を伸ばす",
+          "body": "「SOLAR」で五人は光の中へ飛び出し、「No Limits」で限界の外側へ手を伸ばす。「Heatwave - SOLAR Remix -」では、初期から抱えてきた熱を、より大きな夏の景色へ解き放つ。\n\nアルバム前半は、IGNITEの明るさと勢いを一切ためらわずに鳴らす。"
+        },
+        {
+          "timeSlot": "04–07｜LIGHT IN MOTION",
+          "title": "立ち止まり、振り返り、もう一度走り出す",
+          "body": "「Golden Hour」で初めて足を止め、過ぎていく時間の色を見る。その余韻を抱えたまま、「OVERDRIVE」で身体を加速させ、「Blue Signal」で仲間へ小さな合図を送り、「Run With Us」で再び同じ速度へ集まっていく。\n\nここにあるのは、一方向へ進むだけではない青春の時間だ。立ち止まり、振り返り、誰かがまだ隣にいることを確かめて、もう一度走り出す。"
+        },
+        {
+          "timeSlot": "08–09｜AFTER THE LIGHTS",
+          "title": "消えた照明のあとに残る感情と、答えのない夜",
+          "body": "「Afterimage」で、消えた照明のあとに残る感情を見つめ、「Moonlit」で答えのない夜へ入る。\n\n大きな声だけが熱ではない。届かなかった言葉や、誰にも渡せずに持ち帰った気持ちも、消えたことにはならない。\n\n『SOLAR』の中で最も静かなこの二曲があるからこそ、前半の光は単なる眩しさではなくなる。"
+        },
+        {
+          "timeSlot": "10–12｜TOWARD THE NEXT MORNING",
+          "title": "夜明けを迎えに行き、消えずに受け渡されていく光",
+          "body": "「Daybreak Runner」は、朝を待つのではなく、まだ暗い街を走って迎えに行く曲。「Hands Up, Hearts Out」は、夜を越えた五人と客席が、もう一度無邪気に声を重ねる場所になる。\n\nそして「Sun Never Sleeps」は、勝利や完成を宣言せずにアルバムを閉じる。\n\n光は沈んでも消えない。こちらから見えない時間には、別の誰かを照らし、いつか次の朝として戻ってくる。\n\n十二曲を聴き終えたあと、もう一度最初の「SOLAR」へ戻ると、同じ光が少し違って聞こえるはずだ。"
+        }
+      ]
+    },
+    "trackDescriptions": {
+      "solar-title": "NEW LIGHT — 五人の声が一気に開く、アルバムの始動。",
+      "solar-no-limits": "SINGLE — IGNITEの視線を、限界の外側へ開いたアンセム。",
+      "solar-heatwave-remix": "REIMAGINED — 初期の夏曲を、空の見える大きな景色へ再構築。",
+      "solar-golden-hour": "NEW LIGHT — 終わりゆく時間の美しさを抱くミドルナンバー。",
+      "solar-overdrive": "NEW LIGHT — KAIとSHOが前へ出る、重低音のダンスナンバー。",
+      "solar-blue-signal": "NEW LIGHT — YUTOの歌い出しから始まる、仲間への小さな合図。",
+      "solar-run-with-us": "FROM THE STAGE — 客席と覚えた呼吸を、五人の声へ持ち帰った曲。",
+      "solar-afterimage": "FROM THE STAGE — 消えた照明のあとに残る、外へ投げない熱。",
+      "solar-moonlit": "SINGLE — 答えのない夜を、静かな歩みとともに描いた転換点。",
+      "solar-daybreak-runner": "NEW LIGHT — 夜明けより先に走り出し、次の光を迎えに行く。",
+      "solar-hands-up-hearts-out": "FROM THE STAGE — 五人の無邪気さと客席の声が転がすライブ定番曲。",
+      "solar-sun-never-sleeps": "NEW LIGHT — 見えなくなった光を、次の朝へ受け渡すラストナンバー。"
+    },
+    "commentary": {
+      "heading": "THE SUN DOESN'T END AT SUNSET",
+      "body": "『SOLAR』で、IGNITEは初めて大きな光の中に立つ。\n\nしかし、このアルバムが五人に与えたのは、迷いのない強さだけではなかった。夕方が来ること。夜の中では、同じ光が見えなくなること。誰かを照らすほど、自分たちの足元には新しい影が生まれること。\n\nそれでも、光は終わらない。\n\n一人の声が次の声を呼び、ステージで生まれた歌がスタジオへ戻り、音源を聴いた誰かがまた次のライブで声を返す。そうして受け渡される限り、IGNITEの一日は何度でも始まる。\n\n『SOLAR』は、五人が太陽になった物語ではない。\n\n五人と、その歌を受け取るすべての人が、一緒に一日を作れると知った物語である。\n\nTHE LIGHT MOVES ON. AND MORNING COMES AGAIN."
+    }
+  },
+  {
     "id": "moonlit",
     "status": "current",
     "releaseId": "moonlit",

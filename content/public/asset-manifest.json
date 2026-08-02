@@ -314,6 +314,16 @@
       "path": "/assets/images/articles/hero-six-new-lights.webp",
       "status": "ready",
       "aspect": "3:2"
+    },
+    "hero-solar-release-special-desktop": {
+      "path": "/assets/images/campaigns/hero-solar-release-special-desktop.webp",
+      "status": "ready",
+      "aspect": "16:9"
+    },
+    "hero-solar-desktop": {
+      "path": "/assets/images/campaigns/hero-solar-release-special-desktop.webp",
+      "status": "ready",
+      "aspect": "16:9"
     }
   }
 }
