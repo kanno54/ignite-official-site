@@ -196,3 +196,73 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
     display: none !important;
   }
 }
+
+/* Mobile Current Campaign Bar Styles */
+.mobile-campaign-bar-container {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background-color: #0F131C;
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1400;
+}
+
+.mobile-campaign-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 16px;
+  text-decoration: none;
+  background-color: #0F131C;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-campaign-bar:hover,
+.mobile-campaign-bar:focus-visible {
+  background-color: var(--color-surface-elevated);
+}
+
+.mobile-campaign-bar-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--campaign-accent);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.mobile-campaign-bar-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F6F3ED;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mobile-campaign-bar-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--campaign-accent);
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .brand-tag-mobile-hide {
+    display: none !important;
+  }
+  .mobile-campaign-bar-container {
+    display: block !important;
+  }
+  .main-content {
+    padding-top: 120px !important;
+  }
+}
+

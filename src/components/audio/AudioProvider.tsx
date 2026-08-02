@@ -330,6 +330,36 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
   };
 
+  const stopTrack = () => {
+    if (audioRef.current) {
+      const audio = audioRef.current;
+      audio.pause();
+      audio.currentTime = 0;
+      audio.removeAttribute('src');
+      audio.load();
+    }
+
+    if (typeof window !== 'undefined' && 'mediaSession' in navigator) {
+      try {
+        navigator.mediaSession.metadata = null;
+        navigator.mediaSession.playbackState = 'none';
+      } catch (e) {
+        // Ignore
+      }
+    }
+
+    setPlayerState((prev) => ({
+      ...prev,
+      currentTrackId: null,
+      currentRecording: null,
+      isPlaying: false,
+      currentTime: 0,
+      duration: 0,
+      isExpanded: false,
+      error: null,
+    }));
+  };
+
   const resume = () => {
     if (!audioRef.current || !playerState.currentRecording) return;
     const audio = audioRef.current;
@@ -422,6 +452,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         togglePlay,
         pause,
         resume,
+        stopTrack,
         nextTrack,
         previousTrack,
         seek,

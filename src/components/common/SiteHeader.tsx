@@ -318,13 +318,33 @@ export const SiteHeader: React.FC = () => {
         </div>
       )}
 
+      {/* Mobile Current Campaign Bar */}
+      {currentCampaign && (
+        <div className="mobile-campaign-bar-container">
+          <Link
+            to={`/campaigns/${currentCampaign.slug || currentCampaign.id}/`}
+            className="mobile-campaign-bar"
+            aria-label={`現在のキャンペーン ${currentCampaign.title} へ移動`}
+            {...(location.pathname === `/campaigns/${currentCampaign.slug || currentCampaign.id}/` ? { 'aria-current': 'page' } : {})}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', overflow: 'hidden', minWidth: 0 }}>
+              <span className="mobile-campaign-bar-label">CURRENT CAMPAIGN</span>
+              <span className="mobile-campaign-bar-title">{currentCampaign.shortTitle || currentCampaign.title}</span>
+            </div>
+            <span className="mobile-campaign-bar-arrow" aria-hidden="true">→</span>
+          </Link>
+        </div>
+      )}
+
       <style>{`
         @media (max-width: 900px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: inline-block !important; }
+          .mobile-campaign-bar-container { display: block !important; }
         }
         @media (min-width: 901px) {
           .mobile-menu-btn { display: none !important; }
+          .mobile-campaign-bar-container { display: none !important; }
         }
       `}</style>
     </header>

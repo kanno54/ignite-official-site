@@ -16,6 +16,7 @@ export const ExpandedPlayer: React.FC = () => {
   const {
     playerState,
     togglePlay,
+    stopTrack,
     previousTrack,
     nextTrack,
     seek,
@@ -216,11 +217,29 @@ export const ExpandedPlayer: React.FC = () => {
           </div>
 
           {/* Main Controls */}
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '24px' }}>
-            <button onClick={previousTrack} style={{ fontSize: '1.6rem', color: '#AEB6C4' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
+            <button
+              type="button"
+              onClick={previousTrack}
+              style={{
+                fontSize: '1.6rem',
+                color: '#AEB6C4',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minWidth: '44px',
+                minHeight: '44px',
+              }}
+              aria-label="前の曲"
+            >
               ⏮
             </button>
             <button
+              type="button"
               onClick={togglePlay}
               style={{
                 width: '56px',
@@ -233,12 +252,54 @@ export const ExpandedPlayer: React.FC = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                cursor: 'pointer',
+                border: 'none',
                 boxShadow: isPlaying ? '0 0 20px var(--color-primary)' : '0 0 16px rgba(85,168,255,0.5)',
               }}
+              aria-label={isPlaying ? '一時停止' : '再生'}
             >
               {isPlaying ? '⏸' : '▶'}
             </button>
-            <button onClick={nextTrack} style={{ fontSize: '1.6rem', color: '#AEB6C4' }}>
+            <button
+              type="button"
+              onClick={stopTrack}
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--color-surface-elevated)',
+                border: '1px solid var(--color-border)',
+                color: '#AEB6C4',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              aria-label="停止"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <rect x="5" y="5" width="14" height="14" rx="2" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              onClick={nextTrack}
+              style={{
+                fontSize: '1.6rem',
+                color: '#AEB6C4',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                minWidth: '44px',
+                minHeight: '44px',
+              }}
+              aria-label="次の曲"
+            >
               ⏭
             </button>
           </div>

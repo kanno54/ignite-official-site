@@ -22,6 +22,7 @@ export type AudioContextType = {
   togglePlay: () => void;
   pause: () => void;
   resume: () => void;
+  stopTrack: () => void;
   nextTrack: () => void;
   previousTrack: () => void;
   seek: (seconds: number) => void;

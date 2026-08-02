@@ -145,7 +145,7 @@ export const App: React.FC = () => {
               position: 'relative',
             }}
           >
-            [STAGING ENVIRONMENT — MOONLIT PRE-RELEASE PREVIEW]
+            [STAGING ENVIRONMENT — SOLAR RELEASE SPECIAL PREVIEW]
           </div>
         )}
         <SiteHeader />
