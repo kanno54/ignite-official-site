@@ -143,12 +143,12 @@
         "between-the-lights",
         "afterimage-live"
       ],
-      "campaignState": "current",
+      "campaignState": "past",
       "publication": {
         "fictionalReleaseDate": "2023-05",
         "publishAt": "2023-05-20T00:00:00Z",
         "visibility": "public",
-        "campaignState": "current"
+        "campaignState": "past"
       }
     }
   ],

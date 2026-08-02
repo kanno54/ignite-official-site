@@ -2,7 +2,7 @@
   {
     "id": "solar",
     "slug": "solar",
-    "status": "staging",
+    "status": "current",
     "releaseId": "solar",
     "releaseDate": "2023-08-02",
     "eyebrow": "1ST FULL ALBUM / 2023 SUMMER RELEASE",
@@ -133,7 +133,7 @@
   },
   {
     "id": "moonlit",
-    "status": "current",
+    "status": "archived",
     "releaseId": "moonlit",
     "releaseDate": "2023-05-20",
     "eyebrow": "4TH SINGLE / 2023.05.20 RELEASE",

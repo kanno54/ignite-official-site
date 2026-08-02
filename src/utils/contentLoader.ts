@@ -15,15 +15,19 @@ export const isStagingEnv = (): boolean => {
 export const getCampaigns = (): Campaign[] => {
   const isStaging = isStagingEnv();
   return (campaignsData as Campaign[]).filter((c) => {
-    if (c.status === 'staging' && !isStaging) return false;
+    if ((c.status === 'staging' || c.id === 'solar') && !isStaging) {
+      return false;
+    }
     return true;
   });
 };
 
 export const getCampaignById = (id: string): Campaign | undefined => {
-  const c = (campaignsData as Campaign[]).find((camp) => camp.id === id);
+  const c = (campaignsData as Campaign[]).find((camp) => camp.id === id || camp.slug === id);
   if (!c) return undefined;
-  if (c.status === 'staging' && !isStagingEnv()) return undefined;
+  if ((c.status === 'staging' || c.id === 'solar') && !isStagingEnv()) {
+    return undefined;
+  }
   return c;
 };
 
@@ -31,11 +35,12 @@ export const getCurrentCampaign = (): Campaign => {
   const isStaging = isStagingEnv();
   const campaigns = campaignsData as Campaign[];
   if (isStaging) {
-    const stagingCurrent = campaigns.find((c) => c.status === 'staging');
-    if (stagingCurrent) return stagingCurrent;
+    const current = campaigns.find((c) => c.status === 'current');
+    if (current) return current;
   }
-  const current = campaigns.find((c) => c.status === 'current');
-  return current || campaigns[0];
+  // Production fallback for public cutoff safety
+  const prodCurrent = campaigns.find((c) => c.id === 'moonlit');
+  return prodCurrent || campaigns[0];
 };
 
 export const getSiteConfig = (): SiteConfig => {
