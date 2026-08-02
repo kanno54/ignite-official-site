@@ -47,6 +47,7 @@ const expectedFiles = [
 ];
 
 if (isStagingBuild) {
+  expectedFiles.push('features/six-new-lights/index.html');
   expectedFiles.push('features/leo-from-stage-to-solar/index.html');
 }
 

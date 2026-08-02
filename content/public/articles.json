@@ -1,5 +1,479 @@
 [
   {
+    "id": "six-new-lights",
+    "slug": "six-new-lights",
+    "title": "SIX NEW LIGHTS",
+    "kicker": "SOLAR CAMPAIGN / ROUND TABLE",
+    "series": "ROUND TABLE",
+    "dek": "朝から夜、そして次の朝へ。『SOLAR』で初めて世に出る六つの新曲を、IGNITEの五人が語る。",
+    "publishDate": "2026-08",
+    "publishDateFull": "2026.08.02",
+    "readingTimeMinutes": 15,
+    "mainSpeakerIds": [
+      "kai",
+      "sho",
+      "leo",
+      "ren",
+      "yuto"
+    ],
+    "heroAssetId": "article-hero-six-new-lights",
+    "heroAlt": "夜明けから夕景へ移るSOLARの光の中で言葉を交わすIGNITEの五人",
+    "heroCopy": "五人で作った、一日の光。",
+    "relatedTrackIds": [
+      "solar-title",
+      "solar-golden-hour",
+      "solar-overdrive",
+      "solar-blue-signal",
+      "solar-daybreak-runner",
+      "solar-sun-never-sleeps"
+    ],
+    "publication": {
+      "fictionalReleaseDate": "2026-08-02",
+      "publishAt": "2026-08-02T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "staging"
+    },
+    "blocks": [
+      {
+        "type": "lead",
+        "content": "1st Full Album『SOLAR』には、すでにシングルとして届けられていた曲、ライブで先に育った曲、そして、このアルバムで初めて世に出る六つの新曲が収められている。\n\n強い日差しの下へ飛び出す表題曲「SOLAR」。一日の終わりを惜しむような「Golden Hour」。五人の身体を限界まで加速させる「OVERDRIVE」。仲間へ送る小さな合図を歌う「Blue Signal」。夜明け前の街を駆け抜ける「Daybreak Runner」。そして、消えずに残る光を次の朝へ渡す「Sun Never Sleeps」。\n\n六曲は、それぞれ異なる色と温度を持ちながら、朝から夜、そして次の朝へ続く『SOLAR』の時間を形作っている。\n\n初のフルアルバムで、五人はどんな光を見つけたのか。楽曲制作とレコーディング、パフォーマンスに込めた思いを、IGNITEの五人に聞いた。"
+      },
+      {
+        "type": "heading",
+        "content": "「明るいアルバム」だけでは、一日にならない"
+      },
+      {
+        "type": "question",
+        "content": "――『SOLAR』には、一日の光の移り変わりという大きな流れがあります。最初からコンセプトは決まっていたのでしょうか。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "最初にあったのは、「今のIGNITEが持っている明るさを、一枚にまとめたい」という話でした。僕らは火とか熱のイメージで見てもらうことが多かったけど、フルアルバムなら、ただ強い曲を十二曲並べるだけでは足りない。朝の光も、真昼の光も、夕方も、夜も入って初めて、一日になるんじゃないかって。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "最初の打ち合わせでは、もっとずっと昼でしたよね（笑）。夏、太陽、フェス、全員で走る、みたいな言葉がホワイトボードにいっぱい並んでいて。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "それだけだと、途中で疲れる。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "言い方（笑）。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "聴く人もそうだし、僕らもそう。全部の曲で同じ方向へ全力を出したら、強弱ではなくて平らに聞こえる。光を強く見せるなら、影が必要だった。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "夜が入ってから、アルバムの終わりが見えました。「暗くなったら終わり」ではなくて、暗い時間にも次の朝へ残るものがある。そこまで行けたら、『SOLAR』というタイトルが、昼の太陽だけを指す言葉ではなくなる気がしたんです。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "僕は最初、タイトルを聞いて、ずっと眩しいアルバムだと思っていました。でも曲が揃ってくると、夕方や夜のほうが、昼間の光をよく覚えているんですよね。『SOLAR』を聴いたあとに、外の明るさを少し気にしてもらえたらいいなと思います。"
+      },
+      {
+        "type": "heading",
+        "content": "SOLAR"
+      },
+      {
+        "type": "heading",
+        "content": "「五人で歌った瞬間に、景色が横へ広がった」"
+      },
+      {
+        "type": "question",
+        "content": "――表題曲「SOLAR」は、アルバムの扉を開く曲です。最初に音源を聴いたときの印象は？"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "来た、夏フェスだ！"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "早かったな（笑）。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "でも、みんな思ったでしょ？ イントロが鳴った瞬間に、屋根がなくなる感じがしたんですよ。目の前が一気に外になる。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "開放感はあった。ただ、踊る側からすると、かなり逃げ場のない曲です。音が上へ抜けていくから、動きが小さいと五人だけ地面に残って見える。腕を上げるだけでも、どこまで身体を伸ばすかを全員で合わせました。"
+      },
+      {
+        "type": "question",
+        "content": "――RENさんがサビの入口を担い、そこから五人の声が一気に広がります。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "最初は、もっと僕の声を前に出す形だったんです。でも、それだと「RENが歌い始めて、四人が後ろから支える」ように聞こえた。表題曲で見せたかったのは、誰か一人が太陽になることではなかったので、五人の声が入るタイミングをかなり調整しました。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "RENくんの声が上へ抜けたあと、僕らの声が左右から一気に来るんです。レコーディングしたものを大きなスピーカーで聴いたとき、音が前に出るというより、横へ広がっていく感じがして。あの瞬間に、ジャケットの景色まで見えた気がしました。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "初めてのフルアルバムだから、「これがIGNITEです」と言える曲は必要でした。でも、完成した「SOLAR」は名刺というより、五人で外へ飛び出す曲になった。説明より先に、身体が動く。それが今の僕ららしいと思います。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "RENの最初の一声だけは、ちゃんと聴いてください。そのあと一緒に飛べば大丈夫です（笑）。"
+      },
+      {
+        "type": "heading",
+        "content": "Golden Hour"
+      },
+      {
+        "type": "heading",
+        "content": "「止めたい時間ではなく、残っていく時間」"
+      },
+      {
+        "type": "question",
+        "content": "――「Golden Hour」は、アルバム前半の熱を少し落ち着かせるミドルナンバーです。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "ここで初めて、走るのをやめて周りを見るんです。夕方って、一日の終わりが近づいているのに、景色は一番きれいに見えることがある。楽しい時間が終わってほしくないという気持ちと、終わるから覚えておきたいという気持ちが、同時に入っています。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "最初は、もう少し切ない歌い方をしていました。でもKAIが、「寂しいだけにはしたくない」と言って。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "言ったね。別れの曲ではないから。今日見た景色を持って帰れるなら、一日が終わることは、失うことと同じではないと思っていました。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "KAIがこの曲に一番細かかったんですよ。普段は「もっと前へ」とか「ここは熱を上げよう」と言う人なのに、この曲では「急がないで」「言葉を置いて」と何回も言っていた。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "振付も、止まることを大事にしました。夕方の光は動いているけど、人の目にはゆっくり見える。だから大きく踊るより、体重をどこに残すか、次の一歩をいつ出すか。その間で時間を見せようとしました。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "僕は、この曲を聴くとツアー先の帰り道を思い出します。まだ明るいのに、今日が終わっていく感じ。たぶんファンのみなさんにも、それぞれの「帰りたくない夕方」があると思うんです。そこへ僕らの思い出を押しつけず、隣に置ける曲になったらいいなと思っています。"
+      },
+      {
+        "type": "heading",
+        "content": "OVERDRIVE"
+      },
+      {
+        "type": "heading",
+        "content": "「速くするのではなく、止まれなくなるまで積み上げる」"
+      },
+      {
+        "type": "question",
+        "content": "――穏やかな「Golden Hour」から一転し、「OVERDRIVE」では重低音とダンスが前へ出ます。KAIさんとSHOさんの存在感が強い曲です。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "最初から、ライブの中盤で空気を変える役割を想定していました。「SOLAR」の開放感とは違って、こちらはもっと閉じた場所で圧を高める。速さよりも、低い音が一段ずつ積み上がって、気づいたら止まれなくなっている感覚です。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "タイトルだけ見ると、最初から最後までアクセルを踏み続ける曲に思えるけど、実際は我慢の時間が長いんです。ラップも全部を強く言うのではなくて、前半は低く抑えて、ダンスブレイクで一気に解放する。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "二人が制作の話を始めると、急に専門用語が増える曲です。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "カウントの話が長かったです。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "必要だから。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "ほら（笑）。"
+      },
+      {
+        "type": "question",
+        "content": "――他の三人にとっても、難度の高いパフォーマンスだったのでは？"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "息が上がっていることを隠さずに歌う、というのが難しかったです。普通なら、ダンスのあとでも声を整えて聞かせたい。でもこの曲は、少し呼吸が乱れているほうが、身体が限界を越えようとしている感じが出る。きれいに歌いすぎると、曲だけ先へ行ってしまうんです。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "SHOくんから「追いつこうとするな」と言われたのを覚えています。僕は難しい振付だと、遅れないことばかり考えてしまうので。でもこの曲は、全員が同じ場所へ追いつくというより、五人で圧を押し上げていく曲なんですよね。自分の一歩で曲を進める感覚を、初めて強く持てました。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "そこからYUTOの動きが変わった。正解を確認してから動くのではなく、自分で次のカウントへ行けるようになった。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "……それ、今初めて聞きました。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "よかったね。今日一番うれしそうな顔してる（笑）。"
+      },
+      {
+        "type": "heading",
+        "content": "Blue Signal"
+      },
+      {
+        "type": "heading",
+        "content": "「大声で呼ばなくても、届く合図がある」"
+      },
+      {
+        "type": "question",
+        "content": "――「Blue Signal」は、YUTOさんの歌い出しが印象的なポップソングです。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "デモをもらったとき、すごくうれしかったです。でも、最初の一声で曲の景色が決まると思ったら、急に怖くなって。明るく歌いすぎると軽くなるし、気持ちを込めすぎると、大きな約束みたいに聞こえてしまう。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "YUTOは、何度も歌い方を変えていました。でも最後に残ったテイクは、かなり自然だったよね。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "RENくんが、「誰か一人の顔を思い浮かべなくていいんじゃない」と言ってくれたんです。特定の相手へ送るメッセージではなくて、同じ場所にいる仲間へ、ちゃんとここにいると知らせる合図だから。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "IGNITEの曲は、手を上げるとか、声を返すとか、分かりやすい合図が多いんです。でもこの曲の合図は、もっと小さい。目が合うとか、歩く速度を少し緩めるとか、振り返ったときにまだそこにいるとか。言葉にしなくても通じるものを、ポップな曲の中で描けたのが新しかった。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "まあ、僕とYUTOは、だいたい大声ですけどね。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "大声でも通じてないときがある。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "SHOくんが小さすぎるんです、合図が。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "見ていれば分かる。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "これです。この曲を聴いて、SHOの合図を読み取れるようになってください（笑）。"
+      },
+      {
+        "type": "question",
+        "content": "――明るい曲ですが、どこか夜の入口のような色もあります。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "青って、僕の中では寂しい色だけではないんです。夜が来る前の空にも、朝が来る前の空にもある。同じ青でも、これから暗くなるのか、明るくなるのかで見え方が違う。「Blue Signal」は、その間にいる曲だと思っています。"
+      },
+      {
+        "type": "heading",
+        "content": "Daybreak Runner"
+      },
+      {
+        "type": "heading",
+        "content": "「夜明けを待つのではなく、こちらから迎えに行く」"
+      },
+      {
+        "type": "question",
+        "content": "――アルバム後半、「Moonlit」で深い夜へ入ったあとに「Daybreak Runner」が始まります。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "この曲は、夜明けの曲だけど、明るくなってから走る曲ではありません。まだ誰も起きていない街で、空の色が変わるより先に身体を動かす。その暗さと冷たさが必要でした。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "IGNITEには、インディーズ期から「First Light」という大切な曲があります。「First Light」が暗い場所で最初の光を見つける曲なら、「Daybreak Runner」は、自分たちからその光を迎えに行く曲です。待っていれば朝は来る。でも、今の五人なら走って会いに行ける。その違いは大きいと思います。"
+      },
+      {
+        "type": "question",
+        "content": "――SHOさんは、どのように“夜明け前”を身体で表現しましたか。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "前半は重心を低くして、視線も遠くへ上げすぎない。走る振付でも、爽やかに見せるより、冷たい空気を押し分けるように動く。曲が進むにつれて少しずつ上体が起きて、最後に初めて正面を見る構成にしています。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "リハーサル映像を早送りすると、本当に日の出みたいなんですよ。最初は五人とも低いところにいて、だんだん上がってくる。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "歌も同じで、最初は声を近くに置いて、後半になるほど遠くへ飛ばしています。サビを最初から全開にしないので、最後まで走る体力が必要でした。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "僕は、この曲を録っていた頃、早朝に一人で外を歩いてみたんです。街に誰もいないと、自分だけ取り残された感じもするけど、自分だけが次の時間を先に見つけた感じもする。その両方がありました。ライブでは、客席のみんなと走っているのに、一人で夜明け前にいる感覚も残したいです。"
+      },
+      {
+        "type": "heading",
+        "content": "Sun Never Sleeps"
+      },
+      {
+        "type": "heading",
+        "content": "「終わらないのではなく、消えずに受け渡されていく」"
+      },
+      {
+        "type": "question",
+        "content": "――アルバムの最後を飾るのが「Sun Never Sleeps」です。壮大な曲ですが、“勝利”を宣言するような終わり方ではありません。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "このアルバムで、いちばん歌うのが怖かった曲です。最後だから大きく歌おうと思えば、いくらでも大きくできる。でも、ここまでの十一曲を全部押し切って終わるのは違うと思いました。\n\n太陽が眠らない、という言葉も、「ずっと明るいまま」という意味ではないんです。こちらから見えなくなっても、別の場所を照らしている。誰かが歌い終わっても、別の誰かの中に残っている。その受け渡しを、五人の声で作りたかった。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "初のフルアルバムなので、完成した姿を見せたい気持ちはありました。でも作り終わって分かったのは、僕らはここで完成したわけではないということです。『SOLAR』で大きな光にはなれたかもしれない。打破できれば影もできる。それも含めて、次へ進まなければいけない。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "最後の曲なのに、全員が正面を向いて終わる演出にはしていません。一度それぞれ違う方向を見る。光が同じ場所に留まらず、別の場所へ渡っていくことを見せたかったから。最後の音で、もう一度だけ五人の呼吸が合います。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "この曲のあと、すぐに「ありがとうございました！」と言うのが難しいんですよ。少しだけ、静かな時間がほしい。僕は普段、間が空くと何かしゃべりたくなるんですけど、この曲だけは我慢しています（笑）。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "ラストのレコーディングは、一人ずつ録ったあとに、五人でも同じ場所に立って歌いましたよね。ヘッドホン越しではなく、隣の声がそのまま聞こえてきた。誰かが息を吸うと、自分も自然に吸っていて。歌を揃えようとしたというより、同じ時間にいようとした感覚でした。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "あのテイクには、少しだけ声が揺れているところも残っています。完璧に整えるより、五人がそこにいたことのほうが大事だったから。"
+      },
+      {
+        "type": "heading",
+        "content": "「一番明るい場所に立ったから、その先の影も見えた」"
+      },
+      {
+        "type": "question",
+        "content": "――六つの新曲を通して、初めてのフルアルバムで見つけたものは何ですか。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "IGNITEの明るさは、迷わないことではないと分かりました。夕方も夜も知ったうえで、それでも前を向けること。その強さを、十二曲かけて見せられたと思います。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "一曲の中だけではできない表現がある。前の曲で上げた熱を、次の曲でどう受けるか。逆に、静かな時間をどこで破るか。アルバム全体を一つのステージとして考えられたことが大きかったです。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "僕は、明るい曲だけがみんなを元気にするわけではないと知りました。「Golden Hour」みたいに少し寂しい曲や、「Sun Never Sleeps」のあとの静けさも、誰かと一緒にいられる時間になる。もちろん「SOLAR」では遠慮なく飛んでほしいですけど（笑）。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "五人で歌う意味を、前より考えるようになりました。同じメロディーを揃えて歌うだけではなくて、一人の声が次の声を呼んで、最後に一つの景色になる。それが、この六曲にはそれぞれ違う形で入っています。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "最初に『SOLAR』というタイトルを聞いたときは、大きな光にならなきゃいけないと思いました。でも今は、一人で太陽になる必要はないと思っています。誰かの合図を見つけたり、誰かの声を受け取ったりしながら、五人で一日をつないでいけばいい。"
+      },
+      {
+        "type": "question",
+        "content": "――最後に、このアルバムを手に取る人へ。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "朝から順番に聴くのもいいし、好きな時間から入っても大丈夫です。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "できれば一度は、曲順で最後まで。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "leo",
+        "content": "はい、ダンスリーダーから指示が出ました（笑）。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "ren",
+        "content": "聴き終わったあと、最初の「SOLAR」に戻ると、同じ光が少し違って聞こえると思います。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "kai",
+        "content": "僕らが作った一日を、そのまま正解にするつもりはありません。みなさんの朝や夜、忘れたくない夕方と重ねてもらえたら、それがその人の『SOLAR』になると思っています。"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "yuto",
+        "content": "そして次の朝に、また会いましょう。"
+      }
+    ]
+  },
+  {
     "id": "leo-from-stage-to-solar",
     "slug": "leo-from-stage-to-solar",
     "title": "FROM THE STAGE TO SOLAR",

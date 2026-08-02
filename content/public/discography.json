@@ -6683,6 +6683,53 @@
       "posterAssetId": "track-poster-afterimage-live"
     },
     {
+      "id": "solar-title",
+      "releaseId": "solar",
+      "title": "SOLAR",
+      "versionLabel": "Title Track",
+      "trackNumber": 1,
+      "durationSeconds": 225,
+      "audioUrl": "/media/audio/solar/a01-01-SOLAR.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "夏",
+        "太陽",
+        "開放感"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』表題曲。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-no-limits",
+      "releaseId": "solar",
+      "title": "No Limits",
+      "versionLabel": "Album Version",
+      "trackNumber": 2,
+      "durationSeconds": 210,
+      "audioUrl": "/media/audio/solar/a01-02-no-limits.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "限界突破",
+        "熱量"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録。",
+      "lyrics": []
+    },
+    {
       "id": "solar-heatwave-remix",
       "releaseId": "solar",
       "title": "Heatwave - SOLAR Remix -",
@@ -6700,6 +6747,72 @@
         "熱気"
       ],
       "linerNotes": "1st Full Album『SOLAR』収録のRemixバージョン。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-golden-hour",
+      "releaseId": "solar",
+      "title": "Golden Hour",
+      "versionLabel": "Album Track",
+      "trackNumber": 4,
+      "durationSeconds": 200,
+      "audioUrl": "/media/audio/solar/a01-04-Golden Hour.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "夕景",
+        "静けさ",
+        "余韻"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録の新曲。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-overdrive",
+      "releaseId": "solar",
+      "title": "OVERDRIVE",
+      "versionLabel": "Album Track",
+      "trackNumber": 5,
+      "durationSeconds": 195,
+      "audioUrl": "/media/audio/solar/a01-05-OVERDRIVE.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "kai",
+        "sho"
+      ],
+      "moodTags": [
+        "重低音",
+        "ダンス",
+        "加速"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録の新曲。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-blue-signal",
+      "releaseId": "solar",
+      "title": "Blue Signal",
+      "versionLabel": "Album Track",
+      "trackNumber": 6,
+      "durationSeconds": 215,
+      "audioUrl": "/media/audio/solar/a01-06-Blue Signal.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "yuto",
+        "ren"
+      ],
+      "moodTags": [
+        "合図",
+        "仲間",
+        "ポップ"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録の新曲。",
       "lyrics": []
     },
     {
@@ -6743,6 +6856,46 @@
       "lyrics": []
     },
     {
+      "id": "solar-moonlit",
+      "releaseId": "solar",
+      "title": "Moonlit",
+      "versionLabel": "Album Version",
+      "trackNumber": 9,
+      "durationSeconds": 225,
+      "audioUrl": "/media/audio/solar/a01-09-moonlit.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "ren"
+      ],
+      "moodTags": [
+        "夜",
+        "月光"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-daybreak-runner",
+      "releaseId": "solar",
+      "title": "Daybreak Runner",
+      "versionLabel": "Album Track",
+      "trackNumber": 10,
+      "durationSeconds": 230,
+      "audioUrl": "/media/audio/solar/a01-10-Daybreak Runner.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "sho",
+        "kai"
+      ],
+      "moodTags": [
+        "夜明け",
+        "駆け抜ける",
+        "光"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録の新曲。",
+      "lyrics": []
+    },
+    {
       "id": "solar-hands-up-hearts-out",
       "releaseId": "solar",
       "title": "Hands Up, Hearts Out",
@@ -6761,6 +6914,30 @@
         "笑顔"
       ],
       "linerNotes": "1st Full Album『SOLAR』収録のスタジオ音源。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-sun-never-sleeps",
+      "releaseId": "solar",
+      "title": "Sun Never Sleeps",
+      "versionLabel": "Album Track",
+      "trackNumber": 12,
+      "durationSeconds": 250,
+      "audioUrl": "/media/audio/solar/a01-12-Sun Never Sleeps.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "ren",
+        "kai",
+        "sho",
+        "leo",
+        "yuto"
+      ],
+      "moodTags": [
+        "受け渡し",
+        "次の朝",
+        "壮大"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録の新曲。",
       "lyrics": []
     }
   ]

@@ -304,6 +304,16 @@
       "path": "/assets/images/articles/hero-leo-from-stage-to-solar.webp",
       "status": "ready",
       "aspect": "3:2"
+    },
+    "article-hero-six-new-lights": {
+      "path": "/assets/images/articles/hero-six-new-lights.webp",
+      "status": "ready",
+      "aspect": "3:2"
+    },
+    "hero-six-new-lights": {
+      "path": "/assets/images/articles/hero-six-new-lights.webp",
+      "status": "ready",
+      "aspect": "3:2"
     }
   }
 }
