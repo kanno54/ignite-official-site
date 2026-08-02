@@ -6681,6 +6681,87 @@
         }
       ],
       "posterAssetId": "track-poster-afterimage-live"
+    },
+    {
+      "id": "solar-heatwave-remix",
+      "releaseId": "solar",
+      "title": "Heatwave - SOLAR Remix -",
+      "versionLabel": "SOLAR Remix",
+      "trackNumber": 3,
+      "durationSeconds": 230,
+      "audioUrl": "/media/audio/solar/a01-03-Heatwave (SOLAR Summer Festival Remix).mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "leo"
+      ],
+      "moodTags": [
+        "夏",
+        "フェス",
+        "熱気"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録のRemixバージョン。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-run-with-us",
+      "releaseId": "solar",
+      "title": "Run With Us",
+      "versionLabel": "SOLAR Studio Version",
+      "trackNumber": 7,
+      "durationSeconds": 210,
+      "audioUrl": "/media/audio/solar/a01-07-Run With Us.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "leo"
+      ],
+      "moodTags": [
+        "走る",
+        "仲間",
+        "ライブ"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録のスタジオ音源。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-afterimage",
+      "releaseId": "solar",
+      "title": "Afterimage",
+      "versionLabel": "SOLAR Studio Version",
+      "trackNumber": 8,
+      "durationSeconds": 240,
+      "audioUrl": "/media/audio/solar/a01-08-Afterimage.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "leo"
+      ],
+      "moodTags": [
+        "余韻",
+        "静寂",
+        "感傷"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録のスタジオ音源。",
+      "lyrics": []
+    },
+    {
+      "id": "solar-hands-up-hearts-out",
+      "releaseId": "solar",
+      "title": "Hands Up, Hearts Out",
+      "versionLabel": "SOLAR Studio Version",
+      "trackNumber": 11,
+      "durationSeconds": 220,
+      "audioUrl": "/media/audio/solar/a01-11-Hands Up, Hearts Out.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [
+        "leo",
+        "yuto"
+      ],
+      "moodTags": [
+        "無邪気",
+        "歓声",
+        "笑顔"
+      ],
+      "linerNotes": "1st Full Album『SOLAR』収録のスタジオ音源。",
+      "lyrics": []
     }
   ]
 }
