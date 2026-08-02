@@ -329,6 +329,31 @@
       "path": "/assets/images/campaigns/hero-solar-release-special-mobile.webp",
       "status": "ready",
       "aspect": "3:4"
+    },
+    "cover-solar": {
+      "path": "/assets/images/covers/cover-solar.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "release-cover-solar": {
+      "path": "/assets/images/covers/cover-solar.webp",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-solar-heatwave-remix": {
+      "path": "/assets/images/covers/poster-solar-heatwave-remix.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-solar-golden-hour": {
+      "path": "/assets/images/covers/poster-solar-golden-hour.webp",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-solar-overdrive": {
+      "path": "/assets/images/covers/poster-solar-overdrive.webp",
+      "status": "ready",
+      "aspect": "3:4"
     }
   }
 }
