@@ -324,6 +324,11 @@
       "path": "/assets/images/campaigns/hero-solar-release-special-desktop.webp",
       "status": "ready",
       "aspect": "16:9"
+    },
+    "hero-solar-release-special-mobile": {
+      "path": "/assets/images/campaigns/hero-solar-release-special-mobile.webp",
+      "status": "ready",
+      "aspect": "3:4"
     }
   }
 }
