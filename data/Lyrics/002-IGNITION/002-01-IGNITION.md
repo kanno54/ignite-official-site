@@ -107,6 +107,3 @@ We don't just perform.
 We burn.
 
 IGNITION
-
-[Intro - Low Male Voice, Spoken]
-暗いままの街
