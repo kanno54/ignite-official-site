@@ -75,6 +75,12 @@ export const getRecordings = (): Recording[] => {
   return discographyData.recordings as Recording[];
 };
 
+export const getJukeboxRecordings = (): Recording[] => {
+  return (discographyData.recordings as Recording[]).filter(
+    (r) => r.id !== 'solar-no-limits' && r.id !== 'solar-moonlit'
+  );
+};
+
 export const getRecordingById = (id: string): Recording | undefined => {
   return getRecordings().find((rec) => rec.id === id);
 };

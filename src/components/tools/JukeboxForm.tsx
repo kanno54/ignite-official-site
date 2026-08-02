@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getRecordings, getMemberBySlug } from '../../utils/contentLoader';
+import { getJukeboxRecordings, getMemberBySlug } from '../../utils/contentLoader';
 import { Recording } from '../../types/content';
 import { useAudio } from '../audio/AudioProvider';
 
@@ -23,7 +23,7 @@ export const JukeboxForm: React.FC<Props> = ({ onSelectResult }) => {
   ];
 
   const handleShuffleAll = () => {
-    const allRecordings = getRecordings().filter((r) => r.audioStatus === 'ready');
+    const allRecordings = getJukeboxRecordings().filter((r) => r.audioStatus === 'ready');
     if (allRecordings.length === 0) return;
 
     // Fisher-Yates Shuffle
@@ -34,14 +34,14 @@ export const JukeboxForm: React.FC<Props> = ({ onSelectResult }) => {
     playTrack(firstTrack.id, shuffledQueue, 'jukebox');
     onSelectResult(
       firstTrack,
-      `🎲 【全${allRecordings.length}曲 ランダムシャッフル再生】全${allRecordings.length}曲（4th Single Moonlit含む）を連続再生プレイヤーにセットしました。`
+      `🎲 【全${allRecordings.length}曲 ランダムシャッフル再生】全${allRecordings.length}曲を連続再生プレイヤーにセットしました。`
     );
   };
 
   const handleRecommend = (e: React.FormEvent) => {
     e.preventDefault();
 
-    const allRecordings = getRecordings().filter((r) => r.audioStatus === 'ready');
+    const allRecordings = getJukeboxRecordings().filter((r) => r.audioStatus === 'ready');
     
     // Primary Filter: Mood & Member
     let candidates = allRecordings.filter((r) => {
@@ -101,7 +101,7 @@ export const JukeboxForm: React.FC<Props> = ({ onSelectResult }) => {
           gap: '12px',
         }}
       >
-        <span>🎲 ALL {getRecordings().filter((r) => r.audioStatus === 'ready').length} TRACKS SHUFFLE PLAY (全{getRecordings().filter((r) => r.audioStatus === 'ready').length}曲 ランダム連続再生)</span>
+        <span>🎲 ALL {getJukeboxRecordings().filter((r) => r.audioStatus === 'ready').length} TRACKS SHUFFLE PLAY (全{getJukeboxRecordings().filter((r) => r.audioStatus === 'ready').length}曲 ランダム連続再生)</span>
       </button>
 
       <div style={{ textAlign: 'center', color: '#AEB6C4', fontSize: '0.85rem', fontFamily: 'var(--font-mono)' }}>

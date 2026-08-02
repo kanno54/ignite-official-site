@@ -2,7 +2,7 @@ import React from 'react';
 import { Recording } from '../../types/content';
 import { TrackPlayButton } from '../audio/TrackPlayButton';
 import { ResponsivePicture } from '../common/ResponsivePicture';
-import { getReleaseBySlug, getRecordings } from '../../utils/contentLoader';
+import { getReleaseBySlug, getJukeboxRecordings } from '../../utils/contentLoader';
 import { useAudio } from '../audio/AudioProvider';
 
 type Props = {
@@ -21,7 +21,7 @@ export const JukeboxResult: React.FC<Props> = ({ recording, reason, onReset }) =
   const isOriginalTrack = displayRecording.id === recording.id;
 
   const handleShuffleAll = () => {
-    const allRecordings = getRecordings().filter((r) => r.audioStatus === 'ready');
+    const allRecordings = getJukeboxRecordings().filter((r) => r.audioStatus === 'ready');
     if (allRecordings.length === 0) return;
     const shuffled = [...allRecordings].sort(() => Math.random() - 0.5);
     const firstTrack = shuffled[0];
@@ -81,7 +81,7 @@ export const JukeboxResult: React.FC<Props> = ({ recording, reason, onReset }) =
       <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
         <TrackPlayButton recordingId={displayRecording.id} size="large" />
         <button onClick={handleShuffleAll} className="btn-secondary" style={{ backgroundColor: 'var(--campaign-deep)', borderColor: 'var(--campaign-accent)' }}>
-          🎲 SHUFFLE ALL {getRecordings().filter((r) => r.audioStatus === 'ready').length} TRACKS
+          🎲 SHUFFLE ALL {getJukeboxRecordings().filter((r) => r.audioStatus === 'ready').length} TRACKS
         </button>
         <button onClick={onReset} className="btn-secondary">
           TRY AGAIN ↻

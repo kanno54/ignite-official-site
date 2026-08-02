@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { PlayerState, AudioContextType } from '../../types/audio';
-import { getRecordingById, getRecordingsForRelease, getRecordings, getReleases, getAssetManifest } from '../../utils/contentLoader';
+import { getRecordingById, getRecordingsForRelease, getJukeboxRecordings, getReleases, getAssetManifest } from '../../utils/contentLoader';
 import { trackTrackPlay, trackJukeboxPlay, trackTrackComplete } from '../../utils/analytics';
 
 const AudioContext = createContext<AudioContextType | null>(null);
@@ -62,7 +62,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
         // Shuffle Bag auto-advance for jukebox mode
         if (prev.queueContext === 'jukebox' && nextIndex >= prev.queue.length) {
-          const allReady = getRecordings()
+          const allReady = getJukeboxRecordings()
             .filter((r) => r.audioStatus === 'ready')
             .map((r) => r.id);
 
@@ -352,7 +352,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     let nextQueue = playerState.queue;
 
     if (playerState.queueContext === 'jukebox' && nextIndex >= playerState.queue.length) {
-      const allReady = getRecordings()
+      const allReady = getJukeboxRecordings()
         .filter((r) => r.audioStatus === 'ready')
         .map((r) => r.id);
 

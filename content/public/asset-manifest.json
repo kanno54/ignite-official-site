@@ -379,6 +379,11 @@
       "path": "/assets/images/covers/poster-solar-daybreak-runner.webp",
       "status": "ready",
       "aspect": "3:4"
+    },
+    "poster-solar-sun-never-sleeps": {
+      "path": "/assets/images/covers/poster-solar-sun-never-sleeps.webp",
+      "status": "ready",
+      "aspect": "3:4"
     }
   }
 }
