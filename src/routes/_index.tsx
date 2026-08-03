@@ -262,7 +262,7 @@ export const TopPage: React.FC = () => {
       <section>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
           <div>
-            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)' }}>DISCOGRAPHY 2020–2022</span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)' }}>DISCOGRAPHY 2020–2023</span>
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '2.4rem', color: '#F6F3ED', margin: 0 }}>
               FROM THE ARCHIVE
             </h2>
