@@ -16,8 +16,17 @@ export const TopPage: React.FC = () => {
   const currentCampaign = getCurrentCampaign();
 
   const currentRelease = releases.find((r) => r.id === currentCampaign.releaseId) || releases[0];
-  const pickUpTrack = getRecordingById(config.pickUpTrackId);
+  const pickUpTrackId = currentCampaign.id === 'solar' ? 'solar-title' : config.pickUpTrackId;
+  const pickUpTrack = getRecordingById(pickUpTrackId);
   const latestArticle = articles[0];
+
+  React.useEffect(() => {
+    if (currentCampaign.id === 'solar') {
+      document.title = 'IGNITE Official Portal — 1st Full Album『SOLAR』';
+    } else {
+      document.title = 'IGNITE Official Portal — 4th Single「Moonlit」';
+    }
+  }, [currentCampaign]);
 
   const handlePrimaryCta = () => {
     if (currentRelease && currentRelease.trackIds.length > 0) {

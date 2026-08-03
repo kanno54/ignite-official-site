@@ -98,7 +98,32 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
           }
         }
 
-        return { ...prev, isPlaying: false, currentTime: 0 };
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+          audioRef.current.removeAttribute('src');
+          audioRef.current.load();
+        }
+
+        if (typeof window !== 'undefined' && 'mediaSession' in navigator) {
+          try {
+            navigator.mediaSession.metadata = null;
+            navigator.mediaSession.playbackState = 'none';
+          } catch (e) {
+            // Ignore
+          }
+        }
+
+        return {
+          ...prev,
+          currentTrackId: null,
+          currentRecording: null,
+          isPlaying: false,
+          currentTime: 0,
+          duration: 0,
+          isExpanded: false,
+          error: null,
+        };
       });
     };
 
