@@ -348,6 +348,11 @@ export const TopPage: React.FC = () => {
             EXPLORE ARCHIVE ➔
           </Link>
 
+          {currentCampaign.id === 'solar' && (
+            <Link to="/campaigns/moonlit/" className="btn-secondary">
+              PREVIOUS CAMPAIGN — MOONLIT ↗
+            </Link>
+          )}
           {currentCampaign.id === 'moonlit' && (
             <Link to="/campaigns/no-limits/" className="btn-secondary">
               PREVIOUS CAMPAIGN — NO LIMITS ↗
