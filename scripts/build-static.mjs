@@ -32,13 +32,14 @@ const routes = [
   '/discography/ignition/',
   '/discography/burn-it-down/',
   '/discography/no-limits/',
-  '/discography/moonlit/',
+  '/discography/solar/',
   '/campaigns/',
   '/campaigns/firestarter/',
   '/campaigns/no-limits/',
   '/campaigns/burn-it-down/',
   '/campaigns/ignition/',
   '/campaigns/moonlit/',
+  '/campaigns/solar/',
   '/features/',
   '/features/archive-firestarter-leo-one-day-ahead/',
   '/features/no-limits-interview/',
@@ -48,18 +49,14 @@ const routes = [
   '/features/sho-burn-it-down-interview/',
   '/features/kai-ignition-five-names/',
   '/features/ignition-special-feature/',
+  '/features/six-new-lights/',
+  '/features/leo-from-stage-to-solar/',
   '/story/',
   '/fun/',
   '/privacy/',
   '/accessibility/',
   '/404.html',
 ];
-
-if (isStagingBuild) {
-  routes.push('/campaigns/solar/');
-  routes.push('/features/six-new-lights/');
-  routes.push('/features/leo-from-stage-to-solar/');
-}
 
 for (const route of routes) {
   let targetPath;

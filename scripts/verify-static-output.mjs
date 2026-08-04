@@ -24,13 +24,14 @@ const expectedFiles = [
   'discography/ignition/index.html',
   'discography/burn-it-down/index.html',
   'discography/no-limits/index.html',
-  'discography/moonlit/index.html',
+  'discography/solar/index.html',
   'campaigns/index.html',
   'campaigns/firestarter/index.html',
   'campaigns/no-limits/index.html',
   'campaigns/burn-it-down/index.html',
   'campaigns/ignition/index.html',
   'campaigns/moonlit/index.html',
+  'campaigns/solar/index.html',
   'features/index.html',
   'features/archive-firestarter-leo-one-day-ahead/index.html',
   'features/no-limits-interview/index.html',
@@ -40,17 +41,13 @@ const expectedFiles = [
   'features/sho-burn-it-down-interview/index.html',
   'features/kai-ignition-five-names/index.html',
   'features/ignition-special-feature/index.html',
+  'features/six-new-lights/index.html',
+  'features/leo-from-stage-to-solar/index.html',
   'story/index.html',
   'fun/index.html',
   'privacy/index.html',
   'accessibility/index.html',
 ];
-
-if (isStagingBuild) {
-  expectedFiles.push('campaigns/solar/index.html');
-  expectedFiles.push('features/six-new-lights/index.html');
-  expectedFiles.push('features/leo-from-stage-to-solar/index.html');
-}
 
 let missing = 0;
 for (const relPath of expectedFiles) {

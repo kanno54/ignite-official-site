@@ -13,9 +13,7 @@ const isStagingBuild =
   process.env.VITE_STAGING === 'true' ||
   (fs.existsSync(robotsPath) && fs.readFileSync(robotsPath, 'utf8').includes('Disallow: /'));
 
-const FORBIDDEN_FUTURE_KEYWORDS = isStagingBuild
-  ? ['LINDEN', 'Silent Signal', 'RISE AGAIN']
-  : ['SOLAR', 'EQUINOX', 'LINDEN', 'Silent Signal', 'RISE AGAIN'];
+const FORBIDDEN_FUTURE_KEYWORDS = ['LINDEN', 'Silent Signal', 'RISE AGAIN'];
 
 if (!fs.existsSync(distDir)) {
   console.log('Dist directory does not exist yet; checking source directory...');

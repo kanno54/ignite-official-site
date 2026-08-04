@@ -31,7 +31,7 @@
       "fictionalReleaseDate": "2026-08-02",
       "publishAt": "2026-08-02T00:00:00Z",
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "current"
     },
     "blocks": [
       {
@@ -499,7 +499,7 @@
       "fictionalReleaseDate": "2026-08-02",
       "publishAt": "2026-08-02T00:00:00Z",
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "current"
     },
     "blocks": [
       {
@@ -677,7 +677,7 @@
       "fictionalReleaseDate": "2023-05-20",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "current"
+      "campaignState": "past"
     },
     "blocks": [
       {
@@ -998,7 +998,7 @@
       "fictionalReleaseDate": "2023-05-22",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "current"
+      "campaignState": "past"
     },
     "blocks": [
       {
