@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getReleases, getRecordingsForRelease, getRecordings } from '../utils/contentLoader';
+import { getReleases, getRecordingsForRelease } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
@@ -11,11 +11,21 @@ export const DiscographyIndex: React.FC = () => {
   const [filterFormat, setFilterFormat] = useState<string>('ALL');
   const { playRelease } = useAudio();
 
-  const filteredReleases = releases.filter((r) => {
-    if (filterFormat === 'ALL') return true;
-    if (filterFormat === 'SINGLE') return r.format.includes('Single');
-    return true;
-  });
+  const filteredReleases = releases
+    .filter((r) => {
+      if (filterFormat === 'ALL') return true;
+      if (filterFormat === 'SINGLE') return r.format.includes('Single');
+      if (filterFormat === 'ALBUM') return r.format.includes('Album');
+      return true;
+    })
+    .sort((a, b) => {
+      if (filterFormat === 'SINGLE') {
+        // Singles tab: release date ascending (IGNITION at top)
+        return a.fictionalReleaseDate.localeCompare(b.fictionalReleaseDate);
+      }
+      // ALL and ALBUMS tabs: release date descending (Silent Signal / SOLAR at top)
+      return b.fictionalReleaseDate.localeCompare(a.fictionalReleaseDate);
+    });
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -25,7 +35,7 @@ export const DiscographyIndex: React.FC = () => {
           DISCOGRAPHY
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', maxWidth: '700px', lineHeight: 1.6, margin: 0 }}>
-          インディーズミニアルバム『FIRESTARTER』から最新リリースまで。IGNITEの歩んできた軌跡と全{getRecordings().length}曲の公開収録音源。
+          インディーズミニアルバム『FIRESTARTER』から最新リリースまで。IGNITEの歩んできた軌跡と全31曲の公開収録音源。
         </p>
       </div>
 
@@ -34,6 +44,7 @@ export const DiscographyIndex: React.FC = () => {
         {[
           { id: 'ALL', label: 'ALL RELEASES' },
           { id: 'SINGLE', label: 'SINGLES' },
+          { id: 'ALBUM', label: 'ALBUMS' },
         ].map((f) => (
           <button
             key={f.id}
