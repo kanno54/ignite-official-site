@@ -5,6 +5,7 @@ import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
 import { NotFoundPage } from './404';
+import { SilentSignalCampaignView } from '../components/campaigns/SilentSignalCampaignView';
 
 export const CampaignDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -35,6 +36,10 @@ export const CampaignDetailPage: React.FC = () => {
   const relatedArticles = allArticles.filter((art) => campaign.relatedArticleIds.includes(art.slug) || campaign.relatedArticleIds.includes(art.id));
   const allCampaigns = getCampaigns();
   const relatedCampaigns = allCampaigns.filter((c) => campaign.relatedCampaignIds?.includes(c.id) || campaign.relatedCampaignIds?.includes(c.slug || ''));
+
+  if (campaign.id === 'silent-signal') {
+    return <SilentSignalCampaignView campaign={campaign} relatedArticles={relatedArticles} />;
+  }
 
   const handlePlayTitleTrack = () => {
     if (recordings.length > 0) {

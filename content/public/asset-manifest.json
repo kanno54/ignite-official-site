@@ -394,6 +394,94 @@
       "path": "/assets/images/covers/poster-solar-vertical.webp",
       "status": "ready",
       "aspect": "3:4"
+    },
+    "campaign-hero-silent-signal-desktop": {
+      "path": "/assets/images/campaigns/hero-silent-signal-desktop.webp",
+      "status": "ready"
+    },
+    "campaign-hero-silent-signal-mobile": {
+      "path": "/assets/images/campaigns/hero-silent-signal-mobile.webp",
+      "status": "ready"
+    },
+    "cover-silent-signal": {
+      "path": "/assets/images/covers/cover-silent-signal.webp",
+      "status": "ready"
+    },
+    "poster-silent-signal": {
+      "path": "/assets/images/covers/poster-silent-signal.webp",
+      "status": "ready"
+    },
+    "poster-invisible-line": {
+      "path": "/assets/images/covers/poster-invisible-line.webp",
+      "status": "ready"
+    },
+    "poster-nocturne-drive": {
+      "path": "/assets/images/covers/poster-nocturne-drive.webp",
+      "status": "ready"
+    },
+    "group-ss-g01": {
+      "path": "/assets/images/members/group-ss-g01.webp",
+      "status": "ready"
+    },
+    "avatar-kai-ss": {
+      "path": "/assets/images/members/avatar-kai-ss.webp",
+      "status": "ready"
+    },
+    "avatar-sho-ss": {
+      "path": "/assets/images/members/avatar-sho-ss.webp",
+      "status": "ready"
+    },
+    "avatar-leo-ss": {
+      "path": "/assets/images/members/avatar-leo-ss.webp",
+      "status": "ready"
+    },
+    "avatar-ren-ss": {
+      "path": "/assets/images/members/avatar-ren-ss.webp",
+      "status": "ready"
+    },
+    "avatar-yuto-ss": {
+      "path": "/assets/images/members/avatar-yuto-ss.webp",
+      "status": "ready"
+    },
+    "ss-d01-silence": {
+      "path": "/assets/images/performance/ss-d01-silence.webp",
+      "status": "ready"
+    },
+    "article-hero-sho-choreography-ss": {
+      "path": "/assets/images/articles/hero-sho-choreography-ss.webp",
+      "status": "ready"
+    },
+    "ss-d03-step": {
+      "path": "/assets/images/performance/ss-d03-step.webp",
+      "status": "ready"
+    },
+    "ss-d04-gaze": {
+      "path": "/assets/images/performance/ss-d04-gaze.webp",
+      "status": "ready"
+    },
+    "ss-d05-signal": {
+      "path": "/assets/images/performance/ss-d05-signal.webp",
+      "status": "ready"
+    },
+    "ss-t01-vertical": {
+      "path": "/assets/images/backgrounds/ss-t01-vertical.webp",
+      "status": "ready"
+    },
+    "ss-bg01-horizontal": {
+      "path": "/assets/images/backgrounds/ss-bg01-horizontal.webp",
+      "status": "ready"
+    },
+    "ss-t02-sq": {
+      "path": "/assets/images/social/ss-t02-sq.webp",
+      "status": "ready"
+    },
+    "ss-t03-portrait": {
+      "path": "/assets/images/social/ss-t03-portrait.webp",
+      "status": "ready"
+    },
+    "ss-t04-story": {
+      "path": "/assets/images/social/ss-t04-story.webp",
+      "status": "ready"
     }
   }
 }

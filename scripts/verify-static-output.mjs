@@ -49,6 +49,12 @@ const expectedFiles = [
   'accessibility/index.html',
 ];
 
+if (isStagingBuild) {
+  expectedFiles.push('discography/silent-signal/index.html');
+  expectedFiles.push('campaigns/silent-signal/index.html');
+  expectedFiles.push('features/silent-signal-sho-interview/index.html');
+}
+
 let missing = 0;
 for (const relPath of expectedFiles) {
   const fullPath = path.join(distDir, relPath);

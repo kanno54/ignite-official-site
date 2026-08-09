@@ -62,6 +62,17 @@ export const StoryPage: React.FC = () => {
     },
   ];
 
+  if (currentCamp.id === 'silent-signal') {
+    timelineEvents.push({
+      id: 'silent-signal',
+      date: '2023.11',
+      era: 'EQUINOX ERA',
+      title: '5th Single『Silent Signal』リリース — 言葉を削ぎ落とした身体同調の覚悟',
+      description: 'WE SPEAK WITHOUT WORDS. 視線・呼吸・足音・静止の五人身体言語により新たな時代『EQUINOX』の幕開けを提示。SHO全面監修の振付と無音演出。',
+      link: '/discography/silent-signal/',
+    });
+  }
+
   return (
     <div style={{ maxWidth: 'var(--article-content)', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '50px' }}>
       <div>

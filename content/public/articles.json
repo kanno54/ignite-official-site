@@ -1,5 +1,66 @@
 [
   {
+    "id": "silent-signal-sho-interview",
+    "slug": "silent-signal-sho-interview",
+    "title": "言葉を消したとき、身体に何が残るのか。",
+    "kicker": "SILENT SIGNAL CAMPAIGN / CHOREOGRAPHY INTERVIEW",
+    "series": "CHOREOGRAPHY INTERVIEW",
+    "dek": "「何を踊るか」ではなく、「どこまで動かなくていいか」から始まった。SHOが語る、『Silent Signal』の身体設計。",
+    "publishDate": "2023-11",
+    "publishDateFull": "2023.11.15",
+    "readingTimeMinutes": 12,
+    "mainSpeakerIds": [
+      "sho"
+    ],
+    "heroAssetId": "article-hero-sho-choreography-ss",
+    "heroAlt": "SILENT SIGNALの緊張感の中で鋭い視線と静止を見せるSHO",
+    "heroCopy": "動かない時間まで、振付になる。",
+    "relatedTrackIds": [
+      "silent-signal-title",
+      "silent-signal-invisible-line",
+      "silent-signal-nocturne-drive-live"
+    ],
+    "publication": {
+      "fictionalReleaseDate": "2023-11-15",
+      "publishAt": "2023-11-15T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "staging"
+    },
+    "blocks": [
+      {
+        "type": "lead",
+        "content": "「何を踊るか」ではなく、「どこまで動かなくていいか」から始まった。\n\n5th Single『Silent Signal』の振付を全面監修したSHOに、言葉を削ぎ落とした身体設計と、静寂が作るパフォーマンスの核心を聞いた。"
+      },
+      {
+        "type": "heading",
+        "content": "身体の起点"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "言葉をなくしたときに、一番雄弁になるのは五人の身体の同調でした。音のない瞬間にも、視線と呼吸が揃っていれば、客席には大きな熱が伝わる。"
+      },
+      {
+        "type": "heading",
+        "content": "足音"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "五つの足音が、一瞬だけ同じ時間に重なる。その衝撃は、どんな大音量のリズムよりも強いシグナルになります。"
+      },
+      {
+        "type": "heading",
+        "content": "最後の一拍"
+      },
+      {
+        "type": "dialogue",
+        "speakerId": "sho",
+        "content": "最後の一拍で、五人の呼吸が揃い、全員が静止する。その一瞬のために、この振付のすべてがあります。"
+      }
+    ]
+  },
+  {
     "id": "six-new-lights",
     "slug": "six-new-lights",
     "title": "SIX NEW LIGHTS",

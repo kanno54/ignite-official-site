@@ -1,6 +1,30 @@
 {
   "releases": [
     {
+      "id": "silent-signal",
+      "slug": "silent-signal",
+      "title": "Silent Signal",
+      "subtitle": "5th Single",
+      "format": "5th Single",
+      "fictionalReleaseDate": "2023-11",
+      "fictionalReleaseDateFull": "2023.11.15",
+      "coverAssetId": "cover-silent-signal",
+      "description": "5th Single『Silent Signal』。言葉より先に、伝わるもの。WE SPEAK WITHOUT WORDS.",
+      "linerNotes": "言葉より先に、伝わるものがある。\n\n言葉を消したとき、五人の身体に何が残るのか。SHOが全面監修した振付と無音演出により、視線・呼吸・足音・静止という身体言語を追求したEQUINOX期の幕開けを告げる5thシングル。",
+      "campaignState": "staging",
+      "trackIds": [
+        "silent-signal-title",
+        "silent-signal-invisible-line",
+        "silent-signal-nocturne-drive-live"
+      ],
+      "publication": {
+        "fictionalReleaseDate": "2023-11",
+        "publishAt": "2023-11-15T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "staging"
+      }
+    },
+    {
       "id": "solar",
       "slug": "solar",
       "title": "SOLAR",
@@ -153,6 +177,97 @@
     }
   ],
   "recordings": [
+    {
+      "id": "silent-signal-title",
+      "releaseId": "silent-signal",
+      "title": "Silent Signal",
+      "versionLabel": "5th Single Title",
+      "trackNumber": 1,
+      "durationSeconds": 215,
+      "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-silent-signal",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "静寂",
+        "身体同期",
+        "視線"
+      ],
+      "linerNotes": "言葉を消したとき、身体に何が残るのか。SHOが全面監修した無音と静寂を活かした重厚なダンスチューン。視線、呼吸、足音、そして静止の同調により、IGNITEの身体言語を極限まで突き詰めた楽曲。",
+      "lyrics": [
+        {
+          "text": "言葉より先に 伝わるものがある"
+        },
+        {
+          "text": "視線 呼吸 靴音 そして静止"
+        },
+        {
+          "text": "We speak without words."
+        }
+      ]
+    },
+    {
+      "id": "silent-signal-invisible-line",
+      "releaseId": "silent-signal",
+      "title": "Invisible Line",
+      "versionLabel": "Coupling",
+      "trackNumber": 2,
+      "durationSeconds": 208,
+      "audioUrl": "/media/audio/silent-signal/02-Invisible-Line.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-invisible-line",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "境界線",
+        "繊細"
+      ],
+      "linerNotes": "分かっているからこそ、踏み込まない。Silent Signalの言葉なき信頼と対比をなす、繊細な境界線を描くトラック。",
+      "lyrics": [
+        {
+          "text": "分かっているから越えない距離"
+        },
+        {
+          "text": "目に見えない線を守るように"
+        }
+      ]
+    },
+    {
+      "id": "silent-signal-nocturne-drive-live",
+      "releaseId": "silent-signal",
+      "title": "Nocturne Drive - Live Version -",
+      "versionLabel": "Live Version",
+      "trackNumber": 3,
+      "durationSeconds": 240,
+      "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-nocturne-drive",
+      "spotlightMemberIds": [
+        "sho",
+        "yuto"
+      ],
+      "moodTags": [
+        "疾走感",
+        "Live"
+      ],
+      "linerNotes": "夜を走る身体。SHOとYUTOのダンスを中心に、静かな夜を強い疾走感へ変えたLive Version。",
+      "lyrics": [
+        {
+          "text": "夜を走り抜ける身体の鼓動"
+        }
+      ]
+    },
     {
       "id": "firestarter-main",
       "releaseId": "firestarter",

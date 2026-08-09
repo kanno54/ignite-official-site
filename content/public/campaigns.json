@@ -1,8 +1,47 @@
 [
   {
+    "id": "silent-signal",
+    "slug": "silent-signal",
+    "status": "current",
+    "releaseId": "silent-signal",
+    "releaseDate": "2023-11-15",
+    "eyebrow": "5TH SINGLE / EQUINOX ERA",
+    "title": "Silent Signal",
+    "catchCopy": "言葉より先に、伝わるもの。",
+    "desktopHero": "/assets/images/campaigns/hero-silent-signal-desktop.webp",
+    "mobileHero": "/assets/images/campaigns/hero-silent-signal-mobile.webp",
+    "heroAlt": "言葉を削ぎ落とし、静寂の中で視線と五人の身体を同調させるIGNITE",
+    "primaryCta": {
+      "text": "LISTEN NOW ▶",
+      "action": "play"
+    },
+    "secondaryCta": {
+      "text": "VIEW DISCOGRAPHY ➔",
+      "action": "link",
+      "url": "/discography/silent-signal/"
+    },
+    "campaignColors": {
+      "accent": "#8496B4",
+      "deep": "#05070B",
+      "text": "#E6E8EB"
+    },
+    "relatedArticleIds": [
+      "silent-signal-sho-interview"
+    ],
+    "relatedCampaignIds": [
+      "solar",
+      "moonlit"
+    ],
+    "introduction": {
+      "heading": "WE SPEAK WITHOUT WORDS.",
+      "body": "視線。呼吸。靴音。そして、動かない時間。\n\nIGNITE 5th Single「Silent Signal」は、五人の身体そのものをひとつの言語として描いた作品。\n\n声にならないものが、もっとも強く伝わる瞬間を切り取る。"
+    },
+    "bannerCopy": "WE SPEAK WITHOUT WORDS."
+  },
+  {
     "id": "solar",
     "slug": "solar",
-    "status": "current",
+    "status": "archived",
     "releaseId": "solar",
     "releaseDate": "2023-08-02",
     "eyebrow": "1ST FULL ALBUM / 2023 SUMMER RELEASE",
