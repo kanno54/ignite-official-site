@@ -16,12 +16,18 @@ export const TopPage: React.FC = () => {
   const currentCampaign = getCurrentCampaign();
 
   const currentRelease = releases.find((r) => r.id === currentCampaign.releaseId) || releases[0];
-  const pickUpTrackId = currentCampaign.id === 'solar' ? 'solar-title' : config.pickUpTrackId;
+  const pickUpTrackId = currentCampaign.id === 'silent-signal'
+    ? 'silent-signal-title'
+    : currentCampaign.id === 'solar'
+    ? 'solar-title'
+    : config.pickUpTrackId;
   const pickUpTrack = getRecordingById(pickUpTrackId);
   const latestArticle = articles[0];
 
   React.useEffect(() => {
-    if (currentCampaign.id === 'solar') {
+    if (currentCampaign.id === 'silent-signal') {
+      document.title = 'IGNITE Official Portal — 5th Single「Silent Signal」';
+    } else if (currentCampaign.id === 'solar') {
       document.title = 'IGNITE Official Portal — 1st Full Album『SOLAR』';
     } else {
       document.title = 'IGNITE Official Portal — 4th Single「Moonlit」';
@@ -348,6 +354,11 @@ export const TopPage: React.FC = () => {
             EXPLORE ARCHIVE ➔
           </Link>
 
+          {currentCampaign.id === 'silent-signal' && (
+            <Link to="/campaigns/solar/" className="btn-secondary">
+              PREVIOUS CAMPAIGN — SOLAR ↗
+            </Link>
+          )}
           {currentCampaign.id === 'solar' && (
             <Link to="/campaigns/moonlit/" className="btn-secondary">
               PREVIOUS CAMPAIGN — MOONLIT ↗
