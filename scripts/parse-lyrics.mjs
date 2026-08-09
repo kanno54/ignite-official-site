@@ -40,7 +40,11 @@ const fileMapping = [
   { recordingId: 'solar-moonlit', file: 'data/Lyrics/006-SOLAR/06-09-Moonlit.md' },
   { recordingId: 'solar-daybreak-runner', file: 'data/Lyrics/006-SOLAR/06-10-DaybreakRunner.md' },
   { recordingId: 'solar-hands-up-hearts-out', file: 'data/Lyrics/006-SOLAR/06-11-HandsUpHeartsOut.md' },
-  { recordingId: 'solar-sun-never-sleeps', file: 'data/Lyrics/006-SOLAR/06-12-SunNeverSleep.md' }
+  { recordingId: 'solar-sun-never-sleeps', file: 'data/Lyrics/006-SOLAR/06-12-SunNeverSleep.md' },
+
+  { recordingId: 'silent-signal-title', file: 'data/Lyrics/007-SilentSignal/007-01-Silent Signal.md' },
+  { recordingId: 'silent-signal-invisible-line', file: 'data/Lyrics/007-SilentSignal/007-02-Invisible Line.md' },
+  { recordingId: 'silent-signal-nocturne-drive-live', file: 'data/Lyrics/007-SilentSignal/007-03-Nocturne Drive-LiveVersion.md' }
 ];
 
 function parseLyricsMarkdownClean(content) {
