@@ -175,9 +175,9 @@ export const ArticleDetailPage: React.FC = () => {
 
             case 'image':
               return (
-                <div key={idx} style={{ margin: '24px 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <div style={{ width: '100%', maxWidth: '720px', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                    <ResponsivePicture assetId={block.assetId || ''} title={block.caption || ''} aspectRatio="3:4" />
+                <div key={idx} className="article-inline-image" style={{ margin: '32px 0', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div style={{ width: '100%', maxWidth: '800px', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)', backgroundColor: '#05070A' }}>
+                    <ResponsivePicture assetId={block.assetId || ''} title={block.caption || ''} aspectRatio="16:9" />
                   </div>
                   {block.caption && (
                     <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', marginTop: '10px', textAlign: 'center' }}>

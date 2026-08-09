@@ -266,3 +266,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   }
 }
 
+/* Hide inline article images on mobile for clean readable text layout */
+@media (max-width: 768px) {
+  .article-inline-image {
+    display: none !important;
+  }
+}
+
