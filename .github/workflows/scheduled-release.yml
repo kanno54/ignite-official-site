@@ -1,9 +1,9 @@
-name: Scheduled Production Release — 2026-07-30 00:00 JST
+name: Scheduled Production Release — 2026-08-13 00:00 JST
 
 on:
   schedule:
-    # 2026-07-30 00:00 JST = 2026-07-29 15:00 UTC
-    - cron: '0 15 29 7 *'
+    # 2026-08-13 00:00 JST = 2026-08-12 15:00 UTC
+    - cron: '0 15 12 8 *'
   workflow_dispatch:
 
 jobs:
@@ -13,6 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
+          ref: staging
           fetch-depth: 0
 
       - name: Setup Node.js
@@ -24,19 +25,36 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Promote Staging Content to Production Status
+        run: |
+          node -e '
+            import fs from "fs";
+            const patchFile = (filePath, findStr, replaceStr) => {
+              let content = fs.readFileSync(filePath, "utf8");
+              content = content.replaceAll(findStr, replaceStr);
+              fs.writeFileSync(filePath, content, "utf8");
+            };
+            patchFile("content/public/campaigns.json", "\"status\": \"staging\"", "\"status\": \"current\"");
+            patchFile("content/public/discography.json", "\"campaignState\": \"staging\"", "\"campaignState\": \"current\"");
+            patchFile("content/public/articles.json", "\"campaignState\": \"staging\"", "\"campaignState\": \"current\"");
+          '
+
       - name: Validate Content Data
         run: npm run validate:data
 
       - name: Validate Asset Manifest
         run: npm run validate:assets
 
-      - name: Build Production Output for Release
+      - name: Build Production Output (No Staging Banner)
         env:
           VITE_SITE_URL: 'https://ignite-official.site'
         run: npm run build
 
       - name: Verify Static Output Routes
         run: npm run test:static
+
+      - name: Assert Public Cutoff Safety
+        run: npm run assert-public-cutoff
 
       - name: Deploy to Production Server via lftp
         env:
