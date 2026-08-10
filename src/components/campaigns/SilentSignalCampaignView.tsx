@@ -105,9 +105,54 @@ export const SilentSignalCampaignView: React.FC<SilentSignalCampaignViewProps> =
               >
                 VIEW DISCOGRAPHY ➔
               </Link>
+              <Link
+                to="/campaigns/"
+                className="btn-secondary"
+                style={{ borderColor: 'rgba(132,150,180,0.4)', color: '#8496B4' }}
+              >
+                CAMPAIGN ARCHIVE ↗
+              </Link>
             </div>
           </div>
         </section>
+
+        {/* ARCHIVE NAV STRIP RIGHT AFTER HERO */}
+        <div
+          style={{
+            maxWidth: '800px',
+            margin: '-40px auto 0',
+            padding: '0 24px',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '12px',
+          }}
+        >
+          <Link
+            to="/campaigns/"
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.85rem',
+              color: '#8496B4',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '8px 16px',
+              backgroundColor: '#080D15',
+              border: '1px solid rgba(132, 150, 180, 0.3)',
+              borderRadius: '2px',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            ← VIEW ALL CAMPAIGN ARCHIVES (キャンペーン一覧)
+          </Link>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#637085' }}>
+            CAMPAIGN 05 // EQUINOX ERA
+          </span>
+        </div>
 
         {/* SECTION 02: INTRO */}
         <section style={{ maxWidth: '800px', margin: '0 auto', padding: '0 24px', textAlign: 'center', display: 'flex', flexDirection: 'column', gap: '24px' }}>
