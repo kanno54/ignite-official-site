@@ -47,13 +47,10 @@ const expectedFiles = [
   'fun/index.html',
   'privacy/index.html',
   'accessibility/index.html',
+  'discography/silent-signal/index.html',
+  'campaigns/silent-signal/index.html',
+  'features/silent-signal-sho-interview/index.html',
 ];
-
-if (isStagingBuild) {
-  expectedFiles.push('discography/silent-signal/index.html');
-  expectedFiles.push('campaigns/silent-signal/index.html');
-  expectedFiles.push('features/silent-signal-sho-interview/index.html');
-}
 
 let missing = 0;
 for (const relPath of expectedFiles) {

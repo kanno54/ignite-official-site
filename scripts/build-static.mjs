@@ -56,13 +56,10 @@ const routes = [
   '/privacy/',
   '/accessibility/',
   '/404.html',
+  '/discography/silent-signal/',
+  '/campaigns/silent-signal/',
+  '/features/silent-signal-sho-interview/',
 ];
-
-if (isStagingBuild) {
-  routes.push('/discography/silent-signal/');
-  routes.push('/campaigns/silent-signal/');
-  routes.push('/features/silent-signal-sho-interview/');
-}
 
 for (const route of routes) {
   let targetPath;
