@@ -62,7 +62,7 @@ export const StoryPage: React.FC = () => {
     },
   ];
 
-  if (currentCamp.id === 'silent-signal') {
+  if (['silent-signal', 'rise-again'].includes(currentCamp.id) || currentCamp.status === 'current') {
     timelineEvents.push({
       id: 'silent-signal',
       date: '2024.01',
@@ -70,6 +70,17 @@ export const StoryPage: React.FC = () => {
       title: '5th Single『Silent Signal』リリース — 言葉を削ぎ落とした身体同調の覚悟',
       description: 'WE SPEAK WITHOUT WORDS. 視線・呼吸・足音・静止の五人身体言語により新たな時代『EQUINOX』の幕開けを提示。SHO全面監修の振付と無音演出。',
       link: '/discography/silent-signal/',
+    });
+  }
+
+  if (currentCamp.id === 'rise-again' || currentCamp.status === 'current') {
+    timelineEvents.push({
+      id: 'rise-again',
+      date: '2024.03',
+      era: 'RISE AGAIN ERA',
+      title: '6th Single『RISE AGAIN』リリース ― まだ終わってない。何度でも、ここからだ。',
+      description: '言葉を削ぎ落とした『Silent Signal』の静寂を抜け、傷ついたまま、迷ったまま、もう一度同じ場所へ立ち上がる五人の決意を描く。',
+      link: '/discography/rise-again/',
     });
   }
 
@@ -81,7 +92,7 @@ export const StoryPage: React.FC = () => {
           OFFICIAL STORY & TIMELINE
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-          2020年10月のインディーズ始動から、2023年7月の1st Full Album『SOLAR』まで。五人が小さな火を育て、初めて大きな光を放つまでの公式年表。
+          2020年10月のインディーズ始動から、2024年3月の6th Single『RISE AGAIN』まで。五人が小さな火を育て、不完全な再出発を果たすまでの公式年表。
         </p>
       </div>
 
@@ -153,7 +164,6 @@ export const StoryPage: React.FC = () => {
           );
         })}
       </section>
-
     </div>
   );
 };

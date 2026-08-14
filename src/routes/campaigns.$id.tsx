@@ -6,6 +6,7 @@ import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
 import { NotFoundPage } from './404';
 import { SilentSignalCampaignView } from '../components/campaigns/SilentSignalCampaignView';
+import { RiseAgainCampaignView } from '../components/campaigns/RiseAgainCampaignView';
 
 export const CampaignDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,6 +40,10 @@ export const CampaignDetailPage: React.FC = () => {
 
   if (campaign.id === 'silent-signal') {
     return <SilentSignalCampaignView campaign={campaign} relatedArticles={relatedArticles} />;
+  }
+
+  if (campaign.id === 'rise-again') {
+    return <RiseAgainCampaignView campaign={campaign} relatedArticles={relatedArticles} />;
   }
 
   const handlePlayTitleTrack = () => {

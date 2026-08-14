@@ -482,6 +482,71 @@
     "ss-t04-story": {
       "path": "/assets/images/social/ss-t04-story.webp",
       "status": "ready"
+    },
+    "hero-rise-again-desktop": {
+      "path": "/media/images/rise-again/RA-H01_v01.png",
+      "status": "ready",
+      "aspect": "16:9"
+    },
+    "hero-rise-again-mobile": {
+      "path": "/media/images/rise-again/RA-H02_v01.png",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "cover-rise-again": {
+      "path": "/media/images/rise-again/RA-C01_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "cover-rise-again-track-01": {
+      "path": "/media/images/rise-again/RA-C02_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "cover-rise-again-track-02": {
+      "path": "/media/images/rise-again/RA-C03_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "cover-rise-again-track-03": {
+      "path": "/media/images/rise-again/RA-C04_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "artist-rise-again-group": {
+      "path": "/media/images/rise-again/RA-G01_v01.png",
+      "status": "ready",
+      "aspect": "16:9"
+    },
+    "artist-rise-again-kai": {
+      "path": "/media/images/rise-again/RA-G02_v01.png",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "artist-rise-again-sho": {
+      "path": "/media/images/rise-again/RA-G03_v01.png",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "artist-rise-again-leo": {
+      "path": "/media/images/rise-again/RA-G04_v01.png",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "artist-rise-again-ren": {
+      "path": "/media/images/rise-again/RA-G05_v01.png",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "artist-rise-again-yuto": {
+      "path": "/media/images/rise-again/RA-G06_v01.png",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "article-hero-rise-again": {
+      "path": "/media/images/rise-again/RA-ARH01_v01.png",
+      "status": "ready",
+      "aspect": "3:2"
     }
   }
 }
