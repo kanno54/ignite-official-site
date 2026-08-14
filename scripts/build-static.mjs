@@ -57,8 +57,11 @@ const routes = [
   '/accessibility/',
   '/404.html',
   '/discography/silent-signal/',
+  '/discography/rise-again/',
   '/campaigns/silent-signal/',
+  '/campaigns/rise-again/',
   '/features/silent-signal-sho-interview/',
+  '/features/rise-again-feature/',
 ];
 
 for (const route of routes) {
@@ -77,7 +80,7 @@ for (const route of routes) {
 
   // Customize title tag based on route for static SEO prerendering
   let routeTitle = isStagingBuild
-    ? 'IGNITE Official Portal — 1st Full Album『SOLAR』'
+    ? 'IGNITE Official Portal — 6th Single『RISE AGAIN』'
     : 'IGNITE Official Portal — 4th Single「Moonlit」';
   if (route.includes('/members/')) {
     const slug = route.split('/')[2];
