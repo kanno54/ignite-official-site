@@ -1,8 +1,49 @@
 [
   {
+    "id": "rise-again",
+    "slug": "rise-again",
+    "status": "current",
+    "releaseId": "rise-again",
+    "releaseDate": "2024-03-20",
+    "eyebrow": "6TH SINGLE / RISE AGAIN ERA",
+    "title": "RISE AGAIN",
+    "catchCopy": "まだ終わってない。何度でも、ここからだ。",
+    "desktopHero": "/media/images/rise-again/RA-H01_v01.png",
+    "mobileHero": "/media/images/rise-again/RA-H02_v01.png",
+    "heroAlt": "傷ついたままでも、もう一度立ち上がるIGNITEの五人",
+    "primaryCta": {
+      "text": "LISTEN NOW ▶",
+      "action": "play"
+    },
+    "secondaryCta": {
+      "text": "VIEW DISCOGRAPHY ➔",
+      "action": "link",
+      "url": "/discography/rise-again/"
+    },
+    "campaignColors": {
+      "accent": "#2563EB",
+      "deep": "#0F172A",
+      "text": "#F8FAFC"
+    },
+    "relatedArticleIds": [
+      "rise-again-feature-article"
+    ],
+    "relatedCampaignIds": [
+      "silent-signal",
+      "solar"
+    ],
+    "introduction": {
+      "heading": "立ち上がることは、戻ることじゃない。",
+      "body": "『Silent Signal』で言葉を削ぎ落とし、静寂の中で視線と呼吸を重ねた五人。\nその静けさのあとに残ったものを、再び動きへ変えていく。\n\n傷ついたままでもいい。迷いながらでもいい。\n6th Single『RISE AGAIN』は、何度でも同じ場所へ立ち上がる五人の決意を描く。"
+    },
+    "bannerCopy": "まだ終わってない。何度でも、ここからだ。",
+    "storyUpdate": "# RISE AGAIN Story Update\n\n## 2024.03 — RISE AGAIN\n### 立ち上がることを、選び直す。\n\n『Silent Signal』で、言葉より先に視線と呼吸を重ねた五人。  \nその静寂のあとも、迷いや疲労が消えたわけではなかった。\n\n全国ツアーへ向けた制作が本格化し、求められるものが大きくなるほど、それぞれが抱える責任も重くなっていく。  \nそんな時期に生まれた6th Single『RISE AGAIN』は、すべてを乗り越えたあとの勝利を歌う曲ではない。\n\n傷ついたままでもいい。  \n迷いながらでもいい。  \n一度止まったなら、そこからもう一度始めればいい。\n\n五人は、以前と同じ場所へ戻ろうとはしなかった。  \n揃わなかった時間も、届かなかった景色も、それぞれが抱えてきた弱さも、そのまま次へ持っていく。\n\nそしてステージでは、五人だけだった声に客席の歌声が重なり始める。  \n『RISE AGAIN』は、IGNITEにとって「立ち上がるための曲」から、「同じ場所でもう一度声を重ねるための曲」へ育っていった。\n\n暗青の中から、少しずつ白金の光へ。\n\nまだ完全には朝ではない。  \nけれど五人は、もう一度前を向いている。\n\n次に待つのは、光と影の両方を抱えて立つ『EQUINOX』。  \nその中央へ向かうための一歩が、ここから始まる。\n",
+    "campaignCopy": "# RISE AGAIN\n\n## Campaign Page Copy\n\n**IGNITE 6th Single**\n\n### HERO\n\n**まだ終わってない。  \n何度でも、ここからだ。**\n\n傷ついたままでもいい。  \n迷いながらでもいい。  \n立ち止まった時間も、届かなかった夜も、すべて連れて次へ行く。\n\n**RISE AGAIN**  \n五つの声が重なるたび、僕らはまた前を向く。\n\n---\n\n## CAMPAIGN STATEMENT\n\n### 立ち上がることは、戻ることじゃない。\n\n『RISE AGAIN』が描くのは、すべてを乗り越えたあとの強さではない。\n\n足が重い朝。  \n揃わなかったステップ。  \n届かなかった場所。  \n言えなかった弱さ。\n\nそれらを消して、以前の自分へ戻るのではなく、変わったままもう一度立つこと。\n\n前作『Silent Signal』で、IGNITEは視線、呼吸、足音の中に言葉にならない感情を預けた。  \nその静寂の先で、五人は再び身体を起こし、声を重ねる。\n\n一人が全員を引き上げるのではない。  \n立ち止まるときも、進むときも、それぞれのやり方で同じ場所を選び直す。\n\nそれが、今のIGNITEが歌う“再起”だ。\n\n---\n\n## VISUAL CONCEPT\n\n### DEEP BLUE → PLATINUM\n\nRISE AGAIN期のビジュアルは、**暗青から白金へ移る光**を軸に構成される。\n\n膝をつく。  \n身体を起こす。  \n立ち上がる。  \nそして最後に、五人が横一列に並ぶ。\n\n描くのは、勝者のポーズではない。  \n次の動作が始まる直前、その途中にある身体だ。\n\n白金の光は傷を消すためではなく、残った輪郭ごと照らすためにある。\n\n**倒れなかった五人ではなく、倒れたことのある五人。**\n\nその姿を、RISE AGAINのキャンペーン全体で追いかける。\n\n---\n\n## TRACKS\n\n### 01. RISE AGAIN\n\n**何度だって立ち上がれ。**\n\n無傷の強さではなく、迷いも失敗も抱えたまま前へ進むことを肯定するアンセム。\n\nYUTOの“重い朝”から始まり、LEO、REN、KAI、SHO、それぞれの時間を通って五つの声が重なっていく。  \nライブではサビを客席へ預け、暗青のステージが少しずつ白金へ変わる。\n\n五人だけではなく、その場にいる全員で「まだ終わっていない」を共有するための曲。\n\n**CTA:** `SONG DETAIL` / `LYRICS` / `LISTEN`\n\n---\n\n### 02. Keep the Flame\n\n**大きく燃えなくても、消さなければいい。**\n\n立ち上がったあとにも、迷いは戻ってくる。\n\n『Keep the Flame』が見つめるのは、前進の勢いではなく、手元に残った小さな火を守ること。  \n何かを焼き尽くす炎ではなく、次へつなげるための火種。\n\n進み続けることだけが意志ではない。  \n消さずに残すこともまた、次の一歩になる。\n\n**CTA:** `SONG DETAIL` / `LYRICS`\n\n---\n\n### 03. Afterglow - Live Version -\n\n**立ち上がったあと、何を持ち帰るのか。**\n\n派手なステージのあとに残る静かな余韻を、ライブの熱の中で再構成した『Afterglow』。\n\nスタジオ版へ先行するこのLive Versionでは、原曲の柔らかな感情を残しながら、テンポとビートを引き上げたクールなEDM／シティポップへ変化する。\n\nLEOの歌声、客席の光、会場に残る呼吸まで含めて一曲になる。\n\n**立ち上がる。  \n火を消さない。  \nその熱を持ち帰る。**\n\n三曲目は、RISE AGAINというシングルを静かな余韻へ着地させる。\n\n**CTA:** `SONG DETAIL` / `LYRICS`\n\n---\n\n## FROM SILENCE TO VOICE\n\n### Silent Signal → RISE AGAIN\n\n『Silent Signal』が、息を止める曲だったなら。  \n『RISE AGAIN』は、もう一度息を吸い、声を出す曲だ。\n\n視線だけでつながっていた五人が、今度は客席と声を重ねる。  \n静寂の中で確かめた関係を、そのまま次の動きへ変えていく。\n\nそしてこの流れは、2nd Full Album『EQUINOX』へ続いていく。\n\n光か影かを選ぶのではなく、どちらも抱えたまま同じ場所に立つために。\n\n---\n\n## FEATURE\n\n### 立ち上がることは、戻ることじゃない。\n#### IGNITE『RISE AGAIN』が描く、“再起”のかたち\n\nなぜIGNITEは、今「勝つ歌」ではなく「もう一度立つ歌」を選んだのか。\n\n五人それぞれの傷、前作『Silent Signal』との接続、暗青から白金へ変わるビジュアル、そして三曲で描く“続けること”。\n\nRISE AGAINの中心にある考えを、特集記事でたどる。\n\n**CTA:** `READ FEATURE`\n\n---\n\n## RELEASE\n\n### IGNITE 6th Single\n# RISE AGAIN\n\n**2024.03**\n\n1. RISE AGAIN  \n2. Keep the Flame  \n3. Afterglow - Live Version -\n\n**CTA:** `VIEW DISCOGRAPHY` / `LISTEN`\n\n---\n\n## CLOSING\n\n傷は、消さなくていい。  \n迷いも、置いていかなくていい。\n\nここまで来た時間ごと、次へ持っていけばいい。\n\n**まだ終わってない。  \n何度でも、ここからだ。**\n\n**RISE AGAIN**\n"
+  },
+  {
     "id": "silent-signal",
     "slug": "silent-signal",
-    "status": "current",
+    "status": "archived",
     "releaseId": "silent-signal",
     "releaseDate": "2024-01-15",
     "eyebrow": "5TH SINGLE / EQUINOX ERA",
@@ -36,7 +77,8 @@
       "heading": "WE SPEAK WITHOUT WORDS.",
       "body": "視線。呼吸。靴音。そして、動かない時間。\n\nIGNITE 5th Single「Silent Signal」は、五人の身体そのものをひとつの言語として描いた作品。\n\n声にならないものが、もっとも強く伝わる瞬間を切り取る。"
     },
-    "bannerCopy": "WE SPEAK WITHOUT WORDS."
+    "bannerCopy": "WE SPEAK WITHOUT WORDS.",
+    "campaignState": "past"
   },
   {
     "id": "solar",

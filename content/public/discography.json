@@ -1,6 +1,31 @@
 {
   "releases": [
     {
+      "id": "rise-again",
+      "slug": "rise-again",
+      "title": "RISE AGAIN",
+      "subtitle": "6th Single",
+      "format": "6th Single",
+      "fictionalReleaseDate": "2024-03",
+      "fictionalReleaseDateFull": "2024.03.20",
+      "coverAssetId": "RA-C01",
+      "coverImage": "/media/images/rise-again/RA-C01_v01.png",
+      "description": "6th Single『RISE AGAIN』。まだ終わってない。何度でも、ここからだ。",
+      "linerNotes": "# RISE AGAIN\n\n**IGNITE 6th Single**\n\n## Official Liner Notes\n\n『RISE AGAIN』は、うまくいった瞬間だけを切り取った勝利の歌ではない。\n\n迷い、失敗し、立ち止まった時間まで抱えたまま、それでももう一度同じ場所に立とうとする五人を描いたシングルである。\n\n前作『Silent Signal』で、IGNITEは言葉を減らし、視線や呼吸、身体の動きの中に感情を置いた。そこから続く本作では、その静けさのあとに残ったものを、再び動きへ変えていく。\n\n三曲は、それぞれ異なる距離から「続けること」を描いている。\n\n表題曲『RISE AGAIN』で立ち上がり、『Keep the Flame』で消さずに残し、『Afterglow - Live Version -』でステージを終えたあとにも残る熱を確かめる。\n\n大きな答えを提示するのではなく、次へ進むための温度を手元に残す作品となった。\n\n---\n\n## 01. RISE AGAIN\n\n「何度でも立ち上がる」という強い言葉を持ちながら、この曲が肯定しているのは無傷の強さではない。\n\n足が重い朝も、思うように届かなかった時間も、揃わなかったステップも、すべてを消さずに次へ持っていくことが、この曲の中心にある。\n\nIGNITEにとっての“再起”は、以前とまったく同じ自分たちへ戻ることではない。  \n五人がそれぞれに変化したあと、もう一度同じステージに立ち、新しい形で呼吸を合わせることだ。\n\nサビは客席と一緒に歌える大きさを持ち、ライブでは会場そのものが曲の一部になる。\n\n暗い青から白金へ移っていく照明も、突然すべてが明るくなる演出ではない。傷や迷いの輪郭を残したまま、少しずつ朝へ近づいていく。\n\n「まだ終わっていない」という感覚を、五人だけではなく、その場にいる全員で共有するためのアンセムである。\n\n---\n\n## 02. Keep the Flame\n\n表題曲が“立ち上がる瞬間”を描くなら、『Keep the Flame』が見つめるのは、そのあとに残った小さな熱だ。\n\nここで描かれる火は、何かを焼き尽くす大きな炎ではない。  \n暗がりの中で静かに残る火種のような、手元で守り続ける温度に近い。\n\n一度立ち上がったからといって、迷いが消えるわけではない。  \nそれでも、完全に消してしまわなければ次へつなげられる。\n\n『RISE AGAIN』の強い再起と、『Afterglow』の静かな余韻の間に置かれることで、本作の三曲をつなぐ役割も持つ。\n\n前へ進むことだけではなく、**“消さないこと”もまた意志である。**\n\nその静かな強さを歌う一曲だ。\n\n---\n\n## 03. Afterglow - Live Version -\n\n『Afterglow』は、派手なステージが終わったあとに残る静かな感情を描いた楽曲。  \nこのシングルに収録されたのは、後に『EQUINOX』へ収められるスタジオ版より先に記録されたLive Versionである。\n\nライブ版では、原曲が持つ余韻を残しながら、テンポとビートを引き上げ、クールなEDM／シティポップの感触へ組み替えている。\n\n客席の光、会場の呼吸、歌い終えたあとの熱まで含めて一曲として残すことが、このバージョンの意味になっている。\n\nとくにLEOの柔らかな歌声は、派手な音の中でも温度を失わず、曲が終わりへ向かうほど客席との距離を近づけていく。\n\nステージを照らす無数のライトが星のように見える時間とともに、再起を掲げたシングルを静かな余韻へ着地させる。\n\n『RISE AGAIN』で立ち上がり、『Keep the Flame』で火を残し、『Afterglow - Live Version -』でその熱を持ち帰る。\n\nこの三曲で、IGNITEは“もう一度始めること”を、一瞬の決意ではなく、その後も続いていく時間として描いている。\n",
+      "campaignState": "current",
+      "trackIds": [
+        "rise-again-title",
+        "rise-again-keep-the-flame",
+        "rise-again-afterglow-live"
+      ],
+      "publication": {
+        "fictionalReleaseDate": "2024-03",
+        "publishAt": "2024-03-20T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "current"
+      }
+    },
+    {
       "id": "silent-signal",
       "slug": "silent-signal",
       "title": "Silent Signal",
@@ -11,7 +36,7 @@
       "coverAssetId": "cover-silent-signal",
       "description": "5th Single『Silent Signal』。言葉より先に、伝わるもの。WE SPEAK WITHOUT WORDS.",
       "linerNotes": "『Moonlit』で夜へ踏み込んだIGNITEが、さらに言葉を削り、身体そのものを表現へ変えた5th Single。\n\n視線、呼吸、足音、そして沈黙。\n表題曲「Silent Signal」では、声にしなければ伝わらないものではなく、長い時間を共にしたからこそ、言葉になる前に伝わってしまうものを描く。\n\nカップリング「Invisible Line」が見つめるのは、近づくことではなく、あえて越えない距離。\nそして「Nocturne Drive - Live Version -」では、静かな夜がステージ上の速度と身体の高揚へと姿を変える。\n\n三曲に共通しているのは、夜そのものではない。\n\n見えないものを、どう感じ取るか。\n\nIGNITEが“仲のいい五人”から、“言葉だけに頼らずステージを成立させられる五人”へ変わり始めた瞬間を記録した一枚。",
-      "campaignState": "current",
+      "campaignState": "past",
       "trackIds": [
         "silent-signal-title",
         "silent-signal-invisible-line",
@@ -21,7 +46,7 @@
         "fictionalReleaseDate": "2024-01",
         "publishAt": "2024-01-15T00:00:00Z",
         "visibility": "public",
-        "campaignState": "current"
+        "campaignState": "past"
       }
     },
     {
@@ -12543,6 +12568,39 @@
         }
       ],
       "posterAssetId": "poster-solar-sun-never-sleeps"
+    },
+    {
+      "id": "rise-again-title",
+      "releaseId": "rise-again",
+      "title": "RISE AGAIN",
+      "trackNo": 1,
+      "durationSeconds": 250,
+      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioStatus": "ready",
+      "coverImage": "/media/images/rise-again/RA-C02_v01.png",
+      "lyrics": "[Intro / KAI]\r\n止まったままの音源\r\n床に残る白い線\r\n昨日の位置じゃなくていい\r\nもう一度　数えよう\r\n\r\n[Verse 1 / YUTO]\r\n鏡の中　少し遅れて\r\n動く自分を見ていた\r\n追いつくことばかり考えて\r\n息の置き場をなくしてた\r\n\r\n[Verse 1 / LEO]\r\n笑って流した言葉まで\r\n帰り道で引っかかってた\r\nうまくできた日よりも\r\n揃わなかった夜が残る\r\n\r\n[Pre-Chorus / REN]\r\n八つ数えて　また途切れて\r\n誰もすぐには動けない\r\nそれでも隣にいる気配が\r\n次の拍を待っていた\r\n\r\n[Chorus / All]\r\nRISE AGAIN\r\n前と同じじゃなくていい\r\nずれたままの呼吸でも\r\nここから合わせていける\r\n\r\nRISE AGAIN\r\n空いた場所を埋めるんじゃなく\r\n今の僕らに似合う形を\r\nもう一度　選び直そう\r\n\r\n[Post-Chorus / All]\r\nOne, two, three, four\r\nまだ数えられる\r\nFive, six, seven, eight\r\nここにいる\r\n\r\n[Verse 2 / KAI]\r\n剥がれかけた目印を\r\n指先でそっと外した\r\n正しかったはずの場所に\r\nもう立てない日もある\r\n\r\n[Verse 2 / SHO]\r\n崩れたままの動きには\r\n崩れた理由が残ってる\r\n直すためじゃなく確かめる\r\n身体が覚えた迷いまで\r\n\r\n[Pre-Chorus / REN]\r\n同じ音を聴いていても\r\n見ていた景色は違ってた\r\nだから今　目線の先を\r\nひとつずつ決めていこう\r\n\r\n[Chorus / All]\r\nRISE AGAIN\r\n前と同じじゃなくていい\r\n足元の線を越えて\r\n新しい場所へ立てばいい\r\n\r\nRISE AGAIN\r\n失くしたものを探すより\r\n残っているこのリズムを\r\n五人で鳴らし直そう\r\n\r\n[Bridge / KAI]\r\n誰かが遅れたんじゃない\r\n誰かが間違えたんじゃない\r\n変わっていく途中で\r\n少しだけ　形が合わなくなった\r\n\r\n[Bridge / REN]\r\nならば　ここで止まって\r\nもう一度　呼吸を置こう\r\n戻るためじゃない\r\n今の僕らで　重なるために\r\n\r\n[Break / All]\r\nOne, two\r\n聞こえてる\r\nThree, four\r\nここにいる\r\nFive, six\r\n目を上げて\r\nSeven, eight\r\n始めよう\r\n\r\n[Final Chorus / All]\r\nRISE AGAIN\r\n前と同じじゃなくていい\r\nずれたままの呼吸でも\r\nここから合わせていける\r\n\r\nRISE AGAIN\r\n空いた場所を埋めるんじゃなく\r\n今の僕らに似合う形を\r\nもう一度　選び直そう\r\n\r\n[Outro / All]\r\n剥がした線の向こう側\r\n新しい位置で\r\n同じ音が鳴り始める\r\nRISE AGAIN"
+    },
+    {
+      "id": "rise-again-keep-the-flame",
+      "releaseId": "rise-again",
+      "title": "Keep the Flame",
+      "trackNo": 2,
+      "durationSeconds": 286,
+      "audioUrl": "/media/audio/rise-again/RA-A02_v01.mp3",
+      "audioStatus": "ready",
+      "coverImage": "/media/images/rise-again/RA-C03_v01.png",
+      "lyrics": "**[Intro / LEO]**\r\n消し忘れた灯りが\r\nまだ床を照らしてる\r\n誰もいないはずの部屋に\r\n少しだけ　熱が残ってた\r\n\r\n**[Verse 1 / LEO]**\r\n冷めかけたコーヒーを\r\nまた一口だけ飲んで\r\nうまく笑えなかった今日を\r\n無理に直さず置いておく\r\n\r\n明日のことを考えるほど\r\n足が重くなる夜は\r\n急がなくてもいいんだと\r\n小さく息を吐いた\r\n\r\n**[Verse 1 / YUTO]**\r\n追いつこうとしてばかりで\r\n自分の速さを忘れてた\r\n誰かの背中が遠いほど\r\n立ち止まるのが怖かった\r\n\r\nそれでも隣に残ってた\r\n脱ぎ捨てられた上着と\r\n先に帰ったはずの誰かの\r\n「また明日」が聞こえた\r\n\r\n**[Pre-Chorus / REN]**\r\n強くなくても\r\n明るくなくても\r\n消えていないなら\r\nそれでいい\r\n\r\n**[Chorus / All]**\r\n小さなままでいい\r\nこの胸に残るものを\r\n風からそっと守るように\r\n今夜を越えていこう\r\n\r\n歩けない日には\r\n誰かの声を聞いていよう\r\nまた自分で持てる時まで\r\nKeep the flame\r\nKeep the flame\r\n\r\n**[Post-Chorus / REN]**\r\n燃え上がらなくていい\r\nここにあるなら\r\n\r\n**[Verse 2 / KAI]**\r\n守ることに慣れすぎて\r\n頼り方を忘れていた\r\n大丈夫だと言うたびに\r\n少しずつ遠くなった\r\n\r\n背負ったものを下ろしたら\r\n何も残らない気がした\r\nでも空いたこの両手なら\r\n誰かの手を取れる\r\n\r\n**[Verse 2 / SHO]**\r\n止まれば全部崩れると\r\n同じ動きを繰り返した\r\n乱れた呼吸を隠すほど\r\n身体だけが重くなった\r\n\r\n八つ数えて動けなくても\r\n失くしたわけじゃない\r\n次の一歩を選ぶための\r\n静かな時間だった\r\n\r\n**[Pre-Chorus / REN]**\r\n迷っていても\r\n眠れなくても\r\n朝を待つことは\r\n負けじゃない\r\n\r\n**[Chorus / All]**\r\n小さなままでいい\r\nこの胸に残るものを\r\n冷たい夜に渡さないように\r\n両手で包んでいこう\r\n\r\n歌えない日には\r\n誰かの声に預けていい\r\nまた自分で歌える時まで\r\nKeep the flame\r\nKeep the flame\r\n\r\n**[Rap / KAI]**\r\nNo need to shine, no need to prove\r\n止まった時間にも意味はある\r\n昨日の自分を越えなくても\r\n今日を終えたなら　それでいい\r\n\r\n消えそうなら隣へ渡せ\r\n持てない夜は俺らが持つ\r\n戻りたくなったその時に\r\n同じ場所で待っている\r\n\r\n**[Bridge / YUTO → LEO]**\r\nもしも僕が\r\nもう無理だと言えたなら\r\n何も聞かずに\r\nここにいてくれるかな\r\n\r\n笑えないなら\r\n笑わなくてもいいから\r\nそのままの顔で\r\nまた会えたらいい\r\n\r\n**[Bridge / REN]**\r\n遠くへ行くためじゃなく\r\n今日を離さないために\r\n名前のないこの熱を\r\n静かに残しておこう\r\n\r\n**[Final Chorus / All]**\r\n小さなままでいい\r\n五つの胸に残るものを\r\n誰かの火が揺れる夜には\r\n隣で照らしていこう\r\n\r\n立ち上がれなくても\r\n終わったことにはならない\r\nまた歩き出せる時まで\r\nKeep the flame\r\nKeep the flame\r\n\r\n消えないように\r\n無理に燃やさずに\r\nKeep the flame\r\n\r\n**[Outro / LEO]**\r\n消し忘れた灯りを\r\n今夜はそのままにした\r\n明日ここへ戻るための\r\n小さな目印として"
+    },
+    {
+      "id": "rise-again-afterglow-live",
+      "releaseId": "rise-again",
+      "title": "Afterglow - Live Version -",
+      "trackNo": 3,
+      "durationSeconds": 258,
+      "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
+      "audioStatus": "ready",
+      "coverImage": "/media/images/rise-again/RA-C04_v01.png",
+      "lyrics": "**[shout / LEO]**\r\nAftergow! いくぞー！\r\n\r\n**[Intro / LEO]**\r\n最後の音が消えて\r\nまだ少しだけ　耳の奥で鳴ってる\r\n名前を呼ぶ声さえ\r\n遠い星みたいに揺れていた\r\n\r\n**[Verse 1 / LEO]**\r\n眩しすぎたライトの下\r\nうまく笑えていたかな\r\n袖に残った汗の跡\r\n今日が終わることを知った\r\n\r\nステージの端に立って\r\n暗くなった客席を見る\r\n数えきれない小さな光が\r\n夜空より近くにあった\r\n\r\n**[Pre-Chorus / REN]**\r\n拍手が波のように\r\n少しずつ遠ざかっても\r\n胸の奥に残る熱は\r\nまだ消えないまま\r\n\r\nhoo oh hoo oh\r\n\r\n**[Chorus / LEO → All]**\r\n星みたいな光の中で\r\n僕らは同じ夜を見ていた\r\n言葉にできなくても\r\n確かに届いていたものがある\r\n\r\n終わりじゃない\r\nただ静かに\r\n次の朝を待っているだけ\r\n君が灯したこの景色を\r\n忘れないように抱きしめる\r\n\r\n**[Verse 2 / YUTO]**\r\n誰もいない通路には\r\n外したイヤモニが残って\r\nさっきまでの歓声だけ\r\n嘘みたいに遠く感じた\r\n\r\n**[Verse 2 / LEO]**\r\n「おつかれ」って笑いながら\r\nいつものように肩を叩く\r\nそれだけで救われること\r\n僕らはもう知っている\r\n\r\n**[Pre-Chorus / REN]**\r\n完璧じゃない夜も\r\n迷ったままの明日も\r\n五つの影が重なれば\r\n少しだけ怖くない\r\n\r\nah hah ah hah\r\nいくよー！\r\n\r\n**[Chorus / All]**\r\n星みたいな光の中で\r\n僕らは同じ夜を見ていた\r\n届かない場所まで\r\nこの歌がそっと残るように\r\n\r\nさよならじゃない\r\nまた会えると\r\n約束しなくても分かるから\r\n君がくれたこの熱だけ\r\n胸の奥で燃やしていく\r\n\r\n[Live Rap / KAI]\r\n今日の光は\r\n俺たちだけのものじゃない\r\nここにいる一人ひとりが\r\nこの夜を照らしてくれた\r\n\r\n**[Bridge / LEO]**\r\nひとりになった舞台の上\r\n見上げた天井の向こうへ\r\n君の光がまだ続いてる\r\nそんな気がしたんだ\r\n\r\n**[Bridge / REN & LEO]**\r\n泣きそうになるほど\r\nきれいだった景色を\r\n次はもっと遠くまで\r\n連れていけるように\r\n\r\n**[Final Chorus / All]**\r\n星みたいな光の中で\r\n僕らは同じ夢を見ていた\r\n声にならなくても\r\n心はここに残っている\r\n\r\n終わりじゃない\r\nこの余韻が\r\n新しい歌を呼んでいる\r\n君が灯したこの景色を\r\n次の夜へ連れていく\r\n\r\n**[Outro / LEO]**\r\n最後の光が消える前に\r\nもう一度だけ　手を振った\r\n静かな夜の向こう側で\r\n僕らはまた　燃え続ける\r\n\r\n**[shout / LEO]**\r\nありがとう"
     }
   ]
 }
