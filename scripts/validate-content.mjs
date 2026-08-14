@@ -40,8 +40,11 @@ for (const camp of campaigns) {
   }
 }
 
-// 4. Check speaker IDs in articles
+// 4. Defensive check for speaker IDs & publication in articles
 for (const art of articles) {
+  if (!art.publication || typeof art.publication !== 'object') {
+    throw new Error(`[VALIDATION ERROR] Article '${art.id}' is missing required 'publication' object`);
+  }
   if (!art.mainSpeakerIds || !Array.isArray(art.mainSpeakerIds)) {
     throw new Error(`[VALIDATION ERROR] Article '${art.id}' has missing or invalid mainSpeakerIds (expected Array of member IDs, got ${typeof art.mainSpeakerIds})`);
   }
