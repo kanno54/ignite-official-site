@@ -2,9 +2,9 @@
   "siteUrl": "https://ignite-official.site",
   "canonicalUrl": "https://ignite-official.site",
   "fictionalCurrentDate": "2023-07",
-  "currentCampaign": "SOLAR",
-  "latestReleaseId": "solar",
-  "pickUpTrackId": "solar-title",
+  "currentCampaign": "RISE AGAIN",
+  "latestReleaseId": "rise-again",
+  "pickUpTrackId": "rise-again-title",
   "group": {
     "name": "IGNITE",
     "japaneseName": "イグナイト",
@@ -14,7 +14,13 @@
     "catchphraseEn": "We don’t just perform. We burn.",
     "catchphraseJa": "ただ演じるのではない。自分たち自身を燃やして、舞台に立つ。",
     "fanName": "EMBER",
-    "memberOrder": ["kai", "sho", "leo", "ren", "yuto"]
+    "memberOrder": [
+      "kai",
+      "sho",
+      "leo",
+      "ren",
+      "yuto"
+    ]
   },
   "brandTokens": {
     "primary": "#FF4B2B",
@@ -31,15 +37,15 @@
     "success": "#58C998"
   },
   "campaignSkin": {
-    "campaign": "SOLAR",
-    "accent": "#F4C34E",
-    "accentLight": "#FFF3D0",
-    "deep": "#080A0F",
-    "white": "#F6F3ED",
-    "onAccent": "#080A0F",
-    "heroEyebrow": "1ST FULL ALBUM",
-    "heroTitle": "SOLAR",
-    "heroCopy": "火をつける側から、光を放つ側へ。",
+    "campaign": "RISE AGAIN",
+    "accent": "#2563EB",
+    "accentLight": "#60A5FA",
+    "deep": "#0F172A",
+    "white": "#F8FAFC",
+    "onAccent": "#FFFFFF",
+    "heroEyebrow": "6TH SINGLE",
+    "heroTitle": "RISE AGAIN",
+    "heroCopy": "まだ終わってない。何度でも、ここからだ。",
     "primaryCta": "LISTEN NOW",
     "secondaryCta": "VIEW RELEASE"
   },
