@@ -42,9 +42,12 @@ for (const camp of campaigns) {
 
 // 4. Check speaker IDs in articles
 for (const art of articles) {
+  if (!art.mainSpeakerIds || !Array.isArray(art.mainSpeakerIds)) {
+    throw new Error(`[VALIDATION ERROR] Article '${art.id}' has missing or invalid mainSpeakerIds (expected Array of member IDs, got ${typeof art.mainSpeakerIds})`);
+  }
   for (const speakerId of art.mainSpeakerIds) {
     if (!memberIds.has(speakerId)) {
-      throw new Error(`[VALIDATION ERROR] Article ${art.id} references unknown speaker ID: ${speakerId}`);
+      throw new Error(`[VALIDATION ERROR] Article '${art.id}' references unknown speaker ID: ${speakerId}`);
     }
   }
 }
