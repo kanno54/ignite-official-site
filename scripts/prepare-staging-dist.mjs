@@ -18,7 +18,7 @@ const stagingRobotsTxt = `User-agent: *\nDisallow: /\n`;
 fs.writeFileSync(path.join(distDir, 'robots.txt'), stagingRobotsTxt, 'utf8');
 console.log('  ✔ Created staging robots.txt (Disallow: /)');
 
-// 2. Create Staging .htaccess with X-Robots-Tag, No-Cache headers, and Security settings
+// 2. Create Staging .htaccess with X-Robots-Tag, No-Cache headers, and SPA Fallback
 const stagingHtaccess = `# Staging Security & Search Engine Blocking
 Header set X-Robots-Tag "noindex, nofollow"
 
@@ -29,11 +29,14 @@ Header set X-Robots-Tag "noindex, nofollow"
   Header set Expires "0"
 </IfModule>
 
-# Basic Authentication (Optional / Onamae.com Setup)
-# AuthType Basic
-# AuthName "IGNITE Staging Environment"
-# AuthUserFile /home/r0445204/public_html/staging.ignite-official.site/.htpasswd
-# Require valid-user
+# SPA Fallback & Direct Route Rewriting
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
 `;
 fs.writeFileSync(path.join(distDir, '.htaccess'), stagingHtaccess, 'utf8');
 console.log('  ✔ Created staging .htaccess with no-cache & X-Robots-Tag');

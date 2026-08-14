@@ -33,6 +33,8 @@ const routes = [
   '/discography/burn-it-down/',
   '/discography/no-limits/',
   '/discography/solar/',
+  '/discography/silent-signal/',
+  '/discography/rise-again/',
   '/campaigns/',
   '/campaigns/firestarter/',
   '/campaigns/no-limits/',
@@ -40,6 +42,8 @@ const routes = [
   '/campaigns/ignition/',
   '/campaigns/moonlit/',
   '/campaigns/solar/',
+  '/campaigns/silent-signal/',
+  '/campaigns/rise-again/',
   '/features/',
   '/features/archive-firestarter-leo-one-day-ahead/',
   '/features/no-limits-interview/',
@@ -51,17 +55,13 @@ const routes = [
   '/features/ignition-special-feature/',
   '/features/six-new-lights/',
   '/features/leo-from-stage-to-solar/',
+  '/features/silent-signal-sho-interview/',
+  '/features/rise-again-feature/',
   '/story/',
   '/fun/',
   '/privacy/',
   '/accessibility/',
   '/404.html',
-  '/discography/silent-signal/',
-  '/discography/rise-again/',
-  '/campaigns/silent-signal/',
-  '/campaigns/rise-again/',
-  '/features/silent-signal-sho-interview/',
-  '/features/rise-again-feature/',
 ];
 
 for (const route of routes) {
@@ -112,7 +112,7 @@ for (const route of routes) {
   console.log(`  Generated: ${targetPath.replace(distDir, 'dist')}`);
 }
 
-// 4. Create production .htaccess to prevent stale JS/HTML browser caching
+// 4. Create production .htaccess to prevent stale JS/HTML browser caching & handle SPA routes
 const prodHtaccess = `<IfModule mod_headers.c>
   <FilesMatch "\\.(html|htm|js|css)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
@@ -120,8 +120,16 @@ const prodHtaccess = `<IfModule mod_headers.c>
     Header set Expires "0"
   </FilesMatch>
 </IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
 `;
 fs.writeFileSync(path.join(distDir, '.htaccess'), prodHtaccess, 'utf8');
-console.log('  ✔ Created production .htaccess with Cache-Control no-cache');
+console.log('  ✔ Created production .htaccess with Cache-Control no-cache and SPA rewrite rules');
 
 console.log(`✔ Static pre-rendering completed for ${routes.length} routes!`);
