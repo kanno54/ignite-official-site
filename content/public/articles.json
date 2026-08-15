@@ -33,7 +33,265 @@
     "blocks": [
       {
         "type": "lead",
-        "content": "2024年3月、IGNITEは6th Single『RISE AGAIN』をリリースした。\n\nタイトルだけを見れば、力強い再起のアンセムだ。けれど、この曲が見つめているのは、勝利の瞬間でも、迷いを振り切った後の姿でもない。\n\n傷ついたまま。迷ったまま。昨日より少し重い足で、オススメもう一度、同じ場所へ向かうこと。\n\n『RISE AGAIN』が歌うのは、そんな不完全な再出発だ。"
+        "content": "2024年3月、IGNITEは6th Single『RISE AGAIN』をリリースした。"
+      },
+      {
+        "type": "paragraph",
+        "content": "タイトルだけを見れば、力強い再起のアンセムだ。けれど、この曲が見つめているのは、勝利の瞬間でも、迷いを振り切った後の姿でもない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "傷ついたまま。迷ったまま。昨日より少し重い足で、それでももう一度、同じ場所へ向かうこと。"
+      },
+      {
+        "type": "paragraph",
+        "content": "『RISE AGAIN』が歌うのは、そんな不完全な再出発だ。"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading",
+        "content": "「勝つ歌」ではなく、「もう一度立つ歌」"
+      },
+      {
+        "type": "paragraph",
+        "content": "『RISE AGAIN』というタイトルは、制作の早い段階から決まっていた。"
+      },
+      {
+        "type": "paragraph",
+        "content": "ただし、最初の歌詞案は、現在の形よりも勝利や成功に近い内容だったという。そこから方向を変えたのは、今のIGNITEが歌うべき“強さ”を五人自身が問い直したからだった。"
+      },
+      {
+        "type": "paragraph",
+        "content": "格好よく勝つことよりも、迷ったまま立ち上がること。"
+      },
+      {
+        "type": "paragraph",
+        "content": "この選択が、曲全体の温度を決めている。"
+      },
+      {
+        "type": "paragraph",
+        "content": "YUTOが歌い始めるのは、晴れやかな朝ではない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "上手く笑えず、昨日より少し重く感じる足で、それでも靴紐を結び直して外へ出る朝だ。"
+      },
+      {
+        "type": "paragraph",
+        "content": "LEOは、近づくほど遠く見える目標を前に、「もういいや」と言いかけた言葉を飲み込む。RENは、失ったものを数えていた夜の中で、隣から聞こえた声を拾う。"
+      },
+      {
+        "type": "paragraph",
+        "content": "この曲には、最初から立っている人間がほとんどいない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "だからこそ、サビの「何度だって立ち上がれ」は、上から誰かを励ます言葉ではなく、自分たち自身にも向けられた言葉として響く。"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading",
+        "content": "五人それぞれの傷を、同じ形にはしない"
+      },
+      {
+        "type": "paragraph",
+        "content": "IGNITEの“再起”は、五人が同じ経験をして、同じ答えにたどり着くことではない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "KAIが歌うのは、誰にも見えない場所で積み重ねた時間。SHOが振り返るのは、揃わなかったステップと崩れたフォーメーション。RENは遠回りした時間を肯定し、YUTOとLEOは、朝や目標の距離の中に個人的な迷いを置く。"
+      },
+      {
+        "type": "paragraph",
+        "content": "それぞれが見ている景色は違う。"
+      },
+      {
+        "type": "paragraph",
+        "content": "それでも、サビでは五つの声が重なる。"
+      },
+      {
+        "type": "paragraph",
+        "content": "ここに、現在のIGNITEらしさがある。"
+      },
+      {
+        "type": "paragraph",
+        "content": "誰か一人が四人を救うのではない。全員が同じ強さを持つ必要もない。それぞれが違う場所で立ち止まり、それでも同じステージへ戻ってくる。"
+      },
+      {
+        "type": "paragraph",
+        "content": "KAIのラップにある「立ち止まるなら一緒に止まる／でも進むなら　俺らで進む」という言葉は、その関係をもっとも直接的に示している。"
+      },
+      {
+        "type": "paragraph",
+        "content": "再起とは、一人で立てるようになることではなく、また五人で進むことを選び直すことなのかもしれない。"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading",
+        "content": "『Silent Signal』の静寂から、声が重なる場所へ"
+      },
+      {
+        "type": "paragraph",
+        "content": "前作『Silent Signal』で、IGNITEは言葉を極限まで減らした。"
+      },
+      {
+        "type": "paragraph",
+        "content": "視線、呼吸、足音、止まる時間。言葉にしなくても伝わるものを、身体そのものに預けた作品だった。"
+      },
+      {
+        "type": "paragraph",
+        "content": "『RISE AGAIN』は、その静寂の次にある。"
+      },
+      {
+        "type": "paragraph",
+        "content": "いきなりすべてが解決するわけではない。『Silent Signal』で残った緊張や迷いを抱えたまま、もう一度身体を起こし、声を出し、客席へ向かって手を伸ばす。"
+      },
+      {
+        "type": "paragraph",
+        "content": "そのため、この曲のライブでは“合唱”が重要な意味を持つ。"
+      },
+      {
+        "type": "paragraph",
+        "content": "五人だけで完成させるのではなく、サビを客席へ預ける。暗い場所でそれぞれが抱えていたものが、会場全体の声に変わっていく。"
+      },
+      {
+        "type": "paragraph",
+        "content": "『Silent Signal』が息を止める曲なら、『RISE AGAIN』はもう一度息を吸い、声を出す曲だ。"
+      },
+      {
+        "type": "paragraph",
+        "content": "二曲は正反対に見えながら、同じ時間の前後に立っている。"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading",
+        "content": "暗青から白金へ――ビジュアルが描く「途中」"
+      },
+      {
+        "type": "paragraph",
+        "content": "RISE AGAIN期のビジュアルは、暗い青から白金へ向かう光を基調としている。"
+      },
+      {
+        "type": "paragraph",
+        "content": "重要なのは、最初から明るい場所に五人を立たせないことだった。"
+      },
+      {
+        "type": "paragraph",
+        "content": "膝をついた五人。立ち上がる直前。身体を起こしている途中。そして最後に、同じ高さで横一列に並ぶ五人。"
+      },
+      {
+        "type": "paragraph",
+        "content": "ここで膝をつく姿は、敗北そのものを示しているわけではない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "次の動作が始まる直前の姿だ。"
+      },
+      {
+        "type": "paragraph",
+        "content": "白金の光も、傷や影を消すための光ではない。暗青の中に残っていた輪郭を、そのまま照らしながら朝へ近づいていく。"
+      },
+      {
+        "type": "paragraph",
+        "content": "傷をなかったことにして前を向くのではなく、その痕跡ごと光の中へ持っていく。"
+      },
+      {
+        "type": "paragraph",
+        "content": "『RISE AGAIN』のジャケットやキャンペーンビジュアルが切り取るのは、完成した復活ではなく、まさにその“途中”である。"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading",
+        "content": "三曲で描く、「続ける」ということ"
+      },
+      {
+        "type": "paragraph",
+        "content": "6th Single『RISE AGAIN』は、表題曲だけで完結しない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "二曲目『Keep the Flame』が描くのは、立ち上がったあとに残る小さな火だ。"
+      },
+      {
+        "type": "paragraph",
+        "content": "ここでの火は、何かを焼き尽くす炎ではない。迷いが戻ってきても、完全には消さずに守っておく火種。前へ進み続けることだけではなく、“消さないこと”もまた意志なのだと、この曲は静かに示す。"
+      },
+      {
+        "type": "paragraph",
+        "content": "そして三曲目の『Afterglow - Live Version -』では、ステージが終わったあとに残る熱へ視点が移る。"
+      },
+      {
+        "type": "paragraph",
+        "content": "後に『EQUINOX』へ収録されるスタジオ版に先行して記録されたこのLive Versionは、静かな原曲の余韻を残しながら、テンポとビートを引き上げたクールなEDM／シティポップとして鳴る。"
+      },
+      {
+        "type": "paragraph",
+        "content": "LEOの柔らかな声、客席の光、会場の呼吸。"
+      },
+      {
+        "type": "paragraph",
+        "content": "立ち上がった瞬間だけではなく、そのあとに何を残して帰るのかまでを含めて、『RISE AGAIN』というシングルの物語になる。"
+      },
+      {
+        "type": "paragraph",
+        "content": "立ち上がる。\n火を消さない。\nそして、その熱を持ち帰る。"
+      },
+      {
+        "type": "paragraph",
+        "content": "三曲は、再起を一瞬のドラマではなく、その後も続いていく時間として描いている。"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "heading",
+        "content": "ここから、次の朝へ"
+      },
+      {
+        "type": "paragraph",
+        "content": "『RISE AGAIN』は、IGNITEが迷いを克服した証明ではない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "むしろ、迷いがなくならなくても進めることを知った五人の歌だ。"
+      },
+      {
+        "type": "paragraph",
+        "content": "傷ついたこと。届かなかったこと。揃わなかったこと。立ち止まったこと。"
+      },
+      {
+        "type": "paragraph",
+        "content": "その全部を、ここへ来るための途中として持っていく。"
+      },
+      {
+        "type": "paragraph",
+        "content": "そして五人は、再び同じ場所に立つ。"
+      },
+      {
+        "type": "paragraph",
+        "content": "以前とまったく同じ五人に戻るためではない。\n変わったまま、もう一度呼吸を合わせるために。"
+      },
+      {
+        "type": "paragraph",
+        "content": "『Silent Signal』の静寂を抜け、『RISE AGAIN』で身体を起こしたIGNITEは、この先『EQUINOX』で、光と影の両方を抱えたまま同じ場所へ集まっていく。"
+      },
+      {
+        "type": "paragraph",
+        "content": "まだ終わっていない。"
+      },
+      {
+        "type": "paragraph",
+        "content": "だから、ここからまた始められる。"
       }
     ]
   },
