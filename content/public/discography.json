@@ -1,88 +1,6 @@
 {
   "releases": [
     {
-      "id": "rise-again",
-      "slug": "rise-again",
-      "title": "RISE AGAIN",
-      "subtitle": "6th Single",
-      "format": "6th Single",
-      "fictionalReleaseDate": "2024-03",
-      "fictionalReleaseDateFull": "2024.03.20",
-      "coverAssetId": "cover-rise-again",
-      "coverImage": "/media/images/rise-again/RA-C01_v01.png",
-      "description": "6th Single『RISE AGAIN』。まだ終わってない。何度でも、ここからだ。",
-      "linerNotes": "『RISE AGAIN』は、うまくいった瞬間だけを切り取った勝利の歌ではない。\n\n迷い、失敗し、立ち止まった時間まで抱えたまま、それでももう一度同じ場所に立とうとする五人を描いたシングルである。\n\n前作『Silent Signal』で、IGNITEは言葉を減らし、視線や呼吸、身体の動きの中に感情を置いた。そこから続く本作では、その静けさのあとに残ったものを、再び動きへ変えていく。\n\n三曲は、それぞれ異なる距離から「続けること」を描いている。\n\n表題曲『RISE AGAIN』で立ち上がり、『Keep the Flame』で消さずに残し、『Afterglow - Live Version -』でステージを終えたあとにも残る熱を確かめる。\n\n大きな答えを提示するのではなく、次へ進むための温度を手元に残す作品となった。",
-      "campaignState": "current",
-      "trackIds": [
-        "rise-again-title",
-        "rise-again-keep-the-flame",
-        "rise-again-afterglow-live"
-      ],
-      "publication": {
-        "fictionalReleaseDate": "2024-03",
-        "publishAt": "2024-03-20T00:00:00Z",
-        "visibility": "public",
-        "campaignState": "current"
-      }
-    },
-    {
-      "id": "silent-signal",
-      "slug": "silent-signal",
-      "title": "Silent Signal",
-      "subtitle": "5th Single",
-      "format": "5th Single",
-      "fictionalReleaseDate": "2024-01",
-      "fictionalReleaseDateFull": "2024.01.15",
-      "coverAssetId": "cover-silent-signal",
-      "description": "5th Single『Silent Signal』。言葉より先に、伝わるもの。WE SPEAK WITHOUT WORDS.",
-      "linerNotes": "『Moonlit』で夜へ踏み込んだIGNITEが、さらに言葉を削り、身体そのものを表現へ変えた5th Single。\n\n視線、呼吸、足音、そして沈黙。\n表題曲「Silent Signal」では、声にしなければ伝わらないものではなく、長い時間を共にしたからこそ、言葉になる前に伝わってしまうものを描く。\n\nカップリング「Invisible Line」が見つめるのは、近づくことではなく、あえて越えない距離。\nそして「Nocturne Drive - Live Version -」では、静かな夜がステージ上の速度と身体の高揚へと姿を変える。\n\n三曲に共通しているのは、夜そのものではない。\n\n見えないものを、どう感じ取るか。\n\nIGNITEが“仲のいい五人”から、“言葉だけに頼らずステージを成立させられる五人”へ変わり始めた瞬間を記録した一枚。",
-      "campaignState": "past",
-      "trackIds": [
-        "silent-signal-title",
-        "silent-signal-invisible-line",
-        "silent-signal-nocturne-drive-live"
-      ],
-      "publication": {
-        "fictionalReleaseDate": "2024-01",
-        "publishAt": "2024-01-15T00:00:00Z",
-        "visibility": "public",
-        "campaignState": "current"
-      }
-    },
-    {
-      "id": "solar",
-      "slug": "solar",
-      "title": "SOLAR",
-      "subtitle": "1st Full Album",
-      "format": "1st Full Album",
-      "fictionalReleaseDate": "2023-08",
-      "fictionalReleaseDateFull": "2023 Summer",
-      "coverAssetId": "cover-solar",
-      "description": "1st Full Album『SOLAR』。火をつける側から、光を放つ側へ。",
-      "linerNotes": "火をつける側から、光を放つ側へ。\n\n2023年夏に発表された1st Full Album『SOLAR』は、IGNITEの明るさ、勢い、青春感を初めて一枚の大きな景色として描いた作品である。\n\n強い日差しの中へ飛び出す表題曲「SOLAR」から、夕暮れの余韻、夜の静けさを経て、次の朝へ熱を手渡す「Sun Never Sleeps」まで。全12曲は、朝から夜へ移り変わる光をたどるように構成されている。\n\nシングルとして五人の表現を広げた楽曲、ライブで客席とともに育ててきた楽曲、そして本作で初めて届けられた新曲。それぞれ異なる時間に生まれた音が重なり、当時のIGNITEにしか作れなかった一日を形づくった。\n\nただ眩しいだけではなく、強い光が生む影や、夜の中で初めて見える感情も描かれている。その振れ幅こそが、本作以降のIGNITEへつながる新しい輪郭となった。\n\n『SOLAR』は、五人が太陽になった記録ではない。\n\n五人と聴き手がそれぞれの光を持ち寄り、一つの一日を作れると知った記録である。",
-      "campaignState": "past",
-      "trackIds": [
-        "solar-title",
-        "solar-no-limits",
-        "solar-heatwave-remix",
-        "solar-golden-hour",
-        "solar-overdrive",
-        "solar-blue-signal",
-        "solar-run-with-us",
-        "solar-afterimage",
-        "solar-moonlit",
-        "solar-daybreak-runner",
-        "solar-hands-up-hearts-out",
-        "solar-sun-never-sleeps"
-      ],
-      "publication": {
-        "fictionalReleaseDate": "2023-08",
-        "publishAt": "2023-08-02T00:00:00Z",
-        "visibility": "public",
-        "campaignState": "current"
-      }
-    },
-    {
       "id": "firestarter",
       "slug": "firestarter",
       "title": "FIRESTARTER",
@@ -198,6 +116,88 @@
         "publishAt": "2023-05-20T00:00:00Z",
         "visibility": "public",
         "campaignState": "past"
+      }
+    },
+    {
+      "id": "solar",
+      "slug": "solar",
+      "title": "SOLAR",
+      "subtitle": "1st Full Album",
+      "format": "1st Full Album",
+      "fictionalReleaseDate": "2023-08",
+      "fictionalReleaseDateFull": "2023 Summer",
+      "coverAssetId": "cover-solar",
+      "description": "1st Full Album『SOLAR』。火をつける側から、光を放つ側へ。",
+      "linerNotes": "火をつける側から、光を放つ側へ。\n\n2023年夏に発表された1st Full Album『SOLAR』は、IGNITEの明るさ、勢い、青春感を初めて一枚の大きな景色として描いた作品である。\n\n強い日差しの中へ飛び出す表題曲「SOLAR」から、夕暮れの余韻、夜の静けさを経て、次の朝へ熱を手渡す「Sun Never Sleeps」まで。全12曲は、朝から夜へ移り変わる光をたどるように構成されている。\n\nシングルとして五人の表現を広げた楽曲、ライブで客席とともに育ててきた楽曲、そして本作で初めて届けられた新曲。それぞれ異なる時間に生まれた音が重なり、当時のIGNITEにしか作れなかった一日を形づくった。\n\nただ眩しいだけではなく、強い光が生む影や、夜の中で初めて見える感情も描かれている。その振れ幅こそが、本作以降のIGNITEへつながる新しい輪郭となった。\n\n『SOLAR』は、五人が太陽になった記録ではない。\n\n五人と聴き手がそれぞれの光を持ち寄り、一つの一日を作れると知った記録である。",
+      "campaignState": "past",
+      "trackIds": [
+        "solar-title",
+        "solar-no-limits",
+        "solar-heatwave-remix",
+        "solar-golden-hour",
+        "solar-overdrive",
+        "solar-blue-signal",
+        "solar-run-with-us",
+        "solar-afterimage",
+        "solar-moonlit",
+        "solar-daybreak-runner",
+        "solar-hands-up-hearts-out",
+        "solar-sun-never-sleeps"
+      ],
+      "publication": {
+        "fictionalReleaseDate": "2023-08",
+        "publishAt": "2023-08-02T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "current"
+      }
+    },
+    {
+      "id": "silent-signal",
+      "slug": "silent-signal",
+      "title": "Silent Signal",
+      "subtitle": "5th Single",
+      "format": "5th Single",
+      "fictionalReleaseDate": "2024-01",
+      "fictionalReleaseDateFull": "2024.01.15",
+      "coverAssetId": "cover-silent-signal",
+      "description": "5th Single『Silent Signal』。言葉より先に、伝わるもの。WE SPEAK WITHOUT WORDS.",
+      "linerNotes": "『Moonlit』で夜へ踏み込んだIGNITEが、さらに言葉を削り、身体そのものを表現へ変えた5th Single。\n\n視線、呼吸、足音、そして沈黙。\n表題曲「Silent Signal」では、声にしなければ伝わらないものではなく、長い時間を共にしたからこそ、言葉になる前に伝わってしまうものを描く。\n\nカップリング「Invisible Line」が見つめるのは、近づくことではなく、あえて越えない距離。\nそして「Nocturne Drive - Live Version -」では、静かな夜がステージ上の速度と身体の高揚へと姿を変える。\n\n三曲に共通しているのは、夜そのものではない。\n\n見えないものを、どう感じ取るか。\n\nIGNITEが“仲のいい五人”から、“言葉だけに頼らずステージを成立させられる五人”へ変わり始めた瞬間を記録した一枚。",
+      "campaignState": "past",
+      "trackIds": [
+        "silent-signal-title",
+        "silent-signal-invisible-line",
+        "silent-signal-nocturne-drive-live"
+      ],
+      "publication": {
+        "fictionalReleaseDate": "2024-01",
+        "publishAt": "2024-01-15T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "current"
+      }
+    },
+    {
+      "id": "rise-again",
+      "slug": "rise-again",
+      "title": "RISE AGAIN",
+      "subtitle": "6th Single",
+      "format": "6th Single",
+      "fictionalReleaseDate": "2024-03",
+      "fictionalReleaseDateFull": "2024.03.20",
+      "coverAssetId": "cover-rise-again",
+      "coverImage": "/media/images/rise-again/RA-C01_v01.png",
+      "description": "6th Single『RISE AGAIN』。まだ終わってない。何度でも、ここからだ。",
+      "linerNotes": "『RISE AGAIN』は、うまくいった瞬間だけを切り取った勝利の歌ではない。\n\n迷い、失敗し、立ち止まった時間まで抱えたまま、それでももう一度同じ場所に立とうとする五人を描いたシングルである。\n\n前作『Silent Signal』で、IGNITEは言葉を減らし、視線や呼吸、身体の動きの中に感情を置いた。そこから続く本作では、その静けさのあとに残ったものを、再び動きへ変えていく。\n\n三曲は、それぞれ異なる距離から「続けること」を描いている。\n\n表題曲『RISE AGAIN』で立ち上がり、『Keep the Flame』で消さずに残し、『Afterglow - Live Version -』でステージを終えたあとにも残る熱を確かめる。\n\n大きな答えを提示するのではなく、次へ進むための温度を手元に残す作品となった。",
+      "campaignState": "current",
+      "trackIds": [
+        "rise-again-title",
+        "rise-again-keep-the-flame",
+        "rise-again-afterglow-live"
+      ],
+      "publication": {
+        "fictionalReleaseDate": "2024-03",
+        "publishAt": "2024-03-20T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "current"
       }
     }
   ],
