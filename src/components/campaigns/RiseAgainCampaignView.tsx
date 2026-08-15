@@ -141,6 +141,46 @@ export const RiseAgainCampaignView: React.FC<RiseAgainCampaignViewProps> = ({ ca
           </div>
         </section>
 
+        {/* Sub-bar after Hero: Campaign Archive Navigation */}
+        <div
+          style={{
+            maxWidth: '800px',
+            margin: '-40px auto 0',
+            padding: '0 24px',
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '12px',
+            position: 'relative',
+            zIndex: 10,
+          }}
+        >
+          <Link
+            to="/campaigns/"
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.85rem',
+              color: '#55A8FF',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '8px 16px',
+              backgroundColor: '#080A0F',
+              border: '1px solid rgba(85, 168, 255, 0.4)',
+              borderRadius: '2px',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            ← VIEW ALL CAMPAIGN ARCHIVES (キャンペーン一覧へ)
+          </Link>
+          <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4' }}>
+            CAMPAIGN 06 // RISE AGAIN ERA
+          </span>
+        </div>
+
         {/* SECTION 02: CAMPAIGN STATEMENT */}
         <section style={{ maxWidth: '800px', margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
           <FiveLights height={20} />
