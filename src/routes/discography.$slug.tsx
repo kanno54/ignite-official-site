@@ -116,13 +116,13 @@ export const ReleaseDetailPage: React.FC = () => {
                   </span>
 
                   {/* SongDetail Artwork Image */}
-                  <div style={{ width: '120px', height: '120px', flexShrink: 0, borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+                  <div style={{ width: '120px', height: track.id.startsWith('rise-again') ? '160px' : '120px', flexShrink: 0, borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
                     <ResponsivePicture
                       assetId={trackAssetId}
                       desktopSrc={track.coverImage}
                       title={track.title}
                       subtitle={track.versionLabel}
-                      aspectRatio="1:1"
+                      aspectRatio={track.id.startsWith('rise-again') ? '3:4' : '1:1'}
                       accentColor="var(--campaign-accent)"
                     />
                   </div>

@@ -186,7 +186,26 @@ export const RiseAgainCampaignView: React.FC<RiseAgainCampaignViewProps> = ({ ca
           </div>
 
           {/* 5 Members Cards Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
+          <style>{`
+            .rise-again-members-grid {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 16px;
+            }
+            @media (min-width: 640px) {
+              .rise-again-members-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+              }
+            }
+            @media (min-width: 900px) {
+              .rise-again-members-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 20px;
+              }
+            }
+          `}</style>
+          <div className="rise-again-members-grid">
             {members.map((m) => (
               <div key={m.id} style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', borderRadius: '4px', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
                 <ResponsivePicture desktopSrc={m.image} mobileSrc={m.image} alt={`${m.name} Artist Photo`} aspectRatio="3:4" />
@@ -216,9 +235,9 @@ export const RiseAgainCampaignView: React.FC<RiseAgainCampaignViewProps> = ({ ca
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             {/* Track 01 */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', alignItems: 'center' }}>
-              <div style={{ borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                <ResponsivePicture desktopSrc="/media/images/rise-again/RA-C02_v01.png" mobileSrc="/media/images/rise-again/RA-C02_v01.png" alt="RISE AGAIN Song Detail Image" aspectRatio="1:1" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 240px) 1fr', gap: '28px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', alignItems: 'center' }}>
+              <div style={{ borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)', width: '100%' }}>
+                <ResponsivePicture desktopSrc="/media/images/rise-again/RA-C02_v01.png" mobileSrc="/media/images/rise-again/RA-C02_v01.png" alt="RISE AGAIN Song Detail Image" aspectRatio="3:4" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: '#55A8FF', fontWeight: 600 }}>TRACK 01 // TITLE TRACK</span>
@@ -238,9 +257,9 @@ export const RiseAgainCampaignView: React.FC<RiseAgainCampaignViewProps> = ({ ca
             </div>
 
             {/* Track 02 */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', alignItems: 'center' }}>
-              <div style={{ borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                <ResponsivePicture desktopSrc="/media/images/rise-again/RA-C03_v01.png" mobileSrc="/media/images/rise-again/RA-C03_v01.png" alt="Keep the Flame Song Detail Image" aspectRatio="1:1" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 240px) 1fr', gap: '28px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', alignItems: 'center' }}>
+              <div style={{ borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)', width: '100%' }}>
+                <ResponsivePicture desktopSrc="/media/images/rise-again/RA-C03_v01.png" mobileSrc="/media/images/rise-again/RA-C03_v01.png" alt="Keep the Flame Song Detail Image" aspectRatio="3:4" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: '#55A8FF', fontWeight: 600 }}>TRACK 02 // C/W TRACK</span>
@@ -260,9 +279,9 @@ export const RiseAgainCampaignView: React.FC<RiseAgainCampaignViewProps> = ({ ca
             </div>
 
             {/* Track 03 */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', alignItems: 'center' }}>
-              <div style={{ borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-                <ResponsivePicture desktopSrc="/media/images/rise-again/RA-C04_v01.png" mobileSrc="/media/images/rise-again/RA-C04_v01.png" alt="Afterglow - Live Version - Song Detail Image" aspectRatio="1:1" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(200px, 240px) 1fr', gap: '28px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: '24px', borderRadius: '4px', alignItems: 'center' }}>
+              <div style={{ borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)', width: '100%' }}>
+                <ResponsivePicture desktopSrc="/media/images/rise-again/RA-C04_v01.png" mobileSrc="/media/images/rise-again/RA-C04_v01.png" alt="Afterglow - Live Version - Song Detail Image" aspectRatio="3:4" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: '#55A8FF', fontWeight: 600 }}>TRACK 03 // LIVE TRACK</span>
