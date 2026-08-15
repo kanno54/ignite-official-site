@@ -494,7 +494,7 @@
       "aspect": "3:4"
     },
     "cover-rise-again": {
-      "path": "/assets/images/covers/cover-rise-again.png",
+      "path": "/media/images/rise-again/RA-C01_v01.png",
       "status": "ready",
       "aspect": "1:1"
     },
@@ -554,7 +554,7 @@
       "aspect": "1:1"
     },
     "poster-rise-again-title": {
-      "path": "/assets/images/covers/poster-rise-again-title.png",
+      "path": "/media/images/rise-again/RA-C02_v01.png",
       "status": "ready",
       "aspect": "1:1"
     },
@@ -564,7 +564,7 @@
       "aspect": "1:1"
     },
     "poster-keep-the-flame": {
-      "path": "/assets/images/covers/poster-keep-the-flame.png",
+      "path": "/media/images/rise-again/RA-C03_v01.png",
       "status": "ready",
       "aspect": "1:1"
     },
@@ -574,7 +574,7 @@
       "aspect": "1:1"
     },
     "poster-afterglow-live": {
-      "path": "/assets/images/covers/poster-afterglow-live.png",
+      "path": "/media/images/rise-again/RA-C04_v01.png",
       "status": "ready",
       "aspect": "1:1"
     },
