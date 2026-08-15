@@ -35,7 +35,7 @@ export const DiscographyIndex: React.FC = () => {
           DISCOGRAPHY
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', maxWidth: '700px', lineHeight: 1.6, margin: 0 }}>
-          インディーズミニアルバム『FIRESTARTER』から最新リリースまで。IGNITEの歩んできた軌跡と全31曲の公開収録音源。
+          インディーズミニアルバム『FIRESTARTER』から最新リリースまで。IGNITEの歩んできた軌跡と全34曲の公開収録音源。
         </p>
       </div>
 

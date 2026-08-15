@@ -16,7 +16,9 @@ export const TopPage: React.FC = () => {
   const currentCampaign = getCurrentCampaign();
 
   const currentRelease = releases.find((r) => r.id === currentCampaign.releaseId) || releases[0];
-  const pickUpTrackId = currentCampaign.id === 'silent-signal'
+  const pickUpTrackId = currentCampaign.id === 'rise-again'
+    ? 'rise-again-title'
+    : currentCampaign.id === 'silent-signal'
     ? 'silent-signal-title'
     : currentCampaign.id === 'solar'
     ? 'solar-title'
@@ -25,12 +27,14 @@ export const TopPage: React.FC = () => {
   const latestArticle = articles[0];
 
   React.useEffect(() => {
-    if (currentCampaign.id === 'silent-signal') {
+    if (currentCampaign.id === 'rise-again') {
+      document.title = 'IGNITE Official Portal — 6th Single「RISE AGAIN」';
+    } else if (currentCampaign.id === 'silent-signal') {
       document.title = 'IGNITE Official Portal — 5th Single「Silent Signal」';
     } else if (currentCampaign.id === 'solar') {
       document.title = 'IGNITE Official Portal — 1st Full Album『SOLAR』';
     } else {
-      document.title = 'IGNITE Official Portal — 4th Single「Moonlit」';
+      document.title = 'IGNITE Official Portal — 6th Single「RISE AGAIN」';
     }
   }, [currentCampaign]);
 

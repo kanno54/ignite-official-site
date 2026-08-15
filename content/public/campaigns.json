@@ -2,7 +2,7 @@
   {
     "id": "rise-again",
     "slug": "rise-again",
-    "status": "staging",
+    "status": "current",
     "releaseId": "rise-again",
     "releaseDate": "2024-03-20",
     "eyebrow": "6TH SINGLE / RISE AGAIN ERA",
@@ -43,7 +43,7 @@
   {
     "id": "silent-signal",
     "slug": "silent-signal",
-    "status": "archived",
+    "status": "past",
     "releaseId": "silent-signal",
     "releaseDate": "2024-01-15",
     "eyebrow": "5TH SINGLE / EQUINOX ERA",
@@ -83,7 +83,7 @@
   {
     "id": "solar",
     "slug": "solar",
-    "status": "archived",
+    "status": "past",
     "releaseId": "solar",
     "releaseDate": "2023-08-02",
     "eyebrow": "1ST FULL ALBUM / 2023 SUMMER RELEASE",

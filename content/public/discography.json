@@ -12,7 +12,7 @@
       "coverImage": "/media/images/rise-again/RA-C01_v01.png",
       "description": "6th Single『RISE AGAIN』。まだ終わってない。何度でも、ここからだ。",
       "linerNotes": "『RISE AGAIN』は、うまくいった瞬間だけを切り取った勝利の歌ではない。\n\n迷い、失敗し、立ち止まった時間まで抱えたまま、それでももう一度同じ場所に立とうとする五人を描いたシングルである。\n\n前作『Silent Signal』で、IGNITEは言葉を減らし、視線や呼吸、身体の動きの中に感情を置いた。そこから続く本作では、その静けさのあとに残ったものを、再び動きへ変えていく。\n\n三曲は、それぞれ異なる距離から「続けること」を描いている。\n\n表題曲『RISE AGAIN』で立ち上がり、『Keep the Flame』で消さずに残し、『Afterglow - Live Version -』でステージを終えたあとにも残る熱を確かめる。\n\n大きな答えを提示するのではなく、次へ進むための温度を手元に残す作品となった。",
-      "campaignState": "staging",
+      "campaignState": "current",
       "trackIds": [
         "rise-again-title",
         "rise-again-keep-the-flame",
@@ -22,7 +22,7 @@
         "fictionalReleaseDate": "2024-03",
         "publishAt": "2024-03-20T00:00:00Z",
         "visibility": "public",
-        "campaignState": "staging"
+        "campaignState": "current"
       }
     },
     {
@@ -36,7 +36,7 @@
       "coverAssetId": "cover-silent-signal",
       "description": "5th Single『Silent Signal』。言葉より先に、伝わるもの。WE SPEAK WITHOUT WORDS.",
       "linerNotes": "『Moonlit』で夜へ踏み込んだIGNITEが、さらに言葉を削り、身体そのものを表現へ変えた5th Single。\n\n視線、呼吸、足音、そして沈黙。\n表題曲「Silent Signal」では、声にしなければ伝わらないものではなく、長い時間を共にしたからこそ、言葉になる前に伝わってしまうものを描く。\n\nカップリング「Invisible Line」が見つめるのは、近づくことではなく、あえて越えない距離。\nそして「Nocturne Drive - Live Version -」では、静かな夜がステージ上の速度と身体の高揚へと姿を変える。\n\n三曲に共通しているのは、夜そのものではない。\n\n見えないものを、どう感じ取るか。\n\nIGNITEが“仲のいい五人”から、“言葉だけに頼らずステージを成立させられる五人”へ変わり始めた瞬間を記録した一枚。",
-      "campaignState": "current",
+      "campaignState": "past",
       "trackIds": [
         "silent-signal-title",
         "silent-signal-invisible-line",
@@ -46,7 +46,7 @@
         "fictionalReleaseDate": "2024-01",
         "publishAt": "2024-01-15T00:00:00Z",
         "visibility": "public",
-        "campaignState": "past"
+        "campaignState": "current"
       }
     },
     {
