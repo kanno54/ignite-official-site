@@ -547,6 +547,41 @@
       "path": "/media/images/rise-again/RA-ARH01_v01.png",
       "status": "ready",
       "aspect": "3:2"
+    },
+    "RA-C01": {
+      "path": "/media/images/rise-again/RA-C01_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-rise-again-title": {
+      "path": "/media/images/rise-again/RA-C02_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "RA-C02": {
+      "path": "/media/images/rise-again/RA-C02_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-keep-the-flame": {
+      "path": "/media/images/rise-again/RA-C03_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "RA-C03": {
+      "path": "/media/images/rise-again/RA-C03_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-afterglow-live": {
+      "path": "/media/images/rise-again/RA-C04_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "RA-C04": {
+      "path": "/media/images/rise-again/RA-C04_v01.png",
+      "status": "ready",
+      "aspect": "1:1"
     }
   }
 }

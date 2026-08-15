@@ -85,102 +85,152 @@ export const ReleaseDetailPage: React.FC = () => {
         </h2>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          {tracks.map((track, idx) => (
-            <div
-              key={track.id}
-              style={{
-                backgroundColor: 'var(--color-surface)',
-                border: '1px solid var(--color-border)',
-                padding: '24px',
-                borderRadius: '2px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px',
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '1.2rem', color: 'var(--campaign-accent)', fontWeight: 700 }}>
+          {tracks.map((track, idx) => {
+            const formatSec = (s?: number) => {
+              if (!s) return '';
+              const m = Math.floor(s / 60);
+              const sec = s % 60;
+              return `${m}:${sec < 10 ? '0' : ''}${sec}`;
+            };
+            const trackAssetId = track.posterAssetId || (track.id.startsWith('rise-again') ? `poster-${track.id}` : release.coverAssetId);
+
+            return (
+              <div
+                key={track.id}
+                style={{
+                  backgroundColor: 'var(--color-surface)',
+                  border: '1px solid var(--color-border)',
+                  padding: '24px',
+                  borderRadius: '2px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '20px',
+                }}
+              >
+                {/* Header Row with SongDetail Image, Info & Play Button */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'auto 120px 1fr auto', alignItems: 'center', gap: '20px' }}>
+                  {/* Track No */}
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '1.4rem', color: 'var(--campaign-accent)', fontWeight: 700 }}>
                     0{idx + 1}
                   </span>
-                  <div>
-                    <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.4rem', fontWeight: 700, margin: 0, color: '#F6F3ED' }}>
-                      {track.title}
-                    </h3>
+
+                  {/* SongDetail Artwork Image */}
+                  <div style={{ width: '120px', height: '120px', flexShrink: 0, borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+                    <ResponsivePicture
+                      assetId={trackAssetId}
+                      title={track.title}
+                      subtitle={track.versionLabel}
+                      aspectRatio="1:1"
+                      accentColor="var(--campaign-accent)"
+                    />
+                  </div>
+
+                  {/* Track Title & Song Parameters */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap' }}>
+                      <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.5rem', fontWeight: 800, margin: 0, color: '#F6F3ED' }}>
+                        {track.title}
+                      </h3>
+                      {track.durationSeconds && (
+                        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', fontWeight: 600 }}>
+                          [{formatSec(track.durationSeconds)}]
+                        </span>
+                      )}
+                    </div>
+
                     {track.versionLabel && (
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: '#AEB6C4' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: '#AEB6C4', fontWeight: 500 }}>
                         {track.versionLabel}
                       </span>
                     )}
-                  </div>
-                </div>
 
-                <TrackPlayButton recordingId={track.id} size="medium" />
-              </div>
-
-              {/* Track Liner Notes */}
-              <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
-                {track.linerNotes}
-              </p>
-
-              {/* Track Lyrics Accordion */}
-              {track.lyrics && track.lyrics.length > 0 && (
-                <div style={{ marginTop: '4px' }}>
-                  <button
-                    type="button"
-                    onClick={() => toggleLyrics(track.id)}
-                    style={{
-                      backgroundColor: 'var(--color-surface-elevated)',
-                      border: '1px solid var(--color-border)',
-                      padding: '10px 16px',
-                      borderRadius: '2px',
-                      width: '100%',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      cursor: 'pointer',
-                      color: '#F6F3ED',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.8rem',
-                      transition: 'all 0.2s ease',
-                    }}
-                  >
-                    <span style={{ color: 'var(--campaign-accent)', fontWeight: 600 }}>
-                      {lyricsOpen[track.id] ? '▲ OFFICIAL LYRICS (CLOSE)' : '▼ OFFICIAL LYRICS (EXPAND)'}
-                    </span>
-                    <span style={{ color: '#AEB6C4', fontSize: '0.75rem' }}>
-                      {lyricsOpen[track.id] ? '歌詞をたたむ' : '歌詞を表示する'}
-                    </span>
-                  </button>
-
-                  {lyricsOpen[track.id] && (
-                    <div
-                      style={{
-                        backgroundColor: '#05070A',
-                        border: '1px solid var(--color-border)',
-                        borderTop: 'none',
-                        padding: '24px 20px',
-                        borderRadius: '0 0 2px 2px',
-                        fontFamily: 'var(--font-sans)',
-                        fontSize: '0.95rem',
-                        lineHeight: 1.8,
-                      }}
-                    >
-                      {track.lyrics.map((l, lIdx) =>
-                        l.text === '' ? (
-                          <div key={lIdx} style={{ height: '14px' }} />
-                        ) : (
-                          <div key={lIdx} style={{ color: '#F6F3ED' }}>
-                            {l.text}
-                          </div>
-                        )
+                    {/* Spotlight Members & Mood Tags */}
+                    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '4px', fontSize: '0.78rem', fontFamily: 'var(--font-mono)' }}>
+                      {track.spotlightMemberIds && track.spotlightMemberIds.length > 0 && (
+                        <span style={{ color: '#E2E8F0', backgroundColor: 'var(--color-surface-elevated)', padding: '2px 8px', borderRadius: '2px', border: '1px solid var(--color-border)' }}>
+                          FEAT: {track.spotlightMemberIds.map((m) => m.toUpperCase()).join(', ')}
+                        </span>
+                      )}
+                      {track.moodTags && track.moodTags.length > 0 && (
+                        <span style={{ color: 'var(--campaign-accent)', backgroundColor: 'var(--color-surface-elevated)', padding: '2px 8px', borderRadius: '2px', border: '1px solid var(--color-border)' }}>
+                          TAGS: {track.moodTags.join(' / ')}
+                        </span>
                       )}
                     </div>
-                  )}
+                  </div>
+
+                  {/* Audio Play Button */}
+                  <TrackPlayButton recordingId={track.id} size="medium" />
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* Track Specific Liner Notes */}
+                {track.linerNotes && (
+                  <div style={{ backgroundColor: 'var(--color-surface-elevated)', padding: '16px 20px', borderRadius: '2px', borderLeft: '3px solid var(--campaign-accent)' }}>
+                    <p style={{ fontSize: '0.92rem', color: '#CBD5E1', lineHeight: 1.7, margin: 0, whiteSpace: 'pre-line' }}>
+                      {track.linerNotes}
+                    </p>
+                  </div>
+                )}
+
+                {/* Track Lyrics Accordion */}
+                {track.lyrics && track.lyrics.length > 0 && (
+                  <div style={{ marginTop: '4px' }}>
+                    <button
+                      type="button"
+                      onClick={() => toggleLyrics(track.id)}
+                      style={{
+                        backgroundColor: 'var(--color-surface-elevated)',
+                        border: '1px solid var(--color-border)',
+                        padding: '10px 16px',
+                        borderRadius: '2px',
+                        width: '100%',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        cursor: 'pointer',
+                        color: '#F6F3ED',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.8rem',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      <span style={{ color: 'var(--campaign-accent)', fontWeight: 600 }}>
+                        {lyricsOpen[track.id] ? '▲ OFFICIAL LYRICS (CLOSE)' : '▼ OFFICIAL LYRICS (EXPAND)'}
+                      </span>
+                      <span style={{ color: '#AEB6C4', fontSize: '0.75rem' }}>
+                        {lyricsOpen[track.id] ? '歌詞をたたむ' : '歌詞を表示する'}
+                      </span>
+                    </button>
+
+                    {lyricsOpen[track.id] && (
+                      <div
+                        style={{
+                          backgroundColor: '#05070A',
+                          border: '1px solid var(--color-border)',
+                          borderTop: 'none',
+                          padding: '24px 20px',
+                          borderRadius: '0 0 2px 2px',
+                          fontFamily: 'var(--font-sans)',
+                          fontSize: '0.95rem',
+                          lineHeight: 1.8,
+                        }}
+                      >
+                        {track.lyrics.map((l, lIdx) =>
+                          l.text === '' ? (
+                            <div key={lIdx} style={{ height: '14px' }} />
+                          ) : (
+                            <div key={lIdx} style={{ color: '#F6F3ED' }}>
+                              {l.text}
+                            </div>
+                          )
+                        )}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
