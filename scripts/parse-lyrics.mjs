@@ -44,7 +44,11 @@ const fileMapping = [
 
   { recordingId: 'silent-signal-title', file: 'data/Lyrics/007-SilentSignal/007-01-Silent Signal.md' },
   { recordingId: 'silent-signal-invisible-line', file: 'data/Lyrics/007-SilentSignal/007-02-Invisible Line.md' },
-  { recordingId: 'silent-signal-nocturne-drive-live', file: 'data/Lyrics/007-SilentSignal/007-03-Nocturne Drive-LiveVersion.md' }
+  { recordingId: 'silent-signal-nocturne-drive-live', file: 'data/Lyrics/007-SilentSignal/007-03-Nocturne Drive-LiveVersion.md' },
+
+  { recordingId: 'rise-again-title', file: 'data/Lyrics/008-RiseAgain/01-RISE-AGAIN.md' },
+  { recordingId: 'rise-again-keep-the-flame', file: 'data/Lyrics/008-RiseAgain/02-Keep-the-Flame.md' },
+  { recordingId: 'rise-again-afterglow-live', file: 'data/Lyrics/008-RiseAgain/03-Afterglow-Live.md' }
 ];
 
 function parseLyricsMarkdownClean(content) {

@@ -50,6 +50,9 @@ const expectedFiles = [
   'discography/silent-signal/index.html',
   'campaigns/silent-signal/index.html',
   'features/silent-signal-sho-interview/index.html',
+  'discography/rise-again/index.html',
+  'campaigns/rise-again/index.html',
+  'features/rise-again-feature/index.html',
 ];
 
 let missing = 0;
