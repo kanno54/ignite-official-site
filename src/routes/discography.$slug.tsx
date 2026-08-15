@@ -41,9 +41,10 @@ export const ReleaseDetailPage: React.FC = () => {
           borderRadius: '2px',
         }}
       >
-        <div style={{ maxWidth: '360px' }}>
+        <div style={{ maxWidth: '360px', width: '100%' }}>
           <ResponsivePicture
             assetId={release.coverAssetId}
+            desktopSrc={release.coverImage}
             title={release.title}
             subtitle={`${release.format} — ${release.fictionalReleaseDateFull}`}
             aspectRatio="1:1"
@@ -118,6 +119,7 @@ export const ReleaseDetailPage: React.FC = () => {
                   <div style={{ width: '120px', height: '120px', flexShrink: 0, borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
                     <ResponsivePicture
                       assetId={trackAssetId}
+                      desktopSrc={track.coverImage}
                       title={track.title}
                       subtitle={track.versionLabel}
                       aspectRatio="1:1"

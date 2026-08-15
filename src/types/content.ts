@@ -79,6 +79,7 @@ export type Recording = {
   linerNotes: string;
   lyrics: LyricLine[];
   posterAssetId?: string;
+  coverImage?: string;
 };
 
 export type Release = {
@@ -89,6 +90,7 @@ export type Release = {
   fictionalReleaseDate: string;
   fictionalReleaseDateFull: string;
   coverAssetId: string;
+  coverImage?: string;
   description: string;
   linerNotes: string;
   trackIds: string[];

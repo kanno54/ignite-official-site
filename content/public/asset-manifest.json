@@ -484,17 +484,17 @@
       "status": "ready"
     },
     "hero-rise-again-desktop": {
-      "path": "/media/images/rise-again/RA-H01_v01.png",
+      "path": "/assets/images/campaigns/hero-rise-again-desktop.png",
       "status": "ready",
       "aspect": "16:9"
     },
     "hero-rise-again-mobile": {
-      "path": "/media/images/rise-again/RA-H02_v01.png",
+      "path": "/assets/images/campaigns/hero-rise-again-mobile.png",
       "status": "ready",
       "aspect": "3:4"
     },
     "cover-rise-again": {
-      "path": "/media/images/rise-again/RA-C01_v01.png",
+      "path": "/assets/images/covers/cover-rise-again.png",
       "status": "ready",
       "aspect": "1:1"
     },
@@ -544,7 +544,7 @@
       "aspect": "3:4"
     },
     "article-hero-rise-again": {
-      "path": "/media/images/rise-again/RA-ARH01_v01.png",
+      "path": "/assets/images/articles/hero-rise-again-feature.png",
       "status": "ready",
       "aspect": "3:2"
     },
@@ -554,7 +554,7 @@
       "aspect": "1:1"
     },
     "poster-rise-again-title": {
-      "path": "/media/images/rise-again/RA-C02_v01.png",
+      "path": "/assets/images/covers/poster-rise-again-title.png",
       "status": "ready",
       "aspect": "1:1"
     },
@@ -564,7 +564,7 @@
       "aspect": "1:1"
     },
     "poster-keep-the-flame": {
-      "path": "/media/images/rise-again/RA-C03_v01.png",
+      "path": "/assets/images/covers/poster-keep-the-flame.png",
       "status": "ready",
       "aspect": "1:1"
     },
@@ -574,7 +574,7 @@
       "aspect": "1:1"
     },
     "poster-afterglow-live": {
-      "path": "/media/images/rise-again/RA-C04_v01.png",
+      "path": "/assets/images/covers/poster-afterglow-live.png",
       "status": "ready",
       "aspect": "1:1"
     },
