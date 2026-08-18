@@ -122,35 +122,6 @@ export const TopPage: React.FC = () => {
         </div>
       </section>
 
-      {/* 1.5 Special Campaign Banner */}
-      <section style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 24px', width: '100%' }}>
-        <div style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--campaign-accent)', borderRadius: '4px', overflow: 'hidden', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px', padding: 'clamp(24px, 4vw, 40px)', alignItems: 'center' }}>
-          <div style={{ borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
-            <ResponsivePicture desktopSrc={currentCampaign.desktopHero} mobileSrc={currentCampaign.mobileHero} alt={currentCampaign.title} aspectRatio="16:9" />
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span className="campaign-tag">{currentCampaign.eyebrow}</span>
-              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)', fontWeight: 600 }}>CURRENT ERA</span>
-            </div>
-            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 4vw, 3.2rem)', margin: 0, color: '#F6F3ED', lineHeight: 1.1 }}>
-              {currentCampaign.title} SPECIAL CAMPAIGN
-            </h2>
-            <p style={{ fontSize: '1.05rem', color: '#DCE6F5', lineHeight: 1.6, margin: 0 }}>
-              {currentCampaign.catchCopy}
-            </p>
-            <div style={{ display: 'flex', gap: '16px', marginTop: '8px', flexWrap: 'wrap' }}>
-              <Link to={`/campaigns/${currentCampaign.slug}/`} className="btn-primary" style={{ backgroundColor: 'var(--campaign-accent)', color: 'var(--campaign-on-accent)', borderColor: 'var(--campaign-accent)', fontWeight: 700 }}>
-                VIEW {currentCampaign.title} CAMPAIGN PAGE ➔
-              </Link>
-              <Link to="/campaigns/" className="btn-secondary">
-                CAMPAIGN ARCHIVE ➔
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 2. Latest News */}
       <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: 'clamp(20px, 4vw, 32px)', borderRadius: '2px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
