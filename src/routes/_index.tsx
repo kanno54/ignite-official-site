@@ -167,8 +167,28 @@ export const TopPage: React.FC = () => {
       {pickUpTrack && (
         <section style={{ backgroundColor: 'var(--campaign-deep)', border: '1px solid var(--campaign-accent)', padding: 'clamp(20px, 4vw, 36px)', borderRadius: '2px' }}>
           <span className="campaign-tag" style={{ marginBottom: '12px' }}>PICK UP TRACK</span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '24px', alignItems: 'center', marginTop: '16px' }}>
-            <div style={{ width: '140px', flexShrink: 0, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)', margin: '0 auto' }}>
+          <style>{`
+            .pickup-track-wrapper {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 24px;
+              align-items: center;
+              margin-top: 16px;
+            }
+            @media (max-width: 640px) {
+              .pickup-track-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+              }
+              .pickup-track-artwork {
+                width: 120px !important;
+                margin: 0 !important;
+              }
+            }
+          `}</style>
+          <div className="pickup-track-wrapper">
+            <div className="pickup-track-artwork" style={{ width: '140px', flexShrink: 0, borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--color-border)', margin: '0 auto' }}>
               <ResponsivePicture
                 assetId={pickUpTrack.posterAssetId || currentRelease.coverAssetId}
                 title={pickUpTrack.title}
@@ -177,8 +197,8 @@ export const TopPage: React.FC = () => {
                 accentColor="var(--campaign-accent)"
               />
             </div>
-            <div style={{ flex: 1, minWidth: '220px' }}>
-              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(1.5rem, 5vw, 2rem)', margin: '0 0 8px', color: '#F6F3ED' }}>
+            <div style={{ flex: 1, minWidth: 0, width: '100%' }}>
+              <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(1.5rem, 5vw, 2rem)', margin: '0 0 8px', color: '#F6F3ED', wordBreak: 'break-word' }}>
                 {pickUpTrack.title}
               </h2>
               <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', margin: 0 }}>

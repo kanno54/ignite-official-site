@@ -108,15 +108,52 @@ export const ReleaseDetailPage: React.FC = () => {
                   gap: '20px',
                 }}
               >
+                <style>{`
+                  .discography-track-row {
+                    display: grid;
+                    grid-template-columns: auto 120px 1fr auto;
+                    align-items: center;
+                    gap: 20px;
+                  }
+                  .discography-track-artwork {
+                    width: 120px;
+                    height: 120px;
+                  }
+                  .discography-track-artwork.is-portrait {
+                    height: 160px;
+                  }
+                  .discography-track-play-wrapper {
+                    display: flex;
+                    align-items: center;
+                  }
+                  @media (max-width: 640px) {
+                    .discography-track-row {
+                      grid-template-columns: auto 80px 1fr;
+                      gap: 12px;
+                    }
+                    .discography-track-artwork {
+                      width: 80px;
+                      height: 80px;
+                    }
+                    .discography-track-artwork.is-portrait {
+                      height: 107px;
+                    }
+                    .discography-track-play-wrapper {
+                      grid-column: 1 / -1;
+                      margin-top: 8px;
+                      width: 100%;
+                    }
+                  }
+                `}</style>
                 {/* Header Row with SongDetail Image, Info & Play Button */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'auto 120px 1fr auto', alignItems: 'center', gap: '20px' }}>
+                <div className="discography-track-row">
                   {/* Track No */}
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '1.4rem', color: 'var(--campaign-accent)', fontWeight: 700 }}>
                     0{idx + 1}
                   </span>
 
                   {/* SongDetail Artwork Image */}
-                  <div style={{ width: '120px', height: track.id.startsWith('rise-again') ? '160px' : '120px', flexShrink: 0, borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
+                  <div className={`discography-track-artwork ${track.id.startsWith('rise-again') ? 'is-portrait' : ''}`} style={{ flexShrink: 0, borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
                     <ResponsivePicture
                       assetId={trackAssetId}
                       desktopSrc={track.coverImage}
@@ -128,9 +165,9 @@ export const ReleaseDetailPage: React.FC = () => {
                   </div>
 
                   {/* Track Title & Song Parameters */}
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', flexWrap: 'wrap' }}>
-                      <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.5rem', fontWeight: 800, margin: 0, color: '#F6F3ED' }}>
+                      <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: 'clamp(1.1rem, 4vw, 1.5rem)', fontWeight: 800, margin: 0, color: '#F6F3ED', wordBreak: 'break-word' }}>
                         {track.title}
                       </h3>
                       {track.durationSeconds && (
@@ -162,7 +199,9 @@ export const ReleaseDetailPage: React.FC = () => {
                   </div>
 
                   {/* Audio Play Button */}
-                  <TrackPlayButton recordingId={track.id} size="medium" />
+                  <div className="discography-track-play-wrapper">
+                    <TrackPlayButton recordingId={track.id} size="medium" />
+                  </div>
                 </div>
 
                 {/* Track Specific Liner Notes */}

@@ -136,19 +136,22 @@ export const MemberDetailPage: React.FC = () => {
                   gap: '16px',
                   backgroundColor: 'var(--color-surface)',
                   border: '1px solid var(--color-border)',
-                  padding: '16px 24px',
+                  padding: '16px 20px',
                   borderRadius: '2px',
+                  flexWrap: 'wrap',
                 }}
               >
-                <div>
+                <div style={{ minWidth: 0, flex: 1 }}>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: member.colorHex }}>
                     FEATURED VOCAL / PERFORMANCE
                   </span>
-                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.2rem', margin: '2px 0 0', color: '#F6F3ED' }}>
+                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.2rem', margin: '2px 0 0', color: '#F6F3ED', wordBreak: 'break-word' }}>
                     {track.title} <span style={{ fontSize: '0.85rem', color: 'var(--campaign-accent)', fontWeight: 400 }}>({track.versionLabel})</span>
                   </h4>
                 </div>
-                <TrackPlayButton recordingId={track.id} size="medium" />
+                <div style={{ flexShrink: 0 }}>
+                  <TrackPlayButton recordingId={track.id} size="medium" />
+                </div>
               </div>
             );
           })}

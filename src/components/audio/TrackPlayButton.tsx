@@ -68,6 +68,9 @@ export const TrackPlayButton: React.FC<Props> = ({
         letterSpacing: '0.08em',
         transition: 'all 0.2s ease',
         boxShadow: isPlaying ? '0 0 12px var(--color-primary)' : '0 0 10px rgba(85, 168, 255, 0.3)',
+        whiteSpace: 'nowrap',
+        flexShrink: 0,
+        cursor: 'pointer',
       }}
       aria-label={isPlaying ? `Pause ${recording.title}` : `Play ${recording.title}`}
     >
