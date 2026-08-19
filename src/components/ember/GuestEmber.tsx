@@ -35,6 +35,8 @@ const CONCIERGE_MESSAGES = [
   '🔥ボタンを連打すると熱いリアクションが送れるよ！',
 ];
 
+const REDUCED_MOTION_NOTICE = 'EMBERは端末の「動きを減らす」設定に合わせて、静かに音楽を聴いています。';
+
 export const GuestEmber: React.FC = () => {
   if (!isFeatureEnabled('GUEST_EMBER')) {
     return null;
@@ -49,23 +51,7 @@ export const GuestEmber: React.FC = () => {
   const [isSpecialInsertActive, setIsSpecialInsertActive] = useState(false);
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const [conciergeIdx, setConciergeIdx] = useState(0);
-
-  // Milestone 7.8c Diagnostic Gate Counters & Force Toggle
-  const renderCountRef = useRef(0);
-  renderCountRef.current += 1;
-
-  const [heartbeatCount, setHeartbeatCount] = useState(0);
-  const [effectEntryCount, setEffectEntryCount] = useState(0);
-  const [effectStartCount, setEffectStartCount] = useState(0);
-  const [effectCleanupCount, setEffectCleanupCount] = useState(0);
-  const [timerCreateCount, setTimerCreateCount] = useState(0);
-  const [timerClearCount, setTimerClearCount] = useState(0);
-  const [timerCallbackCount, setTimerCallbackCount] = useState(0);
-  const [lastClearReason, setLastClearReason] = useState<string>('none');
-  const [domSrcFilename, setDomSrcFilename] = useState('');
-  const [renderMode, setRenderMode] = useState<'SRC_REPLACE' | 'FRAME_STACK'>('SRC_REPLACE');
-  const [forceAnimation, setForceAnimation] = useState(false);
-  const [showDiagnostics, setShowDiagnostics] = useState(true);
+  const [reducedNoticeText, setReducedNoticeText] = useState<string | null>(null);
 
   const burnTimerRef = useRef<NodeJS.Timeout | null>(null);
   const talkAutoCloseTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -78,33 +64,6 @@ export const GuestEmber: React.FC = () => {
   const isExpanded = playerState.isExpanded;
   const isPlaying = state.playbackState === 'PLAYING';
 
-  // Evaluate Animation Gates explicitly
-  const gatePlayback = isPlaying || forceAnimation;
-  const gateVisibility = state.visibility === 'VISIBLE';
-  const gateReducedMotion = forceAnimation ? false : isReducedMotion;
-  const gateReaction = state.temporaryReaction === 'NONE' || forceAnimation;
-  const gateSpeech = state.speechState === 'NONE' || forceAnimation;
-
-  const shouldAnimate = gatePlayback && gateVisibility && !gateReducedMotion && gateReaction && gateSpeech;
-
-  const blockedReasons: string[] = [];
-  if (!isPlaying && !forceAnimation) blockedReasons.push('NOT_PLAYING');
-  if (state.visibility !== 'VISIBLE') blockedReasons.push(`VISIBILITY_${state.visibility}`);
-  if (isReducedMotion && !forceAnimation) blockedReasons.push('REDUCED_MOTION');
-  if (state.temporaryReaction !== 'NONE' && !forceAnimation) blockedReasons.push(`REACTION_${state.temporaryReaction}`);
-  if (state.speechState !== 'NONE' && !forceAnimation) blockedReasons.push(`SPEECH_${state.speechState}`);
-
-  // 0. Independent Heartbeat Timer (Completely decoupled from GUEST EMBER & Audio)
-  useEffect(() => {
-    const heartbeatInterval = window.setInterval(() => {
-      setHeartbeatCount((prev) => prev + 1);
-    }, 500);
-
-    return () => {
-      window.clearInterval(heartbeatInterval);
-    };
-  }, []);
-
   // 1. Initial Preload & iOS Safari Compatible Reduced Motion Detection
   useEffect(() => {
     preloadInitialEmberAssets();
@@ -113,9 +72,20 @@ export const GuestEmber: React.FC = () => {
     if (typeof window !== 'undefined' && window.matchMedia) {
       try {
         const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        setIsReducedMotion(mediaQuery.matches);
-        if (mediaQuery.matches) {
+        const hasReducedMotion = mediaQuery.matches;
+        setIsReducedMotion(hasReducedMotion);
+
+        if (hasReducedMotion) {
           trackEmberReduceMotion();
+
+          // Show session notice max once per session if Reduced Motion is enabled
+          if (typeof sessionStorage !== 'undefined') {
+            const noticeShown = sessionStorage.getItem('ignite_ember_rm_notice');
+            if (!noticeShown) {
+              sessionStorage.setItem('ignite_ember_rm_notice', 'true');
+              setReducedNoticeText(REDUCED_MOTION_NOTICE);
+            }
+          }
         }
 
         const handleMotionChange = (e: MediaQueryListEvent | MediaQueryList) => {
@@ -176,10 +146,10 @@ export const GuestEmber: React.FC = () => {
 
   // Preload Mode & Burn Assets when mode changes or player starts
   useEffect(() => {
-    if (isPlaying || forceAnimation) {
+    if (isPlaying) {
       preloadModeAssets(state.listeningMode);
     }
-  }, [isPlaying, forceAnimation, state.listeningMode]);
+  }, [isPlaying, state.listeningMode]);
 
   // 5. Scroll Behavior (Opacity Dimming during Scroll in Normal mode)
   useEffect(() => {
@@ -200,46 +170,26 @@ export const GuestEmber: React.FC = () => {
     };
   }, [isExpanded]);
 
-  // Helper timer wrapper for clear diagnostic logging
-  const clearTimerWithReason = (
-    ref: React.MutableRefObject<NodeJS.Timeout | null>,
-    reason: string
-  ) => {
-    if (ref.current !== null) {
-      clearTimeout(ref.current);
-      clearInterval(ref.current);
-      ref.current = null;
-      setTimerClearCount((prev) => prev + 1);
-      setLastClearReason(reason);
-    }
-  };
-
-  // 6. Sequence & Animation Timers Engine (Milestone 7.8c Gate Isolation)
+  // 6. Sequence & Animation Timers Engine
   useEffect(() => {
-    // Increment Effect Entry Count BEFORE any Gate condition early returns
-    setEffectEntryCount((prev) => prev + 1);
+    if (isReducedMotion) return;
 
-    if (!forceAnimation && isReducedMotion) {
-      return;
-    }
-
-    setEffectStartCount((prev) => prev + 1);
-
-    // Clear sub-timeout on effect start/re-run
+    // Clear sub-timeout and interval on effect start/re-run
     if (subTimeoutRef.current) {
-      clearTimerWithReason(subTimeoutRef, 'effect-rerun:subTimeout');
+      clearTimeout(subTimeoutRef.current);
+      subTimeoutRef.current = null;
     }
     if (modeIntervalRef.current) {
-      clearTimerWithReason(modeIntervalRef, 'effect-rerun:modeInterval');
+      clearInterval(modeIntervalRef.current);
+      clearTimeout(modeIntervalRef.current);
+      modeIntervalRef.current = null;
     }
 
     // IDLE Mode Animation Loop (Random 6-10s -> 150ms Blink)
-    if (!forceAnimation && state.playbackState === 'IDLE' && state.visibility === 'VISIBLE' && state.speechState === 'NONE') {
+    if (state.playbackState === 'IDLE' && state.visibility === 'VISIBLE' && state.speechState === 'NONE') {
       const scheduleBlink = () => {
         const nextDelay = 6000 + Math.random() * 4000;
-        setTimerCreateCount((prev) => prev + 1);
         modeIntervalRef.current = setTimeout(() => {
-          setTimerCallbackCount((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -250,27 +200,21 @@ export const GuestEmber: React.FC = () => {
       scheduleBlink();
     }
 
-    // PLAYING Mode Sequence Loops (Adjusted for Expanded mode & FORCE ON)
-    if (shouldAnimate || forceAnimation) {
+    // PLAYING Mode Sequence Loops (Adjusted for Expanded mode)
+    if (isPlaying && state.visibility === 'VISIBLE') {
       if (state.listeningMode === 'LISTEN') {
         const frameTime = isExpanded ? 520 : 450;
-        setTimerCreateCount((prev) => prev + 1);
         modeIntervalRef.current = setInterval(() => {
-          setTimerCallbackCount((prev) => prev + 1);
           setSequenceFrame((prev) => (prev + 1) % 4);
         }, frameTime);
       } else if (state.listeningMode === 'DANCE') {
         const frameTime = isExpanded ? 400 : 350;
-        setTimerCreateCount((prev) => prev + 1);
         modeIntervalRef.current = setInterval(() => {
-          setTimerCallbackCount((prev) => prev + 1);
           setSequenceFrame((prev) => (prev + 1) % 4);
         }, frameTime);
       } else if (state.listeningMode === 'VOCAL') {
         const intervalTime = isExpanded ? 4500 : 5500;
-        setTimerCreateCount((prev) => prev + 1);
         modeIntervalRef.current = setInterval(() => {
-          setTimerCallbackCount((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -278,9 +222,7 @@ export const GuestEmber: React.FC = () => {
         }, intervalTime);
       } else if (state.listeningMode === 'CHILL') {
         const intervalTime = isExpanded ? 5500 : 7000;
-        setTimerCreateCount((prev) => prev + 1);
         modeIntervalRef.current = setInterval(() => {
-          setTimerCallbackCount((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -290,11 +232,15 @@ export const GuestEmber: React.FC = () => {
     }
 
     return () => {
-      setEffectCleanupCount((prev) => prev + 1);
-      clearTimerWithReason(modeIntervalRef, 'effect-cleanup');
-      clearTimerWithReason(subTimeoutRef, 'effect-cleanup:sub');
+      if (modeIntervalRef.current) {
+        clearInterval(modeIntervalRef.current);
+        clearTimeout(modeIntervalRef.current);
+      }
+      if (subTimeoutRef.current) {
+        clearTimeout(subTimeoutRef.current);
+      }
     };
-  }, [state.playbackState, state.listeningMode, state.visibility, state.speechState, isPlaying, isExpanded, isReducedMotion, forceAnimation, shouldAnimate]);
+  }, [state.playbackState, state.listeningMode, state.visibility, state.speechState, isPlaying, isExpanded, isReducedMotion]);
 
   // 7. Handlers
   const handleSelectMode = (mode: typeof state.listeningMode) => {
@@ -338,6 +284,11 @@ export const GuestEmber: React.FC = () => {
       return;
     }
 
+    // Dismiss Reduced Motion notice if visible on click
+    if (reducedNoticeText) {
+      setReducedNoticeText(null);
+    }
+
     const nextSpeech = state.speechState === 'NONE';
     dispatch({ type: 'TOGGLE_TALK', payload: nextSpeech });
 
@@ -355,10 +306,10 @@ export const GuestEmber: React.FC = () => {
     trackEmberRest();
   };
 
-  // Calculate current frame info (Layer 3: Renderer Props)
+  // Calculate current frame info
   const frameInfo = getEmberFrame(
     state,
-    forceAnimation ? false : isReducedMotion,
+    isReducedMotion,
     sequenceFrame,
     isSpecialInsertActive,
     isExpanded
@@ -390,135 +341,44 @@ export const GuestEmber: React.FC = () => {
     );
   }
 
+  const activeSpeechText = reducedNoticeText || CONCIERGE_MESSAGES[conciergeIdx];
+  const isSpeechVisible = state.speechState === 'OPEN' || Boolean(reducedNoticeText);
+
   return (
-    <>
-      {/* Diagnostic Overlay v2.6: Animation Gate Isolation */}
-      {showDiagnostics && (
-        <div
-          style={{
-            position: 'fixed',
-            top: '8px',
-            left: '8px',
-            zIndex: 10000,
-            backgroundColor: 'rgba(8, 12, 20, 0.94)',
-            border: '1px solid #00FFCC',
-            borderRadius: '8px',
-            padding: '8px 12px',
-            fontFamily: 'var(--font-mono, monospace)',
-            fontSize: '10px',
-            color: '#00FFCC',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.85)',
-            pointerEvents: 'auto',
-            maxWidth: '320px',
-            lineHeight: '1.45',
+    <div
+      className={`guest-ember-dock ${isExpanded ? 'is-expanded' : ''}`}
+      style={{
+        opacity: isExpanded ? 1 : scrollOpacity,
+      }}
+    >
+      {/* Speech Bubble (Concierge or Reduced Motion Notice) */}
+      {isSpeechVisible && (
+        <EmberSpeechBubble
+          messageText={activeSpeechText}
+          onClose={() => {
+            if (reducedNoticeText) setReducedNoticeText(null);
+            dispatch({ type: 'TOGGLE_TALK', payload: false });
           }}
-        >
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px', borderBottom: '1px solid rgba(0,255,204,0.3)', paddingBottom: '4px' }}>
-            <span style={{ fontWeight: 'bold', color: '#FFD700' }}>[EMBER GATE DIAGNOSTICS v2.6]</span>
-            <button
-              onClick={() => setShowDiagnostics(false)}
-              style={{ background: 'none', border: 'none', color: '#94A3B8', cursor: 'pointer', fontSize: '10px' }}
-            >
-              ✕
-            </button>
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span>RENDER COUNT: {renderCountRef.current}</span>
-            <span>HEARTBEAT: <strong style={{ color: '#00FFCC' }}>{heartbeatCount}</strong></span>
-          </div>
-
-          <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
-            <div>RAW AUDIO isPlaying: <strong style={{ color: playerState.isPlaying ? '#10B981' : '#EF4444' }}>{String(playerState.isPlaying)}</strong></div>
-            <div>RUNTIME state: <strong style={{ color: isPlaying ? '#10B981' : '#EAB308' }}>{state.playbackState}</strong> | Mode: {state.listeningMode}</div>
-            <div>REDUCED MOTION: <strong style={{ color: isReducedMotion ? '#EF4444' : '#10B981' }}>{String(isReducedMotion)}</strong></div>
-          </div>
-
-          <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
-            <div>GATE shouldAnimate: <strong style={{ color: shouldAnimate ? '#10B981' : '#EF4444' }}>{String(shouldAnimate)}</strong></div>
-            <div style={{ color: blockedReasons.length > 0 ? '#EF4444' : '#10B981', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              BLOCKED BY: {blockedReasons.length > 0 ? blockedReasons.join(', ') : 'NONE'}
-            </div>
-          </div>
-
-          <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
-            <div>EFFECT ENTRY: {effectEntryCount} | START: {effectStartCount} | CLEANUP: {effectCleanupCount}</div>
-            <div>TIMER CREATE: {timerCreateCount} | CLEAR: {timerClearCount} | TICK: <strong style={{ color: timerCallbackCount > 0 ? '#10B981' : '#EF4444' }}>{timerCallbackCount}</strong></div>
-            <div style={{ fontSize: '9px', color: '#94A3B8', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>LAST CLEAR: {lastClearReason}</div>
-            <div>REACT FRAME: {sequenceFrame} | PROP: {frameInfo.assetCode} | DOM: {domSrcFilename || 'GE-S01.png'}</div>
-          </div>
-
-          <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
-            <button
-              onClick={() => setForceAnimation((prev) => !prev)}
-              style={{
-                backgroundColor: forceAnimation ? '#EF4444' : 'rgba(255,255,255,0.1)',
-                color: forceAnimation ? '#FFFFFF' : '#FFD700',
-                border: '1px solid #FFD700',
-                borderRadius: '4px',
-                padding: '3px 8px',
-                fontSize: '9px',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-              }}
-            >
-              FORCE ANIMATION: {forceAnimation ? 'ON (BYPASS)' : 'OFF'}
-            </button>
-            <button
-              onClick={() => setRenderMode((prev) => (prev === 'SRC_REPLACE' ? 'FRAME_STACK' : 'SRC_REPLACE'))}
-              style={{
-                backgroundColor: renderMode === 'FRAME_STACK' ? '#00FFCC' : 'rgba(255,255,255,0.1)',
-                color: renderMode === 'FRAME_STACK' ? '#000000' : '#00FFCC',
-                border: '1px solid #00FFCC',
-                borderRadius: '4px',
-                padding: '3px 8px',
-                fontSize: '9px',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-              }}
-            >
-              ENGINE: {renderMode}
-            </button>
-          </div>
-        </div>
+          onRestEmber={handleRestEmber}
+        />
       )}
 
-      {/* Main Dock Unit */}
-      <div
-        className={`guest-ember-dock ${isExpanded ? 'is-expanded' : ''}`}
-        style={{
-          opacity: isExpanded ? 1 : scrollOpacity,
-        }}
-      >
-        {/* Speech Bubble */}
-        {state.speechState === 'OPEN' && (
-          <EmberSpeechBubble
-            messageText={CONCIERGE_MESSAGES[conciergeIdx]}
-            onClose={() => dispatch({ type: 'TOGGLE_TALK', payload: false })}
-            onRestEmber={handleRestEmber}
-          />
-        )}
+      {/* Main Ember Avatar Renderer (Top) */}
+      <EmberRenderer
+        assetCode={frameInfo.assetCode}
+        altText={frameInfo.altText}
+        onClick={handleEmberClick}
+      />
 
-        {/* Main Ember Avatar Renderer (Top) */}
-        <EmberRenderer
-          assetCode={frameInfo.assetCode}
-          altText={frameInfo.altText}
-          onClick={handleEmberClick}
-          onDomSrcChange={setDomSrcFilename}
-          renderMode={renderMode}
-          currentListeningMode={state.listeningMode}
+      {/* Control Bar (Mode Switcher + 🔥 Reaction) directly BELOW Ember - Only shown when PLAYING */}
+      {isPlaying && (
+        <EmberControlBar
+          currentMode={state.listeningMode}
+          onSelectMode={handleSelectMode}
+          onTriggerBurn={handleTriggerBurn}
+          comboCount={state.comboCount}
         />
-
-        {/* Control Bar (Mode Switcher + 🔥 Reaction) directly BELOW Ember - Only shown when PLAYING */}
-        {(isPlaying || forceAnimation) && (
-          <EmberControlBar
-            currentMode={state.listeningMode}
-            onSelectMode={handleSelectMode}
-            onTriggerBurn={handleTriggerBurn}
-            comboCount={state.comboCount}
-          />
-        )}
-      </div>
-    </>
+      )}
+    </div>
   );
 };
