@@ -50,8 +50,12 @@ export const GuestEmber: React.FC = () => {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const [conciergeIdx, setConciergeIdx] = useState(0);
 
-  // Diagnostic v2.5 Lifecycle & Timer Counters (Staging Only)
+  // Milestone 7.8c Diagnostic Gate Counters & Force Toggle
+  const renderCountRef = useRef(0);
+  renderCountRef.current += 1;
+
   const [heartbeatCount, setHeartbeatCount] = useState(0);
+  const [effectEntryCount, setEffectEntryCount] = useState(0);
   const [effectStartCount, setEffectStartCount] = useState(0);
   const [effectCleanupCount, setEffectCleanupCount] = useState(0);
   const [timerCreateCount, setTimerCreateCount] = useState(0);
@@ -60,6 +64,7 @@ export const GuestEmber: React.FC = () => {
   const [lastClearReason, setLastClearReason] = useState<string>('none');
   const [domSrcFilename, setDomSrcFilename] = useState('');
   const [renderMode, setRenderMode] = useState<'SRC_REPLACE' | 'FRAME_STACK'>('SRC_REPLACE');
+  const [forceAnimation, setForceAnimation] = useState(false);
   const [showDiagnostics, setShowDiagnostics] = useState(true);
 
   const burnTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -72,6 +77,22 @@ export const GuestEmber: React.FC = () => {
 
   const isExpanded = playerState.isExpanded;
   const isPlaying = state.playbackState === 'PLAYING';
+
+  // Evaluate Animation Gates explicitly
+  const gatePlayback = isPlaying || forceAnimation;
+  const gateVisibility = state.visibility === 'VISIBLE';
+  const gateReducedMotion = forceAnimation ? false : isReducedMotion;
+  const gateReaction = state.temporaryReaction === 'NONE' || forceAnimation;
+  const gateSpeech = state.speechState === 'NONE' || forceAnimation;
+
+  const shouldAnimate = gatePlayback && gateVisibility && !gateReducedMotion && gateReaction && gateSpeech;
+
+  const blockedReasons: string[] = [];
+  if (!isPlaying && !forceAnimation) blockedReasons.push('NOT_PLAYING');
+  if (state.visibility !== 'VISIBLE') blockedReasons.push(`VISIBILITY_${state.visibility}`);
+  if (isReducedMotion && !forceAnimation) blockedReasons.push('REDUCED_MOTION');
+  if (state.temporaryReaction !== 'NONE' && !forceAnimation) blockedReasons.push(`REACTION_${state.temporaryReaction}`);
+  if (state.speechState !== 'NONE' && !forceAnimation) blockedReasons.push(`SPEECH_${state.speechState}`);
 
   // 0. Independent Heartbeat Timer (Completely decoupled from GUEST EMBER & Audio)
   useEffect(() => {
@@ -155,10 +176,10 @@ export const GuestEmber: React.FC = () => {
 
   // Preload Mode & Burn Assets when mode changes or player starts
   useEffect(() => {
-    if (isPlaying) {
+    if (isPlaying || forceAnimation) {
       preloadModeAssets(state.listeningMode);
     }
-  }, [isPlaying, state.listeningMode]);
+  }, [isPlaying, forceAnimation, state.listeningMode]);
 
   // 5. Scroll Behavior (Opacity Dimming during Scroll in Normal mode)
   useEffect(() => {
@@ -193,9 +214,14 @@ export const GuestEmber: React.FC = () => {
     }
   };
 
-  // 6. Sequence & Animation Timers Engine (Milestone 7.8b Diagnostic Lifecycle Isolation)
+  // 6. Sequence & Animation Timers Engine (Milestone 7.8c Gate Isolation)
   useEffect(() => {
-    if (isReducedMotion) return;
+    // Increment Effect Entry Count BEFORE any Gate condition early returns
+    setEffectEntryCount((prev) => prev + 1);
+
+    if (!forceAnimation && isReducedMotion) {
+      return;
+    }
 
     setEffectStartCount((prev) => prev + 1);
 
@@ -208,7 +234,7 @@ export const GuestEmber: React.FC = () => {
     }
 
     // IDLE Mode Animation Loop (Random 6-10s -> 150ms Blink)
-    if (state.playbackState === 'IDLE' && state.visibility === 'VISIBLE' && state.speechState === 'NONE') {
+    if (!forceAnimation && state.playbackState === 'IDLE' && state.visibility === 'VISIBLE' && state.speechState === 'NONE') {
       const scheduleBlink = () => {
         const nextDelay = 6000 + Math.random() * 4000;
         setTimerCreateCount((prev) => prev + 1);
@@ -224,20 +250,20 @@ export const GuestEmber: React.FC = () => {
       scheduleBlink();
     }
 
-    // PLAYING Mode Sequence Loops (Adjusted for Expanded mode)
-    if (isPlaying && state.visibility === 'VISIBLE') {
+    // PLAYING Mode Sequence Loops (Adjusted for Expanded mode & FORCE ON)
+    if (shouldAnimate || forceAnimation) {
       if (state.listeningMode === 'LISTEN') {
         const frameTime = isExpanded ? 520 : 450;
         setTimerCreateCount((prev) => prev + 1);
         modeIntervalRef.current = setInterval(() => {
-          setTimerCallbackCount((prev) => prev + 1); // Counter E: Callback reached
+          setTimerCallbackCount((prev) => prev + 1);
           setSequenceFrame((prev) => (prev + 1) % 4);
         }, frameTime);
       } else if (state.listeningMode === 'DANCE') {
         const frameTime = isExpanded ? 400 : 350;
         setTimerCreateCount((prev) => prev + 1);
         modeIntervalRef.current = setInterval(() => {
-          setTimerCallbackCount((prev) => prev + 1); // Counter E: Callback reached
+          setTimerCallbackCount((prev) => prev + 1);
           setSequenceFrame((prev) => (prev + 1) % 4);
         }, frameTime);
       } else if (state.listeningMode === 'VOCAL') {
@@ -268,7 +294,7 @@ export const GuestEmber: React.FC = () => {
       clearTimerWithReason(modeIntervalRef, 'effect-cleanup');
       clearTimerWithReason(subTimeoutRef, 'effect-cleanup:sub');
     };
-  }, [state.playbackState, state.listeningMode, state.visibility, state.speechState, isPlaying, isExpanded, isReducedMotion]);
+  }, [state.playbackState, state.listeningMode, state.visibility, state.speechState, isPlaying, isExpanded, isReducedMotion, forceAnimation, shouldAnimate]);
 
   // 7. Handlers
   const handleSelectMode = (mode: typeof state.listeningMode) => {
@@ -332,7 +358,7 @@ export const GuestEmber: React.FC = () => {
   // Calculate current frame info (Layer 3: Renderer Props)
   const frameInfo = getEmberFrame(
     state,
-    isReducedMotion,
+    forceAnimation ? false : isReducedMotion,
     sequenceFrame,
     isSpecialInsertActive,
     isExpanded
@@ -366,7 +392,7 @@ export const GuestEmber: React.FC = () => {
 
   return (
     <>
-      {/* Diagnostic Overlay v2.5: iOS Timer Lifecycle & Heartbeat Isolation */}
+      {/* Diagnostic Overlay v2.6: Animation Gate Isolation */}
       {showDiagnostics && (
         <div
           style={{
@@ -383,12 +409,12 @@ export const GuestEmber: React.FC = () => {
             color: '#00FFCC',
             boxShadow: '0 4px 16px rgba(0,0,0,0.85)',
             pointerEvents: 'auto',
-            maxWidth: '310px',
+            maxWidth: '320px',
             lineHeight: '1.45',
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px', borderBottom: '1px solid rgba(0,255,204,0.3)', paddingBottom: '4px' }}>
-            <span style={{ fontWeight: 'bold', color: '#FFD700' }}>[TIMER DIAGNOSTICS v2.5]</span>
+            <span style={{ fontWeight: 'bold', color: '#FFD700' }}>[EMBER GATE DIAGNOSTICS v2.6]</span>
             <button
               onClick={() => setShowDiagnostics(false)}
               style={{ background: 'none', border: 'none', color: '#94A3B8', cursor: 'pointer', fontSize: '10px' }}
@@ -398,24 +424,46 @@ export const GuestEmber: React.FC = () => {
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span>HEARTBEAT (独立):</span>
-            <span style={{ color: '#00FFCC', fontWeight: 'bold' }}>{heartbeatCount}</span>
+            <span>RENDER COUNT: {renderCountRef.current}</span>
+            <span>HEARTBEAT: <strong style={{ color: '#00FFCC' }}>{heartbeatCount}</strong></span>
           </div>
 
           <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
-            <div>EFFECT START: <span style={{ color: '#FFFFFF' }}>{effectStartCount}</span> | CLEANUP: <span style={{ color: '#FFFFFF' }}>{effectCleanupCount}</span></div>
-            <div>TIMER CREATE: <span style={{ color: '#FFFFFF' }}>{timerCreateCount}</span> | CLEAR: <span style={{ color: '#FFFFFF' }}>{timerClearCount}</span></div>
-            <div>TIMER CALLBACK: <span style={{ color: timerCallbackCount > 0 ? '#10B981' : '#EF4444', fontWeight: 'bold' }}>{timerCallbackCount}</span></div>
-            <div style={{ fontSize: '9px', color: '#94A3B8', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>LAST CLEAR REASON: {lastClearReason}</div>
+            <div>RAW AUDIO isPlaying: <strong style={{ color: playerState.isPlaying ? '#10B981' : '#EF4444' }}>{String(playerState.isPlaying)}</strong></div>
+            <div>RUNTIME state: <strong style={{ color: isPlaying ? '#10B981' : '#EAB308' }}>{state.playbackState}</strong> | Mode: {state.listeningMode}</div>
+            <div>REDUCED MOTION: <strong style={{ color: isReducedMotion ? '#EF4444' : '#10B981' }}>{String(isReducedMotion)}</strong></div>
           </div>
 
           <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
-            <div>PLAYBACK: <span style={{ color: isPlaying ? '#10B981' : '#EAB308' }}>{state.playbackState}</span> | MODE: {state.listeningMode}</div>
-            <div>REACT FRAME: {sequenceFrame} | PROP: {frameInfo.assetCode}</div>
-            <div>DOM SRC: {domSrcFilename || 'GE-S01.png'}</div>
+            <div>GATE shouldAnimate: <strong style={{ color: shouldAnimate ? '#10B981' : '#EF4444' }}>{String(shouldAnimate)}</strong></div>
+            <div style={{ color: blockedReasons.length > 0 ? '#EF4444' : '#10B981', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              BLOCKED BY: {blockedReasons.length > 0 ? blockedReasons.join(', ') : 'NONE'}
+            </div>
+          </div>
+
+          <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
+            <div>EFFECT ENTRY: {effectEntryCount} | START: {effectStartCount} | CLEANUP: {effectCleanupCount}</div>
+            <div>TIMER CREATE: {timerCreateCount} | CLEAR: {timerClearCount} | TICK: <strong style={{ color: timerCallbackCount > 0 ? '#10B981' : '#EF4444' }}>{timerCallbackCount}</strong></div>
+            <div style={{ fontSize: '9px', color: '#94A3B8', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>LAST CLEAR: {lastClearReason}</div>
+            <div>REACT FRAME: {sequenceFrame} | PROP: {frameInfo.assetCode} | DOM: {domSrcFilename || 'GE-S01.png'}</div>
           </div>
 
           <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
+            <button
+              onClick={() => setForceAnimation((prev) => !prev)}
+              style={{
+                backgroundColor: forceAnimation ? '#EF4444' : 'rgba(255,255,255,0.1)',
+                color: forceAnimation ? '#FFFFFF' : '#FFD700',
+                border: '1px solid #FFD700',
+                borderRadius: '4px',
+                padding: '3px 8px',
+                fontSize: '9px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+              }}
+            >
+              FORCE ANIMATION: {forceAnimation ? 'ON (BYPASS)' : 'OFF'}
+            </button>
             <button
               onClick={() => setRenderMode((prev) => (prev === 'SRC_REPLACE' ? 'FRAME_STACK' : 'SRC_REPLACE'))}
               style={{
@@ -423,13 +471,13 @@ export const GuestEmber: React.FC = () => {
                 color: renderMode === 'FRAME_STACK' ? '#000000' : '#00FFCC',
                 border: '1px solid #00FFCC',
                 borderRadius: '4px',
-                padding: '2px 6px',
+                padding: '3px 8px',
                 fontSize: '9px',
                 cursor: 'pointer',
                 fontWeight: 'bold',
               }}
             >
-              FRAME STACK ({renderMode})
+              ENGINE: {renderMode}
             </button>
           </div>
         </div>
@@ -462,7 +510,7 @@ export const GuestEmber: React.FC = () => {
         />
 
         {/* Control Bar (Mode Switcher + 🔥 Reaction) directly BELOW Ember - Only shown when PLAYING */}
-        {isPlaying && (
+        {(isPlaying || forceAnimation) && (
           <EmberControlBar
             currentMode={state.listeningMode}
             onSelectMode={handleSelectMode}
