@@ -50,6 +50,12 @@ export const GuestEmber: React.FC = () => {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const [conciergeIdx, setConciergeIdx] = useState(0);
 
+  // Diagnostic Counters for Pipeline Isolation Test (Staging Only)
+  const [timerTick, setTimerTick] = useState(0);
+  const [domSrcFilename, setDomSrcFilename] = useState('');
+  const [renderMode, setRenderMode] = useState<'SRC_REPLACE' | 'FRAME_STACK'>('SRC_REPLACE');
+  const [showDiagnostics, setShowDiagnostics] = useState(true);
+
   const burnTimerRef = useRef<NodeJS.Timeout | null>(null);
   const talkAutoCloseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -155,20 +161,9 @@ export const GuestEmber: React.FC = () => {
     };
   }, [isExpanded]);
 
-  // 6. Sequence & Animation Timers Engine (iOS Safari / WebKit Safe)
+  // 6. Sequence & Animation Timers Engine (5 Layer Diagnostic Pipeline Tracker)
   useEffect(() => {
     if (isReducedMotion) return;
-
-    if (process.env.NODE_ENV !== 'production') {
-      console.debug('[EMBER][effect:start]', {
-        ts: performance.now(),
-        playbackState: state.playbackState,
-        listeningMode: state.listeningMode,
-        isPlaying,
-        isExpanded,
-        isReducedMotion,
-      });
-    }
 
     let intervalId: NodeJS.Timeout | null = null;
     let insertTimeoutId: NodeJS.Timeout | null = null;
@@ -184,6 +179,7 @@ export const GuestEmber: React.FC = () => {
       const scheduleBlink = () => {
         const nextDelay = 6000 + Math.random() * 4000;
         insertTimeoutId = setTimeout(() => {
+          setTimerTick((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -198,35 +194,20 @@ export const GuestEmber: React.FC = () => {
     if (isPlaying && state.visibility === 'VISIBLE') {
       if (state.listeningMode === 'LISTEN') {
         const frameTime = isExpanded ? 520 : 450;
-        if (process.env.NODE_ENV !== 'production') {
-          console.debug('[EMBER][timer:create]', { type: 'listen', frameTime });
-        }
         intervalId = setInterval(() => {
-          setSequenceFrame((prev) => {
-            const next = (prev + 1) % 4;
-            if (process.env.NODE_ENV !== 'production') {
-              console.debug('[EMBER][frame]', { mode: 'LISTEN', sequenceFrame: next });
-            }
-            return next;
-          });
+          setTimerTick((prev) => prev + 1); // Layer 1: Timer Tick
+          setSequenceFrame((prev) => (prev + 1) % 4); // Layer 2: State Update
         }, frameTime);
       } else if (state.listeningMode === 'DANCE') {
         const frameTime = isExpanded ? 400 : 350;
-        if (process.env.NODE_ENV !== 'production') {
-          console.debug('[EMBER][timer:create]', { type: 'dance', frameTime });
-        }
         intervalId = setInterval(() => {
-          setSequenceFrame((prev) => {
-            const next = (prev + 1) % 4;
-            if (process.env.NODE_ENV !== 'production') {
-              console.debug('[EMBER][frame]', { mode: 'DANCE', sequenceFrame: next });
-            }
-            return next;
-          });
+          setTimerTick((prev) => prev + 1); // Layer 1: Timer Tick
+          setSequenceFrame((prev) => (prev + 1) % 4); // Layer 2: State Update
         }, frameTime);
       } else if (state.listeningMode === 'VOCAL') {
         const intervalTime = isExpanded ? 4500 : 5500;
         intervalId = setInterval(() => {
+          setTimerTick((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -235,6 +216,7 @@ export const GuestEmber: React.FC = () => {
       } else if (state.listeningMode === 'CHILL') {
         const intervalTime = isExpanded ? 5500 : 7000;
         intervalId = setInterval(() => {
+          setTimerTick((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -244,13 +226,6 @@ export const GuestEmber: React.FC = () => {
     }
 
     return () => {
-      if (process.env.NODE_ENV !== 'production') {
-        console.debug('[EMBER][effect:cleanup]', {
-          ts: performance.now(),
-          playbackState: state.playbackState,
-          listeningMode: state.listeningMode,
-        });
-      }
       if (intervalId) clearInterval(intervalId);
       if (insertTimeoutId) clearTimeout(insertTimeoutId);
       if (subTimeoutRef.current) clearTimeout(subTimeoutRef.current);
@@ -284,7 +259,6 @@ export const GuestEmber: React.FC = () => {
     if (burnTimerRef.current) clearTimeout(burnTimerRef.current);
     burnTimerRef.current = setTimeout(() => {
       dispatch({ type: 'CLEAR_BURN' });
-      // Reset sequence frame and force animation refresh on BURN completion
       setSequenceFrame((prev) => (prev + 1) % 4);
       setIsSpecialInsertActive(false);
     }, 1100);
@@ -317,7 +291,7 @@ export const GuestEmber: React.FC = () => {
     trackEmberRest();
   };
 
-  // Calculate current frame info
+  // Calculate current frame info (Layer 3: Renderer Props)
   const frameInfo = getEmberFrame(
     state,
     isReducedMotion,
@@ -353,37 +327,117 @@ export const GuestEmber: React.FC = () => {
   }
 
   return (
-    <div
-      className={`guest-ember-dock ${isExpanded ? 'is-expanded' : ''}`}
-      style={{
-        opacity: isExpanded ? 1 : scrollOpacity,
-      }}
-    >
-      {/* Speech Bubble */}
-      {state.speechState === 'OPEN' && (
-        <EmberSpeechBubble
-          messageText={CONCIERGE_MESSAGES[conciergeIdx]}
-          onClose={() => dispatch({ type: 'TOGGLE_TALK', payload: false })}
-          onRestEmber={handleRestEmber}
-        />
+    <>
+      {/* Staging Diagnostic Overlay for 5-Layer Pipeline Isolation Testing */}
+      {showDiagnostics && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '8px',
+            left: '8px',
+            zIndex: 10000,
+            backgroundColor: 'rgba(8, 12, 20, 0.92)',
+            border: '1px solid #00FFCC',
+            borderRadius: '8px',
+            padding: '8px 12px',
+            fontFamily: 'var(--font-mono, monospace)',
+            fontSize: '10px',
+            color: '#00FFCC',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.8)',
+            pointerEvents: 'auto',
+            maxWidth: '300px',
+            lineHeight: '1.4',
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px', borderBottom: '1px solid rgba(0,255,204,0.3)', paddingBottom: '4px' }}>
+            <span style={{ fontWeight: 'bold', color: '#FFD700' }}>[EMBER DIAGNOSTICS v2.4]</span>
+            <button
+              onClick={() => setShowDiagnostics(false)}
+              style={{ background: 'none', border: 'none', color: '#94A3B8', cursor: 'pointer', fontSize: '10px' }}
+            >
+              ✕
+            </button>
+          </div>
+          <div>L1 TIMER TICK: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{timerTick}</span></div>
+          <div>L2 FRAME STATE: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{sequenceFrame}</span></div>
+          <div>L3 RENDER PROP: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{frameInfo.assetCode}</span></div>
+          <div>L4 DOM IMG SRC: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{domSrcFilename || 'GE-S01.png'}</span></div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', margin: '4px 0' }}>
+            <span>L5 VISUAL TEST:</span>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: '32px',
+                height: '18px',
+                borderRadius: '4px',
+                backgroundColor: sequenceFrame % 2 === 0 ? '#EF4444' : '#3B82F6',
+                color: '#FFFFFF',
+                fontWeight: 'bold',
+              }}
+            >
+              [ {(sequenceFrame % 4) + 1} ]
+            </div>
+          </div>
+          <div>PLAYBACK: {state.playbackState} | MODE: {state.listeningMode}</div>
+          <div>MODE ENGINE: <span style={{ color: '#F97316' }}>{renderMode}</span></div>
+          <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
+            <button
+              onClick={() => setRenderMode((prev) => (prev === 'SRC_REPLACE' ? 'FRAME_STACK' : 'SRC_REPLACE'))}
+              style={{
+                backgroundColor: renderMode === 'FRAME_STACK' ? '#00FFCC' : 'rgba(255,255,255,0.1)',
+                color: renderMode === 'FRAME_STACK' ? '#000000' : '#00FFCC',
+                border: '1px solid #00FFCC',
+                borderRadius: '4px',
+                padding: '2px 6px',
+                fontSize: '9px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+              }}
+            >
+              TOGGLE FRAME STACK ({renderMode})
+            </button>
+          </div>
+        </div>
       )}
 
-      {/* Main Ember Avatar Renderer (Top) */}
-      <EmberRenderer
-        assetCode={frameInfo.assetCode}
-        altText={frameInfo.altText}
-        onClick={handleEmberClick}
-      />
+      {/* Main Dock Unit */}
+      <div
+        className={`guest-ember-dock ${isExpanded ? 'is-expanded' : ''}`}
+        style={{
+          opacity: isExpanded ? 1 : scrollOpacity,
+        }}
+      >
+        {/* Speech Bubble */}
+        {state.speechState === 'OPEN' && (
+          <EmberSpeechBubble
+            messageText={CONCIERGE_MESSAGES[conciergeIdx]}
+            onClose={() => dispatch({ type: 'TOGGLE_TALK', payload: false })}
+            onRestEmber={handleRestEmber}
+          />
+        )}
 
-      {/* Control Bar (Mode Switcher + 🔥 Reaction) directly BELOW Ember - Only shown when PLAYING */}
-      {isPlaying && (
-        <EmberControlBar
-          currentMode={state.listeningMode}
-          onSelectMode={handleSelectMode}
-          onTriggerBurn={handleTriggerBurn}
-          comboCount={state.comboCount}
+        {/* Main Ember Avatar Renderer (Top) */}
+        <EmberRenderer
+          assetCode={frameInfo.assetCode}
+          altText={frameInfo.altText}
+          onClick={handleEmberClick}
+          onDomSrcChange={setDomSrcFilename}
+          renderMode={renderMode}
+          currentListeningMode={state.listeningMode}
         />
-      )}
-    </div>
+
+        {/* Control Bar (Mode Switcher + 🔥 Reaction) directly BELOW Ember - Only shown when PLAYING */}
+        {isPlaying && (
+          <EmberControlBar
+            currentMode={state.listeningMode}
+            onSelectMode={handleSelectMode}
+            onTriggerBurn={handleTriggerBurn}
+            comboCount={state.comboCount}
+          />
+        )}
+      </div>
+    </>
   );
 };
