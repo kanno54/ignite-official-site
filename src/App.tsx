@@ -5,6 +5,7 @@ import { SiteHeader } from './components/common/SiteHeader';
 import { SiteFooter } from './components/common/SiteFooter';
 import { MiniPlayer } from './components/audio/MiniPlayer';
 import { ExpandedPlayer } from './components/audio/ExpandedPlayer';
+import { GuestEmber } from './components/ember/GuestEmber';
 
 import { TopPage } from './routes/_index';
 import { MembersIndex } from './routes/members._index';
@@ -173,6 +174,7 @@ export const App: React.FC = () => {
 
         <MiniPlayer />
         <ExpandedPlayer />
+        <GuestEmber />
         <SiteFooter />
       </div>
     </AudioProvider>

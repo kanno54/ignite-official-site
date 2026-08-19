@@ -1,0 +1,192 @@
+/* GUEST EMBER Production Integration Styles */
+
+.guest-ember-root {
+  position: fixed;
+  bottom: 96px;
+  right: 24px;
+  z-index: 995;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.guest-ember-root * {
+  pointer-events: auto;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .guest-ember-root {
+    transition: none !important;
+  }
+  .ember-avatar-img {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Container Sizing */
+.ember-avatar-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (max-width: 640px) {
+  .guest-ember-root {
+    bottom: 86px;
+    right: 16px;
+  }
+  .ember-avatar-container {
+    width: 104px;
+    height: 104px;
+  }
+}
+
+.ember-avatar-container:hover {
+  transform: scale(1.04);
+}
+
+.ember-avatar-container:active {
+  transform: scale(0.96);
+}
+
+.ember-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
+}
+
+/* Control Bar (Mode Switcher + 🔥) */
+.ember-control-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 4px 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.ember-mode-btn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-size: 1.1rem;
+  padding: 6px 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ember-mode-btn:hover {
+  color: #F8FAFC;
+  transform: scale(1.15);
+}
+
+.ember-mode-btn.is-active {
+  color: #EAB308;
+  background: rgba(234, 179, 8, 0.15);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.4);
+}
+
+.ember-burn-btn {
+  background: linear-gradient(135deg, #EF4444, #F97316);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+  transition: all 0.15s ease;
+}
+
+.ember-burn-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(249, 115, 22, 0.8);
+}
+
+.ember-burn-btn:active {
+  transform: scale(0.94);
+}
+
+/* Speech Bubble */
+.ember-speech-bubble {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 12px;
+  width: max-content;
+  max-width: 280px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  color: #F8FAFC;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  animation: emberBubblePop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes emberBubblePop {
+  0% { opacity: 0; transform: translateY(8px) scale(0.9); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ember-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 32px;
+  width: 12px;
+  height: 12px;
+  background: rgba(15, 23, 42, 0.95);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  transform: rotate(45deg);
+}
+
+/* RESTING / Call Button */
+.ember-resting-btn {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(234, 179, 8, 0.4);
+  color: #EAB308;
+  border-radius: 24px;
+  padding: 8px 16px;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease;
+}
+
+.ember-resting-btn:hover {
+  background: rgba(234, 179, 8, 0.15);
+  border-color: #EAB308;
+  transform: translateY(-2px);
+}
