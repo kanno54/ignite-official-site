@@ -50,8 +50,14 @@ export const GuestEmber: React.FC = () => {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const [conciergeIdx, setConciergeIdx] = useState(0);
 
-  // Diagnostic Counters for Pipeline Isolation Test (Staging Only)
-  const [timerTick, setTimerTick] = useState(0);
+  // Diagnostic v2.5 Lifecycle & Timer Counters (Staging Only)
+  const [heartbeatCount, setHeartbeatCount] = useState(0);
+  const [effectStartCount, setEffectStartCount] = useState(0);
+  const [effectCleanupCount, setEffectCleanupCount] = useState(0);
+  const [timerCreateCount, setTimerCreateCount] = useState(0);
+  const [timerClearCount, setTimerClearCount] = useState(0);
+  const [timerCallbackCount, setTimerCallbackCount] = useState(0);
+  const [lastClearReason, setLastClearReason] = useState<string>('none');
   const [domSrcFilename, setDomSrcFilename] = useState('');
   const [renderMode, setRenderMode] = useState<'SRC_REPLACE' | 'FRAME_STACK'>('SRC_REPLACE');
   const [showDiagnostics, setShowDiagnostics] = useState(true);
@@ -60,11 +66,23 @@ export const GuestEmber: React.FC = () => {
   const talkAutoCloseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
   const subTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const modeIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const prevPlayingRef = useRef<boolean>(false);
   const prevTrackIdRef = useRef<string | null>(null);
 
   const isExpanded = playerState.isExpanded;
   const isPlaying = state.playbackState === 'PLAYING';
+
+  // 0. Independent Heartbeat Timer (Completely decoupled from GUEST EMBER & Audio)
+  useEffect(() => {
+    const heartbeatInterval = window.setInterval(() => {
+      setHeartbeatCount((prev) => prev + 1);
+    }, 500);
+
+    return () => {
+      window.clearInterval(heartbeatInterval);
+    };
+  }, []);
 
   // 1. Initial Preload & iOS Safari Compatible Reduced Motion Detection
   useEffect(() => {
@@ -161,25 +179,41 @@ export const GuestEmber: React.FC = () => {
     };
   }, [isExpanded]);
 
-  // 6. Sequence & Animation Timers Engine (5 Layer Diagnostic Pipeline Tracker)
+  // Helper timer wrapper for clear diagnostic logging
+  const clearTimerWithReason = (
+    ref: React.MutableRefObject<NodeJS.Timeout | null>,
+    reason: string
+  ) => {
+    if (ref.current !== null) {
+      clearTimeout(ref.current);
+      clearInterval(ref.current);
+      ref.current = null;
+      setTimerClearCount((prev) => prev + 1);
+      setLastClearReason(reason);
+    }
+  };
+
+  // 6. Sequence & Animation Timers Engine (Milestone 7.8b Diagnostic Lifecycle Isolation)
   useEffect(() => {
     if (isReducedMotion) return;
 
-    let intervalId: NodeJS.Timeout | null = null;
-    let insertTimeoutId: NodeJS.Timeout | null = null;
+    setEffectStartCount((prev) => prev + 1);
 
     // Clear sub-timeout on effect start/re-run
     if (subTimeoutRef.current) {
-      clearTimeout(subTimeoutRef.current);
-      subTimeoutRef.current = null;
+      clearTimerWithReason(subTimeoutRef, 'effect-rerun:subTimeout');
+    }
+    if (modeIntervalRef.current) {
+      clearTimerWithReason(modeIntervalRef, 'effect-rerun:modeInterval');
     }
 
     // IDLE Mode Animation Loop (Random 6-10s -> 150ms Blink)
     if (state.playbackState === 'IDLE' && state.visibility === 'VISIBLE' && state.speechState === 'NONE') {
       const scheduleBlink = () => {
         const nextDelay = 6000 + Math.random() * 4000;
-        insertTimeoutId = setTimeout(() => {
-          setTimerTick((prev) => prev + 1);
+        setTimerCreateCount((prev) => prev + 1);
+        modeIntervalRef.current = setTimeout(() => {
+          setTimerCallbackCount((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -194,20 +228,23 @@ export const GuestEmber: React.FC = () => {
     if (isPlaying && state.visibility === 'VISIBLE') {
       if (state.listeningMode === 'LISTEN') {
         const frameTime = isExpanded ? 520 : 450;
-        intervalId = setInterval(() => {
-          setTimerTick((prev) => prev + 1); // Layer 1: Timer Tick
-          setSequenceFrame((prev) => (prev + 1) % 4); // Layer 2: State Update
+        setTimerCreateCount((prev) => prev + 1);
+        modeIntervalRef.current = setInterval(() => {
+          setTimerCallbackCount((prev) => prev + 1); // Counter E: Callback reached
+          setSequenceFrame((prev) => (prev + 1) % 4);
         }, frameTime);
       } else if (state.listeningMode === 'DANCE') {
         const frameTime = isExpanded ? 400 : 350;
-        intervalId = setInterval(() => {
-          setTimerTick((prev) => prev + 1); // Layer 1: Timer Tick
-          setSequenceFrame((prev) => (prev + 1) % 4); // Layer 2: State Update
+        setTimerCreateCount((prev) => prev + 1);
+        modeIntervalRef.current = setInterval(() => {
+          setTimerCallbackCount((prev) => prev + 1); // Counter E: Callback reached
+          setSequenceFrame((prev) => (prev + 1) % 4);
         }, frameTime);
       } else if (state.listeningMode === 'VOCAL') {
         const intervalTime = isExpanded ? 4500 : 5500;
-        intervalId = setInterval(() => {
-          setTimerTick((prev) => prev + 1);
+        setTimerCreateCount((prev) => prev + 1);
+        modeIntervalRef.current = setInterval(() => {
+          setTimerCallbackCount((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -215,8 +252,9 @@ export const GuestEmber: React.FC = () => {
         }, intervalTime);
       } else if (state.listeningMode === 'CHILL') {
         const intervalTime = isExpanded ? 5500 : 7000;
-        intervalId = setInterval(() => {
-          setTimerTick((prev) => prev + 1);
+        setTimerCreateCount((prev) => prev + 1);
+        modeIntervalRef.current = setInterval(() => {
+          setTimerCallbackCount((prev) => prev + 1);
           setIsSpecialInsertActive(true);
           subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
@@ -226,9 +264,9 @@ export const GuestEmber: React.FC = () => {
     }
 
     return () => {
-      if (intervalId) clearInterval(intervalId);
-      if (insertTimeoutId) clearTimeout(insertTimeoutId);
-      if (subTimeoutRef.current) clearTimeout(subTimeoutRef.current);
+      setEffectCleanupCount((prev) => prev + 1);
+      clearTimerWithReason(modeIntervalRef, 'effect-cleanup');
+      clearTimerWithReason(subTimeoutRef, 'effect-cleanup:sub');
     };
   }, [state.playbackState, state.listeningMode, state.visibility, state.speechState, isPlaying, isExpanded, isReducedMotion]);
 
@@ -328,7 +366,7 @@ export const GuestEmber: React.FC = () => {
 
   return (
     <>
-      {/* Staging Diagnostic Overlay for 5-Layer Pipeline Isolation Testing */}
+      {/* Diagnostic Overlay v2.5: iOS Timer Lifecycle & Heartbeat Isolation */}
       {showDiagnostics && (
         <div
           style={{
@@ -336,21 +374,21 @@ export const GuestEmber: React.FC = () => {
             top: '8px',
             left: '8px',
             zIndex: 10000,
-            backgroundColor: 'rgba(8, 12, 20, 0.92)',
+            backgroundColor: 'rgba(8, 12, 20, 0.94)',
             border: '1px solid #00FFCC',
             borderRadius: '8px',
             padding: '8px 12px',
             fontFamily: 'var(--font-mono, monospace)',
             fontSize: '10px',
             color: '#00FFCC',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.8)',
+            boxShadow: '0 4px 16px rgba(0,0,0,0.85)',
             pointerEvents: 'auto',
-            maxWidth: '300px',
-            lineHeight: '1.4',
+            maxWidth: '310px',
+            lineHeight: '1.45',
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px', borderBottom: '1px solid rgba(0,255,204,0.3)', paddingBottom: '4px' }}>
-            <span style={{ fontWeight: 'bold', color: '#FFD700' }}>[EMBER DIAGNOSTICS v2.4]</span>
+            <span style={{ fontWeight: 'bold', color: '#FFD700' }}>[TIMER DIAGNOSTICS v2.5]</span>
             <button
               onClick={() => setShowDiagnostics(false)}
               style={{ background: 'none', border: 'none', color: '#94A3B8', cursor: 'pointer', fontSize: '10px' }}
@@ -358,30 +396,25 @@ export const GuestEmber: React.FC = () => {
               ✕
             </button>
           </div>
-          <div>L1 TIMER TICK: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{timerTick}</span></div>
-          <div>L2 FRAME STATE: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{sequenceFrame}</span></div>
-          <div>L3 RENDER PROP: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{frameInfo.assetCode}</span></div>
-          <div>L4 DOM IMG SRC: <span style={{ color: '#FFFFFF', fontWeight: 'bold' }}>{domSrcFilename || 'GE-S01.png'}</span></div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', margin: '4px 0' }}>
-            <span>L5 VISUAL TEST:</span>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '32px',
-                height: '18px',
-                borderRadius: '4px',
-                backgroundColor: sequenceFrame % 2 === 0 ? '#EF4444' : '#3B82F6',
-                color: '#FFFFFF',
-                fontWeight: 'bold',
-              }}
-            >
-              [ {(sequenceFrame % 4) + 1} ]
-            </div>
+
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span>HEARTBEAT (独立):</span>
+            <span style={{ color: '#00FFCC', fontWeight: 'bold' }}>{heartbeatCount}</span>
           </div>
-          <div>PLAYBACK: {state.playbackState} | MODE: {state.listeningMode}</div>
-          <div>MODE ENGINE: <span style={{ color: '#F97316' }}>{renderMode}</span></div>
+
+          <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
+            <div>EFFECT START: <span style={{ color: '#FFFFFF' }}>{effectStartCount}</span> | CLEANUP: <span style={{ color: '#FFFFFF' }}>{effectCleanupCount}</span></div>
+            <div>TIMER CREATE: <span style={{ color: '#FFFFFF' }}>{timerCreateCount}</span> | CLEAR: <span style={{ color: '#FFFFFF' }}>{timerClearCount}</span></div>
+            <div>TIMER CALLBACK: <span style={{ color: timerCallbackCount > 0 ? '#10B981' : '#EF4444', fontWeight: 'bold' }}>{timerCallbackCount}</span></div>
+            <div style={{ fontSize: '9px', color: '#94A3B8', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>LAST CLEAR REASON: {lastClearReason}</div>
+          </div>
+
+          <div style={{ margin: '4px 0', borderTop: '1px dashed rgba(255,255,255,0.15)', paddingTop: '4px' }}>
+            <div>PLAYBACK: <span style={{ color: isPlaying ? '#10B981' : '#EAB308' }}>{state.playbackState}</span> | MODE: {state.listeningMode}</div>
+            <div>REACT FRAME: {sequenceFrame} | PROP: {frameInfo.assetCode}</div>
+            <div>DOM SRC: {domSrcFilename || 'GE-S01.png'}</div>
+          </div>
+
           <div style={{ marginTop: '6px', display: 'flex', gap: '6px' }}>
             <button
               onClick={() => setRenderMode((prev) => (prev === 'SRC_REPLACE' ? 'FRAME_STACK' : 'SRC_REPLACE'))}
@@ -396,7 +429,7 @@ export const GuestEmber: React.FC = () => {
                 fontWeight: 'bold',
               }}
             >
-              TOGGLE FRAME STACK ({renderMode})
+              FRAME STACK ({renderMode})
             </button>
           </div>
         </div>
