@@ -55,6 +55,7 @@ export const GuestEmber: React.FC = () => {
   const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
   const subTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const prevPlayingRef = useRef<boolean>(false);
+  const prevTrackIdRef = useRef<string | null>(null);
 
   const isExpanded = playerState.isExpanded;
   const isPlaying = state.playbackState === 'PLAYING';
@@ -97,18 +98,25 @@ export const GuestEmber: React.FC = () => {
     }
   }, [isExpanded]);
 
-  // 3. Connect Audio Player State via Adapter
+  // 3. Connect Audio Player State via Adapter (iOS WebKit Buffer Safe)
   useEffect(() => {
+    const trackChanged = prevTrackIdRef.current !== playerState.currentTrackId;
+    prevTrackIdRef.current = playerState.currentTrackId;
+
     if (!playerState.currentTrackId) {
       dispatch({ type: 'SET_PLAYBACK_STATE', payload: 'IDLE' });
+      setSequenceFrame(0);
+      setIsSpecialInsertActive(false);
     } else if (playerState.isPlaying) {
       dispatch({ type: 'SET_PLAYBACK_STATE', payload: 'PLAYING' });
+      // Only reset frame sequence when switching to a NEW track
+      if (trackChanged) {
+        setSequenceFrame(0);
+        setIsSpecialInsertActive(false);
+      }
     } else {
       dispatch({ type: 'SET_PLAYBACK_STATE', payload: 'PAUSED' });
     }
-    // Reset sequence frame when playback state changes
-    setSequenceFrame(0);
-    setIsSpecialInsertActive(false);
   }, [playerState.currentTrackId, playerState.isPlaying]);
 
   // 4. Control Bar Visibility Analytics
@@ -151,6 +159,17 @@ export const GuestEmber: React.FC = () => {
   useEffect(() => {
     if (isReducedMotion) return;
 
+    if (process.env.NODE_ENV !== 'production') {
+      console.debug('[EMBER][effect:start]', {
+        ts: performance.now(),
+        playbackState: state.playbackState,
+        listeningMode: state.listeningMode,
+        isPlaying,
+        isExpanded,
+        isReducedMotion,
+      });
+    }
+
     let intervalId: NodeJS.Timeout | null = null;
     let insertTimeoutId: NodeJS.Timeout | null = null;
 
@@ -179,13 +198,31 @@ export const GuestEmber: React.FC = () => {
     if (isPlaying && state.visibility === 'VISIBLE') {
       if (state.listeningMode === 'LISTEN') {
         const frameTime = isExpanded ? 520 : 450;
+        if (process.env.NODE_ENV !== 'production') {
+          console.debug('[EMBER][timer:create]', { type: 'listen', frameTime });
+        }
         intervalId = setInterval(() => {
-          setSequenceFrame((prev) => (prev + 1) % 4);
+          setSequenceFrame((prev) => {
+            const next = (prev + 1) % 4;
+            if (process.env.NODE_ENV !== 'production') {
+              console.debug('[EMBER][frame]', { mode: 'LISTEN', sequenceFrame: next });
+            }
+            return next;
+          });
         }, frameTime);
       } else if (state.listeningMode === 'DANCE') {
         const frameTime = isExpanded ? 400 : 350;
+        if (process.env.NODE_ENV !== 'production') {
+          console.debug('[EMBER][timer:create]', { type: 'dance', frameTime });
+        }
         intervalId = setInterval(() => {
-          setSequenceFrame((prev) => (prev + 1) % 4);
+          setSequenceFrame((prev) => {
+            const next = (prev + 1) % 4;
+            if (process.env.NODE_ENV !== 'production') {
+              console.debug('[EMBER][frame]', { mode: 'DANCE', sequenceFrame: next });
+            }
+            return next;
+          });
         }, frameTime);
       } else if (state.listeningMode === 'VOCAL') {
         const intervalTime = isExpanded ? 4500 : 5500;
@@ -207,6 +244,13 @@ export const GuestEmber: React.FC = () => {
     }
 
     return () => {
+      if (process.env.NODE_ENV !== 'production') {
+        console.debug('[EMBER][effect:cleanup]', {
+          ts: performance.now(),
+          playbackState: state.playbackState,
+          listeningMode: state.listeningMode,
+        });
+      }
       if (intervalId) clearInterval(intervalId);
       if (insertTimeoutId) clearTimeout(insertTimeoutId);
       if (subTimeoutRef.current) clearTimeout(subTimeoutRef.current);
