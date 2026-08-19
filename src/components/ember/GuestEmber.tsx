@@ -59,25 +59,34 @@ export const GuestEmber: React.FC = () => {
   const isExpanded = playerState.isExpanded;
   const isPlaying = state.playbackState === 'PLAYING';
 
-  // 1. Initial Preload & Reduced Motion Detection
+  // 1. Initial Preload & iOS Safari Compatible Reduced Motion Detection
   useEffect(() => {
     preloadInitialEmberAssets();
     trackEmberView();
 
-    if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-      setIsReducedMotion(mediaQuery.matches);
-      if (mediaQuery.matches) {
-        trackEmberReduceMotion();
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      try {
+        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        setIsReducedMotion(mediaQuery.matches);
+        if (mediaQuery.matches) {
+          trackEmberReduceMotion();
+        }
+
+        const handleMotionChange = (e: MediaQueryListEvent | MediaQueryList) => {
+          setIsReducedMotion(e.matches);
+          if (e.matches) trackEmberReduceMotion();
+        };
+
+        if (mediaQuery.addEventListener) {
+          mediaQuery.addEventListener('change', handleMotionChange);
+          return () => mediaQuery.removeEventListener('change', handleMotionChange);
+        } else if ((mediaQuery as any).addListener) {
+          (mediaQuery as any).addListener(handleMotionChange);
+          return () => (mediaQuery as any).removeListener(handleMotionChange);
+        }
+      } catch (err) {
+        // Fallback safely on older WebKit engines without crashing execution
       }
-
-      const handleMotionChange = (e: MediaQueryListEvent) => {
-        setIsReducedMotion(e.matches);
-        if (e.matches) trackEmberReduceMotion();
-      };
-
-      mediaQuery.addEventListener('change', handleMotionChange);
-      return () => mediaQuery.removeEventListener('change', handleMotionChange);
     }
   }, []);
 
@@ -138,7 +147,7 @@ export const GuestEmber: React.FC = () => {
     };
   }, [isExpanded]);
 
-  // 6. Sequence & Animation Timers Engine
+  // 6. Sequence & Animation Timers Engine (iOS Safari / WebKit Safe)
   useEffect(() => {
     if (isReducedMotion) return;
 
@@ -231,6 +240,9 @@ export const GuestEmber: React.FC = () => {
     if (burnTimerRef.current) clearTimeout(burnTimerRef.current);
     burnTimerRef.current = setTimeout(() => {
       dispatch({ type: 'CLEAR_BURN' });
+      // Reset sequence frame and force animation refresh on BURN completion
+      setSequenceFrame((prev) => (prev + 1) % 4);
+      setIsSpecialInsertActive(false);
     }, 1100);
   };
 

@@ -38,22 +38,30 @@ export const EMBER_ASSETS = {
 
 export type EmberAssetCode = keyof typeof EMBER_ASSETS;
 
-// Track preloaded image objects in memory to avoid flash / blank frames
-const preloadedMap = new Set<string>();
+// Persistent Image Object Cache in JS memory (Prevents iOS Safari WebKit memory eviction)
+const imageCacheMap = new Map<string, HTMLImageElement>();
 
 export const preloadAsset = (code: EmberAssetCode): Promise<void> => {
   const url = EMBER_ASSETS[code];
-  if (!url || preloadedMap.has(url)) return Promise.resolve();
+  if (!url) return Promise.resolve();
+
+  if (imageCacheMap.has(url)) {
+    return Promise.resolve();
+  }
 
   return new Promise((resolve) => {
+    if (typeof window === 'undefined') {
+      resolve();
+      return;
+    }
     const img = new Image();
     img.src = url;
     img.onload = () => {
-      preloadedMap.add(url);
+      imageCacheMap.set(url, img);
       resolve();
     };
     img.onerror = () => {
-      resolve(); // resolve anyway so execution isn't blocked
+      resolve(); // resolve anyway to avoid blocking
     };
   });
 };
@@ -65,7 +73,7 @@ export const preloadInitialEmberAssets = () => {
   preloadAsset('GE-S03');
 };
 
-// Preload specific mode assets on demand
+// Preload specific mode assets on demand and retain in WebKit memory
 export const preloadModeAssets = (mode: ListeningMode) => {
   switch (mode) {
     case 'LISTEN':
