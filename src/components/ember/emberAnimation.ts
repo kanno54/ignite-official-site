@@ -10,7 +10,8 @@ export const getEmberFrame = (
   state: EmberRuntimeState,
   isReducedMotion: boolean,
   currentSequenceFrame: number,
-  isSpecialInsertActive: boolean
+  isSpecialInsertActive: boolean,
+  isExpanded: boolean = false
 ): FrameInfo => {
 
   // 1. HIDDEN Check
@@ -72,18 +73,18 @@ export const getEmberFrame = (
       // GE-S02 -> GE-S11 -> GE-S02 -> GE-S12 -> GE-S02
       const listenFrames: EmberAssetCode[] = ['GE-S02', 'GE-S11', 'GE-S02', 'GE-S12'];
       const idx = currentSequenceFrame % listenFrames.length;
-      return { assetCode: listenFrames[idx], altText: 'GUEST EMBER LISTENING' };
+      return { assetCode: listenFrames[idx], altText: isExpanded ? 'EXPANDED EMBER LISTENING' : 'GUEST EMBER LISTENING' };
     }
 
     case 'DANCE': {
       // GE-S04 -> GE-S13 -> GE-S05 -> GE-S13
       const danceFrames: EmberAssetCode[] = ['GE-S04', 'GE-S13', 'GE-S05', 'GE-S13'];
       const idx = currentSequenceFrame % danceFrames.length;
-      return { assetCode: danceFrames[idx], altText: 'GUEST EMBER DANCING' };
+      return { assetCode: danceFrames[idx], altText: isExpanded ? 'EXPANDED EMBER DANCING' : 'GUEST EMBER DANCING' };
     }
 
     case 'VOCAL': {
-      // GE-S06 Base, occasionally GE-S14 for 900ms
+      // GE-S06 Base, occasionally GE-S14
       if (isSpecialInsertActive) {
         return { assetCode: 'GE-S14', altText: 'GUEST EMBER SINGING SOFT' };
       }
@@ -91,7 +92,7 @@ export const getEmberFrame = (
     }
 
     case 'CHILL': {
-      // GE-S07 Base, occasionally GE-S15 for 1500ms
+      // GE-S07 Base, occasionally GE-S15
       if (isSpecialInsertActive) {
         return { assetCode: 'GE-S15', altText: 'GUEST EMBER CHILL SOFT' };
       }

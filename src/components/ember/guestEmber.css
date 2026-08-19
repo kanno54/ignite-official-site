@@ -1,25 +1,25 @@
-/* GUEST EMBER Production Integration Styles */
+/* GUEST EMBER Production Integration Styles (Specification v2.1) */
 
-.guest-ember-root {
+.guest-ember-dock {
   position: fixed;
   bottom: 96px;
   right: 24px;
   z-index: 995;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
+  align-items: center;
+  gap: 10px;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.guest-ember-root * {
+.guest-ember-dock * {
   pointer-events: auto;
 }
 
-/* Reduced motion support */
+/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
-  .guest-ember-root {
+  .guest-ember-dock {
     transition: none !important;
   }
   .ember-avatar-img {
@@ -28,7 +28,7 @@
   }
 }
 
-/* Container Sizing */
+/* --- Avatar Container Sizing & Layout Modes --- */
 .ember-avatar-container {
   position: relative;
   width: 150px;
@@ -36,17 +36,40 @@
   cursor: pointer;
   user-select: none;
   touch-action: manipulation;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Expanded Player Mode Position & Size */
+.guest-ember-dock.is-expanded {
+  z-index: 2500 !important; /* Sitting on top of Expanded Player overlay z-index 2000 */
+  top: 120px;
+  right: calc(50% - 120px); /* Centered or anchor positioned in Expanded Player */
+  bottom: auto;
+}
+
+.guest-ember-dock.is-expanded .ember-avatar-container {
+  width: 240px;
+  height: 240px;
 }
 
 @media (max-width: 640px) {
-  .guest-ember-root {
+  .guest-ember-dock {
     bottom: 86px;
     right: 16px;
   }
   .ember-avatar-container {
     width: 104px;
     height: 104px;
+  }
+
+  .guest-ember-dock.is-expanded {
+    top: 90px;
+    right: calc(50% - 80px);
+  }
+
+  .guest-ember-dock.is-expanded .ember-avatar-container {
+    width: 160px;
+    height: 160px;
   }
 }
 
@@ -62,28 +85,36 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.65));
 }
 
-/* Control Bar (Mode Switcher + 🔥) */
+/* --- Control Bar (Mode Switcher + 🔥 Reaction) --- */
 .ember-control-bar {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(15, 23, 42, 0.92);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
-  padding: 4px 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  background: rgba(15, 23, 42, 0.94);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 28px;
+  padding: 4px 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  animation: emberBarFadeIn 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+@keyframes emberBarFadeIn {
+  0% { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Touch Target Minimum 44x44px */
 .ember-mode-btn {
   background: transparent;
   border: none;
   color: #94A3B8;
-  font-size: 1.1rem;
-  padding: 6px 8px;
+  font-size: 1.15rem;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -94,42 +125,50 @@
 
 .ember-mode-btn:hover {
   color: #F8FAFC;
-  transform: scale(1.15);
+  transform: scale(1.12);
 }
 
 .ember-mode-btn.is-active {
   color: #EAB308;
-  background: rgba(234, 179, 8, 0.15);
-  box-shadow: 0 0 10px rgba(234, 179, 8, 0.4);
+  background: rgba(234, 179, 8, 0.2);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.45);
+}
+
+.ember-control-separator {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 4px;
 }
 
 .ember-burn-btn {
   background: linear-gradient(135deg, #EF4444, #F97316);
   color: #FFFFFF;
   border: none;
-  border-radius: 20px;
-  padding: 6px 12px;
+  border-radius: 22px;
+  min-height: 44px;
+  padding: 6px 14px;
   font-size: 0.85rem;
   font-weight: 800;
   font-family: var(--font-mono);
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 4px;
-  box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+  gap: 6px;
+  box-shadow: 0 0 14px rgba(249, 115, 22, 0.6);
   transition: all 0.15s ease;
 }
 
 .ember-burn-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 18px rgba(249, 115, 22, 0.8);
+  transform: scale(1.06);
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.9);
 }
 
 .ember-burn-btn:active {
   transform: scale(0.94);
 }
 
-/* Speech Bubble */
+/* --- Speech Bubble --- */
 .ember-speech-bubble {
   position: absolute;
   bottom: 100%;
@@ -167,26 +206,27 @@
   transform: rotate(45deg);
 }
 
-/* RESTING / Call Button */
+/* --- RESTING / Call Button --- */
 .ember-resting-btn {
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(234, 179, 8, 0.4);
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(234, 179, 8, 0.45);
   color: #EAB308;
   border-radius: 24px;
-  padding: 8px 16px;
-  font-size: 0.82rem;
+  min-height: 44px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
   font-family: var(--font-mono);
   font-weight: 700;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease;
 }
 
 .ember-resting-btn:hover {
-  background: rgba(234, 179, 8, 0.15);
+  background: rgba(234, 179, 8, 0.18);
   border-color: #EAB308;
   transform: translateY(-2px);
 }

@@ -56,7 +56,7 @@ export const EmberControlBar: React.FC<EmberControlBarProps> = ({
         🌙
       </button>
 
-      <div style={{ width: '1px', height: '16px', backgroundColor: 'rgba(255,255,255,0.15)', margin: '0 2px' }} />
+      <div className="ember-control-separator" aria-hidden="true" />
 
       <button
         type="button"

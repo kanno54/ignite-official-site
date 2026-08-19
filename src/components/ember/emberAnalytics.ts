@@ -31,6 +31,12 @@ export const trackEmberBurn = (combo: number) => {
   if (combo >= 3) sendGaEvent('ember_burn_combo_3');
 };
 
+export const trackEmberExpandedView = () => sendGaEvent('ember_expanded_view');
+export const trackEmberExpandedModeChange = (mode: ListeningMode) => sendGaEvent('ember_expanded_mode_change', { mode });
+export const trackEmberExpandedBurn = (combo: number) => sendGaEvent('ember_expanded_burn', { combo });
+export const trackEmberControlBarShow = () => sendGaEvent('ember_controlbar_show');
+export const trackEmberControlBarHide = () => sendGaEvent('ember_controlbar_hide');
+
 export const trackEmberNoticeView = () => sendGaEvent('ember_notice_view');
 export const trackEmberNoticeClick = () => sendGaEvent('ember_notice_click');
 export const trackEmberReduceMotion = () => sendGaEvent('ember_reduce_motion');
