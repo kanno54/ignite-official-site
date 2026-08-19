@@ -44,7 +44,7 @@ export const GuestEmber: React.FC = () => {
   const [state, dispatch] = useReducer(emberReducer, initialEmberState);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
 
-  // Animation Timers & Frames
+  // Animation Timers & Frames State
   const [sequenceFrame, setSequenceFrame] = useState(0);
   const [isSpecialInsertActive, setIsSpecialInsertActive] = useState(false);
   const [scrollOpacity, setScrollOpacity] = useState(1);
@@ -53,6 +53,7 @@ export const GuestEmber: React.FC = () => {
   const burnTimerRef = useRef<NodeJS.Timeout | null>(null);
   const talkAutoCloseTimerRef = useRef<NodeJS.Timeout | null>(null);
   const scrollTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const subTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const prevPlayingRef = useRef<boolean>(false);
 
   const isExpanded = playerState.isExpanded;
@@ -96,6 +97,9 @@ export const GuestEmber: React.FC = () => {
     } else {
       dispatch({ type: 'SET_PLAYBACK_STATE', payload: 'PAUSED' });
     }
+    // Reset sequence frame when playback state changes
+    setSequenceFrame(0);
+    setIsSpecialInsertActive(false);
   }, [playerState.currentTrackId, playerState.isPlaying]);
 
   // 4. Control Bar Visibility Analytics
@@ -141,13 +145,19 @@ export const GuestEmber: React.FC = () => {
     let intervalId: NodeJS.Timeout | null = null;
     let insertTimeoutId: NodeJS.Timeout | null = null;
 
-    // IDLE Mode Animation Loop
+    // Clear sub-timeout on effect start/re-run
+    if (subTimeoutRef.current) {
+      clearTimeout(subTimeoutRef.current);
+      subTimeoutRef.current = null;
+    }
+
+    // IDLE Mode Animation Loop (Random 6-10s -> 150ms Blink)
     if (state.playbackState === 'IDLE' && state.visibility === 'VISIBLE' && state.speechState === 'NONE') {
       const scheduleBlink = () => {
         const nextDelay = 6000 + Math.random() * 4000;
         insertTimeoutId = setTimeout(() => {
           setIsSpecialInsertActive(true);
-          setTimeout(() => {
+          subTimeoutRef.current = setTimeout(() => {
             setIsSpecialInsertActive(false);
             scheduleBlink();
           }, 150);
@@ -172,13 +182,17 @@ export const GuestEmber: React.FC = () => {
         const intervalTime = isExpanded ? 4500 : 5500;
         intervalId = setInterval(() => {
           setIsSpecialInsertActive(true);
-          setTimeout(() => setIsSpecialInsertActive(false), 900);
+          subTimeoutRef.current = setTimeout(() => {
+            setIsSpecialInsertActive(false);
+          }, 900);
         }, intervalTime);
       } else if (state.listeningMode === 'CHILL') {
         const intervalTime = isExpanded ? 5500 : 7000;
         intervalId = setInterval(() => {
           setIsSpecialInsertActive(true);
-          setTimeout(() => setIsSpecialInsertActive(false), 1500);
+          subTimeoutRef.current = setTimeout(() => {
+            setIsSpecialInsertActive(false);
+          }, 1500);
         }, intervalTime);
       }
     }
@@ -186,12 +200,15 @@ export const GuestEmber: React.FC = () => {
     return () => {
       if (intervalId) clearInterval(intervalId);
       if (insertTimeoutId) clearTimeout(insertTimeoutId);
+      if (subTimeoutRef.current) clearTimeout(subTimeoutRef.current);
     };
   }, [state.playbackState, state.listeningMode, state.visibility, state.speechState, isPlaying, isExpanded, isReducedMotion]);
 
   // 7. Handlers
   const handleSelectMode = (mode: typeof state.listeningMode) => {
     dispatch({ type: 'SET_LISTENING_MODE', payload: mode });
+    setSequenceFrame(0);
+    setIsSpecialInsertActive(false);
     preloadModeAssets(mode);
     if (isExpanded) {
       trackEmberExpandedModeChange(mode);
