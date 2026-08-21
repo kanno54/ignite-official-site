@@ -7,6 +7,7 @@ import { useAudio } from '../components/audio/AudioProvider';
 import { NotFoundPage } from './404';
 import { SilentSignalCampaignView } from '../components/campaigns/SilentSignalCampaignView';
 import { RiseAgainCampaignView } from '../components/campaigns/RiseAgainCampaignView';
+import { EquinoxCampaignView } from '../components/campaigns/EquinoxCampaignView';
 
 export const CampaignDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -37,6 +38,10 @@ export const CampaignDetailPage: React.FC = () => {
   const relatedArticles = allArticles.filter((art) => campaign.relatedArticleIds.includes(art.slug) || campaign.relatedArticleIds.includes(art.id));
   const allCampaigns = getCampaigns();
   const relatedCampaigns = allCampaigns.filter((c) => campaign.relatedCampaignIds?.includes(c.id) || campaign.relatedCampaignIds?.includes(c.slug || ''));
+
+  if (campaign.id === 'equinox') {
+    return <EquinoxCampaignView campaign={campaign} relatedArticles={relatedArticles} />;
+  }
 
   if (campaign.id === 'silent-signal') {
     return <SilentSignalCampaignView campaign={campaign} relatedArticles={relatedArticles} />;

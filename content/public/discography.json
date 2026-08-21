@@ -187,7 +187,7 @@
       "coverImage": "/media/images/rise-again/RA-C01_v01.png",
       "description": "6th Single『RISE AGAIN』。まだ終わってない。何度でも、ここからだ。",
       "linerNotes": "『RISE AGAIN』は、うまくいった瞬間だけを切り取った勝利の歌ではない。\n\n迷い、失敗し、立ち止まった時間まで抱えたまま、それでももう一度同じ場所に立とうとする五人を描いたシングルである。\n\n前作『Silent Signal』で、IGNITEは言葉を減らし、視線や呼吸、身体の動きの中に感情を置いた。そこから続く本作では、その静けさのあとに残ったものを、再び動きへ変えていく。\n\n三曲は、それぞれ異なる距離から「続けること」を描いている。\n\n表題曲『RISE AGAIN』で立ち上がり、『Keep the Flame』で消さずに残し、『Afterglow - Live Version -』でステージを終えたあとにも残る熱を確かめる。\n\n大きな答えを提示するのではなく、次へ進むための温度を手元に残す作品となった。",
-      "campaignState": "current",
+      "campaignState": "past",
       "trackIds": [
         "rise-again-title",
         "rise-again-keep-the-flame",
@@ -196,6 +196,38 @@
       "publication": {
         "fictionalReleaseDate": "2024-03",
         "publishAt": "2024-03-20T00:00:00Z",
+        "visibility": "public",
+        "campaignState": "past"
+      }
+    },
+    {
+      "id": "equinox",
+      "slug": "equinox",
+      "title": "EQUINOX",
+      "format": "2nd Full Album",
+      "fictionalReleaseDate": "2024-05",
+      "fictionalReleaseDateFull": "2024.05.15",
+      "coverAssetId": "cover-equinox",
+      "description": "IGNITE待望の2nd Full Album。シングル曲『Silent Signal』『RISE AGAIN』をはじめ、光と影が交錯する全12曲を収録。",
+      "linerNotes": "『FIRESTARTER』で火を点け、『IGNITION』で始まりを告げ、『BURN IT DOWN』で衝動をさらけ出し、『NO LIMITS』で限界を穿ち、『SOLAR』で太陽へ手を伸ばした。  \nそして『Silent Signal』で息を止め、『RISE AGAIN』で膝を起こした。\n\nIGNITEが辿り着いた2nd Full Album『EQUINOX』は、光と影の双方が同じ深さで並び立つ、分律（昼夜平分時）の記録である。\n\n正午の光を意味するXII「EQUINOX」から、夜明けの第一光を呼ぶXXIV「First Dawn」まで。  \n12の楽曲はすべてがローマ数字の時間軸を持ち、五人のメンバーが過ごした葛藤、孤独、信頼、そして高揚のすべてを美しく刻み込んでいる。\n\n一人が誰かの影になるのではない。全員が異なる輝きを放ちながら、ひとつの中心（ONE MOMENT）へ集う。\n\nこの盤は、IGNITEの歴史におけるひとつの到達点であり、次なる物語への静かな扉である。",
+      "trackIds": [
+        "equinox-title",
+        "equinox-silent-signal",
+        "equinox-rise-again",
+        "equinox-shadowplay",
+        "equinox-parallel-lines",
+        "equinox-electric-blue",
+        "equinox-glass-ceiling",
+        "equinox-afterglow",
+        "equinox-nocturne-drive",
+        "equinox-5-voices",
+        "equinox-shadow",
+        "equinox-first-dawn"
+      ],
+      "campaignState": "current",
+      "publication": {
+        "fictionalReleaseDate": "2024-05",
+        "publishAt": "2024-05-15T00:00:00Z",
         "visibility": "public",
         "campaignState": "current"
       }
@@ -13911,6 +13943,384 @@
         {
           "speaker": "shout / LEO",
           "text": "ありがとう"
+        }
+      ]
+    },
+    {
+      "id": "equinox-title",
+      "releaseId": "equinox",
+      "title": "EQUINOX",
+      "versionLabel": "2nd Full Album Title Track",
+      "trackNumber": 1,
+      "trackNo": 1,
+      "romanNumeral": "XII",
+      "durationSeconds": 240,
+      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-title",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "昼夜平分時",
+        "光と影",
+        "交錯",
+        "二面性",
+        "タイトル曲"
+      ],
+      "linerNotes": "正午の光と影が重なる瞬間の美学。二つの世界が交差するアルバムの幕開けを飾るシンフォニック・ダンスナンバー。",
+      "lyrics": [
+        {
+          "speaker": "All",
+          "text": "TWO SIDES, ONE MOMENT\n光と影の境目で僕らは出逢う"
+        }
+      ]
+    },
+    {
+      "id": "equinox-silent-signal",
+      "releaseId": "equinox",
+      "title": "Silent Signal",
+      "versionLabel": "Album Version",
+      "trackNumber": 2,
+      "trackNo": 2,
+      "romanNumeral": "II",
+      "durationSeconds": 222,
+      "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-silent-signal",
+      "coverImage": "/assets/images/covers/cover-silent-signal.jpg",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "静寂",
+        "呼吸",
+        "無言の絆",
+        "ミニマリズム"
+      ],
+      "linerNotes": "言葉を削ぎ落とした静寂の中で五人の視線と呼吸を同期させた話題作。アルバムの第2トラックとして『EQUINOX』の深層を接続する。",
+      "lyrics": [
+        {
+          "speaker": "All",
+          "text": "言葉より先に伝わるものがある\n息を止めた静寂の中に"
+        }
+      ]
+    },
+    {
+      "id": "equinox-rise-again",
+      "releaseId": "equinox",
+      "title": "RISE AGAIN",
+      "versionLabel": "Album Version",
+      "trackNumber": 3,
+      "trackNo": 3,
+      "romanNumeral": "IV",
+      "durationSeconds": 215,
+      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-rise-again-title",
+      "coverImage": "/assets/images/covers/cover-rise-again.png",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "再起",
+        "暗青→白金",
+        "アンセム"
+      ],
+      "linerNotes": "不完全なまま何度でも立ち上がる意志を歌うアンセム。静寂から生まれた熱がアルバム全体のクライマックスへ向けて力強く脈動する。",
+      "lyrics": [
+        {
+          "speaker": "All",
+          "text": "まだ終わってない\n何度でもここからだ"
+        }
+      ]
+    },
+    {
+      "id": "equinox-shadowplay",
+      "releaseId": "equinox",
+      "title": "Shadowplay",
+      "versionLabel": "Album Track",
+      "trackNumber": 4,
+      "trackNo": 4,
+      "romanNumeral": "VI",
+      "durationSeconds": 210,
+      "audioUrl": "/media/audio/rise-again/RA-A02_v01.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-shadowplay",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "sho",
+        "ren"
+      ],
+      "moodTags": [
+        "影絵",
+        "デュエット",
+        "緊張感"
+      ],
+      "linerNotes": "光が強くなるほど深く伸びる影を描いたダークポップナンバー。SHOとRENの複雑なヴォーカルラインが交錯する。",
+      "lyrics": [
+        {
+          "speaker": "SHO / REN",
+          "text": "光の裏側で伸びていく影\n僕らの足音だけが夜に響く"
+        }
+      ]
+    },
+    {
+      "id": "equinox-parallel-lines",
+      "releaseId": "equinox",
+      "title": "Parallel Lines",
+      "versionLabel": "Album Track",
+      "trackNumber": 5,
+      "trackNo": 5,
+      "romanNumeral": "VIII",
+      "durationSeconds": 235,
+      "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-parallel-lines",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "yuto",
+        "leo"
+      ],
+      "moodTags": [
+        "平行線",
+        "感傷",
+        "ミドルテンポ"
+      ],
+      "linerNotes": "交わらない二つの線が、同じ地平線を目指して並んで走るストーリー。YUTOのハイトーンとLEOの温かな声が切なさを惹き立てる。",
+      "lyrics": [
+        {
+          "speaker": "YUTO / LEO",
+          "text": "交わらなくてもいい\n同じ方角を向いて歩けるなら"
+        }
+      ]
+    },
+    {
+      "id": "equinox-electric-blue",
+      "releaseId": "equinox",
+      "title": "Electric Blue",
+      "versionLabel": "Album Track",
+      "trackNumber": 6,
+      "trackNo": 6,
+      "romanNumeral": "X",
+      "durationSeconds": 198,
+      "audioUrl": "/media/audio/silent-signal/02-Invisible-Line.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-electric-blue",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "kai",
+        "yuto"
+      ],
+      "moodTags": [
+        "青い稲妻",
+        "エレクトロダンス",
+        "高速"
+      ],
+      "linerNotes": "青い火花が夜の空間を切り裂くアッパーダンスチューン。KAIのキレのあるラップとYUTOのハイトーンシャウトが炸裂。",
+      "lyrics": [
+        {
+          "speaker": "KAI / YUTO",
+          "text": "Electric Blue 闇を射抜く閃光\n言葉を超えて加速する"
+        }
+      ]
+    },
+    {
+      "id": "equinox-glass-ceiling",
+      "releaseId": "equinox",
+      "title": "Glass Ceiling",
+      "versionLabel": "Album Track",
+      "trackNumber": 7,
+      "trackNo": 7,
+      "romanNumeral": "XIV",
+      "durationSeconds": 228,
+      "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-glass-ceiling",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "sho",
+        "kai"
+      ],
+      "moodTags": [
+        "ガラスの天井",
+        "突破",
+        "ロックエレメント"
+      ],
+      "linerNotes": "見えない限界や固定概念を鋭利なパフォーマンスで打ち破るハードチューン。強烈なベースラインとシャープなヴォーカルワーク。",
+      "lyrics": [
+        {
+          "speaker": "SHO / KAI",
+          "text": "頭上のガラスを打ち砕け\n見えない限界はここにはない"
+        }
+      ]
+    },
+    {
+      "id": "equinox-afterglow",
+      "releaseId": "equinox",
+      "title": "Afterglow",
+      "versionLabel": "Studio Version",
+      "trackNumber": 8,
+      "trackNo": 8,
+      "romanNumeral": "XVI",
+      "durationSeconds": 230,
+      "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-afterglow-live",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "leo",
+        "ren"
+      ],
+      "moodTags": [
+        "余韻",
+        "夕暮れ",
+        "シティポップ"
+      ],
+      "linerNotes": "『RISE AGAIN』シングルで先行ライブ版が収録された楽曲の待望のスタジオフル音源。熱狂のあとに残る美しい夕空のグラデーション。",
+      "lyrics": [
+        {
+          "speaker": "LEO / REN",
+          "text": "ステージが静まり返ったあとも\n胸の奥に残る熱がある"
+        }
+      ]
+    },
+    {
+      "id": "equinox-nocturne-drive",
+      "releaseId": "equinox",
+      "title": "Nocturne Drive",
+      "versionLabel": "Studio Version",
+      "trackNumber": 9,
+      "trackNo": 9,
+      "romanNumeral": "XVIII",
+      "durationSeconds": 218,
+      "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-nocturne-drive",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "sho",
+        "yuto"
+      ],
+      "moodTags": [
+        "夜のドライブ",
+        "ダンス",
+        "グルーヴ"
+      ],
+      "linerNotes": "『Silent Signal』シングルで先行披露されたナイトダンスナンバーのスタジオ完成版。SHOとYUTOの妖しく滑らかなステップが目に浮かぶ。",
+      "lyrics": [
+        {
+          "speaker": "SHO / YUTO",
+          "text": "Nocturne Drive 夜の速度で駆け抜ける\n二人だけの合図で"
+        }
+      ]
+    },
+    {
+      "id": "equinox-5-voices",
+      "releaseId": "equinox",
+      "title": "5 VOICES",
+      "versionLabel": "Album Track",
+      "trackNumber": 10,
+      "trackNo": 10,
+      "romanNumeral": "XX",
+      "durationSeconds": 250,
+      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-5-voices",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "五声",
+        "ハーモニー",
+        "集大成"
+      ],
+      "linerNotes": "五人それぞれの歌声が独立したメロディを紡ぎながら最後ひとつの大ハーモニーへと結実する、アルバムのクライマックスナンバー。",
+      "lyrics": [
+        {
+          "speaker": "All",
+          "text": "5 VOICES 違う声が重なるとき\n誰も見たことのない景色が広がる"
+        }
+      ]
+    },
+    {
+      "id": "equinox-shadow",
+      "releaseId": "equinox",
+      "title": "SHADOW",
+      "versionLabel": "Album Track",
+      "trackNumber": 11,
+      "trackNo": 11,
+      "romanNumeral": "XXII",
+      "durationSeconds": 245,
+      "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-shadow",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "ren",
+        "leo"
+      ],
+      "moodTags": [
+        "影",
+        "静謐",
+        "バラード"
+      ],
+      "linerNotes": "静寂の夜の底で、光を受け止める影の優しさを歌う壮大なバラード。RENの低音とLEOのファルセットが静かな感動を呼ぶ。",
+      "lyrics": [
+        {
+          "speaker": "REN / LEO",
+          "text": "光が届かない場所で守っていたもの\n君の影も僕の一部だから"
+        }
+      ]
+    },
+    {
+      "id": "equinox-first-dawn",
+      "releaseId": "equinox",
+      "title": "First Dawn",
+      "versionLabel": "Album Outro Track",
+      "trackNumber": 12,
+      "trackNo": 12,
+      "romanNumeral": "XXIV",
+      "durationSeconds": 230,
+      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioStatus": "ready",
+      "posterAssetId": "poster-equinox-first-dawn",
+      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "spotlightMemberIds": [
+        "kai",
+        "sho",
+        "leo",
+        "ren",
+        "yuto"
+      ],
+      "moodTags": [
+        "黎明",
+        "第一光",
+        "未来への扉"
+      ],
+      "linerNotes": "長い夜を越えて差し込む新しい朝の第一光。2nd Full Album『EQUINOX』を締めくくり、次のツアーステージへとつなぐアウトロソング。",
+      "lyrics": [
+        {
+          "speaker": "All",
+          "text": "First Dawn 新しい朝の光へ\n僕らは歩き続ける"
         }
       ]
     }

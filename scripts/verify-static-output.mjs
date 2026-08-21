@@ -51,8 +51,15 @@ const expectedFiles = [
   'campaigns/silent-signal/index.html',
   'features/silent-signal-sho-interview/index.html',
   'discography/rise-again/index.html',
+  'discography/equinox/index.html',
   'campaigns/rise-again/index.html',
+  'campaigns/equinox/index.html',
   'features/rise-again-feature/index.html',
+  'features/equinox-special-feature/index.html',
+  'features/equinox-five-members-roundtable/index.html',
+  'features/equinox-artwork-feature/index.html',
+  'features/equinox-costume-feature/index.html',
+  'features/equinox-liner-notes/index.html',
 ];
 
 let missing = 0;

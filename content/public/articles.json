@@ -2494,5 +2494,146 @@
         "content": "探しています。\n\nでも、全部見つけられるとは思っていません。僕らの側からは見えないところで受け取ってくれているものも、きっとあるから。\n\n手を上げなくてもいい。声を出さなくてもいい。笑えない日は、笑わなくてもいい。\n\nその人がその人のままで同じ時間にいてくれたら、もう一緒にライブを作っていると思っています。\n\n僕はステージから、見つけられるものをできるだけ見つける。\n\n見つけられなかった返事も、なかったことにはしない。\n\nあの夜から、ずっとそうです。"
       }
     ]
+  },
+  {
+    "id": "equinox-special-feature-article",
+    "slug": "equinox-special-feature",
+    "title": "二つの影が、ひとつの光を形づくる。2nd Full Album『EQUINOX』解体新書",
+    "subtitle": "光と影、昼と夜、個人と五人。二面性の均衡の中で到達した新たな地平",
+    "category": "SPECIAL FEATURE",
+    "eyebrow": "EQUINOX SPECIAL FEATURE",
+    "publishedAt": "2024-05-15",
+    "publication": {
+      "publishAt": "2024-05-15T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    },
+    "heroImage": "/assets/images/campaigns/hero-equinox-desktop.jpg",
+    "heroAlt": "EQUINOX全体特集メインビジュアル",
+    "leadText": "『Silent Signal』の静寂から『RISE AGAIN』の再起を経て辿り着いた2nd Full Album『EQUINOX』。全12曲に刻まれた時間の美学と、五人が選んだ二面性の答えを解き明かす。",
+    "mainSpeakerIds": [
+      "kai",
+      "sho",
+      "leo",
+      "ren",
+      "yuto"
+    ],
+    "bodyMarkdown": "# 二つの影が、ひとつの光を形づくる。\n## 2nd Full Album『EQUINOX』解体新書\n\n2024年5月15日、IGNITEは2nd Full Album『EQUINOX』をリリースする。\n\nインディーズ『FIRESTARTER』での産声から、メジャーデビュー『IGNITION』、衝動の『BURN IT DOWN』、限界突破の『NO LIMITS』、そして太陽を掴んだ1st Album『SOLAR』。\n\nしかし、その後の五人が歩んだのは、ただ輝きを増すだけの道ではなかった。\n\n言葉を削ぎ落とし身体言語を研ぎ澄ませた『Silent Signal』。傷を抱えたまま立ち上がることを選んだ『RISE AGAIN』。\n\n二つの重要なシングルを経て辿り着いた本作『EQUINOX』は、光だけを誇るのではなく、影の深さをも自らの表現として抱きしめた、まさに分律（昼夜平分時）の瞬間を記録した作品である。\n\n---\n\n## XII → XXIV — ローマ数字が刻む12の時間の美学\n\n『EQUINOX』全12曲のトラックリストには、すべてローマ数字による時間の刻印が与えられている。\n\n正午の光を象徴するXII「EQUINOX」からスタートし、深い夜の底、そして黎明の第一光XXIV「First Dawn」まで。\n\n一曲一曲が独立した時間の質感とグラデーションを持ち、五人のヴォーカルとダンスパフォーマンスがそれぞれの時間を鮮やかに彩る。\n\n---\n\n## 五人それぞれが放つ異なる熱量\n\n『EQUINOX』において、五人は一つの型にはまらない。\n\nKAIとSHOが提示するパフォーマンスの揺るぎない芯。LEOが客席へ届ける情感あふれる熱。RENが全曲の背景を支える低音の美学。YUTOが切り開く圧倒的なハイトーン。\n\n五人がそれぞれのやり方で同じ中心（ONE MOMENT）を目指すことで、IGNITEの表現は過去最高の美しさと深みへと到達した。\n\n---\n\n## 関連記事ナビゲーション\n\n- [EQUINOX 五人座談会](/features/equinox-five-members-roundtable/)\n- [EQUINOX アートワーク解説](/features/equinox-artwork-feature/)\n- [EQUINOX 衣装デザイン特集](/features/equinox-costume-feature/)\n- [EQUINOX 全曲ライナーノーツ](/features/equinox-liner-notes/)\n- [EQUINOX Campaign Page](/campaigns/equinox/)\n",
+    "relatedArticleIds": [
+      "equinox-roundtable-article",
+      "equinox-artwork-article",
+      "equinox-costume-article",
+      "equinox-liner-notes-article"
+    ]
+  },
+  {
+    "id": "equinox-roundtable-article",
+    "slug": "equinox-five-members-roundtable",
+    "title": "【五人座談会】同じ中心へ向かって声を重ねるということ——『EQUINOX』交錯の軌跡",
+    "subtitle": "KAI, SHO, LEO, REN, YUTO が語る、『Silent Signal』『RISE AGAIN』を経て深まった絆",
+    "category": "INTERVIEW",
+    "eyebrow": "FIVE MEMBERS ROUNDTABLE",
+    "publishedAt": "2024-05-16",
+    "publication": {
+      "publishAt": "2024-05-16T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    },
+    "heroImage": "/assets/images/campaigns/hero-equinox-desktop.jpg",
+    "heroAlt": "EQUINOX五人座談会メインビジュアル",
+    "leadText": "2nd Full Album『EQUINOX』の完成を記念し、メンバー5人全員が集結。『Silent Signal』での無言の試行錯誤から『RISE AGAIN』での合唱、そしてアルバム制作の裏側を語り尽くす。",
+    "mainSpeakerIds": [
+      "kai",
+      "sho",
+      "leo",
+      "ren",
+      "yuto"
+    ],
+    "bodyMarkdown": "# 【五人座談会】同じ中心へ向かって声を重ねるということ\n## 『EQUINOX』交錯の軌跡\n\n**KAI**: 『Silent Signal』で言葉を減らして、『RISE AGAIN』で客席と一緒に声を重ねて。その二つがあったからこそ、『EQUINOX』というアルバムで五人の「個」と「集団」のバランスが一番良い形になれたと思う。\n\n**SHO**: ダンスの面でも、ただ揃えるだけじゃなく、それぞれの身体の動きが独立しながらひとつの大きな流れを作るフォーメーションに挑戦した。特に「EQUINOX」や「5 VOICES」のダンスは必見だよ。\n\n**LEO**: 『RISE AGAIN』で立ち上がって、その熱を持ってスタジオに入れたのが大きかった。アルバムの曲たちを歌っていると、客席の顔が自然と浮かんでくるんだよね。\n\n**REN**: 今回、低音パートやハーモニーの重なりをかなり細かく突き詰めた。自分の声が曲の影の部分を支えることで、LEOやYUTOの光がより惹き立つ構造になっている。\n\n**YUTO**: ハイトーンのシャウトから繊細なバラードまで、自分の声の限界を超えられるフレーズがたくさんあって楽しかった！五人でしか鳴らせない音がここにあるって胸を張って言える。\n\n---\n\n## 関連ページ\n\n- [EQUINOX Campaign Page](/campaigns/equinox/)\n- [EQUINOX Album Detail](/discography/equinox/)\n",
+    "relatedArticleIds": [
+      "equinox-special-feature-article",
+      "equinox-liner-notes-article"
+    ]
+  },
+  {
+    "id": "equinox-artwork-article",
+    "slug": "equinox-artwork-feature",
+    "title": "【ARTWORK FEATURE】黒と白金が織りなす無限の二重環——『EQUINOX』デザインの思想",
+    "subtitle": "シボ感のあるブラックパッケージと黄金のエンボスリングが象徴するもの",
+    "category": "DESIGN FEATURE",
+    "eyebrow": "ARTWORK DESIGN FEATURE",
+    "publishedAt": "2024-05-17",
+    "publication": {
+      "publishAt": "2024-05-17T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    },
+    "heroImage": "/assets/images/covers/cover-equinox.jpg",
+    "heroAlt": "EQUINOXジャケットアートワーク",
+    "leadText": "重厚な黒地の質感と、交差する二つの金属環。アルバム『EQUINOX』のアートワークデザインに込められた視覚的コンセプトと美的企みを解説。",
+    "mainSpeakerIds": [
+      "kai",
+      "sho"
+    ],
+    "bodyMarkdown": "# 【ARTWORK FEATURE】黒と白金が織りなす無限の二重環\n## 『EQUINOX』デザインの思想\n\n2nd Full Album『EQUINOX』のジャケットアートワークは、漆黒のマットテクスチャの上に、交差する二つの金属環が刻印された極上のミニマリズムで構成されている。\n\n一つは深い影を象徴するダークメタルの環。  \nもう一つは燦然と輝く白金の環。\n\n二つの環は決して相手を消すことなく、中央で無限の象徴のように滑らかに重なり合う。\n\nこれこそが『EQUINOX（昼夜平分時）』の核心——光と影、昼と夜、自分と仲間が同じ場所で均衡を分かち合う美学である。\n\n---\n\n- [EQUINOX Campaign Page](/campaigns/equinox/)\n- [EQUINOX 衣装デザイン特集](/features/equinox-costume-feature/)\n",
+    "relatedArticleIds": [
+      "equinox-special-feature-article",
+      "equinox-costume-article"
+    ]
+  },
+  {
+    "id": "equinox-costume-article",
+    "slug": "equinox-costume-feature",
+    "title": "【COSTUME FEATURE】光を反射し、影を纏う——『EQUINOX』衣装デザイン詳解",
+    "subtitle": "五人それぞれの体躯と役割に合わせた、ラグジュアリーなダークスーツ＆アクセント",
+    "category": "COSTUME FEATURE",
+    "eyebrow": "COSTUME DESIGN FEATURE",
+    "publishedAt": "2024-05-18",
+    "publication": {
+      "publishAt": "2024-05-18T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    },
+    "heroImage": "/assets/images/campaigns/hero-equinox-desktop.jpg",
+    "heroAlt": "EQUINOX衣装デザインビジュアル",
+    "leadText": "EQUINOX期のビジュアルを飾る5人の衣装スタイル。光の角度で表情を変える素材使いと、各メンバーのシルエッティズムに迫る。",
+    "mainSpeakerIds": [
+      "sho",
+      "ren"
+    ],
+    "bodyMarkdown": "# 【COSTUME FEATURE】光を反射し、影を纏う\n## 『EQUINOX』衣装デザイン詳解\n\n『EQUINOX』期の衣装コンセプトは、**「暗青の影と白金の光の同調」**。\n\nKAIのジャケットには肩から胸元にかけて繊細なゴールド刺繍が施され、SHOのスーツには動きに合わせて光を返すサテンラペルを採用。\n\nLEOのシャツはドレープ感のあるダークシルクで情感を醸し出し、RENは深みのあるダブルブレストで全体の重厚感を保証。最年少YUTOにはタイトなスリムラインに金のアクセントパーツを配している。\n\n五人が並んだとき、統一された高級感の中にそれぞれの個性が浮き上がる完璧なスタイリングとなっている。\n\n---\n\n- [EQUINOX Campaign Page](/campaigns/equinox/)\n- [EQUINOX アートワーク解説](/features/equinox-artwork-feature/)\n",
+    "relatedArticleIds": [
+      "equinox-special-feature-article",
+      "equinox-artwork-article"
+    ]
+  },
+  {
+    "id": "equinox-liner-notes-article",
+    "slug": "equinox-liner-notes",
+    "title": "【全曲ライナーノーツ】2nd Full Album『EQUINOX』全12曲の完全楽曲解説",
+    "subtitle": "XIIからXXIVまで。時間を刻む12のトラックが紡ぐ物語の全貌",
+    "category": "LINER NOTES",
+    "eyebrow": "EQUINOX LINER NOTES",
+    "publishedAt": "2024-05-19",
+    "publication": {
+      "publishAt": "2024-05-19T00:00:00Z",
+      "visibility": "public",
+      "campaignState": "current"
+    },
+    "heroImage": "/assets/images/covers/cover-equinox.jpg",
+    "heroAlt": "EQUINOX全曲ライナーノーツ",
+    "leadText": "2nd Full Album『EQUINOX』に収録された全12曲（XII〜XXIV）の詳細な制作背景とサウンドコンセプトを完全網羅した公式ライナーノーツ。",
+    "mainSpeakerIds": [
+      "kai",
+      "sho",
+      "leo",
+      "ren",
+      "yuto"
+    ],
+    "bodyMarkdown": "# 【全曲ライナーノーツ】2nd Full Album『EQUINOX』全12曲完全解説\n\n## 01. EQUINOX (XII)\n正午の光と影が交差する、アルバムの主題曲。シンフォニックなストリングスとアッパーなEDMビートが融合し、二面性の物語の開幕を告げる。\n\n## 02. Silent Signal (II)\n言葉を削ぎ落とした静寂の5th Single。息を止めるような緊迫感と繊細な呼吸の同調。\n\n## 03. RISE AGAIN (IV)\n不完全なまま立ち上がる意志を歌う6th Single。暗青から白金への再起のアンセム。\n\n## 04. Shadowplay (VI)\nSHOとRENのツインボーカルが冴え渡るミステリアスなダークポップ。\n\n## 05. Parallel Lines (VIII)\nYUTOのハイトーンとLEOの温かな声が交錯する、平行線の切なさを描いた感傷的ミドルナンバー。\n\n## 06. Electric Blue (X)\nKAIの力強い高速ラップが夜を切り裂くアッパーダンスチューン。\n\n## 07. Glass Ceiling (XIV)\n透明な限界を穿つ鋭利なロックナンバー。\n\n## 08. Afterglow (XVI)\nライブの熱狂のあとに残る夕空の余韻を描いたシティポップナンバー。\n\n## 09. Nocturne Drive (XVIII)\nSHOとYUTOのしなやかなステップを連想させるナイト・ダンスチューン。\n\n## 10. 5 VOICES (XX)\n五人の独立した歌声が重なり合い、最高潮のハーモニーを生み出す大曲。\n\n## 11. SHADOW (XXII)\n深い夜の底で光を見つめる壮大なバラード。\n\n## 12. First Dawn (XXIV)\n新しい朝の第一光へ向かう、アルバムのフィナーレ。\n\n---\n\n- [EQUINOX Campaign Page](/campaigns/equinox/)\n- [EQUINOX Album Detail](/discography/equinox/)\n",
+    "relatedArticleIds": [
+      "equinox-special-feature-article",
+      "equinox-roundtable-article"
+    ]
   }
 ]

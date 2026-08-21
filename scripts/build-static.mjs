@@ -35,6 +35,7 @@ const routes = [
   '/discography/solar/',
   '/discography/silent-signal/',
   '/discography/rise-again/',
+  '/discography/equinox/',
   '/campaigns/',
   '/campaigns/firestarter/',
   '/campaigns/no-limits/',
@@ -44,6 +45,7 @@ const routes = [
   '/campaigns/solar/',
   '/campaigns/silent-signal/',
   '/campaigns/rise-again/',
+  '/campaigns/equinox/',
   '/features/',
   '/features/archive-firestarter-leo-one-day-ahead/',
   '/features/no-limits-interview/',
@@ -57,6 +59,11 @@ const routes = [
   '/features/leo-from-stage-to-solar/',
   '/features/silent-signal-sho-interview/',
   '/features/rise-again-feature/',
+  '/features/equinox-special-feature/',
+  '/features/equinox-five-members-roundtable/',
+  '/features/equinox-artwork-feature/',
+  '/features/equinox-costume-feature/',
+  '/features/equinox-liner-notes/',
   '/story/',
   '/fun/',
   '/privacy/',
@@ -80,7 +87,7 @@ for (const route of routes) {
 
   // Customize title tag based on route for static SEO prerendering
   let routeTitle = isStagingBuild
-    ? 'IGNITE Official Portal — 6th Single『RISE AGAIN』'
+    ? 'IGNITE Official Portal — 2nd Full Album『EQUINOX』'
     : 'IGNITE Official Portal — 4th Single「Moonlit」';
   if (route.includes('/members/')) {
     const slug = route.split('/')[2];

@@ -62,7 +62,7 @@ export const StoryPage: React.FC = () => {
     },
   ];
 
-  if (['silent-signal', 'rise-again'].includes(currentCamp.id) || currentCamp.status === 'current') {
+  if (['silent-signal', 'rise-again', 'equinox'].includes(currentCamp.id) || currentCamp.status === 'current') {
     timelineEvents.push({
       id: 'silent-signal',
       date: '2024.01',
@@ -73,7 +73,7 @@ export const StoryPage: React.FC = () => {
     });
   }
 
-  if (currentCamp.id === 'rise-again' || currentCamp.status === 'current') {
+  if (['rise-again', 'equinox'].includes(currentCamp.id) || currentCamp.status === 'current') {
     timelineEvents.push({
       id: 'rise-again',
       date: '2024.03',
@@ -81,6 +81,17 @@ export const StoryPage: React.FC = () => {
       title: '6th Single『RISE AGAIN』リリース ― まだ終わってない。何度でも、ここからだ。',
       description: '言葉を削ぎ落とした『Silent Signal』の静寂を抜け、傷ついたまま、迷ったまま、もう一度同じ場所へ立ち上がる五人の決意を描く。',
       link: '/discography/rise-again/',
+    });
+  }
+
+  if (currentCamp.id === 'equinox' || currentCamp.status === 'current') {
+    timelineEvents.push({
+      id: 'equinox',
+      date: '2024.05',
+      era: 'EQUINOX ERA',
+      title: '2nd Full Album『EQUINOX』リリース ― TWO SIDES, ONE MOMENT',
+      description: '光と影の双方を抱え、昼と夜が同じ長さを分け合う均衡の瞬間へ。全12曲が時間軸を刻み、五人が同じ中心へ向かって声を重ねる。',
+      link: '/discography/equinox/',
     });
   }
 
@@ -92,7 +103,7 @@ export const StoryPage: React.FC = () => {
           OFFICIAL STORY & TIMELINE
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-          2020年10月のインディーズ始動から、2024年3月の6th Single『RISE AGAIN』まで。五人が小さな火を育て、不完全な再出発を果たすまでの公式年表。
+          2020年10月のインディーズ始動から、2024年5月の2nd Full Album『EQUINOX』まで。五人が光と影を抱え、同じ中心へ向かって声を重ねるまでの公式年表。
         </p>
       </div>
 

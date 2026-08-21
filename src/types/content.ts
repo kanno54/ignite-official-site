@@ -120,8 +120,10 @@ export type Article = {
   title: string;
   kicker: string;
   dek: string;
+  category?: string;
   publishDate: string;
   publishDateFull: string;
+  publishedAt?: string;
   storyDate?: string;
   storyDateFull?: string;
   era?: string;
@@ -131,6 +133,7 @@ export type Article = {
   interviewee?: string;
   heroCopy?: string;
   heroAlt?: string;
+  heroImage?: string;
   readingTimeMinutes: number;
   mainSpeakerIds: string[];
   heroAssetId: string;

@@ -582,6 +582,66 @@
       "path": "/media/images/rise-again/RA-C04_v01.png",
       "status": "ready",
       "aspect": "1:1"
+    },
+    "hero-equinox-desktop": {
+      "path": "/assets/images/campaigns/hero-equinox-desktop.jpg",
+      "status": "ready",
+      "aspect": "16:9"
+    },
+    "hero-equinox-mobile": {
+      "path": "/assets/images/campaigns/hero-equinox-mobile.jpg",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "cover-equinox": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "cover-equinox-vertical": {
+      "path": "/assets/images/covers/cover-equinox-vertical.jpg",
+      "status": "ready",
+      "aspect": "3:4"
+    },
+    "poster-equinox-title": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-equinox-shadowplay": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-equinox-parallel-lines": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-equinox-electric-blue": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-equinox-glass-ceiling": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-equinox-5-voices": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-equinox-shadow": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
+    },
+    "poster-equinox-first-dawn": {
+      "path": "/assets/images/covers/cover-equinox.jpg",
+      "status": "ready",
+      "aspect": "1:1"
     }
   }
 }

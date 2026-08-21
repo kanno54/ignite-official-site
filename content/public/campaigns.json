@@ -1,8 +1,54 @@
 [
   {
+    "id": "equinox",
+    "slug": "equinox",
+    "status": "current",
+    "releaseId": "equinox",
+    "releaseDate": "2024-05-15",
+    "eyebrow": "2ND FULL ALBUM / EQUINOX ERA",
+    "title": "EQUINOX",
+    "catchCopy": "TWO SIDES, ONE MOMENT",
+    "desktopHero": "/assets/images/campaigns/hero-equinox-desktop.jpg",
+    "mobileHero": "/assets/images/campaigns/hero-equinox-mobile.jpg",
+    "heroAlt": "光と影の両方を抱え、昼と夜の境界に立つIGNITEの五人",
+    "primaryCta": {
+      "text": "LISTEN NOW ▶",
+      "action": "play"
+    },
+    "secondaryCta": {
+      "text": "VIEW DISCOGRAPHY ➔",
+      "action": "link",
+      "url": "/discography/equinox/"
+    },
+    "campaignColors": {
+      "accent": "#D9B44A",
+      "deep": "#0F172A",
+      "text": "#F8FAFC"
+    },
+    "relatedArticleIds": [
+      "equinox-special-feature-article",
+      "equinox-roundtable-article",
+      "equinox-artwork-article",
+      "equinox-costume-article",
+      "equinox-liner-notes-article"
+    ],
+    "relatedCampaignIds": [
+      "rise-again",
+      "silent-signal",
+      "solar"
+    ],
+    "introduction": {
+      "heading": "光と影の両方を抱え、二つの世界が交差する。",
+      "body": "『Silent Signal』の静寂と、『RISE AGAIN』の再起の息吹を経て、IGNITEは2nd Full Album『EQUINOX』へと結実する。\n\n昼と夜が同じ長さを分け合うように、喜びと葛藤、光と影の双方を抱えたまま、五人は同じ中心へ向かって声を重ねる。"
+    },
+    "bannerCopy": "TWO SIDES, ONE MOMENT",
+    "storyUpdate": "# EQUINOX Story Update\n\n## 2024.05 — EQUINOX\n### TWO SIDES, ONE MOMENT\n\n『Silent Signal』で息を止め、言葉を削ぎ落とした静寂の境界を確かめた。  \n『RISE AGAIN』で傷を抱えたまま膝を起こし、暗青の中から白金の光へ踏み出した。\n\nそして2024年5月、IGNITEは2nd Full Album『EQUINOX』へ到達する。\n\n昼と夜がまったく同じ長さを分け合う分律の時「EQUINOX（昼夜平分時）」。  \nそれは、光だけを選ぶことでも、影を打ち消すことでもない。\n\n互いの違いと傷、それぞれの孤独と熱をそのまま抱え、五人が同じひとつの中心で出会う瞬間。\n\nアルバム全12曲は、XIIからXXIVへ至る時間の軌跡を描き出し、五つの個性が独立したままひとつの巨大な熱へと昇華していく。\n\nここから、SOLAR / LUNAR / EQUINOX / SHADOW へと続く新たな物語の扉が開かれる。\n",
+    "campaignCopy": "# EQUINOX\n\n## Campaign Page Copy\n\n**IGNITE 2nd Full Album**\n\n### HERO\n\n**TWO SIDES, ONE MOMENT**\n\n光と影。昼と夜。熱と静けさ。  \nどちらか一方を選ぶのではなく、その両方を抱えて同じ場所に立つ。\n\n**EQUINOX**  \n二つの世界が交差し、五つの声がひとつの真実になる。\n\n---\n\n## CAMPAIGN STATEMENT\n\n### 二つの影が、ひとつの光を形づくる。\n\n『EQUINOX』が提示するのは、完全無欠の完成ではない。\n\n前作『Silent Signal』で確かめた言葉にならない信頼。  \n『RISE AGAIN』で選んだ不完全なままの再起。\n\nそれらすべてを経て辿り着いたのは、昼と夜が同じ長さを分け合う均衡の瞬間だ。\n\n一人が誰かの影になるのではなく、各自の光と影が重なり合うことで初めて立ち現れる輪郭。  \n五人はそれぞれ異なる場所から同じ中心を目指し、ひとつの瞬間（ONE MOMENT）を共有する。\n\n---\n\n## ALBUM CONCEPT\n\n### XII → XXIV — TIME & SHADOW\n\n『EQUINOX』全12曲には、ローマ数字による時間の割当が施されている。\n\n正午の光を象徴する XII「EQUINOX」から始まり、深夜の静寂や夜明の第一光を巡る。  \nRoman numeralの刻印は、単なるトラック順ではなく、五人が駆け抜けた時間の軌跡そのものである。\n\n---\n\n## TRACK HIGHLIGHTS\n\n### 01. EQUINOX (XII)\n**光と影が交差する、アルバムの主題曲。**\n\n### 02. Silent Signal (II)\n**言葉より先に、伝わるもの。**\n\n### 03. RISE AGAIN (IV)\n**まだ終わってない。何度でも、ここからだ。**\n\n### 04. Shadowplay (VI)\n**光があるからこそ伸びる、もうひとつの影。**\n\n### 05. Parallel Lines (VIII)\n**交わらない平行線が、同じ方角へ伸びていく。**\n\n### 06. Electric Blue (X)\n**青い火花が夜の静寂を切り裂くダンスナンバー。**\n\n### 07. Glass Ceiling (XIV)\n**透明な限界を打ち破る、鋭利な五人の声。**\n\n### 08. Afterglow (XVI)\n**熱狂のあとに残る、愛おしい余韻。**\n\n### 09. Nocturne Drive (XVIII)\n**夜の速度をそのままエモーションに変えて。**\n\n### 10. 5 VOICES (XX)\n**五人の声が独立したまま響き合う最高潮。**\n\n### 11. SHADOW (XXII)\n**深い暗闇の底で光を見つめるバラード。**\n\n### 12. First Dawn (XXIV)\n**新しい朝の第一光へ向かう、最終章。**\n\n---\n\n## EDITORIAL & INTERVIEWS\n\n- **EQUINOX 全体特集**: アルバムの全貌と二面性の美学\n- **五人座談会**: 『Silent Signal』『RISE AGAIN』を経て深まった絆\n- **アートワーク解説**: シボ感のある黒と白金のシンボルデザイン\n- **衣装デザイン特集**: 5人それぞれのシルエットと光の反射\n- **全曲ライナーノーツ**: 全12曲の詳細楽曲解説\n"
+  },
+  {
     "id": "rise-again",
     "slug": "rise-again",
-    "status": "current",
+    "status": "past",
     "releaseId": "rise-again",
     "releaseDate": "2024-03-20",
     "eyebrow": "6TH SINGLE / RISE AGAIN ERA",
