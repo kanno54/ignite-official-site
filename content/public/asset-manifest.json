@@ -584,28 +584,32 @@
       "aspect": "1:1"
     },
     "hero-equinox-desktop": {
-      "path": "/assets/images/campaigns/hero-equinox-desktop.jpg",
-      "status": "pending",
+      "path": "/assets/images/campaigns/hero-equinox-desktop.webp",
+      "status": "ready",
       "aspect": "16:9",
-      "note": "REMOVED generated image; physical approved asset MISSING"
+      "assetCode": "EQ-KV01",
+      "versionId": "v-eq-kv01-1-1786789221518"
     },
     "hero-equinox-mobile": {
-      "path": "/assets/images/campaigns/hero-equinox-mobile.jpg",
-      "status": "pending",
+      "path": "/assets/images/campaigns/hero-equinox-mobile.webp",
+      "status": "ready",
       "aspect": "3:4",
-      "note": "REMOVED generated image; physical approved asset MISSING"
+      "assetCode": "EQ-KV02",
+      "versionId": "v-eq-kv02-1-1786789222466"
     },
     "cover-equinox": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
+      "path": "/assets/images/covers/cover-equinox.webp",
+      "status": "ready",
       "aspect": "1:1",
-      "note": "REMOVED generated image; physical approved asset MISSING"
+      "assetCode": "EQ-A01",
+      "versionId": "v-eq-a01-1-1786790654062"
     },
     "cover-equinox-vertical": {
-      "path": "/assets/images/covers/cover-equinox-vertical.jpg",
-      "status": "pending",
+      "path": "/assets/images/covers/cover-equinox-vertical.webp",
+      "status": "ready",
       "aspect": "3:4",
-      "note": "REMOVED generated image; physical approved asset MISSING"
+      "assetCode": "EQ-A02",
+      "versionId": "v-eq-a02-1-1786801396316"
     },
     "poster-equinox-title": {
       "path": "/assets/images/covers/cover-equinox.jpg",
@@ -654,6 +658,909 @@
       "status": "pending",
       "aspect": "1:1",
       "note": "Individual artwork MISSING"
+    },
+    "hero-ar-all01": {
+      "path": "/assets/images/articles/hero-ar-all01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-H",
+      "versionId": "v-ar-all01-h-1-1787096182107"
+    },
+    "hero-ar-all01-h": {
+      "path": "/assets/images/articles/hero-ar-all01-h.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-H",
+      "versionId": "v-ar-all01-h-1-1787096182107"
+    },
+    "hero-ar-all01-i01": {
+      "path": "/assets/images/articles/hero-ar-all01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-I01",
+      "versionId": "v-ar-all01-i01-1-1787096513516"
+    },
+    "hero-ar-all01-i02": {
+      "path": "/assets/images/articles/hero-ar-all01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-I02",
+      "versionId": "v-ar-all01-i02-1-1787096758324"
+    },
+    "hero-ar-all01-i03": {
+      "path": "/assets/images/articles/hero-ar-all01-i03.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-I03",
+      "versionId": "v-ar-all01-i03-1-1787097021094"
+    },
+    "hero-ar-art01": {
+      "path": "/assets/images/articles/hero-ar-art01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ART01-H",
+      "versionId": "v-ar-art01-h-1-1787097239999"
+    },
+    "hero-ar-art01-h": {
+      "path": "/assets/images/articles/hero-ar-art01-h.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ART01-H",
+      "versionId": "v-ar-art01-h-1-1787097239999"
+    },
+    "hero-ar-art01-i01": {
+      "path": "/assets/images/articles/hero-ar-art01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ART01-I01",
+      "versionId": "v-ar-art01-i01-1-1787097548112"
+    },
+    "hero-ar-art01-i02": {
+      "path": "/assets/images/articles/hero-ar-art01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ART01-I02",
+      "versionId": "v-ar-art01-i02-1-1787097801193"
+    },
+    "hero-ar-cost01": {
+      "path": "/assets/images/articles/hero-ar-cost01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-COST01-H",
+      "versionId": "v-ar-cost01-h-1-1787098362778"
+    },
+    "hero-ar-cost01-h": {
+      "path": "/assets/images/articles/hero-ar-cost01-h.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-COST01-H",
+      "versionId": "v-ar-cost01-h-1-1787098362778"
+    },
+    "hero-ar-cost01-i01": {
+      "path": "/assets/images/articles/hero-ar-cost01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-COST01-I01",
+      "versionId": "v-ar-cost01-i01-1-1787100076143"
+    },
+    "hero-ar-cost01-i02": {
+      "path": "/assets/images/articles/hero-ar-cost01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-COST01-I02",
+      "versionId": "v-ar-cost01-i02-3-1787100032709"
+    },
+    "hero-ar-eq01": {
+      "path": "/assets/images/articles/hero-ar-eq01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-EQ01-H",
+      "versionId": "v-ar-eq01-h-1-1787101194539"
+    },
+    "hero-ar-eq01-h": {
+      "path": "/assets/images/articles/hero-ar-eq01-h.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-EQ01-H",
+      "versionId": "v-ar-eq01-h-1-1787101194539"
+    },
+    "hero-ar-eq01-i01": {
+      "path": "/assets/images/articles/hero-ar-eq01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-EQ01-I01",
+      "versionId": "v-ar-eq01-i01-1-1787101448061"
+    },
+    "hero-ar-eq01-i02": {
+      "path": "/assets/images/articles/hero-ar-eq01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-EQ01-I02",
+      "versionId": "v-ar-eq01-i02-1-1787101726388"
+    },
+    "hero-ar-ln01": {
+      "path": "/assets/images/articles/hero-ar-ln01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-LN01",
+      "versionId": "v-ar-ln01-1-1786802842728"
+    },
+    "eq-a03": {
+      "path": "/assets/images/misc/eq-a03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-A03",
+      "versionId": "v-eq-a03-1-1786801394346"
+    },
+    "eq-a04": {
+      "path": "/assets/images/misc/eq-a04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-A04",
+      "versionId": "v-eq-a04-1-1786801392588"
+    },
+    "eq-a05": {
+      "path": "/assets/images/misc/eq-a05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-A05",
+      "versionId": "v-eq-a05-1-1786801390144"
+    },
+    "eq-a06": {
+      "path": "/assets/images/misc/eq-a06.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-A06",
+      "versionId": "v-eq-a06-1-1786801388366"
+    },
+    "eq-au01": {
+      "path": "/assets/images/misc/eq-au01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU01",
+      "versionId": "v-eq-au01-1-1786789945909"
+    },
+    "eq-au02": {
+      "path": "/assets/images/misc/eq-au02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU02",
+      "versionId": "v-eq-au02-1-1786799144807"
+    },
+    "eq-au03": {
+      "path": "/assets/images/misc/eq-au03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU03",
+      "versionId": "v-eq-au03-1-1786799150112"
+    },
+    "eq-au04": {
+      "path": "/assets/images/misc/eq-au04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU04",
+      "versionId": "v-eq-au04-1-1786789958862"
+    },
+    "eq-au05": {
+      "path": "/assets/images/misc/eq-au05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU05",
+      "versionId": "v-eq-au05-1-1786789967098"
+    },
+    "eq-au06": {
+      "path": "/assets/images/misc/eq-au06.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU06",
+      "versionId": "v-eq-au06-1-1786789970970"
+    },
+    "eq-au07": {
+      "path": "/assets/images/misc/eq-au07.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU07",
+      "versionId": "v-eq-au07-1-1786789975879"
+    },
+    "eq-au08": {
+      "path": "/assets/images/misc/eq-au08.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU08",
+      "versionId": "v-eq-au08-1-1786789981084"
+    },
+    "eq-au09": {
+      "path": "/assets/images/misc/eq-au09.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU09",
+      "versionId": "v-eq-au09-1-1786789986547"
+    },
+    "eq-au10": {
+      "path": "/assets/images/misc/eq-au10.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU10",
+      "versionId": "v-eq-au10-1-1786789990739"
+    },
+    "eq-au11": {
+      "path": "/assets/images/misc/eq-au11.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU11",
+      "versionId": "v-eq-au11-1-1786789994250"
+    },
+    "eq-au12": {
+      "path": "/assets/images/misc/eq-au12.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-AU12",
+      "versionId": "v-eq-au12-1-1786789999089"
+    },
+    "eq-cp01": {
+      "path": "/assets/images/misc/eq-cp01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-CP01",
+      "versionId": "v-eq-cp01-1-1786807315165"
+    },
+    "eq-d01": {
+      "path": "/assets/images/misc/eq-d01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-D01",
+      "versionId": "v-eq-d01-1-1786801387265"
+    },
+    "eq-d02": {
+      "path": "/assets/images/misc/eq-d02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-D02",
+      "versionId": "v-eq-d02-1-1786801384642"
+    },
+    "eq-d03": {
+      "path": "/assets/images/misc/eq-d03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-D03",
+      "versionId": "v-eq-d03-1-1786801381576"
+    },
+    "eq-d04": {
+      "path": "/assets/images/misc/eq-d04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-D04",
+      "versionId": "v-eq-d04-1-1786801380375"
+    },
+    "eq-d05": {
+      "path": "/assets/images/misc/eq-d05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-D05",
+      "versionId": "v-eq-d05-1-1786801379235"
+    },
+    "eq-g01": {
+      "path": "/assets/images/misc/eq-g01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-G01",
+      "versionId": "v-eq-g01-1-1786801402488"
+    },
+    "eq-g02": {
+      "path": "/assets/images/misc/eq-g02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-G02",
+      "versionId": "v-eq-g02-1-1786801401285"
+    },
+    "eq-g03": {
+      "path": "/assets/images/misc/eq-g03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-G03",
+      "versionId": "v-eq-g03-1-1786801400411"
+    },
+    "eq-g04": {
+      "path": "/assets/images/misc/eq-g04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-G04",
+      "versionId": "v-eq-g04-1-1786801399489"
+    },
+    "eq-g05": {
+      "path": "/assets/images/misc/eq-g05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-G05",
+      "versionId": "v-eq-g05-1-1786801398638"
+    },
+    "eq-g06": {
+      "path": "/assets/images/misc/eq-g06.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-G06",
+      "versionId": "v-eq-g06-1-1786801397584"
+    },
+    "equinox-square": {
+      "path": "/assets/images/campaigns/equinox-square.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV03",
+      "versionId": "v-eq-kv03-1-1786789223616"
+    },
+    "eq-kv04": {
+      "path": "/assets/images/misc/eq-kv04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV04",
+      "versionId": "v-eq-kv04-1-1786804371704"
+    },
+    "eq-kv05": {
+      "path": "/assets/images/misc/eq-kv05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV05",
+      "versionId": "v-eq-kv05-1-1786804370212"
+    },
+    "eq-kv06": {
+      "path": "/assets/images/misc/eq-kv06.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV06",
+      "versionId": "v-eq-kv06-1-1786804367733"
+    },
+    "eq-kv07": {
+      "path": "/assets/images/misc/eq-kv07.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV07",
+      "versionId": "v-eq-kv07-1-1786804366227"
+    },
+    "eq-kv08": {
+      "path": "/assets/images/misc/eq-kv08.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV08",
+      "versionId": "v-eq-kv08-1-1786804373916"
+    },
+    "eq-kv09": {
+      "path": "/assets/images/misc/eq-kv09.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV09",
+      "versionId": "v-eq-kv09-1-1786806526456"
+    },
+    "eq-kv10": {
+      "path": "/assets/images/misc/eq-kv10.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV10",
+      "versionId": "v-eq-kv10-1-1786806525487"
+    },
+    "eq-kv11": {
+      "path": "/assets/images/misc/eq-kv11.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV11",
+      "versionId": "v-eq-kv11-1-1786806532571"
+    },
+    "eq-kv12": {
+      "path": "/assets/images/misc/eq-kv12.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-KV12",
+      "versionId": "v-eq-kv12-1-1786806531986"
+    },
+    "eq-ly01": {
+      "path": "/assets/images/misc/eq-ly01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY01",
+      "versionId": "v-eq-ly01-1-1786789686028"
+    },
+    "eq-ly02": {
+      "path": "/assets/images/misc/eq-ly02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY02",
+      "versionId": "v-eq-ly02-1-1786789691089"
+    },
+    "eq-ly03": {
+      "path": "/assets/images/misc/eq-ly03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY03",
+      "versionId": "v-eq-ly03-1-1786802950437"
+    },
+    "eq-ly04": {
+      "path": "/assets/images/misc/eq-ly04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY04",
+      "versionId": "v-eq-ly04-1-1786789635973"
+    },
+    "eq-ly05": {
+      "path": "/assets/images/misc/eq-ly05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY05",
+      "versionId": "v-eq-ly05-1-1786789643806"
+    },
+    "eq-ly06": {
+      "path": "/assets/images/misc/eq-ly06.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY06",
+      "versionId": "v-eq-ly06-1-1786789650610"
+    },
+    "eq-ly07": {
+      "path": "/assets/images/misc/eq-ly07.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY07",
+      "versionId": "v-eq-ly07-1-1786789657596"
+    },
+    "eq-ly08": {
+      "path": "/assets/images/misc/eq-ly08.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY08",
+      "versionId": "v-eq-ly08-1-1786789665030"
+    },
+    "eq-ly09": {
+      "path": "/assets/images/misc/eq-ly09.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY09",
+      "versionId": "v-eq-ly09-1-1786789673776"
+    },
+    "eq-ly10": {
+      "path": "/assets/images/misc/eq-ly10.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY10",
+      "versionId": "v-eq-ly10-1-1786789676655"
+    },
+    "eq-ly11": {
+      "path": "/assets/images/misc/eq-ly11.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY11",
+      "versionId": "v-eq-ly11-1-1786789680428"
+    },
+    "eq-ly12": {
+      "path": "/assets/images/misc/eq-ly12.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-LY12",
+      "versionId": "v-eq-ly12-1-1786789682822"
+    },
+    "eq-r01-01": {
+      "path": "/assets/images/misc/eq-r01-01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R01-01",
+      "versionId": "v-eq-r01-01-1-1786789225266"
+    },
+    "eq-r01-02": {
+      "path": "/assets/images/misc/eq-r01-02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R01-02",
+      "versionId": "v-eq-r01-02-1-1786789226232"
+    },
+    "eq-r01-03": {
+      "path": "/assets/images/misc/eq-r01-03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R01-03",
+      "versionId": "v-eq-r01-03-1-1786789226799"
+    },
+    "eq-r01-04": {
+      "path": "/assets/images/misc/eq-r01-04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R01-04",
+      "versionId": "v-eq-r01-04-1-1786789164374"
+    },
+    "eq-r01-05": {
+      "path": "/assets/images/misc/eq-r01-05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R01-05",
+      "versionId": "v-eq-r01-05-1-1786789165576"
+    },
+    "eq-r02-01": {
+      "path": "/assets/images/misc/eq-r02-01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R02-01",
+      "versionId": "v-eq-r02-01-1-1786789167004"
+    },
+    "eq-r02-02": {
+      "path": "/assets/images/misc/eq-r02-02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R02-02",
+      "versionId": "v-eq-r02-02-1-1786789168277"
+    },
+    "eq-r02-03": {
+      "path": "/assets/images/misc/eq-r02-03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R02-03",
+      "versionId": "v-eq-r02-03-1-1786789169290"
+    },
+    "eq-r02-04": {
+      "path": "/assets/images/misc/eq-r02-04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R02-04",
+      "versionId": "v-eq-r02-04-1-1786789169925"
+    },
+    "eq-r02-05": {
+      "path": "/assets/images/misc/eq-r02-05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R02-05",
+      "versionId": "v-eq-r02-05-1-1786789170754"
+    },
+    "eq-r05": {
+      "path": "/assets/images/misc/eq-r05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R05",
+      "versionId": "v-eq-r05-1-1786789173713"
+    },
+    "eq-r06": {
+      "path": "/assets/images/misc/eq-r06.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R06",
+      "versionId": "v-eq-r06-1-1786789207307"
+    },
+    "eq-r07": {
+      "path": "/assets/images/misc/eq-r07.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R07",
+      "versionId": "v-eq-r07-1-1786789211217"
+    },
+    "eq-r08": {
+      "path": "/assets/images/misc/eq-r08.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R08",
+      "versionId": "v-eq-r08-1-1786789212877"
+    },
+    "eq-r09-01": {
+      "path": "/assets/images/misc/eq-r09-01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R09-01",
+      "versionId": "v-eq-r09-01-1-1786789214383"
+    },
+    "eq-r09-02": {
+      "path": "/assets/images/misc/eq-r09-02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R09-02",
+      "versionId": "v-eq-r09-02-1-1786789215042"
+    },
+    "eq-r09-03": {
+      "path": "/assets/images/misc/eq-r09-03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R09-03",
+      "versionId": "v-eq-r09-03-1-1786789215762"
+    },
+    "eq-r09-04": {
+      "path": "/assets/images/misc/eq-r09-04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R09-04",
+      "versionId": "v-eq-r09-04-1-1786789216274"
+    },
+    "eq-r09-05": {
+      "path": "/assets/images/misc/eq-r09-05.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R09-05",
+      "versionId": "v-eq-r09-05-1-1786789216776"
+    },
+    "eq-r10": {
+      "path": "/assets/images/misc/eq-r10.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R10",
+      "versionId": "v-eq-r10-1-1786789218176"
+    },
+    "eq-r11": {
+      "path": "/assets/images/misc/eq-r11.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R11",
+      "versionId": "v-eq-r11-1-1786789219081"
+    },
+    "eq-r12": {
+      "path": "/assets/images/misc/eq-r12.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-R12",
+      "versionId": "v-eq-r12-1-1786789219862"
+    },
+    "eq-st01": {
+      "path": "/assets/images/misc/eq-st01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-ST01",
+      "versionId": "v-eq-st01-1-1786807444693"
+    },
+    "eq-t01": {
+      "path": "/assets/images/misc/eq-t01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-T01",
+      "versionId": "v-eq-t01-1-1786806531122"
+    },
+    "eq-t02": {
+      "path": "/assets/images/misc/eq-t02.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-T02",
+      "versionId": "v-eq-t02-1-1786806530123"
+    },
+    "eq-t03": {
+      "path": "/assets/images/misc/eq-t03.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-T03",
+      "versionId": "v-eq-t03-1-1786806528962"
+    },
+    "eq-t04": {
+      "path": "/assets/images/misc/eq-t04.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-T04",
+      "versionId": "v-eq-t04-1-1786806528164"
+    },
+    "poster-equinox-tr01-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr01-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR01-SQ",
+      "versionId": "v-eq-tr01-sq-1-1786796995215"
+    },
+    "poster-equinox-tr01-v": {
+      "path": "/assets/images/covers/poster-equinox-tr01-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR01-V",
+      "versionId": "v-eq-tr01-v-1-1786794419499"
+    },
+    "poster-equinox-tr02-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr02-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR02-SQ",
+      "versionId": "v-eq-tr02-sq-1-1786796993833"
+    },
+    "poster-equinox-tr02-v": {
+      "path": "/assets/images/covers/poster-equinox-tr02-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR02-V",
+      "versionId": "v-eq-tr02-v-1-1786794422506"
+    },
+    "poster-equinox-tr03-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr03-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR03-SQ",
+      "versionId": "v-eq-tr03-sq-1-1786796992712"
+    },
+    "poster-equinox-tr03-v": {
+      "path": "/assets/images/covers/poster-equinox-tr03-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR03-V",
+      "versionId": "v-eq-tr03-v-1-1786794411561"
+    },
+    "poster-equinox-tr04-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr04-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR04-SQ",
+      "versionId": "v-eq-tr04-sq-1-1786796991736"
+    },
+    "poster-equinox-tr04-v": {
+      "path": "/assets/images/covers/poster-equinox-tr04-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR04-V",
+      "versionId": "v-eq-tr04-v-1-1786794426489"
+    },
+    "poster-equinox-tr05-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr05-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR05-SQ",
+      "versionId": "v-eq-tr05-sq-1-1786796990712"
+    },
+    "poster-equinox-tr05-v": {
+      "path": "/assets/images/covers/poster-equinox-tr05-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR05-V",
+      "versionId": "v-eq-tr05-v-1-1786794424322"
+    },
+    "poster-equinox-tr06-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr06-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR06-SQ",
+      "versionId": "v-eq-tr06-sq-1-1786796989037"
+    },
+    "poster-equinox-tr06-v": {
+      "path": "/assets/images/covers/poster-equinox-tr06-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR06-V",
+      "versionId": "v-eq-tr06-v-1-1786794410340"
+    },
+    "poster-equinox-tr07-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr07-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR07-SQ",
+      "versionId": "v-eq-tr07-sq-1-1786796987954"
+    },
+    "poster-equinox-tr07-v": {
+      "path": "/assets/images/covers/poster-equinox-tr07-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR07-V",
+      "versionId": "v-eq-tr07-v-1-1786794409056"
+    },
+    "poster-equinox-tr08-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr08-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR08-SQ",
+      "versionId": "v-eq-tr08-sq-1-1786796986712"
+    },
+    "poster-equinox-tr08-v": {
+      "path": "/assets/images/covers/poster-equinox-tr08-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR08-V",
+      "versionId": "v-eq-tr08-v-1-1786794407586"
+    },
+    "poster-equinox-tr09-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr09-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR09-SQ",
+      "versionId": "v-eq-tr09-sq-1-1786796984679"
+    },
+    "poster-equinox-tr09-v": {
+      "path": "/assets/images/covers/poster-equinox-tr09-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR09-V",
+      "versionId": "v-eq-tr09-v-1-1786794432647"
+    },
+    "poster-equinox-tr10-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr10-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR10-SQ",
+      "versionId": "v-eq-tr10-sq-1-1786796982947"
+    },
+    "poster-equinox-tr10-v": {
+      "path": "/assets/images/covers/poster-equinox-tr10-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR10-V",
+      "versionId": "v-eq-tr10-v-1-1786794431555"
+    },
+    "poster-equinox-tr11-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr11-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR11-SQ",
+      "versionId": "v-eq-tr11-sq-1-1786796981616"
+    },
+    "poster-equinox-tr11-v": {
+      "path": "/assets/images/covers/poster-equinox-tr11-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR11-V",
+      "versionId": "v-eq-tr11-v-1-1786794430105"
+    },
+    "poster-equinox-tr12-sq": {
+      "path": "/assets/images/covers/poster-equinox-tr12-sq.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "EQ-TR12-SQ",
+      "versionId": "v-eq-tr12-sq-1-1786796980418"
+    },
+    "poster-equinox-tr12-v": {
+      "path": "/assets/images/covers/poster-equinox-tr12-v.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "EQ-TR12-V",
+      "versionId": "v-eq-tr12-v-1-1786794428750"
+    },
+    "inline-ar-all01-i01": {
+      "path": "/assets/images/articles/inline-ar-all01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-I01",
+      "versionId": "v-ar-all01-i01-1-1787096513516"
+    },
+    "inline-ar-all01-i02": {
+      "path": "/assets/images/articles/inline-ar-all01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-I02",
+      "versionId": "v-ar-all01-i02-1-1787096758324"
+    },
+    "inline-ar-all01-i03": {
+      "path": "/assets/images/articles/inline-ar-all01-i03.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ALL01-I03",
+      "versionId": "v-ar-all01-i03-1-1787097021094"
+    },
+    "inline-ar-art01-i01": {
+      "path": "/assets/images/articles/inline-ar-art01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ART01-I01",
+      "versionId": "v-ar-art01-i01-1-1787097548112"
+    },
+    "inline-ar-art01-i02": {
+      "path": "/assets/images/articles/inline-ar-art01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-ART01-I02",
+      "versionId": "v-ar-art01-i02-1-1787097801193"
+    },
+    "inline-ar-cost01-i01": {
+      "path": "/assets/images/articles/inline-ar-cost01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-COST01-I01",
+      "versionId": "v-ar-cost01-i01-1-1787100076143"
+    },
+    "inline-ar-cost01-i02": {
+      "path": "/assets/images/articles/inline-ar-cost01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-COST01-I02",
+      "versionId": "v-ar-cost01-i02-3-1787100032709"
+    },
+    "inline-ar-eq01-i01": {
+      "path": "/assets/images/articles/inline-ar-eq01-i01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-EQ01-I01",
+      "versionId": "v-ar-eq01-i01-1-1787101448061"
+    },
+    "inline-ar-eq01-i02": {
+      "path": "/assets/images/articles/inline-ar-eq01-i02.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "AR-EQ01-I02",
+      "versionId": "v-ar-eq01-i02-1-1787101726388"
+    },
+    "ar-ss01": {
+      "path": "/assets/images/misc/ar-ss01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "AR-SS01",
+      "versionId": "v-ar-ss01-4-1786550565361"
     }
   }
 }
