@@ -611,54 +611,6 @@
       "assetCode": "EQ-A02",
       "versionId": "v-eq-a02-1-1786801396316"
     },
-    "poster-equinox-title": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
-    "poster-equinox-shadowplay": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
-    "poster-equinox-parallel-lines": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
-    "poster-equinox-electric-blue": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
-    "poster-equinox-glass-ceiling": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
-    "poster-equinox-5-voices": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
-    "poster-equinox-shadow": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
-    "poster-equinox-first-dawn": {
-      "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "pending",
-      "aspect": "1:1",
-      "note": "Individual artwork MISSING"
-    },
     "hero-ar-all01": {
       "path": "/assets/images/articles/hero-ar-all01.webp",
       "status": "ready",
