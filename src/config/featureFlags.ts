@@ -1,7 +1,8 @@
 export type FeatureFlagState = 'OFF' | 'INTERNAL' | 'PUBLIC';
 
 export const FEATURE_FLAGS: Record<string, FeatureFlagState> = {
-  GUEST_EMBER: (import.meta.env.VITE_FEATURE_GUEST_EMBER as FeatureFlagState) || 'INTERNAL',
+  GUEST_EMBER: 'OFF',
+  MY_EMBER_PILOT: 'OFF',
 };
 
 export const isFeatureEnabled = (flagName: keyof typeof FEATURE_FLAGS): boolean => {
