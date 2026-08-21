@@ -585,63 +585,75 @@
     },
     "hero-equinox-desktop": {
       "path": "/assets/images/campaigns/hero-equinox-desktop.jpg",
-      "status": "ready",
-      "aspect": "16:9"
+      "status": "pending",
+      "aspect": "16:9",
+      "note": "REMOVED generated image; physical approved asset MISSING"
     },
     "hero-equinox-mobile": {
       "path": "/assets/images/campaigns/hero-equinox-mobile.jpg",
-      "status": "ready",
-      "aspect": "3:4"
+      "status": "pending",
+      "aspect": "3:4",
+      "note": "REMOVED generated image; physical approved asset MISSING"
     },
     "cover-equinox": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "REMOVED generated image; physical approved asset MISSING"
     },
     "cover-equinox-vertical": {
       "path": "/assets/images/covers/cover-equinox-vertical.jpg",
-      "status": "ready",
-      "aspect": "3:4"
+      "status": "pending",
+      "aspect": "3:4",
+      "note": "REMOVED generated image; physical approved asset MISSING"
     },
     "poster-equinox-title": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     },
     "poster-equinox-shadowplay": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     },
     "poster-equinox-parallel-lines": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     },
     "poster-equinox-electric-blue": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     },
     "poster-equinox-glass-ceiling": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     },
     "poster-equinox-5-voices": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     },
     "poster-equinox-shadow": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     },
     "poster-equinox-first-dawn": {
       "path": "/assets/images/covers/cover-equinox.jpg",
-      "status": "ready",
-      "aspect": "1:1"
+      "status": "pending",
+      "aspect": "1:1",
+      "note": "Individual artwork MISSING"
     }
   }
 }

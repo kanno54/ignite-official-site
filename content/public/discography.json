@@ -230,7 +230,8 @@
         "publishAt": "2024-05-15T00:00:00Z",
         "visibility": "public",
         "campaignState": "current"
-      }
+      },
+      "assetStatus": "MISSING"
     }
   ],
   "recordings": [
@@ -13958,7 +13959,6 @@
       "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-title",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -13979,7 +13979,8 @@
           "speaker": "All",
           "text": "TWO SIDES, ONE MOMENT\n光と影の境目で僕らは出逢う"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     },
     {
       "id": "equinox-silent-signal",
@@ -13993,7 +13994,7 @@
       "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-silent-signal",
-      "coverImage": "/assets/images/covers/cover-silent-signal.jpg",
+      "coverImage": "/assets/images/covers/cover-silent-signal.webp",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -14013,7 +14014,8 @@
           "speaker": "All",
           "text": "言葉より先に伝わるものがある\n息を止めた静寂の中に"
         }
-      ]
+      ],
+      "assetStatus": "FOUND_EXISTING"
     },
     {
       "id": "equinox-rise-again",
@@ -14027,7 +14029,7 @@
       "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-rise-again-title",
-      "coverImage": "/assets/images/covers/cover-rise-again.png",
+      "coverImage": "/media/images/rise-again/RA-C02_v01.png",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -14046,7 +14048,8 @@
           "speaker": "All",
           "text": "まだ終わってない\n何度でもここからだ"
         }
-      ]
+      ],
+      "assetStatus": "FOUND_EXISTING"
     },
     {
       "id": "equinox-shadowplay",
@@ -14060,7 +14063,6 @@
       "audioUrl": "/media/audio/rise-again/RA-A02_v01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-shadowplay",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "sho",
         "ren"
@@ -14076,7 +14078,8 @@
           "speaker": "SHO / REN",
           "text": "光の裏側で伸びていく影\n僕らの足音だけが夜に響く"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     },
     {
       "id": "equinox-parallel-lines",
@@ -14090,7 +14093,6 @@
       "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-parallel-lines",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "yuto",
         "leo"
@@ -14106,7 +14108,8 @@
           "speaker": "YUTO / LEO",
           "text": "交わらなくてもいい\n同じ方角を向いて歩けるなら"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     },
     {
       "id": "equinox-electric-blue",
@@ -14120,7 +14123,6 @@
       "audioUrl": "/media/audio/silent-signal/02-Invisible-Line.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-electric-blue",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "kai",
         "yuto"
@@ -14136,7 +14138,8 @@
           "speaker": "KAI / YUTO",
           "text": "Electric Blue 闇を射抜く閃光\n言葉を超えて加速する"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     },
     {
       "id": "equinox-glass-ceiling",
@@ -14150,7 +14153,6 @@
       "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-glass-ceiling",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "sho",
         "kai"
@@ -14166,7 +14168,8 @@
           "speaker": "SHO / KAI",
           "text": "頭上のガラスを打ち砕け\n見えない限界はここにはない"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     },
     {
       "id": "equinox-afterglow",
@@ -14180,7 +14183,7 @@
       "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-afterglow-live",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "coverImage": "/media/images/rise-again/RA-C04_v01.png",
       "spotlightMemberIds": [
         "leo",
         "ren"
@@ -14196,7 +14199,8 @@
           "speaker": "LEO / REN",
           "text": "ステージが静まり返ったあとも\n胸の奥に残る熱がある"
         }
-      ]
+      ],
+      "assetStatus": "FOUND_EXISTING"
     },
     {
       "id": "equinox-nocturne-drive",
@@ -14210,7 +14214,7 @@
       "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-nocturne-drive",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
+      "coverImage": "/assets/images/covers/poster-nocturne-drive.webp",
       "spotlightMemberIds": [
         "sho",
         "yuto"
@@ -14226,7 +14230,8 @@
           "speaker": "SHO / YUTO",
           "text": "Nocturne Drive 夜の速度で駆け抜ける\n二人だけの合図で"
         }
-      ]
+      ],
+      "assetStatus": "FOUND_EXISTING"
     },
     {
       "id": "equinox-5-voices",
@@ -14240,7 +14245,6 @@
       "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-5-voices",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -14259,7 +14263,8 @@
           "speaker": "All",
           "text": "5 VOICES 違う声が重なるとき\n誰も見たことのない景色が広がる"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     },
     {
       "id": "equinox-shadow",
@@ -14273,7 +14278,6 @@
       "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-shadow",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "ren",
         "leo"
@@ -14289,7 +14293,8 @@
           "speaker": "REN / LEO",
           "text": "光が届かない場所で守っていたもの\n君の影も僕の一部だから"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     },
     {
       "id": "equinox-first-dawn",
@@ -14303,7 +14308,6 @@
       "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-first-dawn",
-      "coverImage": "/assets/images/covers/cover-equinox.jpg",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -14322,7 +14326,8 @@
           "speaker": "All",
           "text": "First Dawn 新しい朝の光へ\n僕らは歩き続ける"
         }
-      ]
+      ],
+      "assetStatus": "MISSING"
     }
   ]
 }
