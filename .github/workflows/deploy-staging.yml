@@ -21,11 +21,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Validate Content Data
-        run: npm run validate:data
+      - name: Run Release Validation Gate
+        run: npm run validate
 
-      - name: Validate Asset Manifest
-        run: npm run validate:assets
+      - name: TypeScript Check
+        run: npm exec tsc -- --noEmit
 
       - name: Build Staging Static Output
         env:
@@ -35,6 +35,17 @@ jobs:
 
       - name: Prepare Staging Protection & Noindex
         run: node scripts/prepare-staging-dist.mjs
+
+      - name: Verify Staging Static Output Routes
+        env:
+          VITE_STAGING: 'true'
+          VITE_SITE_URL: 'https://staging.ignite-official.site'
+        run: npm run test:static
+
+      - name: Assert Public Cutoff Safety
+        env:
+          VITE_STAGING: 'true'
+        run: npm run assert-public-cutoff
 
       - name: Deploy to Staging Server via lftp
         if: github.ref == 'refs/heads/staging'

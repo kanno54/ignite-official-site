@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getSiteConfig, getMembers, getReleases, getArticles, getNews, getRecordingById, getCurrentCampaign } from '../utils/contentLoader';
+import { getSiteConfig, getMembers, getReleases, getArticles, getNews, getRecordingById, getCurrentCampaign, getCampaigns } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { FiveLights } from '../components/common/FiveLights';
@@ -14,29 +14,16 @@ export const TopPage: React.FC = () => {
   const newsList = getNews();
   const { playRelease, playTrack } = useAudio();
   const currentCampaign = getCurrentCampaign();
+  const campaigns = getCampaigns();
 
   const currentRelease = releases.find((r) => r.id === currentCampaign.releaseId) || releases[0];
-  const pickUpTrackId = currentCampaign.id === 'rise-again'
-    ? 'rise-again-title'
-    : currentCampaign.id === 'silent-signal'
-    ? 'silent-signal-title'
-    : currentCampaign.id === 'solar'
-    ? 'solar-title'
-    : config.pickUpTrackId;
+  const pickUpTrackId = currentRelease?.trackIds[0] || config.pickUpTrackId;
   const pickUpTrack = getRecordingById(pickUpTrackId);
-  const latestArticle = articles[0];
-
-  React.useEffect(() => {
-    if (currentCampaign.id === 'rise-again') {
-      document.title = 'IGNITE Official Portal — 6th Single「RISE AGAIN」';
-    } else if (currentCampaign.id === 'silent-signal') {
-      document.title = 'IGNITE Official Portal — 5th Single「Silent Signal」';
-    } else if (currentCampaign.id === 'solar') {
-      document.title = 'IGNITE Official Portal — 1st Full Album『SOLAR』';
-    } else {
-      document.title = 'IGNITE Official Portal — 6th Single「RISE AGAIN」';
-    }
-  }, [currentCampaign]);
+  const latestArticle = articles.find((article) =>
+    currentCampaign.relatedArticleIds.includes(article.id) || currentCampaign.relatedArticleIds.includes(article.slug)
+  ) || articles[0];
+  const currentCampaignIndex = campaigns.findIndex((campaign) => campaign.id === currentCampaign.id);
+  const previousCampaign = currentCampaignIndex >= 0 ? campaigns[currentCampaignIndex + 1] : undefined;
 
   const handlePrimaryCta = () => {
     if (currentRelease && currentRelease.trackIds.length > 0) {
@@ -381,19 +368,9 @@ export const TopPage: React.FC = () => {
             EXPLORE ARCHIVE ➔
           </Link>
 
-          {currentCampaign.id === 'silent-signal' && (
-            <Link to="/campaigns/solar/" className="btn-secondary">
-              PREVIOUS CAMPAIGN — SOLAR ↗
-            </Link>
-          )}
-          {currentCampaign.id === 'solar' && (
-            <Link to="/campaigns/moonlit/" className="btn-secondary">
-              PREVIOUS CAMPAIGN — MOONLIT ↗
-            </Link>
-          )}
-          {currentCampaign.id === 'moonlit' && (
-            <Link to="/campaigns/no-limits/" className="btn-secondary">
-              PREVIOUS CAMPAIGN — NO LIMITS ↗
+          {previousCampaign && (
+            <Link to={`/campaigns/${previousCampaign.slug || previousCampaign.id}/`} className="btn-secondary">
+              PREVIOUS CAMPAIGN — {previousCampaign.title.toUpperCase()} ↗
             </Link>
           )}
         </div>

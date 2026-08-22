@@ -21,11 +21,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Validate Content Data
-        run: npm run validate:data
+      - name: Run Release Validation Gate
+        run: npm run validate
 
-      - name: Validate Asset Manifest
-        run: npm run validate:assets
+      - name: TypeScript Check
+        run: npm exec tsc -- --noEmit
 
       - name: Production Build & Prerender
         run: npm run build

@@ -14,20 +14,6 @@ export const CampaignDetailPage: React.FC = () => {
   const campaign = id ? getCampaignById(id) : undefined;
   const { playTrack } = useAudio();
 
-  React.useEffect(() => {
-    if (campaign) {
-      document.title = `${campaign.title}｜Campaign Special｜IGNITE Official Site`;
-      const canonicalEl = document.querySelector("link[rel='canonical']");
-      if (canonicalEl) {
-        canonicalEl.setAttribute('href', `https://ignite-official.site/campaigns/${campaign.slug || campaign.id}/`);
-      }
-      const ogUrlEl = document.querySelector("meta[property='og:url']");
-      if (ogUrlEl) {
-        ogUrlEl.setAttribute('content', `https://ignite-official.site/campaigns/${campaign.slug || campaign.id}/`);
-      }
-    }
-  }, [campaign]);
-
   if (!campaign) {
     return <NotFoundPage />;
   }

@@ -6,6 +6,8 @@ export type Publication = {
 };
 
 export type SiteConfig = {
+  siteUrl: string;
+  canonicalUrl: string;
   fictionalCurrentDate: string;
   currentCampaign: string;
   latestReleaseId: string;
@@ -138,6 +140,7 @@ export type Article = {
   mainSpeakerIds: string[];
   heroAssetId: string;
   relatedTrackIds: string[];
+  relatedCampaignId?: string;
   blocks: ArticleBlock[];
   publication: Publication;
   specialStory?: SpecialStoryCTA;
@@ -159,7 +162,7 @@ export type Campaign = {
   id: string;
   slug?: string;
   shortTitle?: string;
-  status: 'current' | 'archived' | 'staging';
+  status: 'current' | 'past' | 'archived' | 'staging';
   releaseId: string;
   releaseDate: string;
   archiveOrderDate?: string;

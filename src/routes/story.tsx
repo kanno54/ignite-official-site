@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 // IGNITE Official Story & Timeline Component
 import { Link } from 'react-router-dom';
 import { FiveLights } from '../components/common/FiveLights';
@@ -6,10 +6,6 @@ import { getCurrentCampaign } from '../utils/contentLoader';
 
 export const StoryPage: React.FC = () => {
   const currentCamp = getCurrentCampaign();
-
-  useEffect(() => {
-    document.title = 'OFFICIAL STORY & TIMELINE｜IGNITE Official Site';
-  }, []);
 
   const timelineEvents = [
     {

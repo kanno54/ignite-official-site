@@ -23,6 +23,7 @@ import { AccessibilityPage } from './routes/accessibility';
 import { NotFoundPage } from './routes/404';
 import { getCurrentCampaign, isStagingEnv } from './utils/contentLoader';
 import { ConsentBanner } from './components/common/ConsentBanner';
+import { MetadataManager } from './components/common/MetadataManager';
 import { loadGoogleTag, sendPageViewEvent, trackScrollDepth, getAnalyticsConsent, isAnalyticsEnabledEnv, ConsentStatus } from './utils/analytics';
 
 const ScrollToTop: React.FC = () => {
@@ -129,6 +130,7 @@ export const App: React.FC = () => {
   return (
     <AudioProvider>
       <ScrollToTop />
+      <MetadataManager />
       <AnalyticsTracker />
       <div className="app-container" data-campaign={currentCampaign.id}>
         {isStaging && (
@@ -146,7 +148,7 @@ export const App: React.FC = () => {
               position: 'relative',
             }}
           >
-            [STAGING ENVIRONMENT — SOLAR RELEASE SPECIAL PREVIEW]
+            [STAGING ENVIRONMENT — {currentCampaign.title.toUpperCase()} RELEASE PREVIEW]
           </div>
         )}
         <SiteHeader />

@@ -1,13 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { getPublicRouteEntries, routePathToOutputFile, siteConfig } from './public-site.mjs';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '../dist');
 const indexHtmlPath = path.join(distDir, 'index.html');
 
-console.log('--- GENERATING STATIC PRERENDERED HTML FOR ALL ROUTES ---');
+console.log('--- GENERATING STATIC HTML FOR PUBLIC ROUTES ---');
 
 if (!fs.existsSync(indexHtmlPath)) {
   console.error('dist/index.html not found. Run vite build first.');
@@ -15,111 +15,50 @@ if (!fs.existsSync(indexHtmlPath)) {
 }
 
 const baseHtml = fs.readFileSync(indexHtmlPath, 'utf8');
-
 const isStagingBuild = process.env.VITE_STAGING === 'true';
+const siteUrl = process.env.VITE_SITE_URL || siteConfig.siteUrl;
+const routes = getPublicRouteEntries({ staging: isStagingBuild, siteUrl });
 
-// Known routes to prerender
-const routes = [
-  '/',
-  '/members/',
-  '/members/kai/',
-  '/members/sho/',
-  '/members/leo/',
-  '/members/ren/',
-  '/members/yuto/',
-  '/discography/',
-  '/discography/firestarter/',
-  '/discography/ignition/',
-  '/discography/burn-it-down/',
-  '/discography/no-limits/',
-  '/discography/solar/',
-  '/discography/silent-signal/',
-  '/discography/rise-again/',
-  '/discography/equinox/',
-  '/campaigns/',
-  '/campaigns/firestarter/',
-  '/campaigns/no-limits/',
-  '/campaigns/burn-it-down/',
-  '/campaigns/ignition/',
-  '/campaigns/moonlit/',
-  '/campaigns/solar/',
-  '/campaigns/silent-signal/',
-  '/campaigns/rise-again/',
-  '/campaigns/equinox/',
-  '/features/',
-  '/features/archive-firestarter-leo-one-day-ahead/',
-  '/features/no-limits-interview/',
-  '/features/ren-moonlit-interview/',
-  '/features/between-the-lights-story/',
-  '/features/yuto-hightone-feature/',
-  '/features/sho-burn-it-down-interview/',
-  '/features/kai-ignition-five-names/',
-  '/features/ignition-special-feature/',
-  '/features/six-new-lights/',
-  '/features/leo-from-stage-to-solar/',
-  '/features/silent-signal-sho-interview/',
-  '/features/rise-again-feature/',
-  '/features/equinox-special-feature/',
-  '/features/equinox-five-members-roundtable/',
-  '/features/equinox-artwork-feature/',
-  '/features/equinox-costume-feature/',
-  '/features/equinox-liner-notes/',
-  '/story/',
-  '/fun/',
-  '/privacy/',
-  '/accessibility/',
-  '/404.html',
-];
+const escapeHtml = (value) => String(value)
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;');
+
+const replaceMeta = (html, selector, value) => {
+  const escaped = escapeHtml(value);
+  if (selector === 'description') {
+    return html.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, `<meta name="description" content="${escaped}" />`);
+  }
+  return html.replace(
+    new RegExp(`<meta\\s+property="${selector}"\\s+content="[^"]*"\\s*\\/?>`, 'i'),
+    `<meta property="${selector}" content="${escaped}" />`,
+  );
+};
 
 for (const route of routes) {
-  let targetPath;
-  if (route === '/' || route === '/index.html') {
-    targetPath = path.join(distDir, 'index.html');
-  } else if (route === '/404.html') {
-    targetPath = path.join(distDir, '404.html');
-  } else {
-    // Route like /members/kai/ -> dist/members/kai/index.html
-    const normalized = route.replace(/^\//, '').replace(/\/$/, '');
-    const routeDir = path.join(distDir, normalized);
-    fs.mkdirSync(routeDir, { recursive: true });
-    targetPath = path.join(routeDir, 'index.html');
-  }
+  const relativeOutput = routePathToOutputFile(route.path);
+  const targetPath = path.join(distDir, relativeOutput);
+  fs.mkdirSync(path.dirname(targetPath), { recursive: true });
 
-  // Customize title tag based on route for static SEO prerendering
-  let routeTitle = isStagingBuild
-    ? 'IGNITE Official Portal — 2nd Full Album『EQUINOX』'
-    : 'IGNITE Official Portal — 4th Single「Moonlit」';
-  if (route.includes('/members/')) {
-    const slug = route.split('/')[2];
-    if (slug) routeTitle = `${slug.toUpperCase()} Profile | IGNITE Official Portal`;
-    else routeTitle = 'MEMBERS | IGNITE Official Portal';
-  } else if (route.includes('/discography/')) {
-    const slug = route.split('/')[2];
-    if (slug) routeTitle = `${slug.toUpperCase()} | IGNITE Discography`;
-    else routeTitle = 'DISCOGRAPHY | IGNITE Official Portal';
-  } else if (route.includes('/campaigns/')) {
-    const slug = route.split('/')[2];
-    if (slug) routeTitle = `${slug.toUpperCase()} Campaign | IGNITE Archive`;
-    else routeTitle = 'CAMPAIGN ARCHIVE | IGNITE Official Portal';
-  } else if (route.includes('/features/')) {
-    routeTitle = 'FEATURES & MAGAZINE | IGNITE Official Portal';
-  } else if (route.includes('/story/')) {
-    routeTitle = 'OFFICIAL STORY & TIMELINE | IGNITE Official Portal';
-  } else if (route.includes('/fun/')) {
-    routeTitle = 'JUKEBOX & EMBER DIGITAL PASS | IGNITE Official Portal';
-  }
-
+  const title = `${isStagingBuild ? '[STAGING] ' : ''}${route.title}`;
   const timestamp = Date.now();
   let customizedHtml = baseHtml
-    .replace(/<title>.*?<\/title>/, `<title>${routeTitle}</title>`)
+    .replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(title)}</title>`)
+    .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${escapeHtml(route.canonical)}" />`)
     .replace('src="/assets/index.js"', `src="/assets/index.js?v=${timestamp}"`)
     .replace('href="/assets/index.css"', `href="/assets/index.css?v=${timestamp}"`);
+  customizedHtml = replaceMeta(customizedHtml, 'description', route.description);
+  customizedHtml = replaceMeta(customizedHtml, 'og:url', route.canonical);
+  customizedHtml = replaceMeta(customizedHtml, 'og:title', title);
+  customizedHtml = replaceMeta(customizedHtml, 'og:description', route.description);
+  customizedHtml = replaceMeta(customizedHtml, 'og:image', route.image);
+  customizedHtml = replaceMeta(customizedHtml, 'og:type', route.type);
 
   fs.writeFileSync(targetPath, customizedHtml, 'utf8');
-  console.log(`  Generated: ${targetPath.replace(distDir, 'dist')}`);
+  console.log(`  Generated: dist/${relativeOutput.replaceAll('\\', '/')}`);
 }
 
-// 4. Create production .htaccess to prevent stale JS/HTML browser caching & handle SPA routes
 const prodHtaccess = `<IfModule mod_headers.c>
   <FilesMatch "\\.(html|htm|js|css)$">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
@@ -137,6 +76,5 @@ const prodHtaccess = `<IfModule mod_headers.c>
 </IfModule>
 `;
 fs.writeFileSync(path.join(distDir, '.htaccess'), prodHtaccess, 'utf8');
-console.log('  ✔ Created production .htaccess with Cache-Control no-cache and SPA rewrite rules');
 
-console.log(`✔ Static pre-rendering completed for ${routes.length} routes!`);
+console.log(`Static HTML generation completed for ${routes.length} routes.`);

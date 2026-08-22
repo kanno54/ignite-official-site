@@ -4,6 +4,7 @@ import { ResponsivePicture } from '../common/ResponsivePicture';
 import { FiveLights } from '../common/FiveLights';
 import { useAudio } from '../audio/AudioProvider';
 import { Campaign, Article } from '../../types/content';
+import { getRecordingsForRelease } from '../../utils/contentLoader';
 
 interface EquinoxCampaignViewProps {
   campaign: Campaign;
@@ -12,6 +13,7 @@ interface EquinoxCampaignViewProps {
 
 export const EquinoxCampaignView: React.FC<EquinoxCampaignViewProps> = ({ campaign, relatedArticles }) => {
   const { playTrack } = useAudio();
+  const recordings = getRecordingsForRelease(campaign.releaseId);
 
   const members = [
     {
@@ -56,20 +58,16 @@ export const EquinoxCampaignView: React.FC<EquinoxCampaignViewProps> = ({ campai
     },
   ];
 
-  const tracks = [
-    { num: '01', roman: 'XII', title: 'EQUINOX', sub: '2nd Full Album Title Track', trackId: 'equinox-title', cover: null, status: 'MISSING' },
-    { num: '02', roman: 'II', title: 'Silent Signal', sub: '5th Single Album Version', trackId: 'equinox-silent-signal', cover: '/assets/images/covers/cover-silent-signal.webp', status: 'FOUND_EXISTING' },
-    { num: '03', roman: 'IV', title: 'RISE AGAIN', sub: '6th Single Album Version', trackId: 'equinox-rise-again', cover: '/media/images/rise-again/RA-C02_v01.png', status: 'FOUND_EXISTING' },
-    { num: '04', roman: 'VI', title: 'Shadowplay', sub: 'Album Track / SHO & REN Duet', trackId: 'equinox-shadowplay', cover: null, status: 'MISSING' },
-    { num: '05', roman: 'VIII', title: 'Parallel Lines', sub: 'Album Track / YUTO & LEO', trackId: 'equinox-parallel-lines', cover: null, status: 'MISSING' },
-    { num: '06', roman: 'X', title: 'Electric Blue', sub: 'Album Track / KAI & YUTO Rapid Dance', trackId: 'equinox-electric-blue', cover: null, status: 'MISSING' },
-    { num: '07', roman: 'XIV', title: 'Glass Ceiling', sub: 'Album Track / Hard Rock Element', trackId: 'equinox-glass-ceiling', cover: null, status: 'MISSING' },
-    { num: '08', roman: 'XVI', title: 'Afterglow', sub: 'Album Studio Version', trackId: 'equinox-afterglow', cover: '/media/images/rise-again/RA-C04_v01.png', status: 'FOUND_EXISTING' },
-    { num: '09', roman: 'XVIII', title: 'Nocturne Drive', sub: 'Album Studio Version', trackId: 'equinox-nocturne-drive', cover: '/assets/images/covers/poster-nocturne-drive.webp', status: 'FOUND_EXISTING' },
-    { num: '10', roman: 'XX', title: '5 VOICES', sub: 'Album Track / Full Harmony Climax', trackId: 'equinox-5-voices', cover: null, status: 'MISSING' },
-    { num: '11', roman: 'XXII', title: 'SHADOW', sub: 'Album Track / Ballad', trackId: 'equinox-shadow', cover: null, status: 'MISSING' },
-    { num: '12', roman: 'XXIV', title: 'First Dawn', sub: 'Album Outro / Finale', trackId: 'equinox-first-dawn', cover: null, status: 'MISSING' },
-  ];
+  const romanNumerals = ['XII', 'II', 'IV', 'VI', 'VIII', 'X', 'XIV', 'XVI', 'XVIII', 'XX', 'XXII', 'XXIV'];
+  const tracks = recordings.map((recording, index) => ({
+    num: String(index + 1).padStart(2, '0'),
+    roman: romanNumerals[index],
+    title: recording.title,
+    sub: recording.versionLabel,
+    trackId: recording.id,
+    coverImage: recording.coverImage,
+    posterAssetId: recording.posterAssetId,
+  }));
 
   return (
     <div style={{ backgroundColor: '#0B0F19', color: '#F8FAFC', minHeight: '100vh', position: 'relative' }}>
@@ -222,20 +220,19 @@ export const EquinoxCampaignView: React.FC<EquinoxCampaignViewProps> = ({ campai
               <div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: '#D9B44A', fontSize: '12px', fontWeight: 700, marginBottom: '8px' }}>
                   <span>TRACK {t.num} ({t.roman})</span>
-                  {t.status === 'FOUND_EXISTING' ? (
-                    <span style={{ fontSize: '10px', color: '#4ADE80', border: '1px solid #4ADE80', padding: '1px 4px', borderRadius: '2px' }}>COVER READY</span>
-                  ) : (
-                    <span style={{ fontSize: '10px', color: '#F59E0B', border: '1px solid #F59E0B', padding: '1px 4px', borderRadius: '2px' }}>ARTWORK PENDING</span>
-                  )}
+                  <span style={{ fontSize: '10px', color: '#4ADE80', border: '1px solid #4ADE80', padding: '1px 4px', borderRadius: '2px' }}>COVER READY</span>
                 </div>
 
-                {t.cover ? (
-                  <img src={t.cover} alt={t.title} style={{ width: '100%', aspectRatio: '1/1', objectFit: 'cover', borderRadius: '2px', marginBottom: '12px' }} />
-                ) : (
-                  <div style={{ width: '100%', aspectRatio: '1/1', backgroundColor: '#1E293B', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748B', fontSize: '12px', fontWeight: 700, borderRadius: '2px', marginBottom: '12px', border: '1px dashed rgba(255,255,255,0.15)' }}>
-                    [ {t.title} ]
-                  </div>
-                )}
+                <div style={{ marginBottom: '12px' }}>
+                  <ResponsivePicture
+                    assetId={t.posterAssetId}
+                    desktopSrc={t.coverImage}
+                    title={t.title}
+                    subtitle={t.sub}
+                    aspectRatio="1:1"
+                    accentColor="#D9B44A"
+                  />
+                </div>
 
                 <h3 style={{ margin: '0 0 4px', fontSize: '1.2rem', color: '#FFFFFF' }}>{t.title}</h3>
                 <p style={{ margin: 0, fontSize: '12px', color: '#94A3B8' }}>{t.sub}</p>
@@ -298,7 +295,7 @@ export const EquinoxCampaignView: React.FC<EquinoxCampaignViewProps> = ({ campai
                   flexDirection: 'column',
                 }}
               >
-                <img src={art.heroImage || '/assets/images/articles/hero-rise-again-feature.png'} alt={art.title} style={{ width: '100%', height: '160px', objectFit: 'cover' }} />
+                <ResponsivePicture assetId={art.heroAssetId} title={art.kicker} subtitle={art.title} aspectRatio="3:2" accentColor="#D9B44A" />
                 <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
                   <span style={{ fontSize: '10px', color: '#D9B44A', fontWeight: 700, letterSpacing: '0.1em' }}>{art.kicker || art.category || 'SPECIAL FEATURE'}</span>
                   <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#FFFFFF', lineHeight: '1.4' }}>{art.title}</h3>

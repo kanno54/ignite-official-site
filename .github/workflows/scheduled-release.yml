@@ -39,11 +39,14 @@ jobs:
             patchFile("content/public/articles.json", "\"campaignState\": \"staging\"", "\"campaignState\": \"current\"");
           '
 
-      - name: Validate Content Data
-        run: npm run validate:data
+      - name: Generate Sitemap for Promoted Content
+        run: node scripts/generate-sitemap.mjs
 
-      - name: Validate Asset Manifest
-        run: npm run validate:assets
+      - name: Run Release Validation Gate
+        run: npm run validate
+
+      - name: TypeScript Check
+        run: npm exec tsc -- --noEmit
 
       - name: Build Production Output (No Staging Banner)
         env:

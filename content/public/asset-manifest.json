@@ -730,13 +730,6 @@
       "assetCode": "AR-EQ01-I02",
       "versionId": "v-ar-eq01-i02-1-1787101726388"
     },
-    "hero-ar-ln01": {
-      "path": "/assets/images/articles/hero-ar-ln01.webp",
-      "status": "ready",
-      "aspect": "16:9",
-      "assetCode": "AR-LN01",
-      "versionId": "v-ar-ln01-1-1786802842728"
-    },
     "eq-a03": {
       "path": "/assets/images/misc/eq-a03.webp",
       "status": "ready",
@@ -764,97 +757,6 @@
       "aspect": "1:1",
       "assetCode": "EQ-A06",
       "versionId": "v-eq-a06-1-1786801388366"
-    },
-    "eq-au01": {
-      "path": "/assets/images/misc/eq-au01.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU01",
-      "versionId": "v-eq-au01-1-1786789945909"
-    },
-    "eq-au02": {
-      "path": "/assets/images/misc/eq-au02.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU02",
-      "versionId": "v-eq-au02-1-1786799144807"
-    },
-    "eq-au03": {
-      "path": "/assets/images/misc/eq-au03.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU03",
-      "versionId": "v-eq-au03-1-1786799150112"
-    },
-    "eq-au04": {
-      "path": "/assets/images/misc/eq-au04.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU04",
-      "versionId": "v-eq-au04-1-1786789958862"
-    },
-    "eq-au05": {
-      "path": "/assets/images/misc/eq-au05.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU05",
-      "versionId": "v-eq-au05-1-1786789967098"
-    },
-    "eq-au06": {
-      "path": "/assets/images/misc/eq-au06.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU06",
-      "versionId": "v-eq-au06-1-1786789970970"
-    },
-    "eq-au07": {
-      "path": "/assets/images/misc/eq-au07.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU07",
-      "versionId": "v-eq-au07-1-1786789975879"
-    },
-    "eq-au08": {
-      "path": "/assets/images/misc/eq-au08.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU08",
-      "versionId": "v-eq-au08-1-1786789981084"
-    },
-    "eq-au09": {
-      "path": "/assets/images/misc/eq-au09.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU09",
-      "versionId": "v-eq-au09-1-1786789986547"
-    },
-    "eq-au10": {
-      "path": "/assets/images/misc/eq-au10.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU10",
-      "versionId": "v-eq-au10-1-1786789990739"
-    },
-    "eq-au11": {
-      "path": "/assets/images/misc/eq-au11.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU11",
-      "versionId": "v-eq-au11-1-1786789994250"
-    },
-    "eq-au12": {
-      "path": "/assets/images/misc/eq-au12.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-AU12",
-      "versionId": "v-eq-au12-1-1786789999089"
-    },
-    "eq-cp01": {
-      "path": "/assets/images/misc/eq-cp01.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-CP01",
-      "versionId": "v-eq-cp01-1-1786807315165"
     },
     "eq-d01": {
       "path": "/assets/images/misc/eq-d01.webp",
@@ -1002,90 +904,6 @@
       "aspect": "1:1",
       "assetCode": "EQ-KV12",
       "versionId": "v-eq-kv12-1-1786806531986"
-    },
-    "eq-ly01": {
-      "path": "/assets/images/misc/eq-ly01.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY01",
-      "versionId": "v-eq-ly01-1-1786789686028"
-    },
-    "eq-ly02": {
-      "path": "/assets/images/misc/eq-ly02.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY02",
-      "versionId": "v-eq-ly02-1-1786789691089"
-    },
-    "eq-ly03": {
-      "path": "/assets/images/misc/eq-ly03.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY03",
-      "versionId": "v-eq-ly03-1-1786802950437"
-    },
-    "eq-ly04": {
-      "path": "/assets/images/misc/eq-ly04.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY04",
-      "versionId": "v-eq-ly04-1-1786789635973"
-    },
-    "eq-ly05": {
-      "path": "/assets/images/misc/eq-ly05.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY05",
-      "versionId": "v-eq-ly05-1-1786789643806"
-    },
-    "eq-ly06": {
-      "path": "/assets/images/misc/eq-ly06.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY06",
-      "versionId": "v-eq-ly06-1-1786789650610"
-    },
-    "eq-ly07": {
-      "path": "/assets/images/misc/eq-ly07.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY07",
-      "versionId": "v-eq-ly07-1-1786789657596"
-    },
-    "eq-ly08": {
-      "path": "/assets/images/misc/eq-ly08.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY08",
-      "versionId": "v-eq-ly08-1-1786789665030"
-    },
-    "eq-ly09": {
-      "path": "/assets/images/misc/eq-ly09.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY09",
-      "versionId": "v-eq-ly09-1-1786789673776"
-    },
-    "eq-ly10": {
-      "path": "/assets/images/misc/eq-ly10.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY10",
-      "versionId": "v-eq-ly10-1-1786789676655"
-    },
-    "eq-ly11": {
-      "path": "/assets/images/misc/eq-ly11.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY11",
-      "versionId": "v-eq-ly11-1-1786789680428"
-    },
-    "eq-ly12": {
-      "path": "/assets/images/misc/eq-ly12.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-LY12",
-      "versionId": "v-eq-ly12-1-1786789682822"
     },
     "eq-r01-01": {
       "path": "/assets/images/misc/eq-r01-01.webp",
@@ -1240,13 +1058,6 @@
       "aspect": "1:1",
       "assetCode": "EQ-R12",
       "versionId": "v-eq-r12-1-1786789219862"
-    },
-    "eq-st01": {
-      "path": "/assets/images/misc/eq-st01.webp",
-      "status": "ready",
-      "aspect": "1:1",
-      "assetCode": "EQ-ST01",
-      "versionId": "v-eq-st01-1-1786807444693"
     },
     "eq-t01": {
       "path": "/assets/images/misc/eq-t01.webp",

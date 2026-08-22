@@ -9,13 +9,6 @@ export const ArticleDetailPage: React.FC = () => {
   const article = getArticleBySlug(slug || '');
   const allArticles = getArticles();
 
-  React.useEffect(() => {
-    if (article) {
-      const seriesTag = article.series ? `${article.series}｜` : '';
-      document.title = `${article.title}｜${seriesTag}IGNITE Official Site`;
-    }
-  }, [article]);
-
   if (!article) {
     return <Navigate to="/features/" replace />;
   }
@@ -216,6 +209,17 @@ export const ArticleDetailPage: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+        </section>
+      )}
+
+      {article.relatedCampaignId && (
+        <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--campaign-accent)', padding: '24px', borderRadius: '2px' }}>
+          <span className="campaign-tag">RELATED CAMPAIGN</span>
+          <div style={{ marginTop: '16px' }}>
+            <Link to={`/campaigns/${article.relatedCampaignId}/`} className="btn-primary">
+              VIEW {article.relatedCampaignId.toUpperCase()} CAMPAIGN →
+            </Link>
           </div>
         </section>
       )}

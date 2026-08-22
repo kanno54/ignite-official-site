@@ -245,7 +245,7 @@
       "durationSeconds": 215,
       "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
       "audioStatus": "ready",
-      "posterAssetId": "poster-equinox-tr01-sq",
+      "posterAssetId": "poster-silent-signal",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -638,9 +638,7 @@
         {
           "text": "次を待てた"
         }
-      ],
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      ]
     },
     {
       "id": "silent-signal-invisible-line",
@@ -651,7 +649,7 @@
       "durationSeconds": 208,
       "audioUrl": "/media/audio/silent-signal/02-Invisible-Line.mp3",
       "audioStatus": "ready",
-      "posterAssetId": "poster-equinox-tr02-sq",
+      "posterAssetId": "poster-invisible-line",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -1076,9 +1074,7 @@
         {
           "text": "同じ場所にいる"
         }
-      ],
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      ]
     },
     {
       "id": "silent-signal-nocturne-drive-live",
@@ -1089,7 +1085,7 @@
       "durationSeconds": 240,
       "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
       "audioStatus": "ready",
-      "posterAssetId": "poster-equinox-tr03-sq",
+      "posterAssetId": "poster-nocturne-drive",
       "spotlightMemberIds": [
         "sho",
         "yuto"
@@ -1670,9 +1666,7 @@
         {
           "text": "曲がらなかった"
         }
-      ],
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      ]
     },
     {
       "id": "firestarter-main",
@@ -2065,9 +2059,7 @@
           "text": "We are firestarters"
         }
       ],
-      "posterAssetId": "poster-equinox-tr01-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-firestarter"
     },
     {
       "id": "firestarter-ignition-indies",
@@ -2364,9 +2356,7 @@
           "text": "IGNITION"
         }
       ],
-      "posterAssetId": "poster-equinox-tr02-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-ignition-indies"
     },
     {
       "id": "firestarter-burn-it-down-indies",
@@ -2674,9 +2664,7 @@
           "text": "BURN IT DOWN"
         }
       ],
-      "posterAssetId": "poster-equinox-tr03-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-burn-it-down-indies"
     },
     {
       "id": "firestarter-heatwave-indies",
@@ -3137,9 +3125,7 @@
           "text": "また新しい夏へ"
         }
       ],
-      "posterAssetId": "poster-equinox-tr04-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr04-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-heatwave-indies"
     },
     {
       "id": "firestarter-runaway-beat",
@@ -3508,9 +3494,7 @@
           "text": "We run this night."
         }
       ],
-      "posterAssetId": "poster-equinox-tr05-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr05-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-runaway-beat"
     },
     {
       "id": "firestarter-first-light",
@@ -3822,9 +3806,7 @@
           "text": "少しだけ強い僕らで"
         }
       ],
-      "posterAssetId": "poster-equinox-tr06-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr06-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-first-light"
     },
     {
       "id": "ignition-main",
@@ -4115,9 +4097,7 @@
           "text": "We burn."
         }
       ],
-      "posterAssetId": "poster-equinox-tr01-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-ignition"
     },
     {
       "id": "back-to-the-spark",
@@ -4462,9 +4442,7 @@
           "text": "あの夜の熱は　まだ消えない"
         }
       ],
-      "posterAssetId": "poster-equinox-tr02-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-back-to-the-spark"
     },
     {
       "id": "heatwave-live",
@@ -4962,9 +4940,7 @@
           "text": "また次の夏も、ここで会おう！"
         }
       ],
-      "posterAssetId": "poster-equinox-tr03-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-heatwave-live"
     },
     {
       "id": "burn-it-down-main",
@@ -5274,9 +5250,7 @@
           "text": "BURN IT DOWN"
         }
       ],
-      "posterAssetId": "poster-equinox-tr01-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-burn-it-down"
     },
     {
       "id": "ashes-in-motion",
@@ -5618,9 +5592,7 @@
           "text": "僕らは歩いていく"
         }
       ],
-      "posterAssetId": "poster-equinox-tr02-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-ashes-in-motion"
     },
     {
       "id": "hands-up-hearts-out-live",
@@ -6103,9 +6075,7 @@
           "text": "IGNITE!"
         }
       ],
-      "posterAssetId": "poster-equinox-tr03-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-hands-up-hearts-out-live"
     },
     {
       "id": "no-limits-title",
@@ -6446,9 +6416,7 @@
           "text": "IGNITE"
         }
       ],
-      "posterAssetId": "poster-equinox-tr01-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-no-limits"
     },
     {
       "id": "higher-ground",
@@ -6836,9 +6804,7 @@
           "text": "音が変わった"
         }
       ],
-      "posterAssetId": "poster-equinox-tr02-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-higher-ground"
     },
     {
       "id": "run-with-us-live",
@@ -7187,9 +7153,7 @@
           "text": "また会おう！"
         }
       ],
-      "posterAssetId": "poster-equinox-tr03-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-run-with-us-live"
     },
     {
       "id": "moonlit-title",
@@ -7493,9 +7457,7 @@
           "text": "少しだけ前を向けた"
         }
       ],
-      "posterAssetId": "poster-equinox-tr01-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-moonlit"
     },
     {
       "id": "between-the-lights",
@@ -7816,9 +7778,7 @@
           "text": "誰かが笑って言った"
         }
       ],
-      "posterAssetId": "poster-equinox-tr02-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-between-the-lights"
     },
     {
       "id": "afterimage-live",
@@ -8292,9 +8252,7 @@
           "text": "(演奏が止まり、数秒の静寂のあと拍手)"
         }
       ],
-      "posterAssetId": "poster-equinox-tr03-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-afterimage-live"
     },
     {
       "id": "solar-title",
@@ -8674,9 +8632,7 @@
           "text": "SOLAR"
         }
       ],
-      "posterAssetId": "poster-equinox-tr01-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-title"
     },
     {
       "id": "solar-no-limits",
@@ -9019,9 +8975,7 @@
           "text": "IGNITE"
         }
       ],
-      "posterAssetId": "poster-equinox-tr02-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-no-limits"
     },
     {
       "id": "solar-heatwave-remix",
@@ -9451,9 +9405,7 @@
           "text": "新しい夏へ"
         }
       ],
-      "posterAssetId": "poster-equinox-tr03-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-heatwave-remix"
     },
     {
       "id": "solar-golden-hour",
@@ -9743,9 +9695,7 @@
           "text": "Golden Hour"
         }
       ],
-      "posterAssetId": "poster-equinox-tr04-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr04-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-golden-hour"
     },
     {
       "id": "solar-overdrive",
@@ -10101,9 +10051,7 @@
           "text": "OVERDRIVE."
         }
       ],
-      "posterAssetId": "poster-equinox-tr05-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr05-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-overdrive"
     },
     {
       "id": "solar-blue-signal",
@@ -10510,9 +10458,7 @@
           "text": "君が笑って　手を振った"
         }
       ],
-      "posterAssetId": "poster-equinox-tr06-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr06-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-blue-signal"
     },
     {
       "id": "solar-run-with-us",
@@ -10820,9 +10766,7 @@
           "text": "We’ll run with you"
         }
       ],
-      "posterAssetId": "poster-equinox-tr07-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr07-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-run-with-us"
     },
     {
       "id": "solar-afterimage",
@@ -11235,9 +11179,7 @@
           "text": "僕はまだ立ち尽くしてる"
         }
       ],
-      "posterAssetId": "poster-equinox-tr08-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr08-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-afterimage"
     },
     {
       "id": "solar-moonlit",
@@ -11540,9 +11482,7 @@
           "text": "少しだけ前を向けた"
         }
       ],
-      "posterAssetId": "poster-equinox-tr09-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr09-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "track-poster-moonlit"
     },
     {
       "id": "solar-daybreak-runner",
@@ -11871,9 +11811,7 @@
           "text": "Now we run"
         }
       ],
-      "posterAssetId": "poster-equinox-tr10-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr10-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-daybreak-runner"
     },
     {
       "id": "solar-hands-up-hearts-out",
@@ -12292,9 +12230,7 @@
           "text": "光の方へ"
         }
       ],
-      "posterAssetId": "poster-equinox-tr11-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr11-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-hands-up-hearts-out"
     },
     {
       "id": "solar-sun-never-sleeps",
@@ -12665,9 +12601,7 @@
           "text": "We carry the light"
         }
       ],
-      "posterAssetId": "poster-equinox-tr12-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr12-sq.webp",
-      "assetStatus": "FOUND_EXISTING"
+      "posterAssetId": "poster-solar-sun-never-sleeps"
     },
     {
       "id": "rise-again-title",
@@ -12679,8 +12613,8 @@
       "durationSeconds": 215,
       "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
       "audioStatus": "ready",
-      "posterAssetId": "poster-equinox-tr01-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp",
+      "posterAssetId": "poster-rise-again-title",
+      "coverImage": "/media/images/rise-again/RA-C02_v01.png",
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -13072,8 +13006,7 @@
           "speaker": "Outro / All",
           "text": "RISE AGAIN"
         }
-      ],
-      "assetStatus": "FOUND_EXISTING"
+      ]
     },
     {
       "id": "rise-again-keep-the-flame",
@@ -13085,8 +13018,8 @@
       "durationSeconds": 208,
       "audioUrl": "/media/audio/rise-again/RA-A02_v01.mp3",
       "audioStatus": "ready",
-      "posterAssetId": "poster-equinox-tr02-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
+      "posterAssetId": "poster-keep-the-flame",
+      "coverImage": "/media/images/rise-again/RA-C03_v01.png",
       "spotlightMemberIds": [
         "leo",
         "yuto",
@@ -13599,8 +13532,7 @@
           "speaker": "Outro / LEO",
           "text": "小さな目印として"
         }
-      ],
-      "assetStatus": "FOUND_EXISTING"
+      ]
     },
     {
       "id": "rise-again-afterglow-live",
@@ -13612,8 +13544,8 @@
       "durationSeconds": 240,
       "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
       "audioStatus": "ready",
-      "posterAssetId": "poster-equinox-tr03-sq",
-      "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
+      "posterAssetId": "poster-afterglow-live",
+      "coverImage": "/media/images/rise-again/RA-C04_v01.png",
       "spotlightMemberIds": [
         "leo",
         "kai",
@@ -14014,8 +13946,7 @@
           "speaker": "shout / LEO",
           "text": "ありがとう"
         }
-      ],
-      "assetStatus": "FOUND_EXISTING"
+      ]
     },
     {
       "id": "equinox-title",
@@ -14026,7 +13957,7 @@
       "trackNo": 1,
       "romanNumeral": "XII",
       "durationSeconds": 240,
-      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr01-sq",
       "spotlightMemberIds": [
@@ -14062,7 +13993,7 @@
       "trackNo": 2,
       "romanNumeral": "II",
       "durationSeconds": 222,
-      "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU02.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr02-sq",
       "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
@@ -14097,7 +14028,7 @@
       "trackNo": 3,
       "romanNumeral": "IV",
       "durationSeconds": 215,
-      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU03.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr03-sq",
       "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
@@ -14131,7 +14062,7 @@
       "trackNo": 4,
       "romanNumeral": "VI",
       "durationSeconds": 210,
-      "audioUrl": "/media/audio/rise-again/RA-A02_v01.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU04.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr04-sq",
       "spotlightMemberIds": [
@@ -14162,7 +14093,7 @@
       "trackNo": 5,
       "romanNumeral": "VIII",
       "durationSeconds": 235,
-      "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU05.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr05-sq",
       "spotlightMemberIds": [
@@ -14193,7 +14124,7 @@
       "trackNo": 6,
       "romanNumeral": "X",
       "durationSeconds": 198,
-      "audioUrl": "/media/audio/silent-signal/02-Invisible-Line.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU06.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr06-sq",
       "spotlightMemberIds": [
@@ -14224,7 +14155,7 @@
       "trackNo": 7,
       "romanNumeral": "XIV",
       "durationSeconds": 228,
-      "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU07.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr07-sq",
       "spotlightMemberIds": [
@@ -14255,7 +14186,7 @@
       "trackNo": 8,
       "romanNumeral": "XVI",
       "durationSeconds": 230,
-      "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU08.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr08-sq",
       "coverImage": "/assets/images/covers/poster-equinox-tr08-sq.webp",
@@ -14286,7 +14217,7 @@
       "trackNo": 9,
       "romanNumeral": "XVIII",
       "durationSeconds": 218,
-      "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU09.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr09-sq",
       "coverImage": "/assets/images/covers/poster-equinox-tr09-sq.webp",
@@ -14317,7 +14248,7 @@
       "trackNo": 10,
       "romanNumeral": "XX",
       "durationSeconds": 250,
-      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU10.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr10-sq",
       "spotlightMemberIds": [
@@ -14351,7 +14282,7 @@
       "trackNo": 11,
       "romanNumeral": "XXII",
       "durationSeconds": 245,
-      "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU11.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr11-sq",
       "spotlightMemberIds": [
@@ -14382,7 +14313,7 @@
       "trackNo": 12,
       "romanNumeral": "XXIV",
       "durationSeconds": 230,
-      "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+      "audioUrl": "/media/audio/equinox/EQ-AU12.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr12-sq",
       "spotlightMemberIds": [

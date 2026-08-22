@@ -1,0 +1,903 @@
+{
+  "schemaVersion": 1,
+  "description": "Approved public content regression baseline. Update only after explicit human QA approval.",
+  "protectedFields": {
+    "releases": [
+      "slug",
+      "title",
+      "trackIds",
+      "coverAssetId",
+      "coverImage"
+    ],
+    "recordings": [
+      "title",
+      "releaseId",
+      "audioUrl",
+      "posterAssetId",
+      "coverImage"
+    ],
+    "campaigns": [
+      "slug",
+      "title",
+      "releaseId",
+      "releaseDate",
+      "desktopHero",
+      "mobileHero",
+      "relatedArticleIds",
+      "relatedCampaignIds"
+    ],
+    "articles": [
+      "slug",
+      "title",
+      "heroAssetId",
+      "relatedTrackIds",
+      "relatedCampaignId"
+    ]
+  },
+  "entities": {
+    "releases": [
+      {
+        "id": "burn-it-down",
+        "slug": "burn-it-down",
+        "title": "BURN IT DOWN",
+        "trackIds": [
+          "burn-it-down-main",
+          "ashes-in-motion",
+          "hands-up-hearts-out-live"
+        ],
+        "coverAssetId": "cover-burn-it-down",
+        "coverImage": null
+      },
+      {
+        "id": "equinox",
+        "slug": "equinox",
+        "title": "EQUINOX",
+        "trackIds": [
+          "equinox-title",
+          "equinox-silent-signal",
+          "equinox-rise-again",
+          "equinox-shadowplay",
+          "equinox-parallel-lines",
+          "equinox-electric-blue",
+          "equinox-glass-ceiling",
+          "equinox-afterglow",
+          "equinox-nocturne-drive",
+          "equinox-5-voices",
+          "equinox-shadow",
+          "equinox-first-dawn"
+        ],
+        "coverAssetId": "cover-equinox",
+        "coverImage": "/assets/images/covers/cover-equinox.webp"
+      },
+      {
+        "id": "firestarter",
+        "slug": "firestarter",
+        "title": "FIRESTARTER",
+        "trackIds": [
+          "firestarter-main",
+          "firestarter-ignition-indies",
+          "firestarter-burn-it-down-indies",
+          "firestarter-heatwave-indies",
+          "firestarter-runaway-beat",
+          "firestarter-first-light"
+        ],
+        "coverAssetId": "cover-firestarter",
+        "coverImage": null
+      },
+      {
+        "id": "ignition",
+        "slug": "ignition",
+        "title": "IGNITION",
+        "trackIds": [
+          "ignition-main",
+          "back-to-the-spark",
+          "heatwave-live"
+        ],
+        "coverAssetId": "cover-ignition",
+        "coverImage": null
+      },
+      {
+        "id": "moonlit",
+        "slug": "moonlit",
+        "title": "Moonlit",
+        "trackIds": [
+          "moonlit-title",
+          "between-the-lights",
+          "afterimage-live"
+        ],
+        "coverAssetId": "cover-moonlit",
+        "coverImage": null
+      },
+      {
+        "id": "no-limits",
+        "slug": "no-limits",
+        "title": "No Limits",
+        "trackIds": [
+          "no-limits-title",
+          "higher-ground",
+          "run-with-us-live"
+        ],
+        "coverAssetId": "cover-no-limits",
+        "coverImage": null
+      },
+      {
+        "id": "rise-again",
+        "slug": "rise-again",
+        "title": "RISE AGAIN",
+        "trackIds": [
+          "rise-again-title",
+          "rise-again-keep-the-flame",
+          "rise-again-afterglow-live"
+        ],
+        "coverAssetId": "cover-rise-again",
+        "coverImage": "/media/images/rise-again/RA-C01_v01.png"
+      },
+      {
+        "id": "silent-signal",
+        "slug": "silent-signal",
+        "title": "Silent Signal",
+        "trackIds": [
+          "silent-signal-title",
+          "silent-signal-invisible-line",
+          "silent-signal-nocturne-drive-live"
+        ],
+        "coverAssetId": "cover-silent-signal",
+        "coverImage": null
+      },
+      {
+        "id": "solar",
+        "slug": "solar",
+        "title": "SOLAR",
+        "trackIds": [
+          "solar-title",
+          "solar-no-limits",
+          "solar-heatwave-remix",
+          "solar-golden-hour",
+          "solar-overdrive",
+          "solar-blue-signal",
+          "solar-run-with-us",
+          "solar-afterimage",
+          "solar-moonlit",
+          "solar-daybreak-runner",
+          "solar-hands-up-hearts-out",
+          "solar-sun-never-sleeps"
+        ],
+        "coverAssetId": "cover-solar",
+        "coverImage": null
+      }
+    ],
+    "recordings": [
+      {
+        "id": "afterimage-live",
+        "title": "Afterimage - Live Version -",
+        "releaseId": "moonlit",
+        "audioUrl": "/media/audio/moonlit/03-afterimage-live.v1.mp3",
+        "posterAssetId": "track-poster-afterimage-live",
+        "coverImage": null
+      },
+      {
+        "id": "ashes-in-motion",
+        "title": "Ashes in Motion",
+        "releaseId": "burn-it-down",
+        "audioUrl": "/media/audio/burn-it-down/02-ashes-in-motion.v1.mp3",
+        "posterAssetId": "track-poster-ashes-in-motion",
+        "coverImage": null
+      },
+      {
+        "id": "back-to-the-spark",
+        "title": "Back to the Spark",
+        "releaseId": "ignition",
+        "audioUrl": "/media/audio/ignition/02-back-to-the-spark.v1.mp3",
+        "posterAssetId": "track-poster-back-to-the-spark",
+        "coverImage": null
+      },
+      {
+        "id": "between-the-lights",
+        "title": "Between the Lights",
+        "releaseId": "moonlit",
+        "audioUrl": "/media/audio/moonlit/02-between-the-lights.v1.mp3",
+        "posterAssetId": "track-poster-between-the-lights",
+        "coverImage": null
+      },
+      {
+        "id": "burn-it-down-main",
+        "title": "BURN IT DOWN - Major Version -",
+        "releaseId": "burn-it-down",
+        "audioUrl": "/media/audio/burn-it-down/01-burn-it-down-major.v1.mp3",
+        "posterAssetId": "track-poster-burn-it-down",
+        "coverImage": null
+      },
+      {
+        "id": "equinox-5-voices",
+        "title": "5 VOICES",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU10.mp3",
+        "posterAssetId": "poster-equinox-tr10-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr10-sq.webp"
+      },
+      {
+        "id": "equinox-afterglow",
+        "title": "Afterglow",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU08.mp3",
+        "posterAssetId": "poster-equinox-tr08-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr08-sq.webp"
+      },
+      {
+        "id": "equinox-electric-blue",
+        "title": "Electric Blue",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU06.mp3",
+        "posterAssetId": "poster-equinox-tr06-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr06-sq.webp"
+      },
+      {
+        "id": "equinox-first-dawn",
+        "title": "First Dawn",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU12.mp3",
+        "posterAssetId": "poster-equinox-tr12-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr12-sq.webp"
+      },
+      {
+        "id": "equinox-glass-ceiling",
+        "title": "Glass Ceiling",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU07.mp3",
+        "posterAssetId": "poster-equinox-tr07-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr07-sq.webp"
+      },
+      {
+        "id": "equinox-nocturne-drive",
+        "title": "Nocturne Drive",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU09.mp3",
+        "posterAssetId": "poster-equinox-tr09-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr09-sq.webp"
+      },
+      {
+        "id": "equinox-parallel-lines",
+        "title": "Parallel Lines",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU05.mp3",
+        "posterAssetId": "poster-equinox-tr05-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr05-sq.webp"
+      },
+      {
+        "id": "equinox-rise-again",
+        "title": "RISE AGAIN",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU03.mp3",
+        "posterAssetId": "poster-equinox-tr03-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp"
+      },
+      {
+        "id": "equinox-shadow",
+        "title": "SHADOW",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU11.mp3",
+        "posterAssetId": "poster-equinox-tr11-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr11-sq.webp"
+      },
+      {
+        "id": "equinox-shadowplay",
+        "title": "Shadowplay",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU04.mp3",
+        "posterAssetId": "poster-equinox-tr04-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr04-sq.webp"
+      },
+      {
+        "id": "equinox-silent-signal",
+        "title": "Silent Signal",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU02.mp3",
+        "posterAssetId": "poster-equinox-tr02-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp"
+      },
+      {
+        "id": "equinox-title",
+        "title": "EQUINOX",
+        "releaseId": "equinox",
+        "audioUrl": "/media/audio/equinox/EQ-AU01.mp3",
+        "posterAssetId": "poster-equinox-tr01-sq",
+        "coverImage": "/assets/images/covers/poster-equinox-tr01-sq.webp"
+      },
+      {
+        "id": "firestarter-burn-it-down-indies",
+        "title": "BURN IT DOWN",
+        "releaseId": "firestarter",
+        "audioUrl": "/media/audio/firestarter/03-burn-it-down-indies.v1.mp3",
+        "posterAssetId": "track-poster-burn-it-down-indies",
+        "coverImage": null
+      },
+      {
+        "id": "firestarter-first-light",
+        "title": "First Light",
+        "releaseId": "firestarter",
+        "audioUrl": "/media/audio/firestarter/06-first-light.v1.mp3",
+        "posterAssetId": "track-poster-first-light",
+        "coverImage": null
+      },
+      {
+        "id": "firestarter-heatwave-indies",
+        "title": "Heatwave",
+        "releaseId": "firestarter",
+        "audioUrl": "/media/audio/firestarter/04-heatwave-indies.v1.mp3",
+        "posterAssetId": "track-poster-heatwave-indies",
+        "coverImage": null
+      },
+      {
+        "id": "firestarter-ignition-indies",
+        "title": "IGNITION",
+        "releaseId": "firestarter",
+        "audioUrl": "/media/audio/firestarter/02-ignition-indies.v1.mp3",
+        "posterAssetId": "track-poster-ignition-indies",
+        "coverImage": null
+      },
+      {
+        "id": "firestarter-main",
+        "title": "FIRESTARTER",
+        "releaseId": "firestarter",
+        "audioUrl": "/media/audio/firestarter/01-firestarter.v1.mp3",
+        "posterAssetId": "track-poster-firestarter",
+        "coverImage": null
+      },
+      {
+        "id": "firestarter-runaway-beat",
+        "title": "Runaway Beat",
+        "releaseId": "firestarter",
+        "audioUrl": "/media/audio/firestarter/05-runaway-beat.v1.mp3",
+        "posterAssetId": "track-poster-runaway-beat",
+        "coverImage": null
+      },
+      {
+        "id": "hands-up-hearts-out-live",
+        "title": "Hands Up, Hearts Out - Live Version -",
+        "releaseId": "burn-it-down",
+        "audioUrl": "/media/audio/burn-it-down/03-hands-up-hearts-out-live.v1.mp3",
+        "posterAssetId": "track-poster-hands-up-hearts-out-live",
+        "coverImage": null
+      },
+      {
+        "id": "heatwave-live",
+        "title": "Heatwave - Live Version -",
+        "releaseId": "ignition",
+        "audioUrl": "/media/audio/ignition/03-heatwave-live.v1.mp3",
+        "posterAssetId": "track-poster-heatwave-live",
+        "coverImage": null
+      },
+      {
+        "id": "higher-ground",
+        "title": "Higher Ground",
+        "releaseId": "no-limits",
+        "audioUrl": "/media/audio/no-limits/02-higher-ground.v1.mp3",
+        "posterAssetId": "track-poster-higher-ground",
+        "coverImage": null
+      },
+      {
+        "id": "ignition-main",
+        "title": "IGNITION - Major Version -",
+        "releaseId": "ignition",
+        "audioUrl": "/media/audio/ignition/01-ignition-major.v1.mp3",
+        "posterAssetId": "track-poster-ignition",
+        "coverImage": null
+      },
+      {
+        "id": "moonlit-title",
+        "title": "Moonlit",
+        "releaseId": "moonlit",
+        "audioUrl": "/media/audio/moonlit/01-moonlit.v1.mp3",
+        "posterAssetId": "track-poster-moonlit",
+        "coverImage": null
+      },
+      {
+        "id": "no-limits-title",
+        "title": "No Limits",
+        "releaseId": "no-limits",
+        "audioUrl": "/media/audio/no-limits/01-no-limits.v1.mp3",
+        "posterAssetId": "track-poster-no-limits",
+        "coverImage": null
+      },
+      {
+        "id": "rise-again-afterglow-live",
+        "title": "Afterglow - Live Version -",
+        "releaseId": "rise-again",
+        "audioUrl": "/media/audio/rise-again/RA-A03_v01.mp3",
+        "posterAssetId": "poster-afterglow-live",
+        "coverImage": "/media/images/rise-again/RA-C04_v01.png"
+      },
+      {
+        "id": "rise-again-keep-the-flame",
+        "title": "Keep the Flame",
+        "releaseId": "rise-again",
+        "audioUrl": "/media/audio/rise-again/RA-A02_v01.mp3",
+        "posterAssetId": "poster-keep-the-flame",
+        "coverImage": "/media/images/rise-again/RA-C03_v01.png"
+      },
+      {
+        "id": "rise-again-title",
+        "title": "RISE AGAIN",
+        "releaseId": "rise-again",
+        "audioUrl": "/media/audio/rise-again/RA-A01_v01.mp3",
+        "posterAssetId": "poster-rise-again-title",
+        "coverImage": "/media/images/rise-again/RA-C02_v01.png"
+      },
+      {
+        "id": "run-with-us-live",
+        "title": "Run With Us - Live Version -",
+        "releaseId": "no-limits",
+        "audioUrl": "/media/audio/no-limits/03-run-with-us-live.v1.mp3",
+        "posterAssetId": "track-poster-run-with-us-live",
+        "coverImage": null
+      },
+      {
+        "id": "silent-signal-invisible-line",
+        "title": "Invisible Line",
+        "releaseId": "silent-signal",
+        "audioUrl": "/media/audio/silent-signal/02-Invisible-Line.mp3",
+        "posterAssetId": "poster-invisible-line",
+        "coverImage": null
+      },
+      {
+        "id": "silent-signal-nocturne-drive-live",
+        "title": "Nocturne Drive - Live Version -",
+        "releaseId": "silent-signal",
+        "audioUrl": "/media/audio/silent-signal/03-Nocturne-Drive-Live.mp3",
+        "posterAssetId": "poster-nocturne-drive",
+        "coverImage": null
+      },
+      {
+        "id": "silent-signal-title",
+        "title": "Silent Signal",
+        "releaseId": "silent-signal",
+        "audioUrl": "/media/audio/silent-signal/01-Silent-Signal.mp3",
+        "posterAssetId": "poster-silent-signal",
+        "coverImage": null
+      },
+      {
+        "id": "solar-afterimage",
+        "title": "Afterimage",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-08-Afterimage.mp3",
+        "posterAssetId": "poster-solar-afterimage",
+        "coverImage": null
+      },
+      {
+        "id": "solar-blue-signal",
+        "title": "Blue Signal",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-06-Blue Signal.mp3",
+        "posterAssetId": "poster-solar-blue-signal",
+        "coverImage": null
+      },
+      {
+        "id": "solar-daybreak-runner",
+        "title": "Daybreak Runner",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-10-Daybreak Runner.mp3",
+        "posterAssetId": "poster-solar-daybreak-runner",
+        "coverImage": null
+      },
+      {
+        "id": "solar-golden-hour",
+        "title": "Golden Hour",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-04-Golden Hour.mp3",
+        "posterAssetId": "poster-solar-golden-hour",
+        "coverImage": null
+      },
+      {
+        "id": "solar-hands-up-hearts-out",
+        "title": "Hands Up, Hearts Out",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-11-Hands Up, Hearts Out.mp3",
+        "posterAssetId": "poster-solar-hands-up-hearts-out",
+        "coverImage": null
+      },
+      {
+        "id": "solar-heatwave-remix",
+        "title": "Heatwave - SOLAR Remix -",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-03-Heatwave (SOLAR Summer Festival Remix).mp3",
+        "posterAssetId": "poster-solar-heatwave-remix",
+        "coverImage": null
+      },
+      {
+        "id": "solar-moonlit",
+        "title": "Moonlit",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-09-moonlit.mp3",
+        "posterAssetId": "track-poster-moonlit",
+        "coverImage": null
+      },
+      {
+        "id": "solar-no-limits",
+        "title": "No Limits",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-02-no-limits.mp3",
+        "posterAssetId": "track-poster-no-limits",
+        "coverImage": null
+      },
+      {
+        "id": "solar-overdrive",
+        "title": "OVERDRIVE",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-05-OVERDRIVE.mp3",
+        "posterAssetId": "poster-solar-overdrive",
+        "coverImage": null
+      },
+      {
+        "id": "solar-run-with-us",
+        "title": "Run With Us",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-07-Run With Us.mp3",
+        "posterAssetId": "poster-solar-run-with-us",
+        "coverImage": null
+      },
+      {
+        "id": "solar-sun-never-sleeps",
+        "title": "Sun Never Sleeps",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-12-Sun Never Sleeps.mp3",
+        "posterAssetId": "poster-solar-sun-never-sleeps",
+        "coverImage": null
+      },
+      {
+        "id": "solar-title",
+        "title": "SOLAR",
+        "releaseId": "solar",
+        "audioUrl": "/media/audio/solar/a01-01-SOLAR.mp3",
+        "posterAssetId": "poster-solar-title",
+        "coverImage": null
+      }
+    ],
+    "campaigns": [
+      {
+        "id": "burn-it-down",
+        "slug": null,
+        "title": "BURN IT DOWN",
+        "releaseId": "burn-it-down",
+        "releaseDate": "2021-10-27",
+        "desktopHero": "/assets/images/heroes/hero-burn-it-down-campaign-desktop.webp",
+        "mobileHero": "/assets/images/heroes/hero-burn-it-down-campaign-mobile.webp",
+        "relatedArticleIds": [
+          "sho-burn-it-down-interview"
+        ],
+        "relatedCampaignIds": null
+      },
+      {
+        "id": "equinox",
+        "slug": "equinox",
+        "title": "EQUINOX",
+        "releaseId": "equinox",
+        "releaseDate": "2024-05-15",
+        "desktopHero": "/assets/images/campaigns/hero-equinox-desktop.webp",
+        "mobileHero": "/assets/images/campaigns/hero-equinox-mobile.webp",
+        "relatedArticleIds": [
+          "equinox-special-feature-article",
+          "equinox-roundtable-article",
+          "equinox-artwork-article",
+          "equinox-costume-article",
+          "equinox-liner-notes-article"
+        ],
+        "relatedCampaignIds": [
+          "rise-again",
+          "silent-signal",
+          "solar"
+        ]
+      },
+      {
+        "id": "firestarter",
+        "slug": null,
+        "title": "FIRESTARTER",
+        "releaseId": "firestarter",
+        "releaseDate": "2020-10-01",
+        "desktopHero": "/assets/images/heroes/hero-firestarter-campaign-desktop.webp",
+        "mobileHero": "/assets/images/heroes/hero-firestarter-campaign-mobile.webp",
+        "relatedArticleIds": [
+          "archive-firestarter-leo-one-day-ahead"
+        ],
+        "relatedCampaignIds": null
+      },
+      {
+        "id": "ignition",
+        "slug": null,
+        "title": "IGNITION",
+        "releaseId": "ignition",
+        "releaseDate": "2021-07-21",
+        "desktopHero": "/assets/images/heroes/hero-ignition-campaign-desktop.webp",
+        "mobileHero": "/assets/images/heroes/hero-ignition-campaign-mobile.webp",
+        "relatedArticleIds": [
+          "ignition-special-feature",
+          "kai-ignition-five-names"
+        ],
+        "relatedCampaignIds": null
+      },
+      {
+        "id": "moonlit",
+        "slug": null,
+        "title": "Moonlit",
+        "releaseId": "moonlit",
+        "releaseDate": "2023-05-20",
+        "desktopHero": "/assets/images/heroes/hero-moonlit-desktop.webp",
+        "mobileHero": "/assets/images/heroes/hero-moonlit-mobile.webp",
+        "relatedArticleIds": [
+          "ren-moonlit-interview",
+          "between-the-lights-story"
+        ],
+        "relatedCampaignIds": null
+      },
+      {
+        "id": "no-limits",
+        "slug": null,
+        "title": "No Limits",
+        "releaseId": "no-limits",
+        "releaseDate": "2022-09-14",
+        "desktopHero": "/assets/images/heroes/hero-no-limits-desktop.webp",
+        "mobileHero": "/assets/images/heroes/hero-no-limits-mobile.webp",
+        "relatedArticleIds": [
+          "no-limits-interview",
+          "yuto-hightone-feature"
+        ],
+        "relatedCampaignIds": null
+      },
+      {
+        "id": "rise-again",
+        "slug": "rise-again",
+        "title": "RISE AGAIN",
+        "releaseId": "rise-again",
+        "releaseDate": "2024-03-20",
+        "desktopHero": "/media/images/rise-again/RA-H01_v01.png",
+        "mobileHero": "/media/images/rise-again/RA-H02_v01.png",
+        "relatedArticleIds": [
+          "rise-again-feature-article"
+        ],
+        "relatedCampaignIds": [
+          "silent-signal",
+          "solar"
+        ]
+      },
+      {
+        "id": "silent-signal",
+        "slug": "silent-signal",
+        "title": "Silent Signal",
+        "releaseId": "silent-signal",
+        "releaseDate": "2024-01-15",
+        "desktopHero": "/assets/images/campaigns/hero-silent-signal-desktop.webp",
+        "mobileHero": "/assets/images/campaigns/hero-silent-signal-mobile.webp",
+        "relatedArticleIds": [
+          "silent-signal-sho-interview"
+        ],
+        "relatedCampaignIds": [
+          "solar",
+          "moonlit"
+        ]
+      },
+      {
+        "id": "solar",
+        "slug": "solar",
+        "title": "SOLAR",
+        "releaseId": "solar",
+        "releaseDate": "2023-08-02",
+        "desktopHero": "/assets/images/campaigns/hero-solar-release-special-desktop.webp",
+        "mobileHero": "/assets/images/campaigns/hero-solar-release-special-mobile.webp",
+        "relatedArticleIds": [
+          "leo-from-stage-to-solar",
+          "six-new-lights"
+        ],
+        "relatedCampaignIds": [
+          "no-limits",
+          "moonlit"
+        ]
+      }
+    ],
+    "articles": [
+      {
+        "id": "archive-firestarter-leo-one-day-ahead",
+        "slug": "archive-firestarter-leo-one-day-ahead",
+        "title": "声にならない返事を探して",
+        "heroAssetId": "article-archive-firestarter-leo-one-day-ahead",
+        "relatedTrackIds": [
+          "firestarter-main"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "between-the-lights-story",
+        "slug": "between-the-lights-story",
+        "title": "夜を終わらせない、五人の遠回り",
+        "heroAssetId": "article-between-the-lights-story",
+        "relatedTrackIds": [
+          "between-the-lights",
+          "moonlit-title"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "equinox-artwork-article",
+        "slug": "equinox-artwork-feature",
+        "title": "【ARTWORK FEATURE】黒と白金が織りなす無限の二重環——『EQUINOX』デザインの思想",
+        "heroAssetId": "hero-ar-art01",
+        "relatedTrackIds": [
+          "equinox-title"
+        ],
+        "relatedCampaignId": "equinox"
+      },
+      {
+        "id": "equinox-costume-article",
+        "slug": "equinox-costume-feature",
+        "title": "【COSTUME FEATURE】光を反射し、影を纏う——『EQUINOX』衣装デザイン詳解",
+        "heroAssetId": "hero-ar-cost01",
+        "relatedTrackIds": [
+          "equinox-title",
+          "equinox-shadow"
+        ],
+        "relatedCampaignId": "equinox"
+      },
+      {
+        "id": "equinox-liner-notes-article",
+        "slug": "equinox-liner-notes",
+        "title": "【全曲ライナーノーツ】2nd Full Album『EQUINOX』全12曲の完全楽曲解説",
+        "heroAssetId": "",
+        "relatedTrackIds": [
+          "equinox-title",
+          "equinox-silent-signal",
+          "equinox-rise-again",
+          "equinox-shadowplay",
+          "equinox-parallel-lines",
+          "equinox-electric-blue",
+          "equinox-glass-ceiling",
+          "equinox-afterglow",
+          "equinox-nocturne-drive",
+          "equinox-5-voices",
+          "equinox-shadow",
+          "equinox-first-dawn"
+        ],
+        "relatedCampaignId": "equinox"
+      },
+      {
+        "id": "equinox-roundtable-article",
+        "slug": "equinox-five-members-roundtable",
+        "title": "【五人座談会】同じ中心へ向かって声を重ねるということ——『EQUINOX』交錯の軌跡",
+        "heroAssetId": "hero-ar-all01",
+        "relatedTrackIds": [
+          "equinox-title",
+          "equinox-5-voices"
+        ],
+        "relatedCampaignId": "equinox"
+      },
+      {
+        "id": "equinox-special-feature-article",
+        "slug": "equinox-special-feature",
+        "title": "二つの影が、ひとつの光を形づくる。2nd Full Album『EQUINOX』解体新書",
+        "heroAssetId": "hero-ar-eq01",
+        "relatedTrackIds": [
+          "equinox-title",
+          "equinox-silent-signal",
+          "equinox-rise-again"
+        ],
+        "relatedCampaignId": "equinox"
+      },
+      {
+        "id": "ignition-special-feature",
+        "slug": "ignition-special-feature",
+        "title": "Major 1st Single『IGNITION』誕生ドキュメント — 始まりの火を胸に",
+        "heroAssetId": "article-hero-ignition",
+        "relatedTrackIds": [
+          "ignition-main",
+          "back-to-the-spark",
+          "heatwave-live"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "kai-ignition-five-names",
+        "slug": "kai-ignition-five-names",
+        "title": "五人の名前を、ひとりで言う",
+        "heroAssetId": "article-kai-ignition-five-names",
+        "relatedTrackIds": [
+          "ignition-main"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "leo-from-stage-to-solar",
+        "slug": "leo-from-stage-to-solar",
+        "title": "FROM THE STAGE TO SOLAR",
+        "heroAssetId": "article-hero-leo-from-stage-to-solar",
+        "relatedTrackIds": [
+          "solar-heatwave-remix",
+          "solar-run-with-us",
+          "solar-afterimage",
+          "solar-hands-up-hearts-out"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "no-limits-interview",
+        "slug": "no-limits-interview",
+        "title": "3rd Single『No Limits』座談会 — 限界を解き放つ五つの声",
+        "heroAssetId": "article-hero-no-limits",
+        "relatedTrackIds": [
+          "no-limits-title",
+          "higher-ground"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "ren-moonlit-interview",
+        "slug": "ren-moonlit-interview",
+        "title": "届かない夜に、声を置いていく",
+        "heroAssetId": "article-ren-moonlit-interview",
+        "relatedTrackIds": [
+          "moonlit-title",
+          "afterimage-live"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "rise-again-feature-article",
+        "slug": "rise-again-feature",
+        "title": "立ち上がることは、戻ることじゃない。IGNITE『RISE AGAIN』が描く、“再起”のかたち",
+        "heroAssetId": "article-hero-rise-again",
+        "relatedTrackIds": [
+          "rise-again-title",
+          "rise-again-keep-the-flame",
+          "rise-again-afterglow-live"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "sho-burn-it-down-interview",
+        "slug": "sho-burn-it-down-interview",
+        "title": "綺麗なだけじゃ、踊れない",
+        "heroAssetId": "article-hero-sho-burn-it-down",
+        "relatedTrackIds": [
+          "burn-it-down-main",
+          "ashes-in-motion",
+          "hands-up-hearts-out-live"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "silent-signal-sho-interview",
+        "slug": "silent-signal-sho-interview",
+        "title": "言葉を消したとき、身体に何が残るのか。",
+        "heroAssetId": "article-hero-sho-choreography-ss",
+        "relatedTrackIds": [
+          "silent-signal-title",
+          "silent-signal-invisible-line",
+          "silent-signal-nocturne-drive-live"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "six-new-lights",
+        "slug": "six-new-lights",
+        "title": "SIX NEW LIGHTS",
+        "heroAssetId": "article-hero-six-new-lights",
+        "relatedTrackIds": [
+          "solar-title",
+          "solar-golden-hour",
+          "solar-overdrive",
+          "solar-blue-signal",
+          "solar-daybreak-runner",
+          "solar-sun-never-sleeps"
+        ],
+        "relatedCampaignId": null
+      },
+      {
+        "id": "yuto-hightone-feature",
+        "slug": "yuto-hightone-feature",
+        "title": "高音が、曲の入口になった",
+        "heroAssetId": "article-hero-yuto",
+        "relatedTrackIds": [
+          "no-limits-title",
+          "higher-ground"
+        ],
+        "relatedCampaignId": null
+      }
+    ]
+  }
+}
