@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import {
   parseCanonicalLinerNotes,
   parseCanonicalLyrics,
@@ -9,6 +11,10 @@ import {
   rootDir,
   sourceMap,
 } from './equinox-canonical.mjs';
+import {
+  LyricSection,
+  splitVisibleLyricLines,
+} from '../src/components/discography/LyricSection.mjs';
 
 const contentDir = path.join(rootDir, 'content', 'public');
 const discography = JSON.parse(fs.readFileSync(path.join(contentDir, 'discography.json'), 'utf8'));
@@ -17,6 +23,29 @@ const campaigns = JSON.parse(fs.readFileSync(path.join(contentDir, 'campaigns.js
 const failures = [];
 const equinoxRelease = discography.releases.find((release) => release.id === 'equinox');
 const liner = parseCanonicalLinerNotes(readCanonicalSource(sourceMap.linerNotes.sourcePath));
+
+const decodeRenderedText = (value) => value
+  .replaceAll('&amp;', '&')
+  .replaceAll('&lt;', '<')
+  .replaceAll('&gt;', '>')
+  .replaceAll('&quot;', '"')
+  .replaceAll('&#x27;', "'");
+
+const renderedSectionEvidence = (section) => {
+  const html = renderToStaticMarkup(React.createElement(LyricSection, section));
+  const headingMatch = html.match(/<h3>([\s\S]*?)<\/h3>/);
+  const paragraphMatch = html.match(/<p[^>]*data-source-line-count="(\d+)"[^>]*>([\s\S]*?)<\/p>/);
+  const body = paragraphMatch
+    ? decodeRenderedText(paragraphMatch[2].replace(/<br\s*\/?\s*>/g, '\n'))
+    : '';
+  return {
+    html,
+    heading: headingMatch ? decodeRenderedText(headingMatch[1]) : '',
+    body,
+    lineCount: paragraphMatch ? Number(paragraphMatch[1]) : 0,
+    breakCount: (html.match(/<br\s*\/?\s*>/g) || []).length,
+  };
+};
 
 const validateSourceHash = (mapping) => {
   const source = normalizeNewlines(fs.readFileSync(path.join(rootDir, mapping.sourcePath), 'utf8'));
@@ -49,6 +78,14 @@ for (const mapping of sourceMap.lyrics) {
     if (recording.title !== mapping.trackTitle) failures.push(`${mapping.assetCode} track title mismatch`);
     if (JSON.stringify(recording.lyrics) !== JSON.stringify(expectedLyrics)) failures.push(`${mapping.assetCode} site lyrics differ from canonical Markdown`);
     if (recording.linerNotes !== liner.trackNotes.get(mapping.trackNumber)) failures.push(`${mapping.recordingId} liner note differs from AR-LN01`);
+    for (const [sectionIndex, section] of expectedLyrics.entries()) {
+      const rendered = renderedSectionEvidence(section);
+      const expectedLines = section.text ? splitVisibleLyricLines(section.text) : [];
+      if (rendered.heading !== `[${section.speaker}]`) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered member/section heading differs`);
+      if (rendered.body !== section.text) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered visible lines differ`);
+      if (rendered.lineCount !== expectedLines.length) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered line count differs`);
+      if (rendered.breakCount !== Math.max(0, expectedLines.length - 1)) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered break count differs`);
+    }
   }
 }
 
@@ -67,4 +104,4 @@ if (failures.length > 0) {
   throw new Error(`[EQUINOX CANONICAL CONTENT VALIDATION FAILED]\n${failures.map((failure) => `- ${failure}`).join('\n')}`);
 }
 
-console.log('EQUINOX canonical validation PASSED: AR-LN01 -> 12 track notes; EQ-LY01..12 -> 12 recordings; no Feature Article registration.');
+console.log('EQUINOX canonical validation PASSED: AR-LN01 -> 12 track notes; EQ-LY01..12 -> 12 recordings and production LyricSection render output; no Feature Article registration.');

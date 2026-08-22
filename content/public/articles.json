@@ -472,8 +472,8 @@
     "kicker": "SOLAR CAMPAIGN / ROUND TABLE",
     "series": "ROUND TABLE",
     "dek": "朝から夜、そして次の朝へ。『SOLAR』で初めて世に出る六つの新曲を、IGNITEの五人が語る。",
-    "publishDate": "2026-08",
-    "publishDateFull": "2026.08.02",
+    "publishDate": "2023-08",
+    "publishDateFull": "2023 Summer",
     "readingTimeMinutes": 15,
     "mainSpeakerIds": [
       "kai",
@@ -494,8 +494,8 @@
       "solar-sun-never-sleeps"
     ],
     "publication": {
-      "fictionalReleaseDate": "2026-08-02",
-      "publishAt": "2026-08-02T00:00:00Z",
+      "fictionalReleaseDate": "2023-08",
+      "publishAt": null,
       "visibility": "public",
       "campaignState": "current"
     },
@@ -946,8 +946,8 @@
     "kicker": "SOLAR CAMPAIGN / LEO INTERVIEW",
     "series": "LEO INTERVIEW",
     "dek": "ライブで先に育った三曲と、「Heatwave」の再構築。客席と育てた歌をスタジオへ持ち帰った理由を、LEOが語る。",
-    "publishDate": "2026-08",
-    "publishDateFull": "2026.08.02",
+    "publishDate": "2023-08",
+    "publishDateFull": "2023 Summer",
     "readingTimeMinutes": 12,
     "mainSpeakerIds": [
       "leo"
@@ -962,8 +962,8 @@
       "solar-hands-up-hearts-out"
     ],
     "publication": {
-      "fictionalReleaseDate": "2026-08-02",
-      "publishAt": "2026-08-02T00:00:00Z",
+      "fictionalReleaseDate": "2023-08",
+      "publishAt": null,
       "visibility": "public",
       "campaignState": "current"
     },
@@ -2289,8 +2289,8 @@
     "eraLabel": "2020 FIRESTARTER ERA",
     "heroCopy": "声にならない返事もある。",
     "dek": "LEOが振り返る『FIRESTARTER』と、ある地方公演の夜",
-    "publishDate": "2026-08",
-    "publishDateFull": "2026.08",
+    "publishDate": "2020-11",
+    "publishDateFull": "2020.11",
     "storyDate": "2020-11",
     "storyDateFull": "2020.11",
     "readingTimeMinutes": 8,
@@ -2303,8 +2303,8 @@
       "firestarter-main"
     ],
     "publication": {
-      "fictionalReleaseDate": "2026-08-01",
-      "publishAt": "2026-08-01T00:00:00Z",
+      "fictionalReleaseDate": "2020-11",
+      "publishAt": null,
       "visibility": "public",
       "campaignState": "past"
     },
