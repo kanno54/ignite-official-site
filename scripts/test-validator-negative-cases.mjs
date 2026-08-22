@@ -3,9 +3,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { loadCurrentCollections, validateRegressionBaseline } from './validate-regressions.mjs';
 import { validateSitemapLastmods } from './validate-routes.mjs';
+import { validateArtworkUsage } from './validate-artwork-usage.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const baseline = JSON.parse(fs.readFileSync(path.join(__dirname, 'baselines', 'public-content-baseline.json'), 'utf8'));
+const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content', 'public', 'asset-manifest.json'), 'utf8'));
 const current = loadCurrentCollections();
 
 const expectPass = (label, failures) => {
@@ -56,6 +58,33 @@ additions.campaigns.push({ id: 'negative-test-campaign' });
 additions.articles.push({ id: 'negative-test-article' });
 expectPass('new entity additions', validateRegressionBaseline(baseline, additions).failures);
 
+const swappedRecordingArtwork = structuredClone(current);
+const artworkRecording = swappedRecordingArtwork.recordings.find((item) => item.artwork);
+[artworkRecording.artwork.square, artworkRecording.artwork.vertical] = [artworkRecording.artwork.vertical, artworkRecording.artwork.square];
+expectFailure(
+  'recording artwork slot swap',
+  validateArtworkUsage(swappedRecordingArtwork, manifest),
+  /artwork slot aspect mismatch: square/,
+);
+
+const swappedReleaseArtwork = structuredClone(current);
+const artworkRelease = swappedReleaseArtwork.releases.find((item) => item.artwork);
+[artworkRelease.artwork.cover, artworkRelease.artwork.heroDesktop] = [artworkRelease.artwork.heroDesktop, artworkRelease.artwork.cover];
+expectFailure(
+  'release artwork slot swap',
+  validateArtworkUsage(swappedReleaseArtwork, manifest),
+  /artwork slot aspect mismatch: cover/,
+);
+
+const sameAspectReleaseArtworkSwap = structuredClone(current);
+const sameAspectRelease = sameAspectReleaseArtworkSwap.releases.find((item) => item.artwork);
+[sameAspectRelease.artwork.detail, sameAspectRelease.artwork.heroMobile] = [sameAspectRelease.artwork.heroMobile, sameAspectRelease.artwork.detail];
+expectFailure(
+  'same-aspect release artwork slot swap',
+  validateArtworkUsage(sameAspectReleaseArtworkSwap, manifest),
+  /artwork slot Asset Code mismatch: detail/,
+);
+
 expectFailure(
   'invalid sitemap lastmod',
   validateSitemapLastmods('<urlset><url><lastmod>2023 Summer</lastmod></url></urlset>'),
@@ -71,4 +100,4 @@ expectPass(
   validateSitemapLastmods('<urlset><url><lastmod>2026-08-22</lastmod></url><url><lastmod>2026-08-22T00:00:00+09:00</lastmod></url></urlset>'),
 );
 
-console.log('Negative validator tests PASSED: protected-field mutation, track-order mutation, deletion, new additions, and sitemap lastmod cases behaved as expected.');
+console.log('Negative validator tests PASSED: protected-field mutation, track-order mutation, deletion, new additions, artwork slot swaps, and sitemap lastmod cases behaved as expected.');

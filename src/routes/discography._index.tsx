@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getReleases, getRecordingsForRelease } from '../utils/contentLoader';
+import { getReleaseArtworkAssetId, getReleases, getRecordingsForRelease } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
@@ -90,7 +90,7 @@ export const DiscographyIndex: React.FC = () => {
                 </span>
               )}
 
-              <ResponsivePicture assetId={rel.coverAssetId} title={rel.title} subtitle={`${rel.format} — ${rel.fictionalReleaseDateFull}`} aspectRatio="1:1" accentColor="var(--campaign-accent)" />
+              <ResponsivePicture assetId={getReleaseArtworkAssetId(rel, 'cover')} title={rel.title} subtitle={`${rel.format} — ${rel.fictionalReleaseDateFull}`} aspectRatio="1:1" accentColor="var(--campaign-accent)" />
 
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>

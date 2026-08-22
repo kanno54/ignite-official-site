@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { validateArtworkSurfaceArchitecture, validateArtworkUsage } from './validate-artwork-usage.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
@@ -17,6 +18,8 @@ const articles = readJson('articles.json');
 const campaigns = readJson('campaigns.json');
 const manifest = readJson('asset-manifest.json');
 const failures = [];
+failures.push(...validateArtworkUsage(discography, manifest));
+failures.push(...validateArtworkSurfaceArchitecture(rootDir));
 
 const memberIds = new Set(members.map((member) => member.id));
 const releaseIds = new Set(discography.releases.map((release) => release.id));
@@ -82,6 +85,8 @@ for (const article of articles) {
   else for (const memberId of article.mainSpeakerIds) if (!memberIds.has(memberId)) failures.push(`article ${article.id} references unknown speaker: ${memberId}`);
   if (!article.publication || !Object.hasOwn(article.publication, 'publishAt')) failures.push(`article ${article.id} publication is missing publishAt`);
   else if (article.publication.publishAt !== null && Number.isNaN(Date.parse(article.publication.publishAt))) failures.push(`article ${article.id} has invalid publishAt: ${article.publication.publishAt}`);
+  if (!/^\d{4}(?:-\d{2})?$/.test(article.publishDate)) failures.push(`article ${article.id} has invalid year/month publication key: ${article.publishDate}`);
+  if (!/^\d{4}\.\d{2}(?:\.\d{2})?$/.test(article.publishDateFull)) failures.push(`article ${article.id} has non-chronological publication display: ${article.publishDateFull}`);
   if (!Array.isArray(article.relatedTrackIds)) failures.push(`article ${article.id} relatedTrackIds must be an array`);
   else for (const trackId of article.relatedTrackIds) if (!recordingIds.has(trackId)) failures.push(`article ${article.id} references unknown track: ${trackId}`);
   if (article.relatedCampaignId && !campaignIds.has(article.relatedCampaignId)) failures.push(`article ${article.id} references unknown campaign: ${article.relatedCampaignId}`);

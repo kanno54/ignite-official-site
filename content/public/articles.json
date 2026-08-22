@@ -472,8 +472,8 @@
     "kicker": "SOLAR CAMPAIGN / ROUND TABLE",
     "series": "ROUND TABLE",
     "dek": "朝から夜、そして次の朝へ。『SOLAR』で初めて世に出る六つの新曲を、IGNITEの五人が語る。",
-    "publishDate": "2023-08",
-    "publishDateFull": "2023 Summer",
+    "publishDate": "2023-07",
+    "publishDateFull": "2023.07",
     "readingTimeMinutes": 15,
     "mainSpeakerIds": [
       "kai",
@@ -494,7 +494,7 @@
       "solar-sun-never-sleeps"
     ],
     "publication": {
-      "fictionalReleaseDate": "2023-08",
+      "fictionalReleaseDate": "2023-07",
       "publishAt": null,
       "visibility": "public",
       "campaignState": "current"
@@ -946,8 +946,8 @@
     "kicker": "SOLAR CAMPAIGN / LEO INTERVIEW",
     "series": "LEO INTERVIEW",
     "dek": "ライブで先に育った三曲と、「Heatwave」の再構築。客席と育てた歌をスタジオへ持ち帰った理由を、LEOが語る。",
-    "publishDate": "2023-08",
-    "publishDateFull": "2023 Summer",
+    "publishDate": "2023-07",
+    "publishDateFull": "2023.07",
     "readingTimeMinutes": 12,
     "mainSpeakerIds": [
       "leo"
@@ -962,7 +962,7 @@
       "solar-hands-up-hearts-out"
     ],
     "publication": {
-      "fictionalReleaseDate": "2023-08",
+      "fictionalReleaseDate": "2023-07",
       "publishAt": null,
       "visibility": "public",
       "campaignState": "current"

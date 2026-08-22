@@ -2,7 +2,7 @@ import React from 'react';
 import { useAudio } from './AudioProvider';
 import { EqualizerBars } from './EqualizerBars';
 import { ResponsivePicture } from '../common/ResponsivePicture';
-import { getReleaseBySlug, getMemberBySlug } from '../../utils/contentLoader';
+import { getRecordingArtworkAssetId, getReleaseBySlug, getMemberBySlug } from '../../utils/contentLoader';
 import { protectedMediaProps } from '../../utils/audioDeterrence';
 
 function formatTime(seconds: number): string {
@@ -25,10 +25,11 @@ export const MiniPlayer: React.FC = () => {
     ? getMemberBySlug(currentRecording.spotlightMemberIds[0])
     : null;
 
-  const effectivePosterAssetId = currentRecording.posterAssetId
-    || spotlightMember?.profileImageAssetId
-    || release?.coverAssetId
-    || 'hero-no-limits-desktop';
+  const slotArtworkAssetId = getRecordingArtworkAssetId(currentRecording, 'square');
+  const effectivePosterAssetId = slotArtworkAssetId
+    || (!currentRecording.artwork ? spotlightMember?.profileImageAssetId : undefined)
+    || (!currentRecording.artwork ? release?.coverAssetId : undefined)
+    || (!currentRecording.artwork ? 'hero-no-limits-desktop' : undefined);
 
   const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0;
 
@@ -92,12 +93,12 @@ export const MiniPlayer: React.FC = () => {
           gap: '16px',
         }}
       >
-        {/* Left: 3:4 Poster & Track Info */}
+        {/* Left: square thumbnail & Track Info */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', minWidth: 0, flex: 1 }}>
           <div
             style={{
-              width: '38px',
-              height: '50px',
+              width: '44px',
+              height: '44px',
               backgroundColor: '#171C26',
               borderRadius: '3px',
               border: '1px solid var(--color-border)',
@@ -107,7 +108,12 @@ export const MiniPlayer: React.FC = () => {
               boxShadow: '0 4px 10px rgba(0,0,0,0.5)',
             }}
           >
-            <ResponsivePicture assetId={effectivePosterAssetId} title={currentRecording.title} aspectRatio="3:4" />
+            <ResponsivePicture
+              assetId={effectivePosterAssetId}
+              title={currentRecording.title}
+              aspectRatio="1:1"
+              style={{ border: 'none' }}
+            />
             <div
               style={{
                 position: 'absolute',

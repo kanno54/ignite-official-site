@@ -733,14 +733,14 @@
     "eq-a03": {
       "path": "/assets/images/misc/eq-a03.webp",
       "status": "ready",
-      "aspect": "1:1",
+      "aspect": "16:9",
       "assetCode": "EQ-A03",
       "versionId": "v-eq-a03-1-1786801394346"
     },
     "eq-a04": {
       "path": "/assets/images/misc/eq-a04.webp",
       "status": "ready",
-      "aspect": "1:1",
+      "aspect": "3:4",
       "assetCode": "EQ-A04",
       "versionId": "v-eq-a04-1-1786801392588"
     },

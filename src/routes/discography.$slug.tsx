@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { getReleaseBySlug, getReleases, getRecordingsForRelease } from '../utils/contentLoader';
+import {
+  getRecordingArtworkAssetId,
+  getReleaseArtworkAssetId,
+  getReleaseBySlug,
+  getReleases,
+  getRecordingsForRelease,
+} from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { useAudio } from '../components/audio/AudioProvider';
@@ -49,8 +55,8 @@ export const ReleaseDetailPage: React.FC = () => {
         {isEquinox && (
           <>
             <ResponsivePicture
-              assetId="eq-a03"
-              mobileAssetId="eq-a04"
+              assetId={getReleaseArtworkAssetId(release, 'heroDesktop')}
+              mobileAssetId={getReleaseArtworkAssetId(release, 'heroMobile')}
               title="EQUINOX Discography Hero"
               alt="EQUINOXの光と影を描くDiscography Hero"
               aspectRatio="16:9"
@@ -60,14 +66,15 @@ export const ReleaseDetailPage: React.FC = () => {
             <div className="equinox-release-hero__overlay" />
           </>
         )}
-        <div style={{ maxWidth: isEquinox ? '300px' : '360px', width: '100%', position: 'relative', zIndex: 2 }}>
+        <div style={{ maxWidth: isEquinox ? '300px' : '360px', width: '100%', position: 'relative', zIndex: 2, border: isEquinox ? '1px solid var(--color-border)' : undefined, overflow: isEquinox ? 'hidden' : undefined }}>
           <ResponsivePicture
-            assetId={isEquinox ? 'cover-equinox-vertical' : release.coverAssetId}
+            assetId={getReleaseArtworkAssetId(release, 'detail')}
             desktopSrc={isEquinox ? undefined : release.coverImage}
             title={release.title}
             subtitle={`${release.format} — ${release.fictionalReleaseDateFull}`}
             aspectRatio={isEquinox ? '3:4' : '1:1'}
             accentColor="var(--campaign-accent)"
+            style={isEquinox ? { border: 'none' } : undefined}
           />
         </div>
 
@@ -112,7 +119,8 @@ export const ReleaseDetailPage: React.FC = () => {
               const sec = s % 60;
               return `${m}:${sec < 10 ? '0' : ''}${sec}`;
             };
-            const trackAssetId = track.posterAssetId || (track.id.startsWith('rise-again') ? `poster-${track.id}` : release.coverAssetId);
+            const trackAssetId = getRecordingArtworkAssetId(track, 'square')
+              || (track.id.startsWith('rise-again') ? `poster-${track.id}` : release.coverAssetId);
 
             return (
               <div
@@ -175,11 +183,12 @@ export const ReleaseDetailPage: React.FC = () => {
                   <div className={`discography-track-artwork ${track.id.startsWith('rise-again') ? 'is-portrait' : ''}`} style={{ flexShrink: 0, borderRadius: '2px', overflow: 'hidden', border: '1px solid var(--color-border)' }}>
                     <ResponsivePicture
                       assetId={trackAssetId}
-                      desktopSrc={track.coverImage}
+                      desktopSrc={track.artwork ? undefined : track.coverImage}
                       title={track.title}
                       subtitle={track.versionLabel}
                       aspectRatio={track.id.startsWith('rise-again') ? '3:4' : '1:1'}
                       accentColor="var(--campaign-accent)"
+                      style={track.artwork ? { border: 'none' } : undefined}
                     />
                   </div>
 

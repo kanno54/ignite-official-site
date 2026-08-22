@@ -85,6 +85,25 @@ export const getRecordingById = (id: string): Recording | undefined => {
   return getRecordings().find((rec) => rec.id === id);
 };
 
+export type RecordingArtworkSlot = 'square' | 'vertical';
+export type ReleaseArtworkSlot = 'cover' | 'detail' | 'heroDesktop' | 'heroMobile';
+
+export const getRecordingArtworkAssetId = (
+  recording: Recording,
+  slot: RecordingArtworkSlot,
+): string | undefined => {
+  if (recording.artwork) return recording.artwork[slot];
+  return recording.posterAssetId;
+};
+
+export const getReleaseArtworkAssetId = (
+  release: Release,
+  slot: ReleaseArtworkSlot,
+): string | undefined => {
+  if (release.artwork) return release.artwork[slot];
+  return slot === 'cover' || slot === 'detail' ? release.coverAssetId : undefined;
+};
+
 export const getEquinoxRecordingSlug = (recordingId: string): string =>
   recordingId === 'equinox-title' ? 'equinox' : recordingId.replace(/^equinox-/, '');
 
@@ -103,6 +122,23 @@ export const getRecordingsForRelease = (releaseId: string): Recording[] => {
     .filter((rec): rec is Recording => rec !== undefined);
 };
 
+const getArticlePublicationOrder = (article: Article): [number, number, number, number] => {
+  if (article.publication.publishAt) {
+    const exact = new Date(article.publication.publishAt);
+    if (!Number.isNaN(exact.getTime())) {
+      return [exact.getUTCFullYear(), exact.getUTCMonth() + 1, exact.getUTCDate(), exact.getTime()];
+    }
+  }
+
+  const monthPrecision = /^(\d{4})-(\d{2})$/.exec(article.publishDate);
+  if (monthPrecision) return [Number(monthPrecision[1]), Number(monthPrecision[2]), 0, 0];
+
+  const yearPrecision = /^(\d{4})$/.exec(article.publishDate);
+  if (yearPrecision) return [Number(yearPrecision[1]), 0, 0, 0];
+
+  return [0, 0, 0, 0];
+};
+
 export const getArticles = (): Article[] => {
   const isStaging = isStagingEnv();
   return (articlesData as Article[])
@@ -114,16 +150,12 @@ export const getArticles = (): Article[] => {
     })
     .map((article, originalIndex) => ({ article, originalIndex }))
     .sort((a, b) => {
-      const aTimestamp = a.article.publication.publishAt
-        ? Date.parse(a.article.publication.publishAt)
-        : null;
-      const bTimestamp = b.article.publication.publishAt
-        ? Date.parse(b.article.publication.publishAt)
-        : null;
-      if (aTimestamp === null && bTimestamp === null) return a.originalIndex - b.originalIndex;
-      if (aTimestamp === null) return 1;
-      if (bTimestamp === null) return -1;
-      return bTimestamp - aTimestamp || a.originalIndex - b.originalIndex;
+      const aOrder = getArticlePublicationOrder(a.article);
+      const bOrder = getArticlePublicationOrder(b.article);
+      for (let index = 0; index < aOrder.length; index += 1) {
+        if (aOrder[index] !== bOrder[index]) return bOrder[index] - aOrder[index];
+      }
+      return a.originalIndex - b.originalIndex;
     })
     .map(({ article }) => article);
 };

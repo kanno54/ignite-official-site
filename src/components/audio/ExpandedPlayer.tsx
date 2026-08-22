@@ -3,7 +3,7 @@ import { useAudio } from './AudioProvider';
 import { ResponsivePicture } from '../common/ResponsivePicture';
 import { FiveLights } from '../common/FiveLights';
 import { LyricsRenderer } from '../discography/LyricSection.mjs';
-import { getRecordingById, getReleaseBySlug, getMemberBySlug } from '../../utils/contentLoader';
+import { getRecordingArtworkAssetId, getRecordingById, getReleaseBySlug, getMemberBySlug } from '../../utils/contentLoader';
 import { protectedMediaProps } from '../../utils/audioDeterrence';
 
 function formatTime(seconds: number): string {
@@ -36,10 +36,11 @@ export const ExpandedPlayer: React.FC = () => {
     ? getMemberBySlug(currentRecording.spotlightMemberIds[0])
     : null;
 
-  const effectivePosterAssetId = currentRecording.posterAssetId
-    || spotlightMember?.profileImageAssetId
-    || release?.coverAssetId
-    || 'hero-no-limits-desktop';
+  const slotArtworkAssetId = getRecordingArtworkAssetId(currentRecording, 'vertical');
+  const effectivePosterAssetId = slotArtworkAssetId
+    || (!currentRecording.artwork ? spotlightMember?.profileImageAssetId : undefined)
+    || (!currentRecording.artwork ? release?.coverAssetId : undefined)
+    || (!currentRecording.artwork ? 'hero-no-limits-desktop' : undefined);
 
   const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0;
 
@@ -121,6 +122,7 @@ export const ExpandedPlayer: React.FC = () => {
                 title={currentRecording.title}
                 subtitle={currentRecording.versionLabel}
                 aspectRatio="3:4"
+                style={{ border: 'none' }}
               />
             </div>
           </div>

@@ -232,7 +232,13 @@
         "campaignState": "current"
       },
       "assetStatus": "FOUND_EXISTING",
-      "coverImage": "/assets/images/covers/cover-equinox.webp"
+      "coverImage": "/assets/images/covers/cover-equinox.webp",
+      "artwork": {
+        "cover": "cover-equinox",
+        "detail": "cover-equinox-vertical",
+        "heroDesktop": "eq-a03",
+        "heroMobile": "eq-a04"
+      }
     }
   ],
   "recordings": [
@@ -13960,6 +13966,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU01.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr01-sq",
+      "artwork": {
+        "square": "poster-equinox-tr01-sq",
+        "vertical": "poster-equinox-tr01-v"
+      },
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -14064,6 +14074,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU02.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr02-sq",
+      "artwork": {
+        "square": "poster-equinox-tr02-sq",
+        "vertical": "poster-equinox-tr02-v"
+      },
       "coverImage": "/assets/images/covers/poster-equinox-tr02-sq.webp",
       "spotlightMemberIds": [
         "kai",
@@ -14175,6 +14189,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU03.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr03-sq",
+      "artwork": {
+        "square": "poster-equinox-tr03-sq",
+        "vertical": "poster-equinox-tr03-v"
+      },
       "coverImage": "/assets/images/covers/poster-equinox-tr03-sq.webp",
       "spotlightMemberIds": [
         "kai",
@@ -14265,6 +14283,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU04.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr04-sq",
+      "artwork": {
+        "square": "poster-equinox-tr04-sq",
+        "vertical": "poster-equinox-tr04-v"
+      },
       "spotlightMemberIds": [
         "sho",
         "ren"
@@ -14352,6 +14374,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU05.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr05-sq",
+      "artwork": {
+        "square": "poster-equinox-tr05-sq",
+        "vertical": "poster-equinox-tr05-v"
+      },
       "spotlightMemberIds": [
         "yuto",
         "leo"
@@ -14439,6 +14465,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU06.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr06-sq",
+      "artwork": {
+        "square": "poster-equinox-tr06-sq",
+        "vertical": "poster-equinox-tr06-v"
+      },
       "spotlightMemberIds": [
         "kai",
         "yuto"
@@ -14522,6 +14552,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU07.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr07-sq",
+      "artwork": {
+        "square": "poster-equinox-tr07-sq",
+        "vertical": "poster-equinox-tr07-v"
+      },
       "spotlightMemberIds": [
         "sho",
         "kai"
@@ -14609,6 +14643,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU08.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr08-sq",
+      "artwork": {
+        "square": "poster-equinox-tr08-sq",
+        "vertical": "poster-equinox-tr08-v"
+      },
       "coverImage": "/assets/images/covers/poster-equinox-tr08-sq.webp",
       "spotlightMemberIds": [
         "leo",
@@ -14688,6 +14726,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU09.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr09-sq",
+      "artwork": {
+        "square": "poster-equinox-tr09-sq",
+        "vertical": "poster-equinox-tr09-v"
+      },
       "coverImage": "/assets/images/covers/poster-equinox-tr09-sq.webp",
       "spotlightMemberIds": [
         "sho",
@@ -14851,6 +14893,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU10.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr10-sq",
+      "artwork": {
+        "square": "poster-equinox-tr10-sq",
+        "vertical": "poster-equinox-tr10-v"
+      },
       "spotlightMemberIds": [
         "kai",
         "sho",
@@ -15069,6 +15115,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU11.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr11-sq",
+      "artwork": {
+        "square": "poster-equinox-tr11-sq",
+        "vertical": "poster-equinox-tr11-v"
+      },
       "spotlightMemberIds": [
         "ren",
         "leo"
@@ -15156,6 +15206,10 @@
       "audioUrl": "/media/audio/equinox/EQ-AU12.mp3",
       "audioStatus": "ready",
       "posterAssetId": "poster-equinox-tr12-sq",
+      "artwork": {
+        "square": "poster-equinox-tr12-sq",
+        "vertical": "poster-equinox-tr12-v"
+      },
       "spotlightMemberIds": [
         "kai",
         "sho",

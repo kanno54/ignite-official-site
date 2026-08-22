@@ -5,6 +5,7 @@ import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { LyricsRenderer } from '../components/discography/LyricSection.mjs';
 import {
   getArticles,
+  getRecordingArtworkAssetId,
   getEquinoxRecordingBySlug,
   getEquinoxRecordingSlug,
   getRecordingsForRelease,
@@ -20,7 +21,7 @@ export const EquinoxSongDetailPage: React.FC = () => {
   const index = tracks.findIndex((item) => item.id === track.id);
   const previous = tracks[(index - 1 + tracks.length) % tracks.length];
   const next = tracks[(index + 1) % tracks.length];
-  const verticalArtworkId = `poster-equinox-tr${String(index + 1).padStart(2, '0')}-v`;
+  const verticalArtworkId = getRecordingArtworkAssetId(track, 'vertical');
   const relatedArticles = getArticles().filter((article) => (
     article.relatedCampaignId === 'equinox'
     && (
@@ -40,13 +41,14 @@ export const EquinoxSongDetailPage: React.FC = () => {
       </nav>
 
       <section className="equinox-song-detail__hero">
-        <div className="equinox-song-detail__artwork">
+        <div className="equinox-song-detail__artwork" style={{ border: '1px solid var(--color-border)', overflow: 'hidden' }}>
           <ResponsivePicture
             assetId={verticalArtworkId}
             title={track.title}
             subtitle={track.romanNumeral}
             aspectRatio="3:4"
             accentColor="#D9B44A"
+            style={{ border: 'none' }}
           />
         </div>
 
