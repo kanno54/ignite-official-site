@@ -400,7 +400,7 @@ export const ExpandedPlayer: React.FC = () => {
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4' }}>
-                          0{idx + 1}
+                          {String(idx + 1).padStart(2, '0')}
                         </span>
                         <span style={{ fontSize: '0.85rem', fontWeight: isCurrentInQueue ? 700 : 400, color: '#F6F3ED' }}>
                           {qTrack.title}

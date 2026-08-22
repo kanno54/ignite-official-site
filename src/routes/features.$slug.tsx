@@ -18,7 +18,10 @@ export const ArticleDetailPage: React.FC = () => {
   const nextArticle = allArticles[(articleIndex + 1) % allArticles.length];
 
   return (
-    <article style={{ maxWidth: 'var(--article-content)', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '40px' }}>
+    <article
+      className={article.relatedCampaignId === 'equinox' ? 'equinox-article' : undefined}
+      style={{ maxWidth: 'var(--article-content)', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '40px' }}
+    >
       {/* Header */}
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '12px' }}>
@@ -49,9 +52,11 @@ export const ArticleDetailPage: React.FC = () => {
       </div>
 
       {/* Hero Asset */}
-      <div>
-        <ResponsivePicture assetId={article.heroAssetId} title={article.kicker} subtitle={article.title} aspectRatio="3:2" accentColor="var(--campaign-accent)" />
-      </div>
+      {article.heroAssetId && (
+        <div>
+          <ResponsivePicture assetId={article.heroAssetId} title={article.kicker} subtitle={article.title} aspectRatio="3:2" accentColor="var(--campaign-accent)" />
+        </div>
+      )}
 
       {/* Article Blocks Renderer */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', fontSize: '1.05rem', lineHeight: 1.9, color: '#F6F3ED' }}>

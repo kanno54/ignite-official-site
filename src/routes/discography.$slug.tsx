@@ -22,6 +22,7 @@ export const ReleaseDetailPage: React.FC = () => {
   }
 
   const tracks = getRecordingsForRelease(release.id);
+  const isEquinox = release.id === 'equinox';
   const releaseIndex = allReleases.findIndex((r) => r.id === release.id);
   const prevRelease = allReleases[(releaseIndex - 1 + allReleases.length) % allReleases.length];
   const nextRelease = allReleases[(releaseIndex + 1) % allReleases.length];
@@ -30,6 +31,7 @@ export const ReleaseDetailPage: React.FC = () => {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '60px' }}>
       {/* Release Hero Header */}
       <section
+        className={isEquinox ? 'equinox-release-hero' : undefined}
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
@@ -39,20 +41,36 @@ export const ReleaseDetailPage: React.FC = () => {
           border: '1px solid var(--color-border)',
           padding: 'clamp(20px, 4vw, 40px)',
           borderRadius: '2px',
+          position: 'relative',
+          overflow: 'hidden',
         }}
       >
-        <div style={{ maxWidth: '360px', width: '100%' }}>
+        {isEquinox && (
+          <>
+            <ResponsivePicture
+              assetId="eq-a03"
+              mobileAssetId="eq-a04"
+              title="EQUINOX Discography Hero"
+              alt="EQUINOXの光と影を描くDiscography Hero"
+              aspectRatio="16:9"
+              mobileAspectRatio="3:4"
+              className="equinox-release-hero__background"
+            />
+            <div className="equinox-release-hero__overlay" />
+          </>
+        )}
+        <div style={{ maxWidth: isEquinox ? '300px' : '360px', width: '100%', position: 'relative', zIndex: 2 }}>
           <ResponsivePicture
-            assetId={release.coverAssetId}
-            desktopSrc={release.coverImage}
+            assetId={isEquinox ? 'cover-equinox-vertical' : release.coverAssetId}
+            desktopSrc={isEquinox ? undefined : release.coverImage}
             title={release.title}
             subtitle={`${release.format} — ${release.fictionalReleaseDateFull}`}
-            aspectRatio="1:1"
+            aspectRatio={isEquinox ? '3:4' : '1:1'}
             accentColor="var(--campaign-accent)"
           />
         </div>
 
-        <div>
+        <div style={{ position: 'relative', zIndex: 2 }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.85rem', color: 'var(--campaign-accent)', fontWeight: 600 }}>
             {release.format} // {release.fictionalReleaseDateFull}
           </span>
@@ -149,7 +167,7 @@ export const ReleaseDetailPage: React.FC = () => {
                 <div className="discography-track-row">
                   {/* Track No */}
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '1.4rem', color: 'var(--campaign-accent)', fontWeight: 700 }}>
-                    0{idx + 1}
+                    {String(idx + 1).padStart(2, '0')}
                   </span>
 
                   {/* SongDetail Artwork Image */}
@@ -201,6 +219,15 @@ export const ReleaseDetailPage: React.FC = () => {
                   {/* Audio Play Button */}
                   <div className="discography-track-play-wrapper">
                     <TrackPlayButton recordingId={track.id} size="medium" />
+                    {isEquinox && (
+                      <Link
+                        to={`/discography/equinox/tracks/${track.id === 'equinox-title' ? 'equinox' : track.id.replace(/^equinox-/, '')}/`}
+                        className="btn-secondary"
+                        style={{ fontSize: '0.85rem', padding: '9px 14px' }}
+                      >
+                        SONG DETAIL →
+                      </Link>
+                    )}
                   </div>
                 </div>
 

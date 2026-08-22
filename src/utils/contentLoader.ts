@@ -85,6 +85,16 @@ export const getRecordingById = (id: string): Recording | undefined => {
   return getRecordings().find((rec) => rec.id === id);
 };
 
+export const getEquinoxRecordingSlug = (recordingId: string): string =>
+  recordingId === 'equinox-title' ? 'equinox' : recordingId.replace(/^equinox-/, '');
+
+export const getEquinoxRecordingBySlug = (slug: string): Recording | undefined => {
+  return getRecordings().find((recording) => (
+    recording.releaseId === 'equinox'
+    && getEquinoxRecordingSlug(recording.id) === slug
+  ));
+};
+
 export const getRecordingsForRelease = (releaseId: string): Recording[] => {
   const release = (discographyData.releases as Release[]).find((r) => r.id === releaseId || r.slug === releaseId);
   if (!release) return [];

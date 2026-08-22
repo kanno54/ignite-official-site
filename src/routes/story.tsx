@@ -83,11 +83,19 @@ export const StoryPage: React.FC = () => {
   if (currentCamp.id === 'equinox' || currentCamp.status === 'current') {
     timelineEvents.push({
       id: 'equinox',
-      date: '2024.05',
+      date: '2024.04',
       era: 'EQUINOX ERA',
-      title: '2nd Full Album『EQUINOX』リリース ― TWO SIDES, ONE MOMENT',
-      description: '光と影の双方を抱え、昼と夜が同じ長さを分け合う均衡の瞬間へ。全12曲が時間軸を刻み、五人が同じ中心へ向かって声を重ねる。',
-      link: '/discography/equinox/',
+      title: 'EQUINOX Era Start ― TWO SIDES, ONE MOMENT',
+      description: '光と影の双方を抱え、昼と夜が同じ長さを分け合う均衡のコンセプトを発表。五人が同じ中心へ向かう新章が始まる。',
+      link: '/campaigns/equinox/',
+    });
+    timelineEvents.push({
+      id: 'equinox-tour',
+      date: '2024.05',
+      era: 'EQUINOX NATIONAL TOUR',
+      title: 'National Tour Start ― TWO SIDES, ONE STAGE',
+      description: '2nd Full Album『EQUINOX』を携えた全国ツアーが開幕。光と影、静寂と熱をひとつのステージで結び、五人と客席が同じ瞬間を共有する。',
+      link: '/campaigns/equinox/',
     });
   }
 
@@ -108,7 +116,9 @@ export const StoryPage: React.FC = () => {
         <div style={{ position: 'absolute', top: 0, bottom: 0, left: '19px', width: '2px', backgroundColor: 'var(--color-border)', zIndex: 0 }} />
 
         {timelineEvents.map((ev, idx) => {
-          const isCurrent = currentCamp.id === ev.id || (idx === timelineEvents.length - 1 && (currentCamp.id === 'solar' || currentCamp.status === 'current'));
+          const isCurrent = currentCamp.id === 'equinox'
+            ? ev.id === 'equinox-tour'
+            : currentCamp.id === ev.id || (idx === timelineEvents.length - 1 && currentCamp.id === 'solar');
           const eraText = isCurrent ? `${ev.era} (CURRENT)` : ev.era;
 
           return (
@@ -138,7 +148,7 @@ export const StoryPage: React.FC = () => {
                   flexShrink: 0,
                 }}
               >
-                0{idx + 1}
+                {String(idx + 1).padStart(2, '0')}
               </div>
 
               <div

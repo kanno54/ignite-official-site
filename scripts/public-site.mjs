@@ -118,6 +118,22 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
       type: 'music.album',
       lastmod: release.fictionalReleaseDateFull,
     });
+
+    if (release.id === 'equinox') {
+      for (const recordingId of release.trackIds) {
+        const recording = discography.recordings.find((item) => item.id === recordingId);
+        if (!recording) continue;
+        const slug = recording.id === 'equinox-title' ? 'equinox' : recording.id.replace(/^equinox-/, '');
+        const artworkId = `poster-equinox-tr${String(recording.trackNumber).padStart(2, '0')}-v`;
+        add(`/discography/equinox/tracks/${slug}/`, {
+          title: `${recording.title} (${recording.romanNumeral}) | EQUINOX Song Detail`,
+          description: recording.linerNotes,
+          image: readyAssetPath(artworkId),
+          type: 'music.song',
+          lastmod: release.fictionalReleaseDateFull,
+        });
+      }
+    }
   }
 
   add('/campaigns/', {

@@ -5,8 +5,11 @@ import { getPublicRouteEntries, routePathToOutputFile, siteConfig } from './publ
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir = path.resolve(__dirname, '../dist');
-const isStagingBuild = process.env.VITE_STAGING === 'true';
-const siteUrl = process.env.VITE_SITE_URL || siteConfig.siteUrl;
+const builtIndexPath = path.join(distDir, 'index.html');
+const builtIndex = fs.existsSync(builtIndexPath) ? fs.readFileSync(builtIndexPath, 'utf8') : '';
+const isStagingBuild = process.env.VITE_STAGING === 'true' || builtIndex.includes('<title>[STAGING] ');
+const siteUrl = process.env.VITE_SITE_URL
+  || (isStagingBuild ? 'https://staging.ignite-official.site' : siteConfig.siteUrl);
 const routes = getPublicRouteEntries({ staging: isStagingBuild, siteUrl });
 
 console.log('--- VERIFYING STATIC OUTPUT ROUTES AND METADATA ---');

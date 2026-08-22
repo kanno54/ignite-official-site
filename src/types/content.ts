@@ -82,6 +82,7 @@ export type Recording = {
   lyrics: LyricLine[];
   posterAssetId?: string;
   coverImage?: string;
+  romanNumeral?: string;
 };
 
 export type Release = {

@@ -12,6 +12,7 @@ import { MembersIndex } from './routes/members._index';
 import { MemberDetailPage } from './routes/members.$slug';
 import { DiscographyIndex } from './routes/discography._index';
 import { ReleaseDetailPage } from './routes/discography.$slug';
+import { EquinoxSongDetailPage } from './routes/discography.equinox.tracks.$trackSlug';
 import { FeaturesIndex } from './routes/features._index';
 import { ArticleDetailPage } from './routes/features.$slug';
 import { StoryPage } from './routes/story';
@@ -160,6 +161,7 @@ export const App: React.FC = () => {
               <Route path="/members/" element={<MembersIndex />} />
               <Route path="/members/:slug/" element={<MemberDetailPage />} />
               <Route path="/discography/" element={<DiscographyIndex />} />
+              <Route path="/discography/equinox/tracks/:trackSlug/" element={<EquinoxSongDetailPage />} />
               <Route path="/discography/:slug/" element={<ReleaseDetailPage />} />
               <Route path="/features/" element={<FeaturesIndex />} />
               <Route path="/features/:slug/" element={<ArticleDetailPage />} />

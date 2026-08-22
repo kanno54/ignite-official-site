@@ -470,7 +470,7 @@ export const CampaignDetailPage: React.FC = () => {
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                       <span style={{ fontFamily: 'var(--font-mono)', color: campaign.campaignColors.accent, fontWeight: 700, fontSize: '1.1rem' }}>
-                        0{idx + 1}
+                        {String(idx + 1).padStart(2, '0')}
                       </span>
                       <div>
                         <div style={{ fontWeight: 700, color: '#F6F3ED', fontSize: '1.05rem' }}>{rec.title}</div>

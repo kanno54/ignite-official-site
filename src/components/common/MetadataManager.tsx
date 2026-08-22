@@ -7,6 +7,7 @@ import {
   getCurrentCampaign,
   getMemberBySlug,
   getReleaseBySlug,
+  getEquinoxRecordingBySlug,
   getSiteConfig,
   isStagingEnv,
 } from '../../utils/contentLoader';
@@ -70,7 +71,15 @@ export const MetadataManager: React.FC = () => {
       };
     } else if (parts[0] === 'discography') {
       const release = parts[1] ? getReleaseBySlug(parts[1]) : undefined;
-      metadata = release ? {
+      const equinoxTrack = parts[1] === 'equinox' && parts[2] === 'tracks' && parts[3]
+        ? getEquinoxRecordingBySlug(parts[3])
+        : undefined;
+      metadata = equinoxTrack ? {
+        title: `${equinoxTrack.title} (${equinoxTrack.romanNumeral}) | EQUINOX Song Detail`,
+        description: equinoxTrack.linerNotes,
+        image: manifestImages[`poster-equinox-tr${String(equinoxTrack.trackNumber).padStart(2, '0')}-v`]?.path || fallbackImage,
+        type: 'music.song',
+      } : release ? {
         title: `${release.title} | IGNITE Discography`,
         description: release.description,
         image: release.coverImage || manifestImages[release.coverAssetId]?.path || fallbackImage,

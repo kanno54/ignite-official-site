@@ -2659,6 +2659,11 @@
         "content": "それぞれの場所から同じ作品へ入り、少しずつ距離を測り直していった。"
       },
       {
+        "type": "image",
+        "assetId": "inline-ar-eq01-i01",
+        "caption": "光と影の境界に立ち、同じ中心へ向かう五人。"
+      },
+      {
         "type": "divider"
       },
       {
@@ -2799,6 +2804,11 @@
       {
         "type": "paragraph",
         "content": "その二つを通過して、アルバム『EQUINOX』は五人そのものへ焦点を移していく。"
+      },
+      {
+        "type": "image",
+        "assetId": "inline-ar-eq01-i02",
+        "caption": "違う距離と輪郭を保ったまま、ひとつの瞬間を共有する。"
       },
       {
         "type": "divider"
@@ -3240,6 +3250,11 @@
         "content": "KAI、SHO、LEO、REN、YUTO。\n同じ作品を作った五人は、本当に同じものを見ていたのか。"
       },
       {
+        "type": "image",
+        "assetId": "inline-ar-all01-i01",
+        "caption": "互いの違いを言葉にする、EQUINOX五人座談会。"
+      },
+      {
         "type": "divider"
       },
       {
@@ -3396,6 +3411,11 @@
       {
         "type": "paragraph",
         "content": "KAI　『Silent Signal』で一つ変わったのはそこかもしれない。五人の中でも、客席との間でも、「伝わってるか確認するために全部言わなくていい」という感覚ができた。"
+      },
+      {
+        "type": "image",
+        "assetId": "inline-ar-all01-i02",
+        "caption": "静寂と再起をめぐり、三つの視点が交差する。"
       },
       {
         "type": "divider"
@@ -3683,6 +3703,11 @@
         "content": "SHO　分かりやすいから。"
       },
       {
+        "type": "image",
+        "assetId": "inline-ar-all01-i03",
+        "caption": "五つの声を一つにしすぎない。その均衡がEQUINOXを形づくる。"
+      },
+      {
         "type": "divider"
       },
       {
@@ -3911,6 +3936,11 @@
       {
         "type": "paragraph",
         "content": "それが『EQUINOX』における二重光源の基本思想だ。"
+      },
+      {
+        "type": "image",
+        "assetId": "inline-ar-art01-i01",
+        "caption": "一人の人物に昼と夜を同時に当て、二つの影を生む。"
       },
       {
         "type": "divider"
@@ -4211,6 +4241,11 @@
       {
         "type": "paragraph",
         "content": "もう一度進めると分かった時の、静かな確信の色である。"
+      },
+      {
+        "type": "image",
+        "assetId": "inline-ar-art01-i02",
+        "caption": "DAYからDAWNまで、五段階で設計されたEQUINOXのカラー・スクリプト。"
       },
       {
         "type": "divider"
@@ -4798,6 +4833,11 @@
         "content": "体格、動き方、役割によって見え方が変わる。"
       },
       {
+        "type": "image",
+        "assetId": "inline-ar-cost01-i01",
+        "caption": "五人それぞれの身体に合わせて変化する、EQUINOX衣装のシルエット。"
+      },
+      {
         "type": "divider"
       },
       {
@@ -5030,6 +5070,11 @@
       {
         "type": "paragraph",
         "content": "EQUINOX期の統一感は、その考え方から作られている。"
+      },
+      {
+        "type": "image",
+        "assetId": "inline-ar-cost01-i02",
+        "caption": "白金の光と深い影。衣装がたどる二つの位相。"
       },
       {
         "type": "divider"

@@ -17,28 +17,7 @@ export const MiniPlayer: React.FC = () => {
   const { currentRecording, isPlaying, currentTime, duration, isExpanded, error } = playerState;
 
   if (!currentRecording) {
-    return (
-      <div
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '40px',
-          backgroundColor: '#080A0F',
-          borderTop: '1px solid #1A202C',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '0.75rem',
-          color: '#AEB6C4',
-          fontFamily: 'var(--font-mono)',
-          zIndex: 1000,
-        }}
-      >
-        <span>SELECT A TRACK TO BEGIN LISTENING — IGNITE OFFICIAL PORTAL</span>
-      </div>
-    );
+    return null;
   }
 
   const release = getReleaseBySlug(currentRecording.releaseId);
