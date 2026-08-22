@@ -90,7 +90,16 @@ export const DiscographyIndex: React.FC = () => {
                 </span>
               )}
 
-              <ResponsivePicture assetId={getReleaseArtworkAssetId(rel, 'cover')} title={rel.title} subtitle={`${rel.format} — ${rel.fictionalReleaseDateFull}`} aspectRatio="1:1" accentColor="var(--campaign-accent)" />
+              <div style={rel.artwork ? { border: '1px solid var(--color-border)', overflow: 'hidden' } : undefined}>
+                <ResponsivePicture
+                  assetId={getReleaseArtworkAssetId(rel, 'cover')}
+                  title={rel.title}
+                  subtitle={`${rel.format} — ${rel.fictionalReleaseDateFull}`}
+                  aspectRatio="1:1"
+                  accentColor="var(--campaign-accent)"
+                  style={rel.artwork ? { border: 'none' } : undefined}
+                />
+              </div>
 
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
