@@ -1141,7 +1141,7 @@
     ],
     "publication": {
       "fictionalReleaseDate": "2023-05-20",
-      "publishAt": null,
+      "publishAt": "2023-05-20T00:00:00Z",
       "visibility": "public",
       "campaignState": "past"
     },
@@ -1462,7 +1462,7 @@
     ],
     "publication": {
       "fictionalReleaseDate": "2023-05-22",
-      "publishAt": null,
+      "publishAt": "2023-05-22T00:00:00Z",
       "visibility": "public",
       "campaignState": "past"
     },
