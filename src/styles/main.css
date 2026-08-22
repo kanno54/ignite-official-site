@@ -394,15 +394,23 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   color: #F8FAFC;
   font-size: 1rem;
   line-height: 2;
+}
+
+.equinox-song-detail__lyric-section {
+  margin: 0 0 32px;
+}
+
+.equinox-song-detail__lyric-section h3 {
+  margin: 0 0 10px;
+  color: #D9B44A;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+}
+
+.equinox-song-detail__lyric-section p {
+  margin: 0;
   white-space: pre-line;
-}
-
-.equinox-song-detail__lyric-copy p {
-  margin-bottom: 16px;
-}
-
-.equinox-song-detail__lyric-break {
-  height: 16px;
 }
 
 .equinox-song-detail__related-grid {
@@ -731,7 +739,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .equinox-campaign__primary-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .equinox-campaign__secondary-grid {

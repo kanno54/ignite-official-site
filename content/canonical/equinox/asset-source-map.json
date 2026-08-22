@@ -1,0 +1,132 @@
+{
+  "linerNotes": {
+    "assetCode": "AR-LN01",
+    "selectedVersionId": "v-ar-ln01-1-1786802842728",
+    "sha256": "2978cd0d2d74a51c3f108329807791be79647a6defb87c23eeb4bad6c58f63c1",
+    "sourcePath": "content/canonical/equinox/AR-LN01.md",
+    "contentType": "LINER_NOTES",
+    "releaseId": "equinox"
+  },
+  "lyrics": [
+    {
+      "assetCode": "EQ-LY01",
+      "selectedVersionId": "v-eq-ly01-1-1786789686028",
+      "sha256": "8a433e122b3d50ea44e0eef2fec3173c4c007107da71f6f93cd50da0d1423f1d",
+      "sourcePath": "content/canonical/equinox/EQ-LY01.md",
+      "recordingId": "equinox-title",
+      "trackNumber": 1,
+      "trackTitle": "EQUINOX",
+      "route": "/discography/equinox/tracks/equinox/"
+    },
+    {
+      "assetCode": "EQ-LY02",
+      "selectedVersionId": "v-eq-ly02-1-1786789691089",
+      "sha256": "52ec41971ba9ef37f1113b98c47b785d752a8f06898188364a2822f7e4da40b4",
+      "sourcePath": "content/canonical/equinox/EQ-LY02.md",
+      "recordingId": "equinox-silent-signal",
+      "trackNumber": 2,
+      "trackTitle": "Silent Signal",
+      "route": "/discography/equinox/tracks/silent-signal/"
+    },
+    {
+      "assetCode": "EQ-LY03",
+      "selectedVersionId": "v-eq-ly03-1-1786802950437",
+      "sha256": "dc7bb00feba1b9d927d1b57d21557e66a3a4d9eae650bdd169f299c5464fa6aa",
+      "sourcePath": "content/canonical/equinox/EQ-LY03.md",
+      "recordingId": "equinox-rise-again",
+      "trackNumber": 3,
+      "trackTitle": "RISE AGAIN",
+      "route": "/discography/equinox/tracks/rise-again/"
+    },
+    {
+      "assetCode": "EQ-LY04",
+      "selectedVersionId": "v-eq-ly04-1-1786789635973",
+      "sha256": "e18117090536fa7854fbeee964ab9252c5ad7b60fb0a128d4c41a3d59889b7ad",
+      "sourcePath": "content/canonical/equinox/EQ-LY04.md",
+      "recordingId": "equinox-shadowplay",
+      "trackNumber": 4,
+      "trackTitle": "Shadowplay",
+      "route": "/discography/equinox/tracks/shadowplay/"
+    },
+    {
+      "assetCode": "EQ-LY05",
+      "selectedVersionId": "v-eq-ly05-1-1786789643806",
+      "sha256": "d58310f516da6aa139d864825319b832ee49fe79c3043c869f11209de4f4b840",
+      "sourcePath": "content/canonical/equinox/EQ-LY05.md",
+      "recordingId": "equinox-parallel-lines",
+      "trackNumber": 5,
+      "trackTitle": "Parallel Lines",
+      "route": "/discography/equinox/tracks/parallel-lines/"
+    },
+    {
+      "assetCode": "EQ-LY06",
+      "selectedVersionId": "v-eq-ly06-1-1786789650610",
+      "sha256": "ea6506353136e8ebb9006f5e9e5ce4cb424a907021a2d337972a22e34a1233c4",
+      "sourcePath": "content/canonical/equinox/EQ-LY06.md",
+      "recordingId": "equinox-electric-blue",
+      "trackNumber": 6,
+      "trackTitle": "Electric Blue",
+      "route": "/discography/equinox/tracks/electric-blue/"
+    },
+    {
+      "assetCode": "EQ-LY07",
+      "selectedVersionId": "v-eq-ly07-1-1786789657596",
+      "sha256": "9b66ba2098832e733b54da61eddda852af897cccc8e9b9e1e42d2514db4ef0a6",
+      "sourcePath": "content/canonical/equinox/EQ-LY07.md",
+      "recordingId": "equinox-glass-ceiling",
+      "trackNumber": 7,
+      "trackTitle": "Glass Ceiling",
+      "route": "/discography/equinox/tracks/glass-ceiling/"
+    },
+    {
+      "assetCode": "EQ-LY08",
+      "selectedVersionId": "v-eq-ly08-1-1786789665030",
+      "sha256": "6df3539acdaef40c6e8c022a05758a6f245661846b2c1a6a57ffcce0af7c271c",
+      "sourcePath": "content/canonical/equinox/EQ-LY08.md",
+      "recordingId": "equinox-afterglow",
+      "trackNumber": 8,
+      "trackTitle": "Afterglow",
+      "route": "/discography/equinox/tracks/afterglow/"
+    },
+    {
+      "assetCode": "EQ-LY09",
+      "selectedVersionId": "v-eq-ly09-1-1786789673776",
+      "sha256": "d3cd22e71d88bfad87a871f3b2e66f42579fd4b75fda3a8789eb6b2ceba7d4df",
+      "sourcePath": "content/canonical/equinox/EQ-LY09.md",
+      "recordingId": "equinox-nocturne-drive",
+      "trackNumber": 9,
+      "trackTitle": "Nocturne Drive",
+      "route": "/discography/equinox/tracks/nocturne-drive/"
+    },
+    {
+      "assetCode": "EQ-LY10",
+      "selectedVersionId": "v-eq-ly10-1-1786789676655",
+      "sha256": "698f074a4ba62a7aa35b405479986329d63b847a81b66ec3c448f145ee7f2d7f",
+      "sourcePath": "content/canonical/equinox/EQ-LY10.md",
+      "recordingId": "equinox-5-voices",
+      "trackNumber": 10,
+      "trackTitle": "5 VOICES",
+      "route": "/discography/equinox/tracks/5-voices/"
+    },
+    {
+      "assetCode": "EQ-LY11",
+      "selectedVersionId": "v-eq-ly11-1-1786789680428",
+      "sha256": "4ac29347163193fc2d797779a005ee0cc887e54a139238846ae8d1ace7f8e0d2",
+      "sourcePath": "content/canonical/equinox/EQ-LY11.md",
+      "recordingId": "equinox-shadow",
+      "trackNumber": 11,
+      "trackTitle": "SHADOW",
+      "route": "/discography/equinox/tracks/shadow/"
+    },
+    {
+      "assetCode": "EQ-LY12",
+      "selectedVersionId": "v-eq-ly12-1-1786789682822",
+      "sha256": "2a3ddbdcd533fd7d56e8dc81fdcfeac2f4035b2c407ecb8926c0aab232d27e77",
+      "sourcePath": "content/canonical/equinox/EQ-LY12.md",
+      "recordingId": "equinox-first-dawn",
+      "trackNumber": 12,
+      "trackTitle": "First Dawn",
+      "route": "/discography/equinox/tracks/first-dawn/"
+    }
+  ]
+}

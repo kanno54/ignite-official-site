@@ -209,7 +209,7 @@
       "fictionalReleaseDateFull": "2024.05.15",
       "coverAssetId": "cover-equinox",
       "description": "IGNITE待望の2nd Full Album。シングル曲『Silent Signal』『RISE AGAIN』をはじめ、光と影が交錯する全12曲を収録。",
-      "linerNotes": "『FIRESTARTER』で火を点け、『IGNITION』で始まりを告げ、『BURN IT DOWN』で衝動をさらけ出し、『NO LIMITS』で限界を穿ち、『SOLAR』で太陽へ手を伸ばした。  \nそして『Silent Signal』で息を止め、『RISE AGAIN』で膝を起こした。\n\nIGNITEが辿り着いた2nd Full Album『EQUINOX』は、光と影の双方が同じ深さで並び立つ、分律（昼夜平分時）の記録である。\n\n正午の光を意味するXII「EQUINOX」から、夜明けの第一光を呼ぶXXIV「First Dawn」まで。  \n12の楽曲はすべてがローマ数字の時間軸を持ち、五人のメンバーが過ごした葛藤、孤独、信頼、そして高揚のすべてを美しく刻み込んでいる。\n\n一人が誰かの影になるのではない。全員が異なる輝きを放ちながら、ひとつの中心（ONE MOMENT）へ集う。\n\nこの盤は、IGNITEの歴史におけるひとつの到達点であり、次なる物語への静かな扉である。",
+      "linerNotes": "光と影。熱と静けさ。個人とグループ。\n\n『EQUINOX』が描くのは、相反するもののどちらかを選び取ることではない。ふたつが消えずに存在し、その間で五人が立つ場所を探し続けることだ。キャンペーン全体に掲げられた「TWO SIDES, ONE MOMENT」という思想も、昼と夜を勝敗に分けるのではなく、同じ場所に共存させるところから始まっている。\n\n『SOLAR』で外へ向かって放たれた光は、ここでは五人自身を照らす光へ変わる。そのために見えてくる影、沈黙、距離、迷い。そして、それらを消さないままもう一度同じ場所へ戻るまで。\n\n全12曲は、IGNITEが「五人で揃うこと」の意味を、あらためて問い直した記録でもある。\n\nALBUM NOTE\n\n『EQUINOX』の12曲を通して、IGNITEは「五人であること」を完成形として描いてはいない。\n\n沈黙の中で呼吸を探す『Silent Signal』。\n傷を残したまま再び立つ『RISE AGAIN』。\n自分自身の二面性へ向き合う『Shadowplay』。\n交わらない距離を受け入れる『Parallel Lines』。\n夜を走り抜け、限界へぶつかり、余韻に立ち止まる中盤。\nそして、五つの声を五つのまま重ねる『5 VOICES』。\n\n影を最も濃くした『SHADOW』を越えたあと、『First Dawn』に残るのは、大きな勝利ではなく静かな朝だ。\n\n『SOLAR』で得た光は消えていない。\n\nその光があったからこそ、五人は自分たちの影まで見ることができた。\n\n光と影のどちらかではなく、その両方を持ったまま同じ場所へ立つこと。\n\nそれが、2nd Full Album『EQUINOX』に刻まれたIGNITEの現在地である。",
       "trackIds": [
         "equinox-title",
         "equinox-silent-signal",
@@ -13974,11 +13974,79 @@
         "二面性",
         "タイトル曲"
       ],
-      "linerNotes": "正午の光と影が重なる瞬間の美学。二つの世界が交差するアルバムの幕開けを飾るシンフォニック・ダンスナンバー。",
+      "linerNotes": "アルバムの中心思想を最初に提示するタイトルナンバー。\n\n強い光と深い影、広がるスケールと抑制された緊張感を同時に抱えながら、五人が別々の位置からひとつの中心へ近づいていく。重要なのは、最初から完成したフォーメーションを見せることではない。それぞれが自分の輪郭を持ったまま、同じ瞬間へ収束していく過程そのものにある。\n\n『SOLAR』のように光へ向かって一気に駆け抜けるのではなく、光の中に生まれる影まで引き受ける。その静かな決意が、アルバム全体の基準点となる。",
       "lyrics": [
         {
-          "speaker": "All",
-          "text": "TWO SIDES, ONE MOMENT\n光と影の境目で僕らは出逢う"
+          "speaker": "Intro / All",
+          "text": "Light and shadow\nHeat and silence\nWe are here\nEQUINOX"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "遠い場所で鳴っていた\n名前のない不安さえ\n今日のために抱えてきた\n消せないままでいい"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "笑い合った帰り道\n何気ないその一秒が\nばらばらの僕らをまた\n同じ方へ向かわせた"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "強い光のそばには\n必ず影が生まれる\nだからこそ見失わずに\nここまで来られたんだ"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "EQUINOX\n光と影のあいだで\n僕らは何度も立ち止まって\nEQUINOX\n熱と静けさを抱いて\n同じ未来を選んでいく\n\n違う痛み　違う願い\n重ねた声がひとつになる\n離れた場所からでも\n今　中央へ向かう"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "We come alive\nWe come alive\nFive hearts, one horizon"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "守りたいものが増えるほど\n怖くなる夜もあった\n誰にも見せない傷跡を\n隠すことが強さじゃない"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "八カウント　息を合わせ\nずれた呼吸を戻していく\n完璧じゃないその身体で\nここまで踊ってきたんだ"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "交わらないように見えた\nそれぞれの軌道さえ\n同じ朝へ続いていると\n今なら信じられる"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "EQUINOX\n光と影のあいだで\n僕らは何度も立ち止まって\nEQUINOX\n熱と静けさを抱いて\n同じ未来を選んでいく\n\n違う痛み　違う願い\n重ねた声がひとつになる\n離れた場所からでも\n今　中央へ向かう"
+        },
+        {
+          "speaker": "Rap / KAI",
+          "text": "No perfect line, no easy way\n迷いながら make our day\n誰かの答えじゃ届かない\n五人で描く new skyline\n\nFall apart? No, we reconnect\n沈黙さえも respect\nぶつかった夜も全部\nここへ来るための context\n\nOne step, one breath, one beat\n違う足音でも同じ street\n俺らが選んだこの場所で\n影ごと抱いて rise to the peak"
+        },
+        {
+          "speaker": "Dance Break / SHO",
+          "text": "Left to right\nDark to light\n止まらない heartbeat\n\nNear and far\nWho we are\nひとつになる瞬間へ"
+        },
+        {
+          "speaker": "Bridge / YUTO → LEO → REN",
+          "text": ""
+        },
+        {
+          "speaker": "YUTO",
+          "text": "もしもまた迷って\n足が止まりそうでも"
+        },
+        {
+          "speaker": "LEO",
+          "text": "振り向けばそこに\n変わらない声がある"
+        },
+        {
+          "speaker": "REN",
+          "text": "誰かを照らすためじゃなく\n誰かと照らし合うために\n僕らはここにいる"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "EQUINOX\n光と影のあいだで\n僕らは何度でも戻ってくる\nEQUINOX\n熱と静けさを抱いて\n同じ未来を選んでいく\n\n違う痛み　違う願い\nそれでも五つの声は重なる\n離れた場所から来た僕らが\n今　中央でひとつになる"
+        },
+        {
+          "speaker": "Outro / All",
+          "text": "Light and shadow\nHeat and silence\nFive voices\nOne formation\n\nEQUINOX"
         }
       ],
       "assetStatus": "FOUND_EXISTING",
@@ -14010,11 +14078,87 @@
         "無言の絆",
         "ミニマリズム"
       ],
-      "linerNotes": "言葉を削ぎ落とした静寂の中で五人の視線と呼吸を同期させた話題作。アルバムの第2トラックとして『EQUINOX』の深層を接続する。",
+      "linerNotes": "声を大きくするのではなく、音が消えたあとに何が残るのかを追いかけた一曲。\n\n視線、呼吸、足音、重なる影。楽曲の空白そのものがリズムと同じだけ重要な役割を持ち、五人の身体が「言葉にならない合図」を伝えていく。歌詞でも、聞こえることより伝わること、完全に触れ合うことより同じ場所を感じることが繰り返し描かれている。\n\nパフォーマンスでは全員を完全に同じ形へ矯正せず、それぞれの身体性を残しながら意図だけを揃えるという考え方が強く表れた。深いブルーブラックの緊張と、止まりかけた時間の感覚が、『EQUINOX』という時代への入口を開く。",
       "lyrics": [
         {
-          "speaker": "All",
-          "text": "言葉より先に伝わるものがある\n息を止めた静寂の中に"
+          "speaker": "Intro / SHO",
+          "text": "青になっても\n渡らない靴\n風だけ先に\n向こうへ行った"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "改札の前で\n消してしまった文字\n送れないままの画面が\n指先を照らしてる\n\nテーブルの端\nぬるくなった缶\nさっきから何も\n減っていないのに"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "「平気だよ」って\n少しだけ早く言う\n笑う前にいつも\n袖口を握るんだね\n\n誰にも見えない\n小さな止まり方を\n偶然みたいに\n通り過ぎていた"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "分かるなんて\n簡単に言えない\n君の中には\n僕の知らない部屋がある\n\nだけど今\n閉じた扉の前で\n急かさずに\n立っていたい"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "急がなくていい\n今日を決めなくていい\n青が消えても\nまだここにいる\n\n言えないことを\n言わせなくていい\n君が歩ける速さで\n次の角を曲がろう"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "ひとつ　ふたつ\n消えたサインを\n見失わないように"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "閉まりかけた\nエレベーターの扉\n乗るかどうかも\n聞かずに押さえてた\n\n机の上を\n二度だけ叩く指\n気づかないふりで\n同じ回数返した"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "誰も座らない\n窓際のひとつ席\n置き忘れたみたいに\n空いたままでいた\n\n戻る場所だけ\n残しておくことを\n優しさなんて\n呼ばなくてもいい"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "大丈夫じゃないと\n言えない夜ほど\n余計な言葉は\n君を遠ざけるから\n\n何も聞かず\n隣を空けて\n同じ景色を\n見ていよう"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "急がなくていい\n答えを出さなくていい\n次の電車なら\n一本見送れる\n\n消した言葉を\n拾わなくていい\n君が話せる日まで\nここを離れない"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "ひとつ　ふたつ\n返すリズムが\n途切れないように"
+        },
+        {
+          "speaker": "Pre-Dance / SHO",
+          "text": "止まったままでいい"
+        },
+        {
+          "speaker": "Dance Hook / All",
+          "text": ""
+        },
+        {
+          "speaker": "No vocals — 8 counts of near silence",
+          "text": ""
+        },
+        {
+          "speaker": "One hand tap. Two steps. Held pose. Formation changes.",
+          "text": ""
+        },
+        {
+          "speaker": "Only movement, fabric, and the room remaining.",
+          "text": ""
+        },
+        {
+          "speaker": "Bridge / YUTO → LEO",
+          "text": "新しい缶を\n何も言わず置いた\n冷めたままの時間まで\n責めたくはないから"
+        },
+        {
+          "speaker": "Bridge / KAI → REN",
+          "text": "開いた扉も\n空いた席も\n君が選べるように\nそのままにしておく"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "急がなくていい\n今日を越えなくていい\n青に変わるまで\nここにいればいい\n\n言えないことも\n消えた言葉も\n全部抱えたままで\n同じ側へ行こう\n\n君が一歩\n踏み出すなら\n僕も遅れずに行く\n何も鳴らさず\nただ隣から\n歩き出せるように"
+        },
+        {
+          "speaker": "Outro / SHO",
+          "text": "机の下で\n二度だけ返す\nそれだけで\n次を待てた"
         }
       ],
       "assetStatus": "FOUND_EXISTING"
@@ -14044,11 +14188,67 @@
         "暗青→白金",
         "アンセム"
       ],
-      "linerNotes": "不完全なまま何度でも立ち上がる意志を歌うアンセム。静寂から生まれた熱がアルバム全体のクライマックスへ向けて力強く脈動する。",
+      "linerNotes": "静寂の次に置かれるのは、単純な勝利ではなく「再起」。\n\n傷や迷いを消して強い自分へ戻るのではない。足が重い朝も、崩れたフォーメーションも、うまくいかなかった時間も、そのまま抱えてもう一度立つ。その姿勢を、大きく開いたコーラスへ変えたアンセムだ。\n\n五人の声が重なるほど力は増していくが、そこで過去が美化されることはない。「傷ついたままでもいい」という言葉が、この曲の強さを支えている。暗い青から白金へ向かうイメージも、完全な勝利ではなく、壊れたものを組み直して再び立つ感覚として設計されている。",
       "lyrics": [
         {
-          "speaker": "All",
-          "text": "まだ終わってない\n何度でもここからだ"
+          "speaker": "Intro / KAI",
+          "text": "止まったままの音源\n床に残る白い線\n昨日の位置じゃなくていい\nもう一度　数えよう"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "鏡の中　少し遅れて\n動く自分を見ていた\n追いつくことばかり考えて\n息の置き場をなくしてた"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "笑って流した言葉まで\n帰り道で引っかかってた\nうまくできた日よりも\n揃わなかった夜が残る"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "八つ数えて　また途切れて\n誰もすぐには動けない\nそれでも隣にいる気配が\n次の拍を待っていた"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "RISE AGAIN\n前と同じじゃなくていい\nずれたままの呼吸でも\nここから合わせていける\n\nRISE AGAIN\n空いた場所を埋めるんじゃなく\n今の僕らに似合う形を\nもう一度　選び直そう"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "One, two, three, four\nまだ数えられる\nFive, six, seven, eight\nここにいる"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "剥がれかけた目印を\n指先でそっと外した\n正しかったはずの場所に\nもう立てない日もある"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "崩れたままの動きには\n崩れた理由が残ってる\n直すためじゃなく確かめる\n身体が覚えた迷いまで"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "同じ音を聴いていても\n見ていた景色は違ってた\nだから今　目線の先を\nひとつずつ決めていこう"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "RISE AGAIN\n前と同じじゃなくていい\n足元の線を越えて\n新しい場所へ立てばいい\n\nRISE AGAIN\n失くしたものを探すより\n残っているこのリズムを\n五人で鳴らし直そう"
+        },
+        {
+          "speaker": "Bridge / KAI",
+          "text": "誰かが遅れたんじゃない\n誰かが間違えたんじゃない\n変わっていく途中で\n少しだけ　形が合わなくなった"
+        },
+        {
+          "speaker": "Bridge / REN",
+          "text": "ならば　ここで止まって\nもう一度　呼吸を置こう\n戻るためじゃない\n今の僕らで　重なるために"
+        },
+        {
+          "speaker": "Break / All",
+          "text": "One, two\n聞こえてる\nThree, four\nここにいる\nFive, six\n目を上げて\nSeven, eight\n始めよう"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "RISE AGAIN\n前と同じじゃなくていい\nずれたままの呼吸でも\nここから合わせていける\n\nRISE AGAIN\n空いた場所を埋めるんじゃなく\n今の僕らに似合う形を\nもう一度　選び直そう"
+        },
+        {
+          "speaker": "Outro / All",
+          "text": "剥がした線の向こう側\n新しい位置で\n同じ音が鳴り始める\nRISE AGAIN"
         }
       ],
       "assetStatus": "FOUND_EXISTING"
@@ -14074,11 +14274,67 @@
         "デュエット",
         "緊張感"
       ],
-      "linerNotes": "光が強くなるほど深く伸びる影を描いたダークポップナンバー。SHOとRENの複雑なヴォーカルラインが交錯する。",
+      "linerNotes": "ここからアルバムは、五人の外側ではなく、それぞれの内側へさらに深く入っていく。\n\n低域の重さと抑えたダンスグルーヴの中で描かれるのは、人に見せる自分と、その奥に残る本音のずれ。ステージに立つ以上、見せる顔を持つことは避けられない。しかし、その顔だけが自分のすべてになるわけでもない。\n\n黒と紫の緊張感、反復するビート、光に照らされる身体とその背後に残る影。「表」と「裏」のどちらを本物と決めるのではなく、両方を自分として抱えることで、『EQUINOX』の二面性を個人のレベルまで引き寄せたダンスナンバーである。",
       "lyrics": [
         {
-          "speaker": "SHO / REN",
-          "text": "光の裏側で伸びていく影\n僕らの足音だけが夜に響く"
+          "speaker": "Intro / KAI",
+          "text": "Smile for the camera\n息を整えて\n誰にも見せない顔を\nまた隠した"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "フラッシュが消えたあと\n鏡の前で目を伏せた\n上手く笑えたはずなのに\n胸だけが置いていかれる"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "「大丈夫」って言うたびに\n少しずつ軽くなる声\nみんなが好きな僕のままで\n今夜も終われたらいいのに"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "光が強いほど\n影は濃く伸びて\n隠したはずの痛みまで\n輪郭を持ってしまう"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "見せたい僕と\n見せられない僕が踊ってる\n拍手の奥で\n本当の声だけ聞こえない\n\n笑っていれば\n守れるものもあるけど\nその笑顔の裏側まで\n誰かに触れてほしかった"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "Black and violet\nBlack and violet\nDon’t look away"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "揃いすぎたフォーメーション\n乱せない呼吸の中で\n一拍だけ遅れた鼓動を\n誰にも気づかれないようにした"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "背負うほど強くなれると\nそう信じてきたけれど\n手を離せない理由だけが\n増えていく夜もある"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "正しさだけでは\n届かない場所がある\n黙ったままの君の目が\n今も離れない"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "重なるたびに\n違う形の孤独が浮かぶ\n隣にいても\n触れられない距離がある\n\n演じることが\n嘘になるわけじゃない\nそれでも名前を呼ぶ時だけ\n僕でいたいと思った"
+        },
+        {
+          "speaker": "Rap / KAI",
+          "text": "No filter, no mercy\n誰が決めた perfect story\n期待の中で息をして\n崩れないように立ってるだけ\n\nSmile, pose, repeat\n割れた心拍を隠して keep\n「見せるため」の自分の奥\nまだ消えてない火を探してる"
+        },
+        {
+          "speaker": "Dance Break / SHO",
+          "text": "Turn away\nTurn away\n影を踏み抜いて\n\nLook at me\nLook at me\n今だけは逸らすな"
+        },
+        {
+          "speaker": "Bridge / YUTO → REN",
+          "text": "もしも幕が降りたあと\n何も言えなくなっても\n暗闇の中で伸ばした手を\n見失わないでいて"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "見せたい僕と\n見せられない僕がひとつになる\n拍手の奥で\nようやく本音が聞こえた\n\n笑っていても\n泣いていてもいいんだと\n君が隣にいるだけで\n影は光へ変わっていく"
+        },
+        {
+          "speaker": "Outro / All",
+          "text": "Black and violet\n消えないままで\nShadowplay\n僕たちはまだ踊ってる"
         }
       ],
       "assetStatus": "FOUND_EXISTING",
@@ -14105,11 +14361,67 @@
         "感傷",
         "ミドルテンポ"
       ],
-      "linerNotes": "交わらない二つの線が、同じ地平線を目指して並んで走るストーリー。YUTOのハイトーンとLEOの温かな声が切なさを惹き立てる。",
+      "linerNotes": "近くにいることと、同じ場所にいることは同じではない。\n\nKAIとRENを軸にしたミドルテンポの歌唱曲は、激しい衝突ではなく、すぐ隣を歩きながら完全には交わらない距離を描く。感情を大きくぶつけず、互いの声の間に余白を置くことで、五人の関係の中にある「分かりきれなさ」が残されている。\n\n並行線は、永遠に交わらないことの象徴であると同時に、同じ方向へ進み続けられる関係でもある。無理にひとつになることを答えにしないところに、このアルバムらしい静かな信頼がある。",
       "lyrics": [
         {
-          "speaker": "YUTO / LEO",
-          "text": "交わらなくてもいい\n同じ方角を向いて歩けるなら"
+          "speaker": "Intro / REN",
+          "text": "窓に映る街の灯り\n流れて　また消えていく\n隣にいるはずなのに\n君の見ている先は遠い"
+        },
+        {
+          "speaker": "Verse 1 / KAI",
+          "text": "誰かの期待を背負うたび\n言葉は少なくなっていく\n大丈夫だと笑う癖まで\nいつから身につけたんだろう\n\n同じ部屋　同じ時計\n同じ明日を待っていても\n選んだ道の形だけは\n誰にも代われないまま"
+        },
+        {
+          "speaker": "Verse 1 / REN",
+          "text": "言えないことが増えるほど\n君の背中は遠くなる\n追いつきたいわけじゃない\nただ　置いていかないでほしい\n\n触れそうで触れない距離\n名前を呼べば壊れそうで\n静かなまま並んでいた\n夜が明けるまで"
+        },
+        {
+          "speaker": "Pre-Chorus / KAI → REN",
+          "text": "**KAI**\n交わらない線の上\nそれぞれの痛みを連れて\n\n**REN**\n同じ景色を目指すなら\n離れていてもいいのかな"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "君と僕は\n近くにいても交われない\nそれでもまだ\n同じ朝へ向かっている\n\n答えのない不安ごと\n胸の奥に抱えたまま\n触れない距離があるから\n見失わずにいられる\n\nParallel Lines\n並んでいこう\n言葉にならないままで"
+        },
+        {
+          "speaker": "Post-Chorus / REN",
+          "text": "No need to say\nNo need to stay\nただ隣で　光を待つ"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "守ることに慣れすぎて\n助けを呼ぶ声を忘れた\n誰かのためと言いながら\n自分を置き去りにしてた\n\n強くあること　正しいこと\nそのどちらも選べなくて\n暗い窓に映る顔だけ\n少し知らない人みたいだ"
+        },
+        {
+          "speaker": "Verse 2 / REN",
+          "text": "歌うたびに怖くなる\n届かなかったらどうしよう\n期待されるその場所で\n息を止めてしまわないように\n\n君は何も聞かないまま\n少しだけ歩幅を緩めた\nそれだけで救われること\nたぶん　君は知らない"
+        },
+        {
+          "speaker": "Pre-Chorus / KAI → REN",
+          "text": "**KAI**\n違う夢を見ていたって\n同じ場所に立てるなら\n\n**REN**\n重ならない影さえも\n僕らの形になるだろう"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "君と僕は\n近くにいても交われない\nそれでもまだ\n同じ朝へ向かっている\n\n誰にも見せない傷跡も\n消えないままでいいから\n触れない距離があるから\n壊さずにいられる\n\nParallel Lines\n並んでいこう\n名前を呼ばないままで"
+        },
+        {
+          "speaker": "Rap / KAI",
+          "text": "Same road, different pace\n同じ地図にない答え\n並ぶことは妥協じゃない\n離れたままでも消えない flame\n\n言わなかった言葉の数\n沈黙の奥に残る脈\n無理に一つにならなくていい\n違うままで守れる未来がある\n\nNo crossing, no escape\nそれでも目を逸らさないで\nお前が見てるその先へ\n俺もまだ歩いていく"
+        },
+        {
+          "speaker": "Bridge / REN",
+          "text": "もしも明日　違う場所で\n別の空を見上げても\n君が進む足音だけ\n胸の奥で聞こえている"
+        },
+        {
+          "speaker": "Bridge / KAI",
+          "text": "もしもいつか　立ち止まって\n何も言えなくなったなら\n交わらないこの線の上\n俺は隣にいる"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "君と僕は\n近くにいても交われない\nそれでもまだ\n同じ朝へ向かっている\n\n分かり合えない夜さえも\n置いていかずに連れていこう\n重ならない二つの影が\nひとつの景色を作る\n\nParallel Lines\n並んでいこう\n答えなんてなくてもいい\n\nParallel Lines\n遠いままで\n同じ光を見ている"
+        },
+        {
+          "speaker": "Outro / REN",
+          "text": "窓に映る夜が明ける\n君はまだ　少し先を歩く"
         }
       ],
       "assetStatus": "FOUND_EXISTING",
@@ -14136,11 +14448,63 @@
         "エレクトロダンス",
         "高速"
       ],
-      "linerNotes": "青い火花が夜の空間を切り裂くアッパーダンスチューン。KAIのキレのあるラップとYUTOのハイトーンシャウトが炸裂。",
+      "linerNotes": "内省の続くアルバム中盤に、夜の速度を持ち込む疾走曲。\n\n眠れない街、終電後の空気、青い光。YUTOの歌い出しから始まるクールな推進力は、『SOLAR』の太陽の下を走る感覚とは異なり、誰もいなくなった夜の街をひとりで進むような速さを持つ。\n\nただし、ここでの夜は立ち止まるためだけのものではない。考えがまとまらなくても、行き先が決まらなくても、身体だけは前へ進める。明るい未来へ向かう疾走ではなく、答えのない時間そのものを走り抜けることで、『EQUINOX』の夜に別の温度を与えている。",
       "lyrics": [
         {
-          "speaker": "KAI / YUTO",
-          "text": "Electric Blue 闇を射抜く閃光\n言葉を超えて加速する"
+          "speaker": "Intro / YUTO",
+          "text": "青い光が　濡れた道路に伸びて\n終電の音が　遠くでほどけた\n帰る場所はあるのに\nまだ　帰れないまま"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "コンビニの窓に映った\n少し疲れた横顔\n誰にも見せない言葉だけ\nポケットの中　握ってる\n\n街は眠らないふりをして\nビルの隙間　風が抜ける\n何かを失くした気がして\n歩幅だけ　速くなった"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "交差点を渡るたび\n知らない誰かとすれ違う\n名前も知らない光の中\n僕らはどこへ向かうんだろう\n\n笑って終わらせた今日が\n胸の奥でまだ騒いでる\n大丈夫だと言うために\nまた少し　息を吸った"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "追いつけない夜ほど\n街の色は鮮やかで\n置いてきたはずの迷いが\n背中を呼んでいる"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "Electric Blue\n駆け抜けていく\n眠れない街の真ん中を\nElectric Blue\n答えなんて\n今はなくてもいいから\n\n消えかけたサインを\n見失わないように\n誰にも言えない熱を\nこの胸に灯して\n朝が来る前に\nもう少しだけ　走ろう"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "Blue, blue, electric blue\nまだ終われない\nBlue, blue, electric blue\n夜を越えて"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "信号待ちの沈黙に\n余計な声が入り込む\n「ここまででいい」なんて\n誰が決めたんだろうな\n\n振り返れば見えるけど\n戻るために歩いたんじゃない\n傷ついた靴底の跡も\n全部　ここへ来た証明だ"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "ガラス越しに流れていく\n青と白の残像を\n数えるように　足を運ぶ\n止まるためじゃない\n\n音のないイヤホン越し\n自分の呼吸だけが鳴る\n乱れたままでもいい\n今は前だけ見ていたい"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "遠ざかるテールランプ\n滲んだ視界の向こう\nひとりじゃないと気づく\n小さな光がある"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "Electric Blue\n駆け抜けていく\n眠れない街の真ん中を\nElectric Blue\n迷いながら\nそれでも僕らは行くんだ\n\n消えかけたサインを\n見失わないように\n誰にも言えない熱を\nこの胸に灯して\n朝が来る前に\nもう少しだけ　走ろう"
+        },
+        {
+          "speaker": "Rap / KAI",
+          "text": "Midnight lane, no sleep, no pause\n誰かのルールじゃ測れない flaws\n青いネオン　濡れた asphalt\n遠回りでも still moving fast\n\n見えない未来を睨んで\n不安ごとポケットにしまって\n止まる理由を数えるより\n次の一歩で塗り替えてく\n\nNo map, no perfect answer\nだけどこの足で cross the border\n誰にも見えない夜の中\n俺らの熱はまだ消えない"
+        },
+        {
+          "speaker": "Bridge / YUTO → REN",
+          "text": "もしも今日が終わる前に\nひとつだけ願えるなら\n置いてきた言葉じゃなく\n明日の自分を選びたい\n\n青い街灯が消えても\nこの心まで消えない\n遠くに見えた朝の色へ\n僕らは歩いていく"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "Electric Blue\n駆け抜けていく\n眠れない街の真ん中を\nElectric Blue\n答えなんて\n今はなくてもいいから\n\n痛みも迷いも\n全部連れていこう\n夜を越えたその先で\n新しい光を見つける\n朝が来る前に\n五つの影で　走ろう"
+        },
+        {
+          "speaker": "Outro / YUTO",
+          "text": "青い光が消える頃\n少しだけ　前を向けた\nElectric blue\nまだ　帰らない"
         }
       ],
       "assetStatus": "FOUND_EXISTING",
@@ -14167,11 +14531,67 @@
         "突破",
         "ロックエレメント"
       ],
-      "linerNotes": "見えない限界や固定概念を鋭利なパフォーマンスで打ち破るハードチューン。強烈なベースラインとシャープなヴォーカルワーク。",
+      "linerNotes": "見えない壁に対して、最も真正面から牙をむく一曲。\n\n硬質なビートとKAIのラップを中心に、期待、役割、周囲が勝手に決めた限界を「見えない天井」として描く。壁が見えないからこそ、自分が止められているのか、自分自身で止まっているのかさえ分からない。その苛立ちが、鋭い言葉と身体的なパフォーマンスへ変換されていく。\n\n『EQUINOX』の中でも攻撃性の強い楽曲だが、敵を単純に外部へ置かない点が重要だ。赤い光が黒を切り裂くような緊張の中で、自分に向けられた期待と、自分自身が作った限界の両方を壊そうとする。",
       "lyrics": [
         {
-          "speaker": "SHO / KAI",
-          "text": "頭上のガラスを打ち砕け\n見えない限界はここにはない"
+          "speaker": "Intro / KAI",
+          "text": "Look up.\n見えてるだろ\n触れられそうで\n誰も壊そうとしなかった天井が\n\nOne, two, three—\nBreak it."
+        },
+        {
+          "speaker": "Verse 1 / KAI",
+          "text": "「ここまででいい」って\n笑って線を引く声\n期待という名前の檻で\n俺たちを測るなよ\n\n求められたイメージなら\n何度だって着替えてきた\nでもその奥で鳴る衝動まで\n消せると思うな"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "上手く笑うほどに\n遠ざかっていく気がして\n誰かが決めた僕らの形に\n息が詰まりそうだった"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "見上げるたび\n透明な壁が\n行く手を塞いでいても\nこの手の熱は\nまだ消えない\n壊れる音を待っている"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "叩き割れ\n届かないと言われた空まで\nもう誰にも\n限界の名前はつけさせない\n\n傷ついてもいい\n嫌われてもいい\nここで止まるくらいなら\nこの夜ごと\n突き抜けていけ"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "Break it down\nBreak it down\nRed light, no fear\n\nBreak it down\nBreak it down\nWe’re still here"
+        },
+        {
+          "speaker": "Verse 2 / LEO",
+          "text": "拍手の中に隠れた\n「こうであれ」の視線たち\n愛されるためだけに\n僕らはここにいない"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "揃えた足音さえ\n誰かの答えじゃない\n崩して　組み直して\nこの身体で示していく"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "見えない壁\n高すぎるほど\n燃える理由になるから\n押しつけられた\n未来の外へ\n自分たちで踏み出す"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "叩き割れ\n届かないと言われた空まで\nもう誰にも\n限界の名前はつけさせない\n\n迷いだっていい\n震えててもいい\nそれでも拳を上げるなら\n赤い光を\n切り裂いていく"
+        },
+        {
+          "speaker": "Rap / KAI",
+          "text": "They built a box, put a label on it\n“Stay in line,” yeah, they wanted control it\n期待の形に収まるための\n人生なら最初から興味ないよ\n\nNice smile, right pose, right words\n都合のいい俺らを求める world\nBut I got scars, I got rage, I got proof\nこの足で越える every single rule\n\nNo ceiling, no limit\n届かない場所まで行く意味\n誰かの許可じゃ足りない\n俺らの未来は俺らが決める\n\nRed laser, cut through the dark\n胸の奥で鳴り出す spark\n壊すためじゃない　奪うためだ\n見たことない景色まで連れてくんだ"
+        },
+        {
+          "speaker": "Dance Break / SHO",
+          "text": "Hands up\nDon’t look down\n赤い光の中\n\nStand tall\nBreak the wall\nまだ終わらせない"
+        },
+        {
+          "speaker": "Bridge / YUTO → REN",
+          "text": "ずっと届かないと思ってた\nあの場所が近づいてくる\n誰かのためじゃなく\n自分の名前で立てるなら"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "叩き割れ\n届かないと言われた空まで\nもう誰にも\n限界の名前はつけさせない\n\n傷ついてもいい\n嫌われてもいい\nここで止まるくらいなら\nこの夜ごと\n突き抜けていけ"
+        },
+        {
+          "speaker": "Outro / KAI",
+          "text": "Look up.\nもう壁じゃない。\n\nWe don’t break for them.\nWe break through."
         }
       ],
       "assetStatus": "FOUND_EXISTING",
@@ -14199,11 +14619,59 @@
         "夕暮れ",
         "シティポップ"
       ],
-      "linerNotes": "『RISE AGAIN』シングルで先行ライブ版が収録された楽曲の待望のスタジオフル音源。熱狂のあとに残る美しい夕空のグラデーション。",
+      "linerNotes": "強い光のあとに残るものへ耳を澄ませる、静かな余韻の曲。\n\n派手なステージが終わり、歓声が遠ざかったあと。それでも身体や耳の奥には、少しだけ光と熱が残っている。LEOの柔らかな声を中心に、その「消え切らない時間」を急いで次へ進めず、静かに受け止めていく。\n\n星のような光、広い空間、長く残る余韻。明るいLEOの声を、盛り上げるためではなく静けさを支えるために置くことで、彼自身の表現にも新しい陰影が生まれている。\n\n『EQUINOX』における静けさは、空白ではない。何かが終わったあとにも残る感情まで含めて、一つの時間として扱う。その考え方を最も柔らかく示す一曲だ。",
       "lyrics": [
         {
-          "speaker": "LEO / REN",
-          "text": "ステージが静まり返ったあとも\n胸の奥に残る熱がある"
+          "speaker": "Intro / LEO",
+          "text": "最後の音が消えて\nまだ少しだけ　耳の奥で鳴ってる\n名前を呼ぶ声さえ\n遠い星みたいに揺れていた"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "眩しすぎたライトの下\nうまく笑えていたかな\n袖に残った汗の跡\n今日が終わることを知った\n\nステージの端に立って\n暗くなった客席を見る\n数えきれない小さな光が\n夜空より近くにあった"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "拍手が波のように\n少しずつ遠ざかっても\n胸の奥に残る熱は\nまだ消えないまま"
+        },
+        {
+          "speaker": "Chorus / LEO → All",
+          "text": "星みたいな光の中で\n僕らは同じ夜を見ていた\n言葉にできなくても\n確かに届いていたものがある\n\n終わりじゃない\nただ静かに\n次の朝を待っているだけ\n君が灯したこの景色を\n忘れないように抱きしめる"
+        },
+        {
+          "speaker": "Verse 2 / YUTO",
+          "text": "誰もいない通路には\n外したイヤモニが残って\nさっきまでの歓声だけ\n嘘みたいに遠く感じた"
+        },
+        {
+          "speaker": "Verse 2 / LEO",
+          "text": "「おつかれ」って笑いながら\nいつものように肩を叩く\nそれだけで救われること\n僕らはもう知っている"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "完璧じゃない夜も\n迷ったままの明日も\n五つの影が重なれば\n少しだけ怖くない"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "星みたいな光の中で\n僕らは同じ夜を見ていた\n届かない場所まで\nこの歌がそっと残るように\n\nさよならじゃない\nまた会えると\n約束しなくても分かるから\n君がくれたこの熱だけ\n胸の奥で燃やしていく"
+        },
+        {
+          "speaker": "Interlude / KAI",
+          "text": "ライトが消えても\nここに立ったことは消えない\n誰かの明日を照らせたなら\n今日の僕らは　ちゃんと意味がある"
+        },
+        {
+          "speaker": "Bridge / LEO",
+          "text": "ひとりになった舞台の上\n見上げた天井の向こうへ\n君の光がまだ続いてる\nそんな気がしたんだ"
+        },
+        {
+          "speaker": "Bridge / REN & LEO",
+          "text": "泣きそうになるほど\nきれいだった景色を\n次はもっと遠くまで\n連れていけるように"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "星みたいな光の中で\n僕らは同じ夢を見ていた\n声にならなくても\n心はここに残っている\n\n終わりじゃない\nこの余韻が\n新しい歌を呼んでいる\n君が灯したこの景色を\n次の夜へ連れていく"
+        },
+        {
+          "speaker": "Outro / LEO",
+          "text": "最後の光が消える前に\nもう一度だけ　手を振った\n静かな夜の向こう側で\n僕らはまた　燃え続ける"
         }
       ],
       "assetStatus": "FOUND_EXISTING"
@@ -14230,11 +14698,143 @@
         "ダンス",
         "グルーヴ"
       ],
-      "linerNotes": "『Silent Signal』シングルで先行披露されたナイトダンスナンバーのスタジオ完成版。SHOとYUTOの妖しく滑らかなステップが目に浮かぶ。",
+      "linerNotes": "夜を見つめるのではなく、夜そのものを高速で通過していく。\n\n青黒い都市の光、流れていく道路、止まらないビート。ダークなシンセウェーブとUKガラージの脈動を思わせるサウンドの上で、SHOとYUTOの身体表現が鋭く交差する。\n\n同じ「夜」を扱いながら、『Moonlit』の静けさとも、『Electric Blue』の都会的な疾走とも異なる。こちらはより身体的で、暗さを速度へ変換していく楽曲だ。\n\n正確さを突き詰めるSHOと、反応の速さを持つYUTO。異なるタイプの二人が同じビートへ入ることで、「同じ動き」ではなく「違う身体が同じ方向へ走る」という『EQUINOX』のパフォーマンス思想が鮮明になる。",
       "lyrics": [
         {
-          "speaker": "SHO / YUTO",
-          "text": "Nocturne Drive 夜の速度で駆け抜ける\n二人だけの合図で"
+          "speaker": "Intro / All",
+          "text": "Light and shadow\nHeat and silence\nWe are here\nEQUINOX"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "遠い場所で鳴っていた\n名前のない不安さえ\n今日のために抱えてきた\n消せないままでいい"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "笑い合った帰り道\n何気ないその一秒が\nばらばらの僕らをまた\n同じ方へ向かわせた"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "強い光のそばには\n必ず影が生まれる\nだからこそ見失わずに\nここまで来られたんだ**[Intro / YUTO]**\n午前零時を過ぎた表示\nラジオはもう聞こえない\n窓に触れた指の跡を\n街の光がほどいていく"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "青い標識　流れる文字\n読み終わる前に遠ざかる\n明日の予定を伏せたまま\nシートに深く沈み込んだ\n\n誰かに決められた顔を\nバックミラーへ置いてきて\n言葉より速い景色に\n今だけ身を任せてる"
+        },
+        {
+          "speaker": "Verse 1 / SHO",
+          "text": "一定だった白い線が\n緩いカーブで形を変える\n追いついたと思うたびに\nその影は前へ抜けていく\n\n隣にいるはずなのに\n横顔までは見せないで\n近づくほど遠くなる\nその距離をまだ測ってる"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "トンネルへ入る瞬間\nすべての色が途切れた\n呼吸だけを目印にして\n次の光を待っている"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "まだ戻らないで\n夜がほどけてしまうまで\n途切れた白い線の先を\n答えもなく辿っていく\n\n触れそうな距離で\n互いの速度を確かめて\n名前のつかない衝動だけ\nこの胸に残せばいい"
+        },
+        {
+          "speaker": "Post-Chorus / SHO & YUTO",
+          "text": "Keep your eyes ahead\nDon’t slow it down\n重なる前に\nすり抜けて\n\nKeep your eyes ahead\nDon’t turn around\n朝を知らない\nふりをして"
+        },
+        {
+          "speaker": "Verse 2 / LEO",
+          "text": "眠ったビルの窓を越えて\n知らない出口を見送った\n行き先なんて聞かない方が\n少し自由でいられる\n\n会話が途切れた静けさも\n今夜は妙に心地よくて\n小さく鳴ったウインカーが\n次のリズムを選んでる"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "戻る場所なら分かっている\nだから遠くへ行けるんだ\n決められた道を外れても\n失くすものなどないように\n\n追うのか　追われているのか\nもう確かめる必要はない\n同じ速度を拒むように\n二つの影が揺れている"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "街灯が切れるたびに\n表情だけが入れ替わる\n見えない一秒の中で\n昨日までを脱ぎ捨てる"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "まだ戻らないで\n夜がほどけてしまうまで\nガラスに流れる光だけ\n確かなものに変えていく\n\n触れそうな距離で\n互いの速度を奪い合い\n言葉にできない衝動なら\n身体だけが知ればいい"
+        },
+        {
+          "speaker": "Dance Break / SHO → YUTO",
+          "text": "**SHO:**\nOne step behind\n視線を外して\n音の隙間を\n切り裂いて\n\n**YUTO:**\nHalf beat ahead\n予測を越えて\n追いつく前に\n塗り替える\n\n**SHO & YUTO:**\nLeft, right\n重ならない\nSlow down\n止まりはしない\n\n近づいて\n離れて\n同じ夜を\n追い越して"
+        },
+        {
+          "speaker": "Bridge / YUTO",
+          "text": "もしも朝が来たあとで\n何も残っていなくても\n窓に流れたあの光を\n僕だけは覚えている"
+        },
+        {
+          "speaker": "Bridge / SHO",
+          "text": "決められた場所へ戻って\nまた同じ顔をしていても\n一度外れたこの鼓動は\nもう昨日には戻らない"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "もう振り返らない\n夜が終わりを告げるまで\n行き先の消えた道路を\n二つの影で駆けていく\n\n触れないままでいい\n互いの速度を知れたなら\n名前のつかない衝動だけ\nこの身体に残せばいい"
+        },
+        {
+          "speaker": "Final Post-Chorus / SHO & YUTO",
+          "text": "Keep your eyes ahead\nDon’t slow it down\n夜明けの色を\n追い越して\n\nKeep your eyes ahead\nDon’t turn around\nまだこのまま\n走らせて"
+        },
+        {
+          "speaker": "Outro / YUTO",
+          "text": "出口の数字が\nひとつ減った"
+        },
+        {
+          "speaker": "Outro / SHO",
+          "text": "それでも誰も\n曲がらなかった"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "EQUINOX\n光と影のあいだで\n僕らは何度も立ち止まって\nEQUINOX\n熱と静けさを抱いて\n同じ未来を選んでいく\n\n違う痛み　違う願い\n重ねた声がひとつになる\n離れた場所からでも\n今　中央へ向かう"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "We come alive\nWe come alive\nFive hearts, one horizon"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "守りたいものが増えるほど\n怖くなる夜もあった\n誰にも見せない傷跡を\n隠すことが強さじゃない"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "八カウント　息を合わせ\nずれた呼吸を戻していく\n完璧じゃないその身体で\nここまで踊ってきたんだ"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "交わらないように見えた\nそれぞれの軌道さえ\n同じ朝へ続いていると\n今なら信じられる"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "EQUINOX\n光と影のあいだで\n僕らは何度も立ち止まって\nEQUINOX\n熱と静けさを抱いて\n同じ未来を選んでいく\n\n違う痛み　違う願い\n重ねた声がひとつになる\n離れた場所からでも\n今　中央へ向かう"
+        },
+        {
+          "speaker": "Rap / KAI",
+          "text": "No perfect line, no easy way\n迷いながら make our day\n誰かの答えじゃ届かない\n五人で描く new skyline\n\nFall apart? No, we reconnect\n沈黙さえも respect\nぶつかった夜も全部\nここへ来るための context\n\nOne step, one breath, one beat\n違う足音でも同じ street\n俺らが選んだこの場所で\n影ごと抱いて rise to the peak"
+        },
+        {
+          "speaker": "Dance Break / SHO",
+          "text": "Left to right\nDark to light\n止まらない heartbeat\n\nNear and far\nWho we are\nひとつになる瞬間へ"
+        },
+        {
+          "speaker": "Bridge / YUTO → LEO → REN",
+          "text": ""
+        },
+        {
+          "speaker": "YUTO",
+          "text": "もしもまた迷って\n足が止まりそうでも"
+        },
+        {
+          "speaker": "LEO",
+          "text": "振り向けばそこに\n変わらない声がある"
+        },
+        {
+          "speaker": "REN",
+          "text": "誰かを照らすためじゃなく\n誰かと照らし合うために\n僕らはここにいる"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "EQUINOX\n光と影のあいだで\n僕らは何度でも戻ってくる\nEQUINOX\n熱と静けさを抱いて\n同じ未来を選んでいく\n\n違う痛み　違う願い\nそれでも五つの声は重なる\n離れた場所から来た僕らが\n今　中央でひとつになる"
+        },
+        {
+          "speaker": "Outro / All",
+          "text": "Light and shadow\nHeat and silence\nFive voices\nOne formation\n\nEQUINOX"
         }
       ],
       "assetStatus": "FOUND_EXISTING"
@@ -14263,11 +14863,195 @@
         "ハーモニー",
         "集大成"
       ],
-      "linerNotes": "五人それぞれの歌声が独立したメロディを紡ぎながら最後ひとつの大ハーモニーへと結実する、アルバムのクライマックスナンバー。",
+      "linerNotes": "アルバムの感情的な到達点。\n\n五人それぞれの声を、一度ばらばらのまま聴かせる。誰かが誰かを代弁せず、それぞれが自分の言葉、自分の温度、自分の音域で立つ。そして曲が進むにつれ、その五本の線が少しずつ重なっていく。\n\nここで重要なのは、最後まで個々の輪郭を消さないことだ。五人がひとつになるとは、五つの声を同じ声へ変えることではない。それぞれの違いが聞こえたまま、一曲として成立すること。\n\n『Silent Signal』で身体の違いを残した五人は、『5 VOICES』で声の違いそのものをグループの強さへ変える。個人とグループという『EQUINOX』の問いに対する、最も直接的な答えの一つである。",
       "lyrics": [
         {
+          "speaker": "Intro / Beatless",
+          "text": ""
+        },
+        {
+          "speaker": "KAI",
+          "text": "背負う。"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃える。"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑わせる。"
+        },
+        {
+          "speaker": "REN",
+          "text": "響かせる。"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "追い越す。"
+        },
+        {
           "speaker": "All",
-          "text": "5 VOICES 違う声が重なるとき\n誰も見たことのない景色が広がる"
+          "text": "それだけじゃない。"
+        },
+        {
+          "speaker": "Beat In",
+          "text": ""
+        },
+        {
+          "speaker": "LOOP 1 – A / KAI：Deep Rap",
+          "text": "制御　理想　偽装　起動\n指導　軌道　鼓動　衝動\n決断　分担　段階　断行\n先端　前方　全体　担当\n\n止まるな　迷うな　乱れるな\n誰も欠けるな　俺だけ耐えろ\n背負った荷重で足場が歪む\n支えたつもりで　支えられている"
+        },
+        {
+          "speaker": "LOOP 1 – Hook / KAI → All",
+          "text": "背負うな　全部\n預けろ　一部\nひとりで立つな\n声を渡せ"
+        },
+        {
+          "speaker": "LOOP 2 – A / SHO：Precision Rap",
+          "text": "規定　起点　視点　微点\n静止　精緻　整備　再検視\n切る　見る　知る　ずれる　修正\n一ミリ以下まで即座に訂正\n\n角度　座標　可動　軌道\n肩　腰　足　指先　始動\n揃えるほどに輪郭が消える\n完全な影じゃ誰も踊れない"
+        },
+        {
+          "speaker": "LOOP 2 – Hook / SHO → All",
+          "text": "揃えるな　全部\n残しておけ　微差\n同じにするな\n差異を生かせ"
+        },
+        {
+          "speaker": "LOOP 3 – A / LEO：Syncopated Rap",
+          "text": "笑顔　素顔　虚像　残像\n愛想　愛嬌　快調　快活\n笑う　かわす　回す　鳴らす\nばらす　散らす　間を満たす\n\n軽口　出口　逃げ口　入り口\n本題の前で変える切り口\n笑えない俺も置いていくな\nふざけない声も聞き逃すな"
+        },
+        {
+          "speaker": "LOOP 3 – Hook / LEO → All",
+          "text": "笑ってもいい\n隠すな　意味\n明るさだけで\n俺を括るな"
+        },
+        {
+          "speaker": "LOOP 4 – A / REN：Melodic Speed Rap",
+          "text": "音程　想定　証明　共鳴\n透明　情景　生命　声明\n高音　低音　倍音　残響\n一音ごとに測られる感情\n\n歌える　支える　期待に応える\n応えるたびに期待が増える\n空いた一拍　四人が入る\n僕の終わりを誰かがつなぐ"
+        },
+        {
+          "speaker": "LOOP 4 – Hook / REN → All",
+          "text": "声が切れても\n僕は消えない\n空いた一拍\n誰かがつなぐ"
+        },
+        {
+          "speaker": "Beat Switch",
+          "text": ""
+        },
+        {
+          "speaker": "LOOP 5 – A / YUTO：High-Speed Rap",
+          "text": "期待　未来　理解　誤解\n視界　限界　時代　交代\n失敗　心配　撤回　正解\n実際　絶対　展開　再開\n\n追いたい　近い　まだ足りない\n待たれた場所じゃ終わりたくない\n真似たい　借りたい　それじゃ意味ない\n誰かの速度じゃ隣に立てない\n\n怖い　痛い　それでも前へ\n震える声ほど先頭へ出せ\n次の合図を待つんじゃない\nこの一音を僕から始めたい"
+        },
+        {
+          "speaker": "LOOP 5 – Hook / YUTO → All",
+          "text": "追うな　待つな\n奪え　先手\n追いつくんじゃない\n次を始める"
+        },
+        {
+          "speaker": "Final Relay / One Bar Each",
+          "text": ""
+        },
+        {
+          "speaker": "KAI",
+          "text": "背負うだけじゃない"
+        },
+        {
+          "speaker": "SHO",
+          "text": "揃えるだけじゃない"
+        },
+        {
+          "speaker": "LEO",
+          "text": "笑わせるだけじゃない"
+        },
+        {
+          "speaker": "REN",
+          "text": "響かせるだけじゃない"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "追いかけるだけじゃない"
+        },
+        {
+          "speaker": "Rapid Relay",
+          "text": ""
+        },
+        {
+          "speaker": "KAI",
+          "text": "預けろ"
+        },
+        {
+          "speaker": "SHO",
+          "text": "生かせ"
+        },
+        {
+          "speaker": "LEO",
+          "text": "隠すな"
+        },
+        {
+          "speaker": "REN",
+          "text": "閉じるな"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "奪い取れ"
+        },
+        {
+          "speaker": "All – Rhythmic Unison",
+          "text": "違う起点\n違う視点\n\n違う声帯\n違う形態\n\n消すな存在\n濁すな境界\n\n五つの差異で\n更新する現在"
+        },
+        {
+          "speaker": "Final Acceleration",
+          "text": ""
+        },
+        {
+          "speaker": "KAI",
+          "text": "決断"
+        },
+        {
+          "speaker": "SHO",
+          "text": "切断"
+        },
+        {
+          "speaker": "LEO",
+          "text": "撹乱"
+        },
+        {
+          "speaker": "REN",
+          "text": "連環"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "奪還"
+        },
+        {
+          "speaker": "All",
+          "text": "五方向から同時着弾"
+        },
+        {
+          "speaker": "KAI",
+          "text": "指導"
+        },
+        {
+          "speaker": "SHO",
+          "text": "軌道"
+        },
+        {
+          "speaker": "LEO",
+          "text": "起動"
+        },
+        {
+          "speaker": "REN",
+          "text": "振動"
+        },
+        {
+          "speaker": "YUTO",
+          "text": "主導"
+        },
+        {
+          "speaker": "All",
+          "text": "五つの鼓動で上書く構造"
+        },
+        {
+          "speaker": "Beat Cut / All",
+          "text": "僕の声が終わる場所で\n\n僕らの歌が始まる"
+        },
+        {
+          "speaker": "Hard Stop",
+          "text": ""
         }
       ],
       "assetStatus": "FOUND_EXISTING",
@@ -14294,11 +15078,67 @@
         "静謐",
         "バラード"
       ],
-      "linerNotes": "静寂の夜の底で、光を受け止める影の優しさを歌う壮大なバラード。RENの低音とLEOのファルセットが静かな感動を呼ぶ。",
+      "linerNotes": "『EQUINOX』が影を受け入れた先で、その影を最大まで濃くする。\n\n黒、紫、赤。重い低域と攻撃的な身体表現を前面に出し、IGNITEの中にある危険さ、欲望、緊張感を意図的に解放したダークチューン。アルバムの影はここで隠すものではなく、明確に見せるものへ変わる。\n\nしかし『SHADOW』は、「光を捨てて暗闇へ行く」曲ではない。\n\n影が存在できるのは、どこかに光があるからだ。明るさだけでは見えなかった自分たちを受け入れ、その側面さえパフォーマンスへ変えられるようになったことが、この曲の攻撃性を単なるダークイメージで終わらせない。",
       "lyrics": [
         {
-          "speaker": "REN / LEO",
-          "text": "光が届かない場所で守っていたもの\n君の影も僕の一部だから"
+          "speaker": "Opening / SHO",
+          "text": "灯りが落ちる\nほんの少し前\n\n足元で\n誰かが息をした\n\n振り向かなくても\n分かっていた\n\nずっと\n僕の形をしていた"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "認められたいと\n願うたび\n\n誰かより先へ\n行きたくなった\n\n追いつきたいと\n言いながら\n\n本当は\n追い越したかった\n\nそんな自分を\n隠すため\n\n優しい言葉を\n選んでいた"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "笑うことなら\n覚えている\n\n求められた顔も\nよく知っている\n\nけれど笑顔の奥に\n何もないわけじゃない\n\n譲りたくない場所を\nまだ守っている\n\n綺麗なままでは\n立てなかった\n\nそれだけは\nもう分かっている"
+        },
+        {
+          "speaker": "Refrain / REN",
+          "text": "消さないで\n足元の黒を\n\nそれは光を\n奪うものじゃない\n\nここまで歩いた\n僕の輪郭\n\n離れずに\nついてきたもの"
+        },
+        {
+          "speaker": "Verse 2 / KAI — Spoken",
+          "text": "守りたいと言いながら\n決めつけていた\n\n正しい道を知っていると\n思い込んでいた\n\n差し出した手の中に\n優しさだけがあったわけじゃない\n\n離れていくことが\n怖かった\n\n先頭に立つたび\n後ろを確かめた\n\n誰もいなくなる夢を\n何度も見た\n\nだから強く握りすぎた\n\nそれも\n僕の手だった"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "完璧でいたいのは\n誇りだけじゃない\n\nできなくなる日を\n恐れている\n\n震える脚を\n黙らせながら\n\n平気な顔で\n立ち続けた\n\n壊れたくないのに\n止まれなかった\n\n暗い鏡だけが\nそれを見ていた"
+        },
+        {
+          "speaker": "Refrain / REN + YUTO",
+          "text": "隠さないで\n胸の奥を\n\n正しくなくても\n消さなくていい\n\n羨んだ夜も\n譲れない願いも\n\nここにいる\n僕を作っている"
+        },
+        {
+          "speaker": "Instrumental Interlude",
+          "text": "*Piano and woodwinds only*"
+        },
+        {
+          "speaker": "Bridge / YUTO",
+          "text": "誰かの光が\n眩しいほど\n\n僕の黒は\n濃くなっていった\n\nそれでも同じ景色を\n見たいと思った"
+        },
+        {
+          "speaker": "Bridge / LEO",
+          "text": "笑顔の裏でも\n涙の奥でもない\n\n名前を持たない僕を\nここに置いていく"
+        },
+        {
+          "speaker": "Bridge / KAI",
+          "text": "許されたいわけじゃない"
+        },
+        {
+          "speaker": "Bridge / SHO",
+          "text": "消したいわけでもない"
+        },
+        {
+          "speaker": "Bridge / REN",
+          "text": "ただ\n置き去りにしない"
+        },
+        {
+          "speaker": "Final Refrain / Five Voices — Soft Ensemble",
+          "text": "消さないで\n足元の黒を\n\nそれは僕らを\n分けるものじゃない\n\n綺麗じゃないまま\n同じ場所に立つ\n\n光の中へ\n黒を連れていく\n\n隠さないで\n胸の奥を\n\n言葉にならない\n願いまで\n\n五つの影が\n重なるとき\n\nようやく僕らは\n僕らになる"
+        },
+        {
+          "speaker": "Outro / SHO",
+          "text": "振り向いた先に\n誰もいなかった\n\n足元だけが\n僕と同じ形で\n\n静かに\n息をしていた\n\nこれが僕の\n\nSHADOW"
         }
       ],
       "assetStatus": "FOUND_EXISTING",
@@ -14328,11 +15168,79 @@
         "第一光",
         "未来への扉"
       ],
-      "linerNotes": "長い夜を越えて差し込む新しい朝の第一光。2nd Full Album『EQUINOX』を締めくくり、次のツアーステージへとつなぐアウトロソング。",
+      "linerNotes": "長い夜のあとに訪れる、最初の光。\n\nそれは『SOLAR』のような強い真昼でも、すべてを解決する劇的な朝でもない。薄い銀色から白金へ変わっていくような、静かで確かな明るさでアルバムを閉じる。ビジュアルの設計でも、歓喜ではなく「calm certainty＝静かな確信」がこの曲の核として置かれている。\n\n『First Light』や『Sun Never Sleeps』から続いてきた「朝」というモチーフも、ここでは少し意味を変える。\n\n以前の朝が「これから始まる」ための光だったとすれば、『First Dawn』は、夜を知ったうえで迎える朝だ。\n\n迷いは消えていない。\n五人の違いもなくなっていない。\n影も、これからまた現れる。\n\nそれでも、同じ場所へ戻ってくることはできる。\n\n完全な解決ではなく、その小さな確信を残して、『EQUINOX』は次の時間へ進んでいく。",
       "lyrics": [
         {
-          "speaker": "All",
-          "text": "First Dawn 新しい朝の光へ\n僕らは歩き続ける"
+          "speaker": "Intro / YUTO",
+          "text": "カーテンの隙間から\n知らない色が滲んでる\n眠れなかった理由さえ\n今はもう　話さなくていい"
+        },
+        {
+          "speaker": "Verse 1 / YUTO",
+          "text": "机に伏せたままの時計\n止まったように見えたけど\n遠くで走り出す電車が\n今日の居場所を教えてる\n\n並んだ靴のつま先が\n少しずつ同じ色になる\n誰かが残した足音を\n消さないように歩き出す"
+        },
+        {
+          "speaker": "Verse 1 / LEO",
+          "text": "冷めたカップを持ち上げて\n顔をしかめて笑った声\n何でもないその一言が\n部屋の空気をほどいていく\n\n昨日のままでいいことと\n変わらなくちゃいけないこと\nまだうまく分けられなくても\nここにいることは分かる"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "窓に映っていた輪郭が\n少しずつ顔に戻っていく\n同じ方を見てなくても\n同じ明るさに立っている"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "まだ太陽は見えなくていい\n空の端がほどけていけば\n言葉にできなかったことも\n急がず連れていけるから\n\n遠くまで行けなくていい\n今は足元が見えるから\n名前のつかないこの朝を\n僕らはここから始めていく"
+        },
+        {
+          "speaker": "Post-Chorus / All",
+          "text": "Slowly, slowly\nThe colors change\nSlowly, slowly\nWe stay the same"
+        },
+        {
+          "speaker": "Verse 2 / KAI",
+          "text": "守れなかった約束を\n数えることに慣れすぎて\n残っているものを見るのを\nいつからか忘れていた\n\n先に答えを決めるより\n隣の呼吸を聞いていたい\n誰かを導くその前に\n僕もここで息をしている"
+        },
+        {
+          "speaker": "Verse 2 / SHO",
+          "text": "冷えた床に立つ両足\n結び直さない靴紐\n何度も確かめてきたから\n今日はそのままで歩ける\n\n揃わなかった八カウントも\n途中で止めたあの音も\n消さずに身体へ残したまま\n次の一拍を待っている"
+        },
+        {
+          "speaker": "Pre-Chorus / REN",
+          "text": "閉じたままだった扉にも\n細い光が落ちている\n開けることを急がなくても\nもう戻る必要はない"
+        },
+        {
+          "speaker": "Chorus / All",
+          "text": "まだ太陽は見えなくていい\n空の端がほどけていけば\n言葉にできなかったことも\n急がず連れていけるから\n\n正しい道じゃなくていい\n同じ速さじゃなくてもいい\n名前のつかないこの朝を\n僕らはそれぞれ歩いていく"
+        },
+        {
+          "speaker": "Interlude / SHO",
+          "text": "ひとつ\n息を吸って\n\nひとつ\n音を待って\n\n何も言わず\n次の場所へ"
+        },
+        {
+          "speaker": "Bridge / YUTO",
+          "text": "最初に見たあの光は\nもっと頼りなく揺れていた\nそれでも信じていた僕を\n今なら少し分かる気がする"
+        },
+        {
+          "speaker": "Bridge / LEO",
+          "text": "笑えなかった日もあった\n笑うしかなかった日もある\nどちらも僕らだったことを\nもう隠さなくていい"
+        },
+        {
+          "speaker": "Bridge / KAI → SHO",
+          "text": "終わらせないためじゃなく\n続ける形を探してきた\n\n強く見せるためじゃなく\nここに立てる身体でいたい"
+        },
+        {
+          "speaker": "Bridge / REN",
+          "text": "遠くで鳥が鳴いている\n誰かがカーテンを開ける\nその光に目を細めながら\n五つの影が床に伸びた"
+        },
+        {
+          "speaker": "Final Chorus / All",
+          "text": "もう太陽を待たなくていい\n互いの顔が見えるから\n言えずに残った気持ちにも\n置いていかない場所がある\n\n遠くまで行けなくていい\n次の一歩が分かるから\n何者でもなかった僕らが\n今もここから始めていく\n\n別々の夜を抱えたまま\n同じ朝へ立っている\n名前のつかないこの光を\n消さずに今日へ連れていく"
+        },
+        {
+          "speaker": "Final Refrain / All",
+          "text": "Slowly, slowly\nThe colors change\n\nSlowly, slowly\nWe walk again"
+        },
+        {
+          "speaker": "Outro / YUTO → REN",
+          "text": "始発の音が近づいて\n街が少しだけ動き出す\n\nまだ眩しくはない空を\n五人で静かに見ていた"
         }
       ],
       "assetStatus": "FOUND_EXISTING",

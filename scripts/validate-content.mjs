@@ -80,6 +80,8 @@ for (const article of articles) {
   }
   if (!Array.isArray(article.mainSpeakerIds)) failures.push(`article ${article.id} mainSpeakerIds must be an array`);
   else for (const memberId of article.mainSpeakerIds) if (!memberIds.has(memberId)) failures.push(`article ${article.id} references unknown speaker: ${memberId}`);
+  if (!article.publication || !Object.hasOwn(article.publication, 'publishAt')) failures.push(`article ${article.id} publication is missing publishAt`);
+  else if (article.publication.publishAt !== null && Number.isNaN(Date.parse(article.publication.publishAt))) failures.push(`article ${article.id} has invalid publishAt: ${article.publication.publishAt}`);
   if (!Array.isArray(article.relatedTrackIds)) failures.push(`article ${article.id} relatedTrackIds must be an array`);
   else for (const trackId of article.relatedTrackIds) if (!recordingIds.has(trackId)) failures.push(`article ${article.id} references unknown track: ${trackId}`);
   if (article.relatedCampaignId && !campaignIds.has(article.relatedCampaignId)) failures.push(`article ${article.id} references unknown campaign: ${article.relatedCampaignId}`);

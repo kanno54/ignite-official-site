@@ -578,8 +578,7 @@
           "equinox-special-feature-article",
           "equinox-roundtable-article",
           "equinox-artwork-article",
-          "equinox-costume-article",
-          "equinox-liner-notes-article"
+          "equinox-costume-article"
         ],
         "relatedCampaignIds": [
           "rise-again",
@@ -732,27 +731,6 @@
         "relatedTrackIds": [
           "equinox-title",
           "equinox-shadow"
-        ],
-        "relatedCampaignId": "equinox"
-      },
-      {
-        "id": "equinox-liner-notes-article",
-        "slug": "equinox-liner-notes",
-        "title": "【全曲ライナーノーツ】2nd Full Album『EQUINOX』全12曲の完全楽曲解説",
-        "heroAssetId": "",
-        "relatedTrackIds": [
-          "equinox-title",
-          "equinox-silent-signal",
-          "equinox-rise-again",
-          "equinox-shadowplay",
-          "equinox-parallel-lines",
-          "equinox-electric-blue",
-          "equinox-glass-ceiling",
-          "equinox-afterglow",
-          "equinox-nocturne-drive",
-          "equinox-5-voices",
-          "equinox-shadow",
-          "equinox-first-dawn"
         ],
         "relatedCampaignId": "equinox"
       },

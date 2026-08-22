@@ -105,12 +105,27 @@ export const getRecordingsForRelease = (releaseId: string): Recording[] => {
 
 export const getArticles = (): Article[] => {
   const isStaging = isStagingEnv();
-  return (articlesData as Article[]).filter((a) => {
-    if (a.publication.visibility !== 'public') return false;
-    if (a.publication.campaignState === 'future') return false;
-    if (a.publication.campaignState === 'staging' && !isStaging) return false;
-    return true;
-  });
+  return (articlesData as Article[])
+    .filter((a) => {
+      if (a.publication.visibility !== 'public') return false;
+      if (a.publication.campaignState === 'future') return false;
+      if (a.publication.campaignState === 'staging' && !isStaging) return false;
+      return true;
+    })
+    .map((article, originalIndex) => ({ article, originalIndex }))
+    .sort((a, b) => {
+      const aTimestamp = a.article.publication.publishAt
+        ? Date.parse(a.article.publication.publishAt)
+        : null;
+      const bTimestamp = b.article.publication.publishAt
+        ? Date.parse(b.article.publication.publishAt)
+        : null;
+      if (aTimestamp === null && bTimestamp === null) return a.originalIndex - b.originalIndex;
+      if (aTimestamp === null) return 1;
+      if (bTimestamp === null) return -1;
+      return bTimestamp - aTimestamp || a.originalIndex - b.originalIndex;
+    })
+    .map(({ article }) => article);
 };
 
 export const getArticleBySlug = (slug: string): Article | undefined => {

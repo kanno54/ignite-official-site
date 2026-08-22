@@ -1,0 +1,134 @@
+
+[Intro / All]
+Light and shadow
+Heat and silence
+We are here
+EQUINOX
+
+[Verse 1 / YUTO]
+遠い場所で鳴っていた
+名前のない不安さえ
+今日のために抱えてきた
+消せないままでいい
+
+[Verse 1 / LEO]
+笑い合った帰り道
+何気ないその一秒が
+ばらばらの僕らをまた
+同じ方へ向かわせた
+
+[Pre-Chorus / REN]
+強い光のそばには
+必ず影が生まれる
+だからこそ見失わずに
+ここまで来られたんだ
+
+[Chorus / All]
+EQUINOX
+光と影のあいだで
+僕らは何度も立ち止まって
+EQUINOX
+熱と静けさを抱いて
+同じ未来を選んでいく
+
+違う痛み　違う願い
+重ねた声がひとつになる
+離れた場所からでも
+今　中央へ向かう
+
+[Post-Chorus / All]
+We come alive
+We come alive
+Five hearts, one horizon
+
+[Verse 2 / KAI]
+守りたいものが増えるほど
+怖くなる夜もあった
+誰にも見せない傷跡を
+隠すことが強さじゃない
+
+[Verse 2 / SHO]
+八カウント　息を合わせ
+ずれた呼吸を戻していく
+完璧じゃないその身体で
+ここまで踊ってきたんだ
+
+[Pre-Chorus / REN]
+交わらないように見えた
+それぞれの軌道さえ
+同じ朝へ続いていると
+今なら信じられる
+
+[Chorus / All]
+EQUINOX
+光と影のあいだで
+僕らは何度も立ち止まって
+EQUINOX
+熱と静けさを抱いて
+同じ未来を選んでいく
+
+違う痛み　違う願い
+重ねた声がひとつになる
+離れた場所からでも
+今　中央へ向かう
+
+[Rap / KAI]
+No perfect line, no easy way
+迷いながら make our day
+誰かの答えじゃ届かない
+五人で描く new skyline
+
+Fall apart? No, we reconnect
+沈黙さえも respect
+ぶつかった夜も全部
+ここへ来るための context
+
+One step, one breath, one beat
+違う足音でも同じ street
+俺らが選んだこの場所で
+影ごと抱いて rise to the peak
+
+[Dance Break / SHO]
+Left to right
+Dark to light
+止まらない heartbeat
+
+Near and far
+Who we are
+ひとつになる瞬間へ
+
+[Bridge / YUTO → LEO → REN]
+[YUTO]
+もしもまた迷って
+足が止まりそうでも
+
+[LEO]
+振り向けばそこに
+変わらない声がある
+
+[REN]
+誰かを照らすためじゃなく
+誰かと照らし合うために
+僕らはここにいる
+
+[Final Chorus / All]
+EQUINOX
+光と影のあいだで
+僕らは何度でも戻ってくる
+EQUINOX
+熱と静けさを抱いて
+同じ未来を選んでいく
+
+違う痛み　違う願い
+それでも五つの声は重なる
+離れた場所から来た僕らが
+今　中央でひとつになる
+
+[Outro / All]
+Light and shadow
+Heat and silence
+Five voices
+One formation
+
+EQUINOX
+

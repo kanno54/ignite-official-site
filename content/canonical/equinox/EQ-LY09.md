@@ -1,0 +1,293 @@
+
+[Intro / All]
+Light and shadow
+Heat and silence
+We are here
+EQUINOX
+
+[Verse 1 / YUTO]
+遠い場所で鳴っていた
+名前のない不安さえ
+今日のために抱えてきた
+消せないままでいい
+
+[Verse 1 / LEO]
+笑い合った帰り道
+何気ないその一秒が
+ばらばらの僕らをまた
+同じ方へ向かわせた
+
+[Pre-Chorus / REN]
+強い光のそばには
+必ず影が生まれる
+だからこそ見失わずに
+ここまで来られたんだ**[Intro / YUTO]**
+午前零時を過ぎた表示
+ラジオはもう聞こえない
+窓に触れた指の跡を
+街の光がほどいていく
+
+**[Verse 1 / YUTO]**
+青い標識　流れる文字
+読み終わる前に遠ざかる
+明日の予定を伏せたまま
+シートに深く沈み込んだ
+
+誰かに決められた顔を
+バックミラーへ置いてきて
+言葉より速い景色に
+今だけ身を任せてる
+
+**[Verse 1 / SHO]**
+一定だった白い線が
+緩いカーブで形を変える
+追いついたと思うたびに
+その影は前へ抜けていく
+
+隣にいるはずなのに
+横顔までは見せないで
+近づくほど遠くなる
+その距離をまだ測ってる
+
+**[Pre-Chorus / REN]**
+トンネルへ入る瞬間
+すべての色が途切れた
+呼吸だけを目印にして
+次の光を待っている
+
+**[Chorus / All]**
+まだ戻らないで
+夜がほどけてしまうまで
+途切れた白い線の先を
+答えもなく辿っていく
+
+触れそうな距離で
+互いの速度を確かめて
+名前のつかない衝動だけ
+この胸に残せばいい
+
+**[Post-Chorus / SHO & YUTO]**
+Keep your eyes ahead
+Don’t slow it down
+重なる前に
+すり抜けて
+
+Keep your eyes ahead
+Don’t turn around
+朝を知らない
+ふりをして
+
+**[Verse 2 / LEO]**
+眠ったビルの窓を越えて
+知らない出口を見送った
+行き先なんて聞かない方が
+少し自由でいられる
+
+会話が途切れた静けさも
+今夜は妙に心地よくて
+小さく鳴ったウインカーが
+次のリズムを選んでる
+
+**[Verse 2 / KAI]**
+戻る場所なら分かっている
+だから遠くへ行けるんだ
+決められた道を外れても
+失くすものなどないように
+
+追うのか　追われているのか
+もう確かめる必要はない
+同じ速度を拒むように
+二つの影が揺れている
+
+**[Pre-Chorus / REN]**
+街灯が切れるたびに
+表情だけが入れ替わる
+見えない一秒の中で
+昨日までを脱ぎ捨てる
+
+**[Chorus / All]**
+まだ戻らないで
+夜がほどけてしまうまで
+ガラスに流れる光だけ
+確かなものに変えていく
+
+触れそうな距離で
+互いの速度を奪い合い
+言葉にできない衝動なら
+身体だけが知ればいい
+
+**[Dance Break / SHO → YUTO]**
+**SHO:**
+One step behind
+視線を外して
+音の隙間を
+切り裂いて
+
+**YUTO:**
+Half beat ahead
+予測を越えて
+追いつく前に
+塗り替える
+
+**SHO & YUTO:**
+Left, right
+重ならない
+Slow down
+止まりはしない
+
+近づいて
+離れて
+同じ夜を
+追い越して
+
+**[Bridge / YUTO]**
+もしも朝が来たあとで
+何も残っていなくても
+窓に流れたあの光を
+僕だけは覚えている
+
+**[Bridge / SHO]**
+決められた場所へ戻って
+また同じ顔をしていても
+一度外れたこの鼓動は
+もう昨日には戻らない
+
+**[Final Chorus / All]**
+もう振り返らない
+夜が終わりを告げるまで
+行き先の消えた道路を
+二つの影で駆けていく
+
+触れないままでいい
+互いの速度を知れたなら
+名前のつかない衝動だけ
+この身体に残せばいい
+
+**[Final Post-Chorus / SHO & YUTO]**
+Keep your eyes ahead
+Don’t slow it down
+夜明けの色を
+追い越して
+
+Keep your eyes ahead
+Don’t turn around
+まだこのまま
+走らせて
+
+**[Outro / YUTO]**
+出口の数字が
+ひとつ減った
+
+**[Outro / SHO]**
+それでも誰も
+曲がらなかった
+
+[Chorus / All]
+EQUINOX
+光と影のあいだで
+僕らは何度も立ち止まって
+EQUINOX
+熱と静けさを抱いて
+同じ未来を選んでいく
+
+違う痛み　違う願い
+重ねた声がひとつになる
+離れた場所からでも
+今　中央へ向かう
+
+[Post-Chorus / All]
+We come alive
+We come alive
+Five hearts, one horizon
+
+[Verse 2 / KAI]
+守りたいものが増えるほど
+怖くなる夜もあった
+誰にも見せない傷跡を
+隠すことが強さじゃない
+
+[Verse 2 / SHO]
+八カウント　息を合わせ
+ずれた呼吸を戻していく
+完璧じゃないその身体で
+ここまで踊ってきたんだ
+
+[Pre-Chorus / REN]
+交わらないように見えた
+それぞれの軌道さえ
+同じ朝へ続いていると
+今なら信じられる
+
+[Chorus / All]
+EQUINOX
+光と影のあいだで
+僕らは何度も立ち止まって
+EQUINOX
+熱と静けさを抱いて
+同じ未来を選んでいく
+
+違う痛み　違う願い
+重ねた声がひとつになる
+離れた場所からでも
+今　中央へ向かう
+
+[Rap / KAI]
+No perfect line, no easy way
+迷いながら make our day
+誰かの答えじゃ届かない
+五人で描く new skyline
+
+Fall apart? No, we reconnect
+沈黙さえも respect
+ぶつかった夜も全部
+ここへ来るための context
+
+One step, one breath, one beat
+違う足音でも同じ street
+俺らが選んだこの場所で
+影ごと抱いて rise to the peak
+
+[Dance Break / SHO]
+Left to right
+Dark to light
+止まらない heartbeat
+
+Near and far
+Who we are
+ひとつになる瞬間へ
+
+[Bridge / YUTO → LEO → REN]
+[YUTO]
+もしもまた迷って
+足が止まりそうでも
+
+[LEO]
+振り向けばそこに
+変わらない声がある
+
+[REN]
+誰かを照らすためじゃなく
+誰かと照らし合うために
+僕らはここにいる
+
+[Final Chorus / All]
+EQUINOX
+光と影のあいだで
+僕らは何度でも戻ってくる
+EQUINOX
+熱と静けさを抱いて
+同じ未来を選んでいく
+
+違う痛み　違う願い
+それでも五つの声は重なる
+離れた場所から来た僕らが
+今　中央でひとつになる
+
+[Outro / All]
+Light and shadow
+Heat and silence
+Five voices
+One formation
+
+EQUINOX
+

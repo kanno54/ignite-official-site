@@ -13,7 +13,6 @@ interface EquinoxCampaignViewProps {
 const primaryArticleIds = [
   'equinox-special-feature-article',
   'equinox-roundtable-article',
-  'equinox-liner-notes-article',
 ];
 
 const secondaryArticleIds = [

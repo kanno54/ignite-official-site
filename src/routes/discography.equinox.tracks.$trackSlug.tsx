@@ -24,7 +24,7 @@ export const EquinoxSongDetailPage: React.FC = () => {
     article.relatedCampaignId === 'equinox'
     && (
       article.relatedTrackIds.includes(track.id)
-      || ['equinox-special-feature-article', 'equinox-liner-notes-article'].includes(article.id)
+      || article.id === 'equinox-special-feature-article'
     )
   ));
 
@@ -70,10 +70,11 @@ export const EquinoxSongDetailPage: React.FC = () => {
         <span className="equinox-song-detail__eyebrow">OFFICIAL LYRIC</span>
         <h2>LYRIC</h2>
         <div className="equinox-song-detail__lyric-copy">
-          {track.lyrics.map((line, lineIndex) => (
-            line.text === ''
-              ? <div key={lineIndex} className="equinox-song-detail__lyric-break" />
-              : <p key={lineIndex}>{line.text}</p>
+          {track.lyrics.map((section, sectionIndex) => (
+            <section key={`${section.speaker}-${sectionIndex}`} className="equinox-song-detail__lyric-section">
+              <h3>[{section.speaker}]</h3>
+              {section.text && <p>{section.text}</p>}
+            </section>
           ))}
         </div>
       </section>
