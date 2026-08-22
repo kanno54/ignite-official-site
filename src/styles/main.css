@@ -396,11 +396,40 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   line-height: 2;
 }
 
-.equinox-song-detail__lyric-section {
+.lyrics-renderer,
+.lyric-section,
+.lyric-lines,
+.lyric-line {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.lyric-lines {
+  display: flex;
+  flex-direction: column;
+}
+
+.lyric-line,
+.lyric-speaker,
+.lyric-stanza-gap {
+  display: block;
+}
+
+.lyric-line {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.lyric-stanza-gap {
+  height: 1em;
+  flex: 0 0 1em;
+}
+
+.lyrics-renderer--song-detail .lyric-section {
   margin: 0 0 32px;
 }
 
-.equinox-song-detail__lyric-section h3 {
+.lyrics-renderer--song-detail .lyric-speaker {
   margin: 0 0 10px;
   color: #D9B44A;
   font-family: var(--font-mono);
@@ -408,8 +437,40 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   letter-spacing: 0.06em;
 }
 
-.equinox-song-detail__lyric-section p {
-  margin: 0;
+.expanded-player__lyrics-copy,
+.album-accordion__lyrics-copy {
+  color: #F6F3ED;
+  font-family: var(--font-sans);
+}
+
+.expanded-player__lyrics-copy {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.album-accordion__lyrics-copy {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.lyrics-renderer--expanded-player .lyric-section,
+.lyrics-renderer--album-accordion .lyric-section {
+  margin: 0 0 20px;
+}
+
+.lyrics-renderer--expanded-player .lyric-section:last-child,
+.lyrics-renderer--album-accordion .lyric-section:last-child {
+  margin-bottom: 0;
+}
+
+.lyrics-renderer--expanded-player .lyric-speaker,
+.lyrics-renderer--album-accordion .lyric-speaker {
+  margin: 0 0 6px;
+  color: var(--campaign-accent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .equinox-song-detail__related-grid {

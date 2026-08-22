@@ -13,6 +13,7 @@ import {
 } from './equinox-canonical.mjs';
 import {
   LyricSection,
+  LyricsRenderer,
   splitVisibleLyricLines,
 } from '../src/components/discography/LyricSection.mjs';
 
@@ -31,21 +32,62 @@ const decodeRenderedText = (value) => value
   .replaceAll('&quot;', '"')
   .replaceAll('&#x27;', "'");
 
-const renderedSectionEvidence = (section) => {
-  const html = renderToStaticMarkup(React.createElement(LyricSection, section));
-  const headingMatch = html.match(/<h3>([\s\S]*?)<\/h3>/);
-  const paragraphMatch = html.match(/<p[^>]*data-source-line-count="(\d+)"[^>]*>([\s\S]*?)<\/p>/);
-  const body = paragraphMatch
-    ? decodeRenderedText(paragraphMatch[2].replace(/<br\s*\/?\s*>/g, '\n'))
-    : '';
+const lyricsSurfaces = ['song-detail', 'expanded-player', 'album-accordion'];
+
+const renderedSectionEvidence = (section, surface) => {
+  const html = renderToStaticMarkup(React.createElement(LyricSection, { ...section, surface }));
+  const headingMatch = html.match(/<div class="lyric-speaker"[^>]*>([\s\S]*?)<\/div>/);
+  const linesMatch = html.match(/<div class="lyric-lines"[^>]*data-source-line-count="(\d+)"[^>]*>([\s\S]*?)<\/div><\/section>/);
+  const tokens = [];
+  const tokenPattern = /<div class="(lyric-line|lyric-stanza-gap)"[^>]*>([\s\S]*?)<\/div>/g;
+  let tokenMatch;
+  while ((tokenMatch = tokenPattern.exec(linesMatch?.[2] || '')) !== null) {
+    tokens.push({
+      type: tokenMatch[1],
+      text: tokenMatch[1] === 'lyric-line' ? decodeRenderedText(tokenMatch[2]) : '',
+    });
+  }
   return {
     html,
     heading: headingMatch ? decodeRenderedText(headingMatch[1]) : '',
-    body,
-    lineCount: paragraphMatch ? Number(paragraphMatch[1]) : 0,
+    body: tokens.map((token) => token.text).join('\n'),
+    lineCount: linesMatch ? Number(linesMatch[1]) : 0,
+    lineElementCount: tokens.filter((token) => token.type === 'lyric-line').length,
+    gapElementCount: tokens.filter((token) => token.type === 'lyric-stanza-gap').length,
+    lineTexts: tokens.filter((token) => token.type === 'lyric-line').map((token) => token.text),
     breakCount: (html.match(/<br\s*\/?\s*>/g) || []).length,
+    hasSurfaceMarker: html.includes(`lyric-section--${surface}`),
   };
 };
+
+const validateSharedRendererArchitecture = () => {
+  const consumers = [
+    {
+      sourcePath: 'src/routes/discography.equinox.tracks.$trackSlug.tsx',
+      surface: 'song-detail',
+      forbiddenRenderer: 'track.lyrics.map(',
+    },
+    {
+      sourcePath: 'src/components/audio/ExpandedPlayer.tsx',
+      surface: 'expanded-player',
+      forbiddenRenderer: 'currentRecording.lyrics.map(',
+    },
+    {
+      sourcePath: 'src/routes/discography.$slug.tsx',
+      surface: 'album-accordion',
+      forbiddenRenderer: 'track.lyrics.map(',
+    },
+  ];
+
+  for (const consumer of consumers) {
+    const source = fs.readFileSync(path.join(rootDir, consumer.sourcePath), 'utf8');
+    if (!source.includes('<LyricsRenderer')) failures.push(`${consumer.sourcePath} does not use the shared LyricsRenderer`);
+    if (!source.includes(`surface="${consumer.surface}"`)) failures.push(`${consumer.sourcePath} does not identify the ${consumer.surface} lyrics surface`);
+    if (source.includes(consumer.forbiddenRenderer)) failures.push(`${consumer.sourcePath} still contains its independent lyrics renderer`);
+  }
+};
+
+validateSharedRendererArchitecture();
 
 const validateSourceHash = (mapping) => {
   const source = normalizeNewlines(fs.readFileSync(path.join(rootDir, mapping.sourcePath), 'utf8'));
@@ -78,13 +120,33 @@ for (const mapping of sourceMap.lyrics) {
     if (recording.title !== mapping.trackTitle) failures.push(`${mapping.assetCode} track title mismatch`);
     if (JSON.stringify(recording.lyrics) !== JSON.stringify(expectedLyrics)) failures.push(`${mapping.assetCode} site lyrics differ from canonical Markdown`);
     if (recording.linerNotes !== liner.trackNotes.get(mapping.trackNumber)) failures.push(`${mapping.recordingId} liner note differs from AR-LN01`);
-    for (const [sectionIndex, section] of expectedLyrics.entries()) {
-      const rendered = renderedSectionEvidence(section);
-      const expectedLines = section.text ? splitVisibleLyricLines(section.text) : [];
-      if (rendered.heading !== `[${section.speaker}]`) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered member/section heading differs`);
-      if (rendered.body !== section.text) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered visible lines differ`);
-      if (rendered.lineCount !== expectedLines.length) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered line count differs`);
-      if (rendered.breakCount !== Math.max(0, expectedLines.length - 1)) failures.push(`${mapping.assetCode} section ${sectionIndex + 1} rendered break count differs`);
+    for (const surface of lyricsSurfaces) {
+      const rendererHtml = renderToStaticMarkup(React.createElement(LyricsRenderer, { lyrics: expectedLyrics, surface }));
+      const sectionCount = (rendererHtml.match(/data-lyric-section=/g) || []).length;
+      if (!rendererHtml.includes(`data-lyrics-surface="${surface}"`)) failures.push(`${mapping.assetCode} ${surface} renderer surface marker is missing`);
+      if (sectionCount !== expectedLyrics.length) failures.push(`${mapping.assetCode} ${surface} rendered section count differs`);
+
+      for (const [sectionIndex, section] of expectedLyrics.entries()) {
+        const rendered = renderedSectionEvidence(section, surface);
+        const expectedLines = section.text ? splitVisibleLyricLines(section.text) : [];
+        const expectedVisibleLines = expectedLines.filter((line) => line !== '');
+        const expectedGapCount = expectedLines.filter((line) => line === '').length;
+        if (!rendered.hasSurfaceMarker) failures.push(`${mapping.assetCode} ${surface} section ${sectionIndex + 1} surface marker differs`);
+        if (rendered.heading !== `[${section.speaker}]`) failures.push(`${mapping.assetCode} ${surface} section ${sectionIndex + 1} rendered member/section heading differs`);
+        if (rendered.body !== section.text) failures.push(`${mapping.assetCode} ${surface} section ${sectionIndex + 1} rendered source line sequence differs`);
+        if (rendered.lineCount !== expectedLines.length) failures.push(`${mapping.assetCode} ${surface} section ${sectionIndex + 1} source line count differs`);
+        if (rendered.lineElementCount !== expectedVisibleLines.length) failures.push(`${mapping.assetCode} ${surface} section ${sectionIndex + 1} explicit line element count differs`);
+        if (rendered.gapElementCount !== expectedGapCount) failures.push(`${mapping.assetCode} ${surface} section ${sectionIndex + 1} explicit stanza gap count differs`);
+        if (rendered.breakCount !== 0) failures.push(`${mapping.assetCode} ${surface} section ${sectionIndex + 1} unexpectedly relies on br elements`);
+      }
+    }
+
+    if (mapping.assetCode === 'EQ-LY01') {
+      const expectedIntro = ['Light and shadow', 'Heat and silence', 'We are here', 'EQUINOX'];
+      for (const surface of lyricsSurfaces) {
+        const intro = renderedSectionEvidence(expectedLyrics[0], surface);
+        if (JSON.stringify(intro.lineTexts) !== JSON.stringify(expectedIntro)) failures.push(`EQ-LY01 ${surface} Intro does not render the four canonical line elements`);
+      }
     }
   }
 }
@@ -104,4 +166,4 @@ if (failures.length > 0) {
   throw new Error(`[EQUINOX CANONICAL CONTENT VALIDATION FAILED]\n${failures.map((failure) => `- ${failure}`).join('\n')}`);
 }
 
-console.log('EQUINOX canonical validation PASSED: AR-LN01 -> 12 track notes; EQ-LY01..12 -> 12 recordings and production LyricSection render output; no Feature Article registration.');
+console.log('EQUINOX canonical validation PASSED: AR-LN01 -> 12 track notes; EQ-LY01..12 -> 12 recordings; shared block-DOM LyricsRenderer verified for Song Detail, Expanded Player, and Album accordion; no Feature Article registration.');

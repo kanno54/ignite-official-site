@@ -4,6 +4,7 @@ import { getReleaseBySlug, getReleases, getRecordingsForRelease } from '../utils
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { useAudio } from '../components/audio/AudioProvider';
+import { LyricsRenderer } from '../components/discography/LyricSection.mjs';
 
 export const ReleaseDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -283,15 +284,11 @@ export const ReleaseDetailPage: React.FC = () => {
                           lineHeight: 1.8,
                         }}
                       >
-                        {track.lyrics.map((l, lIdx) =>
-                          l.text === '' ? (
-                            <div key={lIdx} style={{ height: '14px' }} />
-                          ) : (
-                            <div key={lIdx} style={{ color: '#F6F3ED' }}>
-                              {l.text}
-                            </div>
-                          )
-                        )}
+                        <LyricsRenderer
+                          lyrics={track.lyrics}
+                          surface="album-accordion"
+                          className="album-accordion__lyrics-copy"
+                        />
                       </div>
                     )}
                   </div>

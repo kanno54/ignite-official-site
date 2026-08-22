@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
-import { LyricSection } from '../components/discography/LyricSection.mjs';
+import { LyricsRenderer } from '../components/discography/LyricSection.mjs';
 import {
   getArticles,
   getEquinoxRecordingBySlug,
@@ -70,15 +70,11 @@ export const EquinoxSongDetailPage: React.FC = () => {
       <section className="equinox-song-detail__lyrics">
         <span className="equinox-song-detail__eyebrow">OFFICIAL LYRIC</span>
         <h2>LYRIC</h2>
-        <div className="equinox-song-detail__lyric-copy">
-          {track.lyrics.map((section, sectionIndex) => (
-            <LyricSection
-              key={`${section.speaker}-${sectionIndex}`}
-              speaker={section.speaker}
-              text={section.text}
-            />
-          ))}
-        </div>
+        <LyricsRenderer
+          lyrics={track.lyrics}
+          surface="song-detail"
+          className="equinox-song-detail__lyric-copy"
+        />
       </section>
 
       <section className="equinox-song-detail__related">

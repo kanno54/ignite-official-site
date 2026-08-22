@@ -2,6 +2,7 @@ import React from 'react';
 import { useAudio } from './AudioProvider';
 import { ResponsivePicture } from '../common/ResponsivePicture';
 import { FiveLights } from '../common/FiveLights';
+import { LyricsRenderer } from '../discography/LyricSection.mjs';
 import { getRecordingById, getReleaseBySlug, getMemberBySlug } from '../../utils/contentLoader';
 import { protectedMediaProps } from '../../utils/audioDeterrence';
 
@@ -351,17 +352,11 @@ export const ExpandedPlayer: React.FC = () => {
               <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--campaign-accent)', margin: '0 0 12px' }}>
                 OFFICIAL LYRICS
               </h4>
-              <div style={{ fontFamily: 'var(--font-sans)', fontSize: '0.9rem', lineHeight: 1.8 }}>
-                {currentRecording.lyrics.map((line, idx) =>
-                  line.text === '' ? (
-                    <div key={idx} style={{ height: '12px' }} />
-                  ) : (
-                    <div key={idx} style={{ color: '#F6F3ED' }}>
-                      {line.text}
-                    </div>
-                  )
-                )}
-              </div>
+              <LyricsRenderer
+                lyrics={currentRecording.lyrics}
+                surface="expanded-player"
+                className="expanded-player__lyrics-copy"
+              />
             </div>
           )}
 
