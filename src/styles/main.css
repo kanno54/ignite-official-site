@@ -282,7 +282,7 @@
 
 .live-schedule__grid time,
 .live-tour-logs time,
-.live-preview__grid span {
+.live-preview__grid article > div > span {
   color: var(--campaign-accent);
   font-family: var(--font-mono);
   font-size: 0.68rem;
