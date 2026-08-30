@@ -364,7 +364,7 @@
 
 .live-schedule__grid time,
 .live-tour-logs time,
-.live-preview__grid article > div > span {
+.live-preview__content > span {
   color: var(--campaign-accent);
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -475,7 +475,7 @@
   min-width: 0;
 }
 
-.live-preview__grid article > div {
+.live-preview__content {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -496,7 +496,7 @@
   min-width: 0;
 }
 
-.live-tour-logs__grid article a > div {
+.live-tour-log__content {
   display: flex;
   flex-direction: column;
   gap: 7px;

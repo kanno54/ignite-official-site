@@ -204,7 +204,7 @@ export const LiveArchivePage: React.FC = () => {
                     aspectRatio="1:1"
                     {...deferredImageLoadingProps}
                   />
-                  <div>
+                  <div className="live-preview__content">
                     <span>TRACK {String(recording.trackNumber).padStart(2, '0')} // PREVIEW</span>
                     <strong>{recording.title}</strong>
                     <TrackPlayButton recordingId={recording.id} queueContext={previewQueue} size="small" />
@@ -225,7 +225,7 @@ export const LiveArchivePage: React.FC = () => {
                 <article key={log.slug}>
                   <Link to={`/live/${archive.slug}/tour-log/${log.slug}/`}>
                     <ResponsivePicture assetId={log.heroAssetId} title={log.title} alt={`${archive.title} ${log.title} tour log`} aspectRatio="3:2" {...deferredImageLoadingProps} />
-                    <div>
+                    <div className="live-tour-log__content">
                       <time dateTime={log.dateRange.start}>{log.dateRange.start.replaceAll('-', '.')}—{log.dateRange.end.replaceAll('-', '.')}</time>
                       <strong>{log.title}</strong>
                       {log.progressLabel && <span>{log.progressLabel}</span>}
