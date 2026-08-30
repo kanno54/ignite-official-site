@@ -16,6 +16,9 @@ type Props = {
   desktopSrc?: string;
   mobileSrc?: string;
   style?: React.CSSProperties;
+  loading?: 'eager' | 'lazy';
+  fetchPriority?: 'high' | 'low' | 'auto';
+  decoding?: 'async' | 'sync' | 'auto';
 };
 
 export const ResponsivePicture: React.FC<Props> = ({
@@ -31,6 +34,9 @@ export const ResponsivePicture: React.FC<Props> = ({
   desktopSrc,
   mobileSrc,
   style,
+  loading,
+  fetchPriority,
+  decoding,
 }) => {
   const [hasError, setHasError] = useState(false);
   const rawId = React.useId();
@@ -132,6 +138,9 @@ export const ResponsivePicture: React.FC<Props> = ({
           <img
             src={desktopAsset.path}
             alt={displayAlt}
+            loading={loading}
+            fetchPriority={fetchPriority}
+            decoding={decoding}
             onError={() => setHasError(true)}
             draggable={false}
             style={imgStyle}

@@ -41,6 +41,13 @@ export const LiveArchivePage: React.FC = () => {
   const relatedReleases = archive.relatedReleaseIds.map(getReleaseById).filter(Boolean);
   const relatedRecordings = archive.relatedRecordingIds.map(getRecordingById).filter(Boolean);
   const previewQueue = archive.preview?.recordings.map((recording) => recording.id) || [];
+  const isLiveTour2024 = archive.id === 'live-tour-2024';
+  const heroImageLoadingProps = isLiveTour2024
+    ? { loading: 'eager' as const, fetchPriority: 'high' as const, decoding: 'async' as const }
+    : {};
+  const deferredImageLoadingProps = isLiveTour2024
+    ? { loading: 'lazy' as const, decoding: 'async' as const }
+    : {};
   const pageIndexItems = archive.id === 'live-tour-2024' ? [
     ...(archive.schedule ? [{ label: 'TOUR SCHEDULE', href: '#live-schedule' }] : []),
     ...(archive.chapterVisuals?.length ? [{ label: 'FOUR PHASES', href: '#live-chapters' }] : []),
@@ -69,6 +76,7 @@ export const LiveArchivePage: React.FC = () => {
           alt={`${archive.eventTitle} official archive hero`}
           aspectRatio="16:9"
           mobileAspectRatio="4:5"
+          {...heroImageLoadingProps}
         />
         <div className="live-archive__hero-copy">
           <span className="live-kicker">{archive.timingLabel} // {archive.archiveRole} ARCHIVE</span>
@@ -81,6 +89,7 @@ export const LiveArchivePage: React.FC = () => {
               aspectRatio="3:2"
               mobileAspectRatio="1:1"
               className="live-archive__logo"
+              {...deferredImageLoadingProps}
             />
           )}
           <h1>{archive.title}</h1>
@@ -133,7 +142,7 @@ export const LiveArchivePage: React.FC = () => {
             <div className="live-chapters__grid">
               {archive.chapterVisuals.map((chapter) => (
                 <figure key={chapter.id}>
-                  <ResponsivePicture assetId={chapter.assetId} title={chapter.title} alt={`${archive.title} ${chapter.title} chapter visual`} aspectRatio="16:9" />
+                  <ResponsivePicture assetId={chapter.assetId} title={chapter.title} alt={`${archive.title} ${chapter.title} chapter visual`} aspectRatio="16:9" {...deferredImageLoadingProps} />
                   <figcaption>{chapter.title}</figcaption>
                 </figure>
               ))}
@@ -152,6 +161,7 @@ export const LiveArchivePage: React.FC = () => {
                 alt={`${archive.title} ${document.label} selected visual`}
                 aspectRatio="16:9"
                 className="live-document__visual"
+                {...deferredImageLoadingProps}
               />
             )}
             <LiveMarkdown markdown={document.markdown} />
@@ -192,6 +202,7 @@ export const LiveArchivePage: React.FC = () => {
                     title={recording.title}
                     alt={`${recording.title} LIVE 2024 preview visual`}
                     aspectRatio="1:1"
+                    {...deferredImageLoadingProps}
                   />
                   <div>
                     <span>TRACK {String(recording.trackNumber).padStart(2, '0')} // PREVIEW</span>
@@ -213,7 +224,7 @@ export const LiveArchivePage: React.FC = () => {
               {archive.tourLogs.map((log) => (
                 <article key={log.slug}>
                   <Link to={`/live/${archive.slug}/tour-log/${log.slug}/`}>
-                    <ResponsivePicture assetId={log.heroAssetId} title={log.title} alt={`${archive.title} ${log.title} tour log`} aspectRatio="3:2" />
+                    <ResponsivePicture assetId={log.heroAssetId} title={log.title} alt={`${archive.title} ${log.title} tour log`} aspectRatio="3:2" {...deferredImageLoadingProps} />
                     <div>
                       <time dateTime={log.dateRange.start}>{log.dateRange.start.replaceAll('-', '.')}—{log.dateRange.end.replaceAll('-', '.')}</time>
                       <strong>{log.title}</strong>
@@ -234,7 +245,7 @@ export const LiveArchivePage: React.FC = () => {
           <h2 id="live-gallery-heading">ARCHIVE GALLERY</h2>
           <div className="live-gallery__grid">
             {archive.galleryAssetIds.map((assetId, index) => (
-              <ResponsivePicture key={assetId} assetId={assetId} title={`${archive.title} gallery ${index + 1}`} alt={`${archive.title} archive gallery ${index + 1}`} aspectRatio="3:2" />
+              <ResponsivePicture key={assetId} assetId={assetId} title={`${archive.title} gallery ${index + 1}`} alt={`${archive.title} archive gallery ${index + 1}`} aspectRatio="3:2" {...deferredImageLoadingProps} />
             ))}
           </div>
           {pageIndexItems.length > 0 && <BackToIndexLink from="ARCHIVE GALLERY" />}
@@ -248,7 +259,7 @@ export const LiveArchivePage: React.FC = () => {
               <div className="live-related__releases">
                 {relatedReleases.map((release) => release && (
                   <Link to={`/discography/${release.slug}/`} className="live-release-link" key={release.id}>
-                    <ResponsivePicture assetId={getReleaseArtworkAssetId(release, 'cover')} title={release.title} alt={`${release.title} artwork`} aspectRatio="1:1" />
+                    <ResponsivePicture assetId={getReleaseArtworkAssetId(release, 'cover')} title={release.title} alt={`${release.title} artwork`} aspectRatio="1:1" {...deferredImageLoadingProps} />
                     <span>{release.format}</span><strong>{release.title}</strong>
                   </Link>
                 ))}
