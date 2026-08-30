@@ -5,8 +5,9 @@ import articlesData from '../../content/public/articles.json';
 import newsData from '../../content/public/news.json';
 import assetManifestData from '../../content/public/asset-manifest.json';
 import campaignsData from '../../content/public/campaigns.json';
+import liveData from '../../content/public/live.json';
 
-import { SiteConfig, Member, Release, Recording, Article, NewsItem, Campaign } from '../types/content';
+import { SiteConfig, Member, Release, Recording, Article, NewsItem, Campaign, LiveArchive } from '../types/content';
 
 export const isStagingEnv = (): boolean => {
   return import.meta.env.VITE_STAGING === 'true' || (typeof window !== 'undefined' && window.location.hostname.includes('staging'));
@@ -71,6 +72,10 @@ export const getReleaseBySlug = (slug: string): Release | undefined => {
   return release;
 };
 
+export const getReleaseById = (id: string): Release | undefined => {
+  return getReleases().find((release) => release.id === id);
+};
+
 export const getRecordings = (): Recording[] => {
   return discographyData.recordings as Recording[];
 };
@@ -82,7 +87,11 @@ export const getJukeboxRecordings = (): Recording[] => {
 };
 
 export const getRecordingById = (id: string): Recording | undefined => {
-  return getRecordings().find((rec) => rec.id === id);
+  const recording = getRecordings().find((rec) => rec.id === id);
+  if (recording || !isStagingEnv()) return recording;
+  return (liveData as LiveArchive[])
+    .flatMap((archive) => archive.preview?.recordings || [])
+    .find((preview) => preview.id === id);
 };
 
 export type RecordingArtworkSlot = 'square' | 'vertical';
@@ -170,6 +179,27 @@ export const getArticleBySlug = (slug: string): Article | undefined => {
 
 export const getNews = (): NewsItem[] => {
   return (newsData as NewsItem[]).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+};
+
+export const getLiveArchives = (): LiveArchive[] => {
+  if (!isStagingEnv()) return [];
+  return (liveData as LiveArchive[])
+    .filter((archive) => (
+      archive.publication.visibility === 'public'
+      && archive.publication.campaignState === 'staging'
+    ))
+    .slice()
+    .sort((a, b) => a.year - b.year || a.timingLabel.localeCompare(b.timingLabel));
+};
+
+export const getLiveArchiveBySlug = (slug: string): LiveArchive | undefined => {
+  return getLiveArchives().find((archive) => archive.slug === slug || archive.id === slug);
+};
+
+export const getLiveTourLog = (archiveSlug: string, logSlug: string) => {
+  const archive = getLiveArchiveBySlug(archiveSlug);
+  const log = archive?.tourLogs?.find((item) => item.slug === logSlug);
+  return archive && log ? { archive, log } : undefined;
 };
 
 export const getAssetManifest = () => assetManifestData;

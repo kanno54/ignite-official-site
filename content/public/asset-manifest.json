@@ -1324,6 +1324,624 @@
       "aspect": "1:1",
       "assetCode": "AR-SS01",
       "versionId": "v-ar-ss01-4-1786550565361"
+    },
+    "lv-sp-g01": {
+      "path": "/assets/images/live/spark-2021/LV-SP-G01_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SP-G01",
+      "selectedVersion": 1,
+      "sha256": "32e627d98b11f924983ea907579feff780b70fca51f4dc6480994f1064e5cc69",
+      "sourcePackage": "pkg-live-spark-2021-2026-08-26T13-42-56-938Z"
+    },
+    "lv-sp-g02": {
+      "path": "/assets/images/live/spark-2021/LV-SP-G02_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SP-G02",
+      "selectedVersion": 1,
+      "sha256": "94f620def6360e5f84a3dc41283e6cf0840ea91edb2a25b7653c2c03be8fd256",
+      "sourcePackage": "pkg-live-spark-2021-2026-08-26T13-42-56-938Z"
+    },
+    "lv-sp-g03": {
+      "path": "/assets/images/live/spark-2021/LV-SP-G03_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SP-G03",
+      "selectedVersion": 1,
+      "sha256": "376e7135dda21f45837f2b7c20044fc238ee98b977ebdce2e2bf20e6d690c5ee",
+      "sourcePackage": "pkg-live-spark-2021-2026-08-26T13-42-56-938Z"
+    },
+    "lv-sp-g04": {
+      "path": "/assets/images/live/spark-2021/LV-SP-G04_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SP-G04",
+      "selectedVersion": 1,
+      "sha256": "b69f290755b8faa65533c343763299e16c4520ec7db894ccf9479e025bab1f10",
+      "sourcePackage": "pkg-live-spark-2021-2026-08-26T13-42-56-938Z"
+    },
+    "lv-sp-h01": {
+      "path": "/assets/images/live/spark-2021/LV-SP-H01_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV-SP-H01",
+      "selectedVersion": 1,
+      "sha256": "0e6f70f8c3db821a2ccbf2d2d6c60114fca3bcc68b76984ee581aaa4a120dcbc",
+      "sourcePackage": "pkg-live-spark-2021-2026-08-26T13-42-56-938Z"
+    },
+    "lv-sp-h02": {
+      "path": "/assets/images/live/spark-2021/LV-SP-H02_v01.png",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "LV-SP-H02",
+      "selectedVersion": 1,
+      "sha256": "9c6a3f952ea5d967405723318f492fb6bfd836b0c0e1575ceec8d65d877200ac",
+      "sourcePackage": "pkg-live-spark-2021-2026-08-26T13-42-56-938Z"
+    },
+    "lv-nl-g01": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-G01_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-NL-G01",
+      "selectedVersion": 1,
+      "sha256": "8a550b279783bd16da29bddece74705fe8e157a6785a5f1a206ee9644d86f33a",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-nl-g02": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-G02_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-NL-G02",
+      "selectedVersion": 1,
+      "sha256": "e09afb397da363f6a25926caeab771d31b01daa90738c4fcd5900645099d52c0",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-nl-g03": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-G03_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-NL-G03",
+      "selectedVersion": 1,
+      "sha256": "c264f2fe85b96d639974cfc364bbc6b39c6bb87a7ed1460e4ad20f1dd7ebd32c",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-nl-g04": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-G04_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-NL-G04",
+      "selectedVersion": 1,
+      "sha256": "31609057eb692bf063315341659ba0e35e1532a91aa9cc4f084ea54377429086",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-nl-g05": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-G05_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-NL-G05",
+      "selectedVersion": 1,
+      "sha256": "fb60133636da76fbc5b62c2db4bc7ff115017e90604e3a8a9cb0dbce70a88672",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-nl-g06": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-G06_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-NL-G06",
+      "selectedVersion": 1,
+      "sha256": "2e687411df15fe9298c0570d0ac793e09deb5026154734715f100f5727ccff05",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-nl-h01": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-H01_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV-NL-H01",
+      "selectedVersion": 1,
+      "sha256": "4bc6ac69daac60d26b78d220f54dca7fb23967df7585172c5d73a9d5aa05c782",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-nl-h02": {
+      "path": "/assets/images/live/no-limits-2022/LV-NL-H02_v01.png",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "LV-NL-H02",
+      "selectedVersion": 1,
+      "sha256": "414a96c54ec7edbce1047dad6780efd427f421c809967e5874b726621a0c5a6d",
+      "sourcePackage": "pkg-live-no-limits-2022-2026-08-28T06-15-05-975Z"
+    },
+    "lv-fl-g01": {
+      "path": "/assets/images/live/first-light-2022/LV-FL-G01_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-FL-G01",
+      "selectedVersion": 1,
+      "sha256": "feb9691fda8603ed0a18801d57d93b7a7571a034a40cb97f5cd179d7e8220a12",
+      "sourcePackage": "pkg-live-first-light-2022-2026-08-26T14-19-43-995Z"
+    },
+    "lv-fl-g02": {
+      "path": "/assets/images/live/first-light-2022/LV-FL-G02_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-FL-G02",
+      "selectedVersion": 1,
+      "sha256": "af203098f7ddee0672ed98a949bc4ea3331f52c3ebe6546fa4e331fcd1c4c9fc",
+      "sourcePackage": "pkg-live-first-light-2022-2026-08-26T14-19-43-995Z"
+    },
+    "lv-fl-g03": {
+      "path": "/assets/images/live/first-light-2022/LV-FL-G03_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-FL-G03",
+      "selectedVersion": 1,
+      "sha256": "9abc203934725de8b05019a257da4c57648516d86babe7d49ae1dc3724465d01",
+      "sourcePackage": "pkg-live-first-light-2022-2026-08-26T14-19-43-995Z"
+    },
+    "lv-fl-g04": {
+      "path": "/assets/images/live/first-light-2022/LV-FL-G04_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-FL-G04",
+      "selectedVersion": 1,
+      "sha256": "4f7990eacff63b907108f407297c9f8c3b2ecb494e1c34ae5257e61477f14786",
+      "sourcePackage": "pkg-live-first-light-2022-2026-08-26T14-19-43-995Z"
+    },
+    "lv-fl-h01": {
+      "path": "/assets/images/live/first-light-2022/LV-FL-H01_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV-FL-H01",
+      "selectedVersion": 1,
+      "sha256": "ad862c1401aa26d7fd9c5222424aa61a5193382bb4e1cddc5c51f78e321da15d",
+      "sourcePackage": "pkg-live-first-light-2022-2026-08-26T14-19-43-995Z"
+    },
+    "lv-fl-h02": {
+      "path": "/assets/images/live/first-light-2022/LV-FL-H02_v01.png",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "LV-FL-H02",
+      "selectedVersion": 1,
+      "sha256": "3200d3b8ef47082e79edf0d6a3d4a5cdb7c376256d8ce594cf88c235537639a3",
+      "sourcePackage": "pkg-live-first-light-2022-2026-08-26T14-19-43-995Z"
+    },
+    "lv-so-g01": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G01_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G01",
+      "selectedVersion": 1,
+      "sha256": "ade34fe36a1702fc38c7ed939baee3f47d3ec63a3b71323423f927c37aacdc3a",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-g02": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G02_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G02",
+      "selectedVersion": 1,
+      "sha256": "2403a37563e6e2f4fa448bd1dcc87147578a53bc23a904373a17c6458d620b02",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-g03": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G03_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G03",
+      "selectedVersion": 1,
+      "sha256": "138e7305e901ed49549b9ed167375ac8ce8219045f11d2ea02c73a11467bac0c",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-g04": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G04_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G04",
+      "selectedVersion": 1,
+      "sha256": "78031cc97392001c7a6eaad7554b858914885730f1cdb806aca1780b3915b77f",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-g05": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G05_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G05",
+      "selectedVersion": 1,
+      "sha256": "7d062007afc57a2087f96923efe1a4295491cd576a8829648af23ddce908a984",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-g06": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G06_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G06",
+      "selectedVersion": 1,
+      "sha256": "5403b1d1cc03bc51610f427421b427bc59ffe6f5aa1a62b2811b0ff346c5eb4b",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-g07": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G07_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G07",
+      "selectedVersion": 1,
+      "sha256": "5ecd96bb03eae5287344db3add31031fd238ec11747461082bf3847611be8b5c",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-g08": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-G08_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV-SO-G08",
+      "selectedVersion": 1,
+      "sha256": "3f7052f5ed8e8206d30843bcb3c2623cb059e5bdc9ad053797e1bfeb59b2b62f",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-h01": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-H01_v02.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV-SO-H01",
+      "selectedVersion": 2,
+      "sha256": "14cba93b1562b888156b73cb98f388080b3e977133d10442cc14458cb815a005",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv-so-h02": {
+      "path": "/assets/images/live/solar-tour-2023/LV-SO-H02_v01.png",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "LV-SO-H02",
+      "selectedVersion": 1,
+      "sha256": "ba4731bc422020e2686b14a23c5514adb83340cd9fb9e020cf27cc848a0ed742",
+      "sourcePackage": "pkg-live-solar-tour-2023-2026-08-28T07-55-29-881Z"
+    },
+    "lv24-c-h01": {
+      "path": "/assets/images/live/live-tour-2024/LV24-C-H01_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV24-C-H01",
+      "selectedVersion": 1,
+      "sha256": "1835cd06df887c072df561a6974a516f46aaabb0ebd86da83a64dcd64ae4b63a",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-c-h02": {
+      "path": "/assets/images/live/live-tour-2024/LV24-C-H02_v01.png",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "LV24-C-H02",
+      "selectedVersion": 1,
+      "sha256": "61ed691b05f49a6cb89d9c28184855e31153758d631e27aff020fcd3e42c0a8b",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-c-c01": {
+      "path": "/assets/images/live/live-tour-2024/LV24-C-C01_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV24-C-C01",
+      "selectedVersion": 1,
+      "sha256": "ed5b9eb7a8bfef146b98e701b538bacf523b14e86efb6f2a3fec50d1cfdbff20",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-c-s01": {
+      "path": "/assets/images/live/live-tour-2024/LV24-C-S01_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV24-C-S01",
+      "selectedVersion": 1,
+      "sha256": "772a3553d2d54fc6b50696a2a682e320dde9951481c450b4fdcee74d059b82bc",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-i01": {
+      "path": "/assets/images/live/live-tour-2024/LV24-I01_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV24-I01",
+      "selectedVersion": 1,
+      "sha256": "1397fbccf472390da6ea6c5cf652aa1551ad8fb6d9863fe11d4faa1c450196e0",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-i02": {
+      "path": "/assets/images/live/live-tour-2024/LV24-I02_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV24-I02",
+      "selectedVersion": 1,
+      "sha256": "8308cb579bede99bcf5e2f8333f34ddd102b0d4f4a56946bb26fae07184f7198",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-i03": {
+      "path": "/assets/images/live/live-tour-2024/LV24-I03_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV24-I03",
+      "selectedVersion": 1,
+      "sha256": "98da984567940feae65b1690a0840c1db9e811bcc410eb19072cb2c9faffaf88",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-i04": {
+      "path": "/assets/images/live/live-tour-2024/LV24-I04_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LV24-I04",
+      "selectedVersion": 1,
+      "sha256": "04946e316b7ef9545dc54f7f619f84f09ad66fdc3953b42442946997f14de781",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg01": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG01_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG01",
+      "selectedVersion": 1,
+      "sha256": "270c1539fa04cf52f3f2930de0207366ab9232394156e800e55a848f3f5ade05",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg02": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG02_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG02",
+      "selectedVersion": 1,
+      "sha256": "aa60222d39e506faf467f93edb944a2bb17d95648fa9c8f79067dd90429c7948",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg03": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG03_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG03",
+      "selectedVersion": 1,
+      "sha256": "9b2b9934aa336918f6e3022c7188bff468636cf8b85d594eb501e44d8711d0a8",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg04": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG04_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG04",
+      "selectedVersion": 1,
+      "sha256": "a034830726adcecad52f6078fd590ee1a91f30253c3155c1d797a10869bc02a1",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg05": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG05_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG05",
+      "selectedVersion": 1,
+      "sha256": "b1d52bf466e65383b5e7e494acef73686a17201d133cfc565db883c4bb6369a7",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg06": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG06_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG06",
+      "selectedVersion": 1,
+      "sha256": "52bec93aad6ae83f67265b63473b87c10e4170c6c5068c2f6c3281de141d8d0c",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg07": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG07_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG07",
+      "selectedVersion": 1,
+      "sha256": "798e0b08d01c541901a2096938dccf96d3ed72a31d1bec71ab5f311cc4dc7def",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg08": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG08_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG08",
+      "selectedVersion": 1,
+      "sha256": "8b3ad83d81ad9caa64b35e3f2daa437cd5a88211d431414a79f09ed30e3b9eec",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg09": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG09_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG09",
+      "selectedVersion": 1,
+      "sha256": "491f27506e578ab6fb9226186a32ab962ce56eb411f67c1be2507d4190607634",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg10": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG10_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG10",
+      "selectedVersion": 1,
+      "sha256": "17c85cd68a463f93276ff3ea1ebbba31b1aba2d85caba609f112329768ef644e",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg11": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG11_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG11",
+      "selectedVersion": 1,
+      "sha256": "0f5c36242a2bb541ca79ba365a77b6b6a6fd29c8ca7cbd91b75c80fba80d5990",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-fg12": {
+      "path": "/assets/images/live/live-tour-2024/LV24-FG12_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-FG12",
+      "selectedVersion": 1,
+      "sha256": "4fe96cfe6617c41f154dce846802b8fcab21bc6495fdf6b69a1b01d003b7ee81",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l01g-1": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L01G-1_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L01G-1",
+      "selectedVersion": 1,
+      "sha256": "e80b2a8f3f310d896a0400de0e955bdf35f882762beab8339a56821fa78c6427",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l01g-2": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L01G-2_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L01G-2",
+      "selectedVersion": 1,
+      "sha256": "c0f75a8ee7b67260e18d36906b5175ce542c022a3500f44651fa707528c432ff",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l02g-1": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L02G-1_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L02G-1",
+      "selectedVersion": 1,
+      "sha256": "03a0383adabec8361f7da922a822bd6e77eea57f7e7880f3eeae4154062fe436",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l02g-2": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L02G-2_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L02G-2",
+      "selectedVersion": 1,
+      "sha256": "6f4c7ee4841cf0e0139d93c40724e6c6bd8b330ce8d12615832bbafee4a9805f",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l03g-1": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L03G-1_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L03G-1",
+      "selectedVersion": 1,
+      "sha256": "50dbca77a4aeccb565c82723118c4d1a61cec7ec8c0ba281cbb2b968858e145f",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l03g-2": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L03G-2_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L03G-2",
+      "selectedVersion": 1,
+      "sha256": "23cc6d47f4c3d6316d0099b6ed9644f9c0ffea008cbde55ba9dfc0e0470a3e47",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l04g-1": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L04G-1_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L04G-1",
+      "selectedVersion": 1,
+      "sha256": "67babec68f3fab2cd137a43356915990e365fbcfb881afade8ae8ab7e73b3d2b",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l04g-2": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L04G-2_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L04G-2",
+      "selectedVersion": 1,
+      "sha256": "27f66c803b4dfea578cabb9677a3c1158dc99e034df176a91c52a519fc2b72ca",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l05g-1": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L05G-1_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L05G-1",
+      "selectedVersion": 1,
+      "sha256": "45a00653a0f7492b56b81e375b929c9e1eab943aab731891a5286d18220750d9",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l05g-2": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L05G-2_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L05G-2",
+      "selectedVersion": 1,
+      "sha256": "3f5903bb3bff4226ce3aa43e02e6e36f3162f001c59c6369e931e11c3859694c",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l06g-1": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L06G-1_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L06G-1",
+      "selectedVersion": 1,
+      "sha256": "cc49fc535a8308a3a2674fd21126b119b91965722f85a13296fd005d4e2b3a48",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-l06g-2": {
+      "path": "/assets/images/live/live-tour-2024/LV24-L06G-2_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-L06G-2",
+      "selectedVersion": 1,
+      "sha256": "69ca0e9b03d11386ad6f171be9d3dd045f30e0645ce6466d6ae40af6299c1c8b",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-lg04": {
+      "path": "/assets/images/live/live-tour-2024/LV24-LG04_v01.png",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "LV24-LG04",
+      "selectedVersion": 1,
+      "sha256": "cc0a3b78de6474b0f6f1fcfd7a0caafe2436a7472e6d3ad74467cfb558c48318",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-lg05": {
+      "path": "/assets/images/live/live-tour-2024/LV24-LG05_v01.png",
+      "status": "ready",
+      "aspect": "3:2",
+      "assetCode": "LV24-LG05",
+      "selectedVersion": 1,
+      "sha256": "c05d3f82e598f70a9199a3575a6df5dafb634822ed5f6aa1c87d029b435cf5d4",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "lv24-og01": {
+      "path": "/assets/images/live/live-tour-2024/LV24-OG01_v01.png",
+      "status": "ready",
+      "aspect": "1728:910",
+      "assetCode": "LV24-OG01",
+      "selectedVersion": 1,
+      "sha256": "9867dc6e541c0fcd05f9b112df3461fe52db6fa78e8bcf861fc4d2ebb6d6504d",
+      "sourcePackage": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z"
+    },
+    "la24-t03": {
+      "path": "/assets/images/live/live-tour-2024/previews/LA24-T03_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LA24-T03",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-la24-t03-1-1787972807273",
+      "sha256": "a272cda8f08c8248f9477104e03539c0a905c74262ab09b5241f2a7ca27b1c87",
+      "sourceCampaign": "live-album-2024",
+      "usage": "PREVIEW_ONLY"
+    },
+    "la24-t04": {
+      "path": "/assets/images/live/live-tour-2024/previews/LA24-T04_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LA24-T04",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-la24-t04-1-1787972809089",
+      "sha256": "105e32f9b790586fd210427a373fa65512d9beba42a68f330cf68bb1450f97a2",
+      "sourceCampaign": "live-album-2024",
+      "usage": "PREVIEW_ONLY"
+    },
+    "la24-t05": {
+      "path": "/assets/images/live/live-tour-2024/previews/LA24-T05_v01.png",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "LA24-T05",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-la24-t05-1-1787972810504",
+      "sha256": "13dc60356c26c198c7e3f603c033f6eca80530c855372a6c9bfa3d3b20be78d9",
+      "sourceCampaign": "live-album-2024",
+      "usage": "PREVIEW_ONLY"
     }
   }
 }

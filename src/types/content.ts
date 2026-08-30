@@ -311,3 +311,112 @@ export type NewsItem = {
   title: string;
   url: string;
 };
+
+export type LiveArchiveDocument = {
+  label: string;
+  sourceAssetCode: string;
+  markdown: string;
+  imageAssetId?: string;
+};
+
+export type LiveArchiveTrackReference = {
+  trackNumber?: number;
+  title: string;
+  section: string | null;
+  note: string | null;
+};
+
+export type LiveTourLog = {
+  slug: string;
+  title: string;
+  city: string;
+  leg: string | null;
+  venue: string;
+  dateRange: { start: string; end: string };
+  sourceAssetCode: string;
+  markdown: string;
+  heroAssetId: string;
+  galleryAssetIds: string[];
+};
+
+export type LivePreviewRecording = Recording & {
+  publicationState: 'PREVIEW';
+  relation: 'PREVIEW';
+  provenance: 'UNSPECIFIED';
+  source: {
+    campaignId: 'live-album-2024';
+    audioAssetCode: string;
+    audioVersionId: string;
+    audioSha256: string;
+    teaserAssetCode: string;
+    teaserVersionId: string;
+    teaserSha256: string;
+  };
+};
+
+export type LiveArchive = {
+  id: string;
+  slug: string;
+  year: number;
+  timingLabel: string;
+  title: string;
+  eventTitle: string;
+  subtitle: string;
+  archiveRole: 'FULL' | 'COMPACT' | 'COMPLETE';
+  heroDesktopAssetId: string;
+  heroMobileAssetId: string;
+  logoAssetId?: string;
+  compactLogoAssetId?: string;
+  ogAssetId?: string;
+  stageConceptAssetId?: string;
+  costumeAssetId?: string;
+  chapterVisuals?: Array<{ id: string; title: string; assetId: string }>;
+  galleryAssetIds: string[];
+  documents: LiveArchiveDocument[];
+  schedule?: {
+    cityCount: number;
+    showCount: number;
+    start: string;
+    end: string;
+    sourceAssetCode: string;
+    shows: Array<{
+      stop: string;
+      city: string;
+      leg: string | null;
+      venue: string;
+      date: string;
+      weekday: string;
+      show: string;
+      status: string | null;
+    }>;
+  };
+  setlist: {
+    display: boolean;
+    status: string;
+    displayLabel: string;
+    showTrackNumbers?: boolean;
+    tracks: LiveArchiveTrackReference[];
+    sourceAssetCode?: string;
+  };
+  tourLogs?: LiveTourLog[];
+  preview?: {
+    eyebrow: string;
+    title: string;
+    copy: string;
+    sourceAssetCode: string;
+    formalReleaseRoute: string | null;
+    recordings: LivePreviewRecording[];
+  };
+  relatedReleaseIds: string[];
+  relatedRecordingIds: string[];
+  source: {
+    campaignId: string;
+    packageId: string;
+    packageGeneratedAt: string;
+    selectedAssetCodes: string[];
+    publicVisualAssetIds: string[];
+    auditCsv?: string;
+    excludedReferenceAssetCodes?: string[];
+  };
+  publication: Publication;
+};

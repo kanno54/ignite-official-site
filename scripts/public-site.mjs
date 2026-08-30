@@ -13,6 +13,7 @@ export const discography = readJson('discography.json');
 export const articles = readJson('articles.json');
 export const campaigns = readJson('campaigns.json');
 export const assetManifest = readJson('asset-manifest.json');
+export const liveArchives = readJson('live.json');
 
 const readyAssetPath = (assetId) => {
   const asset = assetManifest.images[assetId];
@@ -161,6 +162,40 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
       type: 'article',
       lastmod: article.publishDateFull,
     });
+  }
+
+  if (staging) {
+    const visibleLiveArchives = liveArchives.filter((archive) => publicationIsPublic(archive.publication, true));
+    add('/live/', {
+      title: 'LIVE | IGNITE Official Portal',
+      description: 'IGNITEのステージとツアーを記録する公式Live Archive。',
+      image: readyAssetPath('lv24-og01') || readyAssetPath('lv-so-h01'),
+      sitemap: false,
+    });
+    add('/live/history/', {
+      title: 'LIVE HISTORY | IGNITE Official Portal',
+      description: 'IGNITEの2021年から2024年までのLive Archive。',
+      image: readyAssetPath('lv24-og01') || readyAssetPath('lv-so-h01'),
+      sitemap: false,
+    });
+    for (const archive of visibleLiveArchives) {
+      add(`/live/${archive.slug}/`, {
+        title: `${archive.title} | IGNITE LIVE Archive`,
+        description: `${archive.eventTitle} — ${archive.subtitle}`,
+        image: readyAssetPath(archive.ogAssetId || archive.heroDesktopAssetId),
+        type: 'article',
+        sitemap: false,
+      });
+      for (const log of archive.tourLogs || []) {
+        add(`/live/${archive.slug}/tour-log/${log.slug}/`, {
+          title: `${log.title} | ${archive.title} Tour Log`,
+          description: `${log.dateRange.start}—${log.dateRange.end} // ${log.venue}`,
+          image: readyAssetPath(log.heroAssetId),
+          type: 'article',
+          sitemap: false,
+        });
+      }
+    }
   }
 
   add('/story/', {

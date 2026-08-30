@@ -9,6 +9,8 @@ import {
   getReleaseBySlug,
   getEquinoxRecordingBySlug,
   getSiteConfig,
+  getLiveArchiveBySlug,
+  getLiveTourLog,
   isStagingEnv,
 } from '../../utils/contentLoader';
 
@@ -99,6 +101,30 @@ export const MetadataManager: React.FC = () => {
         title: 'CAMPAIGN ARCHIVE | IGNITE Official Portal',
         description: 'IGNITEのCurrent Campaignと歴代Campaign Archive。',
         image: fallbackImage,
+      };
+    } else if (parts[0] === 'live' && isStagingEnv()) {
+      const archive = parts[1] && parts[1] !== 'history' ? getLiveArchiveBySlug(parts[1]) : undefined;
+      const tourLog = archive && parts[2] === 'tour-log' && parts[3]
+        ? getLiveTourLog(parts[1], parts[3])?.log
+        : undefined;
+      metadata = archive && tourLog ? {
+        title: `${tourLog.title} | ${archive.title} Tour Log`,
+        description: `${tourLog.dateRange.start}—${tourLog.dateRange.end} // ${tourLog.venue}`,
+        image: manifestImages[tourLog.heroAssetId]?.path || fallbackImage,
+        type: 'article',
+      } : archive ? {
+        title: `${archive.title} | IGNITE LIVE Archive`,
+        description: `${archive.eventTitle} — ${archive.subtitle}`,
+        image: manifestImages[archive.ogAssetId || archive.heroDesktopAssetId]?.path || fallbackImage,
+        type: 'article',
+      } : parts[1] === 'history' ? {
+        title: 'LIVE HISTORY | IGNITE Official Portal',
+        description: 'IGNITEの2021年から2024年までのLive Archive。',
+        image: manifestImages['lv24-og01']?.path || manifestImages['lv-so-h01']?.path || fallbackImage,
+      } : {
+        title: 'LIVE | IGNITE Official Portal',
+        description: 'IGNITEのステージとツアーを記録する公式Live Archive。',
+        image: manifestImages['lv24-og01']?.path || manifestImages['lv-so-h01']?.path || fallbackImage,
       };
     } else if (parts[0] === 'features') {
       const article = parts[1] ? getArticleBySlug(parts[1]) : undefined;

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FiveLights } from './FiveLights';
 import { useAudio } from '../audio/AudioProvider';
 import { EqualizerBars } from '../audio/EqualizerBars';
-import { getCurrentCampaign } from '../../utils/contentLoader';
+import { getCurrentCampaign, isStagingEnv } from '../../utils/contentLoader';
 
 export const SiteHeader: React.FC = () => {
   const location = useLocation();
@@ -14,6 +14,7 @@ export const SiteHeader: React.FC = () => {
   const navItems = [
     { label: 'MEMBERS', path: '/members/' },
     { label: 'DISCOGRAPHY', path: '/discography/' },
+    ...(isStagingEnv() ? [{ label: 'LIVE', path: '/live/' }] : []),
     { label: 'FEATURES', path: '/features/' },
     { label: 'STORY', path: '/story/' },
     { label: 'FUN & PASS', path: '/fun/' },

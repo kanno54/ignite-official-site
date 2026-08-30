@@ -21,6 +21,10 @@ import { CampaignDetailPage } from './routes/campaigns.$id';
 import { FunPage } from './routes/fun';
 import { PrivacyPage } from './routes/privacy';
 import { AccessibilityPage } from './routes/accessibility';
+import { LiveIndex } from './routes/live._index';
+import { LiveHistoryPage } from './routes/live.history';
+import { LiveArchivePage } from './routes/live.$slug';
+import { LiveTourLogPage } from './routes/live.$slug.tour-log.$logSlug';
 import { NotFoundPage } from './routes/404';
 import { getCurrentCampaign, isStagingEnv } from './utils/contentLoader';
 import { ConsentBanner } from './components/common/ConsentBanner';
@@ -73,6 +77,9 @@ const AnalyticsTracker: React.FC = () => {
       page_type = 'discography';
       content_id = parts[1] || 'index';
       release_id = parts[1];
+    } else if (parts[0] === 'live') {
+      page_type = 'live';
+      content_id = parts[1] || 'index';
     } else if (parts[0] === 'members') {
       page_type = 'member';
       content_id = parts[1] || 'index';
@@ -163,6 +170,10 @@ export const App: React.FC = () => {
               <Route path="/discography/" element={<DiscographyIndex />} />
               <Route path="/discography/equinox/tracks/:trackSlug/" element={<EquinoxSongDetailPage />} />
               <Route path="/discography/:slug/" element={<ReleaseDetailPage />} />
+              <Route path="/live/" element={<LiveIndex />} />
+              <Route path="/live/history/" element={<LiveHistoryPage />} />
+              <Route path="/live/:slug/tour-log/:logSlug/" element={<LiveTourLogPage />} />
+              <Route path="/live/:slug/" element={<LiveArchivePage />} />
               <Route path="/features/" element={<FeaturesIndex />} />
               <Route path="/features/:slug/" element={<ArticleDetailPage />} />
               <Route path="/campaigns/" element={<CampaignsIndex />} />

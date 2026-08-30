@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiveLights } from './FiveLights';
+import { isStagingEnv } from '../../utils/contentLoader';
 
 export const SiteFooter: React.FC = () => {
   return (
@@ -70,6 +71,7 @@ export const SiteFooter: React.FC = () => {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.85rem' }}>
                 <li><Link to="/members/" style={{ color: '#AEB6C4' }}>MEMBERS</Link></li>
                 <li><Link to="/discography/" style={{ color: '#AEB6C4' }}>DISCOGRAPHY</Link></li>
+                {isStagingEnv() && <li><Link to="/live/" style={{ color: '#AEB6C4' }}>LIVE</Link></li>}
                 <li><Link to="/features/" style={{ color: '#AEB6C4' }}>FEATURES</Link></li>
                 <li><Link to="/story/" style={{ color: '#AEB6C4' }}>STORY & TIMELINE</Link></li>
               </ul>

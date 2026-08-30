@@ -7,6 +7,575 @@
   padding: 0;
 }
 
+/* LIVE historical archive (staging foundation) */
+.live-page,
+.live-archive {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.live-page {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.live-page__intro {
+  max-width: 780px;
+  padding: 48px 0 12px;
+}
+
+.live-page__intro--compact {
+  padding-top: 12px;
+}
+
+.live-page__intro h1,
+.live-archive__hero h1 {
+  color: #F6F3ED;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 6.8rem);
+  letter-spacing: 0.02em;
+  line-height: 0.88;
+  margin: 12px 0 24px;
+}
+
+.live-page__intro p,
+.live-archive__hero-copy > p {
+  color: #AEB6C4;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+.live-kicker,
+.live-section-heading > span,
+.live-recording-reference span,
+.live-release-link > span {
+  color: var(--campaign-accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.live-section-heading {
+  align-items: end;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+}
+
+.live-section-heading h2,
+.live-gallery h2,
+.live-setlist h2,
+.live-related h2,
+.live-schedule h2,
+.live-chapters h2,
+.live-preview h2,
+.live-tour-logs h2 {
+  color: #F6F3ED;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1;
+  margin: 8px 0 0;
+}
+
+.live-card-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.live-card {
+  background: #10141C;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.live-card__image-link {
+  display: block;
+}
+
+.live-card__image-link .responsive-picture {
+  border: 0 !important;
+}
+
+.live-card__body {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.live-card__body h2 {
+  color: #F6F3ED;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin: 8px 0;
+}
+
+.live-card__body p {
+  color: #AEB6C4;
+  line-height: 1.65;
+  margin: 0 0 24px;
+}
+
+.live-card__body .btn-secondary {
+  margin-top: auto;
+}
+
+.live-current .live-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+}
+
+.live-archive__logo {
+  border: 0 !important;
+  margin: 16px 0 10px;
+  max-width: 360px;
+}
+
+.live-breadcrumb {
+  align-items: center;
+  color: #717D96;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  gap: 8px;
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+}
+
+.live-breadcrumb a {
+  color: var(--campaign-accent);
+}
+
+.live-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.live-timeline__row {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 130px minmax(0, 1fr);
+}
+
+.live-timeline__year {
+  color: var(--campaign-accent);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  padding-top: 8px;
+}
+
+.live-archive__hero {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.8fr);
+  margin-bottom: 72px;
+}
+
+.live-archive__hero-copy {
+  align-self: end;
+  padding-bottom: 20px;
+}
+
+.live-archive__hero h1 {
+  font-size: clamp(2.7rem, 6vw, 5rem);
+}
+
+.live-archive__hero-copy .live-archive__event {
+  color: #F6F3ED;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.live-archive__content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.live-document {
+  border-top: 1px solid var(--color-border);
+  padding-top: 22px;
+}
+
+.live-markdown {
+  color: #C6CBD4;
+  line-height: 1.95;
+}
+
+.live-markdown h2,
+.live-markdown h3,
+.live-markdown h4,
+.live-markdown h5,
+.live-markdown h6 {
+  color: #F6F3ED;
+  font-family: var(--font-display);
+  line-height: 1.25;
+  margin: 34px 0 16px;
+}
+
+.live-markdown h2 { font-size: clamp(2rem, 5vw, 3.4rem); }
+.live-markdown h3 { font-size: clamp(1.5rem, 4vw, 2.4rem); }
+.live-markdown h4 { font-size: 1.35rem; }
+
+.live-markdown p {
+  margin: 0 0 1.4em;
+}
+
+.live-markdown ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding-left: 22px;
+}
+
+.live-markdown strong {
+  color: #F6F3ED;
+}
+
+.live-markdown hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 38px 0;
+}
+
+.live-setlist,
+.live-gallery,
+.live-related,
+.live-schedule,
+.live-chapters,
+.live-preview,
+.live-tour-logs {
+  border-top: 1px solid var(--color-border);
+  padding-top: 28px;
+}
+
+.live-schedule__grid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.live-schedule__grid article {
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+  padding: 18px 20px 18px 0;
+}
+
+.live-schedule__grid time,
+.live-tour-logs time,
+.live-preview__grid span {
+  color: var(--campaign-accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.live-schedule__grid strong,
+.live-tour-logs strong,
+.live-preview__grid strong {
+  color: #F6F3ED;
+  font-size: 1.05rem;
+}
+
+.live-schedule__grid span,
+.live-tour-logs span {
+  color: #AEB6C4;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.live-chapters__grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.live-chapters figure {
+  min-width: 0;
+  position: relative;
+}
+
+.live-chapters figcaption {
+  background: rgba(5, 7, 10, 0.82);
+  bottom: 10px;
+  color: #F6F3ED;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  left: 10px;
+  letter-spacing: 0.08em;
+  padding: 7px 10px;
+  position: absolute;
+}
+
+.live-document__visual {
+  margin: 24px 0 34px;
+}
+
+.live-setlist > ul {
+  border-top: 1px solid var(--color-border);
+  list-style: none;
+  margin: 28px 0 0;
+  padding: 0;
+}
+
+.live-setlist > ul > li {
+  border-bottom: 1px solid var(--color-border);
+  padding: 16px 0;
+}
+
+.live-setlist li > div {
+  align-items: baseline;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.live-setlist li strong {
+  color: #F6F3ED;
+  font-size: 1.15rem;
+}
+
+.live-setlist li span {
+  color: var(--campaign-accent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+.live-setlist li p {
+  color: #AEB6C4;
+  font-size: 0.85rem;
+  margin: 8px 0 0;
+}
+
+.live-gallery__grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.live-preview > p {
+  color: #AEB6C4;
+  line-height: 1.7;
+  margin-top: 12px;
+}
+
+.live-preview__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.live-preview__grid article {
+  background: #10141C;
+  border: 1px solid var(--color-border);
+  min-width: 0;
+}
+
+.live-preview__grid article > div {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+}
+
+.live-tour-logs__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.live-tour-logs__grid article {
+  background: #10141C;
+  border: 1px solid var(--color-border);
+  min-width: 0;
+}
+
+.live-tour-logs__grid article a > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px;
+}
+
+.live-tour-log__hero {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.7fr);
+  margin-bottom: 72px;
+}
+
+.live-tour-log__hero > div:last-child {
+  align-self: end;
+  padding-bottom: 18px;
+}
+
+.live-tour-log__hero h1 {
+  color: #F6F3ED;
+  font-family: var(--font-display);
+  font-size: clamp(2.7rem, 6vw, 5rem);
+  line-height: 0.95;
+  margin: 12px 0 20px;
+}
+
+.live-tour-log__hero p,
+.live-tour-log__hero strong {
+  color: #AEB6C4;
+  display: block;
+  line-height: 1.7;
+}
+
+.live-related__releases {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 240px));
+  margin-top: 28px;
+}
+
+.live-release-link {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.live-release-link strong {
+  color: #F6F3ED;
+  font-size: 1.05rem;
+}
+
+.live-recording-reference {
+  align-items: center;
+  background: #10141C;
+  border: 1px solid var(--color-border);
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  margin-top: 28px;
+  padding: 24px;
+}
+
+.live-recording-reference strong {
+  color: #F6F3ED;
+  display: block;
+  font-size: 1.15rem;
+  margin-top: 6px;
+}
+
+.live-recording-reference p {
+  color: #AEB6C4;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin: 8px 0 0;
+}
+
+.live-archive__pager {
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 88px;
+  padding-top: 28px;
+}
+
+.live-archive__pager a {
+  color: var(--campaign-accent);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.live-archive__pager a:last-child {
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  .live-card-grid,
+  .live-gallery__grid,
+  .live-archive__hero,
+  .live-current .live-card,
+  .live-tour-log__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .live-timeline__row {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .live-archive__hero-copy {
+    padding: 0;
+  }
+
+  .live-tour-log__hero > div:last-child {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .live-page,
+  .live-archive {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .live-page__intro {
+    padding-top: 20px;
+  }
+
+  .live-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .live-card__body,
+  .live-recording-reference {
+    padding: 18px;
+  }
+
+  .live-schedule__grid,
+  .live-chapters__grid,
+  .live-preview__grid,
+  .live-tour-logs__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .live-recording-reference {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .live-archive__content {
+    gap: 60px;
+  }
+
+  .live-archive__pager a {
+    font-size: 0.9rem;
+  }
+}
+
 html, body {
   width: 100%;
   min-height: 100vh;
