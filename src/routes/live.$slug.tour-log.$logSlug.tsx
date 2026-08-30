@@ -26,7 +26,16 @@ export const LiveTourLogPage: React.FC = () => {
       </nav>
 
       <header className="live-tour-log__hero">
-        <ResponsivePicture assetId={log.heroAssetId} title={log.title} alt={`${archive.title} ${log.title} selected hero`} aspectRatio="3:2" />
+        <ResponsivePicture
+          assetId={log.heroAssetId}
+          title={log.title}
+          alt={`${archive.title} ${log.title} selected hero`}
+          aspectRatio="3:2"
+          sizes="(max-width: 800px) calc(100vw - 51px), min(65vw, 620px)"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div>
           <span className="live-kicker">TOUR LOG // {log.sourceAssetCode}</span>
           <h1>{log.title}</h1>
@@ -45,7 +54,16 @@ export const LiveTourLogPage: React.FC = () => {
           <h2 id="tour-log-gallery-heading">{log.title} GALLERY</h2>
           <div className="live-gallery__grid">
             {log.galleryAssetIds.map((assetId, index) => (
-              <ResponsivePicture key={assetId} assetId={assetId} title={`${log.title} ${index + 1}`} alt={`${archive.title} ${log.title} gallery ${index + 1}`} aspectRatio="3:2" />
+              <ResponsivePicture
+                key={assetId}
+                assetId={assetId}
+                title={`${log.title} ${index + 1}`}
+                alt={`${archive.title} ${log.title} gallery ${index + 1}`}
+                aspectRatio="3:2"
+                sizes="(max-width: 800px) calc(100vw - 51px), min(49vw, 471px)"
+                loading="lazy"
+                decoding="async"
+              />
             ))}
           </div>
         </section>

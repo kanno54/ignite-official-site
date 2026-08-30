@@ -90,6 +90,7 @@ export const LiveArchivePage: React.FC = () => {
               aspectRatio="3:2"
               mobileAspectRatio="1:1"
               className="live-archive__logo"
+              sizes="min(calc(100vw - 48px), 360px)"
               {...deferredImageLoadingProps}
             />
           )}
@@ -143,7 +144,7 @@ export const LiveArchivePage: React.FC = () => {
             <div className="live-chapters__grid">
               {archive.chapterVisuals.map((chapter) => (
                 <figure key={chapter.id}>
-                  <ResponsivePicture assetId={chapter.assetId} title={chapter.title} alt={`${archive.title} ${chapter.title} chapter visual`} aspectRatio="16:9" {...deferredImageLoadingProps} />
+                  <ResponsivePicture assetId={chapter.assetId} title={chapter.title} alt={`${archive.title} ${chapter.title} chapter visual`} aspectRatio="16:9" sizes="(max-width: 600px) calc(100vw - 51px), min(50vw, 471px)" {...deferredImageLoadingProps} />
                   <figcaption>{chapter.title}</figcaption>
                 </figure>
               ))}
@@ -162,6 +163,7 @@ export const LiveArchivePage: React.FC = () => {
                 alt={`${archive.title} ${document.label} selected visual`}
                 aspectRatio="16:9"
                 className="live-document__visual"
+                sizes="min(calc(100vw - 48px), 958px)"
                 {...deferredImageLoadingProps}
               />
             )}
@@ -203,6 +205,7 @@ export const LiveArchivePage: React.FC = () => {
                     title={recording.title}
                     alt={`${recording.title} LIVE 2024 preview visual`}
                     aspectRatio="1:1"
+                    sizes="(max-width: 600px) calc(100vw - 51px), min(32vw, 304px)"
                     {...deferredImageLoadingProps}
                   />
                   <div className="live-preview__content">
@@ -225,7 +228,7 @@ export const LiveArchivePage: React.FC = () => {
               {archive.tourLogs.map((log) => (
                 <article key={log.slug}>
                   <Link to={`/live/${archive.slug}/tour-log/${log.slug}/`}>
-                    <ResponsivePicture assetId={log.heroAssetId} title={log.title} alt={`${archive.title} ${log.title} tour log`} aspectRatio="3:2" {...deferredImageLoadingProps} />
+                    <ResponsivePicture assetId={log.heroAssetId} title={log.title} alt={`${archive.title} ${log.title} tour log`} aspectRatio="3:2" sizes="(max-width: 600px) calc(100vw - 51px), min(49vw, 467px)" {...deferredImageLoadingProps} />
                     <div className="live-tour-log__content">
                       <time dateTime={log.dateRange.start}>{log.dateRange.start.replaceAll('-', '.')}—{log.dateRange.end.replaceAll('-', '.')}</time>
                       <strong>{log.title}</strong>
@@ -246,7 +249,7 @@ export const LiveArchivePage: React.FC = () => {
           <h2 id="live-gallery-heading">ARCHIVE GALLERY</h2>
           <div className="live-gallery__grid">
             {archive.galleryAssetIds.map((assetId, index) => (
-              <ResponsivePicture key={assetId} assetId={assetId} title={`${archive.title} gallery ${index + 1}`} alt={`${archive.title} archive gallery ${index + 1}`} aspectRatio="3:2" {...deferredImageLoadingProps} />
+              <ResponsivePicture key={assetId} assetId={assetId} title={`${archive.title} gallery ${index + 1}`} alt={`${archive.title} archive gallery ${index + 1}`} aspectRatio="3:2" sizes="(max-width: 800px) calc(100vw - 51px), min(49vw, 471px)" {...deferredImageLoadingProps} />
             ))}
           </div>
           {pageIndexItems.length > 0 && <BackToIndexLink from="ARCHIVE GALLERY" />}
@@ -260,7 +263,7 @@ export const LiveArchivePage: React.FC = () => {
               <div className="live-related__releases">
                 {relatedReleases.map((release) => release && (
                   <Link to={`/discography/${release.slug}/`} className="live-release-link" key={release.id}>
-                    <ResponsivePicture assetId={getReleaseArtworkAssetId(release, 'cover')} title={release.title} alt={`${release.title} artwork`} aspectRatio="1:1" {...deferredImageLoadingProps} />
+                    <ResponsivePicture assetId={getReleaseArtworkAssetId(release, 'cover')} title={release.title} alt={`${release.title} artwork`} aspectRatio="1:1" sizes="min(calc(100vw - 51px), 240px)" {...deferredImageLoadingProps} />
                     <span>{release.format}</span><strong>{release.title}</strong>
                   </Link>
                 ))}

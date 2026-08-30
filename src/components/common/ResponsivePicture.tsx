@@ -57,13 +57,29 @@ export const ResponsivePicture: React.FC<Props> = ({
     : null;
 
   const derivativeRegistry = imageDerivativesData as {
-    assets: Record<string, { webp?: Array<{ path: string; width: number }> }>;
+    outputDirectory: string;
+    profiles: Record<string, { format: string; widths: number[] }>;
+    assets: Record<string, string>;
   };
-  const webpSrcSet = (id?: string) => derivativeRegistry.assets[id || '']?.webp
-    ?.map((derivative) => `${derivative.path} ${derivative.width}w`)
-    .join(', ');
-  const desktopWebpSrcSet = desktopSrc ? undefined : webpSrcSet(assetId);
-  const mobileWebpSrcSet = mobileSrc ? undefined : webpSrcSet(mobileAssetId);
+  const derivativeSrcSet = (id?: string, sourcePath?: string) => {
+    const profile = derivativeRegistry.profiles[derivativeRegistry.assets[id || '']];
+    if (!profile || !sourcePath) return undefined;
+    const extensionIndex = sourcePath.lastIndexOf('.');
+    const slashIndex = sourcePath.lastIndexOf('/');
+    const directory = sourcePath.slice(0, slashIndex);
+    const basename = sourcePath.slice(slashIndex + 1, extensionIndex);
+    return profile.widths
+      .map((width) => `${directory}/${derivativeRegistry.outputDirectory}/${basename}_${width}w.${profile.format} ${width}w`)
+      .join(', ');
+  };
+  const desktopDerivativeSrcSet = desktopSrc ? undefined : derivativeSrcSet(assetId, desktopAsset?.path);
+  const mobileDerivativeSrcSet = mobileSrc ? undefined : derivativeSrcSet(mobileAssetId, mobileAsset?.path);
+  const desktopDerivativeType = desktopDerivativeSrcSet
+    ? `image/${derivativeRegistry.profiles[derivativeRegistry.assets[assetId || '']].format}`
+    : undefined;
+  const mobileDerivativeType = mobileDerivativeSrcSet
+    ? `image/${derivativeRegistry.profiles[derivativeRegistry.assets[mobileAssetId || '']].format}`
+    : undefined;
 
   const isReady = desktopAsset && desktopAsset.status === 'ready' && !hasError;
 
@@ -145,11 +161,11 @@ export const ResponsivePicture: React.FC<Props> = ({
         <picture style={{ width: '100%', height: '100%', display: 'block' }}>
           {mobileAsset && mobileAsset.status === 'ready' && (
             <>
-              {mobileWebpSrcSet && <source media="(max-width: 768px)" srcSet={mobileWebpSrcSet} sizes={sizes} type="image/webp" />}
+              {mobileDerivativeSrcSet && <source media="(max-width: 768px)" srcSet={mobileDerivativeSrcSet} sizes={sizes} type={mobileDerivativeType} />}
               <source media="(max-width: 768px)" srcSet={mobileAsset.path} type={getImageType(mobileAsset.path)} />
             </>
           )}
-          {desktopWebpSrcSet && <source srcSet={desktopWebpSrcSet} sizes={sizes} type="image/webp" />}
+          {desktopDerivativeSrcSet && <source srcSet={desktopDerivativeSrcSet} sizes={sizes} type={desktopDerivativeType} />}
           <source srcSet={desktopAsset.path} type={getImageType(desktopAsset.path)} />
           <img
             src={desktopAsset.path}

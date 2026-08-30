@@ -1,43 +1,59 @@
 {
-  "version": 1,
+  "version": 2,
+  "outputDirectory": "derivatives",
+  "profiles": {
+    "heroDesktop": { "format": "webp", "quality": 80, "widths": [960, 1280, 1600] },
+    "heroMobile": { "format": "webp", "quality": 80, "widths": [384, 640, 960, 1120] },
+    "chapter": { "format": "webp", "quality": 80, "widths": [384, 640, 960, 1280] },
+    "preview": { "format": "webp", "quality": 80, "widths": [384, 640] },
+    "tourLog": { "format": "webp", "quality": 80, "widths": [384, 640, 960] },
+    "featureWide": { "format": "webp", "quality": 80, "widths": [640, 960, 1280, 1600] },
+    "gallery": { "format": "webp", "quality": 80, "widths": [384, 640, 960] },
+    "relatedCover": { "format": "webp", "quality": 80, "widths": [320, 480, 640] },
+    "logo": { "format": "webp", "lossless": true, "widths": [320, 480, 640] }
+  },
   "assets": {
-    "lv24-c-h01": {
-      "quality": 80,
-      "webp": [
-        {
-          "width": 960,
-          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H01_v01_960w.webp"
-        },
-        {
-          "width": 1280,
-          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H01_v01_1280w.webp"
-        },
-        {
-          "width": 1600,
-          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H01_v01_1600w.webp"
-        }
-      ]
-    },
-    "lv24-c-h02": {
-      "quality": 80,
-      "webp": [
-        {
-          "width": 384,
-          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_384w.webp"
-        },
-        {
-          "width": 640,
-          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_640w.webp"
-        },
-        {
-          "width": 960,
-          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_960w.webp"
-        },
-        {
-          "width": 1120,
-          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_1120w.webp"
-        }
-      ]
-    }
+    "lv24-c-h01": "heroDesktop",
+    "lv24-c-h02": "heroMobile",
+    "lv24-i01": "chapter",
+    "lv24-i02": "chapter",
+    "lv24-i03": "chapter",
+    "lv24-i04": "chapter",
+    "la24-t03": "preview",
+    "la24-t04": "preview",
+    "la24-t05": "preview",
+    "lv24-l01g-1": "tourLog",
+    "lv24-l01g-2": "tourLog",
+    "lv24-l02g-1": "tourLog",
+    "lv24-l02g-2": "tourLog",
+    "lv24-l03g-1": "tourLog",
+    "lv24-l03g-2": "tourLog",
+    "lv24-l04g-1": "tourLog",
+    "lv24-l04g-2": "tourLog",
+    "lv24-l05g-1": "tourLog",
+    "lv24-l05g-2": "tourLog",
+    "lv24-l06g-1": "tourLog",
+    "lv24-l06g-2": "tourLog",
+    "lv24-c-s01": "featureWide",
+    "lv24-c-c01": "featureWide",
+    "lv24-fg01": "gallery",
+    "lv24-fg02": "gallery",
+    "lv24-fg03": "gallery",
+    "lv24-fg04": "gallery",
+    "lv24-fg05": "gallery",
+    "lv24-fg06": "gallery",
+    "lv24-fg07": "gallery",
+    "lv24-fg08": "gallery",
+    "lv24-fg09": "gallery",
+    "lv24-fg10": "gallery",
+    "lv24-fg11": "gallery",
+    "lv24-fg12": "gallery",
+    "cover-solar": "relatedCover",
+    "cover-moonlit": "relatedCover",
+    "cover-silent-signal": "relatedCover",
+    "cover-rise-again": "relatedCover",
+    "cover-equinox": "relatedCover",
+    "lv24-lg04": "logo",
+    "lv24-lg05": "logo"
   }
 }
