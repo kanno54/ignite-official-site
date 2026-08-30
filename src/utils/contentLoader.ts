@@ -178,7 +178,11 @@ export const getArticleBySlug = (slug: string): Article | undefined => {
 };
 
 export const getNews = (): NewsItem[] => {
-  return (newsData as NewsItem[]).slice().sort((a, b) => (a.date < b.date ? 1 : -1));
+  const isStaging = isStagingEnv();
+  return (newsData as NewsItem[])
+    .filter((item) => item.publication?.campaignState !== 'staging' || isStaging)
+    .slice()
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
 };
 
 export const getLiveArchives = (): LiveArchive[] => {

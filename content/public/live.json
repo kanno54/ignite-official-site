@@ -780,7 +780,7 @@
     "tourLogs": [
       {
         "slug": "tokyo-opening",
-        "title": "TOKYO — OPENING",
+        "title": "THE FIRST SIGNAL",
         "city": "東京",
         "leg": "OPENING",
         "venue": "東京ベイホール",
@@ -789,7 +789,13 @@
           "end": "2024-05-19"
         },
         "sourceAssetCode": "LV24-L01",
-        "markdown": "# TOUR LOG — TOKYO OPENING\r\n\r\n## 最初の一歩は、まだ揃っていなかった\r\n\r\n暗転の中、五人は別々の場所にいた。\r\n\r\nLIVE TOUR 2024 **“SOLAR / LUNAR / EQUINOX / SHADOW”**。四章を巡るツアーの最初の景色は、五人が横一列に並ぶ姿ではない。\r\n\r\n**IGNITE // OPENING SIGNAL**が鳴り、それぞれ別の通路からステージへ向かう。\r\n\r\nKAIは客席を見渡す。\r\nSHOは立ち位置を確かめる。\r\nLEOは張りつめた空気の向こうにいるEMBERへ目を向ける。\r\nRENは最初の音を待つ。\r\nYUTOは一度だけ深く息を吸う。\r\n\r\nまだ、五人は離れている。\r\n\r\nそして「IGNITION」。\r\n\r\n最初のビートとともに距離が縮まり、中央でこの日最初のフォーメーションが完成する。\r\n\r\n何度も歌ってきた始まりの曲。それでも、このツアーではもう一度「ここから始める」ための曲になった。\r\n\r\nこれからSOLARへ進み、LUNARを通り、EQUINOXで再び集まり、SHADOWまで辿り着く。\r\n\r\nその長い物語の最初にあったのは、大きな答えではない。\r\n\r\n暗闇の中から五人が歩き出し、同じ場所に立つ。\r\n\r\nただ、その一瞬だった。\r\n\r\n### IMAGE 01\r\n\r\n開演直前。別々の導線からステージへ向かう五人。\r\n\r\n### IMAGE 02\r\n\r\n「IGNITION」冒頭、中央で最初のフォーメーションが完成する瞬間。",
+        "sourceVersion": 2,
+        "progressLabel": "2 / 12",
+        "keyMoments": [
+          "IGNITION",
+          "No Limits"
+        ],
+        "markdown": "# LV24-L01 — THE FIRST SIGNAL\r\n\r\n**TOKYO OPENING**\r\n\r\nIGNITE LIVE TOUR 2024 が東京ベイホールからスタートした。暗転のあと、別々の通路から現れた五人が中央へ集まり、「IGNITION」で最初のフォーメーションを組む。まだツアーの輪郭を探るような緊張が残る初日から一夜。二日目の「No Limits」では、サビに合わせて客席の腕が一斉に上がり、五人とEMBERの呼吸が初めて大きく揃った。\r\n\r\n12公演のうち、最初の2公演が終了。ここからライブは東京を離れ、最初の地方公演・福岡へ向かう。\r\n\r\n**IMAGE 01 — LV24-L01G-1**\r\n「IGNITION」冒頭。別々の方向から入った五人が中央で最初のフォーメーションを完成させる瞬間。\r\n\r\n**IMAGE 02 — LV24-L01G-2**\r\n「No Limits」サビ。客席側から五人と一斉に上がるEMBERの腕を捉え、ツアー最初の一体感を見せる。",
         "heroAssetId": "lv24-l01g-1",
         "galleryAssetIds": [
           "lv24-l01g-1",
@@ -798,7 +804,7 @@
       },
       {
         "slug": "fukuoka",
-        "title": "FUKUOKA",
+        "title": "HEAT RETURNS",
         "city": "福岡",
         "leg": null,
         "venue": "福岡サンパレスホール",
@@ -807,7 +813,13 @@
           "end": "2024-06-02"
         },
         "sourceAssetCode": "LV24-L02",
-        "markdown": "# TOUR LOG — FUKUOKA\r\n\r\n## 声を投げれば、すぐ近くから返ってくる\r\n\r\nSOLARの光が広がり、「Heatwave」のイントロが鳴る。\r\n\r\nこの日の福岡で強く残ったのは、ステージと客席の距離だった。\r\n\r\nLEOが前へ出る。\r\nいつものように声を投げる。\r\nけれど、その返事が想像より早い。\r\n\r\nひと呼吸置いて返ってくるのではない。次の音を待つより先に、EMBERの声がステージへ届く。\r\n\r\nLEOが笑い、YUTOもその勢いに乗る。KAIは客席全体を見ながらさらに熱を上げ、RENの歌声がその上を抜けていく。SHOは決められたフォーメーションを保ちながらも、その場の熱に合わせて身体の強弱を変える。\r\n\r\n「Heatwave」は、五人だけで完成する曲ではない。\r\n\r\nコール＆レスポンスの形は決まっていても、その日の声量も、返ってくるタイミングも、空気も同じにはならない。\r\n\r\nだからライブでは、音源にない瞬間が生まれる。\r\n\r\nステージから客席へ。\r\n客席から、もう一度ステージへ。\r\n\r\n福岡での「Heatwave」は、その往復がいつも以上にはっきり見えた。\r\n\r\nSOLARという章が“開く”ためのものなら、この瞬間、ステージは客席の奥まで完全に開いていた。\r\n\r\n### IMAGE 01\r\n\r\n「Heatwave」で客席へ大きく声を投げるLEO。背後では五人がSOLARのフォーメーションを広げている。\r\n\r\n### IMAGE 02\r\n\r\nコールに応えて一斉に手が上がるEMBERと、その反応を受けて笑うLEOとYUTO。",
+        "sourceVersion": 2,
+        "progressLabel": "4 / 12",
+        "keyMoments": [
+          "Heatwave",
+          "RISE AGAIN"
+        ],
+        "markdown": "## LV24-L02 — HEAT RETURNS\r\n\r\n**FUKUOKA**\r\n\r\nツアー最初の地方公演、福岡。東京とは明らかに違う客席の返しに、ステージの温度も早い段階から上がった。「Heatwave」ではLEOの呼びかけに会場が即座に応え、曲の途中から五人の方が煽られているような空気へ。\r\n\r\n二日目の「RISE AGAIN」では、サビの歌声がステージへ返り、五人が一度その声を受け止めてから次のフレーズへ進む場面もあった。同じセットでも、会場が変われば曲は変わる。IGNITEがツアーで確かめ始めたことが、福岡の二夜にはっきり残った。\r\n\r\n**IMAGE 01 — LV24-L02G-1**\r\n「Heatwave」。LEOが前方で客席へマイクを向け、他の四人と会場が同じリズムで跳ねる瞬間。\r\n\r\n**IMAGE 02 — LV24-L02G-2**\r\n「RISE AGAIN」終盤。五人が歌うのを止め、客席から返る大きな合唱を聞いている一瞬。",
         "heroAssetId": "lv24-l02g-1",
         "galleryAssetIds": [
           "lv24-l02g-1",
@@ -816,7 +828,7 @@
       },
       {
         "slug": "nagoya",
-        "title": "NAGOYA",
+        "title": "HOLD THE SILENCE",
         "city": "名古屋",
         "leg": null,
         "venue": "名古屋国際会議場 センチュリーホール",
@@ -825,7 +837,13 @@
           "end": "2024-06-23"
         },
         "sourceAssetCode": "LV24-L03",
-        "markdown": "# TOUR LOG — NAGOYA\r\n\r\n## 消えたあとに、残っているもの\r\n\r\nLUNARの終盤、「Afterglow」。\r\n\r\n大きく動いていた五人の身体が少しずつ静まり、LEOの声が前へ出る。客席の光は強く照らすものではなく、暗い空間の中に点々と残る。\r\n\r\nその景色を見ながら歌う五人は、SOLARの頃とはまるで違って見えた。\r\n\r\n盛り上がった瞬間だけが、ライブの記憶になるわけではない。\r\n\r\n最後の音が消えたあと。\r\n拍手が広がるまでの短い間。\r\n誰かの声が、まだ空間に残っているように感じる時間。\r\n\r\n名古屋で印象に残ったのは、そんな“終わったあと”だった。\r\n\r\n「Afterglow」は、ステージの光が消えたあとの余韻を描く曲だ。\r\n\r\nそしてこの日の終演後も、すぐにすべてが終わったようには感じられなかった。\r\n\r\n熱を持ったままの客席。\r\n照明の落ちたステージ。\r\n少し前までそこにいた五人の気配。\r\n\r\nライブは終われば消えてしまう。\r\n\r\nだからこそ、消えたあとに何が残るのかが分かる。\r\n\r\n名古屋の夜に残ったのは、大きな光ではない。\r\n\r\nそれでも確かに消えない、**Afterglow**だった。\r\n\r\n### IMAGE 01\r\n\r\n「Afterglow」終盤。暗いステージでLEOの歌声が前へ出て、客席のライトが星のように広がる瞬間。\r\n\r\n### IMAGE 02\r\n\r\n終演後、照明が落ちたステージと、まだ光の残る客席。",
+        "sourceVersion": 2,
+        "progressLabel": "6 / 12",
+        "keyMoments": [
+          "Silent Signal",
+          "EQUINOX"
+        ],
+        "markdown": "## LV24-L03 — HOLD THE SILENCE\r\n\r\n**NAGOYA**\r\n\r\nツアー中盤、名古屋。ここで目立ったのは、歓声の大きさよりも静かな時間だった。「Silent Signal」では暗転の中に足音と呼吸が残り、照明が戻るまで客席もその緊張を追う。続くEQUINOXパートでは、離れた位置に立つ五人の距離そのものが演出として見えるようになった。\r\n\r\n東京、福岡と熱を広げてきたツアーが、名古屋で初めて内側へ向く。派手な変化ではない。ただ、同じ曲、同じ五人でも“揃うこと”の意味が少しずつ変わっていく。その輪郭が見え始めた二夜だった。\r\n\r\n**IMAGE 01 — LV24-L03G-1**\r\n「Silent Signal」の暗転。五人の輪郭だけが浮かび、客席まで静止しているように見えるワイド。\r\n\r\n**IMAGE 02 — LV24-L03G-2**\r\n「EQUINOX」。五人がまだ中央に集まり切らず、別々の位置で同じ方向を見る幾何学的な構図。",
         "heroAssetId": "lv24-l03g-1",
         "galleryAssetIds": [
           "lv24-l03g-1",
@@ -834,7 +852,7 @@
       },
       {
         "slug": "osaka",
-        "title": "OSAKA",
+        "title": "ONE MORE TIME",
         "city": "大阪",
         "leg": null,
         "venue": "大阪オリックス劇場",
@@ -843,7 +861,13 @@
           "end": "2024-07-14"
         },
         "sourceAssetCode": "LV24-L04",
-        "markdown": "# TOUR LOG — OSAKA\r\n\r\n## 静けさの中で、五人が同じ瞬間をつかむ\r\n\r\nEQUINOXの入口、「Silent Signal」。\r\n\r\n暗転したステージに残るのは、呼吸と足音だけ。\r\n\r\nツアー序盤、この数秒には張りつめた緊張があった。誰かがわずかに早く動けば、誰かの呼吸がずれれば、そのまま曲全体の印象が変わる。\r\n\r\n大阪で見えたのは、その危うさを越えた先の精度だった。\r\n\r\nSHOを基準に五人の足が揃う。\r\nけれど、全員が同じ動きをしているわけではない。\r\n\r\nKAIは重く前へ出る。\r\nLEOはわずかに外へ開く。\r\nRENは動きを抑え、声の余白を残す。\r\nYUTOは視線と呼吸で次の動きをつなぐ。\r\n\r\nそれぞれの身体の違いを消さないまま、同じタイミングだけを共有する。\r\n\r\n「Silent Signal」がこのツアーで目指してきたのは、完全な同一ではなく、**違う五人が同じ意図へ到達すること**だった。\r\n\r\n曲が進み、サビで初めて全景が開く。\r\n\r\nそこで見えたのは、振付を正確に再現する五人ではない。\r\n\r\n何度も同じステージを重ねたことで、互いの次の動きを待たなくても分かるようになった五人だった。\r\n\r\nツアー中盤。\r\n\r\n大阪の「Silent Signal」は、LIVE TOUR 2024が一つの形をつかみ始めた瞬間を映していた。\r\n\r\n### IMAGE 01\r\n\r\n「Silent Signal」冒頭。暗闇の中、足元だけに光が入り、五人のステップが同時に落ちる瞬間。\r\n\r\n### IMAGE 02\r\n\r\nサビで照明が開き、それぞれ異なる身体のラインを保ちながら、一つのフォーメーションを完成させる五人。",
+        "sourceVersion": 2,
+        "progressLabel": "8 / 12",
+        "keyMoments": [
+          "Silent Signal",
+          "Encore MC"
+        ],
+        "markdown": "## LV24-L04 — ONE MORE TIME\r\n\r\n**OSAKA**\r\n\r\n大阪の二夜は、同じ演目をもう一度やる意味がよく見えた公演になった。初日と二日目で「Silent Signal」の空気は少し違う。二日目、曲が終わったあとに残った短い静寂と、その直後の歓声まで含めて、一つの演目のように会場へ広がった。\r\n\r\nアンコールではYUTOがいつもより少し長くマイクを持ち、**「もっとできるようになりたい」**と短く話した。大きな宣言ではない。それでも、隣で聞いていた四人と客席の反応が、その言葉をこのツアーの一場面として残した。12公演は、ここで折り返しを越える。\r\n\r\n**IMAGE 01 — LV24-L04G-1**\r\n「Silent Signal」終盤のYUTO。派手な感情表現ではなく、息を整えて次の動きへ入る瞬間。\r\n\r\n**IMAGE 02 — LV24-L04G-2**\r\nアンコールMCでマイクを持つYUTOと、その言葉を横で聞く四人。",
         "heroAssetId": "lv24-l04g-1",
         "galleryAssetIds": [
           "lv24-l04g-1",
@@ -852,7 +876,7 @@
       },
       {
         "slug": "sapporo",
-        "title": "SAPPORO",
+        "title": "AFTERGLOW",
         "city": "札幌",
         "leg": null,
         "venue": "札幌文化芸術劇場 hitaru",
@@ -861,7 +885,12 @@
           "end": "2024-08-11"
         },
         "sourceAssetCode": "LV24-L05",
-        "markdown": "# TOUR LOG — SAPPORO\r\n\r\n## 五人の声だけでは、もう完成しない\r\n\r\nツアー終盤の札幌。\r\n\r\n「RISE AGAIN」が始まる頃には、この曲のサビを誰が歌うのかを、もうステージの五人だけで決めているようには見えなかった。\r\n\r\nKAIが前へ出る。\r\nRENが声を伸ばす。\r\nLEOとYUTOが客席へ手を向ける。\r\nSHOは五人の動きを大きく開き、ステージの外側まで届く形へ変える。\r\n\r\nそして、EMBERの声が重なる。\r\n\r\n最初は五人から客席へ渡していた歌だった。\r\n\r\nけれど公演を重ねるうちに、「RISE AGAIN」は少しずつ変わっていった。サビが来れば、五人が促すより先に声が立ち上がる。ステージの歌と客席の歌を分ける境界が、以前よりずっと曖昧になっている。\r\n\r\n傷ついたままでもいい。\r\n迷いながらでも、もう一度立てばいい。\r\n\r\nその言葉を、五人だけが歌っているのではない。\r\n\r\n札幌での「RISE AGAIN」は、ツアーを通して育ってきた一体感が、最も分かりやすい形で現れた瞬間だった。\r\n\r\n五人が声を上げる。\r\n\r\nその先を、会場全体が引き継ぐ。\r\n\r\nツアーの終わりが近づくほど、この曲はIGNITEのものだけではなくなっていた。\r\n\r\n### IMAGE 01\r\n\r\n「RISE AGAIN」サビ。五人が客席へ手を伸ばし、EMBERの合唱が重なる瞬間。\r\n\r\n### IMAGE 02\r\n\r\n曲終盤、ステージと客席の双方から手が上がり、会場全体が一つの方向を向く景色。",
+        "sourceVersion": 2,
+        "progressLabel": "10 / 12",
+        "keyMoments": [
+          "Afterglow"
+        ],
+        "markdown": "## LV24-L05 — AFTERGLOW\r\n\r\n**SAPPORO**\r\n\r\n札幌でツアーは後半へ入った。二日目の「Afterglow」。照明が落ち、客席に残ったライトがゆっくりと星空のように広がっていく。ステージから見える景色に合わせるように、五人の歌もいつもより少しだけ間を残した。\r\n\r\n大きなコールも、派手なダンスブレイクもない数分。それでも、このツアーが客席と一緒に作られていることが一番よく見える時間になった。東京から始まった12公演は10公演を終え、残すのは9月の東京ファイナルだけ。次に五人が立つのは、このツアーで最も大きなステージになる。\r\n\r\n**IMAGE 01 — LV24-L05G-1**\r\n「Afterglow」。ステージ上の五人のシルエット越しに、客席一面のライトが星空のように広がるワイド。\r\n\r\n**IMAGE 02 — LV24-L05G-2**\r\n曲後、暗いステージで客席を見ている五人。大きなポーズを取らず、ツアー終盤の静かな余韻を優先。",
         "heroAssetId": "lv24-l05g-1",
         "galleryAssetIds": [
           "lv24-l05g-1",
@@ -870,7 +899,7 @@
       },
       {
         "slug": "tokyo-final",
-        "title": "TOKYO — FINAL",
+        "title": "WE BURN",
         "city": "東京",
         "leg": "FINAL",
         "venue": "東京ガーデンシアター",
@@ -879,7 +908,14 @@
           "end": "2024-09-15"
         },
         "sourceAssetCode": "LV24-L06",
-        "markdown": "# TOUR LOG — TOKYO FINAL\r\n\r\n## 終わりのあとに、二つの新しい火\r\n\r\nアンコールの「Run With Us」で、張りつめていた本編の空気がほどける。\r\n\r\n四章を走り切った五人が、広くステージを使いながらEMBERへ手を振る。\r\n\r\nそこで終わっても、このツアーは成立していた。\r\n\r\nけれど、東京ファイナルにはその先があった。\r\n\r\n最初に披露されたのは、**「One More Flame」**。\r\n\r\n大きなテーマを背負うのではなく、楽屋や移動中のような、五人の素の距離を感じさせる新曲。ツアーを通して積み重ねてきたものを、最後にいちばん近い温度へ戻すような一曲だった。\r\n\r\nそして、もう一つ。\r\n\r\n**「We Burn」**。\r\n\r\nIGNITEが掲げてきた\r\n**“We don’t just perform. We burn.”**\r\nという言葉を、次へ進むための宣言として鳴らす。\r\n\r\nSOLAR、LUNAR、EQUINOX、SHADOW。\r\n\r\n四つの章を終えたあとに残ったのは、「完成した」という答えではなかった。\r\n\r\nまだ進める。\r\nまだ選べる。\r\nまだ五人で、新しい景色を作れる。\r\n\r\nファイナルの最後に初めて鳴った二曲は、ツアーの終着点ではなく、その先へ続く火だった。\r\n\r\n### IMAGE 01\r\n\r\n「One More Flame」初披露。アンコールらしい柔らかな空気の中、五人が近い距離で歌う瞬間。\r\n\r\n### IMAGE 02\r\n\r\n「We Burn」初披露。五人がそれぞれ強く立ち、次章への宣言をステージから放つ瞬間。",
+        "sourceVersion": 2,
+        "progressLabel": "12 / 12 COMPLETE",
+        "keyMoments": [
+          "EQUINOX",
+          "One More Flame",
+          "We Burn"
+        ],
+        "markdown": "## LV24-L06 — WE BURN\r\n\r\n**TOKYO FINAL**\r\n\r\n5月から続いたIGNITE LIVE TOUR 2024が、東京ガーデンシアターでファイナルを迎えた。「EQUINOX」終盤、離れた位置にいた五人が一人ずつ中央へ歩き、最後に一つのフォーメーションを完成させる。四つの章を巡ってきたこのツアーを、その数十秒が静かに結んだ。\r\n\r\nアンコールでは未リリースの新曲「One More Flame」、そして「We Burn」を初披露。最後の一音が止まったあとも、会場の声は長く残った。全12公演が終了。Full Setlist、Final Report、Stage / Costume Featureは、TOUR COMPLETE更新で公開する。\r\n\r\n**IMAGE 01 — LV24-L06G-1**\r\n「EQUINOX」終盤。五人が別々の位置から中央へ集まり、完全なフォーメーションが完成するツアー象徴カット。\r\n\r\n**IMAGE 02 — LV24-L06G-2**\r\n「We Burn」初披露。アンコール衣装の五人と客席を、四章から解放された荒い熱量として捉える。",
         "heroAssetId": "lv24-l06g-1",
         "galleryAssetIds": [
           "lv24-l06g-1",
@@ -1092,6 +1128,50 @@
         "LV24-REF-LOGO-SPEC",
         "LV24-REF-SETLIST24",
         "LV24-LG01"
+      ],
+      "selectedCorrections": [
+        {
+          "assetCode": "LV24-L01",
+          "versionId": "v-lv24-l01-2-1788063481331",
+          "versionNo": 2,
+          "sha256": "999d0b8718e012978f447fb91414e17e231f90512687c8d0cc24db97d556439c"
+        },
+        {
+          "assetCode": "LV24-L02",
+          "versionId": "v-lv24-l02-2-1788063479912",
+          "versionNo": 2,
+          "sha256": "c3cf61f435bd1af5c0d03ad9238316aec34b070c80efb98612a365cc0d092d1c"
+        },
+        {
+          "assetCode": "LV24-L03",
+          "versionId": "v-lv24-l03-2-1788063478785",
+          "versionNo": 2,
+          "sha256": "d748f46786094279485dacf3a57b0e838308d205ec51ebb9a304e20b67a69e93"
+        },
+        {
+          "assetCode": "LV24-L04",
+          "versionId": "v-lv24-l04-2-1788063477678",
+          "versionNo": 2,
+          "sha256": "8dbb3053a9927967ea8e9c2ba0a3cb5d0cc798d187b3e54f4587611c3215ab3e"
+        },
+        {
+          "assetCode": "LV24-L04G-2",
+          "versionId": "v-lv24-l04g-2-2-1788063486040",
+          "versionNo": 2,
+          "sha256": "b3887eca36a215dc8faffcac7089e57801bbd16ae9b146819d09601e92d46fab"
+        },
+        {
+          "assetCode": "LV24-L05",
+          "versionId": "v-lv24-l05-2-1788063484443",
+          "versionNo": 2,
+          "sha256": "a9f7ccb32f28bf6d1100b29a02c5bd7bd768c1432d40d8d3e94b7442b3ba01b7"
+        },
+        {
+          "assetCode": "LV24-L06",
+          "versionId": "v-lv24-l06-2-1788063482686",
+          "versionNo": 2,
+          "sha256": "dcdd08aea9526860c2fbd559af7367ccc9b3d0e1727a9917a060d1e1ed873694"
+        }
       ]
     },
     "publication": {

@@ -143,8 +143,18 @@ export const TopPage: React.FC = () => {
                 </span>
               </div>
               <span style={{ fontSize: '0.95rem', color: '#F6F3ED', fontWeight: 600, lineHeight: 1.5, wordBreak: 'break-word' }}>
-                {item.title} ➔
+                {item.title}{item.ctaLabel ? '' : ' ➔'}
               </span>
+              {item.description && (
+                <span style={{ fontSize: '0.85rem', color: '#AEB6C4', lineHeight: 1.6 }}>
+                  {item.description}
+                </span>
+              )}
+              {item.ctaLabel && (
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--campaign-accent)', fontWeight: 700 }}>
+                  {item.ctaLabel} ➔
+                </span>
+              )}
             </Link>
           ))}
         </div>

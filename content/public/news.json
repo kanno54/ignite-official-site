@@ -1,5 +1,19 @@
 [
   {
+    "id": "news-2024-09-15-live-tour-2024-archive",
+    "date": "2024.09.15",
+    "category": "LIVE",
+    "title": "LIVE TOUR 2024 — TOUR ARCHIVE NOW OPEN",
+    "description": "SOLAR / LUNAR / EQUINOX / SHADOW。12公演を巡ったIGNITE LIVE TOUR 2024の特設ページを公開しました。Tour Log、ステージ／衣装コンセプト、Final Galleryとともにツアーの記録を辿れます。",
+    "ctaLabel": "VIEW LIVE TOUR 2024",
+    "url": "/live/live-tour-2024/",
+    "imageAssetId": "lv24-c-h01",
+    "publication": {
+      "visibility": "public",
+      "campaignState": "staging"
+    }
+  },
+  {
     "id": "news-2024-05-15-1",
     "date": "2024.05.15",
     "category": "RELEASE",

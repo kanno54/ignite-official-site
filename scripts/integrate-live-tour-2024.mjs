@@ -13,6 +13,27 @@ const packageRoot = path.join(assetStudioRoot, 'asset-library', 'deliveries', ca
 const deliveryManifestPath = path.join(packageRoot, 'manifest.json');
 const auditCsvPath = path.join(rootDir, 'reports', 'm11a-2-live-tour-2024-asset-audit', 'live-tour-2024-assets.csv');
 
+// SELECTED v02 corrections verified against the production Asset Studio database.
+// The original delivery package remains the immutable v01 baseline; these files
+// are copied alongside it so canonical history is preserved.
+const selectedCorrections = [
+  ['LV24-L01', 'v-lv24-l01-2-1788063481331', 2, 'assets/live-tour-2024/LV24-L01/source/v02.md', 'LV24-L01_v02.md', '999d0b8718e012978f447fb91414e17e231f90512687c8d0cc24db97d556439c'],
+  ['LV24-L02', 'v-lv24-l02-2-1788063479912', 2, 'assets/live-tour-2024/LV24-L02/source/v02.md', 'LV24-L02_v02.md', 'c3cf61f435bd1af5c0d03ad9238316aec34b070c80efb98612a365cc0d092d1c'],
+  ['LV24-L03', 'v-lv24-l03-2-1788063478785', 2, 'assets/live-tour-2024/LV24-L03/source/v02.md', 'LV24-L03_v02.md', 'd748f46786094279485dacf3a57b0e838308d205ec51ebb9a304e20b67a69e93'],
+  ['LV24-L04', 'v-lv24-l04-2-1788063477678', 2, 'assets/live-tour-2024/LV24-L04/source/v02.md', 'LV24-L04_v02.md', '8dbb3053a9927967ea8e9c2ba0a3cb5d0cc798d187b3e54f4587611c3215ab3e'],
+  ['LV24-L04G-2', 'v-lv24-l04g-2-2-1788063486040', 2, 'assets/live-tour-2024/LV24-L04G-2/source/v02.png', 'LV24-L04G-2_v02.png', 'b3887eca36a215dc8faffcac7089e57801bbd16ae9b146819d09601e92d46fab'],
+  ['LV24-L05', 'v-lv24-l05-2-1788063484443', 2, 'assets/live-tour-2024/LV24-L05/source/v02.md', 'LV24-L05_v02.md', 'a9f7ccb32f28bf6d1100b29a02c5bd7bd768c1432d40d8d3e94b7442b3ba01b7'],
+  ['LV24-L06', 'v-lv24-l06-2-1788063482686', 2, 'assets/live-tour-2024/LV24-L06/source/v02.md', 'LV24-L06_v02.md', 'dcdd08aea9526860c2fbd559af7367ccc9b3d0e1727a9917a060d1e1ed873694'],
+].map(([assetCode, versionId, versionNo, filePath, deliveryFilename, hash]) => ({
+  assetCode,
+  versionId,
+  versionNo,
+  filePath,
+  deliveryFilename,
+  sha256: hash,
+}));
+const selectedCorrectionByCode = new Map(selectedCorrections.map((item) => [item.assetCode, item]));
+
 const readUtf8 = (filePath) => fs.readFileSync(filePath, 'utf8').replace(/^\uFEFF/, '');
 const readJson = (filePath) => JSON.parse(readUtf8(filePath));
 const writeJson = (filePath, value) => {
@@ -121,6 +142,15 @@ for (const asset of deliveryManifest.assets.filter((item) => item.file_path.ends
   fs.copyFileSync(sourcePath, path.join(canonicalDir, asset.delivery_filename));
 }
 
+for (const correction of selectedCorrections) {
+  const sourcePath = path.join(assetStudioRoot, 'asset-library', correction.filePath);
+  if (!fs.existsSync(sourcePath)) throw new Error(`Missing SELECTED correction source: ${correction.assetCode}`);
+  if (sha256(sourcePath) !== correction.sha256) throw new Error(`SELECTED correction hash mismatch: ${correction.assetCode}`);
+  if (correction.filePath.endsWith('.md')) {
+    fs.copyFileSync(sourcePath, path.join(canonicalDir, correction.deliveryFilename));
+  }
+}
+
 for (const assetCode of tourVisualCodes) {
   const asset = byCode.get(assetCode);
   const sourcePath = path.join(packageRoot, asset.file_path);
@@ -141,6 +171,25 @@ for (const assetCode of tourVisualCodes) {
     sourcePackage: packageId,
   };
 }
+
+
+const correctedVisual = selectedCorrectionByCode.get('LV24-L04G-2');
+const correctedVisualSource = path.join(assetStudioRoot, 'asset-library', correctedVisual.filePath);
+const correctedVisualRelativePath = `/assets/images/live/live-tour-2024/${correctedVisual.deliveryFilename}`;
+const correctedVisualTarget = path.join(rootDir, 'public', correctedVisualRelativePath.replace(/^\//, ''));
+fs.copyFileSync(correctedVisualSource, correctedVisualTarget);
+if (sha256(correctedVisualTarget) !== correctedVisual.sha256) throw new Error('Copied hash mismatch: LV24-L04G-2 v02');
+siteManifest.images[assetIdFor('LV24-L04G-2')] = {
+  path: correctedVisualRelativePath,
+  status: 'ready',
+  aspect: aspectFor(imageDimensions(correctedVisualSource)),
+  assetCode: 'LV24-L04G-2',
+  selectedVersion: correctedVisual.versionNo,
+  selectedVersionId: correctedVisual.versionId,
+  sha256: correctedVisual.sha256,
+  sourceCampaign: campaignId,
+  source: 'ASSET_STUDIO_SELECTED_CORRECTION',
+};
 
 const previewSources = [
   {
@@ -207,7 +256,11 @@ for (const preview of previewSources) {
   preview.audioUrl = audioRelativePath;
 }
 
-const readCanonical = (assetCode) => readUtf8(path.join(canonicalDir, byCode.get(assetCode).delivery_filename)).trim();
+const readCanonical = (assetCode) => {
+  const correction = selectedCorrectionByCode.get(assetCode);
+  const filename = correction?.deliveryFilename || byCode.get(assetCode).delivery_filename;
+  return readUtf8(path.join(canonicalDir, filename)).trim();
+};
 const scheduleData = JSON.parse(readCanonical('LV24-D02'));
 const setlistData = JSON.parse(readCanonical('LV24-F01'));
 const tourLogIndex = JSON.parse(readCanonical('LV24-L00'));
@@ -215,6 +268,14 @@ const tourLogImageCodes = Array.from({ length: 6 }, (_, index) => {
   const prefix = `LV24-L${String(index + 1).padStart(2, '0')}G`;
   return [`${prefix}-1`, `${prefix}-2`];
 });
+const tourLogMetadata = [
+  { title: 'THE FIRST SIGNAL', progressLabel: '2 / 12', keyMoments: ['IGNITION', 'No Limits'] },
+  { title: 'HEAT RETURNS', progressLabel: '4 / 12', keyMoments: ['Heatwave', 'RISE AGAIN'] },
+  { title: 'HOLD THE SILENCE', progressLabel: '6 / 12', keyMoments: ['Silent Signal', 'EQUINOX'] },
+  { title: 'ONE MORE TIME', progressLabel: '8 / 12', keyMoments: ['Silent Signal', 'Encore MC'] },
+  { title: 'AFTERGLOW', progressLabel: '10 / 12', keyMoments: ['Afterglow'] },
+  { title: 'WE BURN', progressLabel: '12 / 12 COMPLETE', keyMoments: ['EQUINOX', 'One More Flame', 'We Burn'] },
+];
 
 const archive = {
   id: campaignId,
@@ -275,12 +336,15 @@ const archive = {
   },
   tourLogs: tourLogIndex.entries.map((entry, index) => ({
     slug: entry.log_id,
-    title: entry.title,
+    title: tourLogMetadata[index].title,
     city: entry.city,
     leg: entry.leg,
     venue: entry.venue,
     dateRange: entry.date_range,
     sourceAssetCode: `LV24-L${String(index + 1).padStart(2, '0')}`,
+    sourceVersion: 2,
+    progressLabel: tourLogMetadata[index].progressLabel,
+    keyMoments: tourLogMetadata[index].keyMoments,
     markdown: readCanonical(`LV24-L${String(index + 1).padStart(2, '0')}`),
     heroAssetId: assetIdFor(tourLogImageCodes[index][0]),
     galleryAssetIds: tourLogImageCodes[index].map(assetIdFor),
@@ -329,6 +393,7 @@ const archive = {
     publicVisualAssetIds: tourVisualCodes.map(assetIdFor),
     auditCsv: 'reports/m11a-2-live-tour-2024-asset-audit/live-tour-2024-assets.csv',
     excludedReferenceAssetCodes: ['LV24-REF-LOGO-SPEC', 'LV24-REF-SETLIST24', 'LV24-LG01'],
+    selectedCorrections: selectedCorrections.map(({ assetCode, versionId, versionNo, sha256: hash }) => ({ assetCode, versionId, versionNo, sha256: hash })),
   },
   publication: {
     fictionalReleaseDate: '2024.09',
@@ -344,5 +409,25 @@ liveArchives.push(archive);
 liveArchives.sort((a, b) => a.year - b.year || a.timingLabel.localeCompare(b.timingLabel));
 writeJson(livePath, liveArchives);
 writeJson(manifestPath, siteManifest);
+
+const announcement = {
+  id: 'news-2024-09-15-live-tour-2024-archive',
+  date: '2024.09.15',
+  category: 'LIVE',
+  title: 'LIVE TOUR 2024 — TOUR ARCHIVE NOW OPEN',
+  description: 'SOLAR / LUNAR / EQUINOX / SHADOW。12公演を巡ったIGNITE LIVE TOUR 2024の特設ページを公開しました。Tour Log、ステージ／衣装コンセプト、Final Galleryとともにツアーの記録を辿れます。',
+  ctaLabel: 'VIEW LIVE TOUR 2024',
+  url: '/live/live-tour-2024/',
+  imageAssetId: assetIdFor('LV24-C-H01'),
+  publication: {
+    visibility: 'public',
+    campaignState: 'staging',
+  },
+};
+const newsPath = path.join(rootDir, 'content', 'public', 'news.json');
+const news = readJson(newsPath).filter((item) => item.id !== announcement.id);
+news.push(announcement);
+news.sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id));
+writeJson(newsPath, news);
 
 console.log(`Integrated ${campaignId}: ${archive.setlist.tracks.length} tracks, ${archive.tourLogs.length} tour logs, ${archive.preview.recordings.length} preview recordings.`);

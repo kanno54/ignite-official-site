@@ -17,6 +17,7 @@ const discography = readJson('discography.json');
 const articles = readJson('articles.json');
 const campaigns = readJson('campaigns.json');
 const liveArchives = readJson('live.json');
+const news = readJson('news.json');
 const manifest = readJson('asset-manifest.json');
 const failures = [];
 failures.push(...validateArtworkUsage(discography, manifest));
@@ -208,8 +209,45 @@ if (tour2024Tracks.length !== 24 || tour2024?.setlist?.status !== 'CANONICAL_24_
   if (tour2024Tracks[22]?.title !== 'One More Flame' || tour2024Tracks[23]?.title !== 'We Burn') failures.push('LIVE TOUR 2024 finale must remain One More Flame / We Burn');
 }
 if (tour2024?.tourLogs?.length !== 6) failures.push('LIVE TOUR 2024 must expose six audited tour logs');
+const expectedTourLogV02 = [
+  ['LV24-L01', 'THE FIRST SIGNAL', '2 / 12', ['IGNITION', 'No Limits'], ['lv24-l01g-1', 'lv24-l01g-2']],
+  ['LV24-L02', 'HEAT RETURNS', '4 / 12', ['Heatwave', 'RISE AGAIN'], ['lv24-l02g-1', 'lv24-l02g-2']],
+  ['LV24-L03', 'HOLD THE SILENCE', '6 / 12', ['Silent Signal', 'EQUINOX'], ['lv24-l03g-1', 'lv24-l03g-2']],
+  ['LV24-L04', 'ONE MORE TIME', '8 / 12', ['Silent Signal', 'Encore MC'], ['lv24-l04g-1', 'lv24-l04g-2']],
+  ['LV24-L05', 'AFTERGLOW', '10 / 12', ['Afterglow'], ['lv24-l05g-1', 'lv24-l05g-2']],
+  ['LV24-L06', 'WE BURN', '12 / 12 COMPLETE', ['EQUINOX', 'One More Flame', 'We Burn'], ['lv24-l06g-1', 'lv24-l06g-2']],
+];
+for (const [index, expected] of expectedTourLogV02.entries()) {
+  const [assetCode, title, progressLabel, keyMoments, galleryAssetIds] = expected;
+  const actual = tour2024?.tourLogs?.[index];
+  if (!actual || actual.sourceAssetCode !== assetCode || actual.sourceVersion !== 2 || actual.title !== title
+    || actual.progressLabel !== progressLabel || JSON.stringify(actual.keyMoments) !== JSON.stringify(keyMoments)
+    || JSON.stringify(actual.galleryAssetIds) !== JSON.stringify(galleryAssetIds)) {
+    failures.push(`LIVE TOUR 2024 Tour Log v02 mapping mismatch: ${assetCode}`);
+  }
+}
+const l04g2 = manifest.images['lv24-l04g-2'];
+if (l04g2?.selectedVersion !== 2 || l04g2?.selectedVersionId !== 'v-lv24-l04g-2-2-1788063486040'
+  || l04g2?.path !== '/assets/images/live/live-tour-2024/LV24-L04G-2_v02.png') {
+  failures.push('LV24-L04G-2 must resolve only to the SELECTED YUTO speaker v02 visual');
+}
+const tourConcept = tour2024?.documents?.find((document) => document.sourceAssetCode === 'LV24-D01');
+const stageConcept = tour2024?.documents?.find((document) => document.sourceAssetCode === 'LV24-F03');
+if (tourConcept?.imageAssetId) failures.push('TOUR CONCEPT must not render LV24-C-S01');
+if (stageConcept?.imageAssetId !== 'lv24-c-s01') failures.push('STAGE CONCEPT must retain LV24-C-S01');
 if (tour2024?.chapterVisuals?.map((chapter) => chapter.title).join('/') !== 'SOLAR/LUNAR/EQUINOX/SHADOW') {
   failures.push('LIVE TOUR 2024 must retain the four canonical chapters');
+}
+
+const liveTourAnnouncement = news.filter((item) => item.id === 'news-2024-09-15-live-tour-2024-archive');
+if (liveTourAnnouncement.length !== 1) failures.push('Homepage must contain exactly one LIVE TOUR 2024 archive announcement');
+else {
+  const item = liveTourAnnouncement[0];
+  if (item.category !== 'LIVE' || item.title !== 'LIVE TOUR 2024 — TOUR ARCHIVE NOW OPEN'
+    || item.url !== '/live/live-tour-2024/' || item.ctaLabel !== 'VIEW LIVE TOUR 2024'
+    || item.imageAssetId !== 'lv24-c-h01' || item.publication?.campaignState !== 'staging') {
+    failures.push('Homepage LIVE TOUR 2024 announcement metadata mismatch');
+  }
 }
 
 const previewRecordings = tour2024?.preview?.recordings || [];

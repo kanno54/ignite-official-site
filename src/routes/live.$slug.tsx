@@ -154,6 +154,7 @@ export const LiveArchivePage: React.FC = () => {
           <section className="live-tour-logs" aria-labelledby="live-tour-logs-heading">
             <span className="live-kicker">COMPLETE TOUR LOG</span>
             <h2 id="live-tour-logs-heading">TOUR LOG</h2>
+            <p className="live-kicker">12 / 12 COMPLETE // TOUR COMPLETE</p>
             <div className="live-tour-logs__grid">
               {archive.tourLogs.map((log) => (
                 <article key={log.slug}>
@@ -162,6 +163,8 @@ export const LiveArchivePage: React.FC = () => {
                     <div>
                       <time dateTime={log.dateRange.start}>{log.dateRange.start.replaceAll('-', '.')}—{log.dateRange.end.replaceAll('-', '.')}</time>
                       <strong>{log.title}</strong>
+                      {log.progressLabel && <span>{log.progressLabel}</span>}
+                      {log.keyMoments && <span>{log.keyMoments.join(' / ')}</span>}
                       <span>{log.venue}</span>
                     </div>
                   </Link>

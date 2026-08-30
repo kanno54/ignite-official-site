@@ -59,7 +59,12 @@ export const runRouteValidation = ({ sitemapPath = defaultSitemapPath } = {}) =>
   const routePaths = new Set(expectedRoutes.map((entry) => entry.path));
   const news = JSON.parse(fs.readFileSync(path.join(rootDir, 'content', 'public', 'news.json'), 'utf8'));
   for (const item of news) {
-    if (item.url.startsWith('/') && !routePaths.has(item.url)) failures.push(`news ${item.id} links to a non-public route: ${item.url}`);
+    if (!item.url.startsWith('/')) continue;
+    if (item.publication?.campaignState === 'staging') {
+      if (!stagingRoutePaths.has(item.url)) failures.push(`staging news ${item.id} links to an unknown staging route: ${item.url}`);
+      continue;
+    }
+    if (!routePaths.has(item.url)) failures.push(`news ${item.id} links to a non-public route: ${item.url}`);
   }
 
   if (failures.length > 0) {

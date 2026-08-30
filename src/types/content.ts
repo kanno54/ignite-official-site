@@ -310,6 +310,10 @@ export type NewsItem = {
   category: string;
   title: string;
   url: string;
+  description?: string;
+  ctaLabel?: string;
+  imageAssetId?: string;
+  publication?: Publication;
 };
 
 export type LiveArchiveDocument = {
@@ -334,6 +338,9 @@ export type LiveTourLog = {
   venue: string;
   dateRange: { start: string; end: string };
   sourceAssetCode: string;
+  sourceVersion?: number;
+  progressLabel?: string;
+  keyMoments?: string[];
   markdown: string;
   heroAssetId: string;
   galleryAssetIds: string[];
@@ -417,6 +424,12 @@ export type LiveArchive = {
     publicVisualAssetIds: string[];
     auditCsv?: string;
     excludedReferenceAssetCodes?: string[];
+    selectedCorrections?: Array<{
+      assetCode: string;
+      versionId: string;
+      versionNo: number;
+      sha256: string;
+    }>;
   };
   publication: Publication;
 };
