@@ -241,7 +241,7 @@ const archive = {
   galleryAssetIds: Array.from({ length: 12 }, (_, index) => assetIdFor(`LV24-FG${String(index + 1).padStart(2, '0')}`)),
   documents: [
     ['COMPLETE ARCHIVE', 'LV24-P01', null],
-    ['TOUR CONCEPT', 'LV24-D01', 'LV24-C-S01'],
+    ['TOUR CONCEPT', 'LV24-D01', null],
     ['TOUR FINAL REPORT', 'LV24-F02', null],
     ['STAGE CONCEPT', 'LV24-F03', 'LV24-C-S01'],
     ['COSTUME OVERVIEW', 'LV24-F04', 'LV24-C-C01'],
