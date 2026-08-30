@@ -126,8 +126,9 @@ for (const archive of liveArchives) {
   if (!['FULL', 'COMPACT', 'COMPLETE'].includes(archive.archiveRole)) failures.push(`LIVE archive ${archive.id} has invalid role: ${archive.archiveRole}`);
   if (archive.source?.campaignId !== archive.id) failures.push(`LIVE archive ${archive.id} source campaign mismatch`);
   if (!archive.source?.packageId?.startsWith(`pkg-${archive.id}-`)) failures.push(`LIVE archive ${archive.id} source package mismatch`);
-  if (archive.publication?.visibility !== 'public' || archive.publication?.campaignState !== 'staging') {
-    failures.push(`LIVE archive ${archive.id} must remain staging-only`);
+  const expectedCampaignState = archive.id === 'live-tour-2024' ? 'current' : 'past';
+  if (archive.publication?.visibility !== 'public' || archive.publication?.campaignState !== expectedCampaignState) {
+    failures.push(`LIVE archive ${archive.id} must be production-public with state ${expectedCampaignState}`);
   }
   if (!Array.isArray(archive.documents) || archive.documents.length === 0) failures.push(`LIVE archive ${archive.id} has no canonical documents`);
   for (const document of archive.documents || []) {
@@ -245,7 +246,7 @@ else {
   const item = liveTourAnnouncement[0];
   if (item.category !== 'LIVE' || item.title !== 'LIVE TOUR 2024 — TOUR ARCHIVE NOW OPEN'
     || item.url !== '/live/live-tour-2024/' || item.ctaLabel !== 'VIEW LIVE TOUR 2024'
-    || item.imageAssetId !== 'lv24-c-h01' || item.publication?.campaignState !== 'staging') {
+    || item.imageAssetId !== 'lv24-c-h01' || item.publication?.campaignState !== 'current') {
     failures.push('Homepage LIVE TOUR 2024 announcement metadata mismatch');
   }
 }

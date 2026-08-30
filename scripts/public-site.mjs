@@ -164,19 +164,19 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
     });
   }
 
-  if (staging) {
-    const visibleLiveArchives = liveArchives.filter((archive) => publicationIsPublic(archive.publication, true));
+  const visibleLiveArchives = liveArchives.filter((archive) => publicationIsPublic(archive.publication, staging));
+  if (visibleLiveArchives.length > 0) {
     add('/live/', {
       title: 'LIVE | IGNITE Official Portal',
       description: 'IGNITEのステージとツアーを記録する公式Live Archive。',
       image: readyAssetPath('lv24-og01') || readyAssetPath('lv-so-h01'),
-      sitemap: false,
+      sitemap: !staging,
     });
     add('/live/history/', {
       title: 'LIVE HISTORY | IGNITE Official Portal',
       description: 'IGNITEの2021年から2024年までのLive Archive。',
       image: readyAssetPath('lv24-og01') || readyAssetPath('lv-so-h01'),
-      sitemap: false,
+      sitemap: !staging,
     });
     for (const archive of visibleLiveArchives) {
       add(`/live/${archive.slug}/`, {
@@ -184,7 +184,7 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
         description: `${archive.eventTitle} — ${archive.subtitle}`,
         image: readyAssetPath(archive.ogAssetId || archive.heroDesktopAssetId),
         type: 'article',
-        sitemap: false,
+        sitemap: !staging,
       });
       for (const log of archive.tourLogs || []) {
         add(`/live/${archive.slug}/tour-log/${log.slug}/`, {
@@ -192,7 +192,7 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
           description: `${log.dateRange.start}—${log.dateRange.end} // ${log.venue}`,
           image: readyAssetPath(log.heroAssetId),
           type: 'article',
-          sitemap: false,
+          sitemap: !staging,
         });
       }
     }

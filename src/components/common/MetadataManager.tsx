@@ -102,7 +102,7 @@ export const MetadataManager: React.FC = () => {
         description: 'IGNITEのCurrent Campaignと歴代Campaign Archive。',
         image: fallbackImage,
       };
-    } else if (parts[0] === 'live' && isStagingEnv()) {
+    } else if (parts[0] === 'live') {
       const archive = parts[1] && parts[1] !== 'history' ? getLiveArchiveBySlug(parts[1]) : undefined;
       const tourLog = archive && parts[2] === 'tour-log' && parts[3]
         ? getLiveTourLog(parts[1], parts[3])?.log

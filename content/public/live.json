@@ -68,7 +68,7 @@
       "fictionalReleaseDate": "2021.12",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "past"
     }
   },
   {
@@ -180,7 +180,7 @@
       "fictionalReleaseDate": "2022.11",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "past"
     }
   },
   {
@@ -268,7 +268,7 @@
       "fictionalReleaseDate": "2022.12",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "past"
     }
   },
   {
@@ -406,7 +406,7 @@
       "fictionalReleaseDate": "2023.09–11",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "past"
     }
   },
   {
@@ -1178,7 +1178,7 @@
       "fictionalReleaseDate": "2024.09",
       "publishAt": null,
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "current"
     }
   }
 ]

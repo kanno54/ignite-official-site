@@ -47,7 +47,7 @@ export const runRouteValidation = ({ sitemapPath = defaultSitemapPath } = {}) =>
   const stagingRoutePaths = new Set(routePathsWithDuplicates);
   for (const route of requiredLiveRoutes) if (!stagingRoutePaths.has(route)) failures.push(`staging route list is missing: ${route}`);
   const publicRoutePaths = new Set(expectedRoutes.map((entry) => entry.path));
-  for (const route of requiredLiveRoutes) if (publicRoutePaths.has(route)) failures.push(`staging-only LIVE route leaked into public route list: ${route}`);
+  for (const route of requiredLiveRoutes) if (!publicRoutePaths.has(route)) failures.push(`public route list is missing LIVE route: ${route}`);
 
   if (JSON.stringify(expectedSitemapUrls) !== JSON.stringify(actualSitemapUrls)) {
     const expected = new Set(expectedSitemapUrls);

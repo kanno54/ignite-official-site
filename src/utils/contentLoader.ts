@@ -88,8 +88,8 @@ export const getJukeboxRecordings = (): Recording[] => {
 
 export const getRecordingById = (id: string): Recording | undefined => {
   const recording = getRecordings().find((rec) => rec.id === id);
-  if (recording || !isStagingEnv()) return recording;
-  return (liveData as LiveArchive[])
+  if (recording) return recording;
+  return getLiveArchives()
     .flatMap((archive) => archive.preview?.recordings || [])
     .find((preview) => preview.id === id);
 };
@@ -186,11 +186,12 @@ export const getNews = (): NewsItem[] => {
 };
 
 export const getLiveArchives = (): LiveArchive[] => {
-  if (!isStagingEnv()) return [];
+  const isStaging = isStagingEnv();
   return (liveData as LiveArchive[])
     .filter((archive) => (
       archive.publication.visibility === 'public'
-      && archive.publication.campaignState === 'staging'
+      && archive.publication.campaignState !== 'future'
+      && (archive.publication.campaignState !== 'staging' || isStaging)
     ))
     .slice()
     .sort((a, b) => a.year - b.year || a.timingLabel.localeCompare(b.timingLabel));
