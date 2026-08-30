@@ -216,6 +216,7 @@
   margin: -24px auto 72px;
   max-width: 960px;
   padding: 28px;
+  scroll-margin-top: 96px;
 }
 
 .live-archive-index h2 {
@@ -266,6 +267,25 @@
 
 .live-archive__content > section[id] {
   scroll-margin-top: 96px;
+}
+
+.back-to-index {
+  align-items: center;
+  align-self: flex-start;
+  color: #AEB6C4;
+  display: inline-flex;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  gap: 7px;
+  letter-spacing: 0.08em;
+  margin-top: 28px;
+  padding: 8px 0;
+}
+
+.back-to-index > span,
+.back-to-index:hover {
+  color: var(--campaign-accent);
 }
 
 .live-document {

@@ -13,6 +13,21 @@ import {
 
 const documentAnchorId = (sourceAssetCode: string) => `live-document-${sourceAssetCode.toLowerCase()}`;
 
+const backToIndexDocumentCodes = new Set([
+  'LV24-P01',
+  'LV24-D01',
+  'LV24-F02',
+  'LV24-F03',
+  'LV24-F04',
+  'LV24-F05',
+]);
+
+const BackToIndexLink: React.FC<{ from: string }> = ({ from }) => (
+  <a href="#tour-index" className="back-to-index" aria-label={`${from}からINDEXへ戻る`}>
+    <span aria-hidden="true">↑</span> INDEXへ戻る
+  </a>
+);
+
 export const LiveArchivePage: React.FC = () => {
   const { slug = '' } = useParams();
   const archives = getLiveArchives();
@@ -75,7 +90,7 @@ export const LiveArchivePage: React.FC = () => {
       </header>
 
       {pageIndexItems.length > 0 && (
-        <nav className="live-archive-index" aria-labelledby="live-archive-index-heading">
+        <nav id="tour-index" className="live-archive-index" aria-labelledby="live-archive-index-heading">
           <div>
             <span className="live-kicker">PAGE NAVIGATION</span>
             <h2 id="live-archive-index-heading">INDEX</h2>
@@ -107,6 +122,7 @@ export const LiveArchivePage: React.FC = () => {
                 </article>
               ))}
             </div>
+            {pageIndexItems.length > 0 && <BackToIndexLink from="TOUR SCHEDULE" />}
           </section>
         )}
 
@@ -122,6 +138,7 @@ export const LiveArchivePage: React.FC = () => {
                 </figure>
               ))}
             </div>
+            {pageIndexItems.length > 0 && <BackToIndexLink from="FOUR PHASES" />}
           </section>
         )}
 
@@ -138,6 +155,9 @@ export const LiveArchivePage: React.FC = () => {
               />
             )}
             <LiveMarkdown markdown={document.markdown} />
+            {pageIndexItems.length > 0 && backToIndexDocumentCodes.has(document.sourceAssetCode) && (
+              <BackToIndexLink from={document.label} />
+            )}
           </section>
         ))}
 
@@ -205,6 +225,7 @@ export const LiveArchivePage: React.FC = () => {
                 </article>
               ))}
             </div>
+            {pageIndexItems.length > 0 && <BackToIndexLink from="TOUR LOG" />}
           </section>
         )}
 
@@ -216,6 +237,7 @@ export const LiveArchivePage: React.FC = () => {
               <ResponsivePicture key={assetId} assetId={assetId} title={`${archive.title} gallery ${index + 1}`} alt={`${archive.title} archive gallery ${index + 1}`} aspectRatio="3:2" />
             ))}
           </div>
+          {pageIndexItems.length > 0 && <BackToIndexLink from="ARCHIVE GALLERY" />}
         </section>
 
         {(relatedReleases.length > 0 || relatedRecordings.length > 0) && (
