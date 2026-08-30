@@ -11,6 +11,8 @@ import {
   getReleaseById,
 } from '../utils/contentLoader';
 
+const documentAnchorId = (sourceAssetCode: string) => `live-document-${sourceAssetCode.toLowerCase()}`;
+
 export const LiveArchivePage: React.FC = () => {
   const { slug = '' } = useParams();
   const archives = getLiveArchives();
@@ -24,6 +26,19 @@ export const LiveArchivePage: React.FC = () => {
   const relatedReleases = archive.relatedReleaseIds.map(getReleaseById).filter(Boolean);
   const relatedRecordings = archive.relatedRecordingIds.map(getRecordingById).filter(Boolean);
   const previewQueue = archive.preview?.recordings.map((recording) => recording.id) || [];
+  const pageIndexItems = archive.id === 'live-tour-2024' ? [
+    ...(archive.schedule ? [{ label: 'TOUR SCHEDULE', href: '#live-schedule' }] : []),
+    ...(archive.chapterVisuals?.length ? [{ label: 'FOUR PHASES', href: '#live-chapters' }] : []),
+    ...archive.documents.map((document) => ({
+      label: document.label === 'FIVE-MEMBER FINAL COMMENTS' ? 'FINAL COMMENTS' : document.label,
+      href: `#${documentAnchorId(document.sourceAssetCode)}`,
+    })),
+    ...(archive.setlist.display ? [{ label: '24-TRACK SETLIST', href: '#live-setlist' }] : []),
+    ...(archive.preview ? [{ label: 'LIVE ALBUM PREVIEW', href: '#live-preview' }] : []),
+    ...(archive.tourLogs?.length ? [{ label: 'TOUR LOG', href: '#live-tour-logs' }] : []),
+    { label: 'ARCHIVE GALLERY', href: '#live-gallery' },
+    ...((relatedReleases.length > 0 || relatedRecordings.length > 0) ? [{ label: 'RELATED MUSIC', href: '#live-related' }] : []),
+  ] : [];
 
   return (
     <article className="live-archive">
@@ -59,9 +74,28 @@ export const LiveArchivePage: React.FC = () => {
         </div>
       </header>
 
+      {pageIndexItems.length > 0 && (
+        <nav className="live-archive-index" aria-labelledby="live-archive-index-heading">
+          <div>
+            <span className="live-kicker">PAGE NAVIGATION</span>
+            <h2 id="live-archive-index-heading">INDEX</h2>
+          </div>
+          <ol>
+            {pageIndexItems.map((item, index) => (
+              <li key={item.href}>
+                <a href={item.href}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <strong>{item.label}</strong>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )}
+
       <div className="live-archive__content">
         {archive.schedule && (
-          <section className="live-schedule" aria-labelledby="live-schedule-heading">
+          <section id="live-schedule" className="live-schedule" aria-labelledby="live-schedule-heading">
             <span className="live-kicker">CANONICAL TOUR DATA // {archive.schedule.sourceAssetCode}</span>
             <h2 id="live-schedule-heading">{archive.schedule.showCount} SHOWS // {archive.schedule.cityCount} CITIES</h2>
             <div className="live-schedule__grid">
@@ -77,7 +111,7 @@ export const LiveArchivePage: React.FC = () => {
         )}
 
         {archive.chapterVisuals && archive.chapterVisuals.length > 0 && (
-          <section className="live-chapters" aria-labelledby="live-chapters-heading">
+          <section id="live-chapters" className="live-chapters" aria-labelledby="live-chapters-heading">
             <span className="live-kicker">FOUR PHASES</span>
             <h2 id="live-chapters-heading">SOLAR / LUNAR / EQUINOX / SHADOW</h2>
             <div className="live-chapters__grid">
@@ -92,7 +126,7 @@ export const LiveArchivePage: React.FC = () => {
         )}
 
         {archive.documents.map((document) => (
-          <section className="live-document" key={document.sourceAssetCode} aria-label={document.label}>
+          <section id={documentAnchorId(document.sourceAssetCode)} className="live-document" key={document.sourceAssetCode} aria-label={document.label}>
             <span className="live-kicker">{document.label} // {document.sourceAssetCode}</span>
             {document.imageAssetId && (
               <ResponsivePicture
@@ -108,7 +142,7 @@ export const LiveArchivePage: React.FC = () => {
         ))}
 
         {archive.setlist.display && (
-          <section className="live-setlist" aria-labelledby="live-setlist-heading">
+          <section id="live-setlist" className="live-setlist" aria-labelledby="live-setlist-heading">
             <span className="live-kicker">AUDITED PERFORMANCE REFERENCES</span>
             <h2 id="live-setlist-heading">{archive.setlist.displayLabel}</h2>
             <ul>
@@ -126,7 +160,7 @@ export const LiveArchivePage: React.FC = () => {
         )}
 
         {archive.preview && (
-          <section className="live-preview" aria-labelledby="live-preview-heading">
+          <section id="live-preview" className="live-preview" aria-labelledby="live-preview-heading">
             <span className="live-kicker">{archive.preview.eyebrow} // {archive.preview.sourceAssetCode}</span>
             <h2 id="live-preview-heading">{archive.preview.title}</h2>
             <p>{archive.preview.copy}</p>
@@ -151,7 +185,7 @@ export const LiveArchivePage: React.FC = () => {
         )}
 
         {archive.tourLogs && archive.tourLogs.length > 0 && (
-          <section className="live-tour-logs" aria-labelledby="live-tour-logs-heading">
+          <section id="live-tour-logs" className="live-tour-logs" aria-labelledby="live-tour-logs-heading">
             <span className="live-kicker">COMPLETE TOUR LOG</span>
             <h2 id="live-tour-logs-heading">TOUR LOG</h2>
             <p className="live-kicker">12 / 12 COMPLETE // TOUR COMPLETE</p>
@@ -174,7 +208,7 @@ export const LiveArchivePage: React.FC = () => {
           </section>
         )}
 
-        <section className="live-gallery" aria-labelledby="live-gallery-heading">
+        <section id="live-gallery" className="live-gallery" aria-labelledby="live-gallery-heading">
           <span className="live-kicker">SELECTED ASSET STUDIO VISUALS</span>
           <h2 id="live-gallery-heading">ARCHIVE GALLERY</h2>
           <div className="live-gallery__grid">
@@ -185,7 +219,7 @@ export const LiveArchivePage: React.FC = () => {
         </section>
 
         {(relatedReleases.length > 0 || relatedRecordings.length > 0) && (
-          <section className="live-related" aria-labelledby="live-related-heading">
+          <section id="live-related" className="live-related" aria-labelledby="live-related-heading">
             <span className="live-kicker">EXISTING DISCOGRAPHY REFERENCES</span>
             <h2 id="live-related-heading">RELATED MUSIC</h2>
             {relatedReleases.length > 0 && (
