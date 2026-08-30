@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "assets": {
+    "lv24-c-h01": {
+      "quality": 80,
+      "webp": [
+        {
+          "width": 960,
+          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H01_v01_960w.webp"
+        },
+        {
+          "width": 1280,
+          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H01_v01_1280w.webp"
+        },
+        {
+          "width": 1600,
+          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H01_v01_1600w.webp"
+        }
+      ]
+    },
+    "lv24-c-h02": {
+      "quality": 80,
+      "webp": [
+        {
+          "width": 384,
+          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_384w.webp"
+        },
+        {
+          "width": 640,
+          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_640w.webp"
+        },
+        {
+          "width": 960,
+          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_960w.webp"
+        },
+        {
+          "width": 1120,
+          "path": "/assets/images/live/live-tour-2024/derivatives/LV24-C-H02_v01_1120w.webp"
+        }
+      ]
+    }
+  }
+}

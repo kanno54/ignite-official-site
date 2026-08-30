@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import imageDerivativesData from '../../../content/public/image-derivatives.json';
 import { getAssetManifest } from '../../utils/contentLoader';
 import { AssetPlaceholder } from './AssetPlaceholder';
 import { protectedMediaProps } from '../../utils/audioDeterrence';
@@ -19,6 +20,7 @@ type Props = {
   loading?: 'eager' | 'lazy';
   fetchPriority?: 'high' | 'low' | 'auto';
   decoding?: 'async' | 'sync' | 'auto';
+  sizes?: string;
 };
 
 export const ResponsivePicture: React.FC<Props> = ({
@@ -37,6 +39,7 @@ export const ResponsivePicture: React.FC<Props> = ({
   loading,
   fetchPriority,
   decoding,
+  sizes,
 }) => {
   const [hasError, setHasError] = useState(false);
   const rawId = React.useId();
@@ -52,6 +55,15 @@ export const ResponsivePicture: React.FC<Props> = ({
     : mobileAssetId
     ? manifest?.images?.[mobileAssetId]
     : null;
+
+  const derivativeRegistry = imageDerivativesData as {
+    assets: Record<string, { webp?: Array<{ path: string; width: number }> }>;
+  };
+  const webpSrcSet = (id?: string) => derivativeRegistry.assets[id || '']?.webp
+    ?.map((derivative) => `${derivative.path} ${derivative.width}w`)
+    .join(', ');
+  const desktopWebpSrcSet = desktopSrc ? undefined : webpSrcSet(assetId);
+  const mobileWebpSrcSet = mobileSrc ? undefined : webpSrcSet(mobileAssetId);
 
   const isReady = desktopAsset && desktopAsset.status === 'ready' && !hasError;
 
@@ -132,8 +144,12 @@ export const ResponsivePicture: React.FC<Props> = ({
       >
         <picture style={{ width: '100%', height: '100%', display: 'block' }}>
           {mobileAsset && mobileAsset.status === 'ready' && (
-            <source media="(max-width: 768px)" srcSet={mobileAsset.path} type={getImageType(mobileAsset.path)} />
+            <>
+              {mobileWebpSrcSet && <source media="(max-width: 768px)" srcSet={mobileWebpSrcSet} sizes={sizes} type="image/webp" />}
+              <source media="(max-width: 768px)" srcSet={mobileAsset.path} type={getImageType(mobileAsset.path)} />
+            </>
           )}
+          {desktopWebpSrcSet && <source srcSet={desktopWebpSrcSet} sizes={sizes} type="image/webp" />}
           <source srcSet={desktopAsset.path} type={getImageType(desktopAsset.path)} />
           <img
             src={desktopAsset.path}
@@ -141,6 +157,7 @@ export const ResponsivePicture: React.FC<Props> = ({
             loading={loading}
             fetchPriority={fetchPriority}
             decoding={decoding}
+            sizes={sizes}
             onError={() => setHasError(true)}
             draggable={false}
             style={imgStyle}

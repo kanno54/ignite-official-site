@@ -76,6 +76,7 @@ export const LiveArchivePage: React.FC = () => {
           alt={`${archive.eventTitle} official archive hero`}
           aspectRatio="16:9"
           mobileAspectRatio="4:5"
+          sizes="(max-width: 768px) calc(100vw - 49px), min(55vw, 776px)"
           {...heroImageLoadingProps}
         />
         <div className="live-archive__hero-copy">
