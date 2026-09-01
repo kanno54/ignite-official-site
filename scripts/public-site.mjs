@@ -135,6 +135,19 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
         });
       }
     }
+    if (release.id === 'live-album-2024') {
+      for (const recordingId of release.trackIds) {
+        const recording = discography.recordings.find((item) => item.id === recordingId);
+        if (!recording?.songDetailSlug) continue;
+        add(`/discography/live-album-2024/tracks/${recording.songDetailSlug}/`, {
+          title: `${recording.title} | IGNITE LIVE 2024 Song Detail`,
+          description: recording.arrangementText,
+          image: readyAssetPath(recording.artwork?.vertical),
+          type: 'music.song',
+          sitemap: false,
+        });
+      }
+    }
   }
 
   add('/campaigns/', {
@@ -196,6 +209,16 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
         });
       }
     }
+  }
+
+  if (staging && discography.releases.some((release) => release.id === 'live-album-2024')) {
+    add('/news/live-album-2024/', {
+      title: 'IGNITE LIVE TOUR 2024、2枚組LIVE ALBUMとしてリリース決定',
+      description: 'THE SHOW ENDED. THE SOUND REMAINS. 2 Discs / 24 Tracks.',
+      image: readyAssetPath('la24-h01'),
+      type: 'article',
+      sitemap: false,
+    });
   }
 
   add('/story/', {

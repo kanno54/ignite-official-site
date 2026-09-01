@@ -13,6 +13,9 @@ import { MemberDetailPage } from './routes/members.$slug';
 import { DiscographyIndex } from './routes/discography._index';
 import { ReleaseDetailPage } from './routes/discography.$slug';
 import { EquinoxSongDetailPage } from './routes/discography.equinox.tracks.$trackSlug';
+import { LiveAlbumReleasePage } from './routes/discography.live-album-2024';
+import { LiveAlbumSongDetailPage } from './routes/discography.live-album-2024.tracks.$trackSlug';
+import { LiveAlbumNewsPage } from './routes/news.live-album-2024';
 import { FeaturesIndex } from './routes/features._index';
 import { ArticleDetailPage } from './routes/features.$slug';
 import { StoryPage } from './routes/story';
@@ -134,6 +137,13 @@ export const App: React.FC = () => {
   const location = useLocation();
   const currentCampaign = getCurrentCampaign();
   const isStaging = isStagingEnv();
+  const isLiveAlbumRoute = location.pathname.includes('live-album-2024')
+    || location.pathname.includes('how-ignite-changed-the-songs')
+    || location.pathname.includes('solar-brass-session')
+    || location.pathname.includes('midnight-session')
+    || location.pathname.includes('signal-stopped-being-silent')
+    || location.pathname.includes('remove-the-light')
+    || location.pathname.includes('five-songs-that-changed-on-tour');
 
   return (
     <AudioProvider>
@@ -156,7 +166,7 @@ export const App: React.FC = () => {
               position: 'relative',
             }}
           >
-            [STAGING ENVIRONMENT — {currentCampaign.title.toUpperCase()} RELEASE PREVIEW]
+            [STAGING ENVIRONMENT — {isLiveAlbumRoute ? 'LIVE ALBUM 2024 FORMAL RELEASE BUILD' : `${currentCampaign.title.toUpperCase()} RELEASE PREVIEW`}]
           </div>
         )}
         <SiteHeader />
@@ -169,7 +179,10 @@ export const App: React.FC = () => {
               <Route path="/members/:slug/" element={<MemberDetailPage />} />
               <Route path="/discography/" element={<DiscographyIndex />} />
               <Route path="/discography/equinox/tracks/:trackSlug/" element={<EquinoxSongDetailPage />} />
+              <Route path="/discography/live-album-2024/tracks/:trackSlug/" element={<LiveAlbumSongDetailPage />} />
+              <Route path="/discography/live-album-2024/" element={<LiveAlbumReleasePage />} />
               <Route path="/discography/:slug/" element={<ReleaseDetailPage />} />
+              <Route path="/news/live-album-2024/" element={<LiveAlbumNewsPage />} />
               <Route path="/live/" element={<LiveIndex />} />
               <Route path="/live/history/" element={<LiveHistoryPage />} />
               <Route path="/live/:slug/tour-log/:logSlug/" element={<LiveTourLogPage />} />

@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { getArticleBySlug, getArticles, getMemberBySlug, getRecordingById } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
+import { LiveMarkdown } from '../components/live/LiveMarkdown';
 
 export const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -43,7 +44,7 @@ export const ArticleDetailPage: React.FC = () => {
           </p>
         )}
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.85rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)' }}>
-          {!article.publishDateFull.startsWith('2026') && (
+          {article.publishDateFull && !article.publishDateFull.startsWith('2026') && (
             <span>PUBLISHED: {article.publishDateFull}</span>
           )}
           {article.storyDateFull && <span>STORY: {article.storyDateFull}</span>}
@@ -59,7 +60,11 @@ export const ArticleDetailPage: React.FC = () => {
       )}
 
       {/* Article Blocks Renderer */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', fontSize: '1.05rem', lineHeight: 1.9, color: '#F6F3ED' }}>
+      {article.canonicalMarkdown ? (
+        <div className="live-album-editorial-copy">
+          <LiveMarkdown markdown={article.canonicalMarkdown} />
+        </div>
+      ) : <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', fontSize: '1.05rem', lineHeight: 1.9, color: '#F6F3ED' }}>
         {article.blocks.map((block, idx) => {
           switch (block.type) {
             case 'lead':
@@ -192,7 +197,7 @@ export const ArticleDetailPage: React.FC = () => {
               return null;
           }
         })}
-      </div>
+      </div>}
 
       {/* Related Audio Tracks */}
       {article.relatedTrackIds && article.relatedTrackIds.length > 0 && (

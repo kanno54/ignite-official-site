@@ -7,6 +7,39 @@
   padding: 0;
 }
 
+/* M11B — LIVE ALBUM 2024 */
+.live-album-page { display: flex; flex-direction: column; gap: clamp(64px, 9vw, 112px); }
+.live-album-hero { position: relative; min-height: min(72vh, 760px); overflow: hidden; border: 1px solid var(--color-border); }
+.live-album-hero__picture { position: absolute !important; inset: 0; height: 100%; padding-top: 0 !important; }
+.live-album-hero__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,7,12,.92) 0%, rgba(5,7,12,.48) 52%, rgba(5,7,12,.1)); }
+.live-album-hero__copy { position: absolute; z-index: 2; left: clamp(24px, 6vw, 80px); bottom: clamp(28px, 8vw, 92px); max-width: 720px; display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.live-album-hero h1 { margin: 0; font: 900 clamp(3rem, 9vw, 7rem)/.86 var(--font-display); letter-spacing: -.04em; }
+.live-album-hero p { margin: 0; font: 700 clamp(1rem, 2.2vw, 1.55rem)/1.3 var(--font-mono); }
+.live-album-hero strong { font-size: clamp(1.1rem, 2vw, 1.55rem); }
+.live-album-intro, .live-album-related-tour { display: grid; grid-template-columns: minmax(260px, 420px) 1fr; gap: clamp(28px, 6vw, 72px); align-items: center; }
+.live-album-intro h2, .live-album-related-tour h2 { font-size: clamp(2rem, 4.5vw, 4rem); line-height: 1.1; margin: 12px 0 20px; }
+.live-album-intro p, .live-album-related-tour p { color: #c2c8d2; line-height: 1.9; }
+.live-album-metadata { display: grid; gap: 0; margin-top: 28px; border-top: 1px solid var(--color-border); }
+.live-album-metadata div { display: grid; grid-template-columns: 110px 1fr; padding: 13px 0; border-bottom: 1px solid var(--color-border); }
+.live-album-metadata dt { color: var(--campaign-accent); font-family: var(--font-mono); }.live-album-metadata dd { margin: 0; }
+.live-album-discs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.live-album-disc { background: #0b0e15; border: 1px solid var(--color-border); overflow: hidden; }
+.live-album-disc--1 { box-shadow: inset 0 3px #d7aa5b; }.live-album-disc--2 { box-shadow: inset 0 3px #386dff; }
+.live-album-disc__heading { padding: 28px; background: linear-gradient(135deg, rgba(215,170,91,.14), rgba(48,62,112,.1) 50%, rgba(108,28,74,.12)); }
+.live-album-disc__heading span, .live-album-disc__heading small { font-family: var(--font-mono); color: var(--campaign-accent); }.live-album-disc__heading h3 { margin: 5px 0; font-size: 1.7rem; }
+.live-album-track { display: grid; grid-template-columns: 58px 32px minmax(0,1fr) auto auto; gap: 12px; align-items: center; padding: 11px 14px; border-top: 1px solid var(--color-border); }
+.live-album-track .responsive-picture { border: 0; }.live-album-track__number { font-family: var(--font-mono); color: var(--campaign-accent); }
+.live-album-track h4 { margin: 0 0 3px; }.live-album-track p { margin: 0; color: #9099aa; font-size: .72rem; }.live-album-track a { font: 700 .72rem var(--font-mono); }
+.live-album-liner, .live-album-credits { max-width: 900px; margin: 0 auto; padding: clamp(28px, 5vw, 60px); background: var(--color-surface); border: 1px solid var(--color-border); }
+.live-album-liner .live-markdown, .live-album-editorial-copy .live-markdown { line-height: 1.9; color: #d7dae0; }.live-album-liner .live-markdown h2, .live-album-editorial-copy .live-markdown h2 { margin-top: 2.8em; }
+.live-album-editorial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }.live-album-editorial-grid a { background: var(--color-surface); border: 1px solid var(--color-border); padding-bottom: 20px; }.live-album-editorial-grid span, .live-album-editorial-grid h3 { display: block; margin: 14px 18px 0; }.live-album-editorial-grid span { color: var(--campaign-accent); font: .75rem var(--font-mono); }
+.live-album-related-tour { padding: clamp(24px, 5vw, 56px); background: linear-gradient(110deg,#19150d,#0a1630 52%,#220b1c); border: 1px solid var(--color-border); }
+.live-album-related-releases { display: flex; flex-wrap: wrap; gap: 12px; }.live-album-related-releases a { min-width: 160px; display: flex; flex-direction: column; gap: 5px; padding: 16px; border: 1px solid var(--color-border); background: var(--color-surface); font-weight: 700; }.live-album-related-releases small { color: #949cab; }
+.live-album-song-detail, .live-album-news { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }.live-album-song-detail header { display: grid; grid-template-columns: minmax(260px, 430px) 1fr; gap: clamp(28px,6vw,70px); align-items: center; }.live-album-song-detail h1 { font-size: clamp(3rem,7vw,6rem); line-height: .95; margin: 12px 0; }.live-album-song-detail section { padding: clamp(24px,5vw,52px); border: 1px solid var(--color-border); background: var(--color-surface); }.live-album-song-detail__note { white-space: pre-line; line-height: 1.9; }.live-album-song-nav { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--color-border); padding-top: 24px; }.live-album-news__actions { display: flex; flex-wrap: wrap; gap: 16px; }
+.live-related-release__card { display: flex; flex-direction: column; gap: 8px; padding: clamp(24px,5vw,52px); border: 1px solid var(--color-border); background: linear-gradient(110deg,#19150d,#0b1730 55%,#220b1c); }.live-related-release__card span { color: var(--campaign-accent); font: 700 clamp(1.7rem,4vw,3.8rem) var(--font-display); }.live-related-release__card small { font: 700 .85rem var(--font-mono); }
+@media (max-width: 900px) { .live-album-discs, .live-album-editorial-grid { grid-template-columns: 1fr; }.live-album-editorial-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 700px) { .live-album-hero { min-height: 74vh; }.live-album-hero__shade { background: linear-gradient(0deg,rgba(5,7,12,.95),rgba(5,7,12,.08) 75%); }.live-album-intro, .live-album-related-tour, .live-album-song-detail header { grid-template-columns: 1fr; }.live-album-editorial-grid { grid-template-columns: 1fr; }.live-album-track { grid-template-columns: 50px 28px minmax(0,1fr) auto; }.live-album-track > a { grid-column: 3 / -1; }.live-album-track p { display: none; }.live-album-song-nav { flex-direction: column; }.live-album-song-nav a:last-child { text-align: right; } }
+
 /* LIVE historical archive (staging foundation) */
 .live-page,
 .live-archive {

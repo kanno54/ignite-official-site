@@ -2,15 +2,117 @@
   "version": 2,
   "outputDirectory": "derivatives",
   "profiles": {
-    "heroDesktop": { "format": "webp", "quality": 80, "widths": [960, 1280, 1600] },
-    "heroMobile": { "format": "webp", "quality": 80, "widths": [384, 640, 960, 1120] },
-    "chapter": { "format": "webp", "quality": 80, "widths": [384, 640, 960, 1280] },
-    "preview": { "format": "webp", "quality": 80, "widths": [384, 640] },
-    "tourLog": { "format": "webp", "quality": 80, "widths": [384, 640, 960] },
-    "featureWide": { "format": "webp", "quality": 80, "widths": [640, 960, 1280, 1600] },
-    "gallery": { "format": "webp", "quality": 80, "widths": [384, 640, 960] },
-    "relatedCover": { "format": "webp", "quality": 80, "widths": [320, 480, 640] },
-    "logo": { "format": "webp", "lossless": true, "widths": [320, 480, 640] }
+    "heroDesktop": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        960,
+        1280,
+        1600
+      ]
+    },
+    "heroMobile": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960,
+        1120
+      ]
+    },
+    "chapter": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960,
+        1280
+      ]
+    },
+    "preview": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640
+      ]
+    },
+    "tourLog": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960
+      ]
+    },
+    "featureWide": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        640,
+        960,
+        1280,
+        1600
+      ]
+    },
+    "gallery": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960
+      ]
+    },
+    "relatedCover": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        320,
+        480,
+        640
+      ]
+    },
+    "logo": {
+      "format": "webp",
+      "lossless": true,
+      "widths": [
+        320,
+        480,
+        640
+      ]
+    },
+    "liveAlbumSquare": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        160,
+        320,
+        640
+      ]
+    },
+    "liveAlbumDetail": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960
+      ]
+    },
+    "liveAlbumArticle": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960,
+        1280
+      ]
+    }
   },
   "assets": {
     "lv24-c-h01": "heroDesktop",
@@ -54,6 +156,65 @@
     "cover-rise-again": "relatedCover",
     "cover-equinox": "relatedCover",
     "lv24-lg04": "logo",
-    "lv24-lg05": "logo"
+    "lv24-lg05": "logo",
+    "la24-ar01-h": "liveAlbumArticle",
+    "la24-ar02-h": "liveAlbumArticle",
+    "la24-ar03-h": "liveAlbumArticle",
+    "la24-ar04-h": "liveAlbumArticle",
+    "la24-ar05-h": "liveAlbumArticle",
+    "la24-ar06-h": "liveAlbumArticle",
+    "la24-c01": "liveAlbumSquare",
+    "la24-c02": "liveAlbumSquare",
+    "la24-c03": "liveAlbumSquare",
+    "la24-h01": "heroDesktop",
+    "la24-h02": "heroMobile",
+    "la24-tr01-sd": "liveAlbumDetail",
+    "la24-tr01-sq": "liveAlbumSquare",
+    "la24-tr02-sd": "liveAlbumDetail",
+    "la24-tr02-sq": "liveAlbumSquare",
+    "la24-tr03-sd": "liveAlbumDetail",
+    "la24-tr03-sq": "liveAlbumSquare",
+    "la24-tr04-sd": "liveAlbumDetail",
+    "la24-tr04-sq": "liveAlbumSquare",
+    "la24-tr05-sd": "liveAlbumDetail",
+    "la24-tr05-sq": "liveAlbumSquare",
+    "la24-tr06-sd": "liveAlbumDetail",
+    "la24-tr06-sq": "liveAlbumSquare",
+    "la24-tr07-sd": "liveAlbumDetail",
+    "la24-tr07-sq": "liveAlbumSquare",
+    "la24-tr08-sd": "liveAlbumDetail",
+    "la24-tr08-sq": "liveAlbumSquare",
+    "la24-tr09-sd": "liveAlbumDetail",
+    "la24-tr09-sq": "liveAlbumSquare",
+    "la24-tr10-sd": "liveAlbumDetail",
+    "la24-tr10-sq": "liveAlbumSquare",
+    "la24-tr11-sd": "liveAlbumDetail",
+    "la24-tr11-sq": "liveAlbumSquare",
+    "la24-tr12-sd": "liveAlbumDetail",
+    "la24-tr12-sq": "liveAlbumSquare",
+    "la24-tr13-sd": "liveAlbumDetail",
+    "la24-tr13-sq": "liveAlbumSquare",
+    "la24-tr14-sd": "liveAlbumDetail",
+    "la24-tr14-sq": "liveAlbumSquare",
+    "la24-tr15-sd": "liveAlbumDetail",
+    "la24-tr15-sq": "liveAlbumSquare",
+    "la24-tr16-sd": "liveAlbumDetail",
+    "la24-tr16-sq": "liveAlbumSquare",
+    "la24-tr17-sd": "liveAlbumDetail",
+    "la24-tr17-sq": "liveAlbumSquare",
+    "la24-tr18-sd": "liveAlbumDetail",
+    "la24-tr18-sq": "liveAlbumSquare",
+    "la24-tr19-sd": "liveAlbumDetail",
+    "la24-tr19-sq": "liveAlbumSquare",
+    "la24-tr20-sd": "liveAlbumDetail",
+    "la24-tr20-sq": "liveAlbumSquare",
+    "la24-tr21-sd": "liveAlbumDetail",
+    "la24-tr21-sq": "liveAlbumSquare",
+    "la24-tr22-sd": "liveAlbumDetail",
+    "la24-tr22-sq": "liveAlbumSquare",
+    "la24-tr23-sd": "liveAlbumDetail",
+    "la24-tr23-sq": "liveAlbumSquare",
+    "la24-tr24-sd": "liveAlbumDetail",
+    "la24-tr24-sq": "liveAlbumSquare"
   }
 }

@@ -48,6 +48,14 @@ export const runRouteValidation = ({ sitemapPath = defaultSitemapPath } = {}) =>
   for (const route of requiredLiveRoutes) if (!stagingRoutePaths.has(route)) failures.push(`staging route list is missing: ${route}`);
   const publicRoutePaths = new Set(expectedRoutes.map((entry) => entry.path));
   for (const route of requiredLiveRoutes) if (!publicRoutePaths.has(route)) failures.push(`public route list is missing LIVE route: ${route}`);
+  const requiredLiveAlbumRoutes = [
+    '/discography/live-album-2024/',
+    '/news/live-album-2024/',
+    ...stagingRoutes.filter((entry) => entry.path.startsWith('/discography/live-album-2024/tracks/')).map((entry) => entry.path),
+  ];
+  if (requiredLiveAlbumRoutes.length !== 26) failures.push(`M11B staging route count mismatch: expected 26, found ${requiredLiveAlbumRoutes.length}`);
+  for (const route of requiredLiveAlbumRoutes) if (!stagingRoutePaths.has(route)) failures.push(`staging route list is missing M11B route: ${route}`);
+  for (const route of requiredLiveAlbumRoutes) if (publicRoutePaths.has(route)) failures.push(`M11B staging route leaked into production route list: ${route}`);
 
   if (JSON.stringify(expectedSitemapUrls) !== JSON.stringify(actualSitemapUrls)) {
     const expected = new Set(expectedSitemapUrls);

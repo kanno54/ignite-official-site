@@ -771,5 +771,41 @@
       "heading": "SIX TRACKS, ONE BEGINNING",
       "body": "「IGNITION」で始まり、「BURN IT DOWN」で壊し、「FIRESTARTER」で自分たちの火を見つけ、「First Light」で次の朝へ向かう。\n\n後に大きな会場で育つ「IGNITION」「BURN IT DOWN」「Heatwave」の原型と、KAIのラップとSHOのダンスが前面に出た「Runaway Beat」、RENが作品の終わりを担った「First Light」。\n\nメジャー期に再構成された楽曲もあるが、ここに収められた原曲は、その後のVersionに置き換えられたものではない。\n\n緊張も、荒さも、近い会場の熱も含めて、五人が最初に残した音である。"
     }
+  },
+  {
+    "id": "live-album-2024",
+    "slug": "live-album-2024",
+    "shortTitle": "LIVE ALBUM 2024",
+    "status": "staging",
+    "releaseId": "live-album-2024",
+    "releaseDate": "",
+    "eyebrow": "2-DISC LIVE ALBUM // 24 TRACKS",
+    "title": "IGNITE LIVE 2024",
+    "catchCopy": "THE SHOW ENDED. THE SOUND REMAINS.",
+    "desktopHero": "/assets/images/live-album-2024/LA24-H01_v01.png",
+    "mobileHero": "/assets/images/live-album-2024/LA24-H02_v01.png",
+    "primaryCta": {
+      "text": "LISTEN TO THE LIVE ALBUM",
+      "action": "link",
+      "url": "/discography/live-album-2024/"
+    },
+    "secondaryCta": {
+      "text": "EXPLORE LIVE TOUR 2024",
+      "action": "link",
+      "url": "/live/live-tour-2024/"
+    },
+    "campaignColors": {
+      "accent": "#5f82ff",
+      "deep": "#080b13",
+      "text": "#f6f3ed"
+    },
+    "relatedArticleIds": [
+      "la24-ar01",
+      "la24-ar02",
+      "la24-ar03",
+      "la24-ar04",
+      "la24-ar05",
+      "la24-ar06"
+    ]
   }
 ]

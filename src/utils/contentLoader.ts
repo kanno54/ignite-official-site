@@ -6,6 +6,7 @@ import newsData from '../../content/public/news.json';
 import assetManifestData from '../../content/public/asset-manifest.json';
 import campaignsData from '../../content/public/campaigns.json';
 import liveData from '../../content/public/live.json';
+import liveAlbumData from '../../content/public/live-album-2024.json';
 
 import { SiteConfig, Member, Release, Recording, Article, NewsItem, Campaign, LiveArchive } from '../types/content';
 
@@ -185,6 +186,9 @@ export const getNews = (): NewsItem[] => {
     .sort((a, b) => (a.date < b.date ? 1 : -1));
 };
 
+export const getLiveAlbumRecordingBySlug = (slug: string): Recording | undefined =>
+  getRecordings().find((recording) => recording.releaseId === 'live-album-2024' && recording.songDetailSlug === slug);
+
 export const getLiveArchives = (): LiveArchive[] => {
   const isStaging = isStagingEnv();
   return (liveData as LiveArchive[])
@@ -208,3 +212,5 @@ export const getLiveTourLog = (archiveSlug: string, logSlug: string) => {
 };
 
 export const getAssetManifest = () => assetManifestData;
+
+export const getLiveAlbumData = () => liveAlbumData;

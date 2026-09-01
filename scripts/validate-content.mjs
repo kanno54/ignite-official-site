@@ -87,8 +87,9 @@ for (const article of articles) {
   else for (const memberId of article.mainSpeakerIds) if (!memberIds.has(memberId)) failures.push(`article ${article.id} references unknown speaker: ${memberId}`);
   if (!article.publication || !Object.hasOwn(article.publication, 'publishAt')) failures.push(`article ${article.id} publication is missing publishAt`);
   else if (article.publication.publishAt !== null && Number.isNaN(Date.parse(article.publication.publishAt))) failures.push(`article ${article.id} has invalid publishAt: ${article.publication.publishAt}`);
-  if (!/^\d{4}(?:-\d{2})?$/.test(article.publishDate)) failures.push(`article ${article.id} has invalid year/month publication key: ${article.publishDate}`);
-  if (!/^\d{4}\.\d{2}(?:\.\d{2})?$/.test(article.publishDateFull)) failures.push(`article ${article.id} has non-chronological publication display: ${article.publishDateFull}`);
+  const undatedStagingArticle = article.publication?.campaignState === 'staging' && article.publishDate === '' && article.publishDateFull === '';
+  if (!undatedStagingArticle && !/^\d{4}(?:-\d{2})?$/.test(article.publishDate)) failures.push(`article ${article.id} has invalid year/month publication key: ${article.publishDate}`);
+  if (!undatedStagingArticle && !/^\d{4}\.\d{2}(?:\.\d{2})?$/.test(article.publishDateFull)) failures.push(`article ${article.id} has non-chronological publication display: ${article.publishDateFull}`);
   if (!Array.isArray(article.relatedTrackIds)) failures.push(`article ${article.id} relatedTrackIds must be an array`);
   else for (const trackId of article.relatedTrackIds) if (!recordingIds.has(trackId)) failures.push(`article ${article.id} references unknown track: ${trackId}`);
   if (article.relatedCampaignId && !campaignIds.has(article.relatedCampaignId)) failures.push(`article ${article.id} references unknown campaign: ${article.relatedCampaignId}`);
@@ -251,20 +252,41 @@ else {
   }
 }
 
-const previewRecordings = tour2024?.preview?.recordings || [];
-const expectedPreviewIds = ['live-album-2024-heatwave', 'live-album-2024-moonlit', 'live-album-2024-silent-signal'];
-if (JSON.stringify(previewRecordings.map((recording) => recording.id)) !== JSON.stringify(expectedPreviewIds)) {
-  failures.push('LIVE TOUR 2024 must expose exactly the three stable Preview Recording identities');
+const liveAlbum = discography.releases.find((release) => release.id === 'live-album-2024');
+const liveAlbumRecordings = discography.recordings.filter((recording) => recording.releaseId === 'live-album-2024');
+const stablePreviewIds = ['live-album-2024-heatwave', 'live-album-2024-moonlit', 'live-album-2024-silent-signal'];
+if (!liveAlbum || liveAlbum.releaseKind !== 'LIVE_ALBUM' || liveAlbum.publication?.campaignState !== 'staging') {
+  failures.push('M11B formal LIVE ALBUM staging release is missing');
 }
-if (releaseIds.has('live-album-2024')) failures.push('M11A-2 must not create the formal LIVE ALBUM release');
-for (const recording of previewRecordings) {
-  if (recording.publicationState !== 'PREVIEW' || recording.relation !== 'PREVIEW') failures.push(`Preview recording has invalid state: ${recording.id}`);
-  if (recording.provenance !== 'UNSPECIFIED') failures.push(`Preview recording provenance was promoted without authority: ${recording.id}`);
-  if (recording.source?.campaignId !== 'live-album-2024') failures.push(`Preview recording source campaign mismatch: ${recording.id}`);
-  if (!recording.source?.audioAssetCode?.startsWith('LA24-AU-')) failures.push(`Preview recording source Asset is invalid: ${recording.id}`);
-  if (!recording.audioUrl || !fs.existsSync(publicFile(recording.audioUrl))) failures.push(`Preview recording audio is missing: ${recording.id}`);
-  const poster = manifest.images[recording.posterAssetId];
-  if (!poster || poster.status !== 'ready' || poster.usage !== 'PREVIEW_ONLY') failures.push(`Preview recording teaser is unavailable: ${recording.id}`);
+if (tour2024?.preview) failures.push('M11B must not retain the obsolete LIVE ALBUM preview module');
+if (!tour2024?.relatedReleaseIds?.includes('live-album-2024')) failures.push('LIVE TOUR 2024 must link to the formal LIVE ALBUM release');
+if (liveAlbumRecordings.length !== 24 || liveAlbum?.trackIds?.length !== 24) failures.push('LIVE_ALBUM_TRACK_COUNT must equal 24');
+if (liveAlbumRecordings.filter((recording) => recording.discNumber === 1).length !== 12) failures.push('DISC_1_COUNT must equal 12');
+if (liveAlbumRecordings.filter((recording) => recording.discNumber === 2).length !== 12) failures.push('DISC_2_COUNT must equal 12');
+const electricBlue = liveAlbumRecordings.find((recording) => recording.title === 'Electric Blue');
+if (electricBlue?.overallTrackNumber !== 17 || electricBlue?.discTrackNumber !== 5) failures.push('ELECTRIC_BLUE_OVERALL_TRACK must equal 17');
+for (const id of stablePreviewIds) {
+  const matches = liveAlbumRecordings.filter((recording) => recording.id === id);
+  if (matches.length !== 1) failures.push(`Stable Preview Recording identity was duplicated or lost: ${id}`);
+  else if (matches[0].publicationState !== 'RELEASED' || matches[0].relation !== 'LIVE_VERSION' || matches[0].provenance !== 'UNSPECIFIED') {
+    failures.push(`Stable Preview Recording was not migrated in place: ${id}`);
+  }
+}
+if (new Set(liveAlbumRecordings.map((recording) => recording.source?.audioSha256)).size !== 24) failures.push('PREVIEW_RECORDING_DUPLICATES must equal 0');
+const liveAlbumAudioRoot = path.join(publicDir, 'media', 'audio', 'live-album-2024');
+const liveAlbumPhysicalAudio = fs.readdirSync(liveAlbumAudioRoot, { recursive: true }).filter((item) => item.toLowerCase().endsWith('.mp3'));
+if (liveAlbumPhysicalAudio.length !== 24) failures.push(`LIVE ALBUM physical audio file count must equal 24, found ${liveAlbumPhysicalAudio.length}`);
+for (const recording of liveAlbumRecordings) {
+  if (!recording.artwork?.square || !recording.artwork?.vertical) failures.push(`MISSING_TRACK_ARTWORK: ${recording.id}`);
+  if (!recording.audioUrl || !fs.existsSync(publicFile(recording.audioUrl))) failures.push(`MISSING_AUDIO: ${recording.id}`);
+  if (!recording.songDetailSlug) failures.push(`ORPHAN_SONG_DETAILS: ${recording.id}`);
+  if (recording.source?.campaignId !== 'live-album-2024' || !recording.source?.audioAssetCode?.startsWith('LA24-AU-')) failures.push(`LIVE ALBUM source mapping mismatch: ${recording.id}`);
+}
+const liveAlbumEditorials = articles.filter((article) => article.relatedCampaignId === 'live-album-2024');
+if (liveAlbumEditorials.length !== 6) failures.push('LIVE ALBUM editorial count must equal 6');
+if (news.filter((item) => item.id === 'la24-n01').length !== 1) failures.push('LIVE ALBUM release NEWS LA24-N01 must exist exactly once');
+if (Object.values(manifest.images).some((asset) => asset?.sourceCampaign === 'live-album-2024' && asset?.assetCode?.includes('-REF-'))) {
+  failures.push('LIVE ALBUM reference assets must not be public');
 }
 
 if (failures.length > 0) {

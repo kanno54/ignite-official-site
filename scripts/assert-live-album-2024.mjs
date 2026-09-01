@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = (file) => JSON.parse(fs.readFileSync(path.join(root, 'content', 'public', file), 'utf8'));
+const discography = read('discography.json');
+const articles = read('articles.json');
+const news = read('news.json');
+const live = read('live.json');
+const manifest = read('asset-manifest.json');
+const release = discography.releases.find((item) => item.id === 'live-album-2024');
+const tracks = discography.recordings.filter((item) => item.releaseId === 'live-album-2024');
+const required = (condition, label) => { if (!condition) throw new Error(`M11B ASSERT FAILED: ${label}`); console.log(`${label} = PASS`); };
+
+required(release?.trackIds?.length === 24 && tracks.length === 24, 'LIVE_ALBUM_TRACK_COUNT_24');
+required(tracks.filter((item) => item.discNumber === 1).length === 12, 'DISC_1_COUNT_12');
+required(tracks.filter((item) => item.discNumber === 2).length === 12, 'DISC_2_COUNT_12');
+required(tracks.find((item) => item.title === 'Electric Blue')?.overallTrackNumber === 17, 'ELECTRIC_BLUE_OVERALL_TRACK_17');
+required(new Set(tracks.map((item) => item.source.audioSha256)).size === 24, 'PREVIEW_RECORDING_DUPLICATES_0');
+const audioRoot = path.join(root, 'public', 'media', 'audio', 'live-album-2024');
+const physicalAudio = fs.readdirSync(audioRoot, { recursive: true }).filter((item) => item.toLowerCase().endsWith('.mp3'));
+required(physicalAudio.length === 24, 'PHYSICAL_LIVE_ALBUM_AUDIO_FILES_24');
+required(tracks.every((item) => manifest.images[item.artwork.square]?.status === 'ready' && manifest.images[item.artwork.vertical]?.status === 'ready'), 'MISSING_TRACK_ARTWORK_0');
+required(tracks.every((item) => fs.existsSync(path.join(root, 'public', item.audioUrl.slice(1)))), 'MISSING_AUDIO_0');
+required(tracks.every((item) => item.songDetailSlug && release.trackIds.includes(item.id)), 'ORPHAN_SONG_DETAILS_0');
+required(articles.filter((item) => item.relatedCampaignId === 'live-album-2024').length === 6, 'EDITORIAL_COUNT_6');
+required(news.filter((item) => item.id === 'la24-n01').length === 1, 'RELEASE_NEWS_1');
+required(!live.find((item) => item.id === 'live-tour-2024')?.preview, 'OBSOLETE_PREVIEW_MODULE_0');
+required(!Object.values(manifest.images).some((item) => item.sourceCampaign === 'live-album-2024' && item.assetCode?.includes('-REF-')), 'PUBLIC_REFERENCE_ASSETS_0');
+console.log('M11B LIVE ALBUM 2024 assertions PASSED.');

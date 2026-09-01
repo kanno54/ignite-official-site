@@ -87,6 +87,26 @@ export type Recording = {
     vertical: string;
   };
   romanNumeral?: string;
+  discNumber?: number;
+  discTrackNumber?: number;
+  overallTrackNumber?: number;
+  arrangementLabel?: string;
+  arrangementText?: string;
+  originalRecordingId?: string | null;
+  relatedReleaseId?: string | null;
+  songDetailSlug?: string;
+  publicationState?: 'PREVIEW' | 'RELEASED';
+  relation?: 'PREVIEW' | 'LIVE_VERSION';
+  provenance?: 'UNSPECIFIED';
+  source?: {
+    campaignId: string;
+    audioAssetCode: string;
+    audioVersionId: string;
+    audioSha256: string;
+    teaserAssetCode?: string;
+    teaserVersionId?: string;
+    teaserSha256?: string;
+  };
 };
 
 export type Release = {
@@ -109,6 +129,12 @@ export type Release = {
   trackIds: string[];
   campaignState: 'past' | 'current' | 'future';
   publication: Publication;
+  releaseKind?: 'LIVE_ALBUM';
+  discCount?: number;
+  canonicalMarkdown?: string;
+  relatedLiveArchiveId?: string;
+  relatedReleaseIds?: string[];
+  source?: Record<string, string>;
 };
 
 export type ArticleBlock = {
@@ -155,6 +181,8 @@ export type Article = {
   blocks: ArticleBlock[];
   publication: Publication;
   specialStory?: SpecialStoryCTA;
+  canonicalMarkdown?: string;
+  sourceAssetCode?: string;
 };
 
 export type CampaignCTA = {
@@ -314,6 +342,8 @@ export type NewsItem = {
   ctaLabel?: string;
   imageAssetId?: string;
   publication?: Publication;
+  canonicalMarkdown?: string;
+  sourceAssetCode?: string;
 };
 
 export type LiveArchiveDocument = {

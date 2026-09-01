@@ -928,99 +928,10 @@
       "moonlit",
       "silent-signal",
       "rise-again",
-      "equinox"
+      "equinox",
+      "live-album-2024"
     ],
     "relatedRecordingIds": [],
-    "preview": {
-      "eyebrow": "LIVE ALBUM 2024 // PREVIEW",
-      "title": "LISTEN TO THE LIVE ALBUM",
-      "copy": "あの日の24曲を、もう一度。",
-      "sourceAssetCode": "LV24-R01",
-      "formalReleaseRoute": null,
-      "recordings": [
-        {
-          "id": "live-album-2024-heatwave",
-          "releaseId": "live-album-2024",
-          "title": "Heatwave",
-          "versionLabel": "LIVE 2024 PREVIEW",
-          "trackNumber": 6,
-          "durationSeconds": 0,
-          "audioUrl": "/media/audio/live-album-2024/previews/LA24-AU-HEATWAVE_v01.mp3",
-          "audioStatus": "ready",
-          "spotlightMemberIds": [],
-          "moodTags": [],
-          "linerNotes": "",
-          "lyrics": [],
-          "posterAssetId": "la24-t03",
-          "publicationState": "PREVIEW",
-          "relation": "PREVIEW",
-          "provenance": "UNSPECIFIED",
-          "source": {
-            "campaignId": "live-album-2024",
-            "audioAssetCode": "LA24-AU-HEATWAVE",
-            "audioVersionId": "v-la24-au-heatwave-1-1787958772427",
-            "audioSha256": "75f5a209e929e62c815c7792008bfa836759a2960773aa01d6e57da2b81548f8",
-            "teaserAssetCode": "LA24-T03",
-            "teaserVersionId": "v-la24-t03-1-1787972807273",
-            "teaserSha256": "a272cda8f08c8248f9477104e03539c0a905c74262ab09b5241f2a7ca27b1c87"
-          }
-        },
-        {
-          "id": "live-album-2024-moonlit",
-          "releaseId": "live-album-2024",
-          "title": "Moonlit",
-          "versionLabel": "LIVE 2024 PREVIEW",
-          "trackNumber": 9,
-          "durationSeconds": 0,
-          "audioUrl": "/media/audio/live-album-2024/previews/LA24-AU-MOONLIT_v01.mp3",
-          "audioStatus": "ready",
-          "spotlightMemberIds": [],
-          "moodTags": [],
-          "linerNotes": "",
-          "lyrics": [],
-          "posterAssetId": "la24-t04",
-          "publicationState": "PREVIEW",
-          "relation": "PREVIEW",
-          "provenance": "UNSPECIFIED",
-          "source": {
-            "campaignId": "live-album-2024",
-            "audioAssetCode": "LA24-AU-MOONLIT",
-            "audioVersionId": "v-la24-au-moonlit-1-1787958821593",
-            "audioSha256": "3668334020bb96db976c608e7508406e91ae301209bafcf2d0a331d01fcd0f84",
-            "teaserAssetCode": "LA24-T04",
-            "teaserVersionId": "v-la24-t04-1-1787972809089",
-            "teaserSha256": "105e32f9b790586fd210427a373fa65512d9beba42a68f330cf68bb1450f97a2"
-          }
-        },
-        {
-          "id": "live-album-2024-silent-signal",
-          "releaseId": "live-album-2024",
-          "title": "Silent Signal",
-          "versionLabel": "LIVE 2024 PREVIEW",
-          "trackNumber": 13,
-          "durationSeconds": 0,
-          "audioUrl": "/media/audio/live-album-2024/previews/LA24-AU-SILENT-SIGNAL_v01.mp3",
-          "audioStatus": "ready",
-          "spotlightMemberIds": [],
-          "moodTags": [],
-          "linerNotes": "",
-          "lyrics": [],
-          "posterAssetId": "la24-t05",
-          "publicationState": "PREVIEW",
-          "relation": "PREVIEW",
-          "provenance": "UNSPECIFIED",
-          "source": {
-            "campaignId": "live-album-2024",
-            "audioAssetCode": "LA24-AU-SILENT-SIGNAL",
-            "audioVersionId": "v-la24-au-silent-signal-1-1787959064384",
-            "audioSha256": "e9d5069649bdd4388041aa2dabaa31e7ec8b2415893121e1c6bbc299d58f57a4",
-            "teaserAssetCode": "LA24-T05",
-            "teaserVersionId": "v-la24-t05-1-1787972810504",
-            "teaserSha256": "13dc60356c26c198c7e3f603c033f6eca80530c855372a6c9bfa3d3b20be78d9"
-          }
-        }
-      ]
-    },
     "source": {
       "campaignId": "live-tour-2024",
       "packageId": "pkg-live-tour-2024-2026-08-30T01-53-36-089Z",

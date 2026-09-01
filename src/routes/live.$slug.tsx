@@ -257,14 +257,14 @@ export const LiveArchivePage: React.FC = () => {
 
         {(relatedReleases.length > 0 || relatedRecordings.length > 0) && (
           <section id="live-related" className="live-related" aria-labelledby="live-related-heading">
-            <span className="live-kicker">EXISTING DISCOGRAPHY REFERENCES</span>
-            <h2 id="live-related-heading">RELATED MUSIC</h2>
+            <span className="live-kicker">{isLiveTour2024 ? 'THE SHOW ENDED. THE SOUND REMAINS.' : 'EXISTING DISCOGRAPHY REFERENCES'}</span>
+            <h2 id="live-related-heading">{isLiveTour2024 ? 'LISTEN TO THE LIVE ALBUM' : 'RELATED MUSIC'}</h2>
             {relatedReleases.length > 0 && (
               <div className="live-related__releases">
                 {relatedReleases.map((release) => release && (
                   <Link to={`/discography/${release.slug}/`} className="live-release-link" key={release.id}>
                     <ResponsivePicture assetId={getReleaseArtworkAssetId(release, 'cover')} title={release.title} alt={`${release.title} artwork`} aspectRatio="1:1" sizes="min(calc(100vw - 51px), 240px)" {...deferredImageLoadingProps} />
-                    <span>{release.format}</span><strong>{release.title}</strong>
+                    <span>{release.format}</span><strong>{release.title}</strong>{release.id === 'live-album-2024' && <small>2 DISCS // 24 TRACKS →</small>}
                   </Link>
                 ))}
               </div>

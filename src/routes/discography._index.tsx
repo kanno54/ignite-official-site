@@ -19,6 +19,8 @@ export const DiscographyIndex: React.FC = () => {
       return true;
     })
     .sort((a, b) => {
+      if (a.id === 'live-album-2024') return -1;
+      if (b.id === 'live-album-2024') return 1;
       if (filterFormat === 'SINGLE') {
         // Singles tab: release date ascending (IGNITION at top)
         return a.fictionalReleaseDate.localeCompare(b.fictionalReleaseDate);
@@ -94,7 +96,7 @@ export const DiscographyIndex: React.FC = () => {
                 <ResponsivePicture
                   assetId={getReleaseArtworkAssetId(rel, 'cover')}
                   title={rel.title}
-                  subtitle={`${rel.format} — ${rel.fictionalReleaseDateFull}`}
+                  subtitle={rel.fictionalReleaseDateFull ? `${rel.format} — ${rel.fictionalReleaseDateFull}` : rel.format}
                   aspectRatio="1:1"
                   accentColor="var(--campaign-accent)"
                   style={rel.artwork ? { border: 'none' } : undefined}
@@ -104,7 +106,7 @@ export const DiscographyIndex: React.FC = () => {
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)' }}>
-                    {rel.format} // {rel.fictionalReleaseDateFull}
+                    {rel.format}{rel.fictionalReleaseDateFull ? ` // ${rel.fictionalReleaseDateFull}` : ''}
                   </span>
                   <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.8rem', fontWeight: 700, margin: '4px 0 8px', color: '#F6F3ED' }}>
                     {rel.title}

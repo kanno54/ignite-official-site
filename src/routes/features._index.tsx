@@ -57,7 +57,7 @@ export const FeaturesIndex: React.FC = () => {
                 </p>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '20px', fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--campaign-accent)' }}>
                 <span>
-                  {!art.publishDateFull.startsWith('2026') ? `${art.publishDateFull} — ` : art.storyDateFull ? `STORY ${art.storyDateFull} — ` : ''}
+                  {art.publishDateFull && !art.publishDateFull.startsWith('2026') ? `${art.publishDateFull} — ` : art.storyDateFull ? `STORY ${art.storyDateFull} — ` : ''}
                   {art.readingTimeMinutes} MIN READ
                 </span>
                 <div style={{ display: 'flex', gap: '4px' }}>
