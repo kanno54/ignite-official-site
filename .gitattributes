@@ -1,1 +1,3 @@
 content/canonical/equinox/*.md text eol=lf whitespace=-trailing-space
+content/canonical/live-album-2024/LA24-CP01_v01.md -text whitespace=-trailing-space
+content/canonical/live-album-2024/LA24-ST01_v01.md -text whitespace=-trailing-space
