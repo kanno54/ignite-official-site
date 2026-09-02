@@ -34,14 +34,44 @@ required(!Object.values(manifest.images).some((item) => item.sourceCampaign === 
 
 const campaign = campaigns.find((item) => item.id === 'live-album-2024');
 const campaignRoute = fs.readFileSync(path.join(root, 'src', 'routes', 'campaigns.$id.tsx'), 'utf8');
+const contentLoaderSource = fs.readFileSync(path.join(root, 'src', 'utils', 'contentLoader.ts'), 'utf8');
+const discographyIndexSource = fs.readFileSync(path.join(root, 'src', 'routes', 'discography._index.tsx'), 'utf8');
 required((campaignRoute.match(/campaign\.id === 'live-album-2024'/gu) || []).length === 1, 'CAMPAIGN_ROUTE_1');
 required(campaign?.status === 'staging', 'CAMPAIGN_STAGING_ONLY');
+required(campaign?.id === 'live-album-2024' && contentLoaderSource.includes("c.id === 'live-album-2024' && c.status === 'staging'"), 'CURRENT_CAMPAIGN_LIVE_ALBUM_2024');
+required(campaign?.releaseId === release?.id && release?.title === 'IGNITE LIVE 2024', 'CURRENT_ERA_IGNITE_LIVE_2024');
+required(discographyIndexSource.includes('const currentReleaseId = getCurrentCampaign().releaseId;') && discographyIndexSource.includes('const isCurrentEra = rel.id === currentReleaseId;') && !discographyIndexSource.includes("rel.campaignState === 'current'"), 'CURRENT_ERA_RESOLVES_FROM_CURRENT_CAMPAIGN_RELEASE_ID');
 required(campaign?.heroAssetId === 'la24-kv01', 'CAMPAIGN_PC_HERO_LA24_KV01');
 required(campaign?.mobileHeroAssetId === 'la24-kv02', 'CAMPAIGN_MOBILE_HERO_LA24_KV02');
 required(campaign?.cardAssetId === 'la24-kv03', 'CAMPAIGN_SQUARE_KV_LA24_KV03');
 required(campaign?.ogAssetId === 'la24-og02', 'CAMPAIGN_OGP_LA24_OG02');
 required(![campaign?.heroAssetId, campaign?.mobileHeroAssetId, campaign?.cardAssetId, campaign?.ogAssetId].includes('la24-og01'), 'CAMPAIGN_OG01_USAGE_0');
 required(['la24-kv01', 'la24-kv02', 'la24-kv03', 'la24-og02'].every((id) => manifest.images[id]?.status === 'ready' && fs.existsSync(path.join(root, 'public', manifest.images[id].path.slice(1)))), 'CAMPAIGN_ASSETS_READY_4');
+
+const canonicalReleaseDate = '2025-02-07';
+required(release?.fictionalReleaseDate === '2025-02' && release?.fictionalReleaseDateFull === '2025.02.07' && release?.publication?.publishAt === canonicalReleaseDate && campaign?.releaseDate === canonicalReleaseDate, 'LIVE_ALBUM_RELEASE_DATE_2025_02_07');
+const expectedFeaturePublishAt = new Map([
+  ['la24-ar01', '2025-02-07'],
+  ['la24-ar02', '2025-02-14'],
+  ['la24-ar03', '2025-02-14'],
+  ['la24-ar04', '2025-02-21'],
+  ['la24-ar05', '2025-02-28'],
+  ['la24-ar06', '2025-03-07'],
+]);
+for (const [id, publishAt] of expectedFeaturePublishAt) {
+  required(articles.find((item) => item.id === id)?.publication?.publishAt === publishAt, `${id.toUpperCase()}_PUBLISH_AT_${publishAt.replaceAll('-', '_')}`);
+}
+const sortedFeatureIds = articles
+  .map((article, originalIndex) => ({ article, originalIndex }))
+  .sort((a, b) => {
+    const dateDifference = new Date(b.article.publication.publishAt || 0).getTime() - new Date(a.article.publication.publishAt || 0).getTime();
+    return dateDifference || a.originalIndex - b.originalIndex;
+  })
+  .slice(0, 6)
+  .map(({ article }) => article.id);
+required(contentLoaderSource.includes('article.publication.publishAt') && contentLoaderSource.includes('return bOrder[index] - aOrder[index];') && sortedFeatureIds.join(',') === 'la24-ar06,la24-ar05,la24-ar04,la24-ar03,la24-ar02,la24-ar01', 'FEATURE_SORT_PUBLICATION_PUBLISH_AT_DESC');
+required([...expectedFeaturePublishAt.values()].every((value) => value.startsWith('2025-')), 'BUILD_DATE_USED_AS_PUBLISH_DATE_0');
+required([...expectedFeaturePublishAt.values()].every((value) => value !== '2026-09-02'), 'STAGING_DATE_USED_AS_PUBLISH_DATE_0');
 
 const hash = (value) => createHash('sha256').update(value).digest('hex');
 const canonicalCampaign = fs.readFileSync(path.join(root, 'content', 'canonical', 'live-album-2024', 'LA24-CP01_v01.md'), 'utf8');

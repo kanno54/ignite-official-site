@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getReleaseArtworkAssetId, getReleases, getRecordingsForRelease } from '../utils/contentLoader';
+import { getCurrentCampaign, getReleaseArtworkAssetId, getReleases, getRecordingsForRelease } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
@@ -8,6 +8,7 @@ import { trackDiscographyOpen } from '../utils/analytics';
 
 export const DiscographyIndex: React.FC = () => {
   const releases = getReleases();
+  const currentReleaseId = getCurrentCampaign().releaseId;
   const [filterFormat, setFilterFormat] = useState<string>('ALL');
   const { playRelease } = useAudio();
 
@@ -72,12 +73,13 @@ export const DiscographyIndex: React.FC = () => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
         {filteredReleases.map((rel) => {
           const readyCount = getRecordingsForRelease(rel.id).filter((r) => r.audioStatus === 'ready').length;
+          const isCurrentEra = rel.id === currentReleaseId;
           return (
             <div
               key={rel.id}
               style={{
                 backgroundColor: 'var(--color-surface)',
-                border: rel.campaignState === 'current' ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
+                border: isCurrentEra ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
                 padding: '24px',
                 borderRadius: '2px',
                 display: 'flex',
@@ -86,7 +88,7 @@ export const DiscographyIndex: React.FC = () => {
                 position: 'relative',
               }}
             >
-              {rel.campaignState === 'current' && (
+              {isCurrentEra && (
                 <span className="campaign-tag" style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}>
                   CURRENT ERA
                 </span>
