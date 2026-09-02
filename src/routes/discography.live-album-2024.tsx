@@ -4,12 +4,11 @@ import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { LiveMarkdown } from '../components/live/LiveMarkdown';
 import { useAudio } from '../components/audio/AudioProvider';
-import { getArticles, getReleaseById, getRecordingsForRelease } from '../utils/contentLoader';
+import { getReleaseById, getRecordingsForRelease } from '../utils/contentLoader';
 
 export const LiveAlbumReleasePage: React.FC = () => {
   const release = getReleaseById('live-album-2024');
   const tracks = getRecordingsForRelease('live-album-2024');
-  const editorial = getArticles().filter((article) => article.relatedCampaignId === 'live-album-2024');
   const { playRelease } = useAudio();
   if (!release || tracks.length !== 24) return <Navigate to="/discography/" replace />;
   const queue = tracks.map((track) => track.id);
@@ -74,16 +73,9 @@ export const LiveAlbumReleasePage: React.FC = () => {
         <LiveMarkdown markdown={release.linerNotes} />
       </section>
 
-      <section>
-        <div className="live-section-heading"><div><span className="live-kicker">EDITORIAL CAMPAIGN</span><h2>EXPLORE THE LIVE ALBUM</h2></div><span>6 STORIES</span></div>
-        <div className="live-album-editorial-grid">
-          {editorial.map((article) => (
-            <Link to={`/features/${article.slug}/`} key={article.id}>
-              <ResponsivePicture assetId={article.heroAssetId} aspectRatio="3:2" title={article.title} loading="lazy" decoding="async" />
-              <span>{article.sourceAssetCode}</span><h3>{article.title}</h3>
-            </Link>
-          ))}
-        </div>
+      <section className="live-album-related-tour">
+        <ResponsivePicture assetId="la24-kv03" aspectRatio="1:1" title="IGNITE LIVE 2024 campaign" alt="IGNITE LIVE 2024 campaign key visual" loading="lazy" decoding="async" sizes="(max-width: 768px) calc(100vw - 48px), 460px" />
+        <div><span className="live-kicker">CAMPAIGN GUIDE // LA24-CP01</span><h2>EXPLORE LIVE ALBUM 2024</h2><p>ツアーで曲がどう変わり、その変化を24曲のLive Versionとしてなぜ残したのか。セッション、三つのLive Version、六つのFeatureをキャンペーンガイドで辿る。</p><Link className="btn-primary" to="/campaigns/live-album-2024/">EXPLORE CAMPAIGN →</Link></div>
       </section>
 
       <section className="live-album-related-tour">

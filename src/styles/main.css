@@ -9,6 +9,30 @@
 
 /* M11B — LIVE ALBUM 2024 */
 .live-album-page { display: flex; flex-direction: column; gap: clamp(64px, 9vw, 112px); }
+.live-album-campaign { display: flex; flex-direction: column; gap: clamp(56px, 8vw, 104px); max-width: 1180px; margin: 0 auto; }
+.live-album-campaign__hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr); min-height: 70vh; background: #070a10; border: 1px solid var(--color-border); overflow: hidden; }
+.live-album-campaign__hero-picture { height: 100%; padding-top: 0 !important; border: 0 !important; border-radius: 0 !important; }
+.live-album-campaign__hero-copy { padding: clamp(28px, 5vw, 64px); align-self: center; min-width: 0; }
+.live-album-campaign__hero-copy .live-markdown { color: #d7dae0; line-height: 1.75; }
+.live-album-campaign__hero-copy h1 { font: 900 clamp(2.6rem, 6vw, 5.5rem)/.9 var(--font-display); margin: 16px 0; }
+.live-album-campaign__hero-copy h2 { color: var(--campaign-accent); font-size: clamp(1rem, 2vw, 1.4rem); }
+.live-album-campaign__section { max-width: 920px; width: 100%; margin: 0 auto; padding: clamp(28px, 5vw, 56px); background: var(--color-surface); border: 1px solid var(--color-border); }
+.live-album-campaign__section .live-markdown { color: #d7dae0; line-height: 1.9; }
+.live-album-campaign__section .live-markdown h2, .live-album-campaign__section .live-markdown > h1 { font: 900 clamp(2rem, 5vw, 4rem)/1 var(--font-display); color: #f6f3ed; margin-top: 0; }
+.live-album-campaign__section .live-markdown h3 { margin-top: 2em; color: var(--campaign-accent); }
+.live-album-campaign__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.live-album-campaign__live-versions { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; margin-top: 28px; }
+.live-album-campaign__live-versions article { padding: 24px; background: var(--color-surface-elevated); border: 1px solid var(--color-border); }
+.live-album-campaign__feature-links { display: grid; gap: 10px; width: 100%; }
+.live-album-campaign__feature-links a { padding: 14px 16px; color: #f6f3ed; border: 1px solid var(--color-border); font: .78rem var(--font-mono); }
+.live-album-campaign__from-tour, .live-album-campaign__return { border-color: var(--campaign-accent); }
+.live-album-campaign__final { background: var(--campaign-deep); border-color: var(--campaign-accent); }
+.home-release-campaign-split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.home-latest-release, .home-campaign-compact { padding: clamp(20px, 4vw, 32px); background: var(--color-surface); border: 1px solid var(--color-border); display: grid; gap: 20px; color: #f6f3ed; }
+.home-latest-release h2, .home-campaign-compact h2 { margin: 5px 0; font: 800 clamp(1.7rem, 4vw, 2.5rem)/1 var(--font-display); }
+.home-latest-release p, .home-campaign-compact p { color: #aeb6c4; }
+.home-latest-release__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.home-campaign-compact strong { color: var(--campaign-accent); font: .82rem var(--font-mono); }
 .live-album-hero { position: relative; min-height: min(72vh, 760px); overflow: hidden; border: 1px solid var(--color-border); }
 .live-album-hero__picture { position: absolute !important; inset: 0; height: 100%; padding-top: 0 !important; }
 .live-album-hero__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,7,12,.92) 0%, rgba(5,7,12,.48) 52%, rgba(5,7,12,.1)); }
@@ -38,7 +62,9 @@
 .live-album-song-detail, .live-album-news { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }.live-album-song-detail header { display: grid; grid-template-columns: minmax(260px, 430px) 1fr; gap: clamp(28px,6vw,70px); align-items: center; }.live-album-song-detail h1 { font-size: clamp(3rem,7vw,6rem); line-height: .95; margin: 12px 0; }.live-album-song-detail section { padding: clamp(24px,5vw,52px); border: 1px solid var(--color-border); background: var(--color-surface); }.live-album-song-detail__note { white-space: pre-line; line-height: 1.9; }.live-album-song-nav { display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--color-border); padding-top: 24px; }.live-album-news__actions { display: flex; flex-wrap: wrap; gap: 16px; }
 .live-related-release__card { display: flex; flex-direction: column; gap: 8px; padding: clamp(24px,5vw,52px); border: 1px solid var(--color-border); background: linear-gradient(110deg,#19150d,#0b1730 55%,#220b1c); }.live-related-release__card span { color: var(--campaign-accent); font: 700 clamp(1.7rem,4vw,3.8rem) var(--font-display); }.live-related-release__card small { font: 700 .85rem var(--font-mono); }
 @media (max-width: 900px) { .live-album-discs, .live-album-editorial-grid { grid-template-columns: 1fr; }.live-album-editorial-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 900px) { .live-album-campaign__hero { grid-template-columns: 1fr; }.live-album-campaign__hero-picture { height: auto; padding-top: 56.25% !important; }.live-album-campaign__live-versions { grid-template-columns: 1fr; } }
 @media (max-width: 700px) { .live-album-hero { min-height: 74vh; }.live-album-hero__shade { background: linear-gradient(0deg,rgba(5,7,12,.95),rgba(5,7,12,.08) 75%); }.live-album-intro, .live-album-related-tour, .live-album-song-detail header { grid-template-columns: 1fr; }.live-album-editorial-grid { grid-template-columns: 1fr; }.live-album-track { grid-template-columns: 50px 28px minmax(0,1fr) auto; }.live-album-track > a { grid-column: 3 / -1; }.live-album-track p { display: none; }.live-album-song-nav { flex-direction: column; }.live-album-song-nav a:last-child { text-align: right; } }
+@media (max-width: 760px) { .home-release-campaign-split { grid-template-columns: 1fr; }.live-album-campaign__hero-picture { padding-top: 133.33% !important; } }
 
 /* LIVE historical archive (staging foundation) */
 .live-page,

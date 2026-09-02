@@ -66,7 +66,9 @@ export const normalizeSitemapLastmod = (value) => {
 };
 
 export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.siteUrl }) => {
-  const currentCampaign = campaigns.find((campaign) => campaign.status === 'current') || campaigns[0];
+  const currentCampaign = (staging && campaigns.find((campaign) => campaign.id === 'live-album-2024' && campaign.status === 'staging'))
+    || campaigns.find((campaign) => campaign.status === 'current')
+    || campaigns[0];
   const currentRelease = discography.releases.find((release) => release.id === currentCampaign.releaseId) || discography.releases[0];
   const fallbackImage = currentCampaign.desktopHero;
   const entries = [];
@@ -158,7 +160,7 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
     add(`/campaigns/${campaign.slug || campaign.id}/`, {
       title: `${campaign.title} Campaign | IGNITE Official Portal`,
       description: `${campaign.catchCopy}。${campaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
-      image: campaign.desktopHero,
+      image: campaign.ogAssetId ? readyAssetPath(campaign.ogAssetId) || campaign.desktopHero : campaign.desktopHero,
       lastmod: campaign.releaseDate,
     });
   }

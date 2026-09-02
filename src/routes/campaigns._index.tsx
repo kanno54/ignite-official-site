@@ -21,12 +21,14 @@ export const CampaignsIndex: React.FC = () => {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
-        {campaigns.map((camp) => (
+        {campaigns.map((camp) => {
+          const isCurrent = camp.status === 'current' || camp.id === 'live-album-2024';
+          return (
           <div
             key={camp.id}
             style={{
               backgroundColor: 'var(--color-surface)',
-              border: camp.status === 'current' ? '2px solid var(--campaign-accent)' : '1px solid var(--color-border)',
+              border: isCurrent ? '2px solid var(--campaign-accent)' : '1px solid var(--color-border)',
               borderRadius: '4px',
               overflow: 'hidden',
               display: 'flex',
@@ -35,19 +37,22 @@ export const CampaignsIndex: React.FC = () => {
           >
             <div style={{ position: 'relative', width: '100%', backgroundColor: camp.campaignColors.deep }}>
               <ResponsivePicture
-                desktopSrc={camp.desktopHero}
-                mobileSrc={camp.mobileHero}
+                assetId={camp.cardAssetId}
+                desktopSrc={camp.cardAssetId ? undefined : camp.desktopHero}
+                mobileSrc={camp.cardAssetId ? undefined : camp.mobileHero}
                 alt={camp.title}
-                aspectRatio="16:9"
-                mobileAspectRatio="3:4"
+                aspectRatio={camp.cardAssetId ? '1:1' : '16:9'}
+                mobileAspectRatio={camp.cardAssetId ? '1:1' : '3:4'}
+                loading="lazy"
+                decoding="async"
               />
               <div
                 style={{
                   position: 'absolute',
                   top: '12px',
                   right: '12px',
-                  backgroundColor: camp.status === 'current' ? 'var(--campaign-accent)' : 'rgba(8, 10, 15, 0.85)',
-                  color: camp.status === 'current' ? 'var(--campaign-on-accent)' : '#AEB6C4',
+                  backgroundColor: isCurrent ? 'var(--campaign-accent)' : 'rgba(8, 10, 15, 0.85)',
+                  color: isCurrent ? 'var(--campaign-on-accent)' : '#AEB6C4',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '0.75rem',
                   fontWeight: 700,
@@ -58,7 +63,7 @@ export const CampaignsIndex: React.FC = () => {
                   border: '1px solid rgba(255,255,255,0.1)',
                 }}
               >
-                {camp.status === 'current' ? '● CURRENT' : 'ARCHIVED'}
+                {isCurrent ? '● CURRENT' : 'ARCHIVED'}
               </div>
             </div>
 
@@ -117,7 +122,7 @@ export const CampaignsIndex: React.FC = () => {
               </div>
             </div>
           </div>
-        ))}
+        )})}
       </div>
     </div>
   );

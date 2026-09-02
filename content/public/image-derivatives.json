@@ -21,6 +21,15 @@
         1120
       ]
     },
+    "campaignMobile": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960
+      ]
+    },
     "chapter": {
       "format": "webp",
       "quality": 80,
@@ -215,6 +224,9 @@
     "la24-tr23-sd": "liveAlbumDetail",
     "la24-tr23-sq": "liveAlbumSquare",
     "la24-tr24-sd": "liveAlbumDetail",
-    "la24-tr24-sq": "liveAlbumSquare"
+    "la24-tr24-sq": "liveAlbumSquare",
+    "la24-kv01": "heroDesktop",
+    "la24-kv02": "campaignMobile",
+    "la24-kv03": "liveAlbumSquare"
   }
 }

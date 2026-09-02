@@ -2,16 +2,16 @@
 
 Campaign: LIVE ALBUM 2024
 Campaign ID: live-album-2024
-Package ID: pkg-live-album-2024-2026-08-29T03-23-41-039Z
-Generated At: 2026-08-29T03:23:41.462Z
+Package ID: pkg-live-album-2024-2026-09-02T00-08-40-852Z
+Generated At: 2026-09-02T00:08:41.355Z
 Manifest Schema Version: 1.0
 
 ## Package Summary
 
-Visual Assets: 72
+Visual Assets: 76
 Audio Assets: 24
-Content Assets: 9
-Total Assets: 105
+Content Assets: 11
+Total Assets: 111
 
 ## Source of Truth
 

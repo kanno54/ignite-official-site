@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
-  "package_id": "pkg-live-album-2024-2026-08-29T03-23-41-039Z",
+  "package_id": "pkg-live-album-2024-2026-09-02T00-08-40-852Z",
   "campaign_id": "live-album-2024",
   "campaign_name": "LIVE ALBUM 2024",
-  "generated_at": "2026-08-29T03:23:41.462Z",
-  "asset_count": 105,
+  "generated_at": "2026-09-02T00:08:41.355Z",
+  "asset_count": 111,
   "categories": {
-    "visual_count": 72,
+    "visual_count": 76,
     "audio_count": 24,
-    "content_count": 9
+    "content_count": 11
   },
   "assets": [
     {
@@ -819,6 +819,26 @@
       }
     },
     {
+      "asset_code": "LA24-CP01",
+      "display_name": "LIVE ALBUM 2024 Campaign Page Copy",
+      "asset_type": "ARTICLE",
+      "category": "CONTENT",
+      "delivery_requirement": "REQUIRED",
+      "version_no": 1,
+      "version_id": "v-la24-cp01-1-1788307425856",
+      "decision": "SELECTED",
+      "production_status": "READY",
+      "source_filename": "v01.md",
+      "delivery_filename": "LA24-CP01_v01.md",
+      "file_name": "LA24-CP01_v01.md",
+      "file_path": "content/LA24-CP01_v01.md",
+      "file_size": 11830,
+      "sha256": "c13d2f70221ced040f51e51ce8286e4bbfb197518e4f7a62307097f74cb699a0",
+      "mime_type": "text/markdown",
+      "recommended_usage": "Feature article markdown body",
+      "metadata": {}
+    },
+    {
       "asset_code": "LA24-D01",
       "display_name": "24-track tracklist / disc split",
       "asset_type": "OTHER",
@@ -905,6 +925,75 @@
       }
     },
     {
+      "asset_code": "LA24-KV01",
+      "display_name": "LIVE ALBUM 2024 Campaign PC Hero",
+      "asset_type": "HERO",
+      "category": "VISUAL",
+      "delivery_requirement": "REQUIRED",
+      "version_no": 1,
+      "version_id": "v-la24-kv01-1-1788307423250",
+      "decision": "SELECTED",
+      "production_status": "READY",
+      "source_filename": "v01.png",
+      "delivery_filename": "LA24-KV01_v01.png",
+      "file_name": "LA24-KV01_v01.png",
+      "file_path": "images/LA24-KV01_v01.png",
+      "file_size": 3070457,
+      "sha256": "36c7eb42e164fc08e45e172c086ea789cf9e19056e737dcd3d6c2e8a08d73b43",
+      "mime_type": "image/webp",
+      "recommended_usage": "Campaign desktop hero image",
+      "metadata": {
+        "width": 1672,
+        "height": 941
+      }
+    },
+    {
+      "asset_code": "LA24-KV02",
+      "display_name": "LIVE ALBUM 2024 Campaign Mobile Hero",
+      "asset_type": "HERO",
+      "category": "VISUAL",
+      "delivery_requirement": "REQUIRED",
+      "version_no": 1,
+      "version_id": "v-la24-kv02-1-1788307421833",
+      "decision": "SELECTED",
+      "production_status": "READY",
+      "source_filename": "v01.png",
+      "delivery_filename": "LA24-KV02_v01.png",
+      "file_name": "LA24-KV02_v01.png",
+      "file_path": "images/LA24-KV02_v01.png",
+      "file_size": 2740805,
+      "sha256": "33f77c591937441dc00fe1a1544e0f71df1b774dec7a497c1b1e5135fc43e2ed",
+      "mime_type": "image/webp",
+      "recommended_usage": "Campaign mobile hero image",
+      "metadata": {
+        "width": 1086,
+        "height": 1448
+      }
+    },
+    {
+      "asset_code": "LA24-KV03",
+      "display_name": "LIVE ALBUM 2024 Campaign Square Key Visual",
+      "asset_type": "HERO",
+      "category": "VISUAL",
+      "delivery_requirement": "REQUIRED",
+      "version_no": 1,
+      "version_id": "v-la24-kv03-1-1788307420098",
+      "decision": "SELECTED",
+      "production_status": "READY",
+      "source_filename": "v01.png",
+      "delivery_filename": "LA24-KV03_v01.png",
+      "file_name": "LA24-KV03_v01.png",
+      "file_path": "images/LA24-KV03_v01.png",
+      "file_size": 3111500,
+      "sha256": "8bb8f473c1bed7bd7714522590a9a7b6fbb54f0af6e63188db342f383fcaaf0f",
+      "mime_type": "image/webp",
+      "recommended_usage": "Campaign desktop hero image",
+      "metadata": {
+        "width": 1254,
+        "height": 1254
+      }
+    },
+    {
       "asset_code": "LA24-N01",
       "display_name": "Live Album announcement NEWS",
       "asset_type": "ARTICLE",
@@ -923,6 +1012,29 @@
       "mime_type": "text/markdown",
       "recommended_usage": "Feature article markdown body",
       "metadata": {}
+    },
+    {
+      "asset_code": "LA24-OG02",
+      "display_name": "LIVE ALBUM 2024 Campaign OGP",
+      "asset_type": "SOCIAL",
+      "category": "VISUAL",
+      "delivery_requirement": "REQUIRED",
+      "version_no": 1,
+      "version_id": "v-la24-og02-1-1788307441530",
+      "decision": "SELECTED",
+      "production_status": "READY",
+      "source_filename": "v01.png",
+      "delivery_filename": "LA24-OG02_v01.png",
+      "file_name": "LA24-OG02_v01.png",
+      "file_path": "images/LA24-OG02_v01.png",
+      "file_size": 2771947,
+      "sha256": "40f9a0e8623cbaa3b5afe6d536c486c3a9a6a8f10dd8ec84dadaaca8e1bcb63d",
+      "mime_type": "image/webp",
+      "recommended_usage": "LIVE ALBUM 2024 Campaign OGP asset",
+      "metadata": {
+        "width": 1731,
+        "height": 909
+      }
     },
     {
       "asset_code": "LA24-P01",
@@ -1098,6 +1210,26 @@
         "width": 1536,
         "height": 1024
       }
+    },
+    {
+      "asset_code": "LA24-ST01",
+      "display_name": "LIVE ALBUM 2024 Story Update",
+      "asset_type": "ARTICLE",
+      "category": "CONTENT",
+      "delivery_requirement": "REQUIRED",
+      "version_no": 1,
+      "version_id": "v-la24-st01-1-1788307424378",
+      "decision": "SELECTED",
+      "production_status": "READY",
+      "source_filename": "v01.md",
+      "delivery_filename": "LA24-ST01_v01.md",
+      "file_name": "LA24-ST01_v01.md",
+      "file_path": "content/LA24-ST01_v01.md",
+      "file_size": 1210,
+      "sha256": "d40f2ab556a1a55e804196f602c2762b4263f910f83f5001798c73c0ce2ba2bf",
+      "mime_type": "text/markdown",
+      "recommended_usage": "Feature article markdown body",
+      "metadata": {}
     },
     {
       "asset_code": "LA24-T01",

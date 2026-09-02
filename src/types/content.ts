@@ -212,6 +212,12 @@ export type Campaign = {
   subheadline?: string;
   desktopHero: string;
   mobileHero: string;
+  heroAssetId?: string;
+  mobileHeroAssetId?: string;
+  cardAssetId?: string;
+  ogAssetId?: string;
+  canonicalSourceAssetCode?: string;
+  storySourceAssetCode?: string;
   heroAlt?: string;
   primaryCta: CampaignCTA;
   secondaryCta: CampaignCTA;

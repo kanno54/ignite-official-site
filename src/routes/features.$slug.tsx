@@ -230,6 +230,11 @@ export const ArticleDetailPage: React.FC = () => {
             <Link to={`/campaigns/${article.relatedCampaignId}/`} className="btn-primary">
               VIEW {article.relatedCampaignId.toUpperCase()} CAMPAIGN →
             </Link>
+            {article.relatedCampaignId === 'live-album-2024' && (
+              <Link to="/discography/live-album-2024/" className="btn-secondary" style={{ marginLeft: '12px' }}>
+                LISTEN / VIEW RELEASE →
+              </Link>
+            )}
           </div>
         </section>
       )}

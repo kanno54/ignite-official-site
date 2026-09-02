@@ -112,7 +112,7 @@ export const MetadataManager: React.FC = () => {
       metadata = routeCampaign ? {
         title: `${routeCampaign.title} Campaign | IGNITE Official Portal`,
         description: `${routeCampaign.catchCopy}。${routeCampaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
-        image: routeCampaign.desktopHero,
+        image: routeCampaign.ogAssetId ? manifestImages[routeCampaign.ogAssetId]?.path || routeCampaign.desktopHero : routeCampaign.desktopHero,
       } : {
         title: 'CAMPAIGN ARCHIVE | IGNITE Official Portal',
         description: 'IGNITEのCurrent Campaignと歴代Campaign Archive。',

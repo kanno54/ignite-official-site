@@ -779,20 +779,20 @@
     "status": "staging",
     "releaseId": "live-album-2024",
     "releaseDate": "",
-    "eyebrow": "2-DISC LIVE ALBUM // 24 TRACKS",
+    "eyebrow": "CURRENT CAMPAIGN // LIVE ALBUM 2024",
     "title": "IGNITE LIVE 2024",
-    "catchCopy": "THE SHOW ENDED. THE SOUND REMAINS.",
-    "desktopHero": "/assets/images/live-album-2024/LA24-H01_v01.png",
-    "mobileHero": "/assets/images/live-album-2024/LA24-H02_v01.png",
+    "catchCopy": "ステージで育った曲を、そのまま残す。",
+    "desktopHero": "/assets/images/live-album-2024/LA24-KV01_v01.png",
+    "mobileHero": "/assets/images/live-album-2024/LA24-KV02_v01.png",
     "primaryCta": {
-      "text": "LISTEN TO THE LIVE ALBUM",
+      "text": "EXPLORE CAMPAIGN",
       "action": "link",
-      "url": "/discography/live-album-2024/"
+      "url": "/campaigns/live-album-2024/"
     },
     "secondaryCta": {
-      "text": "EXPLORE LIVE TOUR 2024",
+      "text": "LISTEN TO THE RELEASE",
       "action": "link",
-      "url": "/live/live-tour-2024/"
+      "url": "/discography/live-album-2024/"
     },
     "campaignColors": {
       "accent": "#5f82ff",
@@ -806,6 +806,12 @@
       "la24-ar04",
       "la24-ar05",
       "la24-ar06"
-    ]
+    ],
+    "heroAssetId": "la24-kv01",
+    "mobileHeroAssetId": "la24-kv02",
+    "cardAssetId": "la24-kv03",
+    "ogAssetId": "la24-og02",
+    "canonicalSourceAssetCode": "LA24-CP01",
+    "storySourceAssetCode": "LA24-ST01"
   }
 ]

@@ -12,7 +12,7 @@ export const TopPage: React.FC = () => {
   const releases = getReleases();
   const articles = getArticles();
   const newsList = getNews();
-  const { playRelease, playTrack } = useAudio();
+  const { playRelease } = useAudio();
   const currentCampaign = getCurrentCampaign();
   const campaigns = getCampaigns();
 
@@ -24,14 +24,6 @@ export const TopPage: React.FC = () => {
   ) || articles[0];
   const currentCampaignIndex = campaigns.findIndex((campaign) => campaign.id === currentCampaign.id);
   const previousCampaign = currentCampaignIndex >= 0 ? campaigns[currentCampaignIndex + 1] : undefined;
-
-  const handlePrimaryCta = () => {
-    if (currentRelease && currentRelease.trackIds.length > 0) {
-      const firstTrack = getRecordingById(currentRelease.trackIds[0]);
-      if (firstTrack) playTrack(firstTrack.id);
-      else playRelease(currentRelease.id);
-    }
-  };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
@@ -49,11 +41,17 @@ export const TopPage: React.FC = () => {
       >
         <div style={{ maxWidth: '900px', width: '100%', position: 'relative', borderRadius: '4px', overflow: 'hidden' }}>
           <ResponsivePicture
-            desktopSrc={currentCampaign.desktopHero}
-            mobileSrc={currentCampaign.mobileHero}
+            assetId={currentCampaign.heroAssetId}
+            mobileAssetId={currentCampaign.mobileHeroAssetId}
+            desktopSrc={currentCampaign.heroAssetId ? undefined : currentCampaign.desktopHero}
+            mobileSrc={currentCampaign.mobileHeroAssetId ? undefined : currentCampaign.mobileHero}
             alt={currentCampaign.title}
             aspectRatio="16:9"
             mobileAspectRatio="3:4"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+            sizes="(max-width: 900px) 100vw, 900px"
           />
         </div>
 
@@ -96,20 +94,34 @@ export const TopPage: React.FC = () => {
           </p>
 
           <div style={{ display: 'flex', gap: '16px', marginTop: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button onClick={handlePrimaryCta} className="btn-primary">
-              {currentCampaign.primaryCta.text}
-            </button>
-            <Link to={`/campaigns/${currentCampaign.slug}/`} className="btn-primary" style={{ backgroundColor: 'var(--campaign-accent)', color: 'var(--campaign-on-accent)', borderColor: 'var(--campaign-accent)', fontWeight: 700 }}>
-              VIEW SPECIAL CAMPAIGN PAGE ➔
-            </Link>
-            <Link to={currentCampaign.secondaryCta.url || `/discography/${currentRelease.slug}/`} className="btn-secondary">
-              {currentCampaign.secondaryCta.text}
+            <Link to={`/campaigns/${currentCampaign.slug || currentCampaign.id}/`} className="btn-primary" style={{ backgroundColor: 'var(--campaign-accent)', color: 'var(--campaign-on-accent)', borderColor: 'var(--campaign-accent)', fontWeight: 700 }}>
+              EXPLORE CAMPAIGN ➔
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 2. Latest News */}
+      {/* 2. Current release and campaign are intentionally separate destinations. */}
+      {currentRelease && (
+        <section className="home-release-campaign-split" aria-label="Latest release and current campaign">
+          <article className="home-latest-release">
+            <div><span className="live-kicker">LATEST RELEASE</span><h2>{currentRelease.title}</h2><p>{currentRelease.format} — {currentRelease.fictionalReleaseDateFull}</p></div>
+            <ResponsivePicture assetId={currentRelease.coverAssetId} aspectRatio="1:1" alt={`${currentRelease.title} album cover`} loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 320px" />
+            <div className="home-latest-release__actions">
+              <button className="btn-primary" onClick={() => playRelease(currentRelease.id)}>PLAY RELEASE ▶</button>
+              <Link className="btn-secondary" to={`/discography/${currentRelease.slug}/`}>VIEW RELEASE →</Link>
+            </div>
+          </article>
+          {currentCampaign.cardAssetId && (
+            <Link className="home-campaign-compact" to={`/campaigns/${currentCampaign.slug || currentCampaign.id}/`}>
+              <ResponsivePicture assetId={currentCampaign.cardAssetId} aspectRatio="1:1" alt={`${currentCampaign.title} campaign card`} loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 320px" />
+              <div><span className="live-kicker">CURRENT CAMPAIGN GUIDE</span><h2>{currentCampaign.title}</h2><p>{currentCampaign.catchCopy}</p><strong>EXPLORE CAMPAIGN →</strong></div>
+            </Link>
+          )}
+        </section>
+      )}
+
+      {/* 3. Latest News */}
       <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: 'clamp(20px, 4vw, 32px)', borderRadius: '2px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: '#F6F3ED', margin: 0 }}>
@@ -303,7 +315,7 @@ export const TopPage: React.FC = () => {
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
-          {releases.map((rel) => (
+          {releases.filter((rel) => rel.id !== currentRelease?.id).map((rel) => (
             <Link
               key={rel.id}
               to={`/discography/${rel.slug}/`}

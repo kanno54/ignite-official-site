@@ -35,6 +35,10 @@ export const getCampaignById = (id: string): Campaign | undefined => {
 
 export const getCurrentCampaign = (): Campaign => {
   const campaigns = campaignsData as Campaign[];
+  if (isStagingEnv()) {
+    const stagingCampaign = campaigns.find((c) => c.id === 'live-album-2024' && c.status === 'staging');
+    if (stagingCampaign) return stagingCampaign;
+  }
   const current = campaigns.find((c) => c.status === 'current');
   if (current) return current;
   return campaigns[0];
@@ -71,6 +75,13 @@ export const getReleaseBySlug = (slug: string): Release | undefined => {
     return undefined;
   }
   return release;
+};
+
+export const getLiveAlbumCampaignContent = () => liveAlbumData as {
+  campaignMarkdown?: string;
+  storyMarkdown?: string;
+  campaignSourceAssetCode?: string;
+  storySourceAssetCode?: string;
 };
 
 export const getReleaseById = (id: string): Release | undefined => {

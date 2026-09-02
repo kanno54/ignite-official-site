@@ -259,6 +259,11 @@ export const LiveArchivePage: React.FC = () => {
           <section id="live-related" className="live-related" aria-labelledby="live-related-heading">
             <span className="live-kicker">{isLiveTour2024 ? 'THE SHOW ENDED. THE SOUND REMAINS.' : 'EXISTING DISCOGRAPHY REFERENCES'}</span>
             <h2 id="live-related-heading">{isLiveTour2024 ? 'LISTEN TO THE LIVE ALBUM' : 'RELATED MUSIC'}</h2>
+            {isLiveTour2024 && (
+              <div style={{ marginBottom: '24px' }}>
+                <Link className="btn-primary" to="/campaigns/live-album-2024/">EXPLORE LIVE ALBUM 2024 CAMPAIGN →</Link>
+              </div>
+            )}
             {relatedReleases.length > 0 && (
               <div className="live-related__releases">
                 {relatedReleases.map((release) => release && (
