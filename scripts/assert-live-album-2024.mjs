@@ -85,6 +85,7 @@ required(campaignHeadings.every((heading) => canonicalCampaign.includes(heading)
 
 const campaignComponent = fs.readFileSync(path.join(root, 'src', 'components', 'campaigns', 'LiveAlbumCampaignView.tsx'), 'utf8');
 const newsRouteSource = fs.readFileSync(path.join(root, 'src', 'routes', 'news.live-album-2024.tsx'), 'utf8');
+required(campaignComponent.indexOf('live-album-campaign__archive-nav') > campaignComponent.indexOf('live-album-campaign__hero') && campaignComponent.indexOf('live-album-campaign__archive-nav') < campaignComponent.indexOf("live-album-campaign__from-tour"), 'CAMPAIGN_ARCHIVE_NAV_AFTER_HERO');
 required(!/la24-tr\d+/iu.test(campaignComponent), 'CAMPAIGN_INITIAL_TRACK_ARTWORK_0');
 required(!campaignComponent.includes('la24-og02'), 'CAMPAIGN_BODY_OG_ASSET_0');
 const publicLiveAlbumSources = [

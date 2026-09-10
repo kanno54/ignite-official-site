@@ -38,6 +38,13 @@ export const LiveAlbumCampaignView: React.FC<Props> = ({ campaign, relatedArticl
         </div>
       </section>
 
+      <nav className="live-album-campaign__archive-nav" aria-label="Campaign archive">
+        <Link to="/campaigns/">
+          ← VIEW ALL CAMPAIGN ARCHIVES (キャンペーン一覧へ)
+        </Link>
+        <span>{campaign.eyebrow}</span>
+      </nav>
+
       {section('live-album-campaign__from-tour', find('## FROM THE TOUR'), <Link className="btn-primary" to="/live/live-tour-2024/">VIEW LIVE TOUR 2024 →</Link>)}
       {section('', find('## IGNITE LIVE 2024'))}
       {section('', find('## TWO DISCS / 24 TRACKS'), <Link className="btn-primary" to="/discography/live-album-2024/#player">VIEW ALL 24 TRACKS →</Link>)}

@@ -16,6 +16,9 @@
 .live-album-campaign__hero-copy .live-markdown { color: #d7dae0; line-height: 1.75; }
 .live-album-campaign__hero-copy h1 { font: 900 clamp(2.6rem, 6vw, 5.5rem)/.9 var(--font-display); margin: 16px 0; }
 .live-album-campaign__hero-copy h2 { color: var(--campaign-accent); font-size: clamp(1rem, 2vw, 1.4rem); }
+.live-album-campaign__archive-nav { max-width: 920px; width: calc(100% - 48px); margin: clamp(-72px, -6vw, -40px) auto 0; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; border-top: 1px solid var(--color-border); }
+.live-album-campaign__archive-nav a { display: inline-flex; align-items: center; padding: 8px 16px; color: var(--campaign-accent); background: var(--campaign-deep); border: 1px solid var(--campaign-accent); border-radius: 2px; font: .78rem var(--font-mono); text-decoration: none; }
+.live-album-campaign__archive-nav span { color: #aeb6c4; font: .75rem var(--font-mono); }
 .live-album-campaign__section { max-width: 920px; width: 100%; margin: 0 auto; padding: clamp(28px, 5vw, 56px); background: var(--color-surface); border: 1px solid var(--color-border); }
 .live-album-campaign__section .live-markdown { color: #d7dae0; line-height: 1.9; }
 .live-album-campaign__section .live-markdown h2, .live-album-campaign__section .live-markdown > h1 { font: 900 clamp(2rem, 5vw, 4rem)/1 var(--font-display); color: #f6f3ed; margin-top: 0; }
