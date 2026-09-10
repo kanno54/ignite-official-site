@@ -74,8 +74,9 @@ export const validateArtworkUsage = (discography, manifest) => {
     const squareCode = square?.assetCode || '';
     const verticalCode = vertical?.assetCode || '';
     if (!squareCode.endsWith('-SQ')) failures.push(`recording ${recording.id} square slot Asset Code must end in -SQ: ${squareCode || 'NONE'}`);
-    if (!verticalCode.endsWith('-V')) failures.push(`recording ${recording.id} vertical slot Asset Code must end in -V: ${verticalCode || 'NONE'}`);
-    if (squareCode && verticalCode && squareCode.replace(/-SQ$/, '') !== verticalCode.replace(/-V$/, '')) {
+    const verticalSuffix = recording.releaseId === 'live-album-2024' ? '-SD' : '-V';
+    if (!verticalCode.endsWith(verticalSuffix)) failures.push(`recording ${recording.id} vertical slot Asset Code must end in ${verticalSuffix}: ${verticalCode || 'NONE'}`);
+    if (squareCode && verticalCode && squareCode.replace(/-SQ$/, '') !== verticalCode.replace(new RegExp(`${verticalSuffix}$`), '')) {
       failures.push(`recording ${recording.id} square/vertical artwork belongs to different Asset Code families: ${squareCode} / ${verticalCode}`);
     }
   }

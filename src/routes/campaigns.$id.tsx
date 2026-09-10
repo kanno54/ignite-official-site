@@ -8,6 +8,7 @@ import { NotFoundPage } from './404';
 import { SilentSignalCampaignView } from '../components/campaigns/SilentSignalCampaignView';
 import { RiseAgainCampaignView } from '../components/campaigns/RiseAgainCampaignView';
 import { EquinoxCampaignView } from '../components/campaigns/EquinoxCampaignView';
+import { LiveAlbumCampaignView } from '../components/campaigns/LiveAlbumCampaignView';
 
 export const CampaignDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,6 +28,10 @@ export const CampaignDetailPage: React.FC = () => {
 
   if (campaign.id === 'equinox') {
     return <EquinoxCampaignView campaign={campaign} relatedArticles={relatedArticles} />;
+  }
+
+  if (campaign.id === 'live-album-2024') {
+    return <LiveAlbumCampaignView campaign={campaign} relatedArticles={relatedArticles} />;
   }
 
   if (campaign.id === 'silent-signal') {

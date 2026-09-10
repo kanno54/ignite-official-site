@@ -43,7 +43,14 @@ for (const [assetId, profileName] of Object.entries(registry.assets)) {
 
     const outputPath = derivativePath(sourceAsset.path, registry.outputDirectory, width, derivativeConfig.format);
     const outputFile = publicFile(outputPath);
-    if (!checkOnly) {
+    let outputIsCurrent = false;
+    try {
+      const existingMetadata = await sharp(outputFile).metadata();
+      outputIsCurrent = existingMetadata.format === derivativeConfig.format && existingMetadata.width === width;
+    } catch {
+      outputIsCurrent = false;
+    }
+    if (!checkOnly && !outputIsCurrent) {
       await fs.mkdir(path.dirname(outputFile), { recursive: true });
       const pipeline = sharp(sourceFile).resize({ width, withoutEnlargement: true });
       if (derivativeConfig.format === 'webp') {

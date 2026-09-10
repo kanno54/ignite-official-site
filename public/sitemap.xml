@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ignite-official.site/</loc>
-    <lastmod>2024-05-15</lastmod>
+    <lastmod>2025-02-07</lastmod>
   </url>
   <url>
     <loc>https://ignite-official.site/members/</loc>
@@ -109,6 +109,10 @@
     <lastmod>2024-05-15</lastmod>
   </url>
   <url>
+    <loc>https://ignite-official.site/discography/live-album-2024/</loc>
+    <lastmod>2025-02-07</lastmod>
+  </url>
+  <url>
     <loc>https://ignite-official.site/campaigns/</loc>
   </url>
   <url>
@@ -148,7 +152,35 @@
     <lastmod>2020-10-01</lastmod>
   </url>
   <url>
+    <loc>https://ignite-official.site/campaigns/live-album-2024/</loc>
+    <lastmod>2025-02-07</lastmod>
+  </url>
+  <url>
     <loc>https://ignite-official.site/features/</loc>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/five-songs-that-changed-on-tour/</loc>
+    <lastmod>2025-03-07</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/remove-the-light/</loc>
+    <lastmod>2025-02-28</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/silent-signal-when-the-signal-stopped-being-silent/</loc>
+    <lastmod>2025-02-21</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/midnight-session/</loc>
+    <lastmod>2025-02-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/solar-brass-session/</loc>
+    <lastmod>2025-02-14</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/how-ignite-changed-the-songs/</loc>
+    <lastmod>2025-02-07</lastmod>
   </url>
   <url>
     <loc>https://ignite-official.site/features/rise-again-feature/</loc>
@@ -249,6 +281,10 @@
   </url>
   <url>
     <loc>https://ignite-official.site/live/live-tour-2024/tour-log/tokyo-final/</loc>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/news/live-album-2024/</loc>
+    <lastmod>2025-02-07</lastmod>
   </url>
   <url>
     <loc>https://ignite-official.site/story/</loc>

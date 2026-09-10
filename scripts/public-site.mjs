@@ -66,7 +66,9 @@ export const normalizeSitemapLastmod = (value) => {
 };
 
 export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.siteUrl }) => {
-  const currentCampaign = campaigns.find((campaign) => campaign.status === 'current') || campaigns[0];
+  const currentCampaign = (staging && campaigns.find((campaign) => campaign.id === 'live-album-2024' && campaign.status === 'staging'))
+    || campaigns.find((campaign) => campaign.status === 'current')
+    || campaigns[0];
   const currentRelease = discography.releases.find((release) => release.id === currentCampaign.releaseId) || discography.releases[0];
   const fallbackImage = currentCampaign.desktopHero;
   const entries = [];
@@ -135,6 +137,19 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
         });
       }
     }
+    if (release.id === 'live-album-2024') {
+      for (const recordingId of release.trackIds) {
+        const recording = discography.recordings.find((item) => item.id === recordingId);
+        if (!recording?.songDetailSlug) continue;
+        add(`/discography/live-album-2024/tracks/${recording.songDetailSlug}/`, {
+          title: `${recording.title} | IGNITE LIVE 2024 Song Detail`,
+          description: recording.arrangementText,
+          image: readyAssetPath(recording.artwork?.vertical),
+          type: 'music.song',
+          sitemap: false,
+        });
+      }
+    }
   }
 
   add('/campaigns/', {
@@ -145,7 +160,7 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
     add(`/campaigns/${campaign.slug || campaign.id}/`, {
       title: `${campaign.title} Campaign | IGNITE Official Portal`,
       description: `${campaign.catchCopy}。${campaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
-      image: campaign.desktopHero,
+      image: campaign.ogAssetId ? readyAssetPath(campaign.ogAssetId) || campaign.desktopHero : campaign.desktopHero,
       lastmod: campaign.releaseDate,
     });
   }
@@ -196,6 +211,18 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
         });
       }
     }
+  }
+
+  const liveAlbumRelease = discography.releases.find((release) => release.id === 'live-album-2024');
+  if (liveAlbumRelease && publicationIsPublic(liveAlbumRelease.publication, staging)) {
+    add('/news/live-album-2024/', {
+      title: 'IGNITE LIVE TOUR 2024、2枚組LIVE ALBUMとしてリリース決定',
+      description: 'THE SHOW ENDED. THE SOUND REMAINS. 2 Discs / 24 Tracks.',
+      image: readyAssetPath('la24-h01'),
+      type: 'article',
+      lastmod: liveAlbumRelease.publication.publishAt,
+      sitemap: liveAlbumRelease.publication.campaignState !== 'staging',
+    });
   }
 
   add('/story/', {

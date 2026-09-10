@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getReleaseArtworkAssetId, getReleases, getRecordingsForRelease } from '../utils/contentLoader';
+import { getCurrentCampaign, getReleaseArtworkAssetId, getReleases, getRecordingsForRelease } from '../utils/contentLoader';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
@@ -8,6 +8,7 @@ import { trackDiscographyOpen } from '../utils/analytics';
 
 export const DiscographyIndex: React.FC = () => {
   const releases = getReleases();
+  const currentReleaseId = getCurrentCampaign().releaseId;
   const [filterFormat, setFilterFormat] = useState<string>('ALL');
   const { playRelease } = useAudio();
 
@@ -19,6 +20,8 @@ export const DiscographyIndex: React.FC = () => {
       return true;
     })
     .sort((a, b) => {
+      if (a.id === 'live-album-2024') return -1;
+      if (b.id === 'live-album-2024') return 1;
       if (filterFormat === 'SINGLE') {
         // Singles tab: release date ascending (IGNITION at top)
         return a.fictionalReleaseDate.localeCompare(b.fictionalReleaseDate);
@@ -70,12 +73,13 @@ export const DiscographyIndex: React.FC = () => {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '28px' }}>
         {filteredReleases.map((rel) => {
           const readyCount = getRecordingsForRelease(rel.id).filter((r) => r.audioStatus === 'ready').length;
+          const isCurrentEra = rel.id === currentReleaseId;
           return (
             <div
               key={rel.id}
               style={{
                 backgroundColor: 'var(--color-surface)',
-                border: rel.campaignState === 'current' ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
+                border: isCurrentEra ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
                 padding: '24px',
                 borderRadius: '2px',
                 display: 'flex',
@@ -84,7 +88,7 @@ export const DiscographyIndex: React.FC = () => {
                 position: 'relative',
               }}
             >
-              {rel.campaignState === 'current' && (
+              {isCurrentEra && (
                 <span className="campaign-tag" style={{ position: 'absolute', top: '12px', right: '12px', zIndex: 10 }}>
                   CURRENT ERA
                 </span>
@@ -94,7 +98,7 @@ export const DiscographyIndex: React.FC = () => {
                 <ResponsivePicture
                   assetId={getReleaseArtworkAssetId(rel, 'cover')}
                   title={rel.title}
-                  subtitle={`${rel.format} — ${rel.fictionalReleaseDateFull}`}
+                  subtitle={rel.fictionalReleaseDateFull ? `${rel.format} — ${rel.fictionalReleaseDateFull}` : rel.format}
                   aspectRatio="1:1"
                   accentColor="var(--campaign-accent)"
                   style={rel.artwork ? { border: 'none' } : undefined}
@@ -104,7 +108,7 @@ export const DiscographyIndex: React.FC = () => {
               <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
                   <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.8rem', color: 'var(--campaign-accent)' }}>
-                    {rel.format} // {rel.fictionalReleaseDateFull}
+                    {rel.format}{rel.fictionalReleaseDateFull ? ` // ${rel.fictionalReleaseDateFull}` : ''}
                   </span>
                   <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.8rem', fontWeight: 700, margin: '4px 0 8px', color: '#F6F3ED' }}>
                     {rel.title}

@@ -1,10 +1,10 @@
 {
   "siteUrl": "https://ignite-official.site",
   "canonicalUrl": "https://ignite-official.site",
-  "fictionalCurrentDate": "2024-05",
-  "currentCampaign": "EQUINOX",
-  "latestReleaseId": "equinox",
-  "pickUpTrackId": "equinox-title",
+  "fictionalCurrentDate": "2025-02",
+  "currentCampaign": "LIVE ALBUM 2024",
+  "latestReleaseId": "live-album-2024",
+  "pickUpTrackId": "live-album-2024-ignition",
   "group": {
     "name": "IGNITE",
     "japaneseName": "イグナイト",

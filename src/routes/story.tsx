@@ -2,12 +2,24 @@ import React from 'react';
 // IGNITE Official Story & Timeline Component
 import { Link } from 'react-router-dom';
 import { FiveLights } from '../components/common/FiveLights';
-import { getCurrentCampaign } from '../utils/contentLoader';
+import { LiveMarkdown } from '../components/live/LiveMarkdown';
+import { getCurrentCampaign, getLiveAlbumCampaignContent } from '../utils/contentLoader';
+
+type TimelineEvent = {
+  id: string;
+  date: string;
+  era: string;
+  title: string;
+  description: string;
+  link: string;
+  canonicalMarkdown?: string;
+};
 
 export const StoryPage: React.FC = () => {
   const currentCamp = getCurrentCampaign();
+  const { storyMarkdown = '' } = getLiveAlbumCampaignContent();
 
-  const timelineEvents = [
+  const timelineEvents: TimelineEvent[] = [
     {
       id: 'firestarter',
       date: '2020.10',
@@ -58,7 +70,7 @@ export const StoryPage: React.FC = () => {
     },
   ];
 
-  if (['silent-signal', 'rise-again', 'equinox'].includes(currentCamp.id) || currentCamp.status === 'current') {
+  if (['silent-signal', 'rise-again', 'equinox', 'live-album-2024'].includes(currentCamp.id) || currentCamp.status === 'current') {
     timelineEvents.push({
       id: 'silent-signal',
       date: '2024.01',
@@ -69,7 +81,7 @@ export const StoryPage: React.FC = () => {
     });
   }
 
-  if (['rise-again', 'equinox'].includes(currentCamp.id) || currentCamp.status === 'current') {
+  if (['rise-again', 'equinox', 'live-album-2024'].includes(currentCamp.id) || currentCamp.status === 'current') {
     timelineEvents.push({
       id: 'rise-again',
       date: '2024.03',
@@ -80,7 +92,7 @@ export const StoryPage: React.FC = () => {
     });
   }
 
-  if (currentCamp.id === 'equinox' || currentCamp.status === 'current') {
+  if (['equinox', 'live-album-2024'].includes(currentCamp.id) || currentCamp.status === 'current') {
     timelineEvents.push({
       id: 'equinox',
       date: '2024.04',
@@ -99,6 +111,18 @@ export const StoryPage: React.FC = () => {
     });
   }
 
+  if (currentCamp.id === 'live-album-2024' && storyMarkdown) {
+    timelineEvents.push({
+      id: 'live-album-2024',
+      date: '2024',
+      era: 'LIVE ALBUM 2024',
+      title: '',
+      description: '',
+      canonicalMarkdown: storyMarkdown,
+      link: '/campaigns/live-album-2024/',
+    });
+  }
+
   return (
     <div style={{ maxWidth: 'var(--article-content)', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '50px' }}>
       <div>
@@ -107,7 +131,7 @@ export const StoryPage: React.FC = () => {
           OFFICIAL STORY & TIMELINE
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-          2020年10月のインディーズ始動から、2024年5月の2nd Full Album『EQUINOX』まで。五人が光と影を抱え、同じ中心へ向かって声を重ねるまでの公式年表。
+          2020年10月のインディーズ始動から、LIVE TOUR 2024を経て『IGNITE LIVE 2024』へ。五人の音がステージで変わり、その変化が作品として残るまでの公式年表。
         </p>
       </div>
 
@@ -166,16 +190,20 @@ export const StoryPage: React.FC = () => {
                     {ev.date} // {eraText}
                   </span>
                   <Link to={ev.link} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4' }}>
-                    VIEW RELEASE ➔
+                    {ev.id === 'live-album-2024' ? 'VIEW CAMPAIGN' : 'VIEW RELEASE'} ➔
                   </Link>
                 </div>
 
-                <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.4rem', fontWeight: 700, margin: '8px 0', color: '#F6F3ED' }}>
-                  {ev.title}
-                </h2>
-                <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-                  {ev.description}
-                </p>
+                {ev.canonicalMarkdown ? (
+                  <div className="live-album-editorial-copy"><LiveMarkdown markdown={ev.canonicalMarkdown} /></div>
+                ) : (<>
+                  <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.4rem', fontWeight: 700, margin: '8px 0', color: '#F6F3ED' }}>
+                    {ev.title}
+                  </h2>
+                  <p style={{ fontSize: '0.9rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
+                    {ev.description}
+                  </p>
+                </>)}
               </div>
             </div>
           );

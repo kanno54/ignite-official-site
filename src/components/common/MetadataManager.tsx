@@ -8,6 +8,7 @@ import {
   getMemberBySlug,
   getReleaseBySlug,
   getEquinoxRecordingBySlug,
+  getLiveAlbumRecordingBySlug,
   getSiteConfig,
   getLiveArchiveBySlug,
   getLiveTourLog,
@@ -76,7 +77,15 @@ export const MetadataManager: React.FC = () => {
       const equinoxTrack = parts[1] === 'equinox' && parts[2] === 'tracks' && parts[3]
         ? getEquinoxRecordingBySlug(parts[3])
         : undefined;
-      metadata = equinoxTrack ? {
+      const liveAlbumTrack = parts[1] === 'live-album-2024' && parts[2] === 'tracks' && parts[3]
+        ? getLiveAlbumRecordingBySlug(parts[3])
+        : undefined;
+      metadata = liveAlbumTrack ? {
+        title: `${liveAlbumTrack.title} | IGNITE LIVE 2024 Song Detail`,
+        description: liveAlbumTrack.arrangementText || liveAlbumTrack.linerNotes,
+        image: manifestImages[liveAlbumTrack.artwork?.vertical || '']?.path || fallbackImage,
+        type: 'music.song',
+      } : equinoxTrack ? {
         title: `${equinoxTrack.title} (${equinoxTrack.romanNumeral}) | EQUINOX Song Detail`,
         description: equinoxTrack.linerNotes,
         image: manifestImages[`poster-equinox-tr${String(equinoxTrack.trackNumber).padStart(2, '0')}-v`]?.path || fallbackImage,
@@ -91,12 +100,19 @@ export const MetadataManager: React.FC = () => {
         description: 'IGNITEの公開リリースと全収録曲。',
         image: fallbackImage,
       };
+    } else if (parts[0] === 'news' && parts[1] === 'live-album-2024') {
+      metadata = {
+        title: 'IGNITE LIVE TOUR 2024、2枚組LIVE ALBUMとしてリリース決定',
+        description: 'THE SHOW ENDED. THE SOUND REMAINS. 2 Discs / 24 Tracks.',
+        image: manifestImages['la24-h01']?.path || fallbackImage,
+        type: 'article',
+      };
     } else if (parts[0] === 'campaigns') {
       const routeCampaign = parts[1] ? getCampaignById(parts[1]) : undefined;
       metadata = routeCampaign ? {
         title: `${routeCampaign.title} Campaign | IGNITE Official Portal`,
         description: `${routeCampaign.catchCopy}。${routeCampaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
-        image: routeCampaign.desktopHero,
+        image: routeCampaign.ogAssetId ? manifestImages[routeCampaign.ogAssetId]?.path || routeCampaign.desktopHero : routeCampaign.desktopHero,
       } : {
         title: 'CAMPAIGN ARCHIVE | IGNITE Official Portal',
         description: 'IGNITEのCurrent Campaignと歴代Campaign Archive。',
