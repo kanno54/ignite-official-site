@@ -154,6 +154,10 @@ export type SpecialStoryCTA = {
 };
 
 export type Article = {
+  featureLayout?: 'individual' | 'conversation';
+  ogAssetId?: string;
+  cardAssetId?: string;
+  sourceVersion?: number;
   id: string;
   slug: string;
   title: string;

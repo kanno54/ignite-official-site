@@ -51,8 +51,10 @@ for (const route of routes) {
   customizedHtml = replaceMeta(customizedHtml, 'description', route.description);
   customizedHtml = replaceMeta(customizedHtml, 'og:url', route.canonical);
   customizedHtml = replaceMeta(customizedHtml, 'og:title', title);
-  customizedHtml = replaceMeta(customizedHtml, 'og:description', route.description);
-  customizedHtml = replaceMeta(customizedHtml, 'og:image', route.image);
+  customizedHtml = replaceMeta(customizedHtml, 'og:description', route.ogDescription || route.description);
+  customizedHtml = route.image ? replaceMeta(customizedHtml, 'og:image', route.image)
+    : customizedHtml.replace(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i, '');
+  customizedHtml = customizedHtml.replace('</head>', `<meta name="twitter:card" content="${route.image ? 'summary_large_image' : 'summary'}" />\n</head>`);
   customizedHtml = replaceMeta(customizedHtml, 'og:type', route.type);
 
   fs.writeFileSync(targetPath, customizedHtml, 'utf8');

@@ -2641,6 +2641,252 @@
       "sourceCampaign": "live-album-2024",
       "sourcePackage": "pkg-live-album-2024-2026-09-02T00-08-40-852Z",
       "usage": "CAMPAIGN_OGP"
+    },
+    "wb25-web01": {
+      "path": "/assets/images/we-burn/WB25-WEB01_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "WB25-WEB01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-web01-1-1789990349478",
+      "sourceSha256": "74d5d3c42732aa523e55c837b1ce63c8d34fa6dafbdbb7c272dbeeea67782cd6",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-web02": {
+      "path": "/assets/images/we-burn/WB25-WEB02_v01.webp",
+      "status": "ready",
+      "aspect": "9:16",
+      "assetCode": "WB25-WEB02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-web02-1-1789990347975",
+      "sourceSha256": "30e09c7df73658f8d2509e37eb16906c559a2ce96af315bb016abfd237e26216",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-jk01": {
+      "path": "/assets/images/we-burn/WB25-JK01_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "WB25-JK01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-jk01-1-1789990357843",
+      "sourceSha256": "343e99be4674782f3f06fdcc103b16c319a53f1f2a5d068ad3dcecfaeae5d003",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-wb01": {
+      "path": "/assets/images/we-burn/WB25-WB01_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "WB25-WB01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-wb01-1-1789990346506",
+      "sourceSha256": "27aa755dd861cc2e33762138ce28e739d3fbe85c50065cd74fb2f8e365b11e51",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-wb02": {
+      "path": "/assets/images/we-burn/WB25-WB02_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "WB25-WB02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-wb02-1-1789990344952",
+      "sourceSha256": "3f766d51573981f6720c26cba76bc83b44387b875dc1e414a82eadafb7c50a1a",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-np01": {
+      "path": "/assets/images/we-burn/WB25-NP01_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "WB25-NP01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-np01-1-1789990363491",
+      "sourceSha256": "dac15170107411cd4e164997a39c4b89844082ab0e5ec529eede4a8a94a2d084",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-np02": {
+      "path": "/assets/images/we-burn/WB25-NP02_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "WB25-NP02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-np02-1-1789990362165",
+      "sourceSha256": "9bad72b36782327ab6d17c3cc7fcb999660226357972fe7b794f788abf7536dc",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-bs01": {
+      "path": "/assets/images/we-burn/WB25-BS01_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "WB25-BS01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-bs01-1-1789990341858",
+      "sourceSha256": "37994cc596d82af7a1094268a146d6a63be3bc27ab0199643089e201968e6a09",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-bs02": {
+      "path": "/assets/images/we-burn/WB25-BS02_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "WB25-BS02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-bs02-1-1789990343257",
+      "sourceSha256": "fb812fa52ea0dd31b9092aaa486449988acbf232f38228a549ed515bca5497b5",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe01-hr01": {
+      "path": "/assets/images/we-burn/WB25-FE01-HR01_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "WB25-FE01-HR01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-fe01-hr01-1-1790459181260",
+      "sourceSha256": "fd48869ee4b5640205d9c8aa21ae4b6996ea906b0dea80d9833c84546046fa13",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe02-hr01": {
+      "path": "/assets/images/we-burn/WB25-FE02-HR01_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "WB25-FE02-HR01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-fe02-hr01-1-1790461074732",
+      "sourceSha256": "86bf530bd4bba72441d634a2a509ea65aa26dbadb6c116017951837e280e6889",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe02-ph01": {
+      "path": "/assets/images/we-burn/WB25-FE02-PH01_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-FE02-PH01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-fe02-ph01-1-1790462107605",
+      "sourceSha256": "8189cbdda0e9d0f77e77298d7b6dd91fd40729585965005a7cba073d71dfffed",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe02-in01": {
+      "path": "/assets/images/we-burn/WB25-FE02-IN01_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "WB25-FE02-IN01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-fe02-in01-1-1790461073702",
+      "sourceSha256": "5bb1fbf775e0b0604d69bcdd5e5c3dd11ad9c1822d80451a82f20ffc69cd6c9f",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe02-in02": {
+      "path": "/assets/images/we-burn/WB25-FE02-IN02_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "WB25-FE02-IN02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-fe02-in02-1-1790461076521",
+      "sourceSha256": "7e65f98264f00c1a2f5744bd3fd0209ee4477f2682c0ea93f0e83157317ef7ee",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe01-sns01": {
+      "path": "/assets/images/we-burn/WB25-FE01-SNS01_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-FE01-SNS01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-fe01-sns01-1-1790459182289",
+      "sourceSha256": "620b96add5ebecd7956971eea61d533f154488d03060edb49db51333dca37c41",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe02-sns01": {
+      "path": "/assets/images/we-burn/WB25-FE02-SNS01_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-FE02-SNS01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-fe02-sns01-1-1790462108801",
+      "sourceSha256": "8bf509b8aa60324faeb9873837b32fbf3ed5884802ff76ed176d7285ed718a02",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-m01": {
+      "path": "/assets/images/we-burn/WB25-M01_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-M01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-m01-1-1789990354885",
+      "sourceSha256": "3e78c597324d23e0531bfc58a4281b755e134801ad626b0130fdfa3c18d8a182",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-m02": {
+      "path": "/assets/images/we-burn/WB25-M02_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-M02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-m02-1-1789990353664",
+      "sourceSha256": "6913876e5a9c13a08c4867092985c0d69288e72b34beb81ff97ac6379341b0b1",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-m03": {
+      "path": "/assets/images/we-burn/WB25-M03_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-M03",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-m03-1-1789990352367",
+      "sourceSha256": "5494c22077475aa80c42d4af3f51ef2441ed68e5ae70d4407e691fae68372fd2",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-m04": {
+      "path": "/assets/images/we-burn/WB25-M04_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-M04",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-m04-1-1789990350885",
+      "sourceSha256": "192b2aeef77269b62ecbeed58971425e86faf30e4250f5103d76232cc33435a7",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-m05": {
+      "path": "/assets/images/we-burn/WB25-M05_v01.webp",
+      "status": "ready",
+      "aspect": "4:5",
+      "assetCode": "WB25-M05",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-wb25-m05-1-1789990364828",
+      "sourceSha256": "d86a87801bafa510f19650add72cf0c8bef7816481c051406c5ff66626b06f8a",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe01-og-review": {
+      "path": "/assets/images/we-burn/wb25-fe01-og-review.jpg",
+      "status": "ready",
+      "aspect": "1200:630",
+      "assetCode": "WB25-FE01-HR01",
+      "derivedFrom": "WB25-FE01-HR01",
+      "editorialReview": "pending",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe01-card": {
+      "path": "/assets/images/we-burn/wb25-fe01-card.jpg",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "WB25-FE01-HR01",
+      "derivedFrom": "WB25-FE01-HR01",
+      "editorialReview": "pending",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe02-og-review": {
+      "path": "/assets/images/we-burn/wb25-fe02-og-review.jpg",
+      "status": "ready",
+      "aspect": "1200:630",
+      "assetCode": "WB25-FE02-HR01",
+      "derivedFrom": "WB25-FE02-HR01",
+      "editorialReview": "pending",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "wb25-fe02-card": {
+      "path": "/assets/images/we-burn/wb25-fe02-card.jpg",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "WB25-FE02-HR01",
+      "derivedFrom": "WB25-FE02-HR01",
+      "editorialReview": "pending",
+      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
     }
   }
 }

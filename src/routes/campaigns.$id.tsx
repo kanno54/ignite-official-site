@@ -9,6 +9,7 @@ import { SilentSignalCampaignView } from '../components/campaigns/SilentSignalCa
 import { RiseAgainCampaignView } from '../components/campaigns/RiseAgainCampaignView';
 import { EquinoxCampaignView } from '../components/campaigns/EquinoxCampaignView';
 import { LiveAlbumCampaignView } from '../components/campaigns/LiveAlbumCampaignView';
+import { WeBurnCampaignView } from '../components/campaigns/WeBurnCampaignView';
 
 export const CampaignDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,6 +19,8 @@ export const CampaignDetailPage: React.FC = () => {
   if (!campaign) {
     return <NotFoundPage />;
   }
+
+  if (campaign.id === 'we-burn') return <WeBurnCampaignView />;
 
   const release = getReleaseBySlug(campaign.releaseId);
   const recordings = getRecordingsForRelease(campaign.releaseId);

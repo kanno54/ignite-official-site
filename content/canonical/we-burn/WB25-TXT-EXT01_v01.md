@@ -1,0 +1,5 @@
+# WHERE DO YOU BURN NEXT?
+
+次は、どこで燃える？
+
+FIVE DIRECTIONS. ONE FIRE.

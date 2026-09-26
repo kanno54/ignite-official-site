@@ -53,13 +53,17 @@ jobs:
           FTP_HOST: ${{ secrets.SFTP_HOST }}
           FTP_USER: ${{ secrets.SFTP_USERNAME }}
           FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
-          FTP_PATH: ${{ secrets.SFTP_STAGING_PATH || secrets.SFTP_REMOTE_PATH }}
+          FTP_PATH: ${{ secrets.SFTP_STAGING_PATH }}
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           cd ./dist
 
           CANDIDATES=()
           if [ -n "$FTP_PATH" ]; then
+            case "$FTP_PATH" in
+              *staging*) ;;
+              *) echo "Refusing a non-staging deployment directory"; exit 1 ;;
+            esac
             CANDIDATES+=("$FTP_PATH")
           fi
           CANDIDATES+=(
@@ -74,7 +78,8 @@ jobs:
           CHOSEN_DIR=""
           for candidate in "${CANDIDATES[@]}"; do
             echo "Testing candidate remote directory: $candidate"
-            TEST_OUT=$(lftp -c "
+            if lftp -c "
+              set cmd:fail-exit yes;
               set ftp:ssl-allow no;
               set ftp:passive-mode on;
               set net:timeout 5;
@@ -83,33 +88,34 @@ jobs:
               cd '$candidate';
               pwd;
               quit;
-            " 2>&1 || true)
-
-            if ! echo "$TEST_OUT" | grep -q "550"; then
+            " >/dev/null 2>&1; then
               CHOSEN_DIR="$candidate"
               echo "✔ Successfully verified remote directory: $CHOSEN_DIR"
               break
             else
-              echo "  ✘ Candidate $candidate returned 550"
+              echo "  ✘ Candidate unavailable: $candidate"
             fi
           done
 
           if [ -z "$CHOSEN_DIR" ]; then
-            CHOSEN_DIR="/staging.ignite-official.site"
-            echo "Falling back to default directory: $CHOSEN_DIR"
+            echo "No verified staging directory; refusing deployment"
+            exit 1
           fi
 
           echo "Final Target Remote Directory: $CHOSEN_DIR"
 
-          cat <<EOF > deploy.lftp
+          DEPLOY_SCRIPT=$(mktemp)
+          trap 'rm -f "$DEPLOY_SCRIPT"' EXIT
+          cat <<EOF > "$DEPLOY_SCRIPT"
+          set cmd:fail-exit yes
           set ftp:ssl-allow no
           set ftp:passive-mode on
           set net:timeout 15
           set net:max-retries 2
           open -u "$FTP_USER","$FTP_PASS" "$FTP_HOST"
           cd "$CHOSEN_DIR"
-          mirror -R --delete --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
+          mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
           quit
           EOF
 
-          lftp -f deploy.lftp
+          lftp -f "$DEPLOY_SCRIPT"

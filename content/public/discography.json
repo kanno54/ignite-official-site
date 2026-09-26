@@ -305,6 +305,30 @@
         "visibility": "public",
         "campaignState": "current"
       }
+    },
+    {
+      "id": "we-burn",
+      "slug": "we-burn",
+      "title": "We Burn",
+      "format": "7th Single",
+      "fictionalReleaseDate": "2025-04",
+      "fictionalReleaseDateFull": "2025.04.23",
+      "coverAssetId": "wb25-jk01",
+      "description": "同じ場所に立ちながら、それぞれの未来へ進んでいく――IGNITEの次の一歩を刻む7th Single。",
+      "linerNotes": "# We Burn — Single Release Notes\r\n\r\nFUTURE / NOW / ORIGIN.\r\n\r\n五人が同じ道を歩かなくても、同じ熱を持ち続けられる。IGNITEの7th Single『We Burn』は、未来・現在・原点という三つの視点から、次の活動期へ向かう五人を描いた作品。\r\n\r\nFUTURE —「We Burn」 異なる未来へ踏み出す五人の意思を、力強い歌声と開放感のあるサウンドで表現した宣言曲。\r\n\r\nNOW —「NO PLAN」 リズムのズレや反復、即興的な展開を取り入れたExperimental Dance-Funk。答えを出す前に動き始める、現在の五人の自由な衝動を鳴らす。\r\n\r\nORIGIN —「Back to the Spark - Live Version -」 初期の楽曲を現在の五人がライブで再演。歌声と客席の熱が重なり、原点の火を未来へとつないでいく。\r\n\r\nFIVE DIRECTIONS. ONE FIRE.\r\n\r\n異なる三曲を通じて、変わり続ける五人と、変わらず共有する熱を記録したシングル。\r\n",
+      "trackIds": [
+        "we-burn-single",
+        "we-burn-no-plan",
+        "we-burn-back-to-the-spark-live"
+      ],
+      "campaignState": "past",
+      "publication": {
+        "fictionalReleaseDate": "2025-04-23",
+        "publishAt": "2025-04-23T12:00:00+09:00",
+        "visibility": "public",
+        "campaignState": "staging"
+      },
+      "canonicalMarkdown": "## 7th Single『We Burn』\r\n\r\n同じ場所に立ちながら、それぞれの未来へ進んでいく――IGNITEの次の一歩を刻む7th Single。\r\n\r\n表題曲「We Burn」は、五人が同じ方向だけを向くのではなく、それぞれの道を選びながらも、ひとつの熱を共有し続ける意思を描いた楽曲。続く「NO PLAN」では、すべての答えを決めてから進むのではなく、ズレや偶然さえ取り込みながら、まず動き出す現在の衝動を鳴らす。\r\n\r\nそして「Back to the Spark - Live Version -」では、原点へ戻るのではなく、最初に持っていた火を現在まで連れてきたことをライブの音で確かめる。\r\n\r\n**FUTURE / NOW / ORIGIN。**\r\n\r\n異なる三つの方向から、今のIGNITEと、その先へ続く物語を描くシングル。\r\n"
     }
   ],
   "recordings": [
@@ -16228,6 +16252,72 @@
         "audioAssetCode": "LA24-AU-WE-BURN",
         "audioVersionId": "v-la24-au-we-burn-1-1787959146298",
         "audioSha256": "9c6d1a835835a2d94c053c19cf3ba601857eca15ee4bd528b760ae0baca63f43"
+      }
+    },
+    {
+      "id": "we-burn-single",
+      "releaseId": "we-burn",
+      "title": "We Burn",
+      "versionLabel": "Original",
+      "trackNumber": 1,
+      "durationSeconds": 323,
+      "audioUrl": "/media/audio/we-burn/WB25-AUD01_v01.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [],
+      "moodTags": [],
+      "linerNotes": "# We Burn — Liner Notes\r\n\r\n2024年の全国ツアーファイナルで初披露された、IGNITEの次章を告げる宣言曲。\r\n\r\n五人が同じ方向へ進み続けることだけが、グループであることの証明ではない。それぞれが異なる未来を選び、自分の可能性を広げながらも、これまで共有してきた熱を持ち続ける。\r\n\r\n力強く前へ進むビートと開放感のあるサウンドに、個々の意志を宿した五つの声が重なり、ひとつの宣言へと結実する。\r\n\r\n過去を燃やし尽くすのではなく、積み重ねてきた経験を次の場所へ運んでいく。\r\n\r\n同じ道を歩かなくても、同じ火を持っていられる。\r\n\r\n「We Burn」は、五人がそれぞれの未来へ踏み出すことを、IGNITEとしての新たな可能性へ変えていく一曲。\r\n",
+      "lyrics": [],
+      "posterAssetId": "wb25-wb01",
+      "publicationState": "RELEASED",
+      "source": {
+        "campaignId": "we-burn",
+        "audioAssetCode": "WB25-AUD01",
+        "audioVersionId": "v-wb25-aud01-1-1790382785850",
+        "audioSha256": "56c875058c1e3d2a4febf0eebbedcb0383b0d4761ff4cb08a370b87bcc592a14"
+      }
+    },
+    {
+      "id": "we-burn-no-plan",
+      "releaseId": "we-burn",
+      "title": "NO PLAN",
+      "versionLabel": "Original",
+      "trackNumber": 2,
+      "durationSeconds": 252,
+      "audioUrl": "/media/audio/we-burn/WB25-AUD02_v01.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [],
+      "moodTags": [],
+      "linerNotes": "# NO PLAN — Liner Notes\r\n\r\n未来への意思を明確に掲げた「We Burn」に対し、「NO PLAN」が鳴らすのは、答えを出す前に動き始める五人の衝動。\r\n\r\nExperimental Dance-Funkを軸に、リズムのズレ、執拗な反復、予想外の展開を取り入れた実験的なダンスナンバー。長めのインストゥルメンタルパートでは、即興性を感じさせるグルーヴと身体の反応が、言葉以上に楽曲を動かしていく。\r\n\r\n整いすぎないこと、偶然を排除しないこと。予定どおりに進まない面白さを、そのまま音楽へ変える。\r\n\r\n計画はなくても、次のビートは始まっている。\r\n\r\n「NO PLAN」は、完成されたパフォーマンスだけではない、IGNITEの自由さと遊び心を解き放つ一曲。\r\n",
+      "lyrics": [],
+      "posterAssetId": "wb25-np01",
+      "publicationState": "RELEASED",
+      "source": {
+        "campaignId": "we-burn",
+        "audioAssetCode": "WB25-AUD02",
+        "audioVersionId": "v-wb25-aud02-1-1790382781773",
+        "audioSha256": "d5848685f68025c3a4bb761a5d1857a6e99bff4ba9e826d9a314479cc5487142"
+      }
+    },
+    {
+      "id": "we-burn-back-to-the-spark-live",
+      "releaseId": "we-burn",
+      "title": "Back to the Spark - Live Version -",
+      "versionLabel": "Live Version",
+      "trackNumber": 3,
+      "durationSeconds": 245,
+      "audioUrl": "/media/audio/we-burn/WB25-AUD03_v01.mp3",
+      "audioStatus": "ready",
+      "spotlightMemberIds": [],
+      "moodTags": [],
+      "linerNotes": "# Back to the Spark - Live Version - — Liner Notes\r\n\r\nメジャー1st Single『IGNITION』のカップリング曲を、2024年の全国ツアーで再び取り上げたLive Version。\r\n\r\nデビュー当時の衝動を宿した楽曲が、経験を重ねた五人の歌声とパフォーマンス、そして客席の熱によって、新たな表情を獲得する。ステージで生まれる掛け合いや歓声も含め、現在のIGNITEだからこそ成立するライブの記録となった。\r\n\r\n原点とは、戻るべき場所ではなく、これからも持ち続けていくもの。\r\n\r\n最初の火は、今も五人の中で燃えている。\r\n\r\n「Back to the Spark - Live Version -」は、過去の再現ではなく、これまで積み重ねてきた時間と、これから始まる未来をつなぐ一曲。\r\n",
+      "lyrics": [],
+      "posterAssetId": "wb25-bs01",
+      "publicationState": "RELEASED",
+      "source": {
+        "campaignId": "we-burn",
+        "audioAssetCode": "WB25-AUD03",
+        "audioVersionId": "v-wb25-aud03-1-1790382790166",
+        "audioSha256": "6597a5b61d935d59c53d3a23b1cad1086a66d419986c444f3a9eb97447c1aed6"
       }
     }
   ]

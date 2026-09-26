@@ -2,6 +2,7 @@ import React from 'react';
 
 type Props = {
   markdown: string;
+  headingOffset?: number;
 };
 
 const renderInline = (value: string): React.ReactNode[] => {
@@ -14,7 +15,7 @@ const renderInline = (value: string): React.ReactNode[] => {
   });
 };
 
-export const LiveMarkdown: React.FC<Props> = ({ markdown }) => {
+export const LiveMarkdown: React.FC<Props> = ({ markdown, headingOffset = 1 }) => {
   const lines = markdown.replace(/\r\n/g, '\n').split('\n');
   const blocks: React.ReactNode[] = [];
   let paragraph: string[] = [];
@@ -48,7 +49,7 @@ export const LiveMarkdown: React.FC<Props> = ({ markdown }) => {
     if (heading) {
       flushParagraph();
       flushList();
-      const level = Math.min(heading[1].length + 1, 6);
+      const level = Math.max(2, Math.min(heading[1].length + headingOffset, 6));
       blocks.push(React.createElement(`h${level}`, { key: `h-${blocks.length}` }, renderInline(heading[2])));
       return;
     }

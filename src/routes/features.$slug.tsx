@@ -4,6 +4,7 @@ import { getArticleBySlug, getArticles, getMemberBySlug, getRecordingById } from
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { LiveMarkdown } from '../components/live/LiveMarkdown';
+import { WeBurnFeature } from '../components/campaigns/WeBurnFeature';
 
 export const ArticleDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,6 +14,8 @@ export const ArticleDetailPage: React.FC = () => {
   if (!article) {
     return <Navigate to="/features/" replace />;
   }
+
+  if (article.relatedCampaignId === 'we-burn') return <WeBurnFeature article={article} />;
 
   const articleIndex = allArticles.findIndex((a) => a.id === article.id);
   const prevArticle = allArticles[(articleIndex - 1 + allArticles.length) % allArticles.length];

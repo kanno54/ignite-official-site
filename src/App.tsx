@@ -151,6 +151,9 @@ export const App: React.FC = () => {
       <MetadataManager />
       <AnalyticsTracker />
       <div className="app-container" data-campaign={currentCampaign.id}>
+        <SiteHeader />
+
+        <main className="main-content">
         {isStaging && (
           <div
             style={{
@@ -162,16 +165,15 @@ export const App: React.FC = () => {
               fontSize: '0.8rem',
               fontWeight: 700,
               letterSpacing: '0.08em',
-              zIndex: 100000,
+              zIndex: 1,
+              marginBottom: 24,
               position: 'relative',
             }}
           >
-            [STAGING ENVIRONMENT — {isLiveAlbumRoute ? 'LIVE ALBUM 2024 FORMAL RELEASE BUILD' : `${currentCampaign.title.toUpperCase()} RELEASE PREVIEW`}]
+            [STAGING ENVIRONMENT — {location.pathname.includes('we-burn') || ['/features/five-directions/', '/features/no-plan/'].includes(location.pathname) ? 'WE BURN CAMPAIGN PREVIEW' : isLiveAlbumRoute ? 'LIVE ALBUM 2024 FORMAL RELEASE BUILD' : `${currentCampaign.title.toUpperCase()} RELEASE PREVIEW`}]
           </div>
         )}
-        <SiteHeader />
-        
-        <main className="main-content">
+
           <div key={location.pathname} className="page-transition">
             <Routes>
               <Route path="/" element={<TopPage />} />

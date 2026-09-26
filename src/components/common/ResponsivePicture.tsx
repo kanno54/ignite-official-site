@@ -9,8 +9,8 @@ type Props = {
   title?: string;
   subtitle?: string;
   alt?: string;
-  aspectRatio?: '16:9' | '3:4' | '1:1' | '4:5' | '3:2';
-  mobileAspectRatio?: '16:9' | '3:4' | '1:1' | '4:5' | '3:2';
+  aspectRatio?: '9:16' | '16:9' | '3:4' | '1:1' | '4:5' | '3:2';
+  mobileAspectRatio?: '9:16' | '16:9' | '3:4' | '1:1' | '4:5' | '3:2';
   accentColor?: string;
   className?: string;
   mobileAssetId?: string;
@@ -97,6 +97,7 @@ export const ResponsivePicture: React.FC<Props> = ({
 
   const getPaddingTopVal = (ratioStr: string) => {
     switch (ratioStr) {
+      case '9:16': return '177.7778%';
       case '16:9': return '56.25%';
       case '3:4': return '133.33%';
       case '1:1': return '100%';
@@ -171,7 +172,7 @@ export const ResponsivePicture: React.FC<Props> = ({
             src={desktopAsset.path}
             alt={displayAlt}
             loading={loading}
-            fetchPriority={fetchPriority}
+            {...{ fetchpriority: fetchPriority }}
             decoding={decoding}
             sizes={sizes}
             onError={() => setHasError(true)}

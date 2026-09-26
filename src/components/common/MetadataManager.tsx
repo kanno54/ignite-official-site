@@ -1,4 +1,5 @@
 import React from 'react';
+import weBurn from '../../../content/public/we-burn.json';
 import { useLocation } from 'react-router-dom';
 import {
   getArticleBySlug,
@@ -16,9 +17,10 @@ import {
 } from '../../utils/contentLoader';
 
 type PageMetadata = {
+  ogDescription?: string;
   title: string;
   description: string;
-  image: string;
+  image: string | null;
   type?: string;
 };
 
@@ -92,7 +94,8 @@ export const MetadataManager: React.FC = () => {
         type: 'music.song',
       } : release ? {
         title: `${release.title} | IGNITE Discography`,
-        description: release.description,
+        description: release.id === 'we-burn' ? weBurn.seoDescription : release.description,
+        ogDescription: release.id === 'we-burn' ? weBurn.ogDescription : undefined,
         image: release.coverImage || manifestImages[release.coverAssetId]?.path || fallbackImage,
         type: 'music.album',
       } : {
@@ -111,7 +114,8 @@ export const MetadataManager: React.FC = () => {
       const routeCampaign = parts[1] ? getCampaignById(parts[1]) : undefined;
       metadata = routeCampaign ? {
         title: `${routeCampaign.title} Campaign | IGNITE Official Portal`,
-        description: `${routeCampaign.catchCopy}。${routeCampaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
+        description: routeCampaign.id === 'we-burn' ? weBurn.seoDescription : `${routeCampaign.catchCopy}。${routeCampaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
+        ogDescription: routeCampaign.id === 'we-burn' ? weBurn.ogDescription : undefined,
         image: routeCampaign.ogAssetId ? manifestImages[routeCampaign.ogAssetId]?.path || routeCampaign.desktopHero : routeCampaign.desktopHero,
       } : {
         title: 'CAMPAIGN ARCHIVE | IGNITE Official Portal',
@@ -147,7 +151,7 @@ export const MetadataManager: React.FC = () => {
       metadata = article ? {
         title: `${article.title} | IGNITE Official Site`,
         description: article.dek,
-        image: article.heroImage || manifestImages[article.heroAssetId]?.path || fallbackImage,
+        image: manifestImages[article.ogAssetId || '']?.path || article.heroImage || manifestImages[article.heroAssetId]?.path || fallbackImage,
         type: 'article',
       } : {
         title: 'FEATURES & MAGAZINE | IGNITE Official Portal',
@@ -166,8 +170,10 @@ export const MetadataManager: React.FC = () => {
 
     const configuredSiteUrl = import.meta.env.VITE_SITE_URL || config.siteUrl;
     const siteUrl = configuredSiteUrl.replace(/\/$/, '');
-    const canonical = `${siteUrl}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
-    const image = /^https?:\/\//.test(metadata.image) ? metadata.image : `${siteUrl}${metadata.image}`;
+    const canonical = `${siteUrl}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
+    const isWeBurnPage = (['campaigns','discography'].includes(parts[0]) && parts[1] === 'we-burn') || (parts[0] === 'features' && ['five-directions','no-plan'].includes(parts[1]));
+    if (isWeBurnPage) metadata.image = null;
+    const image = metadata.image ? (/^https?:\/\//.test(metadata.image) ? metadata.image : `${siteUrl}${metadata.image}`) : null;
     const title = `${isStagingEnv() ? '[STAGING] ' : ''}${metadata.title}`;
 
     document.title = title;
@@ -175,9 +181,11 @@ export const MetadataManager: React.FC = () => {
     ensureMeta('name', 'description').content = metadata.description;
     ensureMeta('property', 'og:url').content = canonical;
     ensureMeta('property', 'og:title').content = title;
-    ensureMeta('property', 'og:description').content = metadata.description;
-    ensureMeta('property', 'og:image').content = image;
+    ensureMeta('property', 'og:description').content = metadata.ogDescription || metadata.description;
+    if (image) ensureMeta('property', 'og:image').content = image;
+    else document.querySelectorAll('meta[property="og:image"],meta[name="twitter:image"]').forEach(element=>element.remove());
     ensureMeta('property', 'og:type').content = metadata.type || 'website';
+    ensureMeta('name', 'twitter:card').content = image ? 'summary_large_image' : 'summary';
   }, [pathname]);
 
   return null;

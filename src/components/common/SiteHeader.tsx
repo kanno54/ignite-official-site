@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FiveLights } from './FiveLights';
 import { useAudio } from '../audio/AudioProvider';
 import { EqualizerBars } from '../audio/EqualizerBars';
-import { getCurrentCampaign, getLiveArchives } from '../../utils/contentLoader';
+import { getCurrentCampaign, getLiveArchives, getCampaignById } from '../../utils/contentLoader';
 
 export const SiteHeader: React.FC = () => {
   const location = useLocation();
@@ -13,6 +13,7 @@ export const SiteHeader: React.FC = () => {
   const hasLiveArchives = getLiveArchives().length > 0;
 
   const navItems = [
+    ...(getCampaignById('we-burn') ? [{label:'WE BURN',path:'/campaigns/we-burn/'}] : []),
     { label: 'MEMBERS', path: '/members/' },
     { label: 'DISCOGRAPHY', path: '/discography/' },
     ...(hasLiveArchives ? [{ label: 'LIVE', path: '/live/' }] : []),

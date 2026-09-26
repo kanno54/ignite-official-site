@@ -1,0 +1,49 @@
+.we-burn { --campaign-accent:#dfa16b; --campaign-accent-2:#f3eadc; color:#f3eadc; display:flex; flex-direction:column; gap:64px; }
+.we-burn a:focus-visible { outline:3px solid #dfa16b; outline-offset:5px; }
+.we-burn h1,.we-burn h2 { overflow-wrap:anywhere; }
+.wb-label { color:#dfa16b; font-family:var(--font-mono); letter-spacing:.12em; font-size:.85rem; }
+.wb-campaign-hero,.wb-feature-hero { position:relative; background:#151515; }
+.wb-hero-copy { padding:32px; }
+.wb-hero-copy h1 { font-size:clamp(3rem,8vw,6rem); line-height:1; margin:12px 0; }
+.wb-catch { font-size:clamp(1.3rem,3vw,2rem); }
+.wb-release-intro,.wb-track { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.7fr); gap:40px; align-items:start; }
+.wb-tracks { display:grid; gap:56px; }
+.wb-track { padding-top:32px; border-top:1px solid #594539; }
+.wb-note { color:#d4c5b9; font-size:.85rem; }
+.wb-history { display:grid; gap:16px; }
+.wb-history>div { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px 24px; border-bottom:1px solid #594539; padding-bottom:16px; }
+.wb-history dd { margin:0; color:#d4c5b9; }
+.wb-related { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr)); gap:32px; }
+.wb-card { border:1px solid #594539; background:#1c1918; color:#f3eadc; padding:20px; text-decoration:none; }
+.wb-card h2 { font-size:1.3rem; line-height:1.6; }
+.wb-card p { font-size:.9rem; line-height:1.8; color:#c9c1b7; }
+.wb-card>span { display:block; color:#dfa16b; margin-top:20px; font-family:var(--font-mono); }
+.wb-feature { max-width:1120px; margin:auto; }
+.wb-feature-title { padding:28px; }
+.wb-feature-title h1 { font-family:var(--font-serif); font-size:clamp(1.6rem,3.3vw,2.7rem); line-height:1.5; margin:12px 0 0; }
+.wb-toc { display:flex; gap:12px 24px; flex-wrap:wrap; padding:20px 0; border-block:1px solid #594539; }
+.wb-toc a { color:#f3eadc; line-height:1.8; }
+.wb-editorial-section { scroll-margin-top:100px; }
+.wb-editorial-section h2 { font-family:var(--font-serif); font-size:clamp(1.3rem,2.3vw,2rem); line-height:1.7; margin:0 0 32px; }
+.wb-copy { max-width:720px; margin-inline:auto; line-height:2; font-size:1.05rem; }
+.wb-copy p { white-space:pre-wrap; margin:0 0 1.35em; }
+.wb-question { color:#edbd91; font-weight:700; padding-top:20px; }
+.wb-dialogue strong { color:#f0c69a; font-family:var(--font-mono); }
+.wb-portrait { margin:0; max-width:360px; width:100%; }
+.wb-portrait figcaption,.wb-insert figcaption { font-size:.75rem; line-height:1.7; color:#c9c1b7; margin-top:10px; }
+.wb-individual .wb-section-body:has(.wb-portrait) { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.8fr); gap:40px; align-items:start; }
+.wb-individual .wb-editorial-section:nth-of-type(even) .wb-portrait { grid-column:2; grid-row:1; }
+.wb-individual .wb-editorial-section:nth-of-type(even) .wb-section-body:has(.wb-portrait) { grid-template-columns:minmax(0,1.8fr) minmax(0,1fr); }
+.wb-conversation .wb-dialogue { border-left:2px solid #805137; padding-left:20px; }
+.wb-conversation .wb-portrait { margin:40px auto 0; }
+.wb-insert { margin:40px 0 0; }
+.wb-actions { display:flex; gap:16px; flex-wrap:wrap; }
+.we-burn img { object-fit:contain !important; }
+@media(min-width:1000px) { .wb-individual .wb-feature-title { position:absolute; top:0; left:0; width:38%; padding:24px; background:linear-gradient(90deg,rgba(12,12,12,.92),rgba(12,12,12,.25)); } .wb-individual .wb-feature-title h1 { font-size:1.65rem; } }
+@media(max-width:767px) {
+ .wb-editorial-section { scroll-margin-top:130px; }
+ .we-burn { gap:40px; } .wb-hero-copy,.wb-feature-title { padding:20px 16px; }
+ .wb-release-intro,.wb-track,.wb-individual .wb-section-body:has(.wb-portrait),.wb-individual .wb-editorial-section:nth-of-type(even) .wb-section-body:has(.wb-portrait) { grid-template-columns:minmax(0,1fr); gap:24px; }
+ .wb-individual .wb-editorial-section:nth-of-type(even) .wb-portrait { grid-column:auto; grid-row:auto; }
+ .wb-portrait { margin-inline:auto; } .wb-copy { font-size:1rem; } .wb-toc { flex-direction:column; } .wb-actions a { width:100%; text-align:center; }
+}

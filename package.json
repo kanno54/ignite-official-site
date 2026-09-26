@@ -17,6 +17,7 @@
     "baseline:generate": "node scripts/generate-public-content-baseline.mjs",
     "assert-public-cutoff": "node scripts/assert-public-cutoff.mjs",
     "test:static": "node scripts/verify-static-output.mjs",
+    "test:we-burn": "node scripts/verify-we-burn.mjs",
     "generate:image-derivatives": "node scripts/generate-image-derivatives.mjs",
     "prepare:staging": "node scripts/prepare-staging-dist.mjs",
     "build:staging": "node scripts/build-staging.mjs"

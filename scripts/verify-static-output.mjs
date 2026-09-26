@@ -29,7 +29,7 @@ for (const route of routes) {
   if (!html.includes(`<title>${expectedTitleHtml}</title>`)) failures.push(`incorrect title: ${route.path}`);
   if (!html.includes(`<link rel="canonical" href="${route.canonical}" />`)) failures.push(`incorrect canonical: ${route.path}`);
   if (!html.includes(`<meta property="og:url" content="${route.canonical}" />`)) failures.push(`incorrect og:url: ${route.path}`);
-  if (!html.includes(`<meta property="og:image" content="${route.image}" />`)) failures.push(`incorrect og:image: ${route.path}`);
+  if (route.image ? !html.includes(`<meta property="og:image" content="${route.image}" />`) : html.includes('property="og:image"')) failures.push(`incorrect og:image: ${route.path}`);
   console.log(`  VERIFIED: dist/${relativeOutput.replaceAll('\\', '/')}`);
 }
 

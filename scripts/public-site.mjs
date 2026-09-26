@@ -14,6 +14,7 @@ export const articles = readJson('articles.json');
 export const campaigns = readJson('campaigns.json');
 export const assetManifest = readJson('asset-manifest.json');
 export const liveArchives = readJson('live.json');
+const weBurn = readJson('we-burn.json');
 
 const readyAssetPath = (assetId) => {
   const asset = assetManifest.images[assetId];
@@ -77,13 +78,15 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
     const canonical = routePath === '/404.html'
       ? absoluteUrl(siteUrl, '/404.html')
       : absoluteUrl(siteUrl, routePath);
-    const image = metadata.image || fallbackImage;
+    const isWeBurnPage = ['/campaigns/we-burn/','/discography/we-burn/','/features/five-directions/','/features/no-plan/'].includes(routePath);
+    const image = isWeBurnPage ? null : metadata.image || fallbackImage;
     entries.push({
       path: routePath,
       title: metadata.title,
       description: metadata.description,
+      ogDescription: metadata.ogDescription || metadata.description,
       canonical,
-      image: absoluteUrl(siteUrl, image),
+      image: image ? absoluteUrl(siteUrl, image) : null,
       type: metadata.type || 'website',
       lastmod: normalizeSitemapLastmod(metadata.lastmod),
       sitemap: metadata.sitemap !== false,
@@ -116,7 +119,8 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
   for (const release of discography.releases.filter((release) => publicationIsPublic(release.publication, staging))) {
     add(`/discography/${release.slug}/`, {
       title: `${release.title} | IGNITE Discography`,
-      description: release.description,
+      description: release.id === 'we-burn' ? weBurn.seoDescription : release.description,
+      ogDescription: release.id === 'we-burn' ? weBurn.ogDescription : undefined,
       image: release.coverImage || readyAssetPath(release.coverAssetId),
       type: 'music.album',
       lastmod: release.fictionalReleaseDateFull,
@@ -159,7 +163,8 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
   for (const campaign of campaigns.filter((campaign) => campaign.status !== 'staging' || staging)) {
     add(`/campaigns/${campaign.slug || campaign.id}/`, {
       title: `${campaign.title} Campaign | IGNITE Official Portal`,
-      description: `${campaign.catchCopy}。${campaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
+      description: campaign.id === 'we-burn' ? weBurn.seoDescription : `${campaign.catchCopy}。${campaign.introduction?.body || ''}`.replace(/\s+/g, ' ').trim(),
+      ogDescription: campaign.id === 'we-burn' ? weBurn.ogDescription : undefined,
       image: campaign.ogAssetId ? readyAssetPath(campaign.ogAssetId) || campaign.desktopHero : campaign.desktopHero,
       lastmod: campaign.releaseDate,
     });
@@ -173,7 +178,7 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
     add(`/features/${article.slug}/`, {
       title: `${article.title} | IGNITE Official Site`,
       description: article.dek,
-      image: article.heroImage || readyAssetPath(article.heroAssetId),
+      image: readyAssetPath(article.ogAssetId) || article.heroImage || readyAssetPath(article.heroAssetId),
       type: 'article',
       lastmod: article.publishDateFull,
     });

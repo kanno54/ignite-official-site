@@ -5,6 +5,7 @@ import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
+import { WeBurnRelated } from '../components/campaigns/WeBurnCampaignView';
 
 export const TopPage: React.FC = () => {
   const config = getSiteConfig();
@@ -27,6 +28,7 @@ export const TopPage: React.FC = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
+      {campaigns.some(c=>c.id==='we-burn') && <section className="we-burn"><Link to="/campaigns/we-burn/" className="btn-primary">We Burn — 燃える先は、ひとつじゃない。 →</Link><WeBurnRelated /></section>}
       {/* 1. Dynamic Campaign Hero Banner */}
       <section
         style={{

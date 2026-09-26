@@ -1,0 +1,82 @@
+[
+  {
+    "images": [
+      {
+        "alt": "同じ空間でそれぞれ別の方向を見つめるIGNITEの五人",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-FE01-HR01_v01_1600w.webp"
+      },
+      {
+        "alt": "KAI — We Burn ソロビジュアル",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-M01_v01_960w.webp"
+      },
+      {
+        "alt": "SHO — We Burn ソロビジュアル",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-M02_v01_960w.webp"
+      },
+      {
+        "alt": "LEO — We Burn ソロビジュアル",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-M03_v01_960w.webp"
+      },
+      {
+        "alt": "REN — We Burn ソロビジュアル",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-M04_v01_960w.webp"
+      },
+      {
+        "alt": "YUTO — We Burn ソロビジュアル",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-M05_v01_960w.webp"
+      },
+      {
+        "alt": "NO PLAN — IGNITE五人のエディトリアルイメージ",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/wb25-fe02-card.jpg"
+      }
+    ],
+    "links": [
+      "/discography/we-burn/",
+      "/campaigns/we-burn/",
+      "/features/no-plan/"
+    ],
+    "route": "/features/five-directions/"
+  },
+  {
+    "images": [
+      {
+        "alt": "IGNITE五人が集まる制作スタジオのエディトリアルイメージ",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-FE02-HR01_v01_1600w.webp"
+      },
+      {
+        "alt": "SHOが音に耳を傾けるエディトリアルイメージ",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-FE02-PH01_v01_960w.webp"
+      },
+      {
+        "alt": "リズムのずれを表す無人スタジオのエディトリアルイメージ",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-FE02-IN01_v01_1600w.webp"
+      },
+      {
+        "alt": "五人それぞれの動きを描くエディトリアルイメージ",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/derivatives/WB25-FE02-IN02_v01_1600w.webp"
+      },
+      {
+        "alt": "FIVE DIRECTIONS — IGNITE五人のエディトリアルイメージ",
+        "loaded": true,
+        "src": "http://127.0.0.1:5173/assets/images/we-burn/wb25-fe01-card.jpg"
+      }
+    ],
+    "links": [
+      "/discography/we-burn/",
+      "/campaigns/we-burn/",
+      "/features/five-directions/"
+    ],
+    "route": "/features/no-plan/"
+  }
+]

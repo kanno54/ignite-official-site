@@ -70,7 +70,7 @@ export const getReleases = (): Release[] => {
 
 export const getReleaseBySlug = (slug: string): Release | undefined => {
   const release = (discographyData.releases as Release[]).find((r) => r.slug === slug);
-  if (!release || release.publication.visibility !== 'public') return undefined;
+  if (!release || release.publication.visibility !== 'public' || release.publication.campaignState === 'future') return undefined;
   if (release.publication.campaignState === 'staging' && !isStagingEnv()) {
     return undefined;
   }
@@ -89,12 +89,13 @@ export const getReleaseById = (id: string): Release | undefined => {
 };
 
 export const getRecordings = (): Recording[] => {
-  return discographyData.recordings as Recording[];
+  const visibleReleaseIds = new Set(getReleases().map(release => release.id));
+  return (discographyData.recordings as Recording[]).filter(recording => visibleReleaseIds.has(recording.releaseId));
 };
 
 export const getJukeboxRecordings = (): Recording[] => {
-  return (discographyData.recordings as Recording[]).filter(
-    (r) => r.id !== 'solar-no-limits' && r.id !== 'solar-moonlit'
+  return getRecordings().filter(
+    (r) => r.audioStatus === 'ready' && r.id !== 'solar-no-limits' && r.id !== 'solar-moonlit'
   );
 };
 

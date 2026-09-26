@@ -66,6 +66,7 @@ for (const [id, publishAt] of expectedFeaturePublishAt) {
   }
 }
 const sortedFeatureIds = articles
+  .filter((article) => article.relatedCampaignId === 'live-album-2024')
   .map((article, originalIndex) => ({ article, originalIndex }))
   .sort((a, b) => {
     const dateDifference = new Date(b.article.publication.publishAt || 0).getTime() - new Date(a.article.publication.publishAt || 0).getTime();

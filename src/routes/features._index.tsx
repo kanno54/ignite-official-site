@@ -20,7 +20,7 @@ export const FeaturesIndex: React.FC = () => {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '32px' }}>
         {articles.map((art) => (
           <Link
             key={art.id}
@@ -36,7 +36,7 @@ export const FeaturesIndex: React.FC = () => {
               transition: 'transform 0.2s ease',
             }}
           >
-            <ResponsivePicture assetId={art.heroAssetId} title={art.kicker} subtitle={art.title} aspectRatio="3:2" accentColor="var(--campaign-accent)" />
+            <ResponsivePicture assetId={art.cardAssetId || art.heroAssetId} title={art.kicker} subtitle={art.title} aspectRatio={art.cardAssetId ? '1:1' : '3:2'} accentColor="var(--campaign-accent)" loading="lazy" />
 
             <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '8px' }}>

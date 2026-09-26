@@ -11,6 +11,7 @@ import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { useAudio } from '../components/audio/AudioProvider';
 import { LyricsRenderer } from '../components/discography/LyricSection.mjs';
+import { WeBurnCampaignView } from '../components/campaigns/WeBurnCampaignView';
 
 export const ReleaseDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -27,6 +28,8 @@ export const ReleaseDetailPage: React.FC = () => {
   if (!release) {
     return <Navigate to="/discography/" replace />;
   }
+
+  if (release.id === 'we-burn') return <WeBurnCampaignView release />;
 
   const tracks = getRecordingsForRelease(release.id);
   const isEquinox = release.id === 'equinox';

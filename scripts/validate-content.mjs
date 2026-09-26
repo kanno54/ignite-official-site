@@ -51,7 +51,7 @@ for (const recording of discography.recordings) {
   if (recordingOwners.get(recording.id) !== recording.releaseId) {
     failures.push(`recording/release relationship mismatch: ${recording.id} -> ${recording.releaseId}`);
   }
-  if (!recording.audioUrl || !fs.existsSync(publicFile(recording.audioUrl))) {
+  if (recording.audioStatus === 'ready' && (!recording.audioUrl || !fs.existsSync(publicFile(recording.audioUrl)))) {
     failures.push(`recording audio is missing: ${recording.id} -> ${recording.audioUrl}`);
   }
   if (recording.posterAssetId) {

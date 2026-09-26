@@ -813,5 +813,38 @@
     "ogAssetId": "la24-og02",
     "canonicalSourceAssetCode": "LA24-CP01",
     "storySourceAssetCode": "LA24-ST01"
+  },
+  {
+    "id": "we-burn",
+    "slug": "we-burn",
+    "status": "staging",
+    "releaseId": "we-burn",
+    "releaseDate": "2025.04.23",
+    "eyebrow": "IGNITE 7th Single",
+    "title": "We Burn",
+    "catchCopy": "燃える先は、ひとつじゃない。",
+    "desktopHero": "/assets/images/we-burn/WB25-WEB01_v01.webp",
+    "mobileHero": "/assets/images/we-burn/WB25-WEB02_v01.webp",
+    "heroAssetId": "wb25-web01",
+    "mobileHeroAssetId": "wb25-web02",
+    "primaryCta": {
+      "text": "VIEW RELEASE",
+      "action": "link",
+      "url": "/discography/we-burn/"
+    },
+    "secondaryCta": {
+      "text": "READ NO PLAN",
+      "action": "link",
+      "url": "/features/no-plan/"
+    },
+    "campaignColors": {
+      "accent": "#DFA16B",
+      "deep": "#171515",
+      "text": "#F3EADC"
+    },
+    "relatedArticleIds": [
+      "five-directions",
+      "no-plan"
+    ]
   }
 ]

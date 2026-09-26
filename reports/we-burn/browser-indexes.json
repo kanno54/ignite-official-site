@@ -1,0 +1,56 @@
+[
+  {
+    "campaignLinks": 3,
+    "fiveDirectionsLinks": 1,
+    "noPlanLinks": 1,
+    "overflow": false,
+    "releaseLinks": 1,
+    "route": "/",
+    "width": 360
+  },
+  {
+    "campaignLinks": 1,
+    "fiveDirectionsLinks": 1,
+    "noPlanLinks": 1,
+    "overflow": false,
+    "releaseLinks": 0,
+    "route": "/features/",
+    "width": 360
+  },
+  {
+    "campaignLinks": 1,
+    "fiveDirectionsLinks": 0,
+    "noPlanLinks": 0,
+    "overflow": false,
+    "releaseLinks": 1,
+    "route": "/discography/",
+    "width": 360
+  },
+  {
+    "campaignLinks": 3,
+    "fiveDirectionsLinks": 1,
+    "noPlanLinks": 1,
+    "overflow": false,
+    "releaseLinks": 1,
+    "route": "/",
+    "width": 1440
+  },
+  {
+    "campaignLinks": 1,
+    "fiveDirectionsLinks": 1,
+    "noPlanLinks": 1,
+    "overflow": false,
+    "releaseLinks": 0,
+    "route": "/features/",
+    "width": 1440
+  },
+  {
+    "campaignLinks": 1,
+    "fiveDirectionsLinks": 0,
+    "noPlanLinks": 0,
+    "overflow": false,
+    "releaseLinks": 1,
+    "route": "/discography/",
+    "width": 1440
+  }
+]

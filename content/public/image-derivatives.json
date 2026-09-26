@@ -121,6 +121,43 @@
         960,
         1280
       ]
+    },
+    "weBurn1600": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960,
+        1280,
+        1600
+      ]
+    },
+    "weBurn941": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640
+      ]
+    },
+    "weBurn1254": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960
+      ]
+    },
+    "weBurn1122": {
+      "format": "webp",
+      "quality": 80,
+      "widths": [
+        384,
+        640,
+        960
+      ]
     }
   },
   "assets": {
@@ -227,6 +264,27 @@
     "la24-tr24-sq": "liveAlbumSquare",
     "la24-kv01": "heroDesktop",
     "la24-kv02": "campaignMobile",
-    "la24-kv03": "liveAlbumSquare"
+    "la24-kv03": "liveAlbumSquare",
+    "wb25-web01": "weBurn1600",
+    "wb25-web02": "weBurn941",
+    "wb25-jk01": "weBurn1254",
+    "wb25-wb01": "weBurn1254",
+    "wb25-wb02": "weBurn1122",
+    "wb25-np01": "weBurn1254",
+    "wb25-np02": "weBurn1122",
+    "wb25-bs01": "weBurn1254",
+    "wb25-bs02": "weBurn1122",
+    "wb25-fe01-hr01": "weBurn1600",
+    "wb25-fe02-hr01": "weBurn1600",
+    "wb25-fe02-ph01": "weBurn1122",
+    "wb25-fe02-in01": "weBurn1600",
+    "wb25-fe02-in02": "weBurn1600",
+    "wb25-fe01-sns01": "weBurn1122",
+    "wb25-fe02-sns01": "weBurn1122",
+    "wb25-m01": "weBurn1122",
+    "wb25-m02": "weBurn1122",
+    "wb25-m03": "weBurn1122",
+    "wb25-m04": "weBurn1122",
+    "wb25-m05": "weBurn1122"
   }
 }
