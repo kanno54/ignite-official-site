@@ -12,6 +12,7 @@ type TimelineEvent = {
   title: string;
   description: string;
   link: string;
+  secondaryLink?: string;
   canonicalMarkdown?: string;
 };
 
@@ -110,17 +111,46 @@ export const StoryPage: React.FC = () => {
       description: '2nd Full Album『EQUINOX』を携えた全国ツアーが開幕。光と影、静寂と熱をひとつのステージで結び、五人と客席が同じ瞬間を共有する。',
       link: '/campaigns/equinox/',
     });
+    timelineEvents.push({
+      id: 'live-tour-2024-tokyo-final',
+      date: '2024.09',
+      era: 'EQUINOX NATIONAL TOUR',
+      title: 'LIVE TOUR 2024 東京ファイナル — 「We Burn」初披露',
+      description: 'ツアーの集大成となる東京ファイナルで、未発表曲「We Burn」を初披露。五人それぞれの未来を示す、新しい宣言として会場に届けた。',
+      link: '/live/live-tour-2024/',
+    });
   }
 
   if (getReleaseById('live-album-2024') && storyMarkdown) {
     timelineEvents.push({
       id: 'live-album-2024',
-      date: '2024',
+      date: '2025.02',
       era: 'LIVE ALBUM 2024',
       title: '',
       description: '',
       canonicalMarkdown: storyMarkdown,
       link: '/campaigns/live-album-2024/',
+    });
+  }
+
+  if (getReleaseById('we-burn')) {
+    timelineEvents.push({
+      id: 'we-burn-announcement',
+      date: '2025.03.26',
+      era: 'WE BURN ERA',
+      title: '7th Single『We Burn』発表',
+      description: '2024年ツアーファイナルで初披露した「We Burn」を正式にシングル化。未来、現在、原点を描く三曲構成の作品として、次章の輪郭を発表した。',
+      link: '/campaigns/we-burn/',
+      secondaryLink: '/discography/we-burn/',
+    });
+    timelineEvents.push({
+      id: 'we-burn',
+      date: '2025.04.23',
+      era: 'WE BURN ERA',
+      title: '7th Single『We Burn』リリース — 燃える先は、ひとつじゃない。',
+      description: '2024年ツアーファイナルで初披露した「We Burn」を、7th Singleとして正式リリース。五人がそれぞれの道を選びながら同じ熱を持って進む意思を、新たなサウンドとビジュアルで提示する。TAKE FOURと制作した実験的なダンスファンク「NO PLAN」、デビューシングルのカップリングを現在の五人で鳴らした「Back to the Spark - Live Version -」を収録。未来、現在、原点という三つの時間を通じて、IGNITEの次章が始まる。',
+      link: '/campaigns/we-burn/',
+      secondaryLink: '/discography/we-burn/',
     });
   }
 
@@ -132,7 +162,7 @@ export const StoryPage: React.FC = () => {
           OFFICIAL STORY & TIMELINE
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', lineHeight: 1.6, margin: 0 }}>
-          2020年10月のインディーズ始動から、LIVE TOUR 2024を経て『IGNITE LIVE 2024』へ。五人の音がステージで変わり、その変化が作品として残るまでの公式年表。
+          2020年10月のインディーズ始動から、LIVE TOUR 2024、そして7th Single『We Burn』へ。五人の音がステージで変わり、その変化が作品として残り、次の宣言になるまでの公式年表。
         </p>
       </div>
 
@@ -192,8 +222,13 @@ export const StoryPage: React.FC = () => {
                     {ev.date} // {eraText}
                   </span>
                   <Link to={ev.link} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4' }}>
-                    {ev.id === 'live-album-2024' ? 'VIEW CAMPAIGN' : 'VIEW RELEASE'} ➔
+                    {ev.id === 'live-album-2024' || ev.id.startsWith('we-burn') ? 'VIEW CAMPAIGN' : 'VIEW RELEASE'} ➔
                   </Link>
+                  {ev.secondaryLink && (
+                    <Link to={ev.secondaryLink} style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: '#AEB6C4' }}>
+                      VIEW RELEASE ➔
+                    </Link>
+                  )}
                 </div>
 
                 {ev.canonicalMarkdown ? (
