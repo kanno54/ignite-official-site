@@ -41,7 +41,7 @@ const staged=read('dist/index.html').includes('[STAGING]');
 if(!staged){
   assert.ok(!fs.existsSync('dist/assets/images/we-burn'));
   assert.ok(!fs.existsSync('dist/media/audio/we-burn'));
-  const bundle=read('dist/assets/index.js');
+  const bundle=fs.readdirSync('dist/assets').filter(f=>f.endsWith('.js')).map(f=>read('dist/assets/'+f)).join('');
   for(const phrase of ['自分一人だったら、何を言うんだろうって。','WB25-TXT-FEAT01','WB25-JK01_v01.webp']) assert.ok(!bundle.includes(phrase),`Staging content leaked: ${phrase}`);
 }
 for(const route of routes) assert.equal(staging.find(r=>r.path===route).image,null);

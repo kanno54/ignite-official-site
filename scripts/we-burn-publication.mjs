@@ -61,6 +61,13 @@ export function applyWeBurnPublication(root, packageRoot) {
   write('articles',articles);
   const campaigns=read('campaigns'),campaign=campaigns.find(c=>c.id==='we-burn');
   campaign.releaseDate='2025.04.23';delete campaign.ogAssetId;
+  const approvedCopy=read('we-burn');
+  const plain=value=>value.replaceAll('\r\n','\n').replace(/^#{1,3}\s+[^\n]*\n/gm,'').replaceAll('**','').trim();
+  campaign.bannerCopy='FIVE DIRECTIONS. ONE FIRE.';
+  campaign.introduction={heading:'7th Single『We Burn』',body:plain(approvedCopy.releaseMarkdown)};
+  campaign.trackDescriptions=Object.fromEntries(disc.recordings.filter(r=>r.releaseId==='we-burn').map((r,i)=>[r.id,plain(approvedCopy.tracks[i].markdown)]));
+  campaign.relatedArticleIds=['five-directions','no-plan'];
+  campaign.relatedCampaignIds=['live-album-2024','equinox'];
   write('campaigns',campaigns);
   const copy=read('we-burn');
   Object.assign(copy,{publicationDates,externalLinks:[],ogImage:null});

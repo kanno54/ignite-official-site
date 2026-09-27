@@ -1,0 +1,26 @@
+[
+  {
+    "id": "we-burn-single",
+    "url": "https://staging.ignite-official.site/media/audio/we-burn/WB25-AUD01_v01.mp3",
+    "status": 200,
+    "mime": "audio/mpeg",
+    "range": null,
+    "bytes": 7658733
+  },
+  {
+    "id": "we-burn-no-plan",
+    "url": "https://staging.ignite-official.site/media/audio/we-burn/WB25-AUD02_v01.mp3",
+    "status": 200,
+    "mime": "audio/mpeg",
+    "range": null,
+    "bytes": 6353123
+  },
+  {
+    "id": "we-burn-back-to-the-spark-live",
+    "url": "https://staging.ignite-official.site/media/audio/we-burn/WB25-AUD03_v01.mp3",
+    "status": 200,
+    "mime": "audio/mpeg",
+    "range": null,
+    "bytes": 5910689
+  }
+]

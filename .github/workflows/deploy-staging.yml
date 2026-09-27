@@ -24,6 +24,9 @@ jobs:
       - name: Run Release Validation Gate
         run: npm run validate
 
+      - name: Verify campaign selection and release order
+        run: npm run test:content-selection
+
       - name: TypeScript Check
         run: npm exec tsc -- --noEmit
 

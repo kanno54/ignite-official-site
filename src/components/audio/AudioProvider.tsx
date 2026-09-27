@@ -9,7 +9,9 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const [playerState, setPlayerState] = useState<PlayerState>(() => {
-    const savedVolume = localStorage.getItem('ignite_player_volume');
+    let savedVolume: string | null = null;
+    try { savedVolume = localStorage.getItem('ignite_player_volume'); } catch { /* Private storage may be unavailable. */ }
+    const parsedVolume = savedVolume === null ? 0.8 : Number(savedVolume);
     return {
       currentTrackId: null,
       currentRecording: null,
@@ -17,21 +19,50 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       queueIndex: 0,
       queueContext: null,
       isPlaying: false,
+      isLoading: false,
       currentTime: 0,
       duration: 0,
-      volume: savedVolume ? parseFloat(savedVolume) : 0.8,
+      volume: Number.isFinite(parsedVolume) ? Math.min(1, Math.max(0, parsedVolume)) : 0.8,
       muted: false,
       isExpanded: false,
       error: null,
     };
   });
 
+  const stateRef = useRef(playerState);
+  stateRef.current = playerState;
+  const requestRef = useRef(0);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const clearPending = () => { clearTimeout(timeoutRef.current); };
+  const playbackError = (message: string) => {
+    console.warn("Audio playback interrupted", {message,src:audioRef.current?.currentSrc,mediaError:audioRef.current?.error?.code,networkState:audioRef.current?.networkState,readyState:audioRef.current?.readyState});
+    clearPending();
+    setPlayerState(prev => ({...prev, isPlaying:false, isLoading:false, error:message}));
+  };
+  const attemptPlay = (audio: HTMLAudioElement) => {
+    const request = ++requestRef.current;
+    clearPending();
+    setPlayerState(prev=>({...prev,isLoading:true,error:null}));
+    timeoutRef.current=setTimeout(()=>{
+      if(request!==requestRef.current) return;
+      ++requestRef.current; audio.pause();
+      playbackError('通信がタイムアウトしました。再生ボタンで再試行できます。');
+    },20000);
+    audio.play().then(()=>{
+      if(request!==requestRef.current) return;
+      clearPending(); setPlayerState(prev=>({...prev,isPlaying:true,isLoading:false,error:null}));
+    }).catch(error=>{
+      if(request!==requestRef.current) return;
+      playbackError(error.name==='NotAllowedError' ? '再生ボタンを押して音声を開始してください。' : '通信または音声の読み込みに失敗しました。再生ボタンで再試行できます。');
+    });
+  };
+
   // Initialize single shared HTMLAudioElement with strict event handling
   useEffect(() => {
-    const audio = new Audio();
+    const audio = audioRef.current!;
     audio.preload = 'metadata';
     audio.volume = playerState.volume;
-    audioRef.current = audio;
+
 
     const handleTimeUpdate = () => {
       setPlayerState((prev) => ({
@@ -42,98 +73,29 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     };
 
     const handleEnded = () => {
-      // Immediately reset time to 0 upon track completion so play state is clean
-      audio.currentTime = 0;
-
-      setPlayerState((prev) => {
-        if (prev.currentRecording) {
-          const rec = prev.currentRecording;
-          trackTrackComplete({
-            track_id: rec.id,
-            release_id: rec.releaseId,
-            track_position: prev.queueIndex + 1,
-            track_version: rec.versionLabel,
-            source: prev.queueContext || 'manual',
-          });
-        }
-
-        let nextIndex = prev.queueIndex + 1;
-        let nextQueue = prev.queue;
-
-        // Shuffle Bag auto-advance for jukebox mode
-        if (prev.queueContext === 'jukebox' && nextIndex >= prev.queue.length) {
-          const allReady = getJukeboxRecordings()
-            .filter((r) => r.audioStatus === 'ready')
-            .map((r) => r.id);
-
-          if (allReady.length > 0) {
-            let shuffled = [...allReady].sort(() => Math.random() - 0.5);
-            const lastTrackId = prev.currentTrackId;
-            if (lastTrackId && shuffled.length > 1 && shuffled[0] === lastTrackId) {
-              const swapIdx = 1 + Math.floor(Math.random() * (shuffled.length - 1));
-              [shuffled[0], shuffled[swapIdx]] = [shuffled[swapIdx], shuffled[0]];
-            }
-            nextQueue = shuffled;
-            nextIndex = 0;
-          }
-        }
-
-        if (nextIndex < nextQueue.length) {
-          const nextTrackId = nextQueue[nextIndex];
-          const nextRecording = getRecordingById(nextTrackId);
-
-          if (nextRecording && nextRecording.audioStatus === 'ready' && audioRef.current) {
-            audioRef.current.src = nextRecording.audioUrl;
-            audioRef.current.currentTime = 0;
-            audioRef.current.play().catch(() => {});
-            return {
-              ...prev,
-              currentTrackId: nextTrackId,
-              currentRecording: nextRecording,
-              queue: nextQueue,
-              queueIndex: nextIndex,
-              isPlaying: true,
-              error: null,
-            };
-          }
-        }
-
-        if (audioRef.current) {
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
-          audioRef.current.removeAttribute('src');
-          audioRef.current.load();
-        }
-
-        if (typeof window !== 'undefined' && 'mediaSession' in navigator) {
-          try {
-            navigator.mediaSession.metadata = null;
-            navigator.mediaSession.playbackState = 'none';
-          } catch (e) {
-            // Ignore
-          }
-        }
-
-        return {
-          ...prev,
-          currentTrackId: null,
-          currentRecording: null,
-          isPlaying: false,
-          currentTime: 0,
-          duration: 0,
-          isExpanded: false,
-          error: null,
-        };
-      });
+      const prev=stateRef.current;
+      if(prev.currentRecording) trackTrackComplete({track_id:prev.currentRecording.id,release_id:prev.currentRecording.releaseId,track_position:prev.queueIndex+1,track_version:prev.currentRecording.versionLabel,source:prev.queueContext||'manual'});
+      const next=prev.queueIndex+1;
+      if(next<prev.queue.length) playTrack(prev.queue[next],prev.queue,prev.queueContext);
+      else if(prev.queueContext==='jukebox') {
+        const queue=getJukeboxRecordings().map(r=>r.id).filter(id=>id!==prev.currentTrackId).sort(()=>Math.random()-.5);
+        if(queue.length) playTrack(queue[0],queue,'jukebox'); else stopTrack();
+      } else stopTrack();
     };
 
     const handleError = () => {
-      setPlayerState((prev) => ({
-        ...prev,
-        isPlaying: false,
-        error: 'この音源は現在再生できません。',
-      }));
+      ++requestRef.current;
+      audio.dataset.mediaError = String(audio.error?.code || 0);
+      playbackError('音源を読み込めませんでした。再生ボタンで再試行できます。');
     };
+    const handleWaiting = () => {
+      if(!audio.paused) {
+        setPlayerState(prev=>({...prev,isLoading:true}));
+        clearPending();
+        timeoutRef.current=setTimeout(()=>{++requestRef.current;audio.pause();playbackError('通信が途切れました。再生ボタンで再試行できます。');},20000);
+      }
+    };
+    const handlePlaying = () => {clearPending();setPlayerState(prev=>({...prev,isPlaying:true,isLoading:false,error:null}));};
 
     const handlePlay = () => {
       setPlayerState((prev) => {
@@ -165,6 +127,9 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       setPlayerState((prev) => (prev.isPlaying ? { ...prev, isPlaying: false } : prev));
     };
 
+    audio.addEventListener('waiting',handleWaiting);
+    audio.addEventListener('playing',handlePlaying);
+    audio.addEventListener('loadedmetadata',handleTimeUpdate);
     audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('ended', handleEnded);
     audio.addEventListener('error', handleError);
@@ -172,6 +137,10 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     audio.addEventListener('pause', handlePause);
 
     return () => {
+      ++requestRef.current; clearPending();
+      audio.removeEventListener('waiting',handleWaiting);
+      audio.removeEventListener('playing',handlePlaying);
+      audio.removeEventListener('loadedmetadata',handleTimeUpdate);
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('error', handleError);
@@ -208,7 +177,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     }
 
     const origin = window.location.origin;
-    const jpgImagePath = relativeImagePath.replace(/\.webp$/i, '.jpg');
+    const jpgImagePath = relativeImagePath;
     const fullJpgUrl = jpgImagePath.startsWith('http') ? jpgImagePath : `${origin}${jpgImagePath}`;
     const fullWebpUrl = relativeImagePath.startsWith('http') ? relativeImagePath : `${origin}${relativeImagePath}`;
 
@@ -290,33 +259,14 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const queue = customQueue && customQueue.length > 0 ? customQueue : [recordingId];
     const queueIndex = Math.max(0, queue.indexOf(recordingId));
 
-    if (audioRef.current) {
-      audioRef.current.src = recording.audioUrl;
-      audioRef.current.currentTime = 0;
-      audioRef.current
-        .play()
-        .then(() => {
-          setPlayerState((prev) => ({
-            ...prev,
-            currentTrackId: recordingId,
-            currentRecording: recording,
-            queue,
-            queueIndex,
-            queueContext: context,
-            isPlaying: true,
-            error: null,
-          }));
-        })
-        .catch(() => {
-          setPlayerState((prev) => ({
-            ...prev,
-            currentTrackId: recordingId,
-            currentRecording: recording,
-            isPlaying: false,
-            error: '音声の再生に失敗しました。',
-          }));
-        });
-    }
+    const audio=audioRef.current;
+    if (!audio || !recording.audioUrl) return;
+    ++requestRef.current; clearPending(); audio.pause();
+    setPlayerState(prev=>({...prev,currentTrackId:recordingId,currentRecording:recording,queue,queueIndex,queueContext:context,isPlaying:false,isLoading:true,currentTime:0,duration:recording.durationSeconds,error:null}));
+    audio.dataset.recordingId=recordingId; delete audio.dataset.mediaError;
+    audio.src=recording.audioUrl;
+    audio.load();
+    attemptPlay(audio);
   };
 
   const playRelease = (releaseId: string) => {
@@ -327,35 +277,17 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const togglePlay = () => {
-    if (!audioRef.current || !playerState.currentRecording) return;
-    const audio = audioRef.current;
-
-    if (playerState.isPlaying && !audio.paused) {
-      audio.pause();
-      setPlayerState((prev) => ({ ...prev, isPlaying: false }));
-    } else {
-      if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration - 0.5)) {
-        audio.currentTime = 0;
-      }
-      audio
-        .play()
-        .then(() => {
-          setPlayerState((prev) => ({ ...prev, isPlaying: true }));
-        })
-        .catch(() => {
-          setPlayerState((prev) => ({ ...prev, isPlaying: false }));
-        });
-    }
+    if (stateRef.current.isPlaying || stateRef.current.isLoading) pause();
+    else resume();
   };
-
   const pause = () => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      setPlayerState((prev) => ({ ...prev, isPlaying: false }));
-    }
+    ++requestRef.current; clearPending();
+    audioRef.current?.pause();
+    setPlayerState(prev=>({...prev,isPlaying:false,isLoading:false}));
   };
 
   const stopTrack = () => {
+    ++requestRef.current; clearPending();
     if (audioRef.current) {
       const audio = audioRef.current;
       audio.pause();
@@ -378,6 +310,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       currentTrackId: null,
       currentRecording: null,
       isPlaying: false,
+      isLoading: false,
       currentTime: 0,
       duration: 0,
       isExpanded: false,
@@ -386,20 +319,12 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   };
 
   const resume = () => {
-    if (!audioRef.current || !playerState.currentRecording) return;
-    const audio = audioRef.current;
-
-    if (audio.ended || (audio.duration > 0 && audio.currentTime >= audio.duration - 0.5)) {
-      audio.currentTime = 0;
-    }
-    audio
-      .play()
-      .then(() => {
-        setPlayerState((prev) => ({ ...prev, isPlaying: true }));
-      })
-      .catch(() => {
-        setPlayerState((prev) => ({ ...prev, isPlaying: false }));
-      });
+    const audio=audioRef.current, current=stateRef.current;
+    if (!audio || !current.currentRecording) return;
+    if (audio.error || current.error) {
+      audio.src=current.currentRecording.audioUrl; audio.load();
+    } else if(audio.ended) audio.currentTime=0;
+    attemptPlay(audio);
   };
 
   const nextTrack = () => {
@@ -448,7 +373,8 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (audioRef.current) {
       audioRef.current.volume = clamped;
     }
-    localStorage.setItem('ignite_player_volume', clamped.toString());
+    if(audioRef.current) audioRef.current.muted=clamped===0;
+    try { localStorage.setItem('ignite_player_volume', clamped.toString()); } catch { /* Playback works without storage. */ }
     setPlayerState((prev) => ({ ...prev, volume: clamped, muted: clamped === 0 }));
   };
 
@@ -487,6 +413,7 @@ export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         setIsExpanded,
       }}
     >
+      <audio ref={audioRef} preload="metadata" aria-hidden="true" style={{display:'none'}} />
       {children}
     </AudioContext.Provider>
   );

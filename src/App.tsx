@@ -150,7 +150,7 @@ export const App: React.FC = () => {
       <ScrollToTop />
       <MetadataManager />
       <AnalyticsTracker />
-      <div className="app-container" data-campaign={currentCampaign.id}>
+      <div className="app-container" data-campaign={currentCampaign.id} style={{'--campaign-accent':currentCampaign.campaignColors.accent,'--campaign-deep':currentCampaign.campaignColors.deep,'--campaign-accent-2':currentCampaign.campaignColors.text} as React.CSSProperties}>
         <SiteHeader />
 
         <main className="main-content">

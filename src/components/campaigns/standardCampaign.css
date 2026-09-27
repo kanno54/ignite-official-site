@@ -1,0 +1,11 @@
+/* Existing campaign template: allow its grids and track controls to wrap on narrow screens. */
+.standard-campaign { min-width: 0; }
+.standard-campaign > div { max-width: 100%; }
+.standard-campaign section { min-width: 0; }
+.standard-campaign section > div { min-width: 0; }
+.standard-campaign p { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .standard-campaign section { padding-inline: 20px !important; }
+  .standard-campaign div[style*="grid-template-columns"] { grid-template-columns: minmax(0, 1fr) !important; }
+  .standard-campaign div[style*="justify-content: space-between"] { flex-wrap: wrap; gap: 16px; }
+}

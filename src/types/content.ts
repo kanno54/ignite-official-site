@@ -10,6 +10,7 @@ export type SiteConfig = {
   canonicalUrl: string;
   fictionalCurrentDate: string;
   currentCampaign: string;
+  stagingCurrentCampaignId?: string;
   latestReleaseId: string;
   pickUpTrackId: string;
   group: {

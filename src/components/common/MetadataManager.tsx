@@ -54,7 +54,7 @@ export const MetadataManager: React.FC = () => {
     const manifest = getAssetManifest();
     const manifestImages = manifest.images as Record<string, { path: string; status: string }>;
     const parts = pathname.split('/').filter(Boolean);
-    const fallbackImage = campaign.desktopHero;
+    const fallbackImage = campaign.id === 'we-burn' ? null : campaign.desktopHero;
     let metadata: PageMetadata = {
       title: currentRelease
         ? `IGNITE Official Portal — ${currentRelease.format}『${currentRelease.title}』`
@@ -172,7 +172,7 @@ export const MetadataManager: React.FC = () => {
     const siteUrl = configuredSiteUrl.replace(/\/$/, '');
     const canonical = `${siteUrl}${pathname === '/' ? '/' : `${pathname.replace(/\/$/, '')}/`}`;
     const isWeBurnPage = (['campaigns','discography'].includes(parts[0]) && parts[1] === 'we-burn') || (parts[0] === 'features' && ['five-directions','no-plan'].includes(parts[1]));
-    if (isWeBurnPage) metadata.image = null;
+    if (isWeBurnPage || (parts.length === 0 && campaign.id === 'we-burn')) metadata.image = null;
     const image = metadata.image ? (/^https?:\/\//.test(metadata.image) ? metadata.image : `${siteUrl}${metadata.image}`) : null;
     const title = `${isStagingEnv() ? '[STAGING] ' : ''}${metadata.title}`;
 

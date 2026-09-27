@@ -54,5 +54,6 @@
     "enableEmberPass": true,
     "enableLyricCard": false,
     "enableSetlistMaker": false
-  }
+  },
+  "stagingCurrentCampaignId": "we-burn"
 }

@@ -180,6 +180,8 @@ export const ExpandedPlayer: React.FC = () => {
           {/* Playhead & Seek */}
           <div>
             <div
+              role="slider" tabIndex={0} aria-label="再生位置" aria-valuemin={0} aria-valuemax={duration || 0} aria-valuenow={currentTime}
+              onKeyDown={event=>{const values:Record<string,number>={ArrowRight:Math.min(duration,currentTime+5),ArrowLeft:Math.max(0,currentTime-5),Home:0,End:duration};if(event.key in values){event.preventDefault();seek(values[event.key]);}}}
               style={{
                 width: '100%',
                 height: '6px',
@@ -309,7 +311,7 @@ export const ExpandedPlayer: React.FC = () => {
 
           {/* Volume Control */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', justifyContent: 'center' }}>
-            <button onClick={toggleMute} style={{ fontSize: '1rem', color: '#AEB6C4' }}>
+            <button aria-label={muted ? "Unmute" : "Mute"} onClick={toggleMute} style={{ fontSize: '1rem', color: '#AEB6C4' }}>
               {muted || volume === 0 ? '🔇' : '🔊'}
             </button>
             <input

@@ -1,3 +1,4 @@
+import { selectCurrentCampaign } from '../src/utils/contentSelection.mjs';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -67,11 +68,9 @@ export const normalizeSitemapLastmod = (value) => {
 };
 
 export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.siteUrl }) => {
-  const currentCampaign = (staging && campaigns.find((campaign) => campaign.id === 'live-album-2024' && campaign.status === 'staging'))
-    || campaigns.find((campaign) => campaign.status === 'current')
-    || campaigns[0];
+  const currentCampaign = selectCurrentCampaign(campaigns, siteConfig, staging);
   const currentRelease = discography.releases.find((release) => release.id === currentCampaign.releaseId) || discography.releases[0];
-  const fallbackImage = currentCampaign.desktopHero;
+  const fallbackImage = currentCampaign.id === 'we-burn' ? null : currentCampaign.desktopHero;
   const entries = [];
 
   const add = (routePath, metadata) => {
@@ -79,7 +78,7 @@ export const getPublicRouteEntries = ({ staging = false, siteUrl = siteConfig.si
       ? absoluteUrl(siteUrl, '/404.html')
       : absoluteUrl(siteUrl, routePath);
     const isWeBurnPage = ['/campaigns/we-burn/','/discography/we-burn/','/features/five-directions/','/features/no-plan/'].includes(routePath);
-    const image = isWeBurnPage ? null : metadata.image || fallbackImage;
+    const image = isWeBurnPage || (routePath === '/' && currentCampaign.id === 'we-burn') ? null : metadata.image || fallbackImage;
     entries.push({
       path: routePath,
       title: metadata.title,

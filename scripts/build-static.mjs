@@ -42,12 +42,9 @@ for (const route of routes) {
   fs.mkdirSync(path.dirname(targetPath), { recursive: true });
 
   const title = `${isStagingBuild ? '[STAGING] ' : ''}${route.title}`;
-  const timestamp = Date.now();
   let customizedHtml = baseHtml
     .replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(title)}</title>`)
-    .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${escapeHtml(route.canonical)}" />`)
-    .replace('src="/assets/index.js"', `src="/assets/index.js?v=${timestamp}"`)
-    .replace('href="/assets/index.css"', `href="/assets/index.css?v=${timestamp}"`);
+    .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${escapeHtml(route.canonical)}" />`);
   customizedHtml = replaceMeta(customizedHtml, 'description', route.description);
   customizedHtml = replaceMeta(customizedHtml, 'og:url', route.canonical);
   customizedHtml = replaceMeta(customizedHtml, 'og:title', title);

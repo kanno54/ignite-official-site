@@ -23,7 +23,7 @@ export const TrackPlayButton: React.FC<Props> = ({
   }
 
   const isCurrent = playerState.currentTrackId === recordingId;
-  const isPlaying = isCurrent && playerState.isPlaying;
+  const isPlaying = isCurrent && (playerState.isPlaying || playerState.isLoading);
 
   const handleClick = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -78,7 +78,7 @@ export const TrackPlayButton: React.FC<Props> = ({
         {isPlaying ? '⏸' : '▶'}
       </span>
       {showLabel && (
-        <span>{isPlaying ? 'PAUSE' : 'PLAY'}</span>
+        <span>{isCurrent && playerState.isLoading ? 'CANCEL LOADING' : isPlaying ? 'PAUSE' : isCurrent && playerState.error ? 'RETRY' : 'PLAY'}</span>
       )}
     </button>
   );

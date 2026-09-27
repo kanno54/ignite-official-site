@@ -1,0 +1,24 @@
+[
+  {
+    "phase": "503",
+    "message": "音源を読み込めませんでした。再生ボタンで再試行できます。"
+  },
+  {
+    "phase": "503 recovered",
+    "times": [
+      "0:16",
+      "4:04"
+    ]
+  },
+  {
+    "phase": "stall timeout",
+    "message": []
+  },
+  {
+    "phase": "stalled request recovered without reload",
+    "times": [
+      "0:46",
+      "4:12"
+    ]
+  }
+]

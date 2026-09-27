@@ -1,3 +1,4 @@
+import { selectCurrentCampaign, sortReleasesNewestFirst } from './contentSelection.mjs';
 import siteConfigData from '../../content/public/site-config.json';
 import membersData from '../../content/public/members.json';
 import discographyData from '../../content/public/discography.json';
@@ -33,16 +34,7 @@ export const getCampaignById = (id: string): Campaign | undefined => {
   return c;
 };
 
-export const getCurrentCampaign = (): Campaign => {
-  const campaigns = campaignsData as Campaign[];
-  if (isStagingEnv()) {
-    const stagingCampaign = campaigns.find((c) => c.id === 'live-album-2024' && c.status === 'staging');
-    if (stagingCampaign) return stagingCampaign;
-  }
-  const current = campaigns.find((c) => c.status === 'current');
-  if (current) return current;
-  return campaigns[0];
-};
+export const getCurrentCampaign = (): Campaign => selectCurrentCampaign(campaignsData as Campaign[], siteConfigData as SiteConfig, isStagingEnv());
 
 export const getSiteConfig = (): SiteConfig => {
   return siteConfigData as SiteConfig;
@@ -60,12 +52,12 @@ export const getMemberBySlug = (slug: string): Member | undefined => {
 
 export const getReleases = (): Release[] => {
   const isStaging = isStagingEnv();
-  return (discographyData.releases as Release[]).filter((r) => {
+  return sortReleasesNewestFirst((discographyData.releases as Release[]).filter((r) => {
     if (r.publication.visibility !== 'public') return false;
     if (r.publication.campaignState === 'future') return false;
     if (r.publication.campaignState === 'staging' && !isStaging) return false;
     return true;
-  });
+  }));
 };
 
 export const getReleaseBySlug = (slug: string): Release | undefined => {

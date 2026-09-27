@@ -14,7 +14,9 @@ function formatTime(seconds: number): string {
 
 export const MiniPlayer: React.FC = () => {
   const { playerState, togglePlay, nextTrack, seek, toggleExpand } = useAudio();
-  const { currentRecording, isPlaying, currentTime, duration, isExpanded, error } = playerState;
+  const { currentRecording, currentTime, duration, isExpanded, error } = playerState;
+
+  const isPlaying = playerState.isPlaying || playerState.isLoading;
 
   if (!currentRecording) {
     return null;
@@ -229,10 +231,10 @@ export const MiniPlayer: React.FC = () => {
 
       {/* Error notification banner if any */}
       {error && (
-        <div
+        <div role="alert"
           style={{
             position: 'absolute',
-            top: '-32px',
+            bottom: '100%',
             left: 0,
             right: 0,
             backgroundColor: 'var(--color-error)',

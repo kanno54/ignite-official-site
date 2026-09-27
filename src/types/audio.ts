@@ -7,6 +7,7 @@ export type PlayerState = {
   queueIndex: number;
   queueContext: 'release' | 'jukebox' | 'manual' | null;
   isPlaying: boolean;
+  isLoading: boolean;
   currentTime: number;
   duration: number;
   volume: number;

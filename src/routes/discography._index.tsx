@@ -18,17 +18,7 @@ export const DiscographyIndex: React.FC = () => {
       if (filterFormat === 'SINGLE') return r.format.includes('Single');
       if (filterFormat === 'ALBUM') return r.format.includes('Album');
       return true;
-    })
-    .sort((a, b) => {
-      if (a.id === 'live-album-2024') return -1;
-      if (b.id === 'live-album-2024') return 1;
-      if (filterFormat === 'SINGLE') {
-        // Singles tab: release date ascending (IGNITION at top)
-        return a.fictionalReleaseDate.localeCompare(b.fictionalReleaseDate);
-      }
-      // ALL and ALBUMS tabs: release date descending (Silent Signal / SOLAR at top)
-      return b.fictionalReleaseDate.localeCompare(a.fictionalReleaseDate);
-    });
+    });
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -38,7 +28,7 @@ export const DiscographyIndex: React.FC = () => {
           DISCOGRAPHY
         </h1>
         <p style={{ fontSize: '1rem', color: '#AEB6C4', maxWidth: '700px', lineHeight: 1.6, margin: 0 }}>
-          インディーズミニアルバム『FIRESTARTER』から最新リリースまで。IGNITEの歩んできた軌跡と全34曲の公開収録音源。
+          インディーズミニアルバム『FIRESTARTER』から最新リリースまで。IGNITEの歩んできた軌跡と公開収録音源。
         </p>
       </div>
 

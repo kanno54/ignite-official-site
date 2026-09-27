@@ -5,7 +5,7 @@ import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { FiveLights } from '../components/common/FiveLights';
 import { useAudio } from '../components/audio/AudioProvider';
-import { WeBurnRelated } from '../components/campaigns/WeBurnCampaignView';
+import { CampaignFeatures, CampaignTracks } from '../components/campaigns/StandardCampaignView';
 
 export const TopPage: React.FC = () => {
   const config = getSiteConfig();
@@ -23,12 +23,10 @@ export const TopPage: React.FC = () => {
   const latestArticle = articles.find((article) =>
     currentCampaign.relatedArticleIds.includes(article.id) || currentCampaign.relatedArticleIds.includes(article.slug)
   ) || articles[0];
-  const currentCampaignIndex = campaigns.findIndex((campaign) => campaign.id === currentCampaign.id);
-  const previousCampaign = currentCampaignIndex >= 0 ? campaigns[currentCampaignIndex + 1] : undefined;
+  const previousCampaign = releases.map(r=>campaigns.find(c=>c.releaseId===r.id)).find(c=>c && c.id!==currentCampaign.id);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '80px' }}>
-      {campaigns.some(c=>c.id==='we-burn') && <section className="we-burn"><Link to="/campaigns/we-burn/" className="btn-primary">We Burn — 燃える先は、ひとつじゃない。 →</Link><WeBurnRelated /></section>}
       {/* 1. Dynamic Campaign Hero Banner */}
       <section
         style={{
@@ -122,6 +120,9 @@ export const TopPage: React.FC = () => {
           )}
         </section>
       )}
+
+      {currentCampaign.trackDescriptions && <CampaignTracks campaign={currentCampaign} />}
+      <CampaignFeatures campaign={currentCampaign} />
 
       {/* 3. Latest News */}
       <section style={{ backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-border)', padding: 'clamp(20px, 4vw, 32px)', borderRadius: '2px' }}>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getCampaigns } from '../utils/contentLoader';
+import { getCampaigns, getCurrentCampaign, getReleases } from '../utils/contentLoader';
 import { FiveLights } from '../components/common/FiveLights';
 import { ResponsivePicture } from '../components/common/ResponsivePicture';
 import { trackCampaignArchiveSelect } from '../utils/analytics';
 
 export const CampaignsIndex: React.FC = () => {
-  const campaigns = getCampaigns();
+  const campaigns = getReleases().map(r=>getCampaigns().find(c=>c.releaseId===r.id)).filter((c): c is NonNullable<typeof c> => Boolean(c));
 
   return (
     <div style={{ maxWidth: 'var(--article-content)', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '40px' }}>
@@ -20,9 +20,9 @@ export const CampaignsIndex: React.FC = () => {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '32px' }}>
         {campaigns.map((camp) => {
-          const isCurrent = camp.status === 'current' || camp.id === 'live-album-2024';
+          const isCurrent = camp.id === getCurrentCampaign().id;
           return (
           <div
             key={camp.id}

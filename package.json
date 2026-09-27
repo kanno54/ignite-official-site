@@ -20,7 +20,8 @@
     "test:we-burn": "node scripts/verify-we-burn.mjs",
     "generate:image-derivatives": "node scripts/generate-image-derivatives.mjs",
     "prepare:staging": "node scripts/prepare-staging-dist.mjs",
-    "build:staging": "node scripts/build-staging.mjs"
+    "build:staging": "node scripts/build-staging.mjs",
+    "test:content-selection": "node scripts/test-content-selection.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

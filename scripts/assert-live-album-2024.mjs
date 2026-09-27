@@ -38,7 +38,7 @@ const contentLoaderSource = fs.readFileSync(path.join(root, 'src', 'utils', 'con
 const discographyIndexSource = fs.readFileSync(path.join(root, 'src', 'routes', 'discography._index.tsx'), 'utf8');
 required((campaignRoute.match(/campaign\.id === 'live-album-2024'/gu) || []).length === 1, 'CAMPAIGN_ROUTE_1');
 required(['staging', 'current'].includes(campaign?.status), 'CAMPAIGN_LIFECYCLE_STATE_VALID');
-required(campaign?.id === 'live-album-2024' && contentLoaderSource.includes("c.id === 'live-album-2024' && c.status === 'staging'") && contentLoaderSource.includes("campaigns.find((c) => c.status === 'current')"), 'CURRENT_CAMPAIGN_LIVE_ALBUM_2024');
+required(campaign?.status === 'current' && contentLoaderSource.includes('selectCurrentCampaign'), 'PRODUCTION_CURRENT_CAMPAIGN_PRESERVED');
 required(campaign?.releaseId === release?.id && release?.title === 'IGNITE LIVE 2024', 'CURRENT_ERA_IGNITE_LIVE_2024');
 required(discographyIndexSource.includes('const currentReleaseId = getCurrentCampaign().releaseId;') && discographyIndexSource.includes('const isCurrentEra = rel.id === currentReleaseId;') && !discographyIndexSource.includes("rel.campaignState === 'current'"), 'CURRENT_ERA_RESOLVES_FROM_CURRENT_CAMPAIGN_RELEASE_ID');
 required(campaign?.heroAssetId === 'la24-kv01', 'CAMPAIGN_PC_HERO_LA24_KV01');
