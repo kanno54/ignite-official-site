@@ -21,12 +21,16 @@ test('production confirmation is bound to the exact full commit SHA', () => {
 test('invalid CLI inputs fail before mutation', async () => {
   for (const args of [['stage', 'production'], ['verify'], ['stage', '--aply'], ['rollback', 'unknown'], ['check', '--to']]) await assert.rejects(main(args));
 });
-test('production has no automatic trigger and retired scheduler cannot deploy', () => {
+test('production uses main push, retired scheduler cannot deploy, confirmation precedes push', () => {
   const production = fs.readFileSync('.github/workflows/deploy.yml', 'utf8');
-  assert.ok(production.includes('SITE_OPS_MANUAL_PRODUCTION_V1'));
-  assert.ok(production.includes("inputs.confirmation == format('PRODUCTION:{0}', github.sha)"));
+  assert.ok(production.includes('SITE_OPS_PUSH_PRODUCTION_V1'));
+  assert.ok(production.includes("if: github.ref == 'refs/heads/main'"));
+  assert.ok(production.includes('branches: [ main ]'));
   assert.ok(production.includes('secrets.SFTP_PROD_PATH || secrets.SFTP_REMOTE_PATH'));
-  assert.doesNotMatch(production, /\n\s+(push|schedule):/);
+  assert.doesNotMatch(production, /\n\s+(workflow_dispatch|schedule):/);
+  const cli = fs.readFileSync('scripts/site-ops.mjs', 'utf8').split('async function production(')[1].split('async function rollback(')[0];
+  assert.ok(cli.indexOf('requireProductionConfirmation(sha, confirmation)') < cli.indexOf("git('push'"));
+  assert.doesNotMatch(cli, /dispatches|GITHUB_TOKEN/);
   const scheduler = fs.readFileSync('.github/workflows/scheduled-release.yml', 'utf8');
   assert.doesNotMatch(scheduler, /cron:|lftp|SFTP_|deploy-site/);
   const transport = fs.readFileSync('scripts/deploy-site.sh', 'utf8');

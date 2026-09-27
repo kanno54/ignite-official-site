@@ -9,12 +9,14 @@ case "$SITE_ENV" in
     candidates=("${FTP_PATH:-}" /staging.ignite-official.site /public_html/staging.ignite-official.site /staging /public_html/staging staging.ignite-official.site public_html/staging.ignite-official.site)
     ;;
   production)
-    # Never guess a production directory or fall back to the account root.
+    # Restore the existing domain-specific candidate discovery. Probe each
+    # directory successfully before transfer; never fall back after failure.
+    candidates=()
     case "${FTP_PATH:-}" in
-      /ignite-official.site|/public_html/ignite-official.site|ignite-official.site|public_html/ignite-official.site) ;;
-      *) echo 'Set SFTP_PROD_PATH to the verified ignite-official.site directory; refusing other paths'; exit 1 ;;
+      /ignite-official.site|/public_html/ignite-official.site|ignite-official.site|public_html/ignite-official.site) candidates+=("$FTP_PATH") ;;
+      *) echo 'Configured path is empty or not domain-specific; probing existing production domain directories' ;;
     esac
-    candidates=("$FTP_PATH")
+    candidates+=(/ignite-official.site /public_html/ignite-official.site ignite-official.site public_html/ignite-official.site)
     ;;
   *) echo 'Unknown environment'; exit 1 ;;
 esac

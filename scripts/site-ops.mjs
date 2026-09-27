@@ -41,12 +41,12 @@ export function validateManifest(manifest, environment, expected) {
   if (manifest.environment !== environment || manifest.sha !== expected || !/^[a-f0-9]{40}$/.test(expected)) throw new Error('Wrong environment or stale revision.');
   if (!manifest.files || !manifest.files['/index.html']) throw new Error('Missing entry document hashes.');
   for (const [name, hash] of Object.entries(manifest.files)) {
-    if (!/^\/(?:assets\/[\w.-]+|(?:[\w-]+\/)*index\.html)$/.test(name) || !/^[a-f0-9]{64}$/.test(hash)) throw new Error('Invalid manifest file.');
+    if (!/^\/(?:assets\/[\w./-]+|(?:[\w-]+\/)*index\.html)$/.test(name) || name.split('/').includes('..') || !/^[a-f0-9]{64}$/.test(hash)) throw new Error('Invalid manifest file.');
   }
 }
 function manifest(environment) {
   const files = {};
-  for (const route of [...routes, ...(environment === 'staging' ? stageRoutes : [])]) {
+  for (const route of [...routes, ...stageRoutes]) {
     const file = `${route}index.html`;
     const html = fs.readFileSync(path.join(root, 'dist', file));
     files[file] = digest(html);
@@ -54,13 +54,17 @@ function manifest(environment) {
       files[match[1]] = digest(fs.readFileSync(path.join(root, 'dist', match[1])));
     }
   }
+  const jacket = JSON.parse(fs.readFileSync(path.join(root, 'content/public/asset-manifest.json'))).images['wb25-jk01'].path;
+  for (const file of [jacket, ...[384,640,960].map(width => jacket.replace(/\/([^/]+)\.webp$/, `/derivatives/$1_${width}w.webp`))]) {
+    files[file] = digest(fs.readFileSync(path.join(root, 'dist', file)));
+  }
   fs.writeFileSync(path.join(root, 'dist/site-revision.json'), JSON.stringify({ environment, sha: git('rev-parse', 'HEAD'), files }, null, 2));
 }
 export async function verify(environment, expected) {
   const base = sites[environment];
   const manifest = await (await get(`${base}/site-revision.json?revision=${expected}`)).json();
   validateManifest(manifest, environment, expected);
-  for (const route of [...routes, ...(environment === 'staging' ? stageRoutes : [])]) {
+  for (const route of [...routes, ...stageRoutes]) {
     if (!manifest.files[`${route}index.html`]) throw new Error(`Missing route in manifest: ${route}`);
   }
   if (!Object.keys(manifest.files).some(file => file.endsWith('.js'))) throw new Error('Missing application bundle hash.');
@@ -115,19 +119,20 @@ export function requireProductionConfirmation(sha, confirmation) {
   if (confirmation !== `PRODUCTION:${sha}`) throw new Error(`Explicit confirmation required: --confirm PRODUCTION:${sha}`);
 }
 async function production(sha, apply, confirmation) {
-  if (sha !== remoteHead('main')) throw new Error('Production must use the current remote main commit.');
-  // Refuse to dispatch the legacy workflow, even if this local checkout has been updated.
-  const installed = await (await get(`https://raw.githubusercontent.com/${repo}/${sha}/.github/workflows/deploy.yml`)).text();
-  if (!installed.includes('SITE_OPS_MANUAL_PRODUCTION_V1') || /\n\s+(push|schedule):/.test(installed)) throw new Error('Safe manual workflow is not installed on main. See README installation section.');
-  const scheduler = await (await get(`https://raw.githubusercontent.com/${repo}/${sha}/.github/workflows/scheduled-release.yml`)).text();
+  preflight();
+  if (!/^[a-f0-9]{40}$/.test(sha)) throw new Error('Use a full 40-character commit SHA.');
+  const installed = git('show', `${sha}:.github/workflows/deploy.yml`);
+  if (!installed.includes('SITE_OPS_PUSH_PRODUCTION_V1') || !installed.includes('branches: [ main ]')) throw new Error('Target commit lacks the production push workflow.');
+  const scheduler = git('show', `${sha}:.github/workflows/scheduled-release.yml`);
   if (/cron:|lftp|SFTP_|deploy-site/.test(scheduler)) throw new Error('Legacy scheduled production deployment is still enabled.');
   console.log(`Production target: ${sites.production}, main ${sha}`);
+  console.log(`To publish: npm run site -- production --sha ${sha} --apply --confirm PRODUCTION:${sha}`);
   if (!apply) return;
   requireProductionConfirmation(sha, confirmation);
-  if (!process.env.GITHUB_TOKEN) throw new Error('Set a GitHub token with Actions write access, or use the GitHub Actions manual form documented in README.');
-  const started = Date.now() - 1000;
-  await github('/actions/workflows/deploy.yml/dispatches', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ref: 'main', inputs: { confirmation: `PRODUCTION:${sha}` } }) });
-  await waitForDeploy('production', sha, started);
+  git('fetch', 'origin', 'main');
+  git('merge-base', '--is-ancestor', 'origin/main', sha);
+  git('push', 'origin', `${sha}:refs/heads/main`);
+  await waitForDeploy('production', sha);
 }
 async function rollback(environment, target, apply, confirmation) {
   preflight();
@@ -146,9 +151,10 @@ async function rollback(environment, target, apply, confirmation) {
   const sha = createRollbackCommit(root, good, head);
   // Fast-forward push only. Concurrent remote updates fail rather than being overwritten.
   console.log(`Created rollback commit: ${sha}`);
-  git('push', 'origin', `${sha}:refs/heads/${branch}`);
-  if (environment === 'staging') await waitForDeploy(environment, sha);
-  else console.log(`Rollback commit pushed, NOT deployed. Confirm its new SHA separately: npm run site -- production --sha ${sha} --apply --confirm PRODUCTION:${sha}`);
+  if (environment === 'staging') {
+    git('push', 'origin', `${sha}:refs/heads/${branch}`);
+    await waitForDeploy(environment, sha);
+  } else console.log(`Rollback commit created locally, NOT pushed or deployed. Publish separately: npm run site -- production --sha ${sha} --apply --confirm PRODUCTION:${sha}`);
 }
 export function createRollbackCommit(repository, good, head) {
   const localGit = (...args) => run('git', args, repository, true);
@@ -195,7 +201,7 @@ export async function main(args) {
     git('merge-base', '--is-ancestor', 'origin/staging', sha);
     console.log(`Staging target: ${sites.staging}, committed HEAD ${sha}. Checks/build run once in CI.`);
     if (options.apply) { git('push', 'origin', `${sha}:refs/heads/staging`); await waitForDeploy('staging', sha); }
-  } else if (command === 'production') await production(options.sha || remoteHead('main'), options.apply, options.confirm);
+  } else if (command === 'production') await production(options.sha || git('rev-parse', 'HEAD'), options.apply, options.confirm);
   else if (command === 'rollback') {
     if (environment === 'production') await production(remoteHead('main'), false);
     await rollback(environment, options.to, options.apply, options.confirm);

@@ -33,26 +33,26 @@ npm run test:we-burn-interview
 npm run test:story-we-burn
 ```
 
-## 本番操作と初回導入の制限
+## 本番操作（既存のGit認証だけで実行）
 
-**この実装をステージングに置いただけでは、main上の旧設定は変わりません。今回、本番ブランチも本番サイトも変更しません。** 旧mainにはpush公開と年次cron公開が残っています。本番運用を開始する前に、管理者が `.github/workflows/deploy.yml` の手動確認版と `scheduled-release.yml` の停止版、および本運用スクリプトをレビューしてmainへ取り込む必要があります。スクリプトはmain上の旧設定を検出すると本番操作を拒否します。設定導入のためにWe Burnの公開状態を一括変更しないでください。
+本番は従来どおりmainへのpushで公開します。運用スクリプトが完全SHAの明示確認を受けてからpushし、Actions完了と実URLを検証します。Actions用トークンやブラウザでの手動起動は不要です。**直接 `git push origin ...:main` すると確認を経ず公開されるため、通常運用は以下のスクリプトを使ってください。** 年次cron公開は停止したままです。
 
-本番の `SFTP_PROD_PATH` は実際に確認済みの専用ディレクトリに設定してください。許可値は `/ignite-official.site`、`/public_html/ignite-official.site` または先頭 `/` を除いた形です。以前の共用 `SFTP_REMOTE_PATH` や `/public_html` 全体へのフォールバックは使用しません。既存構成がこの値以外の場合は転送を止め、管理者が実パスを確認してから許可値を修正します。
+既存の `SFTP_PROD_PATH` または `SFTP_REMOTE_PATH` を使用します。旧workflowのドメイン専用候補 `/ignite-official.site`、`/public_html/ignite-official.site` および先頭 `/` を除いた形を再利用し、接続とディレクトリ移動が成功した場所だけに転送します。共用 `/public_html` 全体や存在を確認できない場所へは転送しません。
 
-導入後はmainへのpushだけでは公開されません。
+対象はコミット済みのローカルHEADです。未コミットのサイト変更やmainとの分岐があれば停止します。既にpush済みの同じSHAでは新しいrunは作られません。失敗runはGitHubで再実行し、`wait` コマンドで結果を確認してください。
 
 ```powershell
-# 最新mainの対象確認（反映なし）
+# ローカルHEADの対象確認（反映なし）。実行用コマンドも表示されます。
 .\site.cmd production
 
-# Actions書込権限のある既存GitHub tokenをGITHUB_TOKEN環境変数で設定した場合
-# トークンをコマンド履歴・README・Gitに記録しないでください。
-.\site.cmd production --sha <mainの40桁SHA> --apply --confirm PRODUCTION:<同じSHA>
+# SHAを手入力せず、Gitから取得して明示確認するPowerShellの例
+$releaseSha = git rev-parse HEAD
+.\site.cmd production --sha $releaseSha --apply --confirm "PRODUCTION:$releaseSha"
 
 .\site.cmd verify production --sha <公開した40桁SHA>
 ```
 
-トークンを用意しない場合は [本番Actions](https://github.com/kanno54/ignite-official-site/actions/workflows/deploy.yml) の **Run workflow** でmainを選び、確認欄に `PRODUCTION:40桁SHA` を入力してください。その後 `site.cmd wait production --sha ...` で完了と実URLを検証できます。確認文字列が実際のmain SHAと異なる場合、Actionsの公開ジョブは実行されません。本番は常に既存の本番用コンテンツ選択を使い、staging状態を自動昇格しません。
+`site.cmd wait production --sha ...` で中断後の待機を再開できます。本番は既存の本番用コンテンツ選択を使い、staging状態のデータを自動昇格しません。
 
 ## ロールバック
 
@@ -62,7 +62,7 @@ npm run test:story-we-burn
 .\site.cmd rollback staging --to <復元先SHA>
 .\site.cmd rollback staging --to <復元先SHA> --apply
 
-# 本番は、現main SHAへの確認で復元コミットを作るだけ（公開は別操作）
+# 本番は、現main SHAへの確認でローカルに復元コミットを作るだけ（push・公開は別操作）
 .\site.cmd rollback production --to <復元先SHA> --apply --confirm PRODUCTION:<現在のmainの40桁SHA>
 # 出力された新しいSHAに対して、上記productionコマンドで別途公開確認
 ```
@@ -86,6 +86,6 @@ FTP転送は従来どおり逐次更新で、原子的切替ではありませ�
 - push成功で終了、任意の本文文字列検索 → Actions待機とSHA・HTML・JS/CSSの実体照合。
 - 音源確認未設定 → 実在音源のRange確認。
 - 運用スクリプト自身も巻き戻す復元 → 運用/依存変更をまたぐ場合は停止。
-- 本番未対応 → SHAに結びついた確認付き手動公開、旧定期公開の停止版。
+- 本番未対応 → ローカルでSHAの明示確認を受けた通常push公開、旧定期公開の停止。
 
 既存本番workflowには転送対象dist内に認証情報入り `deploy.lftp` を生成する記述もありました。新実装では転送範囲外の一時ファイルだけを使います。過去にそのファイルが本番へ転送されたかは未確認です。サーバー管理者は旧ファイルの有無を確認し、残っていれば削除・認証情報更新を行ってください。本作業で本番サーバーを変更しません。

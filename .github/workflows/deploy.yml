@@ -1,13 +1,9 @@
 name: IGNITE production — Build & Deploy
-# SITE_OPS_MANUAL_PRODUCTION_V1
+# SITE_OPS_PUSH_PRODUCTION_V1
 
 on:
-  workflow_dispatch:
-    inputs:
-      confirmation:
-        description: 'Enter PRODUCTION: followed by the full current main commit SHA'
-        required: true
-        type: string
+  push:
+    branches: [ main ]
 
 concurrency:
   group: ignite-production
@@ -18,7 +14,7 @@ permissions:
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main' && inputs.confirmation == format('PRODUCTION:{0}', github.sha)
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
