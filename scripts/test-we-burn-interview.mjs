@@ -18,7 +18,8 @@ const articles = JSON.parse(fs.readFileSync('content/public/articles.json', 'utf
 const parsed = {};
 for (const [slug, file] of [['five-directions', 'WB25-TXT-FEAT01_v01.md'], ['no-plan', 'WB25-TXT-FEAT02_v01.md']]) {
   const source = fs.readFileSync(`content/canonical/we-burn/${file}`, 'utf8');
-  assert.equal(articles.find(a => a.slug === slug).canonicalMarkdown, source);
+  // Git checks out LF on CI and CRLF on Windows; preserve every paragraph.
+  assert.equal(articles.find(a => a.slug === slug).canonicalMarkdown.replace(/\r\n/g, '\n'), source.replace(/\r\n/g, '\n'));
   const sections = parseWeBurnInterview(source, { closingEditorialStart: slug === 'no-plan' ? NO_PLAN_EDITORIAL_START : undefined });
   parsed[slug] = sections;
   const reconstructed = sections.flatMap(s => [s.heading, ...s.blocks.flatMap(b => b.paragraphs.map((p, i) => b.type === 'speech' && i === 0 ? b.label + b.separator + p : p))]).filter(Boolean);
