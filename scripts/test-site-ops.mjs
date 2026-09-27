@@ -25,6 +25,7 @@ test('production has no automatic trigger and retired scheduler cannot deploy', 
   const production = fs.readFileSync('.github/workflows/deploy.yml', 'utf8');
   assert.ok(production.includes('SITE_OPS_MANUAL_PRODUCTION_V1'));
   assert.ok(production.includes("inputs.confirmation == format('PRODUCTION:{0}', github.sha)"));
+  assert.ok(production.includes('secrets.SFTP_PROD_PATH || secrets.SFTP_REMOTE_PATH'));
   assert.doesNotMatch(production, /\n\s+(push|schedule):/);
   const scheduler = fs.readFileSync('.github/workflows/scheduled-release.yml', 'utf8');
   assert.doesNotMatch(scheduler, /cron:|lftp|SFTP_|deploy-site/);

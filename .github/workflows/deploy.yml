@@ -47,7 +47,9 @@ jobs:
           FTP_HOST: ${{ secrets.SFTP_HOST }}
           FTP_USER: ${{ secrets.SFTP_USERNAME }}
           FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
-          FTP_PATH: ${{ secrets.SFTP_PROD_PATH }}
+          # Reuse the legacy production-path secret when the dedicated name has
+          # not been migrated yet. deploy-site.sh still rejects broad paths.
+          FTP_PATH: ${{ secrets.SFTP_PROD_PATH || secrets.SFTP_REMOTE_PATH }}
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
           bash scripts/deploy-site.sh
