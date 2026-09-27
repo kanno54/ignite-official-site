@@ -5,7 +5,7 @@ import { useAudio } from '../audio/AudioProvider';
 import { TrackPlayButton } from '../audio/TrackPlayButton';
 import { ResponsivePicture } from '../common/ResponsivePicture';
 import { LiveMarkdown } from '../live/LiveMarkdown';
-import { getLiveAlbumCampaignContent } from '../../utils/contentLoader';
+import { getLiveAlbumCampaignContent, getCurrentCampaign } from '../../utils/contentLoader';
 
 type Props = { campaign: Campaign; relatedArticles: Article[] };
 
@@ -32,7 +32,7 @@ export const LiveAlbumCampaignView: React.FC<Props> = ({ campaign, relatedArticl
       <section className="live-album-campaign__hero">
         <ResponsivePicture assetId="la24-kv01" mobileAssetId="la24-kv02" aspectRatio="16:9" mobileAspectRatio="3:4" alt="IGNITE LIVE 2024 campaign key visual" loading="eager" decoding="async" fetchPriority="high" sizes="100vw" className="live-album-campaign__hero-picture" />
         <div className="live-album-campaign__hero-copy">
-          <span className="live-kicker">CURRENT CAMPAIGN // LA24-CP01</span>
+          <span className="live-kicker">{getCurrentCampaign().id === campaign.id ? 'CURRENT CAMPAIGN' : 'ARCHIVED CAMPAIGN'} // LA24-CP01</span>
           <LiveMarkdown markdown={blocks[0] || ''} />
           <Link className="btn-primary" to="/discography/live-album-2024/">LISTEN TO THE RELEASE →</Link>
         </div>
