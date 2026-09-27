@@ -2663,14 +2663,14 @@
       "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
     },
     "wb25-jk01": {
-      "path": "/assets/images/we-burn/WB25-JK01_v01.webp",
+      "path": "/assets/images/we-burn/WB25-JK01_v02.webp",
       "status": "ready",
       "aspect": "1:1",
       "assetCode": "WB25-JK01",
-      "selectedVersion": 1,
-      "selectedVersionId": "v-wb25-jk01-1-1789990357843",
-      "sourceSha256": "343e99be4674782f3f06fdcc103b16c319a53f1f2a5d068ad3dcecfaeae5d003",
-      "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+      "selectedVersion": 2,
+      "selectedVersionId": "WB25-JK01_v02",
+      "sourceSha256": "c30a0540533e71a4dbc45a0bbc0645ef9b81edd3b1799591c2cc326c0c4129ff",
+      "sourcePackage": "user-approved-update-2026-09-27"
     },
     "wb25-wb01": {
       "path": "/assets/images/we-burn/WB25-WB01_v01.webp",

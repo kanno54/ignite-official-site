@@ -32,14 +32,20 @@ const manifest = json(content('asset-manifest'));
 const derivatives = json(content('image-derivatives'));
 const visualCodes = ['WB25-WEB01','WB25-WEB02','WB25-JK01','WB25-WB01','WB25-WB02','WB25-NP01','WB25-NP02','WB25-BS01','WB25-BS02','WB25-FE01-HR01','WB25-FE02-HR01','WB25-FE02-PH01','WB25-FE02-IN01','WB25-FE02-IN02','WB25-FE01-SNS01','WB25-FE02-SNS01',...Array.from({length:5},(_,i)=>`WB25-M0${i+1}`)];
 for (const code of visualCodes) {
-  const a = source(code), id = code.toLowerCase();
-  const src = path.join(packageRoot, a.file_path);
+  const delivered = source(code), id = code.toLowerCase();
+  const isUpdatedJacket = code === 'WB25-JK01';
+  const src = isUpdatedJacket
+    ? path.join(canonical, 'images/WB25-JK01_v02.png')
+    : path.join(packageRoot, delivered.file_path);
+  const a = isUpdatedJacket
+    ? { version_no: 2, version_id: 'WB25-JK01_v02', sha256: hash(src) }
+    : delivered;
   const meta = await sharp(src).metadata();
   const url = `/assets/images/we-burn/${code}_v${String(a.version_no).padStart(2,'0')}.webp`;
   fs.mkdirSync(path.join(root, 'public/assets/images/we-burn'), {recursive:true});
   await sharp(src).webp({quality:88}).toFile(path.join(root,'public',url));
   const aspect = code === 'WB25-WEB02' ? '9:16' : /M0[1-5]$|PH01$|SNS01$/.test(code) ? '4:5' : /JK01$|(?:WB|NP|BS)01$/.test(code) ? '1:1' : /(?:WB|NP|BS)02$/.test(code) ? '3:4' : '16:9';
-  manifest.images[id] = {path:url,status:'ready',aspect,assetCode:code,selectedVersion:a.version_no,selectedVersionId:a.version_id,sourceSha256:a.sha256,sourcePackage:delivery.package_id};
+  manifest.images[id] = {path:url,status:'ready',aspect,assetCode:code,selectedVersion:a.version_no,selectedVersionId:a.version_id,sourceSha256:a.sha256,sourcePackage:isUpdatedJacket?'user-approved-update-2026-09-27':delivery.package_id};
   const profile = `weBurn${Math.min(meta.width,1600)}`;
   derivatives.profiles[profile] = {format:'webp',quality:80,widths:[384,640,960,1280,1600].filter(w=>w<=meta.width)};
   derivatives.assets[id] = profile;
