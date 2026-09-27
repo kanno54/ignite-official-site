@@ -118,7 +118,25 @@ jobs:
           open -u "$FTP_USER","$FTP_PASS" "$FTP_HOST"
           cd "$CHOSEN_DIR"
           mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
-          quit
           EOF
 
+          # Hashed asset references can change without changing HTML byte length.
+          # Always replace entry documents; keep the size-based bulk media sync.
+          while IFS= read -r -d '' page; do
+            printf 'put "%s" -o "%s"\n' "$page" "$page" >> "$DEPLOY_SCRIPT"
+          done < <(find . -type f \( -name '*.html' -o -name '*.xml' -o -name '.htaccess' -o -name 'robots.txt' \) -print0)
+          echo 'quit' >> "$DEPLOY_SCRIPT"
           lftp -f "$DEPLOY_SCRIPT"
+
+      - name: Verify deployed entry documents match this build
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          for (const route of ['/', '/campaigns/solar/', '/campaigns/we-burn/', '/discography/', '/discography/we-burn/', '/features/five-directions/', '/features/no-plan/']) {
+            const response = await fetch(`https://staging.ignite-official.site${route}`, {headers:{'Cache-Control':'no-cache'}});
+            assert.equal(response.status, 200, route);
+            assert.equal(await response.text(), fs.readFileSync(`dist${route}index.html`, 'utf8'), `Stale deployed document: ${route}`);
+          }
+          console.log('All seven deployed entry documents match the current build.');
+          NODE
