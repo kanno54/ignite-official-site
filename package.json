@@ -12,7 +12,7 @@
     "validate:assets": "node scripts/validate-assets.mjs && node scripts/generate-image-derivatives.mjs --check",
     "validate:routes": "node scripts/validate-routes.mjs",
     "validate:regressions": "node scripts/validate-regressions.mjs",
-    "validate": "npm run validate:data && npm run validate:assets && npm run validate:routes && npm run validate:regressions && npm run test:validators",
+    "validate": "npm run validate:data && npm run validate:assets && npm run validate:routes && npm run validate:regressions && npm run test:validators && npm run test:we-burn-interview",
     "test:validators": "node scripts/test-validator-negative-cases.mjs",
     "baseline:generate": "node scripts/generate-public-content-baseline.mjs",
     "assert-public-cutoff": "node scripts/assert-public-cutoff.mjs",
@@ -21,6 +21,7 @@
     "generate:image-derivatives": "node scripts/generate-image-derivatives.mjs",
     "prepare:staging": "node scripts/prepare-staging-dist.mjs",
     "build:staging": "node scripts/build-staging.mjs",
+    "test:we-burn-interview": "node scripts/test-we-burn-interview.mjs",
     "test:content-selection": "node scripts/test-content-selection.mjs"
   },
   "dependencies": {

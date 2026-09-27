@@ -1,22 +1,15 @@
 import React from 'react';
 import { Article } from '../../types/content';
 import { ResponsivePicture } from '../common/ResponsivePicture';
+import { parseWeBurnInterview } from '../../utils/weBurnInterview.mjs';
+import { WeBurnInterviewCopy } from './WeBurnInterviewCopy';
 import './weBurn.css';
 
 // Formatting only: keep every manuscript line and speaker prefix in its original order.
 export const WeBurnFeature: React.FC<{ article: Article }> = ({ article }) => {
   const individual = article.featureLayout === 'individual';
-  const lines = (article.canonicalMarkdown || '').replace(/\r\n/g,'\n').split('\n');
-  const first = lines.findIndex(l=>l.trim());
-  const sections: {heading:string;lines:string[]}[] = [{heading:'',lines:[]}];
-  lines.slice(first+1).forEach(line=>{
-    const heading=line.match(/^##\s+(.+)$/) || line.match(/^(\d{2}｜.+)$/);
-    if(heading) sections.push({heading:heading[1],lines:[]});
-    else sections[sections.length-1].lines.push(line);
-  });
-  const renderCopy = (body:string[]) => body.filter(l=>l.trim()).map((line,i)=>{
-    const speaker=line.match(/^(KAI|SHO|LEO|REN|YUTO)(：\s*)(.*)$/);
-    return <p key={i} className={line.startsWith('――')?'wb-question':speaker?'wb-dialogue':undefined}>{speaker?<><strong>{speaker[1]}</strong>{speaker[2]}{speaker[3]}</>:line}</p>;
+  const sections = parseWeBurnInterview(article.canonicalMarkdown || '', {
+    closingEditorialStart: individual ? undefined : article.canonicalMarkdown?.split(/\r?\n/).find(line => line.startsWith('FUTURE —')),
   });
   const figure = (id:string,alt:string,portrait=false) => <figure className={portrait?'wb-portrait':'wb-insert'}><ResponsivePicture assetId={id} alt={alt} aspectRatio={portrait?'4:5':'16:9'} loading="lazy" /><figcaption>{alt}</figcaption></figure>;
   return <div className={`we-burn wb-feature-body ${individual?'wb-individual':'wb-conversation'}`}>
@@ -25,7 +18,7 @@ export const WeBurnFeature: React.FC<{ article: Article }> = ({ article }) => {
       {section.heading && <h2>{section.heading}</h2>}
       <div className="wb-section-body">
         {individual && i>=1 && i<=5 && figure(`wb25-m0${i}`,`${['KAI','SHO','LEO','REN','YUTO'][i-1]} — We Burn ソロビジュアル`,true)}
-        <div className="wb-copy">{renderCopy(section.lines)}</div>
+        <WeBurnInterviewCopy blocks={section.blocks} />
       </div>
       {!individual && i===1 && figure('wb25-fe02-ph01','SHOが音に耳を傾けるエディトリアルイメージ',true)}
       {!individual && i===3 && figure('wb25-fe02-in01','リズムのずれを表す無人スタジオのエディトリアルイメージ')}

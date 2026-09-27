@@ -23,7 +23,9 @@
 .wb-editorial-section { scroll-margin-top:100px; }
 .wb-editorial-section h2 { font-family:var(--font-serif); font-size:clamp(1.3rem,2.3vw,2rem); line-height:1.7; margin:0 0 32px; }
 .wb-copy { max-width:720px; margin-inline:auto; line-height:2; font-size:1.05rem; }
-.wb-copy p { white-space:pre-wrap; margin:0 0 1.35em; }
+.wb-copy p { margin:0; }
+.wb-copy > :not(:first-child) { margin-top:1.35em; }
+.wb-dialogue > p + p { margin-top:.65em; }
 .wb-question { color:#edbd91; font-weight:700; padding-top:20px; }
 .wb-dialogue strong { color:#f0c69a; font-family:var(--font-mono); }
 .wb-portrait { margin:0; max-width:360px; width:100%; }
