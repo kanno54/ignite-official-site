@@ -15,8 +15,6 @@ export const ArticleDetailPage: React.FC = () => {
     return <Navigate to="/features/" replace />;
   }
 
-  if (article.relatedCampaignId === 'we-burn') return <WeBurnFeature article={article} />;
-
   const articleIndex = allArticles.findIndex((a) => a.id === article.id);
   const prevArticle = allArticles[(articleIndex - 1 + allArticles.length) % allArticles.length];
   const nextArticle = allArticles[(articleIndex + 1) % allArticles.length];
@@ -63,7 +61,7 @@ export const ArticleDetailPage: React.FC = () => {
       )}
 
       {/* Article Blocks Renderer */}
-      {article.canonicalMarkdown ? (
+      {article.relatedCampaignId === 'we-burn' ? <WeBurnFeature article={article} /> : article.canonicalMarkdown ? (
         <div className="live-album-editorial-copy">
           <LiveMarkdown markdown={article.canonicalMarkdown} />
         </div>
@@ -233,8 +231,8 @@ export const ArticleDetailPage: React.FC = () => {
             <Link to={`/campaigns/${article.relatedCampaignId}/`} className="btn-primary">
               VIEW {article.relatedCampaignId.toUpperCase()} CAMPAIGN →
             </Link>
-            {article.relatedCampaignId === 'live-album-2024' && (
-              <Link to="/discography/live-album-2024/" className="btn-secondary" style={{ marginLeft: '12px' }}>
+            {['live-album-2024', 'we-burn'].includes(article.relatedCampaignId) && (
+              <Link to={`/discography/${article.relatedCampaignId}/`} className="btn-secondary" style={{ marginLeft: '12px' }}>
                 LISTEN / VIEW RELEASE →
               </Link>
             )}
@@ -288,7 +286,7 @@ export const ArticleDetailPage: React.FC = () => {
       )}
 
       {/* Navigation Footer */}
-      <section style={{ display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--color-border)', paddingTop: '32px' }}>
+      <section style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', justifyContent: 'space-between', borderTop: '1px solid var(--color-border)', paddingTop: '32px' }}>
         <Link to={`/features/${prevArticle.slug}/`} className="btn-secondary">
           ← PREV FEATURE ({prevArticle.kicker})
         </Link>

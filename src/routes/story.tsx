@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiveLights } from '../components/common/FiveLights';
 import { LiveMarkdown } from '../components/live/LiveMarkdown';
-import { getCurrentCampaign, getLiveAlbumCampaignContent } from '../utils/contentLoader';
+import { getCurrentCampaign, getLiveAlbumCampaignContent, getReleaseById } from '../utils/contentLoader';
 
 type TimelineEvent = {
   id: string;
@@ -70,7 +70,8 @@ export const StoryPage: React.FC = () => {
     },
   ];
 
-  if (['silent-signal', 'rise-again', 'equinox', 'live-album-2024'].includes(currentCamp.id) || currentCamp.status === 'current') {
+  // Published history follows visible releases, independently of the current campaign.
+  if (getReleaseById('silent-signal')) {
     timelineEvents.push({
       id: 'silent-signal',
       date: '2024.01',
@@ -81,7 +82,7 @@ export const StoryPage: React.FC = () => {
     });
   }
 
-  if (['rise-again', 'equinox', 'live-album-2024'].includes(currentCamp.id) || currentCamp.status === 'current') {
+  if (getReleaseById('rise-again')) {
     timelineEvents.push({
       id: 'rise-again',
       date: '2024.03',
@@ -92,7 +93,7 @@ export const StoryPage: React.FC = () => {
     });
   }
 
-  if (['equinox', 'live-album-2024'].includes(currentCamp.id) || currentCamp.status === 'current') {
+  if (getReleaseById('equinox')) {
     timelineEvents.push({
       id: 'equinox',
       date: '2024.04',
@@ -111,7 +112,7 @@ export const StoryPage: React.FC = () => {
     });
   }
 
-  if (currentCamp.id === 'live-album-2024' && storyMarkdown) {
+  if (getReleaseById('live-album-2024') && storyMarkdown) {
     timelineEvents.push({
       id: 'live-album-2024',
       date: '2024',
@@ -178,6 +179,7 @@ export const StoryPage: React.FC = () => {
               <div
                 style={{
                   flex: 1,
+                  minWidth: 0,
                   backgroundColor: isCurrent ? 'rgba(85, 168, 255, 0.04)' : 'var(--color-surface)',
                   border: isCurrent ? '1px solid var(--campaign-accent)' : '1px solid var(--color-border)',
                   padding: '24px',

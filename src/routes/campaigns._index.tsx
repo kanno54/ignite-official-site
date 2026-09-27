@@ -41,8 +41,8 @@ export const CampaignsIndex: React.FC = () => {
                 desktopSrc={camp.cardAssetId ? undefined : camp.desktopHero}
                 mobileSrc={camp.cardAssetId ? undefined : camp.mobileHero}
                 alt={camp.title}
-                aspectRatio={camp.cardAssetId ? '1:1' : '16:9'}
-                mobileAspectRatio={camp.cardAssetId ? '1:1' : '3:4'}
+                aspectRatio="16:9"
+                mobileAspectRatio="3:4"
                 loading="lazy"
                 decoding="async"
               />
