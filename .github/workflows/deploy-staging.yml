@@ -1,142 +1,51 @@
-name: IGNITE Staging Environment — Build & Deploy
+name: IGNITE staging — Build & Deploy
 
 on:
   push:
     branches: [ staging ]
   workflow_dispatch:
 
-jobs:
-  build-and-deploy-staging:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+concurrency:
+  group: ignite-staging
+  cancel-in-progress: false
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/staging'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      VITE_STAGING: 'true'
+      VITE_SITE_URL: 'https://staging.ignite-official.site'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Run Release Validation Gate
-        run: npm run validate
-
-      - name: Verify campaign selection and release order
-        run: npm run test:content-selection
-
-      - name: TypeScript Check
-        run: npm exec tsc -- --noEmit
-
-      - name: Build Staging Static Output
+          cache: npm
+      - run: npm ci
+      - name: Routine content and route checks
+        run: npm run site -- check staging
+      - name: Operations safety tests
+        run: npm run test:site-ops
+      - name: Build (includes TypeScript check)
+        run: npm run build:staging
+      - run: npm run test:static
+      - run: npm run assert-public-cutoff
+      - name: Record revision and entry asset hashes
+        run: npm run site -- manifest staging
+      - name: Deploy using existing lftp transport
         env:
-          VITE_STAGING: 'true'
-          VITE_SITE_URL: 'https://staging.ignite-official.site'
-        run: npm run build
-
-      - name: Prepare Staging Protection & Noindex
-        run: node scripts/prepare-staging-dist.mjs
-
-      - name: Verify Staging Static Output Routes
-        env:
-          VITE_STAGING: 'true'
-          VITE_SITE_URL: 'https://staging.ignite-official.site'
-        run: npm run test:static
-
-      - name: Assert Public Cutoff Safety
-        env:
-          VITE_STAGING: 'true'
-        run: npm run assert-public-cutoff
-
-      - name: Deploy to Staging Server via lftp
-        if: github.ref == 'refs/heads/staging'
-        env:
+          SITE_ENV: staging
           FTP_HOST: ${{ secrets.SFTP_HOST }}
           FTP_USER: ${{ secrets.SFTP_USERNAME }}
           FTP_PASS: ${{ secrets.SFTP_PASSWORD }}
           FTP_PATH: ${{ secrets.SFTP_STAGING_PATH }}
         run: |
           sudo apt-get update && sudo apt-get install -y lftp
-          cd ./dist
-
-          CANDIDATES=()
-          if [ -n "$FTP_PATH" ]; then
-            case "$FTP_PATH" in
-              *staging*) ;;
-              *) echo "Refusing a non-staging deployment directory"; exit 1 ;;
-            esac
-            CANDIDATES+=("$FTP_PATH")
-          fi
-          CANDIDATES+=(
-            "/staging.ignite-official.site"
-            "/public_html/staging.ignite-official.site"
-            "/staging"
-            "/public_html/staging"
-            "staging.ignite-official.site"
-            "public_html/staging.ignite-official.site"
-          )
-
-          CHOSEN_DIR=""
-          for candidate in "${CANDIDATES[@]}"; do
-            echo "Testing candidate remote directory: $candidate"
-            if lftp -c "
-              set cmd:fail-exit yes;
-              set ftp:ssl-allow no;
-              set ftp:passive-mode on;
-              set net:timeout 5;
-              set net:max-retries 1;
-              open -u '$FTP_USER','$FTP_PASS' '$FTP_HOST';
-              cd '$candidate';
-              pwd;
-              quit;
-            " >/dev/null 2>&1; then
-              CHOSEN_DIR="$candidate"
-              echo "✔ Successfully verified remote directory: $CHOSEN_DIR"
-              break
-            else
-              echo "  ✘ Candidate unavailable: $candidate"
-            fi
-          done
-
-          if [ -z "$CHOSEN_DIR" ]; then
-            echo "No verified staging directory; refusing deployment"
-            exit 1
-          fi
-
-          echo "Final Target Remote Directory: $CHOSEN_DIR"
-
-          DEPLOY_SCRIPT=$(mktemp)
-          trap 'rm -f "$DEPLOY_SCRIPT"' EXIT
-          cat <<EOF > "$DEPLOY_SCRIPT"
-          set cmd:fail-exit yes
-          set ftp:ssl-allow no
-          set ftp:passive-mode on
-          set net:timeout 15
-          set net:max-retries 2
-          open -u "$FTP_USER","$FTP_PASS" "$FTP_HOST"
-          cd "$CHOSEN_DIR"
-          mirror -R --verbose --no-perms --no-symlinks --ignore-time --parallel=2 . .
-          EOF
-
-          # Hashed asset references can change without changing HTML byte length.
-          # Always replace entry documents; keep the size-based bulk media sync.
-          while IFS= read -r -d '' page; do
-            printf 'put "%s" -o "%s"\n' "$page" "$page" >> "$DEPLOY_SCRIPT"
-          done < <(find . -type f \( -name '*.html' -o -name '*.xml' -o -name '.htaccess' -o -name 'robots.txt' \) -print0)
-          echo 'quit' >> "$DEPLOY_SCRIPT"
-          lftp -f "$DEPLOY_SCRIPT"
-
-      - name: Verify deployed entry documents match this build
-        run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          import assert from 'node:assert/strict';
-          for (const route of ['/', '/campaigns/', '/features/', '/story/', '/campaigns/solar/', '/campaigns/we-burn/', '/discography/', '/discography/we-burn/', '/features/five-directions/', '/features/no-plan/']) {
-            const response = await fetch(`https://staging.ignite-official.site${route}`, {headers:{'Cache-Control':'no-cache'}});
-            assert.equal(response.status, 200, route);
-            assert.equal(await response.text(), fs.readFileSync(`dist${route}index.html`, 'utf8'), `Stale deployed document: ${route}`);
-          }
-          console.log('All ten deployed entry documents match the current build.');
-          NODE
+          bash scripts/deploy-site.sh
+      - name: Verify deployed revision, HTML, assets and audio
+        run: npm run site -- verify staging --sha "$GITHUB_SHA"

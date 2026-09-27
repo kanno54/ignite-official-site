@@ -4,6 +4,8 @@
   "version": "2.0.0",
   "type": "module",
   "scripts": {
+    "site": "node scripts/site-ops.mjs",
+    "test:site-ops": "node --test scripts/test-site-ops.mjs",
     "dev": "vite",
     "dev:staging": "npx cross-env VITE_STAGING=true vite",
     "build": "node scripts/generate-sitemap.mjs && tsc && vite build && node scripts/build-static.mjs",
