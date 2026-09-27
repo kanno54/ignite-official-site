@@ -1,10 +1,10 @@
 {
   "siteUrl": "https://ignite-official.site",
   "canonicalUrl": "https://ignite-official.site",
-  "fictionalCurrentDate": "2025-02",
-  "currentCampaign": "LIVE ALBUM 2024",
-  "latestReleaseId": "live-album-2024",
-  "pickUpTrackId": "live-album-2024-ignition",
+  "fictionalCurrentDate": "2025-04-25",
+  "currentCampaign": "We Burn",
+  "latestReleaseId": "we-burn",
+  "pickUpTrackId": "we-burn-single",
   "group": {
     "name": "IGNITE",
     "japaneseName": "イグナイト",

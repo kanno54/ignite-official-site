@@ -54,7 +54,7 @@ for (const feature of ['FE01','FE02']) {
   }
 }
 write(content('asset-manifest'),manifest);write(content('image-derivatives'),derivatives);
-const publication = {fictionalReleaseDate:'',publishAt:null,visibility:'public',campaignState:'staging'};
+const publication = {fictionalReleaseDate:'',publishAt:null,visibility:'public',campaignState:'current'};
 const disc = json(content('discography'));
 const trackIds = ['we-burn-single','we-burn-no-plan','we-burn-back-to-the-spark-live'];
 const titles = ['We Burn','NO PLAN','Back to the Spark - Live Version -'];
@@ -73,7 +73,7 @@ const correctFive = /^#?\s*FIVE DIRECTIONS/.test(copy('WB25-TXT-FEAT01'));
 if(correctFive) addArticle('WB25-TXT-FEAT01','five-directions','individual');
 write(content('articles'),articles);
 const campaigns=json(content('campaigns'));
-upsert(campaigns,{id:'we-burn',slug:'we-burn',status:'staging',releaseId:'we-burn',releaseDate:'',eyebrow:'IGNITE 7th Single',title:'We Burn',catchCopy:'燃える先は、ひとつじゃない。',desktopHero:manifest.images['wb25-web01'].path,mobileHero:manifest.images['wb25-web02'].path,heroAssetId:'wb25-web01',mobileHeroAssetId:'wb25-web02',ogAssetId:'wb25-jk01',primaryCta:{text:'VIEW RELEASE',action:'link',url:'/discography/we-burn/'},secondaryCta:{text:'READ NO PLAN',action:'link',url:'/features/no-plan/'},campaignColors:{accent:'#DFA16B',deep:'#171515',text:'#F3EADC'},relatedArticleIds:correctFive?['five-directions','no-plan']:['no-plan']});
+upsert(campaigns,{id:'we-burn',slug:'we-burn',status:'current',releaseId:'we-burn',releaseDate:'',eyebrow:'IGNITE 7th Single',title:'We Burn',catchCopy:'燃える先は、ひとつじゃない。',desktopHero:manifest.images['wb25-web01'].path,mobileHero:manifest.images['wb25-web02'].path,heroAssetId:'wb25-web01',mobileHeroAssetId:'wb25-web02',ogAssetId:'wb25-jk01',primaryCta:{text:'VIEW RELEASE',action:'link',url:'/discography/we-burn/'},secondaryCta:{text:'READ NO PLAN',action:'link',url:'/features/no-plan/'},campaignColors:{accent:'#DFA16B',deep:'#171515',text:'#F3EADC'},relatedArticleIds:correctFive?['five-directions','no-plan']:['no-plan']});
 write(content('campaigns'),campaigns);
 write(content('we-burn'),{packageId:delivery.package_id,releaseMarkdown:copy('WB25-TXT-DISC01'),closingMarkdown:copy('WB25-TXT-WEB06'),seoDescription:copy('WB25-TXT-EXT09').trim(),ogDescription:copy('WB25-TXT-EXT08').trim(),tracks:titles.map((title,i)=>({title,direction:['FUTURE','NOW','ORIGIN'][i],markdown:copy(`WB25-TXT-WEB0${i+3}`),coverAssetId:['wb25-wb01','wb25-np01','wb25-bs01'][i],detailAssetId:['wb25-wb02','wb25-np02','wb25-bs02'][i]}))});
 write(path.join(root,'reports/we-burn/asset-map.json'),[...delivery.assets.map(a=>({...a,sitePath:a.category==='AUDIO'?`/media/audio/we-burn/${a.delivery_filename}`:manifest.images[a.asset_code.toLowerCase()]?.path || null,disposition:a.asset_code==='WB25-TXT-FEAT01'?'INVALID v2: contains NO PLAN; replaced by explicitly user-approved v1':a.category==='AUDIO'?'used in staging player; approved bytes verified':manifest.images[a.asset_code.toLowerCase()]?'available in staging; see report for actual placements':a.category==='CONTENT'?'canonical source retained; only explicitly mapped copy rendered':'not used'})),{asset_code:'WB25-TXT-FEAT01',version_no:1,decision:'USER_APPROVED_OVERRIDE',file_path:'content/canonical/we-burn/WB25-TXT-FEAT01_v01.md',sha256:hash(correctedFivePath),sitePath:'/features/five-directions/',disposition:'used in staging; title, member order and closing questions verified'}]);

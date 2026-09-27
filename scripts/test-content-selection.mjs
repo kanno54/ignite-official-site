@@ -5,7 +5,7 @@ import { getPublicRouteEntries } from './public-site.mjs';
 const read=name=>JSON.parse(fs.readFileSync(`content/public/${name}.json`));
 const campaigns=read('campaigns'),config=read('site-config'),{releases}=read('discography');
 assert.equal(selectCurrentCampaign(campaigns,config,true).id,'we-burn');
-assert.equal(selectCurrentCampaign(campaigns,config,false).id,'live-album-2024');
+assert.equal(selectCurrentCampaign(campaigns,config,false).id,'we-burn');
 const sorted=sortReleasesNewestFirst(releases);
 assert.equal(sorted[0].id,'we-burn');
 assert.equal(sorted[1].id,'live-album-2024');
@@ -16,7 +16,7 @@ assert.deepEqual(sortReleasesNewestFirst(fixture).map(r=>r.id),['newer','day','m
 assert.equal(fixture[0].id,'missing');
 for(const staging of [true,false]) {
   const home=getPublicRouteEntries({staging}).find(r=>r.path==='/');
-  assert(home.title.includes(staging?'We Burn':'IGNITE LIVE 2024'));
-  if(staging) assert.equal(home.image,null);
+  assert(home.title.includes('We Burn'));
+  assert.equal(home.image,null);
 }
 console.log('Campaign selection, environment isolation, real-date order, undated-last and home SEO passed.');

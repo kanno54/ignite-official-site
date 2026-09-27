@@ -303,7 +303,7 @@
         "fictionalReleaseDate": "2025-02",
         "publishAt": "2025-02-07",
         "visibility": "public",
-        "campaignState": "current"
+        "campaignState": "past"
       }
     },
     {
@@ -321,12 +321,12 @@
         "we-burn-no-plan",
         "we-burn-back-to-the-spark-live"
       ],
-      "campaignState": "past",
+      "campaignState": "current",
       "publication": {
         "fictionalReleaseDate": "2025-04-23",
         "publishAt": "2025-04-23T12:00:00+09:00",
         "visibility": "public",
-        "campaignState": "staging"
+        "campaignState": "current"
       },
       "canonicalMarkdown": "## 7th Single『We Burn』\r\n\r\n同じ場所に立ちながら、それぞれの未来へ進んでいく――IGNITEの次の一歩を刻む7th Single。\r\n\r\n表題曲「We Burn」は、五人が同じ方向だけを向くのではなく、それぞれの道を選びながらも、ひとつの熱を共有し続ける意思を描いた楽曲。続く「NO PLAN」では、すべての答えを決めてから進むのではなく、ズレや偶然さえ取り込みながら、まず動き出す現在の衝動を鳴らす。\r\n\r\nそして「Back to the Spark - Live Version -」では、原点へ戻るのではなく、最初に持っていた火を現在まで連れてきたことをライブの音で確かめる。\r\n\r\n**FUTURE / NOW / ORIGIN。**\r\n\r\n異なる三つの方向から、今のIGNITEと、その先へ続く物語を描くシングル。\r\n"
     }

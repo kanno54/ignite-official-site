@@ -255,7 +255,7 @@ else {
 const liveAlbum = discography.releases.find((release) => release.id === 'live-album-2024');
 const liveAlbumRecordings = discography.recordings.filter((recording) => recording.releaseId === 'live-album-2024');
 const stablePreviewIds = ['live-album-2024-heatwave', 'live-album-2024-moonlit', 'live-album-2024-silent-signal'];
-if (!liveAlbum || liveAlbum.releaseKind !== 'LIVE_ALBUM' || !['staging', 'current'].includes(liveAlbum.publication?.campaignState)) {
+if (!liveAlbum || liveAlbum.releaseKind !== 'LIVE_ALBUM' || !['past', 'staging', 'current'].includes(liveAlbum.publication?.campaignState)) {
   failures.push('M11B formal LIVE ALBUM release is missing or has an invalid lifecycle state');
 }
 if (tour2024?.preview) failures.push('M11B must not retain the obsolete LIVE ALBUM preview module');

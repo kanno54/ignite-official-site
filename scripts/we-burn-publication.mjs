@@ -38,8 +38,8 @@ export function applyWeBurnPublication(root, packageRoot) {
   const delivery = JSON.parse(fs.readFileSync(path.join(packageRoot,'manifest.json'),'utf8'));
   const disc=read('discography');
   const release=disc.releases.find(r=>r.id==='we-burn');
-  Object.assign(release,{fictionalReleaseDate:'2025-04',fictionalReleaseDateFull:'2025.04.23',campaignState:'past'});
-  Object.assign(release.publication,{fictionalReleaseDate:publicationDates.release,publishAt:publicationDates.releaseUpdate});
+  Object.assign(release,{fictionalReleaseDate:'2025-04',fictionalReleaseDateFull:'2025.04.23',campaignState:'current'});
+  Object.assign(release.publication,{fictionalReleaseDate:publicationDates.release,publishAt:publicationDates.releaseUpdate,campaignState:'current'});
   for(const recording of disc.recordings.filter(r=>r.releaseId==='we-burn')) {
     const asset=delivery.assets.find(a=>a.asset_code===`WB25-AUD0${recording.trackNumber}`);
     const bytes=fs.readFileSync(path.join(packageRoot,asset.file_path));
@@ -55,7 +55,7 @@ export function applyWeBurnPublication(root, packageRoot) {
   for(const a of articles.filter(a=>a.relatedCampaignId==='we-burn')) {
     const date=a.slug==='five-directions'?publicationDates.fiveDirections:publicationDates.noPlan;
     Object.assign(a,{publishDate:'2025-04',publishDateFull:date.slice(0,10).replaceAll('-','.')});
-    Object.assign(a.publication,{fictionalReleaseDate:date.slice(0,10),publishAt:date});
+    Object.assign(a.publication,{fictionalReleaseDate:date.slice(0,10),publishAt:date,campaignState:'current'});
     delete a.ogAssetId;
   }
   write('articles',articles);

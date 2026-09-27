@@ -57,7 +57,8 @@ export const runRouteValidation = ({ sitemapPath = defaultSitemapPath } = {}) =>
   for (const route of requiredLiveAlbumRoutes) if (!stagingRoutePaths.has(route)) failures.push(`staging route list is missing M11B route: ${route}`);
   const liveAlbumRelease = JSON.parse(fs.readFileSync(path.join(rootDir, 'content', 'public', 'discography.json'), 'utf8'))
     .releases.find((release) => release.id === 'live-album-2024');
-  const liveAlbumIsPublic = liveAlbumRelease?.publication?.campaignState === 'current';
+  const liveAlbumIsPublic = liveAlbumRelease?.publication?.visibility === 'public'
+    && !['future', 'staging'].includes(liveAlbumRelease.publication?.campaignState);
   for (const route of requiredLiveAlbumRoutes) {
     if (liveAlbumIsPublic && !publicRoutePaths.has(route)) failures.push(`M11B production route list is missing: ${route}`);
     if (!liveAlbumIsPublic && publicRoutePaths.has(route)) failures.push(`M11B staging route leaked into production route list: ${route}`);

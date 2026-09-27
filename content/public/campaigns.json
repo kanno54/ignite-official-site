@@ -776,7 +776,7 @@
     "id": "live-album-2024",
     "slug": "live-album-2024",
     "shortTitle": "LIVE ALBUM 2024",
-    "status": "current",
+    "status": "archived",
     "releaseId": "live-album-2024",
     "releaseDate": "2025-02-07",
     "eyebrow": "CURRENT CAMPAIGN // LIVE ALBUM 2024",
@@ -817,7 +817,7 @@
   {
     "id": "we-burn",
     "slug": "we-burn",
-    "status": "staging",
+    "status": "current",
     "releaseId": "we-burn",
     "releaseDate": "2025.04.23",
     "eyebrow": "IGNITE 7th Single",
