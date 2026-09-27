@@ -92,6 +92,7 @@ export const TopPage: React.FC = () => {
           >
             {currentCampaign.catchCopy}
           </p>
+          {currentCampaign.bannerCopy && <p>{currentCampaign.bannerCopy}</p>}
 
           <div style={{ display: 'flex', gap: '16px', marginTop: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link to={`/campaigns/${currentCampaign.slug || currentCampaign.id}/`} className="btn-primary" style={{ backgroundColor: 'var(--campaign-accent)', color: 'var(--campaign-on-accent)', borderColor: 'var(--campaign-accent)', fontWeight: 700 }}>
