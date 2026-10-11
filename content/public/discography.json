@@ -350,12 +350,12 @@
         "kai-2700-ippo",
         "kai-2700-34"
       ],
-      "campaignState": "future",
+      "campaignState": "current",
       "publication": {
         "fictionalReleaseDate": "2025-10-15",
         "publishAt": null,
         "visibility": "public",
-        "campaignState": "staging"
+        "campaignState": "current"
       }
     }
   ],

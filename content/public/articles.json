@@ -5654,7 +5654,7 @@
       "fictionalReleaseDate": "2025-10-15",
       "publishAt": "2025-10-15",
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "current"
     }
   },
   {
@@ -5693,7 +5693,7 @@
       "fictionalReleaseDate": "2025-10-15",
       "publishAt": "2025-10-15",
       "visibility": "public",
-      "campaignState": "staging"
+      "campaignState": "current"
     }
   }
 ]

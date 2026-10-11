@@ -34,11 +34,11 @@ for (const code of visualCodes) {
   manifest.images[code.toLowerCase()] = { path: url, status: 'ready', aspect: code.includes('-SQ') || code === 'K27-CV01' ? '1:1' : code === 'K27-WEB02' ? '9:16' : code.includes('-DT') ? '3:4' : '16:9', assetCode: code, selectedVersion: a.version_no, selectedVersionId: a.version_id, sourceSha256: a.sha256, sourcePackage: delivery.package_id };
 }
 write(content('asset-manifest'), manifest);
-const publication = { fictionalReleaseDate: '2025-10-15', publishAt: null, visibility: 'public', campaignState: 'staging' };
+const publication = { fictionalReleaseDate: '2025-10-15', publishAt: null, visibility: 'public', campaignState: 'current' };
 const titles = ['STEPS', 'BACK ROOM', 'FIRST NAME', '27:00', 'OLD FRIENDS', 'いっぽ', '34'];
 const trackIds = ['steps', 'back-room', 'first-name', '2700', 'old-friends', 'ippo', '34'].map(s => `kai-2700-${s}`);
 const disc = json(content('discography'));
-upsert(disc.releases, { id: 'kai-2700', slug: 'kai-2700', title: '27:00', format: 'KAI 1st Rap Mini Album', fictionalReleaseDate: '2025-10', fictionalReleaseDateFull: '2025.10.15', coverAssetId: 'k27-cv01', description: plain(copy('K27-TXT-DISC01')), linerNotes: plain(copy('K27-TXT-LINER01')), canonicalMarkdown: copy('K27-TXT-DISC01'), trackIds, campaignState: 'future', publication });
+upsert(disc.releases, { id: 'kai-2700', slug: 'kai-2700', title: '27:00', format: 'KAI 1st Rap Mini Album', fictionalReleaseDate: '2025-10', fictionalReleaseDateFull: '2025.10.15', coverAssetId: 'k27-cv01', description: plain(copy('K27-TXT-DISC01')), linerNotes: plain(copy('K27-TXT-LINER01')), canonicalMarkdown: copy('K27-TXT-DISC01'), trackIds, campaignState: 'current', publication });
 for (let i = 0; i < 7; i++) {
   const n = String(i + 1).padStart(2, '0'), next = String(i + 2).padStart(2, '0');
   const a = asset(`K27-AUD${n}`), bytes = fs.readFileSync(path.join(packageRoot, a.file_path));
@@ -57,7 +57,7 @@ for (let i = 0; i < 2; i++) {
 }
 write(content('articles'), articles);
 const campaigns = json(content('campaigns'));
-upsert(campaigns, { id: 'kai-2700', slug: 'kai-2700', status: 'staging', releaseId: 'kai-2700', releaseDate: '2025.10.15', eyebrow: 'KAI 1st Rap Mini Album', title: '27:00', catchCopy: title(copy('K27-TXT-WEB01')), desktopHero: manifest.images['k27-web01'].path, mobileHero: manifest.images['k27-web02'].path, heroAssetId: 'k27-web01', mobileHeroAssetId: 'k27-web02', ogAssetId: 'k27-og01', primaryCta: { text: 'PLAY RELEASE', action: 'play' }, secondaryCta: { text: 'READ INTERVIEW', action: 'link', url: `/features/${featureIds[0]}/` }, campaignColors: { accent: '#A9B9CD', deep: '#11151D', text: '#F6F3ED' }, relatedArticleIds: featureIds, introduction: { heading: 'KAI 1st Rap Mini Album『27:00』', body: plain(copy('K27-TXT-WEB02')) }, creationBackground: { heading: 'KAI', body: plain(copy('K27-TXT-WEB10')) }, commentary: { heading: title(copy('K27-TXT-WEB11')), body: plain(copy('K27-TXT-WEB11')) }, trackDescriptions: Object.fromEntries(trackIds.map((id, i) => [id, plain(copy(`K27-TXT-WEB${String(i + 3).padStart(2, '0')}`))])), focusSection: { eyebrow: 'RELEASE NOTES', heading: '27:00 — Album Release Notes', body: plain(copy('K27-TXT-LINER01')) }, storySourceAssetCode: 'K27-TXT-WEB12' });
+upsert(campaigns, { id: 'kai-2700', slug: 'kai-2700', status: 'current', releaseId: 'kai-2700', releaseDate: '2025.10.15', eyebrow: 'KAI 1st Rap Mini Album', title: '27:00', catchCopy: title(copy('K27-TXT-WEB01')), desktopHero: manifest.images['k27-web01'].path, mobileHero: manifest.images['k27-web02'].path, heroAssetId: 'k27-web01', mobileHeroAssetId: 'k27-web02', ogAssetId: 'k27-og01', primaryCta: { text: 'PLAY RELEASE', action: 'play' }, secondaryCta: { text: 'READ INTERVIEW', action: 'link', url: `/features/${featureIds[0]}/` }, campaignColors: { accent: '#A9B9CD', deep: '#11151D', text: '#F6F3ED' }, relatedArticleIds: featureIds, introduction: { heading: 'KAI 1st Rap Mini Album『27:00』', body: plain(copy('K27-TXT-WEB02')) }, creationBackground: { heading: 'KAI', body: plain(copy('K27-TXT-WEB10')) }, commentary: { heading: title(copy('K27-TXT-WEB11')), body: plain(copy('K27-TXT-WEB11')) }, trackDescriptions: Object.fromEntries(trackIds.map((id, i) => [id, plain(copy(`K27-TXT-WEB${String(i + 3).padStart(2, '0')}`))])), focusSection: { eyebrow: 'RELEASE NOTES', heading: '27:00 — Album Release Notes', body: plain(copy('K27-TXT-LINER01')) }, storySourceAssetCode: 'K27-TXT-WEB12' });
 write(content('campaigns'), campaigns);
 const news = json(content('news'));
 for (let i = 2; i >= 1; i--) {

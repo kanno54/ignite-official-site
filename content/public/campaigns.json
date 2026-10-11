@@ -817,7 +817,7 @@
   {
     "id": "we-burn",
     "slug": "we-burn",
-    "status": "current",
+    "status": "past",
     "releaseId": "we-burn",
     "releaseDate": "2025.04.23",
     "eyebrow": "IGNITE 7th Single",
@@ -898,7 +898,7 @@
   {
     "id": "kai-2700",
     "slug": "kai-2700",
-    "status": "staging",
+    "status": "current",
     "releaseId": "kai-2700",
     "releaseDate": "2025.10.15",
     "eyebrow": "KAI 1st Rap Mini Album",
