@@ -73,6 +73,14 @@ export const validateArtworkUsage = (discography, manifest) => {
     const vertical = manifest.images?.[recording.artwork.vertical];
     const squareCode = square?.assetCode || '';
     const verticalCode = vertical?.assetCode || '';
+    // 27:00's delivered detail artwork uses K27-DTnn, paired with K27-TRnn-SQ.
+    if (recording.releaseId === 'kai-2700') {
+      const number = String(recording.trackNumber).padStart(2, '0');
+      if (squareCode !== `K27-TR${number}-SQ` || verticalCode !== `K27-DT${number}`) {
+        failures.push(`recording ${recording.id} artwork does not match its delivered track number`);
+      }
+      continue;
+    }
     if (!squareCode.endsWith('-SQ')) failures.push(`recording ${recording.id} square slot Asset Code must end in -SQ: ${squareCode || 'NONE'}`);
     const verticalSuffix = recording.releaseId === 'live-album-2024' ? '-SD' : '-V';
     if (!verticalCode.endsWith(verticalSuffix)) failures.push(`recording ${recording.id} vertical slot Asset Code must end in ${verticalSuffix}: ${verticalCode || 'NONE'}`);

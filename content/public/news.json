@@ -1,5 +1,39 @@
 [
   {
+    "id": "kai-2700-news01",
+    "date": "TBD",
+    "category": "RELEASE",
+    "title": "KAI 1st Rap Mini Album『27:00』リリース決定",
+    "description": "KAI初のソロラップ・ミニアルバム『27:00』のリリースが決定しました。\n\n『27:00』は、20歳前後の記憶、27歳の現在、そしてまだ起きていない未来への想像をたどる全7曲の作品です。",
+    "url": "/campaigns/kai-2700/",
+    "imageAssetId": "k27-cv01",
+    "canonicalMarkdown": "# KAI 1st Rap Mini Album『27:00』リリース決定\n\nKAI初のソロラップ・ミニアルバム『27:00』のリリースが決定しました。\n\n『27:00』は、20歳前後の記憶、27歳の現在、そしてまだ起きていない未来への想像をたどる全7曲の作品です。\n\nタイトルの「27:00」には、午前3時という時間と、KAIが27歳であることの二つの意味が重ねられています。\n\n前半では実際の過去を振り返り、中央のタイトル曲「27:00」で現在へ。後半では、旧友、自分の次の一歩、七年後の自分へと視線を広げていきます。\n\nKAI自身の言葉とラップを軸に、楽曲ごとに異なる音像で「記憶 → 現在 → 想像」という時間の流れを描く一作です。\n\n## Release Information\n\n- Artist：KAI\n- Title：27:00\n- Format：1st Rap Mini Album\n- Tracks：7\n- Release Date：TBD\n- Product Number：TBD\n- Streaming / Download：TBD\n- Credits：TBD\n\n収録曲、アートワーク、各種コンテンツなどの詳細は、順次お知らせします。",
+    "sourceAssetCode": "K27-TXT-NEWS01",
+    "publication": {
+      "fictionalReleaseDate": "",
+      "publishAt": null,
+      "visibility": "public",
+      "campaignState": "staging"
+    }
+  },
+  {
+    "id": "kai-2700-news02",
+    "date": "TBD",
+    "category": "RELEASE",
+    "title": "KAI 1st Rap Mini Album『27:00』本日リリース",
+    "description": "KAI初のソロラップ・ミニアルバム『27:00』がリリースされました。\n\n『27:00』は、20歳前後の記憶、27歳の現在、そしてまだ起きていない未来への想像をたどる全7曲の作品です。",
+    "url": "/discography/kai-2700/",
+    "imageAssetId": "k27-cv01",
+    "canonicalMarkdown": "# KAI 1st Rap Mini Album『27:00』本日リリース\n\nKAI初のソロラップ・ミニアルバム『27:00』がリリースされました。\n\n『27:00』は、20歳前後の記憶、27歳の現在、そしてまだ起きていない未来への想像をたどる全7曲の作品です。\n\n前半では、IGNITE結成以前からメジャーデビュー初期までの実際の過去を振り返り、中央のタイトル曲「27:00」で午前3時の現在へ。後半では、旧友、自分の次の一歩、七年後の自分へと視線を広げていきます。\n\nブレイクビーツ、ミニマル・ヒップホップ、エレクトロ、メロディック・ラップ、ネオソウル、Future Garage、Ambient Rapまで、7曲はそれぞれ異なる音像を持ちながら、KAI自身の言葉と身体感覚を軸に一つの流れを作っています。\n\n## Listen\n\n各種配信サービスはこちら。\n\n**Streaming / Download：TBD_URL**\n\n## Discography\n\n収録曲、作品概要、各楽曲の詳細はこちら。\n\n**Discography：TBD_URL**\n\n## Track List\n\n1. STEPS  \n2. BACK ROOM  \n3. FIRST NAME  \n4. 27:00  \n5. OLD FRIENDS  \n6. いっぽ  \n7. 34\n\n昨日の続きでも、今日の始まりでも。\n\nKAI『27:00』を、ぜひお聴きください。",
+    "sourceAssetCode": "K27-TXT-NEWS02",
+    "publication": {
+      "fictionalReleaseDate": "",
+      "publishAt": null,
+      "visibility": "public",
+      "campaignState": "staging"
+    }
+  },
+  {
     "id": "la24-n01",
     "date": "2025.02.07",
     "category": "RELEASE",

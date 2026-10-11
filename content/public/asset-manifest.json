@@ -2887,6 +2887,206 @@
       "derivedFrom": "WB25-FE02-HR01",
       "editorialReview": "pending",
       "sourcePackage": "pkg-we-burn-2026-09-26T22-42-00-254Z"
+    },
+    "k27-cv01": {
+      "path": "/assets/images/kai-2700/K27-CV01_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-CV01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-cv01-1-1791295873180",
+      "sourceSha256": "5feaa9b7a5354a941ef582ff9660900551b703c69aa13364214bc247f6e052ee",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-web01": {
+      "path": "/assets/images/kai-2700/K27-WEB01_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "K27-WEB01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-web01-1-1791697697217",
+      "sourceSha256": "c0f1e02fd0d8f9ee3160009fb30e6b33f0f1b3d1ac52bef30541c1abf2bf5845",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-web02": {
+      "path": "/assets/images/kai-2700/K27-WEB02_v01.webp",
+      "status": "ready",
+      "aspect": "9:16",
+      "assetCode": "K27-WEB02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-web02-1-1791697698182",
+      "sourceSha256": "72cfcb2eb798cfd09f8550e4cc22ccd73db333bf4efe602d023ccba01910c685",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-og01": {
+      "path": "/assets/images/kai-2700/K27-OG01_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "K27-OG01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-og01-1-1791295830444",
+      "sourceSha256": "f0cb07cf031aa2c4ac9eec18e09624a6ac9f212297fb529fb98cc2b0061f43f4",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-feat-h01": {
+      "path": "/assets/images/kai-2700/K27-FEAT-H01_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "K27-FEAT-H01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-feat-h01-1-1791711374808",
+      "sourceSha256": "e9cb0a9c2046fe0a13ddf4519dbf6fccf2264f5526d634eac19e001051118058",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-feat-h02": {
+      "path": "/assets/images/kai-2700/K27-FEAT-H02_v01.webp",
+      "status": "ready",
+      "aspect": "16:9",
+      "assetCode": "K27-FEAT-H02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-feat-h02-1-1791711373513",
+      "sourceSha256": "64fb032d0d1f798779d88cda4bd62ec54bd667b3e267437a169f8e52dad91961",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-tr01-sq": {
+      "path": "/assets/images/kai-2700/K27-TR01-SQ_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-TR01-SQ",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-tr01-sq-1-1791295095827",
+      "sourceSha256": "aace0ca671d2d0c4870a14e88c0d7e2e74cf4986e75b524058c8bae0b66215fa",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-tr02-sq": {
+      "path": "/assets/images/kai-2700/K27-TR02-SQ_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-TR02-SQ",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-tr02-sq-1-1791295091900",
+      "sourceSha256": "26704da5ace9b473c6a0a60218f9f2b4b48e0f9acf342ca12718fdffadd1569f",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-tr03-sq": {
+      "path": "/assets/images/kai-2700/K27-TR03-SQ_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-TR03-SQ",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-tr03-sq-1-1791295090329",
+      "sourceSha256": "9bdd359e9b51e8152d8185cec3b48eca1cbfda317d650ca78d826ac20f6ec260",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-tr04-sq": {
+      "path": "/assets/images/kai-2700/K27-TR04-SQ_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-TR04-SQ",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-tr04-sq-1-1791295098249",
+      "sourceSha256": "baff0ae404922cc852ccb09616047893b734280c38a063af55b35a2af8e56a94",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-tr05-sq": {
+      "path": "/assets/images/kai-2700/K27-TR05-SQ_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-TR05-SQ",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-tr05-sq-1-1791295097092",
+      "sourceSha256": "56e5b1bfc170e2b78ca258df48dc852c61cc4080e1f45c79d4c9ec27a1016b3b",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-tr06-sq": {
+      "path": "/assets/images/kai-2700/K27-TR06-SQ_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-TR06-SQ",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-tr06-sq-1-1791295094397",
+      "sourceSha256": "4931d6dfaf567219e4322b57dd883712733b2e5f24005fbcff16ce87df1ebfc2",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-tr07-sq": {
+      "path": "/assets/images/kai-2700/K27-TR07-SQ_v01.webp",
+      "status": "ready",
+      "aspect": "1:1",
+      "assetCode": "K27-TR07-SQ",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-tr07-sq-1-1791295093288",
+      "sourceSha256": "476f410258ab2c1095101a2be7c3b633f4c7e6193af0f9ba74264475e13a54b5",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-dt01": {
+      "path": "/assets/images/kai-2700/K27-DT01_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "K27-DT01",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-dt01-1-1791694870484",
+      "sourceSha256": "135538405a8bfad3cd8f9aa77c0dc16984ba967b77e94edf06253dc27816ec46",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-dt02": {
+      "path": "/assets/images/kai-2700/K27-DT02_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "K27-DT02",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-dt02-1-1791697694504",
+      "sourceSha256": "648db47218070345f5e0204446aa671d50e0f1b3de8d8297f5454db6aa847edd",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-dt03": {
+      "path": "/assets/images/kai-2700/K27-DT03_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "K27-DT03",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-dt03-1-1791697695482",
+      "sourceSha256": "5b069ae68e5ada23ff03809d44709fcd5652b9af52dc9caf9b950e90922a589d",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-dt04": {
+      "path": "/assets/images/kai-2700/K27-DT04_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "K27-DT04",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-dt04-1-1791699982178",
+      "sourceSha256": "c9e7c68cd5ccb77ced8d57ed0f75ea8bf1070ce7145589fd8cb81a2839e4b958",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-dt05": {
+      "path": "/assets/images/kai-2700/K27-DT05_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "K27-DT05",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-dt05-1-1791699981123",
+      "sourceSha256": "e5e54be74ed002b4b0825753f9c04674df52679f8ee1046746426d840a6ecab3",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-dt06": {
+      "path": "/assets/images/kai-2700/K27-DT06_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "K27-DT06",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-dt06-1-1791699980098",
+      "sourceSha256": "c8b2d44d6fd58afb0fbd2ef7c0fc47c11c4bc97ecd18f998fcf7facf30623d0b",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
+    },
+    "k27-dt07": {
+      "path": "/assets/images/kai-2700/K27-DT07_v01.webp",
+      "status": "ready",
+      "aspect": "3:4",
+      "assetCode": "K27-DT07",
+      "selectedVersion": 1,
+      "selectedVersionId": "v-k27-dt07-1-1791699979182",
+      "sourceSha256": "57a3f2cf5ab6640a4c1951ee16a1ade3c7cce83a9d9f3a54f413ee03159eaea6",
+      "sourcePackage": "pkg-kai-2700-2026-10-11T09-36-45-868Z"
     }
   }
 }

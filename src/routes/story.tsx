@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FiveLights } from '../components/common/FiveLights';
 import { LiveMarkdown } from '../components/live/LiveMarkdown';
 import { getCurrentCampaign, getLiveAlbumCampaignContent, getReleaseById } from '../utils/contentLoader';
+import kai2700Story from '../../content/canonical/kai-2700/K27-TXT-WEB12_v01.md?raw';
 
 type TimelineEvent = {
   id: string;
@@ -151,6 +152,18 @@ export const StoryPage: React.FC = () => {
       description: '2024年ツアーファイナルで初披露した「We Burn」を、7th Singleとして正式リリース。五人がそれぞれの道を選びながら同じ熱を持って進む意思を、新たなサウンドとビジュアルで提示する。TAKE FOURと制作した実験的なダンスファンク「NO PLAN」、デビューシングルのカップリングを現在の五人で鳴らした「Back to the Spark - Live Version -」を収録。未来、現在、原点という三つの時間を通じて、IGNITEの次章が始まる。',
       link: '/campaigns/we-burn/',
       secondaryLink: '/discography/we-burn/',
+    });
+  }
+
+  if (getReleaseById('kai-2700')) {
+    timelineEvents.push({
+      id: 'kai-2700',
+      date: 'TBD',
+      era: 'KAI 27:00',
+      title: 'KAI 1st Rap Mini Album『27:00』',
+      description: '',
+      canonicalMarkdown: kai2700Story.replace('TBD｜', '').replace(/\*\*VIEW RELEASE → TBD_URL\*\*/, '').trim(),
+      link: '/discography/kai-2700/',
     });
   }
 
