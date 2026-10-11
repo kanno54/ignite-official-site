@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ignite-official.site/</loc>
-    <lastmod>2025-04-23</lastmod>
+    <lastmod>2025-10-15</lastmod>
   </url>
   <url>
     <loc>https://ignite-official.site/members/</loc>
@@ -117,6 +117,10 @@
     <lastmod>2025-04-23</lastmod>
   </url>
   <url>
+    <loc>https://ignite-official.site/discography/kai-2700/</loc>
+    <lastmod>2025-10-15</lastmod>
+  </url>
+  <url>
     <loc>https://ignite-official.site/campaigns/</loc>
   </url>
   <url>
@@ -162,6 +166,10 @@
   <url>
     <loc>https://ignite-official.site/campaigns/we-burn/</loc>
     <lastmod>2025-04-23</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/campaigns/kai-2700/</loc>
+    <lastmod>2025-10-15</lastmod>
   </url>
   <url>
     <loc>https://ignite-official.site/features/</loc>
@@ -258,6 +266,14 @@
   <url>
     <loc>https://ignite-official.site/features/five-directions/</loc>
     <lastmod>2025-04-18</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/kai-2700-production-interview/</loc>
+    <lastmod>2025-10-15</lastmod>
+  </url>
+  <url>
+    <loc>https://ignite-official.site/features/kai-2700-the-hidden-seven/</loc>
+    <lastmod>2025-10-15</lastmod>
   </url>
   <url>
     <loc>https://ignite-official.site/live/</loc>
