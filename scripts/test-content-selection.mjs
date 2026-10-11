@@ -4,7 +4,7 @@ import { selectCurrentCampaign, sortReleasesNewestFirst, releaseDateKey } from '
 import { getPublicRouteEntries } from './public-site.mjs';
 const read=name=>JSON.parse(fs.readFileSync(`content/public/${name}.json`));
 const campaigns=read('campaigns'),config=read('site-config'),{releases}=read('discography');
-assert.equal(selectCurrentCampaign(campaigns,config,true).id,'we-burn');
+assert.equal(selectCurrentCampaign(campaigns,config,true).id,'kai-2700');
 assert.equal(selectCurrentCampaign(campaigns,config,false).id,'we-burn');
 const sorted=sortReleasesNewestFirst(releases);
 assert.equal(sorted[0].id,'we-burn');
@@ -16,7 +16,8 @@ assert.deepEqual(sortReleasesNewestFirst(fixture).map(r=>r.id),['newer','day','m
 assert.equal(fixture[0].id,'missing');
 for(const staging of [true,false]) {
   const home=getPublicRouteEntries({staging}).find(r=>r.path==='/');
-  assert(home.title.includes('We Burn'));
-  assert.equal(home.image,null);
+  assert(home.title.includes(staging ? '27:00' : 'We Burn'));
+  if (staging) assert(home.image.endsWith('/assets/images/kai-2700/K27-WEB01_v01.webp'));
+  else assert.equal(home.image,null);
 }
 console.log('Campaign selection, environment isolation, real-date order, undated-last and home SEO passed.');
