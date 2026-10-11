@@ -9,15 +9,10 @@ import { TrackPlayButton } from '../audio/TrackPlayButton';
 import './standardCampaign.css';
 
 export const StandardCampaignView: React.FC<{campaign:Campaign}> = ({campaign}) => {
-  const {playTrack}=useAudio();
+  const {playRelease}=useAudio();
   const release=getReleaseBySlug(campaign.releaseId);
   const recordings=getRecordingsForRelease(campaign.releaseId);
   const relatedCampaigns=getCampaigns().filter(c=>campaign.relatedCampaignIds?.includes(c.id));
-  const handlePlayTitleTrack = () => {
-    if (recordings.length > 0) {
-      playTrack(recordings[0].id);
-    }
-  };
 
   return (
     <div className="standard-campaign" style={{ '--campaign-accent': campaign.campaignColors.accent, '--campaign-deep': campaign.campaignColors.deep, display: 'flex', flexDirection: 'column', gap: '60px' } as React.CSSProperties}>
@@ -116,7 +111,7 @@ export const StandardCampaignView: React.FC<{campaign:Campaign}> = ({campaign}) 
           <div style={{ display: 'flex', gap: '16px', marginTop: '12px', flexWrap: 'wrap' }}>
             {recordings.length > 0 && (
               <button
-                onClick={handlePlayTitleTrack}
+                onClick={() => playRelease(campaign.releaseId)}
                 style={{
                   padding: '14px 28px',
                   backgroundColor: campaign.campaignColors.accent,
@@ -129,7 +124,7 @@ export const StandardCampaignView: React.FC<{campaign:Campaign}> = ({campaign}) 
                   borderRadius: '2px',
                 }}
               >
-                {campaign.primaryCta.action === 'link' ? 'PLAY RELEASE ▶' : campaign.primaryCta.text}
+                PLAY FULL RELEASE
               </button>
             )}
 

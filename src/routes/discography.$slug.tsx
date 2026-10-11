@@ -12,6 +12,7 @@ import { TrackPlayButton } from '../components/audio/TrackPlayButton';
 import { useAudio } from '../components/audio/AudioProvider';
 import { LyricsRenderer } from '../components/discography/LyricSection.mjs';
 import { WeBurnCampaignView } from '../components/campaigns/WeBurnCampaignView';
+import { LiveMarkdown } from '../components/live/LiveMarkdown';
 
 export const ReleaseDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -93,7 +94,7 @@ export const ReleaseDetailPage: React.FC = () => {
           </p>
 
           <button onClick={() => playRelease(release.id)} className="btn-primary">
-            PLAY FULL RELEASE ▶
+            PLAY FULL RELEASE
           </button>
         </div>
       </section>
@@ -101,11 +102,11 @@ export const ReleaseDetailPage: React.FC = () => {
       {/* Liner Notes */}
       <section style={{ backgroundColor: 'var(--color-surface-elevated)', border: '1px solid var(--color-border)', padding: '32px', borderRadius: '2px' }}>
         <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--campaign-accent)', margin: '0 0 12px' }}>
-          OFFICIAL LINER NOTES
+          {release.canonicalMarkdown ? 'RELEASE OVERVIEW' : 'OFFICIAL LINER NOTES'}
         </h3>
-        <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#AEB6C4', margin: 0, whiteSpace: 'pre-line' }}>
+        {release.canonicalMarkdown ? <LiveMarkdown markdown={release.canonicalMarkdown} /> : <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#AEB6C4', margin: 0, whiteSpace: 'pre-line' }}>
           {release.linerNotes}
-        </p>
+        </p>}
       </section>
 
       {/* Track List */}

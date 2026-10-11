@@ -103,7 +103,7 @@ export const DiscographyIndex: React.FC = () => {
                   <h2 style={{ fontFamily: 'var(--font-sans)', fontSize: '1.8rem', fontWeight: 700, margin: '4px 0 8px', color: '#F6F3ED' }}>
                     {rel.title}
                   </h2>
-                  <p style={{ fontSize: '0.85rem', color: '#AEB6C4', lineHeight: 1.5, margin: 0 }}>
+                  <p className="release-card-description" style={{ fontSize: '0.85rem', color: '#AEB6C4', lineHeight: 1.5, margin: 0 }}>
                     {rel.description}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export const DiscographyIndex: React.FC = () => {
                         borderRadius: '2px',
                       }}
                     >
-                      PLAY RELEASE ▶
+                      PLAY FULL RELEASE
                     </button>
                   )}
                   <Link

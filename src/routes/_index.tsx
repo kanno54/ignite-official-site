@@ -109,7 +109,7 @@ export const TopPage: React.FC = () => {
             <div><span className="live-kicker">LATEST RELEASE</span><h2>{currentRelease.title}</h2><p>{currentRelease.format} — {currentRelease.fictionalReleaseDateFull}</p></div>
             <ResponsivePicture assetId={currentRelease.coverAssetId} aspectRatio="1:1" alt={`${currentRelease.title} album cover`} loading="lazy" decoding="async" sizes="(max-width: 760px) 100vw, 320px" />
             <div className="home-latest-release__actions">
-              <button className="btn-primary" onClick={() => playRelease(currentRelease.id)}>PLAY RELEASE ▶</button>
+              <button className="btn-primary" onClick={() => playRelease(currentRelease.id)}>PLAY FULL RELEASE</button>
               <Link className="btn-secondary" to={`/discography/${currentRelease.slug}/`}>VIEW RELEASE →</Link>
             </div>
           </article>

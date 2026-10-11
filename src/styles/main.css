@@ -35,6 +35,13 @@
 .home-latest-release h2, .home-campaign-compact h2 { margin: 5px 0; font: 800 clamp(1.7rem, 4vw, 2.5rem)/1 var(--font-display); }
 .home-latest-release p, .home-campaign-compact p { color: #aeb6c4; }
 .home-latest-release__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (min-width: 761px) {
+  .home-release-campaign-split:has(> .home-latest-release:only-child) {
+    grid-template-columns: minmax(0, calc((100% - 24px) / 2));
+    justify-content: center;
+  }
+}
+.release-card-description { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
 .home-campaign-compact strong { color: var(--campaign-accent); font: .82rem var(--font-mono); }
 .live-album-hero { position: relative; min-height: min(72vh, 760px); overflow: hidden; border: 1px solid var(--color-border); }
 .live-album-hero__picture { position: absolute !important; inset: 0; height: 100%; padding-top: 0 !important; }

@@ -158,7 +158,7 @@ export const StoryPage: React.FC = () => {
   if (getReleaseById('kai-2700')) {
     timelineEvents.push({
       id: 'kai-2700',
-      date: 'TBD',
+      date: getReleaseById('kai-2700')!.fictionalReleaseDateFull,
       era: 'KAI 27:00',
       title: 'KAI 1st Rap Mini Album『27:00』',
       description: '',

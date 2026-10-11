@@ -5624,8 +5624,8 @@
     "title": "KAI『27:00』Production Interview",
     "kicker": "27:00 Production Interview",
     "dek": "「分からないままでも、次には行ける」",
-    "publishDate": "",
-    "publishDateFull": "",
+    "publishDate": "2025-10",
+    "publishDateFull": "2025.10.15",
     "readingTimeMinutes": 7,
     "mainSpeakerIds": [
       "kai"
@@ -5651,8 +5651,8 @@
     "sourceAssetCode": "K27-TXT-FEAT01",
     "sourceVersion": 1,
     "publication": {
-      "fictionalReleaseDate": "",
-      "publishAt": null,
+      "fictionalReleaseDate": "2025-10-15",
+      "publishAt": "2025-10-15",
       "visibility": "public",
       "campaignState": "staging"
     }
@@ -5663,8 +5663,8 @@
     "title": "The Hidden Seven",
     "kicker": "The Hidden Seven",
     "dek": "『27:00』の中に残された「7」",
-    "publishDate": "",
-    "publishDateFull": "",
+    "publishDate": "2025-10",
+    "publishDateFull": "2025.10.15",
     "readingTimeMinutes": 5,
     "mainSpeakerIds": [
       "kai"
@@ -5690,8 +5690,8 @@
     "sourceAssetCode": "K27-TXT-FEAT02",
     "sourceVersion": 1,
     "publication": {
-      "fictionalReleaseDate": "",
-      "publishAt": null,
+      "fictionalReleaseDate": "2025-10-15",
+      "publishAt": "2025-10-15",
       "visibility": "public",
       "campaignState": "staging"
     }
